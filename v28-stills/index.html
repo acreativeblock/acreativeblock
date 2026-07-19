@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — a space to understand the stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7f5; --ink:#121110; --muted:#7a766e; --line:#e0dfda;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.disp{font-family:var(--serif);font-weight:300;letter-spacing:-.01em;line-height:1.0}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.seclabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;padding:14px 28px;border-radius:9999px;transition:.15s}
+.btn.dark{background:var(--ink);color:#fff}.btn.dark:hover{background:#000}
+.btn.line{border:1px solid var(--ink)}.btn.line:hover{background:#ececea}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:60;background:rgba(247,247,245,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px;max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.nav .lg{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:-.01em}
+.nav .lk{display:flex;gap:26px;font-size:15px}
+.nav .lk a:hover{opacity:.6}
+.nav .cta{border:1px solid var(--ink);border-radius:9999px;padding:9px 20px;font-size:14px;font-weight:500}
+.nav .cta:hover{background:var(--ink);color:#fff}
+@media(max-width:760px){.nav .lk{display:none}}
+
+/* HERO */
+.hero{padding:clamp(50px,7vw,110px) 0 clamp(30px,4vw,56px)}
+.hero .lab{margin-bottom:26px}
+.hero h1{font-size:clamp(44px,8.5vw,124px);letter-spacing:-.02em;max-width:14ch}
+.hero .row{display:grid;grid-template-columns:1fr .8fr;gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(30px,4vw,56px)}
+@media(max-width:820px){.hero .row{grid-template-columns:1fr}}
+.hero p{font-size:clamp(17px,1.7vw,21px);color:#3b3934;max-width:46ch;line-height:1.5}
+.hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .him{aspect-ratio:5/4;overflow:hidden}
+
+/* full-bleed 3-image showcase */
+.showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:clamp(20px,3vw,40px) 8px}
+@media(max-width:700px){.showcase{grid-template-columns:1fr}}
+.showcase .s{aspect-ratio:4/5;overflow:hidden}
+
+/* 3 feature blurbs */
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,52px);padding:clamp(40px,6vw,88px) 0;border-top:1px solid var(--line)}
+@media(max-width:760px){.feats{grid-template-columns:1fr}}
+.feat h3{font-size:22px;font-weight:500;margin-bottom:10px;letter-spacing:-.01em}
+.feat p{font-size:15px;color:var(--muted);line-height:1.55;max-width:34ch}
+
+/* big serif statement */
+.statement{padding:clamp(60px,9vw,140px) 0;text-align:center;border-top:1px solid var(--line)}
+.statement h2{font-size:clamp(32px,5.6vw,80px);max-width:16ch;margin:0 auto}
+.statement p{font-size:clamp(17px,1.7vw,21px);color:var(--muted);max-width:52ch;margin:26px auto 0;line-height:1.5}
+.statement .cta{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* masonry gallery (Stills signature) */
+.gallery{padding:clamp(40px,6vw,90px) 0;border-top:1px solid var(--line)}
+.gallery .gh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:clamp(24px,3vw,40px)}
+.gallery h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,46px);letter-spacing:-.01em}
+.masonry{column-count:3;column-gap:16px}
+@media(max-width:900px){.masonry{column-count:2}}@media(max-width:540px){.masonry{column-count:1}}
+.mitem{break-inside:avoid;margin-bottom:22px}
+.mitem .mi{overflow:hidden}
+.mitem img{width:100%;height:auto;transition:transform .5s ease}
+.mitem:hover img{transform:scale(1.03)}
+.mitem .cap{padding:12px 2px 0}
+.mitem .cap .n{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mitem .cap .t{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px;letter-spacing:-.01em}
+.mitem .cap p{font-size:14px;color:var(--muted);line-height:1.5}
+
+/* quotes */
+.quotes{padding:clamp(40px,6vw,90px) 0;border-top:1px solid var(--line)}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:clamp(20px,2vw,32px)}
+@media(max-width:760px){.qgrid{grid-template-columns:1fr}}
+.qc{display:grid;grid-template-columns:110px 1fr;gap:22px;align-items:start}
+.qc .qi{aspect-ratio:1/1;overflow:hidden}
+.qc .q{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2vw,25px);line-height:1.28;margin-bottom:12px}
+.qc .who{font-size:13.5px;color:var(--muted)}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:clamp(40px,5vw,72px) 0 40px}
+.footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:end}
+.footer .word{font-family:var(--serif);font-weight:300;font-size:clamp(40px,8vw,110px);letter-spacing:-.02em;line-height:.9}
+.footer .lks{display:flex;flex-direction:column;gap:6px;font-size:15px;color:var(--muted)}
+.footer .lks a:hover{color:var(--ink)}
+.footer .bar{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav"><div class="in">
+  <a href="index.html" class="lg">A Creative Block</a>
+  <nav class="lk"><a href="method.html">Method</a><a href="blocks.html">The 6 Blocks</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+  <a href="Questionnaire.html" class="cta">Find your block</a>
+</div></header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="lab seclabel">A space for the stuck</div>
+    <h1 class="disp">Understand what keeps you from the work.</h1>
+    <div class="row">
+      <p>Getting stuck isn't a flaw. It's a signal — something underneath, asking for attention. We help you hear it, and find your way back to the work.
+        <span style="display:block" class="cta"><a href="Questionnaire.html" class="btn dark">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn line">Book a free call</a></span>
+      </p>
+      <div class="him"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/authentic/2.png" alt="A soft, contemplative moment"></div>
+    </div>
+  </section>
+</div>
+
+<!-- SHOWCASE (full-bleed) -->
+<section class="showcase">
+  <div class="s"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/enterprise/1.png" alt=""></div>
+  <div class="s"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/6.png" alt=""></div>
+  <div class="s"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/authentic/3.png" alt=""></div>
+</section>
+
+<div class="wrap">
+
+  <!-- 3 FEATURES -->
+  <section class="feats">
+    <div class="feat"><h3>Root first</h3><p>The stuck you feel is rarely the stuck that's there. We name what waits underneath the noise.</p></div>
+    <div class="feat"><h3>We stay in it with you</h3><p>Not a framework and a goodbye. We think it through together, until the way becomes clear.</p></div>
+    <div class="feat"><h3>A practice you keep</h3><p>We set you up to get unstuck on your own — again and again, long after we're done.</p></div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <h2 class="disp">Getting unstuck is more.</h2>
+    <p>More than a push to start — it's understanding what stopped you. More than discipline — it's a way back to the work. More than a fix — it's a practice you keep.</p>
+  </section>
+
+  <!-- GALLERY (masonry) -->
+  <section class="gallery">
+    <div class="gh">
+      <h2>Six ways of being stuck. Usually, a few at once.</h2>
+      <a href="Questionnaire.html" class="btn line">Find your block →</a>
+    </div>
+    <div class="masonry">
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/6.png" alt=""></div><div class="cap"><div class="n">Block 01</div><div class="t">Directional</div><p>Too many roads, none chosen. Picking one feels like killing the rest.</p></div></div>
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/2.png" alt=""></div><div class="cap"><div class="n">Block 02</div><div class="t">Structural</div><p>The mess is the hiding place. You can't find the edge to start at.</p></div></div>
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/8.png" alt=""></div><div class="cap"><div class="n">Block 03</div><div class="t">Execution</div><p>You know — you just don't. Avoiding brings instant relief.</p></div></div>
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/12.png" alt=""></div><div class="cap"><div class="n">Block 04</div><div class="t">Identity</div><p>Finishing feels like a verdict, so you stall at the last ten percent.</p></div></div>
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/13.png" alt=""></div><div class="cap"><div class="n">Block 05</div><div class="t">Skill</div><p>A gap, not a flaw — one missing thing that balloons into self-doubt.</p></div></div>
+      <div class="mitem"><div class="mi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/7.png" alt=""></div><div class="cap"><div class="n">Block 06</div><div class="t">Environmental</div><p>Your setup eats your focus before you ever reach the work.</p></div></div>
+    </div>
+  </section>
+
+  <!-- STATEMENT 2 -->
+  <section class="statement">
+    <h2 class="disp">For anyone with something to make.</h2>
+    <p>Mostly creatives — from solo makers to whole studios. But you don't need to make a living from it. If there's a project that matters, you belong here.</p>
+  </section>
+
+  <!-- QUOTES -->
+  <section class="quotes">
+    <div class="seclabel">In their words</div>
+    <div class="qgrid">
+      <div class="qc"><div class="qi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/5.png" alt=""></div><div><div class="q">“I finally understood why I kept restarting — and left with a plan I actually followed.”</div><div class="who">Freelance designer</div></div></div>
+      <div class="qc"><div class="qi"><img src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/16.png" alt=""></div><div><div class="q">“The block wasn't laziness — it was fear. Naming it changed how I work.”</div><div class="who">Maker &amp; writer</div></div></div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="statement">
+    <h2 class="disp">Come back to the work.</h2>
+    <p>Find your block — it's free, and it's the first step out.</p>
+    <div class="cta"><a href="Questionnaire.html" class="btn dark">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn line">Book a call</a></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="top">
+      <div class="word disp">A Creative Block</div>
+      <div class="lks">
+        <a href="method.html">Method</a><a href="blocks.html">The 6 Blocks</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="mailto:hello@acreativeblock.com">Contact</a>
+      </div>
+    </div>
+    <div class="bar"><span>© 2026 A Creative Block · Lisbon</span><span>Understand the why. Then move.</span></div>
+  </footer>
+
+</div>
+</body>
+</html>

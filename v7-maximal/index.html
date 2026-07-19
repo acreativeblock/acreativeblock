@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — get unstuck, then move</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%2374b98c'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23234a33'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f2ea; --ink:#2c2c29; --muted:#6f6e66; --olive:#54784e; --olive-d:#3f6039;
+    --green:#79bd8e; --green-d:#5fa276; --mint:#d8ecda; --mint2:#e8f2e6; --cream:#fbf9f3;
+    --line:#e4ded1; --peach:#f3d9c6; --lilac:#dcd2ee; --sky:#cfe2ef; --butter:#f4e3a8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.08}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#1f3a28;font-weight:600;padding:13px 26px;border-radius:40px;font-size:15px;border:2px solid var(--green);cursor:pointer;transition:.15s}
+  .btn:hover{background:var(--green-d);border-color:var(--green-d)}
+  .btn-out{background:transparent;color:var(--ink);border:2px solid #cdc6b8}
+  .btn-out:hover{background:#fff;border-color:var(--ink)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(245,242,234,.9);backdrop-filter:blur(10px)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:600;font-size:20px;letter-spacing:-.02em}
+  .logo i{font-style:italic;font-weight:500;color:var(--olive)}
+  nav.links{display:flex;gap:28px;align-items:center;font-size:15px;color:#46453f}
+  nav.links a:hover{color:var(--olive)}
+  nav.links a.act{color:var(--olive);font-weight:600}
+  .nav-cta{background:var(--green);color:#1f3a28;padding:9px 20px;border-radius:40px;font-weight:600;font-size:14px}
+  @media(max-width:880px){ nav.links{display:none} }
+
+  /* hero */
+  .hero{text-align:center;padding:64px 0 30px}
+  .hero h1{font-size:clamp(34px,5.4vw,58px)}
+  .hero h1 .o{color:var(--olive)}
+  .hero p.sub{font-size:18px;color:#4a493f;max-width:560px;margin:22px auto 32px}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* stats pill + illustration */
+  .statwrap{display:flex;align-items:center;justify-content:center;gap:10px;margin:54px 0 20px;flex-wrap:wrap}
+  .illus{width:170px;height:150px;flex-shrink:0}
+  .statpill{background:var(--mint);border-radius:40px;padding:26px 40px;display:flex;gap:42px;flex-wrap:wrap;justify-content:center}
+  .stat{text-align:center}
+  .stat .n{font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--olive)}
+  .stat .l{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#6c7a66;margin-top:2px}
+  @media(max-width:760px){ .illus{display:none} .statpill{gap:28px;padding:22px 26px} }
+
+  section{padding:80px 0}
+  .sechead{text-align:center;margin-bottom:48px}
+  .sechead h2{font-size:clamp(28px,4vw,42px)}
+  .sechead p{color:var(--muted);font-size:17px;max-width:560px;margin:14px auto 0}
+
+  /* how it works */
+  .how{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  @media(max-width:860px){ .how{grid-template-columns:1fr} }
+  .howimg{background:var(--mint2);border-radius:26px;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .howimg img{width:100%;height:100%;object-fit:cover}
+  .steps{display:flex;flex-direction:column;gap:14px}
+  .step{background:var(--mint2);border-radius:20px;padding:24px 26px;display:flex;gap:20px;align-items:flex-start;border-left:4px solid var(--green)}
+  .step .num{font-size:40px;font-weight:700;color:var(--olive);line-height:1;min-width:40px}
+  .step h3{font-size:19px;margin-bottom:4px}
+  .step p{font-size:14.5px;color:var(--muted)}
+
+  /* explore badges */
+  .badges{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory}
+  .badge{flex:0 0 auto;width:150px;text-align:center;scroll-snap-align:start}
+  .badge .circ{width:120px;height:120px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink)}
+  .badge .circ svg{width:52px;height:52px;stroke:var(--ink);fill:none;stroke-width:1.5}
+  .badge:nth-child(1) .circ{background:var(--sky)}.badge:nth-child(2) .circ{background:var(--peach)}
+  .badge:nth-child(3) .circ{background:var(--mint)}.badge:nth-child(4) .circ{background:var(--lilac)}
+  .badge:nth-child(5) .circ{background:var(--butter)}.badge:nth-child(6) .circ{background:#f0cdd6}
+  .badge .name{font-weight:600;font-size:16px}
+  .badge .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* values / quote band */
+  .band{background:var(--olive);color:#eef3e9;border-radius:30px;text-align:center;padding:70px 30px}
+  .band h2{font-size:clamp(26px,3.6vw,40px);max-width:760px;margin:0 auto 10px}
+  .band p{color:#cfdcc6;max-width:540px;margin:0 auto}
+
+  /* pricing-ish simple cards */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){ .three{grid-template-columns:1fr} }
+  .pc{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:28px}
+  .pc .ic{width:46px;height:46px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .pc .ic svg{width:24px;height:24px;stroke:var(--olive);fill:none;stroke-width:1.7}
+  .pc h3{font-size:20px;margin-bottom:6px}
+  .pc p{font-size:14.5px;color:var(--muted)}
+
+  /* big CTA */
+  .cta-big{text-align:center;padding:90px 0 40px}
+  .cta-big h2{font-size:clamp(30px,4.4vw,52px);max-width:720px;margin:0 auto 26px}
+  .cta-big h2 .o{color:var(--olive)}
+
+  footer.ft{background:var(--cream);border-top:1px solid var(--line);padding:54px 0 30px;margin-top:40px}
+  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px;margin-bottom:34px}
+  @media(max-width:760px){ .ft-grid{grid-template-columns:1fr 1fr} }
+  footer.ft h5{font-size:13px;margin-bottom:12px;color:var(--ink)}
+  footer.ft a{display:block;font-size:14px;color:#5d5c54;padding:4px 0}
+  footer.ft a:hover{color:var(--olive)}
+  .ft-bottom{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">The Creative <i>Block</i></a>
+    <nav class="links">
+      <a href="#how" class="act">For Creatives</a>
+      <a href="#explore">The Blocks</a>
+      <a href="#offer">Sessions</a>
+      <a href="#">Blog</a>
+    <a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+    <a href="Questionnaire.html" class="nav-cta">Find your block →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>Creating is hard.<br><span class="o">Getting unstuck shouldn't be.</span></h1>
+    <p class="sub">A coaching practice that diagnoses the real block behind your work — and gives you a clear, doable way to move. For creatives, freelancers, founders, students and teams.</p>
+    <div class="cta">
+      <a href="Questionnaire.html" class="btn">Find your block type</a>
+      <a href="#offer" class="btn btn-out">Book a free call</a>
+    </div>
+    <div class="statwrap">
+      <svg class="illus" viewBox="0 0 170 150" fill="none">
+        <circle cx="60" cy="64" r="34" fill="#f4e3a8" stroke="#2c2c29" stroke-width="2"/>
+        <circle cx="98" cy="46" r="20" fill="#79bd8e" stroke="#2c2c29" stroke-width="2"/>
+        <circle cx="104" cy="92" r="16" fill="#f3d9c6" stroke="#2c2c29" stroke-width="2"/>
+        <path d="M30 120c20-12 60-12 88 0" stroke="#2c2c29" stroke-width="2" stroke-linecap="round"/>
+        <path d="M52 60c4 4 12 4 16 0" stroke="#2c2c29" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="52" cy="52" r="2" fill="#2c2c29"/><circle cx="68" cy="52" r="2" fill="#2c2c29"/>
+      </svg>
+      <div class="statpill">
+        <div class="stat"><div class="n">6</div><div class="l">Blocks</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">Method</div></div>
+        <div class="stat"><div class="n">90<span style="font-size:.6em">min</span></div><div class="l">To clarity</div></div>
+        <div class="stat"><div class="n">1:1→∞</div><div class="l">Solo to teams</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sechead"><h2>How A Creative Block works</h2><p>Three simple steps from stuck to moving.</p></div>
+    <div class="how">
+      <div class="howimg"><img src="https://picsum.photos/seed/tcbhow/800/600" alt="A session"></div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Find your block</h3><p>Take the 4-minute quiz or book a session — we diagnose which of the six blocks is really stopping you.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Reduce the friction</h3><p>Together we remove what's quietly in the way and turn it into one concrete next step.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Build momentum</h3><p>With a simple accountability loop, small action becomes finished work — and confidence.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE BADGES -->
+<section id="explore">
+  <div class="wrap">
+    <div class="sechead"><h2>Curious about your block?</h2><p>Creative block isn't one thing — it's six. Explore the type that sounds like you.</p></div>
+    <div class="badges">
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-6"/><circle cx="12" cy="12" r="1.5" fill="#2c2c29" stroke="none"/></svg></div><div class="name">Directional</div><div class="sub">No clear direction</div></div>
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-5 3 3 6-7"/><path d="M4 6h16M4 12h6"/></svg></div><div class="name">Structural</div><div class="sub">Project too chaotic</div></div>
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="name">Execution</div><div class="sub">You avoid starting</div></div>
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="4"/><path d="M5 20c1.5-4 5-5 7-5s5.5 1 7 5"/></svg></div><div class="name">Identity</div><div class="sub">Not good enough?</div></div>
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z"/></svg></div><div class="name">Skill</div><div class="sub">Missing know-how</div></div>
+      <div class="badge"><div class="circ"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6h6v6"/></svg></div><div class="name">Environmental</div><div class="sub">Context kills it</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section style="padding:30px 0">
+  <div class="wrap">
+    <div class="band">
+      <h2>Talent is rarely the problem. The block is — and it can be named.</h2>
+      <p>Grounded in neuroscience, psychology, systems thinking and real creative practice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="wrap">
+    <div class="sechead"><h2>Ways to work together</h2><p>From a single conversation to ongoing work with teams and universities.</p></div>
+    <div class="three">
+      <div class="pc"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12 7.7L3 21l1.8-6A8.5 8.5 0 1 1 21 11.5z"/></svg></div><h3>1:1 coaching</h3><p>The 90-minute Unblock Session, or a 4–8 session package for deeper work and accountability.</p></div>
+      <div class="pc"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M16 6a3 3 0 0 1 0 6"/></svg></div><h3>Groups & community</h3><p>Get unstuck alongside other creatives — shared accountability and momentum that lasts.</p></div>
+      <div class="pc"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></div><h3>Teams & universities</h3><p>Workshops, creative-team consulting, and an in-residence counsellor for students.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-big" id="contact">
+  <div class="wrap">
+    <h2>Ready to get unstuck? <span class="o">Then move.</span></h2>
+    <div class="cta" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="Questionnaire.html" class="btn">Find your block type</a>
+      <a href="mailto:hello@acreativeblock.com" class="btn btn-out">Book a free call</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px">The Creative <i>Block</i></div>
+        <p style="font-size:14px;color:var(--muted);max-width:300px">Get unstuck, then move. A creative coaching practice &amp; space.</p>
+      </div>
+      <div><h5>For Creatives</h5><a href="#how">How it works</a><a href="#explore">The Blocks</a><a href="Questionnaire.html">Find your block</a></div>
+      <div><h5>Work with us</h5><a href="#offer">Sessions</a><a href="#offer">Teams</a><a href="#contact">Contact</a></div>
+      <div><h5>Company</h5><a href="#">About</a><a href="#">Blog</a><a href="#">Ethics</a></div>
+    </div>
+    <div class="ft-bottom"><span>© 2026 A Creative Block</span><span>Get unstuck, then move</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — understand why you keep getting stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23714cb6'/%3E%3Cpath d='M16 5 L19 13 L27 16 L19 19 L16 27 L13 19 L5 16 L13 13 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --warm:#f7f5f2; --warm2:#f2f0eb; --ink:#292827; --muted:#6b6864; --line:#e7e3dc;
+  --lav:#d4c7ff; --lav-soft:#efeaff; --purple:#714cb6; --wine:#421d24;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:450}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:500;letter-spacing:-.015em;line-height:1.05}
+.muted{color:var(--muted)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--purple);margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:11px 20px;border-radius:8px;cursor:pointer;border:none;font-family:inherit;transition:.16s}
+.btn.lav{background:var(--lav);color:var(--ink)}.btn.lav:hover{background:#c4b4ff}
+.btn.dark{background:var(--wine);color:#fff}.btn.dark:hover{background:#561f2c}
+.btn.ghost{background:transparent;color:var(--purple);border:1px solid var(--line)}.btn.ghost:hover{background:var(--lav-soft);border-color:var(--lav)}
+.btn.white{background:rgba(255,255,255,.95);color:var(--ink)}.btn.white:hover{background:#fff}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:600;font-size:16.5px}.logo svg{width:23px;height:23px}
+.links{display:flex;gap:2px;font-size:14.5px;font-weight:500}@media(max-width:820px){.links{display:none}}
+.links a{padding:8px 13px;border-radius:8px;color:var(--muted)}.links a:hover{color:var(--ink);background:var(--warm)}
+
+.sec{padding:clamp(70px,9vw,120px) 0}
+.sec.warm{background:var(--warm)}
+.sec h2{font-size:clamp(30px,4.4vw,52px)}
+.lead{font-size:clamp(17px,1.8vw,20px);color:var(--muted);max-width:600px;line-height:1.5}
+
+/* hero — dark wine block with light text (mirrors Superhuman hero) */
+.hero{padding:18px 0 0}
+.hero-box{background:radial-gradient(120% 130% at 85% -10%,#16585a,#0c4243 58%);border-radius:24px;padding:clamp(48px,8vw,110px) clamp(28px,5vw,64px);text-align:left;color:#fff;position:relative;overflow:hidden}
+.hero-box:before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:760px;height:560px;background:radial-gradient(closest-side,rgba(212,199,255,.28),transparent 70%);z-index:0}
+.hero-box>*{position:relative;z-index:1}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#f0e9ff;background:rgba(212,199,255,.16);border:1px solid rgba(212,199,255,.3);border-radius:40px;padding:6px 14px;margin-bottom:26px}
+.hero .pill i{width:7px;height:7px;border-radius:50%;background:var(--lav);display:block}
+.hero h1{font-size:clamp(38px,6.2vw,76px);font-weight:500;letter-spacing:-.025em;max-width:17ch;margin:0;color:#fff}
+.hero h1 em{font-style:normal;color:var(--lav)}
+.hero p{font-size:clamp(17px,1.9vw,21px);color:rgba(255,255,255,.82);max-width:560px;margin:24px 0 0;font-weight:450}
+.hero .cta{margin-top:34px;display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap}
+
+/* differentiator */
+.band .inner{max-width:780px}.band h2 em{font-style:normal;color:var(--purple)}
+.band p{font-size:clamp(16px,1.7vw,19px);color:#403d39;line-height:1.6;margin-top:20px}
+
+/* method cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+@media(max-width:780px){.cards3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.card .n{font-size:13px;font-weight:600;color:var(--purple);margin-bottom:14px}
+.card h3{font-size:19px;margin-bottom:8px;font-weight:600}
+.card p{font-size:14.5px;color:var(--muted);line-height:1.55}
+
+/* SUITE: sticky tabs + scroll-synced */
+.suite-head{margin-bottom:44px}
+.suite-grid{display:grid;grid-template-columns:320px 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.suite-tabs{position:sticky;top:92px;display:flex;flex-direction:column;gap:3px}
+.tab{display:flex;align-items:center;gap:13px;text-align:left;background:none;border:1px solid transparent;color:var(--muted);font-family:inherit;cursor:pointer;padding:14px 15px;border-radius:12px;transition:.2s;width:100%}
+.tab .tn{font-size:12px;font-weight:700;width:24px;color:#bdb7ad;transition:.2s}
+.tab .tt{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.tab .ts{display:block;font-size:12.5px;font-weight:450;color:#a8a39a;margin-top:2px}
+.tab:hover{color:var(--ink);background:var(--warm)}
+.tab.active{background:var(--lav-soft);border-color:var(--lav);color:var(--ink);box-shadow:inset 3px 0 0 var(--purple)}
+.tab.active .tn{color:var(--purple)}
+.suite-panels{display:flex;flex-direction:column}
+.spanel{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:46px 0}
+.spanel+.spanel{border-top:1px solid var(--line)}
+.spanel .meta{font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--purple);margin-bottom:16px}
+.spanel .quote{font-size:clamp(27px,3.8vw,44px);font-weight:500;letter-spacing:-.02em;line-height:1.06;margin-bottom:22px}
+.spanel .why{font-size:clamp(16px,1.7vw,19px);color:var(--muted);line-height:1.6;max-width:560px;margin-bottom:24px}
+.spanel .signs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.spanel .signs span{font-size:13.5px;color:var(--ink);background:var(--warm);border:1px solid var(--line);border-radius:30px;padding:7px 14px}
+.spanel .way{background:var(--lav-soft);border:1px solid var(--lav);border-radius:14px;padding:18px 22px;max-width:520px}
+.spanel .way small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
+.spanel .way b{font-size:16.5px;font-weight:600}
+@media(max-width:860px){
+  .suite-grid{grid-template-columns:1fr;gap:14px}
+  .suite-tabs{position:sticky;top:64px;z-index:20;flex-direction:row;overflow-x:auto;gap:8px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);margin:0 -24px;padding:12px 24px;border-bottom:1px solid var(--line)}
+  .tab{flex:0 0 auto;width:auto;padding:9px 14px}.tab .ts{display:none}.tab .tt{font-size:14px}
+  .spanel{min-height:auto;padding:32px 0}
+}
+
+/* who + stories */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+@media(max-width:820px){.who-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.who-grid{grid-template-columns:1fr}}
+.who-c{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.who-c h4{font-size:16px;margin-bottom:6px;font-weight:600}.who-c p{font-size:13.5px;color:var(--muted);line-height:1.5}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}@media(max-width:720px){.qgrid{grid-template-columns:1fr}}
+.qc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}.qc .qb{font-size:18px;font-weight:600;line-height:1.3;margin-bottom:12px;letter-spacing:-.01em}
+.qc p{font-size:14px;color:var(--muted);margin-bottom:12px;line-height:1.5}.qc .who{font-size:12px;letter-spacing:.04em;color:#a8a39a;font-weight:600}
+
+/* closing */
+.closing-box{background:radial-gradient(120% 130% at 20% -10%,#16585a,#0c4243 58%);border-radius:24px;padding:clamp(54px,8vw,96px) clamp(28px,5vw,56px);text-align:center;color:#fff;position:relative;overflow:hidden}
+.closing-box:before{content:"";position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:760px;height:520px;background:radial-gradient(closest-side,rgba(212,199,255,.24),transparent 70%)}
+.closing-box>*{position:relative}
+.closing-box h2{font-size:clamp(32px,5vw,58px);font-weight:500;letter-spacing:-.02em;color:#fff}
+.closing-box h2 em{font-style:normal;color:var(--lav)}
+.closing-box .cta{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.foot{border-top:1px solid var(--line);padding:46px 0;color:var(--muted);font-size:14px}
+.foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}.foot a{color:var(--muted)}.foot a:hover{color:var(--ink)}
+.foot .cols{display:flex;gap:46px;flex-wrap:wrap}.foot .col{display:flex;flex-direction:column;gap:8px}.foot .col b{color:var(--ink);font-size:13px;font-weight:600;margin-bottom:2px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap nav-in">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#714cb6"/><path d="M16 5 L19 13 L27 16 L19 19 L16 27 L13 19 L5 16 L13 13 Z" fill="#fff"/></svg>A Creative Block</a>
+  <nav class="links"><a href="#method">Method</a><a href="#blocks">The 6 blocks</a><a href="#who">Who it's for</a><a href="#stories">Stories</a><a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+  <a href="#blocks" class="btn lav">Find your block</a>
+</div></header>
+
+<main id="top">
+  <section class="hero"><div class="wrap"><div class="hero-box">
+    <span class="pill"><i></i>Creative-block coaching</span>
+    <h1>Understand <em>why</em> you keep getting stuck</h1>
+    <p>We get to the root of why, then build the structure to actually move through it. Depth that ships work — not endless reflection.</p>
+    <div class="cta"><a href="#blocks" class="btn lav">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn white">Book a free call</a></div>
+  </div></div></section>
+
+  <section class="sec warm band"><div class="wrap"><div class="inner">
+    <div class="eyebrow">What makes this different</div>
+    <h2>Most coaches start with systems. <em>We start with why.</em></h2>
+    <p>Systems and accountability help — until the block comes back. For most creatives the real cause isn't structural, it's psychological: fear, identity, the meaning we attach to the work. I've been there myself, so I know the difference.</p>
+    <p>Once we've found the root, we build the structure to actually move — depth that ships work, not endless reflection.</p>
+  </div></div></section>
+
+  <section class="sec" id="method"><div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2>Root first — then a path</h2>
+    <div class="cards3">
+      <div class="card rv"><div class="n">01 · Root</div><h3>Find the real block</h3><p>The surface “stuck” is rarely the actual block. We name the pattern underneath the procrastination.</p></div>
+      <div class="card rv"><div class="n">02 · Understand</div><h3>Understand why it returns</h3><p>We look at what the block is protecting — fear, identity, meaning — so it loses its grip.</p></div>
+      <div class="card rv"><div class="n">03 · Move</div><h3>Build the structure to move</h3><p>A clear path, the right systems and gentle accountability — matched to your block.</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec warm" id="blocks"><div class="wrap">
+    <div class="suite-head">
+      <div class="eyebrow">The six blocks</div>
+      <h2>Six kinds of stuck. One is yours.</h2>
+      <p class="lead" style="margin-top:14px">Scroll through each — the feeling, why it keeps coming back, and the way through.</p>
+    </div>
+    <div class="suite-grid">
+      <div class="suite-tabs" id="tabs">
+        <button class="tab active" data-i="0"><span class="tn">01</span><span class="tt">Directional<span class="ts">No clear direction</span></span></button>
+        <button class="tab" data-i="1"><span class="tn">02</span><span class="tt">Structural<span class="ts">Too much chaos</span></span></button>
+        <button class="tab" data-i="2"><span class="tn">03</span><span class="tt">Execution<span class="ts">Can't get going</span></span></button>
+        <button class="tab" data-i="3"><span class="tn">04</span><span class="tt">Identity<span class="ts">Fear of not enough</span></span></button>
+        <button class="tab" data-i="4"><span class="tn">05</span><span class="tt">Environmental<span class="ts">The conditions</span></span></button>
+        <button class="tab" data-i="5"><span class="tn">06</span><span class="tt">Skill<span class="ts">A missing ability</span></span></button>
+      </div>
+      <div class="suite-panels" id="panels">
+        <div class="spanel" data-i="0"><div class="meta">01 · Directional</div><div class="quote">“I don't know what to make.”</div><p class="why">You're not out of ideas — if anything you have too many. As long as you don't choose, every version of you stays possible and none can fail. So the not-choosing isn't laziness, it's protection.</p><div class="signs"><span>You start everything, finish nothing</span><span>You've lost the why</span><span>Nothing really pulls at you</span></div><div class="way"><small>The way through</small><b>Commit to one direction — to test, not forever.</b></div></div>
+        <div class="spanel" data-i="1"><div class="meta">02 · Structural</div><div class="quote">“It's pure chaos in here.”</div><p class="why">The mess is real — but it's also a hiding place. While everything's chaotic you never face the genuinely hard creative decision underneath, so it quietly regenerates every time you get close.</p><div class="signs"><span>40 tabs, scattered files</span><span>You keep redoing the same step</span><span>The plan lives only in your head</span></div><div class="way"><small>The way through</small><b>Break the mess into three ordered steps.</b></div></div>
+        <div class="spanel" data-i="2"><div class="meta">03 · Execution</div><div class="quote">“I know what to do — I just don't.”</div><p class="why">Avoiding gives instant relief from a threat your nervous system senses — and relief is a reward, so your brain repeats it. You never start, so you never prove it was safe. A loop, not a flaw.</p><div class="signs"><span>You plan, then avoid the file</span><span>Starting feels impossible</span><span>Deadlines keep ambushing you</span></div><div class="way"><small>The way through</small><b>Shrink it. Begin for ten ugly minutes.</b></div></div>
+        <div class="spanel" data-i="3"><div class="meta">04 · Identity</div><div class="quote">“What if I'm not good enough?”</div><p class="why">If your worth rides on the outcome, an unfinished piece is safer than a finished one — it can't be judged. The block is doing a job: keeping your self-image intact. So you stall at the finish.</p><div class="signs"><span>You stall at the finish line</span><span>You can't hit publish</span><span>You compare, constantly</span></div><div class="way"><small>The way through</small><b>Ship it imperfect — you are not the work.</b></div></div>
+        <div class="spanel" data-i="4"><div class="meta">05 · Environmental</div><div class="quote">“My life keeps killing my momentum.”</div><p class="why">Willpower can't out-muscle a setup that's working against you. When your environment spends your attention and energy first, there's nothing left to push through with — so you read it as failure and try harder, which drains you faster.</p><div class="signs"><span>You can't focus where you work</span><span>You're drained before you begin</span><span>Time and space fight you</span></div><div class="way"><small>The way through</small><b>Change one condition: space, time or energy.</b></div></div>
+        <div class="spanel" data-i="5"><div class="meta">06 · Skill</div><div class="quote">“I don't know how to do the next bit.”</div><p class="why">A vague gap is scarier than a named one. Not knowing exactly what you're missing lets it balloon into “maybe I'm just not good enough,” so you avoid looking — which keeps it vague, which keeps it scary.</p><div class="signs"><span>You hit one technical wall</span><span>You binge tutorials</span><span>Impostor feelings creep in</span></div><div class="way"><small>The way through</small><b>Name the one missing skill — learn just that.</b></div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec" id="who"><div class="wrap">
+    <div class="eyebrow">Who it's for</div>
+    <h2>Made for anyone with something to make</h2>
+    <div class="who-grid">
+      <div class="who-c rv"><h4>Working creatives</h4><p>Stalling between briefs or before the finish line.</p></div>
+      <div class="who-c rv"><h4>Passion projects</h4><p>The book or idea you've always meant to make.</p></div>
+      <div class="who-c rv"><h4>Students</h4><p>Mistaking a block for a lack of talent.</p></div>
+      <div class="who-c rv"><h4>Teams &amp; studios</h4><p>Great talent, slowed by friction and burnout.</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec warm" id="stories"><div class="wrap">
+    <div class="eyebrow">In their words</div>
+    <h2>What people say</h2>
+    <div class="qgrid">
+      <div class="qc rv"><div class="qb">“I finally understood why I kept restarting.”</div><p>Came in stuck on a project restarted five times — left with a plan I actually followed.</p><div class="who">Freelance designer · example</div></div>
+      <div class="qc rv"><div class="qb">“The block wasn't laziness — it was fear.”</div><p>Naming what was really going on changed how I work — then I had a structure to act on it.</p><div class="who">Maker · example</div></div>
+      <div class="qc rv"><div class="qb">“Someone finally got what was going on.”</div><p>Instead of ‘just start’ — a real reason, and a real next step.</p><div class="who">Design student · example</div></div>
+      <div class="qc rv"><div class="qb">“A shared language for what slowed us down.”</div><p>The workshop got the team's creative output moving again.</p><div class="who">Studio lead · example</div></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap"><div class="closing-box">
+    <h2>Let's get to the <em>why.</em></h2>
+    <div class="cta"><a href="#blocks" class="btn lav">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn white">Book a free call</a></div>
+  </div></div></section>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <div><div class="logo" style="font-size:15px"><svg viewBox="0 0 32 32" style="width:22px;height:22px"><rect width="32" height="32" rx="8" fill="#714cb6"/><path d="M16 5 L19 13 L27 16 L19 19 L16 27 L13 19 L5 16 L13 13 Z" fill="#fff"/></svg>A Creative Block</div><p style="margin-top:12px;max-width:240px;font-size:13px">Understand why you keep getting stuck — then move.</p></div>
+  <div class="cols">
+    <div class="col"><b>Explore</b><a href="#method">Method</a><a href="#blocks">The 6 blocks</a><a href="#who">Who it's for</a></div>
+    <div class="col"><b>Connect</b><a href="mailto:hello@acreativeblock.com">Contact</a><a href="mailto:hello@acreativeblock.com">Book a free call</a></div>
+  </div>
+</div></footer>
+
+<script>
+const tabs=[...document.querySelectorAll('.tab')], panels=[...document.querySelectorAll('.spanel')];
+const setA=i=>tabs.forEach(t=>t.classList.toggle('active',+t.dataset.i===i));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setA(+e.target.dataset.i)}),{rootMargin:'-45% 0px -45% 0px'});
+panels.forEach(p=>io.observe(p));
+tabs.forEach(t=>t.addEventListener('click',()=>{const p=panels[+t.dataset.i];window.scrollTo({top:p.getBoundingClientRect().top+scrollY-100,behavior:'smooth'})}));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>

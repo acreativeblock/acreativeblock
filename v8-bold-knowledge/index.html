@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — learn, unblock, create</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231b1e28'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23b9971e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4f0e7; --paper:#fbf9f3; --navy:#1b1e28; --ink:#24272f; --ochre:#b9971e; --ochre-d:#9c7f15;
+    --muted:#6f6c64; --line:#e3ddcf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:"Lora",Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .cond{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+  .label{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:600;color:var(--ochre-d)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--cream);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:600;padding:14px 24px;border-radius:7px;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{background:#000}
+  .btn .ar{font-family:"Lora",serif}
+  .btn-out{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-out:hover{background:var(--navy);color:var(--cream)}
+
+  /* nav */
+  header.nav{border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;font-size:18px;line-height:.9;color:var(--ochre-d);letter-spacing:.02em}
+  .logo span{display:block}
+  nav.links{display:flex;gap:26px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:500;color:var(--ink)}
+  nav.links a:hover{color:var(--ochre-d)}
+  .pill{background:var(--ochre);color:var(--navy);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:600;padding:11px 20px;border-radius:30px}
+  @media(max-width:920px){ nav.links{display:none} }
+
+  /* search */
+  .search{border-bottom:1px solid var(--line)}
+  .search .box{display:flex;align-items:center;gap:12px;max-width:560px;margin:0 auto;padding:18px 0;color:var(--muted);font-size:16px}
+  .search .dot{width:16px;height:16px;border-radius:50%;background:var(--ochre)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 1.15fr;min-height:520px}
+  @media(max-width:900px){ .hero{grid-template-columns:1fr} }
+  .hero .left{background:var(--navy);color:var(--cream);padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+  .hero h1{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(38px,4.6vw,64px);line-height:.98;letter-spacing:.01em;margin-bottom:24px}
+  .hero p{font-size:17px;color:#d7d3c6;margin-bottom:16px;max-width:420px}
+  .hero .left .btn{margin-top:14px;align-self:flex-start;background:var(--ochre);color:var(--navy)}
+  .hero .left .btn:hover{background:#cba926}
+  .hero .right{background:var(--cream);position:relative;overflow:hidden;min-height:360px}
+  .hero .right svg{position:absolute;inset:0;width:100%;height:100%}
+
+  section{padding:84px 0}
+  .serif-h{font-family:"Lora",serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.12;letter-spacing:-.01em}
+  .lede{font-size:17px;color:#46443c;max-width:560px}
+
+  /* alternating feature */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  @media(max-width:860px){ .feature{grid-template-columns:1fr;gap:28px} }
+  .circlepanel{background:var(--paper);border:1px solid var(--line);border-radius:14px;aspect-ratio:5/4;position:relative;overflow:hidden}
+  .circlepanel svg{position:absolute;inset:0;width:100%;height:100%}
+  .feature .btn{margin-top:24px}
+
+  /* article cards (six blocks) */
+  .sechead{text-align:center;margin-bottom:46px}
+  .sechead .label{display:block;margin-bottom:10px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  @media(max-width:860px){ .cards{grid-template-columns:1fr 1fr} }
+  @media(max-width:560px){ .cards{grid-template-columns:1fr} }
+  .acard .img{aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--paper)}
+  .acard .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .acard .cat{margin:16px 0 8px}
+  .acard h3{font-family:"Lora",serif;font-weight:600;font-size:23px;line-height:1.15;margin-bottom:8px}
+  .acard p{font-size:15px;color:var(--muted)}
+  .acard .view{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:12px;font-weight:600;margin-top:14px;display:inline-flex;gap:8px;align-items:center}
+
+  /* ways / list */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  @media(max-width:760px){ .ways{grid-template-columns:1fr} }
+  .way{padding:34px 28px;border-bottom:1px solid var(--line)}
+  .way:not(:last-child){border-right:1px solid var(--line)}
+  @media(max-width:760px){ .way:not(:last-child){border-right:none} }
+  .way h4{font-family:"Lora",serif;font-weight:600;font-size:21px;margin:6px 0 8px}
+  .way p{font-size:14.5px;color:var(--muted)}
+
+  /* band */
+  .band{background:var(--navy);color:var(--cream);border-radius:16px;text-align:center;padding:74px 30px;position:relative;overflow:hidden}
+  .band h2{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1;margin-bottom:14px}
+  .band p{color:#cfcbbe;max-width:520px;margin:0 auto 26px}
+  .band .btn{background:var(--ochre);color:var(--navy)}
+
+  /* footer */
+  footer.ft{border-top:1px solid var(--line);padding:56px 0 30px;margin-top:30px}
+  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:36px}
+  @media(max-width:760px){ .ft-grid{grid-template-columns:1fr 1fr} }
+  footer.ft h5{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;margin-bottom:12px;color:var(--ink)}
+  footer.ft a{display:block;font-size:15px;color:#56544c;padding:5px 0}
+  footer.ft a:hover{color:var(--ochre-d)}
+  .ft-bottom{border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:var(--muted);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">The Creative<span>Block</span></a>
+    <nav class="links">
+      <a href="#method">Method</a><a href="#blocks">The Blocks</a><a href="#ways">Work with us</a><a href="#about">About</a>
+    <a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+    <a href="Questionnaire.html" class="pill">Find your block</a>
+  </div>
+</header>
+
+<div class="search"><div class="wrap"><div class="box"><span class="dot"></span> What's getting in the way of your work today?</div></div></div>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="left">
+    <h1>Learn.<br>Unblock.<br>Create.</h1>
+    <p>Creating is hard. Getting unstuck shouldn't be. A Creative Block helps you understand what's really in the way — and find a calm, practical path back to the work.</p>
+    <p>For creatives, freelancers, founders, students and teams who want to finish what they start.</p>
+    <a href="Questionnaire.html" class="btn">Find your block <span class="ar">→</span></a>
+  </div>
+  <div class="right">
+    <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice">
+      <circle cx="170" cy="150" r="120" fill="#b9971e"/>
+      <circle cx="420" cy="120" r="80" fill="#1b1e28"/>
+      <circle cx="450" cy="330" r="130" fill="#d8b73f"/>
+      <circle cx="220" cy="360" r="70" fill="#e7e1d2"/>
+    </svg>
+  </div>
+</section>
+
+<!-- FEATURE -->
+<section>
+  <div class="wrap feature">
+    <div class="circlepanel">
+      <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+        <circle cx="160" cy="170" r="110" fill="#b9971e"/>
+        <circle cx="360" cy="250" r="90" fill="#1b1e28"/>
+        <circle cx="330" cy="90" r="50" fill="#d8b73f"/>
+      </svg>
+    </div>
+    <div>
+      <span class="label">A different kind of help</span>
+      <h2 class="serif-h" style="margin:12px 0 16px">Talent is rarely the problem. The block is — and there's a way through it.</h2>
+      <p class="lede">We don't push harder or wait for inspiration. We gently work out which of six familiar blocks is in your way, ease the friction around it, and turn it into one doable next step — so the work starts moving again.</p>
+      <a href="#method" class="btn btn-out">How it works <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- THE SIX BLOCKS (article cards) -->
+<section id="blocks" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sechead"><span class="label">The six blocks</span><h2 class="serif-h">Which one sounds like you?</h2></div>
+    <div class="cards">
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b1/520/330"></div><div class="cat label">01 · Directional</div><h3>“I don't know where to go.”</h3><p>Usually not motivation — just no clear direction yet. The way through: a small, doable direction to aim at.</p><span class="view">Read more →</span></div>
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b2/520/330"></div><div class="cat label">02 · Structural</div><h3>“The project's a chaos.”</h3><p>Big vision, tangled plan. The way through: turn it into clear, ordered, do-able steps.</p><span class="view">Read more →</span></div>
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b3/520/330"></div><div class="cat label">03 · Execution</div><h3>“I know what to do — I just don't.”</h3><p>Not laziness — your mind is protecting you. The way through: shrink it, and add a little accountability.</p><span class="view">Read more →</span></div>
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b4/520/330"></div><div class="cat label">04 · Identity</div><h3>“Am I actually good enough?”</h3><p>Finishing can feel like a verdict. The way through: let the work be separate from your worth — and imperfect.</p><span class="view">Read more →</span></div>
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b5/520/330"></div><div class="cat label">05 · Skill</div><h3>“I don't know how to do the next part.”</h3><p>Sometimes you just need the skill. The way through: name it, and learn the smallest piece.</p><span class="view">Read more →</span></div>
+      <div class="acard"><div class="img"><img src="https://picsum.photos/seed/b6/520/330"></div><div class="cat label">06 · Environmental</div><h3>“My life keeps killing my momentum.”</h3><p>Often the problem's around you, not in you. The way through: redesign the conditions — time, space, energy.</p><span class="view">Read more →</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD / WAYS -->
+<section id="ways">
+  <div class="wrap">
+    <div class="sechead"><span class="label">Work with us</span><h2 class="serif-h">Ways through, together</h2></div>
+    <div class="ways">
+      <div class="way"><span class="label">Individuals</span><h4>The Unblock Session</h4><p>90 calm minutes to understand the block and leave with one clear next step. The first call is free.</p></div>
+      <div class="way"><span class="label">Individuals</span><h4>Deep Package</h4><p>Four to eight sessions with gentle accountability, turning clarity into finished work.</p></div>
+      <div class="way"><span class="label">Community</span><h4>Groups &amp; community</h4><p>Get unstuck alongside other creatives — shared momentum and people who understand.</p></div>
+      <div class="way"><span class="label">Organisations</span><h4>Team workshops</h4><p>Half or full-day sessions to get a stuck team and its projects moving again.</p></div>
+      <div class="way"><span class="label">Organisations</span><h4>Creative consulting</h4><p>Hands-on help to untangle messy projects — scope, priorities and focus.</p></div>
+      <div class="way"><span class="label">Universities</span><h4>In residence</h4><p>A creative counsellor on campus, helping students get unstuck and finish strong.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD ANCHOR / FEATURE 2 -->
+<section id="method" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap feature">
+    <div>
+      <span class="label">The method</span>
+      <h2 class="serif-h" style="margin:12px 0 16px">A simple, repeatable way to move.</h2>
+      <p class="lede">Find what's really in the way · ease the friction · take the smallest step · build momentum. Calm and practical, drawing on neuroscience, psychology, mindfulness and real creative craft.</p>
+      <a href="Questionnaire.html" class="btn">Find your block <span class="ar">→</span></a>
+    </div>
+    <div class="circlepanel">
+      <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+        <circle cx="250" cy="200" r="150" fill="#1b1e28"/>
+        <circle cx="250" cy="200" r="84" fill="#b9971e"/>
+        <circle cx="250" cy="200" r="30" fill="#d8b73f"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <h2>There's a way through.<br>Let's find yours.</h2>
+      <p>Take the four-minute quiz to see which block is in your way — and what helps.</p>
+      <a href="Questionnaire.html" class="btn">Find your block <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="logo" style="font-size:20px;margin-bottom:14px">The Creative<span>Block</span></div>
+        <p style="font-size:15px;color:var(--muted);max-width:300px">There's a way through — let's find yours. A creative-unblocking practice for individuals, teams and students.</p>
+      </div>
+      <div><h5>Explore</h5><a href="#method">Method</a><a href="#blocks">The Blocks</a><a href="#ways">Work with us</a></div>
+      <div><h5>Company</h5><a href="#about">About</a><a href="Questionnaire.html">Find your block</a><a href="mailto:hello@acreativeblock.com">Contact</a></div>
+      <div><h5>Start</h5><a href="Questionnaire.html">Find your block</a><a href="mailto:hello@acreativeblock.com">Book a free call</a></div>
+    </div>
+    <div class="ft-bottom"><span>© 2026 A Creative Block</span><span>There's a way through</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

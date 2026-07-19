@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — understand why you keep getting stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e8501f'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#e8501f; --ink:#1c1c1c; --grey:#8c8a87; --bg:#fff; --line:#e8501f;
+  --fw:clamp(10px,1.3vw,16px);
+  --disp:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --label:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;padding:var(--fw)}
+a{color:inherit;text-decoration:none}
+.frame{position:fixed;inset:0;border:var(--fw) solid var(--orange);pointer-events:none;z-index:1000}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,3vw,40px)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.label{font-family:var(--label);font-style:italic;font-weight:400;font-size:18px;color:var(--ink)}
+.lk{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:var(--orange);border-bottom:2px solid var(--orange);padding-bottom:2px;display:inline-block}
+.lk:hover{color:#c8400f;border-color:#c8400f}
+.orange{color:var(--orange)}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0 26px}
+.brand{font-family:var(--disp);font-weight:900;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;color:var(--orange)}
+.brand sup{font-size:.5em;font-weight:700}
+.nlinks{display:flex;gap:26px;font-size:14.5px;font-weight:500}
+.nlinks a:hover{color:var(--orange)}
+@media(max-width:680px){.nlinks{display:none}}
+
+/* HERO */
+.hero{text-align:center;padding:clamp(30px,5vw,70px) 0 clamp(40px,6vw,80px)}
+.hero h1{font-size:clamp(26px,3.6vw,44px);font-weight:800;color:var(--orange);max-width:20ch;margin:0 auto;line-height:1.12;letter-spacing:-.02em}
+
+/* strip */
+.strip{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;padding:clamp(24px,3vw,44px) 0;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.strip span{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.7vw,22px);color:#c9c6c2;letter-spacing:.02em;text-transform:uppercase}
+
+/* ABOUT big statement */
+.about{padding:clamp(40px,6vw,84px) 0}
+.about .label{margin-bottom:24px;display:block}
+.about h2{font-size:clamp(26px,3.9vw,52px);font-weight:800;color:var(--orange);letter-spacing:-.025em;line-height:1.13}
+
+/* two-col text + image */
+.twocol{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,4vw,56px);align-items:start;padding-bottom:clamp(30px,4vw,56px)}
+@media(max-width:760px){.twocol{grid-template-columns:1fr}}
+.twocol .col p{font-size:13.5px;color:var(--grey);line-height:1.55;margin-bottom:22px;max-width:30ch}
+.media{border-radius:6px;overflow:hidden;aspect-ratio:16/10}
+.media svg{width:100%;height:100%;display:block}
+
+/* for individuals / for teams */
+.fortwo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);padding:clamp(20px,3vw,40px) 0 clamp(40px,6vw,70px)}
+@media(max-width:680px){.fortwo{grid-template-columns:1fr}}
+.fortwo h3{font-size:clamp(22px,2.8vw,34px);font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:14px}
+.fortwo p{font-size:13.5px;color:var(--grey);line-height:1.55;margin-bottom:20px;max-width:42ch}
+
+/* big image */
+.bigimg{border-radius:8px;overflow:hidden;aspect-ratio:21/9;margin-bottom:clamp(40px,6vw,84px)}
+.bigimg svg{width:100%;height:100%;display:block}
+
+/* services / blocks cards */
+.sec-head{margin-bottom:clamp(20px,3vw,36px)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-bottom:clamp(40px,6vw,80px)}
+@media(max-width:680px){.cards{grid-template-columns:1fr}}
+.card{border:1.5px solid var(--orange);border-radius:14px;padding:clamp(22px,2.6vw,34px);min-height:180px;display:flex;flex-direction:column}
+.card h3{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:12px}
+.card p{font-size:13.5px;color:var(--grey);line-height:1.55;margin-bottom:auto}
+.card .lk{margin-top:22px}
+
+/* how we work */
+.how{display:grid;grid-template-columns:.55fr 1.45fr;gap:clamp(24px,4vw,56px);padding-bottom:clamp(40px,6vw,80px);align-items:start}
+@media(max-width:760px){.how{grid-template-columns:1fr}}
+.how .media{aspect-ratio:3/4;max-width:220px}
+.steps .label{display:block;margin-bottom:22px}
+.step{display:grid;grid-template-columns:32px 1fr;gap:18px;padding:22px 0;border-top:1px solid #eee}
+.step:first-of-type{border-top:none}
+.step .n{font-family:var(--disp);font-weight:700;font-size:14px;color:var(--ink);padding-top:6px}
+.step h3{font-size:clamp(20px,2.4vw,30px);font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px}
+.step p{font-size:13.5px;color:var(--grey);line-height:1.55;max-width:50ch}
+
+/* contact form */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,60px);padding:clamp(20px,3vw,40px) 0 clamp(40px,6vw,70px);align-items:end}
+@media(max-width:680px){.contact{grid-template-columns:1fr}}
+.contact .info{font-size:13.5px;color:var(--grey);line-height:1.7}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:12px;color:var(--grey);margin-bottom:6px}
+.field input,.field textarea{width:100%;border:none;border-bottom:1.5px solid #d8d5d1;background:none;font-family:inherit;font-size:16px;padding:6px 0;color:var(--ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.send{font-family:var(--disp);font-weight:800;font-size:16px;text-transform:uppercase;color:var(--orange);border-bottom:2px solid var(--orange);padding-bottom:3px;background:none;cursor:pointer}
+
+/* footer */
+.foot{padding:clamp(20px,3vw,36px) 0 0;border-top:1px solid #eee}
+.foot .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.foot .addr{font-family:var(--body);font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--grey);line-height:1.7}
+.wordmark{font-family:var(--disp);font-weight:900;color:var(--orange);text-transform:uppercase;letter-spacing:-.03em;line-height:.86;font-size:clamp(48px,13vw,170px);margin-top:clamp(20px,3vw,40px);padding-bottom:6px}
+</style>
+</head>
+<body>
+<div class="frame"></div>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="index.html" class="brand">A CREATIVE BLOCK<sup>©</sup></a>
+    <nav class="nlinks"><a href="method.html">Method</a><a href="blocks.html">Blocks</a><a href="about.html">About</a><a href="#contact">Contact</a><a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Creative-block coaching that helps you understand why you keep getting stuck — and build the way through.</h1>
+  </section>
+
+  <!-- STRIP -->
+  <section class="strip"><span>Makers</span><span>Writers</span><span>Designers</span><span>Students</span><span>Studios</span><span>Teams</span></section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <span class="label">About</span>
+    <h2>We help creatives get to the root of why they keep getting stuck. Since 2015 we've worked with makers, writers and whole studios — finding the real block underneath the procrastination, then building the structure to actually move through it. We stay in it with you, before, during and after the work.</h2>
+  </section>
+
+  <!-- TWO COL -->
+  <section class="twocol">
+    <div class="col">
+      <p>We work with everyone from solo makers to whole teams — you don't have to do this for a living to qualify.</p>
+      <p>The work isn't just diagnosis. We help you name the block, understand what it's protecting, and build a plan you'll actually follow.</p>
+    </div>
+    <div class="media"><svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="480" height="300" fill="#10303a"/><circle cx="360" cy="70" r="40" fill="#e8501f"/><g stroke="#0a1f26" stroke-width="6"><circle cx="150" cy="150" r="34" fill="#3aa3b8"/><path d="M96 290 q0 -70 54 -70 q54 0 54 70 z" fill="#1c5562"/><circle cx="280" cy="160" r="30" fill="#e8501f"/><path d="M232 290 q0 -64 48 -64 q48 0 48 64 z" fill="#2a7585"/></g><rect x="40" y="60" width="90" height="60" rx="4" fill="#0a1f26" stroke="#3aa3b8" stroke-width="4"/><path d="M52 90 h66 M52 102 h40" stroke="#3aa3b8" stroke-width="4"/></svg></div>
+  </section>
+
+  <!-- FOR INDIVIDUALS / TEAMS -->
+  <section class="fortwo">
+    <div>
+      <h3>For individuals</h3>
+      <p>We find what's actually blocking you, sort out the noise, and build a personal plan — with gentle accountability matched to your block, not a generic system.</p>
+      <a href="Questionnaire.html" class="lk">Find your block →</a>
+    </div>
+    <div>
+      <h3>For teams</h3>
+      <p>A shared language for what's slowing the work down. We run workshops that get creative output moving again — less friction, fewer stalls, more shipped.</p>
+      <a href="mailto:hello@acreativeblock.com" class="lk">Book a workshop →</a>
+    </div>
+  </section>
+
+  <!-- BIG IMAGE -->
+  <section class="bigimg"><svg viewBox="0 0 1200 510" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="510" fill="#0e2a32"/><ellipse cx="600" cy="300" rx="280" ry="120" fill="#16424d"/><g stroke="#08171c" stroke-width="8"><circle cx="600" cy="220" r="46" fill="#e8501f"/><path d="M520 470 q0 -110 80 -110 q80 0 80 110 z" fill="#1d5765"/><circle cx="470" cy="250" r="36" fill="#3aa3b8"/><path d="M410 470 q0 -86 60 -86 q60 0 60 86 z" fill="#13414c"/><circle cx="740" cy="255" r="36" fill="#3aa3b8"/><path d="M680 470 q0 -86 60 -86 q60 0 60 86 z" fill="#13414c"/></g><path d="M980 60 l40 90 -90 -20 z" fill="#e8501f"/><rect x="120" y="90" width="150" height="100" rx="8" fill="#08171c" stroke="#3aa3b8" stroke-width="6"/><path d="M150 130 h90 M150 150 h60" stroke="#3aa3b8" stroke-width="6"/></svg></section>
+
+  <!-- THE SIX BLOCKS (services-style cards) -->
+  <section>
+    <div class="sec-head"><span class="label">The six blocks</span></div>
+    <div class="cards">
+      <div class="card"><h3>Directional</h3><p>Too many roads, none chosen. You're not short on ideas — picking one feels like killing the rest, so you circle.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+      <div class="card"><h3>Structural</h3><p>The mess is the hiding place. You can't find the edge to start at, so tidying quietly feels like progress.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+      <div class="card"><h3>Execution</h3><p>You know — you just don't. Avoiding brings instant relief, and your brain has learned to take it. Not laziness.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+      <div class="card"><h3>Identity</h3><p>Finishing feels like a verdict. An unfinished piece is safer than a judged one, so you stall at the last ten percent.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+      <div class="card"><h3>Skill</h3><p>A gap, not a flaw. One specific thing the work needs that you haven't learned — so it balloons into self-doubt.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+      <div class="card"><h3>Environmental</h3><p>Your setup eats your focus. Space, hours and noise spend your energy before you ever reach the work.</p><a href="Questionnaire.html" class="lk">Find your block →</a></div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="how">
+    <div class="media"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="400" fill="#1a0a06"/><circle cx="150" cy="150" r="80" fill="#e8501f"/><circle cx="150" cy="150" r="50" fill="#1a0a06"/><path d="M150 230 v120 M90 290 h120" stroke="#e8501f" stroke-width="14" stroke-linecap="round"/></svg></div>
+    <div class="steps">
+      <span class="label">How we work</span>
+      <div class="step"><div class="n">1</div><div><h3>Find the block</h3><p>We figure out which of the six patterns is really in your way — naming it accurately is most of the work.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Understand the why</h3><p>We look at what the block is protecting — fear, identity, meaning — so it loses its grip instead of returning.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Build the plan</h3><p>A clear path and the right systems, matched to your block — doable steps, not a generic framework.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Move with support</h3><p>Gentle accountability while you actually begin — we stay in it with you, not waving from the sidelines.</p></div></div>
+      <div class="step"><div class="n">5</div><div><h3>Finish it</h3><p>We keep you moving to the finish line, and set you up to get unstuck on your own next time.</p></div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="info">
+      Lisbon · online worldwide<br>
+      hello@acreativeblock.com<br>
+      Mon–Fri · CET
+    </div>
+    <form onsubmit="return false">
+      <div class="field"><label>Full name</label><input type="text" name="name"></div>
+      <div class="field"><label>Email</label><input type="email" name="email"></div>
+      <div class="field"><label>What are you stuck on?</label><input type="text" name="stuck"></div>
+      <div class="field"><label>Message</label><textarea rows="2" name="message"></textarea></div>
+      <button class="send" type="submit">Send request</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="row">
+      <span class="addr">Lisbon, Portugal<br>hello@acreativeblock.com · +351 000 000 000</span>
+      <span>Instagram</span>
+      <span>Twitter</span>
+    </div>
+    <div class="wordmark">A Creative Block</div>
+  </footer>
+
+</div>
+</body>
+</html>

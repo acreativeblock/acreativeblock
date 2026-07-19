@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — School for getting unstuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fed933'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0a; --paper:#fff; --muted:#5b5854;
+  --y:#fed933; --o:#fe6d2e; --b:#377ef0; --g:#00ad6f;
+  --u:40px; --line:#0a0a0a;
+  --serif:"Schibsted Grotesk","Inter",sans-serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#eceae4;color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.025em;line-height:1.02}
+
+/* the page is framed by thin black lines into modular blocks */
+.frame{max-width:none;margin:0;background:var(--paper)}
+.row{border-top:1px solid var(--line);position:relative}
+.row:first-child{border-top:none}
+
+/* graph-paper field + colour cells (real 40px grid) */
+.gp{background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:var(--u) var(--u);background-position:0 0;position:relative}
+.cell{position:absolute;width:var(--u);height:var(--u)}
+.cell.b{background:var(--b)}.cell.y{background:var(--y)}.cell.o{background:var(--o)}.cell.g{background:var(--g)}
+/* real bordered-cell grid — cells are guaranteed aligned to the lines */
+.gpgrid{display:grid;grid-template-columns:repeat(4,var(--u));grid-auto-rows:var(--u);align-content:start;justify-content:start;overflow:hidden}
+.gpgrid i{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gpgrid i.b{background:var(--b)}.gpgrid i.y{background:var(--y)}.gpgrid i.o{background:var(--o)}.gpgrid i.g{background:var(--g)}
+.gpgrid.end{justify-content:end;grid-template-columns:repeat(5,var(--u))}
+.diag{position:absolute;inset:0}
+.bar{height:var(--u);width:100%}
+.bar.b{background:var(--b)}.bar.y{background:var(--y)}.bar.o{background:var(--o)}.bar.g{background:var(--g)}
+
+/* buttons */
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:100px;padding:12px 26px;font-size:15px;font-weight:500;background:var(--paper);transition:.16s}
+.pill:hover{background:#f4f2ec}
+.pill.dark{background:var(--ink);color:#fff}.pill.dark:hover{background:#000}
+
+/* ===== NAV ===== */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(16px,3vw,28px);min-height:78px}
+.brand{font-family:var(--serif);font-weight:500;font-size:25px;letter-spacing:-.02em}
+.navrects{display:grid;grid-template-columns:repeat(3,var(--u));grid-template-rows:repeat(2,var(--u))}
+.navrects i{border-right:1px solid var(--line);border-bottom:2px solid var(--line)}
+.navrects i:nth-child(3n){border-right:none}.navrects i:nth-child(n+4){border-bottom:none}
+.navrects i.y{background:var(--y)}.navrects i.b{background:var(--b)}.navrects i.o{background:var(--o)}
+.navright{display:flex;align-items:center;gap:18px;font-size:15px;font-weight:500}
+.navright .lnk{padding:8px 4px}.navright .lnk:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.navrects{display:none}.navright .lnk{display:none}}
+
+/* ===== HERO PHOTO STRIP ===== */
+.herobanner{height:clamp(150px,22vw,300px);overflow:hidden}
+
+/* ===== HERO MODULAR ROW ===== */
+.heror{display:grid;grid-template-columns:160px minmax(0,1fr) 160px}
+.heror>div{border-right:1px solid var(--line)}
+.heror>div:last-child{border-right:none}
+.hgp{min-height:280px}
+.hcenter{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(36px,5vw,72px) clamp(20px,3vw,40px);gap:18px}
+.hcenter h1{font-size:clamp(26px,3.2vw,46px);max-width:16ch}
+.hcenter p{color:var(--muted);font-size:clamp(15px,1.3vw,17px);max-width:34ch}
+.hright{position:relative;min-height:280px}
+.hright .gbar{position:absolute;top:0;bottom:0;right:0;width:8px;background:var(--g)}
+@media(max-width:760px){.heror{grid-template-columns:1fr}.heror>div{border-right:none;border-top:1px solid var(--line)}.heror>div:first-child{border-top:none}.hgp,.hright{min-height:140px}}
+
+/* ===== BIG STATEMENT ===== */
+.statement{padding:clamp(56px,9vw,150px) clamp(24px,4vw,72px)}
+.statement h2{font-size:clamp(40px,7.4vw,108px);line-height:.98;max-width:13ch}
+
+/* ===== BUILDING BLOCKS ===== */
+.bbhead{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(20px,3vw,48px);padding:clamp(36px,5vw,80px) clamp(24px,4vw,56px)}
+.bbhead h2{font-size:clamp(30px,4.8vw,68px);line-height:1;max-width:14ch}
+.bbhead .sub{color:var(--muted);font-size:clamp(15px,1.4vw,18px);align-self:end;max-width:38ch}
+@media(max-width:760px){.bbhead{grid-template-columns:1fr}}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.bcard{border-left:1px solid var(--line);border-top:1px solid var(--line);min-height:330px;padding:24px;display:flex;flex-direction:column}
+.bgrid .bcard:nth-child(4n+1){border-left:none}
+.bcard .n{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:auto}
+.bcard h3{font-size:clamp(19px,1.6vw,24px);margin:18px 0 10px}
+.bcard p{font-size:13.5px;color:var(--muted);line-height:1.5}
+.bcard.img{padding:0}
+.bcard.fill{background:var(--y)}.bcard.fill .n,.bcard.fill p{color:var(--ink)}
+.bcard.fillb{background:var(--b);color:#fff}.bcard.fillb .n,.bcard.fillb p{color:rgba(255,255,255,.85)}
+@media(max-width:900px){.bgrid{grid-template-columns:repeat(2,1fr)}.bgrid .bcard:nth-child(4n+1){border-left:1px solid var(--line)}.bgrid .bcard:nth-child(2n+1){border-left:none}}
+@media(max-width:560px){.bgrid{grid-template-columns:1fr}.bgrid .bcard{border-left:none!important}}
+
+/* ===== TESTIMONIAL ===== */
+.testi{display:grid;grid-template-columns:8px 1fr 1.4fr;align-items:stretch}
+.testi .gbar{background:var(--g)}
+.testi .ph{border-right:1px solid var(--line);min-height:300px;overflow:hidden}
+.testi .quote{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column;justify-content:center}
+.testi .quote .q{font-family:var(--serif);font-size:clamp(20px,2vw,28px);line-height:1.25;margin-bottom:20px}
+.testi .quote .who{font-size:13.5px;color:var(--muted)}
+.testi .ybar{grid-column:1/-1;height:14px;background:var(--y)}
+@media(max-width:760px){.testi{grid-template-columns:8px 1fr}.testi .ph{display:none}}
+
+/* ===== GALLERY ===== */
+.galhead{padding:clamp(40px,6vw,90px) clamp(24px,4vw,56px) clamp(20px,3vw,40px);text-align:center}
+.galhead h2{font-size:clamp(26px,3.6vw,52px);line-height:1.04;max-width:18ch;margin:0 auto}
+.gal{display:grid;grid-template-columns:repeat(5,1fr)}
+.gal .g{border-left:1px solid var(--line);border-top:1px solid var(--line);aspect-ratio:1;overflow:hidden}
+.gal .g:first-child{border-left:none}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}.gal .g:first-child{border-left:1px solid var(--line)}.gal .g:nth-child(2n+1){border-left:none}}
+
+/* ===== CLOSING CTA ===== */
+.ctarow{display:grid;grid-template-columns:120px 1fr 200px}
+.ctarow>div{border-right:1px solid var(--line)}
+.ctarow>div:last-child{border-right:none}
+.ctaybar{position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--y)}
+.ctaleft{position:relative;min-height:260px}
+.ctac{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:clamp(40px,6vw,90px) 20px}
+.ctac h2{font-size:clamp(26px,3.4vw,48px);max-width:18ch}
+.ctaright{position:relative;min-height:260px}
+@media(max-width:760px){.ctarow{grid-template-columns:8px 1fr}.ctaright{display:none}}
+
+/* ===== FOOTER ===== */
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(20px,3vw,40px);padding:clamp(36px,4vw,60px) clamp(24px,4vw,56px) clamp(28px,3vw,40px)}
+.foot h5{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-family:var(--sans);font-weight:600}
+.foot a{display:block;padding:5px 0;font-size:15px;color:var(--ink)}.foot a:hover{text-decoration:underline}
+.footword{border-top:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:clamp(20px,3vw,40px) clamp(24px,4vw,56px) clamp(28px,3vw,44px);flex-wrap:wrap}
+.footword .bigname{font-family:var(--serif);font-weight:500;font-size:clamp(56px,12vw,168px);line-height:.86;letter-spacing:-.02em}
+.footword .meta{font-size:13px;color:var(--muted)}
+@media(max-width:760px){.foot{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- NAV -->
+  <header class="row nav">
+    <a href="index.html" class="brand">A Creative Block.</a>
+    <div class="navrects" aria-hidden="true"><i class="b"></i><i class="y"></i><i></i><i class="o"></i><i></i><i class="b"></i></div>
+    <div class="navright">
+      <a class="lnk" href="method.html">Method</a>
+      <a class="lnk" href="about.html">About</a><a class="lnk" href="faq.html">FAQ</a><a class="lnk" href="manifesto.html">Manifesto</a><a class="lnk" href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a>
+      <a class="pill dark" href="Questionnaire.html">Find your block</a>
+    </div>
+  </header>
+
+  <!-- HERO PHOTO STRIP -->
+  <section class="row herobanner"><img src="https://picsum.photos/seed/tcbprimerband/1800/420" alt=""></section>
+
+  <!-- HERO MODULAR ROW -->
+  <section class="row heror">
+    <div class="hgp gpgrid">
+      <i></i><i class="b"></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i>
+      <i></i><i></i><i class="y"></i><i></i>
+      <i></i><i></i><i></i><i></i>
+      <i class="o"></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i>
+    </div>
+    <div class="hcenter">
+      <h1>Understand why you keep getting stuck.</h1>
+      <p>Creative-block coaching that finds the root — then builds the structure to move through it.</p>
+      <a class="pill" href="Questionnaire.html">Find your block</a>
+    </div>
+    <div class="hright">
+      <svg class="diag" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" stroke="#0a0a0a" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+      <span class="gbar"></span>
+    </div>
+  </section>
+  <section class="row"><div class="bar b"></div></section>
+
+  <!-- BIG STATEMENT -->
+  <section class="row statement">
+    <h2>Every creative deserves a way through.</h2>
+  </section>
+
+  <!-- BUILDING BLOCKS -->
+  <section class="row bbhead">
+    <h2>The building blocks of getting unstuck.</h2>
+    <p class="sub">We draw on the real reasons creatives stall — and turn them into a path. Most “stuck” is one of six patterns; naming yours is where the work starts.</p>
+  </section>
+  <section class="row">
+    <div class="bgrid">
+      <div class="bcard"><div class="n">01</div><h3>Directional</h3><p>Too many roads, none chosen. You don't lack ideas — you have too many, and picking one feels like killing the rest.</p></div>
+      <div class="bcard img"><img src="https://picsum.photos/seed/tcbpb1/520/660" alt=""></div>
+      <div class="bcard"><div class="n">02</div><h3>Structural</h3><p>The mess is the hiding place. You can't find the edge to start at, so tidying feels like progress.</p></div>
+      <div class="bcard fill"><div class="n">03</div><h3>Execution</h3><p>You know — you just don't. Avoiding brings instant relief, and your brain has learned to take it. Not laziness.</p></div>
+      <div class="bcard"><div class="n">04</div><h3>Identity</h3><p>Finishing feels like a verdict. An unfinished piece is safer than a judged one, so you stall at the last ten percent.</p></div>
+      <div class="bcard img"><img src="https://picsum.photos/seed/tcbpb2/520/660" alt=""></div>
+      <div class="bcard fillb"><div class="n">05</div><h3>Skill</h3><p>One real gap balloons into “maybe I'm not good enough,” so you avoid naming the missing piece.</p></div>
+      <div class="bcard"><div class="n">06</div><h3>Environmental</h3><p>Your setup spends your energy before you reach the work. Willpower can't out-muscle the wrong room.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="row testi">
+    <div class="gbar"></div>
+    <div class="ph"><img src="https://picsum.photos/seed/tcbpface/600/700" alt=""></div>
+    <div class="quote">
+      <div class="q">“I finally understood why I kept restarting — and left with a plan I actually followed.”</div>
+      <div class="who">Freelance designer · example client</div>
+    </div>
+    <div class="ybar"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="row galhead"><h2>100% real creatives. 0% stock advice.</h2></section>
+  <section class="row">
+    <div class="gal">
+      <div class="g"><img src="https://picsum.photos/seed/tcbg1/400/400" alt=""></div>
+      <div class="g"><img src="https://picsum.photos/seed/tcbg2/400/400" alt=""></div>
+      <div class="g"><img src="https://picsum.photos/seed/tcbg3/400/400" alt=""></div>
+      <div class="g"><img src="https://picsum.photos/seed/tcbg4/400/400" alt=""></div>
+      <div class="g"><img src="https://picsum.photos/seed/tcbg5/400/400" alt=""></div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="row ctarow">
+    <div class="ctaleft"><span class="ctaybar"></span>
+      <svg class="diag" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" stroke="#0a0a0a" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+    </div>
+    <div class="ctac">
+      <h2>Ready to get unstuck? Your first step starts here.</h2>
+      <a class="pill dark" href="Questionnaire.html">Find your block — it's free</a>
+    </div>
+    <div class="ctaright gpgrid end">
+      <i></i><i></i><i class="y"></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i><i class="o"></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i class="b"></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </section>
+  <section class="row"><div class="bar b"></div></section>
+
+  <!-- FOOTER -->
+  <section class="row foot">
+    <div>
+      <p style="max-width:260px;color:var(--muted);font-size:15px;line-height:1.55">Understand why you keep getting stuck — then build the structure to move through it.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="method.html">Method</a><a href="blocks.html">The 6 Blocks</a><a href="individuals.html">For Individuals</a><a href="teams.html">For Teams</a>
+    </div>
+    <div>
+      <h5>A Creative Block</h5>
+      <a href="about.html">About</a><a href="resources.html">Resources</a><a href="blog.html">Blog</a><a href="mailto:hello@acreativeblock.com">Contact</a>
+    </div>
+  </section>
+  <section class="row footword">
+    <div class="bigname">A Creative Block.</div>
+    <div class="meta">© 2026 · Lisbon · hello@acreativeblock.com</div>
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — a space to understand the stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23bcbcbc'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#111111; --muted:#6f6f6f; --line:#e6e6e6;
+  --grey:#bcbcbc; --slate:#6a7e87; --clay:#b0715a; --olive:#7d8663;
+  --sb:274px;
+  --font:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:400;letter-spacing:-.01em;line-height:1.02}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.ph{filter:grayscale(1);transition:filter .45s ease}
+.ph:hover{filter:grayscale(0)}
+
+/* ===== LEFT SIDEBAR (grey) + submenu ===== */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sb);background:var(--grey);color:#fff;display:flex;flex-direction:column;padding:24px 22px;overflow-y:auto;z-index:50}
+.sidebar .logo{font-weight:500;font-size:19px;letter-spacing:-.01em;line-height:1.1;margin-bottom:28px;display:block;color:#fff}
+.snav{display:flex;flex-direction:column;gap:0;font-size:17px;letter-spacing:.6px;font-weight:400}
+.snav a{padding:7px 4px;color:#fff}
+.snav a:hover,.snav a.act{color:#111}
+.snav .sub{display:flex;flex-direction:column;margin:0 0 4px 0;padding-left:14px}
+.snav .sub a{font-size:14.5px;color:rgba(255,255,255,.72);padding:5px 4px;letter-spacing:.4px}
+.snav .sub a:hover{color:#111}
+.sidebar .cta{margin:22px 0 0}
+.sidebar .cta a{display:block;text-align:center;background:#111;color:#fff;padding:13px;font-weight:500;font-size:15px}
+.sidebar .cta a:hover{background:#000}
+.sidebar .foot{margin-top:auto;padding-top:26px;font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.7}
+.sidebar .foot a{display:inline-block;margin-right:12px}.sidebar .foot a:hover{color:#111}
+.sbtoggle{display:none}
+
+/* ===== MAIN ===== */
+.main{margin-left:var(--sb)}
+.pad{padding:clamp(32px,4vw,52px) clamp(20px,3vw,44px)}
+.wrap{max-width:960px}
+.seclabel{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+
+/* intro: heading + lead + fact list + image */
+.introgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,3vw,52px);align-items:start}
+@media(max-width:820px){.introgrid{grid-template-columns:1fr}}
+.intro h1{font-size:clamp(34px,4.4vw,58px);letter-spacing:-.02em;line-height:1.0;max-width:15ch}
+.intro .lead{font-size:clamp(16px,1.4vw,18px);color:var(--muted);margin-top:22px;max-width:52ch;line-height:1.5}
+.facts{margin-top:clamp(26px,3vw,38px);border-top:1px solid var(--line);max-width:560px}
+.facts .f{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts .f b{font-weight:600}.facts .f span{color:var(--muted)}
+.intro .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.introimg{aspect-ratio:3/4;overflow:hidden;background:var(--grey)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;padding:13px 24px;transition:.15s}
+.btn.dark{background:var(--ink);color:#fff}.btn.dark:hover{background:#000}
+.btn.line{border:1px solid var(--ink)}.btn.line:hover{background:#f2f2f2}
+
+/* ===== full-width breathable BANDS ===== */
+.band{padding:clamp(64px,9vw,132px) clamp(20px,4vw,72px);color:#fff}
+.band.slate{background:var(--slate)}.band.clay{background:var(--clay)}.band.olive{background:var(--olive)}
+.band .bwrap{max-width:1000px}
+.band h2{font-size:clamp(28px,4.2vw,58px);letter-spacing:-.02em;line-height:1.06;max-width:20ch}
+.band p{font-size:clamp(16px,1.6vw,20px);margin-top:20px;max-width:56ch;opacity:.93;line-height:1.5}
+.band .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.band .btn.dark{background:#fff;color:var(--ink)}.band .btn.dark:hover{background:#f0f0f0}
+.band .btn.line{border-color:rgba(255,255,255,.6);color:#fff}.band .btn.line:hover{background:rgba(255,255,255,.12)}
+
+/* six blocks — image cards */
+.blocks h2{font-size:clamp(26px,3.4vw,46px);max-width:16ch;margin-bottom:clamp(24px,3vw,40px)}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.6vw,24px)}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.bgrid{grid-template-columns:1fr}}
+.bcard{display:flex;flex-direction:column}
+.bcard .bimg{aspect-ratio:1/1;overflow:hidden;background:var(--grey);margin-bottom:14px}
+.bcard .n{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bcard h3{font-size:22px;margin:6px 0 8px;letter-spacing:-.02em}
+.bcard p{font-size:14px;color:var(--muted);line-height:1.5}
+.bcard .lk{margin-top:12px;font-size:14px;font-weight:500;border-bottom:1px solid var(--ink);align-self:flex-start;padding-bottom:1px}
+
+/* tag pills */
+.tags h2{font-size:clamp(22px,2.8vw,36px);max-width:20ch;margin-bottom:22px}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pills a{border:1px solid var(--ink);border-radius:9999px;padding:8px 17px;font-size:15px}
+.pills a:hover{background:var(--ink);color:#fff}
+
+/* quotes */
+.quotes .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);margin-top:8px}
+@media(max-width:760px){.quotes .qgrid{grid-template-columns:1fr}}
+.qc{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start}
+.qc .qimg{aspect-ratio:1/1;overflow:hidden;background:var(--grey)}
+.qc .q{font-size:clamp(18px,1.8vw,22px);letter-spacing:-.01em;line-height:1.3;margin-bottom:12px}
+.qc .who{font-size:13.5px;color:var(--muted)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot a:hover{color:var(--ink)}
+
+/* mobile: sidebar → top bar */
+@media(max-width:860px){
+  .sidebar{position:sticky;top:0;width:100%;bottom:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 18px;overflow:visible}
+  .sidebar .logo{margin:0;font-size:17px}
+  .sbtoggle{display:block;background:#111;color:#fff;border:none;padding:10px 14px;font:inherit;font-weight:500;cursor:pointer}
+  .snav,.sidebar .cta,.sidebar .foot{display:none;width:100%}
+  .sidebar.open{flex-direction:column;align-items:stretch}
+  .sidebar.open .snav,.sidebar.open .cta,.sidebar.open .foot{display:flex}
+  .sidebar.open .snav{flex-direction:column;margin-top:12px}
+  .main{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <a href="index.html" class="logo">A Creative Block</a>
+  <button class="sbtoggle" onclick="document.getElementById('sidebar').classList.toggle('open')">Menu</button>
+  <nav class="snav">
+    <a href="method.html">The Method</a>
+    <div class="sub"><a href="blocks.html">The 6 Blocks</a></div>
+    <a href="individuals.html">For Individuals</a>
+    <a href="teams.html">For Teams</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Journal</a>
+    <a href="resources.html">Resources</a>
+  <a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+  <div class="cta"><a href="Questionnaire.html">Find your block</a></div>
+  <div class="foot">
+    <div style="margin-bottom:10px"><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+    Lisbon · online worldwide<br>hello@acreativeblock.com<br>© 2026 A Creative Block
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- INTRO -->
+  <section class="intro pad"><div class="introgrid">
+    <div>
+      <div class="seclabel">A space for the stuck</div>
+      <h1>Understand what keeps you from the work.</h1>
+      <p class="lead">Getting stuck isn't a flaw. It's a signal — something underneath, asking for attention. We help you hear it, and find your way back to the work.</p>
+      <div class="facts">
+        <div class="f"><b>Approach</b><span>Root first, then a path</span></div>
+        <div class="f"><b>Focus</b><span>The six kinds of stuck</span></div>
+        <div class="f"><b>For</b><span>Individuals, teams &amp; studios</span></div>
+        <div class="f"><b>Where</b><span>Online · Lisbon</span></div>
+      </div>
+      <div class="cta"><a href="Questionnaire.html" class="btn dark">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn line">Book a free call</a></div>
+    </div>
+    <div class="introimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/enterprise/2.png" alt="A quiet, contemplative moment"></div>
+  </div></section>
+
+  <!-- BAND 1 -->
+  <section class="band slate"><div class="bwrap">
+    <h2>We don't hand you a system. We stay in it with you.</h2>
+    <p>Most approaches hand you a framework and step away. We stay present with you — finding what's beneath the stuck, thinking it through together, until the way becomes clear.</p>
+  </div></section>
+
+  <!-- SIX BLOCKS -->
+  <section class="blocks pad"><div class="wrap" style="max-width:none">
+    <div class="seclabel">The six blocks</div>
+    <h2>Six ways of being stuck. Usually, a few at once.</h2>
+    <div class="bgrid">
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/6.png" alt=""></div><div class="n">Block 01</div><h3>Directional</h3><p>Too many roads, none chosen. Picking one feels like killing the rest.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/2.png" alt=""></div><div class="n">Block 02</div><h3>Structural</h3><p>The mess is the hiding place. You can't find the edge to start at.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/8.png" alt=""></div><div class="n">Block 03</div><h3>Execution</h3><p>You know — you just don't. Avoiding brings instant relief.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/12.png" alt=""></div><div class="n">Block 04</div><h3>Identity</h3><p>Finishing feels like a verdict, so you stall at the last ten percent.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/13.png" alt=""></div><div class="n">Block 05</div><h3>Skill</h3><p>A gap, not a flaw — one missing thing that balloons into self-doubt.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+      <div class="bcard"><div class="bimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/7.png" alt=""></div><div class="n">Block 06</div><h3>Environmental</h3><p>Your setup eats your focus before you ever reach the work.</p><a href="Questionnaire.html" class="lk">Learn more</a></div>
+    </div>
+  </div></section>
+
+  <!-- BAND 2 -->
+  <section class="band clay"><div class="bwrap">
+    <h2>Getting unstuck is more.</h2>
+    <p>More than a push to start — it's understanding what stopped you. More than discipline — it's a way back to the work. More than a fix — it's a practice you keep.</p>
+  </div></section>
+
+  <!-- TAGS -->
+  <section class="tags pad"><div class="wrap">
+    <div class="seclabel">Where are you stuck?</div>
+    <h2>Start with the feeling. We'll find the pattern.</h2>
+    <div class="pills">
+      <a href="Questionnaire.html">I don't know what to make</a>
+      <a href="Questionnaire.html">It's pure chaos in here</a>
+      <a href="Questionnaire.html">I know — I just don't</a>
+      <a href="Questionnaire.html">What if I'm not good enough</a>
+      <a href="Questionnaire.html">I don't know the next bit</a>
+      <a href="Questionnaire.html">My life kills my momentum</a>
+    </div>
+  </div></section>
+
+  <!-- BAND 3 -->
+  <section class="band olive"><div class="bwrap">
+    <h2>For anyone with something to make.</h2>
+    <p>Mostly creatives — from solo makers to whole studios. But you don't need to make a living from it. If there's a project that matters, you belong here.</p>
+  </div></section>
+
+  <!-- QUOTES -->
+  <section class="quotes pad"><div class="wrap" style="max-width:none">
+    <div class="seclabel">In their words</div>
+    <div class="qgrid">
+      <div class="qc"><div class="qimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/5.png" alt=""></div><div><div class="q">“I finally understood why I kept restarting — and left with a plan I actually followed.”</div><div class="who">Freelance designer</div></div></div>
+      <div class="qc"><div class="qimg"><img class="ph" src="https://res.cloudinary.com/musicbed-marketing/image/upload/f_auto,q_auto:best/stills/homepage/artists/16.png" alt=""></div><div><div class="q">“The block wasn't laziness — it was fear. Naming it changed how I work.”</div><div class="who">Maker &amp; writer</div></div></div>
+    </div>
+  </div></section>
+
+  <!-- CLOSING BAND -->
+  <section class="band slate"><div class="bwrap">
+    <h2>Come back to the work.</h2>
+    <p>Find your block — it's free, and it's the first step out.</p>
+    <div class="cta"><a href="Questionnaire.html" class="btn dark">Find your block →</a><a href="mailto:hello@acreativeblock.com" class="btn line">Book a call</a></div>
+  </div></section>
+
+  <footer class="foot pad">
+    <span>© 2026 A Creative Block · Lisbon</span>
+    <span>Understand the why. Then move.</span>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manifesto — A Creative Block</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23eceae5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f6f3; --ink:#211f1c; --soft:#6f6b64; --cloud:#e7e5df; --line:#e0ddd6;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+  text-rendering:optimizeLegibility;font-kerning:normal;font-feature-settings:"kern" 1,"liga" 1,"calt" 1}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:60;background:rgba(247,246,243,.82);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:18px;height:60px;padding:0 clamp(18px,4vw,44px);font-size:14px}
+.nav .lg{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:-.01em}
+.nav .lk{display:flex;gap:22px;align-items:center;color:var(--soft)}
+.nav .lk a:hover{color:var(--ink)}
+.nav .lk a.cta{color:var(--ink);border:1px solid #cfccc4;border-radius:60px;padding:8px 16px}
+.nav .lk a.cta:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+@media(max-width:680px){.nav .lk a.wol{display:none}}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:clamp(70px,11vw,150px) 20px clamp(30px,5vw,70px);overflow:hidden}
+.clouds{position:absolute;left:50%;top:clamp(120px,17vw,230px);transform:translateX(-50%);
+  width:min(1100px,120%);height:340px;z-index:0;pointer-events:none;filter:blur(2px);opacity:.9}
+.hero h1{position:relative;z-index:2;font-family:var(--serif);font-weight:400;
+  font-size:clamp(38px,7.2vw,94px);line-height:1.02;letter-spacing:-.02em;max-width:15ch;margin:0 auto}
+.hero .file{position:relative;z-index:2;display:inline-block;margin-top:22px;font-size:12.5px;color:var(--soft);
+  background:#efece6;border:1px solid var(--line);border-radius:40px;padding:6px 14px}
+
+/* ESSAY */
+.essay{max-width:660px;margin:0 auto;padding:clamp(20px,4vw,50px) 22px clamp(60px,8vw,120px)}
+.lead{text-align:center;font-family:var(--serif);font-size:clamp(19px,2.2vw,24px);line-height:1.5;color:#37342f}
+.lead p{margin:0 auto 1.1em;max-width:44ch}
+.pull{text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(26px,4.4vw,50px);
+  line-height:1.08;letter-spacing:-.02em;color:var(--ink);margin:clamp(48px,7vw,96px) auto;max-width:16ch}
+.pull em{font-style:italic}
+.body{max-width:56ch;margin:0 auto}
+.body p{font-size:clamp(16px,1.4vw,18.5px);line-height:1.72;color:#2c2a26;margin-bottom:1.25em}
+.body p .cap{font-variant:small-caps;letter-spacing:.02em;color:var(--soft)}
+.eyebrow{text-align:center;text-transform:uppercase;letter-spacing:.16em;font-size:11.5px;color:var(--soft);margin:clamp(40px,6vw,80px) 0 26px}
+
+/* SIGN-OFF / CTA */
+.signoff{text-align:center;border-top:1px solid var(--line);margin-top:clamp(50px,7vw,90px);padding-top:clamp(40px,5vw,64px)}
+.signoff .mk{font-family:var(--serif);font-size:clamp(26px,3.4vw,42px);letter-spacing:-.01em;margin-bottom:22px}
+.signoff .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.signoff a{font-size:14.5px;border-radius:60px;padding:12px 22px}
+.signoff a.dark{background:var(--ink);color:var(--paper)}
+.signoff a.dark:hover{background:#000}
+.signoff a.line{border:1px solid #cfccc4}.signoff a.line:hover{background:#efece6}
+.foot{text-align:center;color:var(--soft);font-size:12.5px;padding:0 20px clamp(40px,6vw,70px)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="lg">A Creative Block</a>
+  <nav class="lk">
+    <a href="https://sublime.app/collection/sublime-wall-of-love" class="wol" target="_blank" rel="noopener">Wall of Love</a>
+    <a href="index.html">Home</a>
+    <a href="mailto:hello@acreativeblock.com" class="cta">Book a call</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="clouds" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="#e7e5df">
+      <ellipse cx="230" cy="250" rx="220" ry="90"/>
+      <ellipse cx="430" cy="220" rx="180" ry="120"/>
+      <ellipse cx="620" cy="250" rx="230" ry="95"/>
+      <ellipse cx="850" cy="235" rx="200" ry="110"/>
+      <ellipse cx="360" cy="150" rx="120" ry="90"/>
+      <ellipse cx="700" cy="150" rx="130" ry="95"/>
+      <ellipse cx="540" cy="285" rx="560" ry="60"/>
+    </g>
+  </svg>
+  <h1>Getting unstuck is not a &ldquo;just do it&rdquo; problem</h1>
+  <span class="file">manifesto.txt</span>
+</section>
+
+<article class="essay">
+
+  <div class="lead">
+    <p>A Creative Block began with a simple insight: the usual advice for creative block is aimed at the wrong problem.</p>
+    <p>&ldquo;Push through.&rdquo; &ldquo;Just start.&rdquo; &ldquo;Stop overthinking.&rdquo; We treat a psychological event as if it were a scheduling error.</p>
+  </div>
+
+  <p class="pull">A block is not a shortage of willpower. It&rsquo;s a <em>disconnection</em>.</p>
+
+  <div class="eyebrow">It&rsquo;s deeper than doing</div>
+  <div class="body">
+    <p>Creative block isn&rsquo;t only &ldquo;can&rsquo;t paint today.&rdquo; The same stuck shows up in writing a book, launching a business, making any decision that needs your creative agency. The brush-and-canvas picture is far too narrow.</p>
+    <p>And it isn&rsquo;t only inaction. It can be about identity, environment, circumstance, or old psychology &mdash; closer to <span class="cap">who am I, what do I want, why can&rsquo;t I reach this</span> than to <span class="cap">I simply haven&rsquo;t started yet</span>. Naming it as laziness is the fastest way to keep someone stuck.</p>
+  </div>
+
+  <p class="pull">Often, what looks like &ldquo;not being creative anymore&rdquo; is an unprocessed loss.</p>
+
+  <div class="eyebrow">The quiet grief</div>
+  <div class="body">
+    <p>Think of how children play &mdash; freely, without asking permission. Then somewhere along the way they&rsquo;re told that play isn&rsquo;t for grown-ups, and they quietly absorb it as a kind of grief they never get to mourn.</p>
+    <p>Creativity often follows the same arc. People rarely quit in a single dramatic moment. They disengage slowly, over years, until one day the work feels closed to them &mdash; and what remains is a low hum of dissatisfaction, envy, or a sense of something unfinished. That&rsquo;s not a character flaw. That&rsquo;s a loss that was never named.</p>
+  </div>
+
+  <p class="pull">Take it as seriously as you&rsquo;d take any real thing.</p>
+
+  <div class="eyebrow">A useful comparison</div>
+  <div class="body">
+    <p>We&rsquo;re not saying creative block is depression. But the mistake people make with it is the same mistake &ldquo;just be happy&rdquo; makes with depression: treating something psychologically real as if it were merely behavioural.</p>
+    <p>You might think of a block as a kind of domain-specific anhedonia &mdash; a shutdown of interest, access and agency, but localised to your relationship with your own creativity rather than to life as a whole. Not a diagnosis. A real, non-trivial event that deserves proportionate tools &mdash; inquiry, identity work, environment design &mdash; instead of slogans.</p>
+  </div>
+
+  <p class="pull">And no one moves through it alone.</p>
+
+  <div class="eyebrow">Why we exist</div>
+  <div class="body">
+    <p>If the problem is disconnection, the answer is connection. People get unstuck when there is community around them, accountability that expects them to keep going, partnership in the hard middle of the work, and a space that treats their creativity as worth the effort.</p>
+    <p>That&rsquo;s what A Creative Block is for. We help you understand the why beneath your block &mdash; and then we stay in it with you, so moving forward stops taking everything you&rsquo;ve got. Not push-through. Proper support.</p>
+  </div>
+
+  <div class="signoff">
+    <div class="mk">Come back to the work.</div>
+    <div class="btns">
+      <a href="mailto:hello@acreativeblock.com" class="dark">Book a call</a>
+      <a href="https://sublime.app/collection/sublime-wall-of-love" class="line" target="_blank" rel="noopener">Wall of Love &#8599;</a>
+    </div>
+  </div>
+</article>
+
+<footer class="foot">&copy; 2026 A Creative Block &middot; Lisbon &amp; online &middot; Understand the why, then move.</footer>
+
+</body>
+</html>

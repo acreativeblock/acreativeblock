@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — get unstuck, then move</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1814'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23d8c6cb'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e8e5de; --ink:#1a1814; --muted:#76726a; --line:#1f1d18; --line-soft:#cdc8bd;
+    --mauve:#d8c6cb; --tan:#e6cf9c; --sage:#c9cfc4; --grey:#d4d1ca; --lav:#cdc6e0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1360px;margin:0 auto;padding:14px}
+  h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1.0}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;padding:16px 28px;border-radius:40px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{opacity:.88}
+  .label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .av{display:inline-block;border-radius:50%;vertical-align:middle}
+  .av.a{background:linear-gradient(135deg,#c9b2bb,#9c7b88)}.av.b{background:linear-gradient(135deg,#e0c488,#bd9248)}
+  .av.c{background:linear-gradient(135deg,#b6c0b0,#8aa088)}
+
+  /* announcement */
+  .ann{text-align:center;font-size:14px;padding:10px;display:flex;gap:11px;justify-content:center;align-items:center}
+  .ann .tag{background:var(--ink);color:#fff;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600}
+  .ann span.t{color:var(--ink)}
+
+  /* framed panel */
+  .panel{border:1px solid var(--line);border-radius:30px;overflow:hidden;margin-bottom:14px}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.85fr 1fr}
+  @media(max-width:980px){ .hero{grid-template-columns:1fr} }
+  .hero .main{border-right:1px solid var(--line)}
+  @media(max-width:980px){ .hero .main{border-right:none;border-bottom:1px solid var(--line)} }
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;border-bottom:1px solid var(--line)}
+  .logo{font-family:"Saira Stencil One",monospace;font-size:26px;letter-spacing:1px}
+  .nav-links{display:flex;gap:24px;font-size:14px;font-weight:500;color:#403d37}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--ink);color:#fff;padding:9px 17px;border-radius:30px;font-size:13px;font-weight:600}
+  @media(max-width:720px){ .nav-links{display:none} }
+  .herobody{padding:54px 36px 48px}
+  .herobody h1{font-size:60px;font-weight:600;max-width:760px}
+  .herobody h1 .av{width:52px;height:52px;margin:0 1px}
+  .herobody p{font-size:18px;color:#403d37;max-width:430px;margin:28px 0 32px}
+  .cta-row{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .cta-row .link{font-size:15px;font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+  @media(max-width:760px){ .herobody h1{font-size:38px} .herobody h1 .av{width:34px;height:34px} }
+
+  /* feed column */
+  .feed{padding:22px;display:flex;flex-direction:column;gap:14px;max-height:660px;overflow:hidden;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 86%,transparent);
+    mask-image:linear-gradient(180deg,transparent,#000 12%,#000 86%,transparent)}
+  .fc{border-radius:18px;padding:20px}
+  .fc.mauve{background:var(--mauve)}.fc.tan{background:var(--tan)}.fc.sage{background:var(--sage)}.fc.grey{background:var(--grey)}.fc.lav{background:var(--lav)}
+  .fc .ft{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:rgba(26,24,20,.55);margin-bottom:13px}
+  .fc .ft .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:7px}
+  .fc h4{font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:-.02em;line-height:1.15}
+  .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{border:1.5px solid rgba(26,24,20,.32);border-radius:30px;padding:7px 14px;font-size:13px;font-weight:500}
+  .htag{background:rgba(26,24,20,.16);border-radius:7px;padding:5px 10px;font-size:12px;font-weight:600}
+
+  /* row panels */
+  .rowlabel{padding:16px 36px;border-bottom:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:860px){ .row{grid-template-columns:1fr} }
+  .row .l{padding:48px 36px;border-right:1px solid var(--line)}
+  @media(max-width:860px){ .row .l{border-right:none;border-bottom:1px solid var(--line)} }
+  .row .l h2{font-size:36px;margin:0 0 16px}
+  .row .l p{font-size:17px;color:#403d37;max-width:420px;margin-bottom:24px}
+  .row .r{padding:28px;display:flex;align-items:center}
+  .bigcard{border-radius:20px;padding:26px;width:100%;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+  .bigcard .ct{font-size:29px;font-weight:600;letter-spacing:-.02em;line-height:1.08}
+  .byline{display:flex;align-items:center;gap:12px;margin-top:6px}
+  .byline .av{width:40px;height:40px}.byline b{font-size:14px;font-weight:600;display:block}.byline span{font-size:13px;color:var(--muted)}
+
+  /* blocks grid panel */
+  .gridpanel{padding:40px 36px}
+  .gridpanel h2{font-size:40px;max-width:620px;margin-bottom:30px}
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:860px){ .bgrid{grid-template-columns:1fr} }
+  .bx{border:1px solid var(--line-soft);border-radius:18px;padding:22px}
+  .bx .bn{font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  .bx h4{font-size:19px;font-weight:600;margin:8px 0 6px}
+  .bx .q{font-size:14px;color:#403d37;font-style:italic;margin-bottom:10px}
+  .bx p{font-size:13.5px;color:var(--muted)}.bx p b{color:var(--ink);font-weight:600}
+
+  /* dark panel */
+  .dark{background:var(--ink);color:#efe9df}
+  .dark .label{color:#a39d92}
+  .dark .ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;margin-top:8px}
+  .dark .ptable th,.dark .ptable td{padding:15px 4px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14)}
+  .dark .ptable th{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a39d92;font-weight:600}
+  .dark .ptable td{color:#d8d2c8}.dark .ptable td:first-child{color:#efe9df;font-weight:600}
+  .dark .ptable tr:last-child td{border-bottom:none}
+  .pad{padding:48px 36px}
+
+  /* cta panel */
+  .ctapanel{padding:90px 36px;text-align:center;background:var(--ink);color:#efe9df}
+  .ctapanel h2{font-size:56px;font-weight:600;margin-bottom:26px}
+  .ctapanel .btn{background:#efe9df;color:var(--ink)}
+  @media(max-width:760px){ .ctapanel h2{font-size:36px} }
+
+  /* footer */
+  .footp{padding:40px 36px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:flex-start}
+  .footp .logo{font-size:22px}
+  .fcol h5{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+  .fcol a{display:block;font-size:14px;color:#403d37;padding:3px 0}.fcol a:hover{color:var(--ink)}
+  .foot-cols{display:flex;gap:48px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="ann">
+    <span class="tag">Now booking</span>
+    <span class="t">First session free · for creatives, teams &amp; students</span>
+  </div>
+
+  <!-- HERO PANEL -->
+  <div class="panel hero">
+    <div class="main">
+      <div class="navrow">
+        <div class="logo">TCB</div>
+        <div class="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#blocks">The Blocks</a>
+          <a href="#pricing">Pricing</a>
+          <a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a>
+        </div>
+        <a href="#contact" class="nav-cta">Book a session →</a>
+      </div>
+      <div class="herobody">
+        <h1>Get unstuck <span class="av a"></span><span class="av b"></span><span class="av c"></span> and finally finish what you started.</h1>
+        <p>Talent is rarely the problem. Most creatives stall from blocks that go undiagnosed. We find the real one — and give you a system to move.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn">Book a free session →</a>
+          <a href="#blocks" class="link">See the six blocks</a>
+        </div>
+      </div>
+    </div>
+    <aside class="feed">
+      <div class="fc mauve"><div class="ft"><span><span class="dot"></span> Diagnosed</span><span>Today</span></div><h4>Found the real block — Directional</h4><div class="pills"><span class="htag">#clarity</span><span class="htag">#direction</span></div></div>
+      <div class="fc tan"><div class="ft"><span><span class="dot"></span> In progress</span><span>This week</span></div><h4>Shipping the portfolio, finally</h4><div class="pills"><span class="pill">Execution</span><span class="pill">Accountability</span></div></div>
+      <div class="fc sage"><div class="ft"><span><span class="dot"></span> Building</span></div><div class="pills"><span class="pill">Smallest action</span><span class="pill">Friday check-in</span><span class="pill">Reduce scope</span></div></div>
+      <div class="fc grey"><div class="ft"><span><span class="dot"></span> Unblocked ✔</span><span>Done</span></div><h4>Finished the album after two years</h4><div class="pills"><span class="htag">#momentum</span><span class="htag">#shipped</span></div></div>
+      <div class="fc lav"><div class="ft"><span><span class="dot"></span> Active</span><span>2 days ago</span></div><h4>First draft, out the door</h4><div class="pills"><span class="htag">#execution</span><span class="htag">#done</span></div></div>
+    </aside>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="panel" id="how">
+    <div class="rowlabel"><span class="label">Step 1 · Diagnose</span></div>
+    <div class="row">
+      <div class="l">
+        <h2>Tell us what's stuck.</h2>
+        <p>Book a session and describe what feels blocked — the project, the timeline, what keeps stopping you. We listen for the real cause, not the symptom.</p>
+        <a href="#contact" class="btn">Book a free session →</a>
+      </div>
+      <div class="r">
+        <div class="bigcard mauve">
+          <div class="ft" style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:rgba(26,24,20,.55)"><span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:7px"></span> The brief</span><span>Just now</span></div>
+          <div class="ct">"I keep restarting the same project and never finish."</div>
+          <div class="byline"><span class="av a"></span><div><b>A freelance designer</b><span>example</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="panel">
+    <div class="rowlabel"><span class="label">Step 2 · Unblock</span></div>
+    <div class="row">
+      <div class="l">
+        <h2>Find the real block.</h2>
+        <p>Every block has a different cure. We name which of the six is actually stopping you, then reduce the friction around it — so movement becomes possible again.</p>
+        <a href="#blocks" class="link" style="font-size:15px;font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:1px">See the six blocks →</a>
+      </div>
+      <div class="r">
+        <div class="bigcard sage">
+          <div class="ft" style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:rgba(26,24,20,.55)"><span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:7px"></span> Diagnosis</span><span>Live</span></div>
+          <div class="ct">It's not motivation. It's a <em>Structural</em> block.</div>
+          <div class="pills"><span class="pill">Directional</span><span class="pill">Structural</span><span class="pill">Execution</span><span class="pill">+3</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="panel">
+    <div class="rowlabel"><span class="label">Step 3 · Move</span></div>
+    <div class="row">
+      <div class="l">
+        <h2>Build momentum.</h2>
+        <p>You leave with one concrete next step and an accountability loop. Small consistent action turns "I'm stuck" into "I'm someone who ships."</p>
+        <div class="byline"><span class="av c"></span><div><b>A founder</b><span>example</span></div></div>
+      </div>
+      <div class="r">
+        <div class="bigcard tan">
+          <div class="ft" style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:rgba(26,24,20,.55)"><span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:7px"></span> Momentum</span><span>+1 shipped</span></div>
+          <div class="ct">Diagnose → reduce friction → smallest action → build.</div>
+          <div class="pills"><span class="htag">#unblocked</span><span class="htag">#moving</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCKS -->
+  <div class="panel" id="blocks">
+    <div class="rowlabel"><span class="label">The framework</span></div>
+    <div class="gridpanel">
+      <h2>Creative block isn't one thing. It's six.</h2>
+      <div class="bgrid">
+        <div class="bx"><div class="bn">01 · Directional</div><h4>"I don't know where to go."</h4><div class="q">Not motivation — direction.</div><p><b>Helps:</b> constraints; an actionable, not permanent, direction.</p></div>
+        <div class="bx"><div class="bn">02 · Structural</div><h4>"The project is chaos."</h4><div class="q">Vision, broken architecture.</div><p><b>Helps:</b> restructure scope, stages, priorities.</p></div>
+        <div class="bx"><div class="bn">03 · Execution</div><h4>"I avoid doing it."</h4><div class="q">Not laziness.</div><p><b>Helps:</b> shrink the task, remove ambiguity, add accountability.</p></div>
+        <div class="bx"><div class="bn">04 · Identity</div><h4>"Am I good enough?"</h4><div class="q">A verdict on your worth.</div><p><b>Helps:</b> separate self-worth from output.</p></div>
+        <div class="bx"><div class="bn">05 · Skill</div><h4>"I don't know how."</h4><div class="q">Misread as emotional.</div><p><b>Helps:</b> name the missing skill, smallest path to it.</p></div>
+        <div class="bx"><div class="bn">06 · Environmental</div><h4>"My context kills it."</h4><div class="q">The problem is outside.</div><p><b>Helps:</b> redesign conditions — sleep, schedule, space.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING (dark) -->
+  <div class="panel dark" id="pricing">
+    <div class="rowlabel" style="border-color:rgba(255,255,255,.14)"><span class="label">Pricing</span></div>
+    <div class="pad">
+      <h2 style="font-size:38px;margin-bottom:10px;color:#efe9df">Honest, accessible, fair.</h2>
+      <p style="color:#a39d92;max-width:520px;margin-bottom:6px">A sliding scale by income — an honesty model, no proof required.</p>
+      <table class="ptable">
+        <tr><th>Annual income</th><th>Single · 90 min</th><th>4-Session</th><th>8-Session</th></tr>
+        <tr><td>Under €20k</td><td>€70</td><td>€260</td><td>€480</td></tr>
+        <tr><td>€20k – €35k</td><td>€100</td><td>€370</td><td>€700</td></tr>
+        <tr><td>€35k – €50k</td><td>€140</td><td>€520</td><td>€980</td></tr>
+        <tr><td>€50k+ / international</td><td>€185</td><td>€680</td><td>€1,300</td></tr>
+      </table>
+      <p style="color:#a39d92;font-size:13.5px;margin-top:14px">Group €25 / seat (€15 lowest band) · Community Free / €15 / €30 per month · Orgs &amp; universities quoted separately.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="panel">
+    <div class="ctapanel" id="contact">
+      <h2>Get unstuck. Then move.</h2>
+      <a href="mailto:hello@acreativeblock.com" class="btn">Book a free first session →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="panel">
+    <div class="footp">
+      <div>
+        <div class="logo">TCB</div>
+        <p style="font-size:14px;color:var(--muted);max-width:280px;margin-top:10px">A Creative Block — get unstuck, then move.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="fcol"><h5>Help</h5><a href="#how">How it works</a><a href="#blocks">The Blocks</a><a href="#pricing">Pricing</a></div>
+        <div class="fcol"><h5>Company</h5><a href="#contact">Contact</a><a href="#">About</a></div>
+        <div class="fcol"><h5>Read</h5><a href="#">Essays</a><a href="#">Newsletter</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

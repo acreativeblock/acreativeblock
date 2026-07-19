@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — Find your block type</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234040ef'/%3E%3Cpath d='M16 4 L19 13 L28 16 L19 19 L16 28 L13 19 L4 16 L13 13 Z' fill='%23f6c61b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f0ece4; --paper:#f6f3ec; --ink:#15120f; --muted:#6e6a62; --blue:#4040ef;
+    --yellow:#f6c61b; --hair:#d3cdc0; --tint:#e7e2d6;
+    --orange:#e8400f; --green:#1aa64c; --pink:#ff8ed1; --teal:#17b39a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+
+  .progress{position:fixed;top:0;left:0;height:5px;background:var(--blue);width:0;transition:width .3s ease;z-index:30}
+  .top{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;z-index:20}
+  .logo{font-family:"Anton",sans-serif;font-size:19px}
+  .logo small{font-family:"Inter";font-weight:600;font-size:8px;letter-spacing:2px;color:var(--muted);display:block;text-transform:uppercase;margin-top:-3px}
+  .top .count{font-size:13px;color:var(--muted);font-weight:600}
+
+  .stage{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:90px 26px 60px}
+  .card{width:100%;max-width:700px}
+  .qnum{font-size:14px;color:var(--blue);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .qnum svg{width:14px;height:14px}
+  .qtext{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(24px,3.6vw,40px);line-height:1.04;letter-spacing:.01em;margin-bottom:10px}
+  .qhelp{color:var(--muted);font-size:15px;margin-bottom:30px}
+
+  .opts{display:flex;flex-direction:column;gap:10px;max-width:600px}
+  .opt{display:flex;align-items:center;gap:14px;border:1.5px solid var(--hair);background:var(--paper);border-radius:14px;padding:15px 18px;font-size:16px;cursor:pointer;transition:.12s}
+  .opt:hover{border-color:var(--ink)}
+  .opt.sel{border-color:var(--blue);background:#eceaff}
+  .opt .key{width:26px;height:26px;border:1.5px solid var(--hair);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+  .opt.sel .key{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  .scale{display:flex;gap:10px;flex-wrap:wrap}
+  .scale .s{width:60px;height:60px;border:1.5px solid var(--hair);background:var(--paper);border-radius:12px;font-size:20px;font-weight:700;cursor:pointer;transition:.12s}
+  .scale .s:hover{border-color:var(--ink)}
+  .scale .s.sel{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .scalelab{display:flex;justify-content:space-between;max-width:452px;margin-top:10px;font-size:12px;color:var(--muted)}
+
+  textarea,input.txt{width:100%;max-width:560px;border:none;border-bottom:2px solid var(--hair);background:transparent;font-family:inherit;font-size:22px;padding:10px 2px;color:var(--ink);resize:none}
+  textarea:focus,input.txt:focus{outline:none;border-bottom-color:var(--blue)}
+  textarea::placeholder,input.txt::placeholder{color:#b6b0a4}
+
+  .nav{display:flex;align-items:center;gap:14px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:13px 26px;border-radius:30px;font-size:15px;font-weight:600;border:none;cursor:pointer}
+  .btn:hover{opacity:.9}
+  .btn-ghost{background:transparent;color:var(--muted);padding:13px 6px}
+  .hint{font-size:13px;color:var(--muted)}.hint b{color:var(--ink)}
+
+  .center{text-align:center;max-width:680px;margin:0 auto}
+  .center .big{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(34px,6vw,72px);line-height:.95;margin:16px 0}
+  .center p{font-size:18px;color:#3a372f;margin-bottom:26px}
+  .center .bl{color:var(--blue)}
+  .bigstar{width:38px;height:38px;display:block;margin:0 auto}
+
+  /* result */
+  .rescard{background:var(--paper);border:1px solid var(--hair);border-radius:22px;padding:34px;text-align:left;margin:8px 0 22px;border-top:8px solid var(--blue)}
+  .rescard .rlabel{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .rescard h3{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:clamp(30px,4.5vw,46px);margin:6px 0 10px}
+  .rescard .rline{font-size:17px;font-weight:600;margin-bottom:16px}
+  .rescard .rk{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:12px}
+  .rescard .rk+p{font-size:15px;color:#3a372f}
+  .ressec{font-size:15px;color:var(--muted);margin-bottom:22px}
+  .emailrow{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  .emailrow input{flex:1;min-width:230px;border:1px solid var(--hair);border-radius:30px;padding:14px 20px;font-size:15px;font-family:inherit;background:var(--paper)}
+  .bars{max-width:520px;margin:24px auto 0;text-align:left}
+  .bar{display:flex;align-items:center;gap:12px;margin:7px 0;font-size:13px}
+  .bar .bn{width:118px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:11px}
+  .bar.is-primary .bn{color:var(--ink);font-weight:800}
+  .bar .bt{flex:1;height:10px;background:#e3ddd0;border-radius:6px;overflow:hidden}
+  .bar .bf{display:block;height:100%;border-radius:6px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .bar .bv{width:30px;text-align:right;font-weight:700;font-size:13px;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="top">
+  <a href="Website%207%20%E2%80%94%20Orta%20(live).html" class="logo">TCB<small>a creative block</small></a>
+  <div class="count" id="count"></div>
+</div>
+<div class="stage"><div id="screen" class="card"></div></div>
+
+<script>
+const BLOCKS = {
+  DIR:{name:"Directional",color:"#4040ef",line:"You're not short on motivation — you're short on direction.",
+       mech:"Commitment anxiety: choosing one path means closing others, so you commit to none. Common in multi-potential creatives and ADHD minds.",
+       help:"Constraints, and a temporary, actionable direction — enough to create movement. It doesn't have to be permanent, only doable."},
+  STR:{name:"Structural",color:"#e8400f",line:"The project is too chaotic to move — even with vision and drive.",
+       mech:"Your brain can't process undefined complexity: scope too large, no hierarchy, unclear sequencing, too many moving parts.",
+       help:"Restructure the work — scope, stages, priorities and dependencies — until the next step is obvious."},
+  EXE:{name:"Execution",color:"#1aa64c",line:"You know what to do — you just avoid doing it. This is not laziness.",
+       mech:"Your nervous system tags the task as threatening, painful or identity-relevant, so it protects you by avoiding it.",
+       help:"Shrink the task, remove ambiguity, lower the emotional stakes, and add external accountability."},
+  IDE:{name:"Identity",color:"#ff8ed1",line:"Finishing threatens your sense of worth, so you stall near the end.",
+       mech:"Creative work has become a verdict on who you are — succeed and expectations rise, fail and identity takes the hit.",
+       help:"Separate self-worth from output, normalise imperfect release, and reduce catastrophic thinking. (Coaching territory — with boundaries.)"},
+  SKI:{name:"Skill",color:"#caa21f",line:"You're genuinely missing a skill the project needs — often misread as emotional.",
+       mech:"The project exceeds your current ability, which breeds shame, avoidance and impostor feelings.",
+       help:"Name the exact missing skill and the smallest path to learning it. Clarity alone often removes the anxiety."},
+  ENV:{name:"Environmental",color:"#17b39a",line:"Your context is killing momentum — the problem is outside, not inside.",
+       mech:"Your environment is incompatible with sustained creative work: burnout, money stress, no space, chaos, constant interruptions.",
+       help:"Redesign the conditions — sleep, schedule, boundaries, workload, space — before blaming your discipline."}
+};
+
+const Q = [
+  {type:'intro'},
+  // basics (not scored)
+  {basic:'age', type:'choice', q:"First, the basics. Which age group are you in?", opts:["Under 18","18–24","25–34","35–44","45–54","55+"]},
+  {basic:'field', type:'text', q:"What's your main creative field?", ph:"e.g. design, music, writing, film…"},
+  {basic:'freq', type:'choice', q:"How often do you feel creatively blocked?", opts:["Rarely","A few times a year","Monthly","Weekly","Almost daily"]},
+  // diagnostic — interleaved, scale 1–5 (agreement)
+  {block:'DIR', type:'scale', q:"I have too many ideas and can't decide which to commit to."},
+  {block:'STR', type:'scale', q:"My projects feel too big or chaotic to manage."},
+  {block:'EXE', type:'scale', q:"I know exactly what to do, but I avoid actually doing it."},
+  {block:'IDE', type:'scale', q:"I'm afraid my work — or I — won't be good enough."},
+  {block:'SKI', type:'scale', q:"I get stuck because I don't technically know how to do the next part."},
+  {block:'ENV', type:'scale', q:"My schedule, space or finances make consistent work hard."},
+  // scenario 1
+  {type:'choice6', q:"When you stall, which is closest to the truth?",
+   opts:[{t:"I don't know which direction to commit to.",b:'DIR'},{t:"The project is a chaotic mess.",b:'STR'},{t:"I know the steps — I just can't start.",b:'EXE'},{t:"I'm scared it (or I) won't be good enough.",b:'IDE'},{t:"I don't know how to do the next part.",b:'SKI'},{t:"My life or context makes it impossible.",b:'ENV'}]},
+  {block:'DIR', type:'scale', q:"I keep starting new projects instead of finishing the one I'm on."},
+  {block:'STR', type:'scale', q:"I keep re-planning and reorganising instead of progressing."},
+  {block:'EXE', type:'scale', q:"I procrastinate or get distracted right when it's time to work."},
+  {block:'IDE', type:'scale', q:"I often abandon projects when they're almost finished."},
+  {block:'SKI', type:'scale', q:"I consume tutorials and courses but still can't execute."},
+  {block:'ENV', type:'scale', q:"I feel exhausted or burned out more than uninspired."},
+  {block:'DIR', type:'scale', q:"I spend more time exploring options than actually making."},
+  {block:'STR', type:'scale', q:"Everything feels equally urgent — I can't tell what to do first."},
+  {block:'EXE', type:'scale', q:"I keep ‘preparing’ endlessly instead of starting."},
+  {block:'IDE', type:'scale', q:"Sharing or publishing my work makes me anxious."},
+  {block:'SKI', type:'scale', q:"The project needs a skill I haven't learned yet."},
+  {block:'ENV', type:'scale', q:"Constant interruptions or instability keep breaking my focus."},
+  // scenario 2
+  {type:'choice6', q:"What would help you most right now?",
+   opts:[{t:"A clear direction to commit to.",b:'DIR'},{t:"A way to structure the chaos.",b:'STR'},{t:"A push to actually begin.",b:'EXE'},{t:"Permission to make something imperfect.",b:'IDE'},{t:"Learning a specific skill.",b:'SKI'},{t:"Fixing my time, space or energy.",b:'ENV'}]},
+  {type:'result'}
+];
+
+const answers={}; let i=0;
+const screen=document.getElementById('screen'), progress=document.getElementById('progress'), count=document.getElementById('count');
+const KEYS="ABCDEF";
+const total=Q.filter(q=>q.q).length;
+function qIndex(){ let n=0; for(let k=1;k<=i;k++){ if(Q[k]&&Q[k].q) n++; } return n; }
+const starSVG=c=>`<svg class="bigstar" viewBox="0 0 40 40"><path d="M20 1 L25 15 L39 20 L25 25 L20 39 L15 25 L1 20 L15 15 Z" fill="${c}"/></svg>`;
+
+function score(){
+  const s={DIR:0,STR:0,EXE:0,IDE:0,SKI:0,ENV:0};
+  Q.forEach((q,idx)=>{
+    const a=answers[idx]; if(a==null) return;
+    if(q.block && q.type==='scale') s[q.block]+=Number(a);
+    if(q.type==='choice6') s[a]+=4;
+  });
+  return s;
+}
+
+function render(){
+  const item=Q[i];
+  progress.style.width=(i/(Q.length-1)*100)+'%';
+  count.textContent=item.q?(qIndex()+' / '+total):'';
+
+  if(item.type==='intro'){
+    screen.innerHTML=`<div class="center">${starSVG('#f6c61b')}
+      <div class="big">Find your <span class="bl">block type</span></div>
+      <p>Creative block isn't one thing — it's six. Answer ~20 quick questions and we'll identify the one most likely stopping you, with what actually helps. Takes about 4 minutes, and you can send the result to a coach at the end.</p>
+      <button class="btn" onclick="next()">Start →</button></div>`;
+    return;
+  }
+
+  if(item.type==='result'){
+    const s=score();
+    const order=Object.keys(s).sort((a,b)=>s[b]-s[a]);
+    const p=order[0], sec=order[1];
+    const P=BLOCKS[p], S=BLOCKS[sec];
+    const max=Math.max(...Object.values(s))||1;
+    const bars=order.map(k=>`<div class="bar${k===p?' is-primary':''}"><span class="bn">${BLOCKS[k].name}</span><span class="bt"><span class="bf" data-w="${Math.round(s[k]/max*100)}" style="background:${BLOCKS[k].color}"></span></span><span class="bv">${s[k]}</span></div>`).join('');
+    screen.innerHTML=`<div class="center" style="max-width:700px">
+      ${starSVG(P.color)}
+      <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 0">Your result</p>
+      <div class="rescard" style="border-top-color:${P.color}">
+        <div class="rlabel">Primary block</div>
+        <h3>${P.name}</h3>
+        <div class="rline">${P.line}</div>
+        <div class="rk">Why it happens</div><p>${P.mech}</p>
+        <div class="rk">What helps</div><p>${P.help}</p>
+      </div>
+      <p class="ressec"><b>Secondary pattern:</b> ${S.name}. Most people are mixtures — the work is to address the <b>primary driver</b> first.</p>
+      <div class="bars">${bars}</div>
+      <p style="margin:26px 0 12px;font-size:16px;color:#3a372f">Want a coach to look at this with you? Drop your email and we'll send your result.</p>
+      <div class="emailrow">
+        <input type="email" id="rmail" placeholder="Your email">
+        <button class="btn" onclick="sendResults('${p}','${sec}')">Send my result →</button>
+      </div>
+      <p style="margin-top:24px"><a href="Website%207%20%E2%80%94%20Orta%20(live).html" style="color:var(--muted);text-decoration:underline">Back to site</a></p>
+    </div>`;
+    requestAnimationFrame(()=>screen.querySelectorAll('.bf').forEach(f=>{f.style.width=f.dataset.w+'%';}));
+    return;
+  }
+
+  const sec=`<div class="qnum">${starSVG('#4040ef')} ${item.basic?'About you':'Your block'}</div>`;
+  let body=''; const cur=answers[i];
+  if(item.type==='choice'){
+    body=`<div class="opts">`+item.opts.map((o,idx)=>`<div class="opt ${cur===o?'sel':''}" data-o="${o.replace(/"/g,'&quot;')}"><span class="key">${KEYS[idx]}</span><span>${o}</span></div>`).join('')+`</div>`;
+  } else if(item.type==='choice6'){
+    body=`<div class="opts">`+item.opts.map((o,idx)=>`<div class="opt ${cur===o.b?'sel':''}" data-b="${o.b}"><span class="key">${KEYS[idx]}</span><span>${o.t}</span></div>`).join('')+`</div>`;
+  } else if(item.type==='scale'){
+    body=`<div class="scale">`+[1,2,3,4,5].map(n=>`<button class="s ${cur==n?'sel':''}" data-s="${n}">${n}</button>`).join('')+`</div><div class="scalelab"><span>1 — not me</span><span>5 — totally me</span></div>`;
+  } else if(item.type==='text'){
+    body=`<textarea rows="2" class="txt" id="ta" placeholder="${item.ph||'Type here…'}">${cur||''}</textarea>`;
+  }
+  const backBtn=i>1?`<button class="btn-ghost" onclick="prev()">← Back</button>`:'';
+  const isText=item.type==='text';
+  screen.innerHTML=`${sec}<div class="qtext">${item.q}</div>${item.help?`<div class="qhelp">${item.help}</div>`:''}${body}
+    <div class="nav"><button class="btn" onclick="next()">${i===Q.length-2?'See result':'Next'} →</button>${backBtn}${isText?'<span class="hint">press <b>Enter</b> to continue</span>':''}</div>`;
+
+  if(item.type==='choice'){ screen.querySelectorAll('.opt').forEach(el=>el.onclick=()=>{answers[i]=el.dataset.o;setTimeout(next,150);}); }
+  if(item.type==='choice6'){ screen.querySelectorAll('.opt').forEach(el=>el.onclick=()=>{answers[i]=el.dataset.b;setTimeout(next,150);}); }
+  if(item.type==='scale'){ screen.querySelectorAll('.s').forEach(el=>el.onclick=()=>{answers[i]=el.dataset.s;setTimeout(next,150);}); }
+  if(isText){ const ta=document.getElementById('ta'); ta.focus(); ta.oninput=()=>answers[i]=ta.value; }
+}
+function next(){ if(i<Q.length-1){i++;render();window.scrollTo(0,0);} }
+function prev(){ if(i>0){i--;render();window.scrollTo(0,0);} }
+window.next=next; window.prev=prev;
+
+function sendResults(p,sec){
+  const s=score();
+  const email=(document.getElementById('rmail')||{}).value||'(not provided)';
+  const basics=`Age: ${answers[1]||'-'}\nField: ${answers[2]||'-'}\nFrequency: ${answers[3]||'-'}`;
+  const scoreLines=Object.keys(BLOCKS).map(k=>`${BLOCKS[k].name}: ${s[k]}`).join('\n');
+  const body=`Block-type quiz result\n\nPrimary block: ${BLOCKS[p].name}\nSecondary: ${BLOCKS[sec].name}\n\nScores:\n${scoreLines}\n\n${basics}\n\nContact: ${email}`;
+  window.location.href=`mailto:hello@acreativeblock.com?subject=${encodeURIComponent('Block quiz result — '+BLOCKS[p].name)}&body=${encodeURIComponent(body)}`;
+}
+window.sendResults=sendResults;
+
+document.addEventListener('keydown',e=>{
+  const item=Q[i];
+  if(e.key==='Enter'){ e.preventDefault(); next(); }
+  if(item&&(item.type==='choice'||item.type==='choice6')&&/^[a-f]$/i.test(e.key)){
+    const idx=KEYS.indexOf(e.key.toUpperCase());
+    if(idx>-1&&item.opts[idx]){ answers[i]=item.type==='choice6'?item.opts[idx].b:item.opts[idx]; setTimeout(next,120);} }
+  if(item&&item.type==='scale'&&/^[1-5]$/.test(e.key)){ answers[i]=e.key; setTimeout(next,120); }
+});
+render();
+</script>
+</body>
+</html>

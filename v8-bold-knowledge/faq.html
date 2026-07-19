@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — FAQ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231b1e28'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23b9971e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4f0e7; --paper:#fbf9f3; --navy:#1b1e28; --ink:#24272f; --ochre:#b9971e; --ochre-d:#9c7f15;
+    --muted:#6f6c64; --line:#e3ddcf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:"Lora",Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .cond{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+  .label{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:600;color:var(--ochre-d)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--cream);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:600;padding:14px 24px;border-radius:7px;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{background:#000}
+  .btn .ar{font-family:"Lora",serif}
+  .btn-out{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-out:hover{background:var(--navy);color:var(--cream)}
+
+  /* nav */
+  header.nav{border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;font-size:18px;line-height:.9;color:var(--ochre-d);letter-spacing:.02em}
+  .logo span{display:block}
+  nav.links{display:flex;gap:26px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:500;color:var(--ink)}
+  nav.links a:hover{color:var(--ochre-d)}
+  .pill{background:var(--ochre);color:var(--navy);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:600;padding:11px 20px;border-radius:30px}
+  @media(max-width:920px){ nav.links{display:none} }
+
+  /* search */
+  .search{border-bottom:1px solid var(--line)}
+  .search .box{display:flex;align-items:center;gap:12px;max-width:560px;margin:0 auto;padding:18px 0;color:var(--muted);font-size:16px}
+  .search .dot{width:16px;height:16px;border-radius:50%;background:var(--ochre)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 1.15fr;min-height:520px}
+  @media(max-width:900px){ .hero{grid-template-columns:1fr} }
+  .hero .left{background:var(--navy);color:var(--cream);padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+  .hero h1{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(38px,4.6vw,64px);line-height:.98;letter-spacing:.01em;margin-bottom:24px}
+  .hero p{font-size:17px;color:#d7d3c6;margin-bottom:16px;max-width:420px}
+  .hero .left .btn{margin-top:14px;align-self:flex-start;background:var(--ochre);color:var(--navy)}
+  .hero .left .btn:hover{background:#cba926}
+  .hero .right{background:var(--cream);position:relative;overflow:hidden;min-height:360px}
+  .hero .right svg{position:absolute;inset:0;width:100%;height:100%}
+
+  section{padding:84px 0}
+  .serif-h{font-family:"Lora",serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.12;letter-spacing:-.01em}
+  .lede{font-size:17px;color:#46443c;max-width:560px}
+
+  /* alternating feature */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  @media(max-width:860px){ .feature{grid-template-columns:1fr;gap:28px} }
+  .circlepanel{background:var(--paper);border:1px solid var(--line);border-radius:14px;aspect-ratio:5/4;position:relative;overflow:hidden}
+  .circlepanel svg{position:absolute;inset:0;width:100%;height:100%}
+  .feature .btn{margin-top:24px}
+
+  /* article cards (six blocks) */
+  .sechead{text-align:center;margin-bottom:46px}
+  .sechead .label{display:block;margin-bottom:10px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  @media(max-width:860px){ .cards{grid-template-columns:1fr 1fr} }
+  @media(max-width:560px){ .cards{grid-template-columns:1fr} }
+  .acard .img{aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--paper)}
+  .acard .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .acard .cat{margin:16px 0 8px}
+  .acard h3{font-family:"Lora",serif;font-weight:600;font-size:23px;line-height:1.15;margin-bottom:8px}
+  .acard p{font-size:15px;color:var(--muted)}
+  .acard .view{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:12px;font-weight:600;margin-top:14px;display:inline-flex;gap:8px;align-items:center}
+
+  /* ways / list */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  @media(max-width:760px){ .ways{grid-template-columns:1fr} }
+  .way{padding:34px 28px;border-bottom:1px solid var(--line)}
+  .way:not(:last-child){border-right:1px solid var(--line)}
+  @media(max-width:760px){ .way:not(:last-child){border-right:none} }
+  .way h4{font-family:"Lora",serif;font-weight:600;font-size:21px;margin:6px 0 8px}
+  .way p{font-size:14.5px;color:var(--muted)}
+
+  /* band */
+  .band{background:var(--navy);color:var(--cream);border-radius:16px;text-align:center;padding:74px 30px;position:relative;overflow:hidden}
+  .band h2{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1;margin-bottom:14px}
+  .band p{color:#cfcbbe;max-width:520px;margin:0 auto 26px}
+  .band .btn{background:var(--ochre);color:var(--navy)}
+
+  /* footer */
+  footer.ft{border-top:1px solid var(--line);padding:56px 0 30px;margin-top:30px}
+  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:36px}
+  @media(max-width:760px){ .ft-grid{grid-template-columns:1fr 1fr} }
+  footer.ft h5{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;margin-bottom:12px;color:var(--ink)}
+  footer.ft a{display:block;font-size:15px;color:#56544c;padding:5px 0}
+  footer.ft a:hover{color:var(--ochre-d)}
+  .ft-bottom{border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:var(--muted);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:1px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+  <div style="max-width:900px;margin:0 auto;padding:clamp(26px,4vw,52px) clamp(20px,4vw,44px)">
+    <a href="index.html" style="display:inline-block;font-weight:700;margin-bottom:clamp(28px,5vw,56px)">← A Creative Block</a> <a href="manifesto.html" style="text-decoration:underline">Manifesto</a> <a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener" style="text-decoration:underline">Wall of Love</a>
+    <h2 style="font-size:clamp(28px,4.4vw,52px);letter-spacing:-.02em;margin-bottom:clamp(24px,3vw,34px)">Frequently asked questions</h2>
+    <div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">What is A Creative Block?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">A space to understand why you keep getting stuck — and find your way back to the work. We coach creatives to the root of the block, then build the structure to move through it.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">What exactly is a “creative block”?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">Any pattern that keeps you from the work you want to do. It's rarely just laziness — underneath most blocks is a real reason: a fear, an unclear direction, a missing skill, or a life quietly working against you.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">How is this different from productivity coaching?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">Most coaching hands you a system and steps away. We start with the why — the root cause — and only then build the structure to move through it.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">Is this coaching or consultancy?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">Both. Getting stuck can be personal or practical — sometimes the block is about you (identity, fear, direction), and we coach; sometimes it's about the work itself (a project, a plan, a decision that won't settle), and we roll up our sleeves and consult. Most people need a little of each, and we move between the two as you do.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">Do I have to be a professional creative?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">No. This is for anyone with a project that matters — a book, an album, a side idea. You don't need to make a living from it to get stuck, or unstuck.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">What happens in the first session?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">We find which of the six blocks is really in your way, then map the first small steps. Naming it accurately is most of the work.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">What if I'm a mix of several blocks?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">Most people are, and that's normal. We find your primary one — the pattern with the most pull right now — and start there.</p></div><div style="border-top:1px solid rgba(128,128,128,.28);padding:20px 0"><h3 style="font-size:19px;margin:0 0 8px;font-weight:700">How do I get in touch?</h3><p style="opacity:.75;line-height:1.6;max-width:660px;margin:0">Email hello@acreativeblock.com, or start with the free ‘Find your block’ questionnaire. We reply within a couple of days.</p></div>
+    <div style="border-top:1px solid rgba(128,128,128,.28);padding-top:22px;margin-top:10px;opacity:.6;font-size:14px">© 2026 A Creative Block · <a href="index.html" style="text-decoration:underline">Home</a></div>
+  </div>
+</body>
+</html>

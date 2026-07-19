@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — find the block, then move</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a0a0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23eae7df'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0b; --panel:#141417; --ink:#eae7df; --muted:#8f8b83; --soft:#bdb9b0;
+    --serif:#c4c0b6; --line:rgba(255,255,255,.1); --line2:rgba(255,255,255,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:1.5px}
+  .serif{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+  .serif em{font-style:italic}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#111;padding:11px 22px;border-radius:40px;font-size:12px;font-weight:500;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:1.5px;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{opacity:.88}
+  .btn-dark{background:#1c1c20;color:var(--ink);border:1px solid var(--line)}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+  /* nav */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 28px}
+  .logo .mark{width:22px;height:22px;border:1.5px solid var(--ink);border-radius:6px;display:inline-block;position:relative}
+  .logo .mark::after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--ink)}
+  nav.links{display:flex;gap:26px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink)}
+  nav.links a:hover{opacity:.6}
+  .nav-cta{background:var(--ink);color:#111;padding:8px 16px;border-radius:30px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+  @media(max-width:860px){ nav.links{display:none} }
+
+  /* hero */
+  .hero{position:relative;min-height:760px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  .hero .sky{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(60% 50% at 30% 20%,rgba(255,255,255,.5),transparent 60%),
+      radial-gradient(50% 45% at 75% 30%,rgba(214,228,245,.6),transparent 60%),
+      linear-gradient(180deg,#9fb6d4 0%,#7e93b4 30%,#3c4456 62%,#0a0a0b 100%)}
+  .hero .in{position:relative;z-index:1;padding-top:80px}
+  .hero .eyebrow{color:#1c2230}
+  .hero h1{font-family:"Fraunces",serif;font-weight:400;font-size:78px;color:#14171f;margin:18px 0 28px;letter-spacing:-.02em;line-height:1}
+  .hero h1 em{font-style:italic}
+  .ask{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(8px);border-radius:40px;padding:8px 8px 8px 24px;max-width:430px;margin:0 auto}
+  .ask input{flex:1;background:none;border:none;outline:none;font-size:16px;color:#14171f;font-family:inherit}
+  .ask input::placeholder{color:#3a4150}
+  .ask .go{width:40px;height:40px;border-radius:50%;background:#14171f;color:#fff;border:none;cursor:pointer;font-size:16px}
+  .hero .cap{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#28303f;margin-top:18px}
+  @media(max-width:760px){ .hero h1{font-size:46px} .hero{min-height:620px} }
+
+  section{padding:110px 0}
+  .center{text-align:center}
+  .display{font-family:"Fraunces",serif;font-weight:400;font-size:64px;color:var(--serif);line-height:1.0;letter-spacing:-.02em}
+  .display em{font-style:italic;color:var(--ink)}
+  @media(max-width:760px){ .display{font-size:40px} }
+  .sub{color:var(--soft);font-size:17px;max-width:520px;margin:20px auto 0}
+
+  /* feature cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px}
+  @media(max-width:900px){ .cards{grid-template-columns:1fr} }
+  .fcard .art{height:300px;border-radius:16px;padding:22px;position:relative;overflow:hidden;display:flex;align-items:flex-start}
+  .fcard:nth-child(1) .art{background:linear-gradient(160deg,#acbfd9,#4d5d7d)}
+  .fcard:nth-child(2) .art{background:linear-gradient(160deg,#d3ab78,#7c5d3a)}
+  .fcard:nth-child(3) .art{background:linear-gradient(160deg,#a3b6bd,#3c4d54)}
+  .fcard .mock{background:rgba(10,10,12,.78);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 18px;width:100%}
+  .fcard .mock .mh{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8f8b83;margin-bottom:12px}
+  .fcard .mock .ml{display:flex;justify-content:space-between;font-size:13px;color:#d8d5cd;padding:7px 0;border-top:1px solid rgba(255,255,255,.08)}
+  .fcard .mock .ml:first-of-type{border-top:none}
+  .fcard .mock .ml span:last-child{color:#8f8b83;font-family:"IBM Plex Mono",monospace;font-size:11px}
+  .fcard h3{font-size:19px;font-weight:500;margin:20px 0 6px}
+  .fcard p{color:var(--muted);font-size:14.5px}
+
+  /* blocks list */
+  .blist{margin-top:56px;border-top:1px solid var(--line2)}
+  .brow{display:grid;grid-template-columns:60px 220px 1fr;gap:24px;padding:26px 4px;border-bottom:1px solid var(--line2);align-items:baseline}
+  @media(max-width:760px){ .brow{grid-template-columns:40px 1fr;gap:12px} .brow .bd{grid-column:1/-1} }
+  .brow .bnum{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+  .brow .bname{font-family:"Fraunces",serif;font-size:25px}
+  .brow .bd .q{color:var(--soft);font-size:15px;font-style:italic;margin-bottom:8px}
+  .brow .bd p{color:var(--muted);font-size:14.5px}
+  .brow .bd p b{color:var(--ink);font-weight:500;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
+
+  /* lenses */
+  .lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2);border-radius:16px;overflow:hidden;margin-top:50px}
+  @media(max-width:760px){ .lgrid{grid-template-columns:1fr} }
+  .lcell{background:var(--bg);padding:28px}
+  .lcell .ln{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+  .lcell h4{font-size:18px;font-weight:500;margin:10px 0 6px}
+  .lcell p{font-size:14px;color:var(--muted)}
+
+  /* pricing */
+  .ptable{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px;margin-top:50px}
+  .ptable th,.ptable td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line2)}
+  .ptable th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .ptable td:first-child{color:var(--ink)}.ptable td{color:var(--soft)}
+  .ptable tr:last-child td{border-bottom:none}
+  .pnote{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+  /* cta */
+  .cta{text-align:center;padding:130px 0}
+  .cta .display{font-size:74px}
+  @media(max-width:760px){ .cta .display{font-size:42px} }
+
+  footer.ft{border-top:1px solid var(--line2);padding:54px 0 34px}
+  .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;margin-bottom:36px}
+  @media(max-width:760px){ .ft-grid{grid-template-columns:1fr 1fr} }
+  footer.ft h5{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  footer.ft a{display:block;font-size:14px;padding:5px 0;color:var(--soft)}
+  footer.ft a:hover{color:var(--ink)}
+  .ft-bottom{border-top:1px solid var(--line2);padding-top:22px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#top" class="logo mono" style="display:flex;align-items:center;gap:10px;font-size:12px"><span class="mark"></span> A Creative Block</a>
+    <nav class="links">
+      <a href="#blocks">The Blocks</a>
+      <a href="#how">Method</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    <a href="faq.html">FAQ</a><a href="manifesto.html">Manifesto</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></nav>
+    <a href="#contact" class="nav-cta">Book a session →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="sky"></div>
+  <div class="in wrap">
+    <span class="eyebrow">The creative unblocking practice</span>
+    <h1 class="serif"><em>Find</em> your block.</h1>
+    <form class="ask" onsubmit="return false;">
+      <input type="text" placeholder="What feels stuck right now?">
+      <button class="go" type="submit">↑</button>
+    </form>
+    <div class="cap">Diagnose anything · then move</div>
+  </div>
+</section>
+
+<!-- DIAGNOSE EVERYTHING -->
+<section class="center">
+  <div class="wrap">
+    <h2 class="display"><em>Diagnose</em> everything.</h2>
+    <p class="sub">Six blocks. One method. A clear next step — instead of vague motivation.</p>
+    <div style="margin-top:30px"><a href="#blocks" class="btn btn-dark">See the framework →</a></div>
+    <div class="cards">
+      <div class="fcard">
+        <div class="art"><div class="mock"><div class="mh">The Diagnosis</div>
+          <div class="ml"><span>Directional</span><span>likely</span></div>
+          <div class="ml"><span>Execution</span><span>maybe</span></div>
+          <div class="ml"><span>Identity</span><span>—</span></div></div></div>
+        <h3>Diagnose the block</h3>
+        <p>Find the real cause behind feeling stuck — not just that you are.</p>
+      </div>
+      <div class="fcard">
+        <div class="art"><div class="mock"><div class="mh">Friction</div>
+          <div class="ml"><span>Scope too large</span><span>cut</span></div>
+          <div class="ml"><span>Unclear next step</span><span>define</span></div>
+          <div class="ml"><span>No accountability</span><span>add</span></div></div></div>
+        <h3>Reduce the friction</h3>
+        <p>Remove what's quietly stopping you, one obstacle at a time.</p>
+      </div>
+      <div class="fcard">
+        <div class="art"><div class="mock"><div class="mh">Momentum</div>
+          <div class="ml"><span>Smallest action</span><span>today</span></div>
+          <div class="ml"><span>Check-in</span><span>Fri</span></div>
+          <div class="ml"><span>Shipped</span><span>+1</span></div></div></div>
+        <h3>Build momentum</h3>
+        <p>Small consistent action that turns "I'm stuck" into "I move."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIX BLOCKS -->
+<section id="blocks">
+  <div class="wrap center">
+    <h2 class="display"><em>Six</em> blocks, six cures.</h2>
+    <p class="sub">A block is a symptom — the cure depends on the cause.</p>
+  </div>
+  <div class="wrap blist">
+    <div class="brow"><div class="bnum">01</div><div class="bname serif">Directional</div><div class="bd"><div class="q">"I don't know where to go."</div><p><b>Mechanism</b> Commitment anxiety — choosing one path closes others. <b>Helps</b> Constraints; an actionable, not permanent, direction.</p></div></div>
+    <div class="brow"><div class="bnum">02</div><div class="bname serif">Structural</div><div class="bd"><div class="q">"The project is chaos."</div><p><b>Mechanism</b> The brain can't process undefined complexity. <b>Helps</b> Restructure scope, stages, priorities, dependencies.</p></div></div>
+    <div class="brow"><div class="bnum">03</div><div class="bname serif">Execution</div><div class="bd"><div class="q">"I avoid doing it."</div><p><b>Mechanism</b> The nervous system tags the task as threatening — not laziness. <b>Helps</b> Shrink the task, remove ambiguity, add accountability.</p></div></div>
+    <div class="brow"><div class="bnum">04</div><div class="bname serif">Identity</div><div class="bd"><div class="q">"Am I good enough?"</div><p><b>Mechanism</b> Finishing becomes a verdict on your worth, so you stall. <b>Helps</b> Separate self-worth from output; normalise imperfect release.</p></div></div>
+    <div class="brow"><div class="bnum">05</div><div class="bname serif">Skill</div><div class="bd"><div class="q">"I don't know how."</div><p><b>Mechanism</b> The project exceeds current ability → shame, avoidance. <b>Helps</b> Name the missing skill and the smallest path to it.</p></div></div>
+    <div class="brow"><div class="bnum">06</div><div class="bname serif">Environmental</div><div class="bd"><div class="q">"My context kills it."</div><p><b>Mechanism</b> The environment is incompatible with sustained work. <b>Helps</b> Redesign conditions: sleep, schedule, boundaries, space.</p></div></div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="how" class="center">
+  <div class="wrap">
+    <h2 class="display"><em>One</em> method, many ways in.</h2>
+    <p class="sub">Diagnose the block → reduce friction → smallest action → build momentum.</p>
+    <div class="lgrid" style="margin-top:46px">
+      <div class="lcell"><div class="ln">01 / Individuals</div><h4>The Unblock Session</h4><p>A single 90-minute session — diagnosis, reduced friction, one concrete next step.</p></div>
+      <div class="lcell"><div class="ln">02 / Individuals</div><h4>Deep Packages</h4><p>4 or 8 sessions with accountability that turns clarity into finished work.</p></div>
+      <div class="lcell"><div class="ln">03 / Individuals</div><h4>Groups &amp; Community</h4><p>Get unstuck alongside other creatives — shared accountability.</p></div>
+      <div class="lcell"><div class="ln">04 / Organisations</div><h4>Team Workshops</h4><p>Unblock a stuck project or team, built around your real work.</p></div>
+      <div class="lcell"><div class="ln">05 / Organisations</div><h4>Creative Consulting</h4><p>Restructure messy projects: scope, priorities, workflow, systems.</p></div>
+      <div class="lcell"><div class="ln">06 / Universities</div><h4>Residency</h4><p>A Creative Counsellor on campus twice a month for your students.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LENSES -->
+<section class="center" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="display"><em>Six</em> lenses behind it.</h2>
+    <div class="lgrid">
+      <div class="lcell"><div class="ln">Lens 01</div><h4>Mind &amp; Neuroscience</h4><p>Focus, dopamine, the nervous system, ADHD.</p></div>
+      <div class="lcell"><div class="ln">Lens 02</div><h4>Psychology &amp; Mindset</h4><p>Impostor syndrome, perfectionism, self-worth.</p></div>
+      <div class="lcell"><div class="ln">Lens 03</div><h4>Mindfulness</h4><p>Emotional regulation, burnout recovery, meaning.</p></div>
+      <div class="lcell"><div class="ln">Lens 04</div><h4>Creative Craft</h4><p>Ideation, explore vs. commit, constraints, skill.</p></div>
+      <div class="lcell"><div class="ln">Lens 05</div><h4>Systems &amp; Execution</h4><p>Habits, structure, accountability, architecture.</p></div>
+      <div class="lcell"><div class="ln">Lens 06</div><h4>Meaning &amp; Belonging</h4><p>Purpose, creative identity, community.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="center">
+  <div class="wrap">
+    <h2 class="display"><em>Fair</em> by design.</h2>
+    <p class="sub">A sliding scale by income — an honesty model, no proof required.</p>
+    <table class="ptable" style="text-align:left">
+      <tr><th>Annual income</th><th>Single · 90 min</th><th>4-Session</th><th>8-Session</th></tr>
+      <tr><td>Under €20k</td><td>€70</td><td>€260</td><td>€480</td></tr>
+      <tr><td>€20k – €35k</td><td>€100</td><td>€370</td><td>€700</td></tr>
+      <tr><td>€35k – €50k</td><td>€140</td><td>€520</td><td>€980</td></tr>
+      <tr><td>€50k+ / international</td><td>€185</td><td>€680</td><td>€1,300</td></tr>
+    </table>
+    <p class="pnote">Group session €25 / seat (€15 lowest band) · Community membership Free / €15 / €30 per month. Organisations &amp; universities quoted separately.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="center">
+  <div class="wrap">
+    <span class="eyebrow">About</span>
+    <h2 class="display" style="margin-top:16px;max-width:780px;margin-left:auto;margin-right:auto"><em>Built</em> from lived experience.</h2>
+    <p class="sub" style="max-width:600px">ADHD, unfinished projects, recurring blocks. Grounded, practical, empathetic — sitting between creative direction, coaching and problem-solving consulting. From stuck to moving, with clarity on <em style="font-style:italic;color:var(--ink)">why</em>, and a system for what's next.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2 class="display">Get unstuck. <em>Then move.</em></h2>
+    <div style="margin-top:34px"><a href="#contact" class="btn">Book a free first session →</a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="center" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Get in touch</span>
+    <h2 class="display" style="margin-top:14px">Tell us what's <em>blocked.</em></h2>
+    <form onsubmit="return false;" class="ask" style="margin-top:30px;background:rgba(255,255,255,.06);border-color:var(--line)">
+      <input type="email" placeholder="Your email" style="color:var(--ink)">
+      <button class="go" type="submit">↑</button>
+    </form>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="logo mono" style="display:flex;align-items:center;gap:10px;font-size:12px;margin-bottom:14px"><span class="mark"></span> A Creative Block</div>
+        <p style="font-size:14px;color:var(--muted);max-width:280px">Find the block. Then move.</p>
+      </div>
+      <div><h5>Help</h5><a href="#blocks">The Blocks</a><a href="#how">Method</a><a href="#pricing">Pricing</a></div>
+      <div><h5>Company</h5><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div><h5>Read</h5><a href="#">Essays</a><a href="#">Newsletter</a></div>
+    </div>
+    <div class="ft-bottom"><span>© 2026 A Creative Block</span><span>Get unstuck, then move</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

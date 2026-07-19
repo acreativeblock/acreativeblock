@@ -1,0 +1,84 @@
+:root{
+  --ink:#000; --paper:#fff; --line:#000; --pad:clamp(16px,3vw,40px);
+  --font:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.4;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+  text-rendering:optimizeLegibility;font-kerning:normal;font-optical-sizing:auto;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1,"tnum" 1}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.up{text-transform:uppercase}
+h1,h2,h3{font-weight:500;text-transform:uppercase;letter-spacing:-.01em;line-height:.92}
+.mono{font-variant-numeric:tabular-nums}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:80;background:var(--paper);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;height:54px;padding:0 var(--pad);
+  text-transform:uppercase;font-size:13px;letter-spacing:.02em}
+.nav .lg{font-weight:600;letter-spacing:.01em;font-size:15px}
+.nav .lk{display:flex;gap:24px;align-items:center}
+.nav .lk a{padding:4px 0;border-bottom:2px solid transparent}
+.nav .lk a:hover,.nav .lk a.on{border-bottom:2px solid var(--line)}
+.nav .lk a.cta{border:1px solid var(--line);padding:8px 16px}
+.nav .lk a.cta:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:920px){.nav .lk a:not(.cta):not(.faq):not(.mf){display:none}}
+
+/* SECTION HEAD */
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:14px var(--pad);border-bottom:1px solid var(--line);text-transform:uppercase;font-size:13px;letter-spacing:.03em}
+
+/* HERO */
+.hero{border-bottom:1px solid var(--line);padding:clamp(40px,7vw,110px) var(--pad) clamp(30px,4vw,60px);position:relative}
+.hero .idx{position:absolute;top:14px;right:var(--pad);font-size:12px;letter-spacing:.04em}
+.hero h1{font-size:clamp(38px,8.4vw,120px);font-weight:500;letter-spacing:-.02em;line-height:.9;max-width:16ch}
+.hero .lead{margin-top:clamp(24px,3vw,44px);font-size:clamp(15px,1.6vw,20px);max-width:52ch;line-height:1.45}
+
+/* GENERIC PROSE ROWS (label | body) */
+.rows .row{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.1fr);align-items:start;
+  gap:clamp(14px,2.4vw,44px);padding:clamp(20px,2.6vw,40px) var(--pad);border-bottom:1px solid var(--line);
+  transition:background .18s,color .18s}
+.rows .row:hover{background:var(--ink);color:var(--paper)}
+.rows .num{font-size:14px;letter-spacing:.02em;padding-top:8px}
+.rows .name{font-size:clamp(28px,5vw,66px);font-weight:500;letter-spacing:-.02em;line-height:.9}
+.rows .body p{font-size:clamp(14px,1.4vw,17px);max-width:52ch;line-height:1.5;margin-bottom:10px}
+.rows .body .kw{display:inline-block;margin-top:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:820px){.rows .row{grid-template-columns:52px 1fr}.rows .body{grid-column:1/-1;margin-top:6px}}
+
+/* COLUMN GRID (gap-less, black dividers) */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+@media(max-width:820px){.cols{grid-template-columns:1fr}}
+.cols.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){.cols.two{grid-template-columns:1fr}}
+.cols .cell{padding:clamp(24px,3vw,52px) var(--pad);border-right:1px solid var(--line);min-height:clamp(200px,24vw,320px);
+  display:flex;flex-direction:column;transition:background .18s,color .18s}
+.cols .cell:last-child{border-right:none}
+@media(max-width:820px){.cols .cell{border-right:none;border-bottom:1px solid var(--line)}.cols .cell:last-child{border-bottom:none}}
+.cols .cell:hover{background:var(--ink);color:var(--paper)}
+.cols .cell .mn{font-size:13px;letter-spacing:.03em}
+.cols .cell h3{font-size:clamp(20px,2.4vw,34px);margin:auto 0 12px;font-weight:500;letter-spacing:-.01em}
+.cols .cell p{font-size:14.5px;max-width:36ch;line-height:1.5}
+
+/* PROSE BLOCK */
+.prose{padding:clamp(30px,4vw,70px) var(--pad);border-bottom:1px solid var(--line);max-width:none}
+.prose .in{max-width:64ch}
+.prose p{font-size:clamp(15px,1.5vw,19px);line-height:1.6;margin-bottom:1.1em}
+.prose .k{text-transform:uppercase;font-size:12px;letter-spacing:.05em;margin-bottom:20px}
+
+/* STATEMENT */
+.statement{padding:clamp(50px,8vw,130px) var(--pad);border-bottom:1px solid var(--line)}
+.statement h2{font-size:clamp(30px,6vw,100px);font-weight:500;letter-spacing:-.02em;line-height:.9;max-width:17ch}
+.statement p{margin-top:24px;font-size:clamp(15px,1.5vw,19px);max-width:52ch;line-height:1.5}
+
+/* CTA / CONTACT */
+.cta-sec{padding:clamp(46px,7vw,110px) var(--pad);border-bottom:1px solid var(--line)}
+.cta-sec h2{font-size:clamp(30px,6vw,92px);font-weight:500;letter-spacing:-.02em;line-height:.9;max-width:15ch}
+.cta-sec .row2{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;text-transform:uppercase;font-size:13px;letter-spacing:.03em}
+.cta-sec .row2 a{border:1px solid var(--line);padding:12px 22px}
+.cta-sec .row2 a:hover{background:var(--ink);color:var(--paper)}
+
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px var(--pad);
+  text-transform:uppercase;font-size:12px;letter-spacing:.03em}
