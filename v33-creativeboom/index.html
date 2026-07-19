@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — a place to understand why you get stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffc828'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23000'/%3E%3C/svg%3E">
+<style>
+/* === Exact Creative Boom fonts (Roobert display + ABC Diatype body), hotlinked from their CDN === */
+@font-face{font-family:'Roobert';src:url('https://www.creativeboom.com/assets/front/fonts/Roobert-Medium.woff2') format('woff2'),url('https://www.creativeboom.com/assets/front/fonts/Roobert-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'ABC Diatype';src:url('https://www.creativeboom.com/assets/front/fonts/ABCDiatype-Regular.woff2') format('woff2'),url('https://www.creativeboom.com/assets/front/fonts/ABCDiatype-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'ABC Diatype';src:url('https://www.creativeboom.com/assets/front/fonts/ABCDiatype-Bold.woff2') format('woff2'),url('https://www.creativeboom.com/assets/front/fonts/ABCDiatype-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+:root{
+  --paper:#ffffff; --cream:#fbf7ef; --ink:#000000; --soft:#000000; --line:#e6e2d9;
+  --yellow:#ffc828; --green:#3f7d3f; --orange:#f0673a; --pink:#f3a7c4; --blue:#2f4de0;
+  --font:"ABC Diatype",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:"Roobert","ABC Diatype",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:24px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+  text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:1536px;margin:0 auto;padding:0 24px}
+
+/* buttons — full pill, 1px black, 14/700 uppercase, 20px 32px */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:9999px;
+  padding:20px 32px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:normal;
+  line-height:1;transition:.16s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.fill{background:var(--ink);color:var(--paper)}.btn.fill:hover{background:#222}
+.btn.sm{padding:12px 22px}
+
+/* NAV — sticky single row, links always visible, subtle shrink on scroll */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);transition:box-shadow .25s}
+.nav .navrow{display:flex;align-items:center;gap:24px;height:72px;transition:height .25s}
+.nav .lg{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:-.01em;white-space:nowrap;transition:font-size .25s}
+.nav .navlinks{display:flex;gap:24px;align-items:center;margin:0 auto;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:normal}
+.nav .navlinks a{padding-bottom:2px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav .navlinks a:hover,.nav .navlinks a.on{border-bottom:2px solid var(--ink)}
+.nav .booklink{border:1px solid var(--ink);border-radius:9999px;padding:10px 18px;font-size:14px;font-weight:700;text-transform:uppercase;white-space:nowrap}
+.nav .booklink:hover{background:var(--ink);color:var(--paper)}
+.nav.shrink{box-shadow:0 6px 20px rgba(0,0,0,.06)}
+@media(max-width:1000px){.nav .navlinks a.hide{display:none}}
+@media(max-width:760px){.nav .navlinks{display:none}}
+
+/* HERO — cream band #fbf7ef, py 80 */
+.hero{background:var(--cream)}
+.hero .in{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding-top:80px;padding-bottom:80px}
+@media(max-width:860px){.hero .in{grid-template-columns:1fr;gap:32px;padding-top:48px;padding-bottom:48px}}
+.hero h1{font-family:var(--display);font-size:60px;line-height:66px;font-weight:500;letter-spacing:normal;color:#000;max-width:14ch}
+.hero p{font-size:24px;line-height:30px;color:#000;margin:24px 0 32px;max-width:34ch}
+@media(max-width:768px){.hero h1{font-size:40px;line-height:44px}.hero p{font-size:20px;line-height:26px}}
+.hero .art{justify-self:center}
+.hero .art img{width:min(100%,520px)}
+
+/* SECTION scaffold */
+.sec{padding-top:80px;padding-bottom:80px}
+.kicker{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:normal;color:#000;margin-bottom:14px}
+.sec h2{font-family:var(--display);font-size:36px;line-height:40px;font-weight:500;letter-spacing:-.01em;max-width:22ch;color:#000}
+.sec .intro{font-size:24px;line-height:30px;color:#000;max-width:52ch;margin-top:16px}
+
+/* USP 3-col — grid gap 40 / 24, thin top rule */
+.usps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;margin-top:48px}
+@media(max-width:820px){.usps{grid-template-columns:1fr}}
+.usp{border-top:1px solid var(--ink);padding-top:22px}
+.usp img{width:150px;height:150px;object-fit:contain;margin:-6px 0 18px}
+.usp h3{font-size:24px;line-height:30px;font-weight:400;margin-bottom:10px;color:#000}
+.usp p{color:#000;font-size:16px;line-height:24px;max-width:34ch}
+
+/* BLOCKS grid */
+.blocks{background:var(--cream)}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+@media(max-width:860px){.bgrid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.bgrid{grid-template-columns:1fr}}
+.bcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px;transition:.18s}
+.bcard:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.08)}
+.bcard .dot{width:52px;height:52px;border-radius:9999px;display:grid;place-items:center;margin-bottom:18px;
+  font-weight:700;font-size:18px;color:#000;border:1.5px solid var(--ink)}
+.bcard h3{font-size:24px;line-height:30px;font-weight:500;margin-bottom:8px;color:#000;font-family:var(--display)}
+.bcard p{font-size:16px;line-height:24px;color:#000}
+
+/* COMMUNITY strip */
+.strip{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding-top:80px;padding-bottom:80px}
+@media(max-width:820px){.strip{grid-template-columns:1fr;gap:28px}}
+.strip .ph{border-radius:20px;overflow:hidden;aspect-ratio:16/11;background:var(--cream)}
+.strip .ph img{width:100%;height:100%;object-fit:cover}
+.strip h2{font-family:var(--display);font-size:36px;line-height:40px;font-weight:500;letter-spacing:-.01em;margin-bottom:16px;max-width:16ch;color:#000}
+.strip p{font-size:24px;line-height:30px;color:#000;max-width:44ch;margin-bottom:24px}
+
+/* STATEMENT band (green) */
+.band{background:var(--green);color:#fff}
+.band .in{padding-top:100px;padding-bottom:100px;max-width:960px;margin:0 auto;text-align:center}
+.band h2{font-family:var(--display);font-size:44px;line-height:1.1;font-weight:500;letter-spacing:-.01em;max-width:24ch;margin:0 auto;color:#fff;text-wrap:balance}
+.band p{font-size:22px;line-height:1.35;opacity:.95;max-width:60ch;margin:24px auto 0;text-wrap:pretty}
+@media(max-width:768px){.band h2{font-size:32px;line-height:36px}}
+
+/* CTA (yellow) */
+.cta{background:var(--yellow)}
+.cta .in{padding-top:100px;padding-bottom:100px;text-align:center}
+.cta h2{font-family:var(--display);font-size:56px;line-height:1.05;font-weight:500;letter-spacing:normal;max-width:18ch;margin:0 auto 28px;color:#000;text-wrap:balance}
+@media(max-width:768px){.cta h2{font-size:40px;line-height:44px}}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);padding:56px 0}
+.foot .in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:flex-start}
+.foot .lg{font-family:var(--display);font-weight:500;font-size:22px}
+.foot .cols{display:flex;gap:70px;flex-wrap:wrap}
+.foot h5{font-size:14px;text-transform:uppercase;letter-spacing:normal;font-weight:700;color:#000;margin-bottom:12px}
+.foot a{display:block;padding:3px 0;font-size:16px;color:#000}.foot a:hover{text-decoration:underline}
+.foot .cp{margin-top:26px;font-size:14px;color:#000}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container navrow">
+    <a href="index.html" class="lg">A Creative Block</a>
+    <nav class="navlinks">
+      <a href="#blocks">The 6 Blocks</a>
+      <a href="#method">Method</a>
+      <a href="#about" class="hide">About</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener" class="hide">Wall of Love</a>
+    </nav>
+    <a href="mailto:hello@acreativeblock.com" class="booklink">Book a call</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero"><div class="container in">
+  <div>
+    <h1>A place to understand why you keep getting stuck</h1>
+    <p>A Creative Block is coaching &amp; consultancy for creatives who keep stalling on the work that matters. Getting stuck isn't a flaw — it's a signal.</p>
+    <a href="#blocks" class="btn fill">Find your block</a>
+  </div>
+  <div class="art"><img src="https://www.creativeboom.com/upload/pages/92/92a8623c8670370226e2bc4eee55c523847f8517_600_600.png" alt="Illustration of a creative at work"></div>
+</div></section>
+
+<!-- METHOD / USPs -->
+<section class="sec" id="method"><div class="container">
+  <div class="kicker">How we work</div>
+  <h2>Root first, then a path — and we stay in it with you.</h2>
+  <div class="usps">
+    <div class="usp"><img src="https://www.creativeboom.com/assets/front/img/usps/people.svg" alt=""><h3>Find the root</h3><p>The stuck you feel is rarely the stuck that's there. We name which of the six blocks is really in your way.</p></div>
+    <div class="usp"><img src="https://www.creativeboom.com/assets/front/img/usps/learn.svg" alt=""><h3>Understand the why</h3><p>We look at what the block protects — fear, meaning, identity — so it loosens its grip instead of being forced.</p></div>
+    <div class="usp"><img src="https://www.creativeboom.com/assets/front/img/usps/ideas.svg" alt=""><h3>Build the way through</h3><p>A clear path, gentle structure, and the accountability to keep going — so moving stops taking everything you've got.</p></div>
+  </div>
+</div></section>
+
+<!-- BLOCKS -->
+<section class="blocks" id="blocks"><div class="container sec">
+  <div class="kicker">The taxonomy</div>
+  <h2>Six kinds of stuck — usually a mix.</h2>
+  <p class="intro">Most creative block is one of six patterns, with one that pulls hardest right now. Naming yours accurately is where the work begins.</p>
+  <div class="bgrid">
+    <div class="bcard"><div class="dot" style="background:var(--yellow)">01</div><h3>Directional</h3><p>Too many ideas, or none that pull. The block is a missing north — you need to know where, and why it's yours.</p></div>
+    <div class="bcard"><div class="dot" style="background:var(--green);color:#fff">02</div><h3>Structural</h3><p>Work happens in bursts, then collapses. The block is scaffolding — a way to keep going without willpower.</p></div>
+    <div class="bcard"><div class="dot" style="background:var(--orange);color:#fff">03</div><h3>Execution</h3><p>You know what to do and can't start — or finish. Usually fear in a productivity costume. We find what it protects.</p></div>
+    <div class="bcard"><div class="dot" style="background:var(--pink)">04</div><h3>Identity</h3><p>"Am I even a real creative?" The block lives in the story about yourself, not the work.</p></div>
+    <div class="bcard"><div class="dot" style="background:var(--blue);color:#fff">05</div><h3>Skill</h3><p>The gap between your taste and ability is real, and it hurts. Not a flaw — a stage. We build a path across it.</p></div>
+    <div class="bcard"><div class="dot" style="background:var(--yellow)">06</div><h3>Environmental</h3><p>Your life, setup and people quietly work against the work. Sometimes the block is around you, not in you.</p></div>
+  </div>
+</div></section>
+
+<!-- COMMUNITY STRIP -->
+<section id="about"><div class="container strip">
+  <div>
+    <div class="kicker">Not a "just do it" thing</div>
+    <h2>You don't get unstuck alone.</h2>
+    <p>People move through blocks in relationship — with community around them, accountability that expects them to keep going, and a space that treats their creativity as worth the effort.</p>
+    <a href="manifesto.html" class="btn">Read the manifesto</a>
+  </div>
+  <div class="ph"><img src="https://www.creativeboom.com/upload/events/8a/8a583856b9a257948f036d42a7e673fba8576c7d_1464.jpeg" alt="A creative community session"></div>
+</div></section>
+
+<!-- STATEMENT -->
+<section class="band"><div class="container in">
+  <h2>Coaching when it's about you. Consultancy when it's about the work.</h2>
+  <p>Sometimes the block is personal — identity, fear, direction. Sometimes it's practical — a project, a plan, a decision that won't settle. Most people need a little of each.</p>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="container in">
+  <h2>Come back to the work.</h2>
+  <div class="btns">
+    <a href="#blocks" class="btn">Find your block</a>
+    <a href="mailto:hello@acreativeblock.com" class="btn fill">Book a call</a>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="foot"><div class="container in">
+  <div><div class="lg">A Creative Block</div><div class="cp">© 2026 A Creative Block · Lisbon &amp; online<br>Understand the why, then move.</div></div>
+  <div class="cols">
+    <div><h5>Explore</h5><a href="#blocks">The 6 Blocks</a><a href="#method">Method</a><a href="manifesto.html">Manifesto</a></div>
+    <div><h5>More</h5><a href="faq.html">FAQ</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a><a href="mailto:hello@acreativeblock.com">Book a call</a></div>
+  </div>
+</div></footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('shrink',window.scrollY>20);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
+</body>
+</html>

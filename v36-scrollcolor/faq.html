@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — FAQ [ Field Notes ]</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23001d21'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fb8569'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#001d21;--accent:#fb8569;--tx:#eef2f0;--dot:rgba(238,242,240,.14);
+  --disp:"Space Grotesk",-apple-system,Helvetica,Arial,sans-serif;--mono:"Space Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(18px,3.4vw,40px);--max:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--teal);color:var(--tx);font-family:var(--disp);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:.94}
+#dots{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(var(--dot) 1px,transparent 1.5px);background-size:24px 24px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:40}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:52px;border-bottom:1px solid rgba(238,242,240,.22);padding:0 var(--pad)}
+.nav .lg{font-family:var(--mono);font-size:13px}.nav .lg .sub{color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-size:11px;margin-left:8px}
+.nav .lk{display:flex;gap:clamp(14px,2.4vw,36px)}
+.nav .lk a{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;opacity:.8}
+.nav .lk a:hover,.nav .lk a.on{opacity:1;color:var(--accent)}
+.nav .join{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;background:var(--accent);color:var(--teal);padding:6px 12px}
+@media(max-width:680px){.nav .lk{display:none}}
+.hero{padding:120px 0 30px}
+.hero .kick{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--accent);margin-bottom:22px}
+.hero h1{font-size:clamp(44px,9vw,130px);font-weight:600;letter-spacing:-.045em;line-height:.88;color:var(--accent)}
+.hero p{font-size:clamp(17px,1.6vw,22px);opacity:.9;margin-top:20px;max-width:48ch}
+.part{display:flex;justify-content:space-between;border-top:1px solid var(--accent);padding-top:12px;color:var(--accent);margin:60px 0 10px}
+.part span{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.qa{padding-bottom:80px}
+.item{border-bottom:1px solid rgba(238,242,240,.18);padding:28px 0;display:grid;grid-template-columns:70px 1fr;gap:24px}
+.item .qid{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);padding-top:6px}
+.item h3{font-size:clamp(19px,2.2vw,28px);font-weight:600;letter-spacing:-.025em;margin-bottom:10px}
+.item p{font-size:15.5px;opacity:.86;max-width:60ch;line-height:1.6}
+@media(max-width:640px){.item{grid-template-columns:1fr;gap:8px}}
+.foot{border-top:1px solid var(--accent);padding:26px 0 70px;text-align:center}
+.foot h2{font-size:clamp(30px,5vw,66px);font-weight:600;letter-spacing:-.04em;margin-bottom:24px;text-wrap:balance}
+.btn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:13px;padding:14px 24px;border:1px solid var(--accent);color:var(--accent);margin:0 5px;display:inline-block}
+.btn.solid{background:var(--accent);color:var(--teal)}
+</style>
+</head>
+<body>
+<div id="dots"></div>
+<header class="nav"><div class="in">
+  <a href="index.html" class="lg"><b>A Creative Block</b><span class="sub">Field Notes</span></a>
+  <nav class="lk">
+    <a href="index.html#blocks">Blocks</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="faq.html" class="on">FAQ</a>
+    <a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a>
+  </nav>
+  <a href="mailto:hello@acreativeblock.com" class="join">Book a call</a>
+</div></header>
+
+<section class="wrap hero">
+  <div class="kick">A Creative Block / Field Notes</div>
+  <h1>A few honest<br>questions.</h1>
+  <p>The things people ask most before they begin. If yours isn't here, just reach out.</p>
+</section>
+
+<section class="wrap qa">
+  <div class="part"><span>Questions</span><span>Q [01—07]</span></div>
+  <div class="item"><div class="qid">Q/01</div><div><h3>What exactly is a creative block?</h3><p>Any pattern that keeps you from the work you want to do. It's rarely just laziness — underneath most blocks is a real reason: a fear, an unclear direction, a missing skill, or a life quietly working against you.</p></div></div>
+  <div class="item"><div class="qid">Q/02</div><div><h3>How is this different from productivity coaching?</h3><p>Most coaching hands you a system and steps away. We start with the why — the root cause — and only then build the structure to move through it.</p></div></div>
+  <div class="item"><div class="qid">Q/03</div><div><h3>Is this coaching or consultancy?</h3><p>Both. Getting stuck can be personal or practical — sometimes the block is about you (identity, fear, direction), and we coach; sometimes it's about the work itself (a project, a plan, a decision that won't settle), and we consult. Most people need a little of each, and we move between the two as you do.</p></div></div>
+  <div class="item"><div class="qid">Q/04</div><div><h3>Do I have to be a professional creative?</h3><p>No. This is for anyone with a project that matters — a book, an album, a side idea. You don't need to make a living from it to get stuck, or unstuck.</p></div></div>
+  <div class="item"><div class="qid">Q/05</div><div><h3>What happens in the first session?</h3><p>We find which of the six blocks is really in your way, then map the first small steps. Naming it accurately is most of the work.</p></div></div>
+  <div class="item"><div class="qid">Q/06</div><div><h3>What if I'm a mix of several blocks?</h3><p>Most people are, and that's how it should be. We find your primary one — the pattern with the most pull right now — and start there.</p></div></div>
+  <div class="item"><div class="qid">Q/07</div><div><h3>Where do sessions happen?</h3><p>Online, everywhere — and in person around Lisbon. What matters is the work, not the room.</p></div></div>
+</section>
+
+<section class="wrap foot">
+  <h2>Still wondering? Let's get to the why.</h2>
+  <div><a href="index.html#blocks" class="btn solid">Find your block</a><a href="mailto:hello@acreativeblock.com" class="btn">Book a call</a></div>
+</section>
+</body>
+</html>

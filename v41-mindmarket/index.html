@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — real human support</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%238ed462'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322221c'/%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --beige:#f5f1e4; --green:#8ed462; --yellow:#f5e211; --coral:#ff705d; --blue:#2f9bf4;
+  --ink:#22221c; --white:#ffffff; --muted:#7a7566;
+  --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,90px); --max:1500px; --r:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--beige);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.45;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:500;letter-spacing:-.03em;line-height:.98}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:20px}
+.wave svg{display:block;width:100%;height:auto;overflow:visible}
+
+/* ===== NAV — floating pill ===== */
+.nav{position:fixed;top:14px;left:14px;right:14px;z-index:100}
+.nav .bar{position:relative;max-width:var(--max);margin:0 auto;background:var(--white);border-radius:9999px;display:flex;align-items:center;
+  gap:clamp(14px,2vw,32px);padding:11px 11px 11px clamp(20px,2vw,28px);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.nav .lg{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;letter-spacing:-.02em}
+.nav .lg .mk{width:27px;height:27px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+.nav .lg .mk b{width:11px;height:11px;border-radius:50%;background:var(--ink);display:block}
+.nav .lk{display:flex;align-items:center;gap:clamp(12px,1.8vw,28px);font-size:16px;font-weight:500;margin-left:14px}
+.nav .lk a{display:flex;align-items:center;gap:5px}.nav .lk a:hover{color:var(--muted)}
+.nav .lk .car{width:10px;height:10px;color:var(--muted)}
+.nav .sp{margin-left:auto}
+.nav .burger{width:44px;height:44px;border-radius:50%;background:var(--green);border:0;display:grid;place-items:center;cursor:pointer}
+.nav .burger span{display:block;width:16px;height:2px;background:var(--ink);margin:2.5px 0;border-radius:2px}
+.nav .quote{background:var(--white);border:1px solid #eee;border-radius:9999px;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 20px;font-weight:600;font-size:16px}
+/* v40-style dropdown menu */
+.mm{position:static;display:flex;align-items:center}
+.mmt{font-size:16px;font-weight:500;display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;font-family:var(--font);color:var(--ink);padding:0;white-space:nowrap}
+.mmt:hover{color:var(--muted)}
+.mmt .car{width:10px;height:10px;color:var(--muted);transition:transform .2s}
+.has-mega:hover .car,.has-mega:focus-within .car{transform:rotate(180deg)}
+.mega{position:absolute;left:0;right:0;top:calc(100% + 12px);background:var(--white);border-radius:28px;
+  box-shadow:0 24px 54px rgba(0,0,0,.12);padding:clamp(26px,2.6vw,44px);opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .2s,transform .2s,visibility .2s;z-index:90}
+.has-mega:hover .mega,.has-mega:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,48px)}
+.mega h5{font-size:19px;font-weight:600;margin-bottom:12px}
+.mega a{display:block;padding:7px 0;font-size:17px;color:var(--muted)}.mega a:hover{color:var(--ink)}
+.qbtn{background:var(--green);color:var(--ink);border-radius:9999px;padding:11px 20px;font-weight:600;font-size:15.5px;white-space:nowrap}
+.qbtn:hover{background:#7cc551}
+.bbtn{background:var(--ink);color:var(--beige);border-radius:9999px;padding:11px 20px;font-weight:600;font-size:15.5px;white-space:nowrap}
+.bbtn:hover{background:#000}
+@media(max-width:900px){.mm,.mmt.lnk{display:none}}
+
+/* ===== FULL-FRAME SECTIONS (stacked, overlapping rounded corners) ===== */
+.frame{position:relative;padding:clamp(70px,11vw,150px) var(--pad);min-height:86vh;display:flex;flex-direction:column;justify-content:center}
+.frame + .frame{margin-top:-48px;border-top-left-radius:var(--r);border-top-right-radius:var(--r)}
+.frame:last-child{border-bottom-left-radius:var(--r);border-bottom-right-radius:var(--r)}
+.wrap{max-width:var(--max);margin:0 auto;width:100%}
+.f-green{background:var(--green)}.f-beige{background:var(--beige)}.f-coral{background:var(--coral)}
+.f-yellow{background:var(--yellow)}.f-ink{background:var(--ink);color:var(--beige)}
+.f-white{background:var(--white)}
+
+/* HERO */
+.hero{text-align:center;padding-top:clamp(120px,16vw,220px)}
+.hero h1{font-size:clamp(56px,13vw,210px);font-weight:500;letter-spacing:-.045em;line-height:.9}
+.hero .sub{margin-top:clamp(22px,3vw,42px);font-size:clamp(16px,1.6vw,22px);font-weight:600}
+.hero .acts{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:9999px;padding:15px 26px;font-size:16px;font-weight:600;transition:.15s}
+.pill.dark{background:var(--ink);color:var(--beige)}.pill.dark:hover{background:#000}
+.pill.white{background:var(--white);color:var(--ink)}.pill.white:hover{opacity:.9}
+
+/* STATEMENT frame — one big line */
+.stmt h2{font-size:clamp(40px,8vw,140px);font-weight:500;letter-spacing:-.045em;line-height:.92;max-width:15ch}
+.stmt .lede{font-size:clamp(17px,1.7vw,24px);max-width:44ch;margin-top:clamp(24px,3vw,44px);line-height:1.4;opacity:.85}
+.stmt.center{text-align:center}.stmt.center h2,.stmt.center .lede{margin-left:auto;margin-right:auto}
+
+/* STATS frame */
+.numsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+@media(max-width:860px){.numsplit{grid-template-columns:1fr;gap:30px}}
+.numsplit h2{font-size:clamp(34px,5vw,80px);font-weight:500;letter-spacing:-.035em;max-width:14ch}
+.numsplit .lede{font-size:clamp(16px,1.5vw,20px);max-width:42ch;margin-top:24px;line-height:1.5;opacity:.85}
+.statcol{display:flex;flex-direction:column;gap:20px}
+.statc{border-radius:28px;padding:clamp(28px,2.6vw,44px);min-height:clamp(280px,28vw,380px);display:flex;flex-direction:column;position:relative}
+.statc .big{font-size:clamp(70px,9vw,150px);font-weight:500;letter-spacing:-.04em;line-height:.82;margin-top:auto}
+.statc .ic{position:absolute;top:clamp(24px,2.4vw,34px);right:clamp(24px,2.4vw,34px);width:48px;height:48px;border-radius:50%;display:grid;place-items:center}
+.statc p{font-size:clamp(15px,1.4vw,18px);margin-top:16px;max-width:34ch;line-height:1.45}
+.statc.white{background:var(--white);transform:rotate(-1.5deg)}.statc.white .big,.statc.white p{color:var(--blue)}.statc.white .ic{background:var(--blue);color:#fff}
+.statc.green{background:var(--green);transform:rotate(2deg)}.statc.green .ic{background:var(--ink);color:var(--green)}
+.statc.coral{background:var(--coral);transform:rotate(-1deg)}.statc.coral .ic{background:var(--ink);color:var(--coral)}
+
+/* METHOD frame */
+.method h2{font-size:clamp(34px,5vw,80px);font-weight:500;letter-spacing:-.035em;max-width:14ch}
+.msteps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(30px,4vw,54px)}
+@media(max-width:860px){.msteps{grid-template-columns:1fr}}
+.mstep{background:var(--white);border-radius:28px;padding:clamp(26px,2.4vw,40px);min-height:clamp(240px,22vw,300px);display:flex;flex-direction:column}
+.mstep .mn{width:46px;height:46px;border-radius:50%;background:var(--green);display:grid;place-items:center;font-weight:600;margin-bottom:auto}
+.mstep h3{font-size:clamp(22px,2.2vw,32px);font-weight:500;letter-spacing:-.03em;margin:20px 0 10px}
+.mstep p{font-size:16px;line-height:1.45;opacity:.85}
+
+/* ===== FOOTER frame (yellow) — taller ===== */
+.foot{min-height:104vh;justify-content:flex-start;padding-top:clamp(80px,11vw,170px);padding-bottom:clamp(48px,6vw,88px)}
+.foot .top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(24px,3vw,50px);margin-bottom:auto}
+@media(max-width:860px){.foot .top{grid-template-columns:1fr}}
+.foot .intro{font-size:clamp(17px,1.6vw,23px);font-weight:600;max-width:34ch;line-height:1.35;margin-bottom:26px}
+.foot .quote{background:var(--white);border-radius:9999px;display:inline-flex;align-items:center;gap:14px;padding:12px 12px 12px 26px;font-weight:600;font-size:17px}
+.foot .quote .arw{width:34px;height:34px;border-radius:50%;background:var(--yellow);display:grid;place-items:center}
+.foot h5{font-size:14px;font-weight:600;margin-bottom:14px}
+.foot .col a{display:block;padding:5px 0;font-size:16px;font-weight:500}.foot .col a:hover{opacity:.6}
+.foot .big{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(24px,3vw,50px);align-items:end}
+@media(max-width:860px){.foot .big{grid-template-columns:1fr;gap:34px}}
+.foot .lc{font-size:clamp(74px,14vw,210px);font-weight:500;letter-spacing:-.05em;line-height:.82}
+.foot .lc .wave{margin-top:2px}
+.foot .addr h6{font-size:16px;font-weight:600;margin-bottom:6px}
+.foot .addr p{font-size:15px;color:#5a5533;line-height:1.5;margin-bottom:18px}
+.foot .addr .em{font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.foot .bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:clamp(34px,4vw,60px);font-size:14px;font-weight:500}
+.foot .bar .badge{background:var(--ink);color:var(--yellow);border-radius:6px;padding:5px 12px;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav"><div class="bar">
+  <a href="index.html" class="lg">A Creative Block.</a>
+  <div class="mm has-mega">
+    <button class="mmt">About <svg class="car" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <div class="mega"><div class="cols">
+      <div><h5>The practice</h5><a href="#connect">Our story</a><a href="#connect">The founder</a><a href="#value">Why we exist</a></div>
+      <div><h5>Read</h5><a href="manifesto.html">The Manifesto</a><a href="manifesto.html">Resources</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a></div>
+      <div><h5>Get unstuck</h5><a href="#value">Find your block</a><a href="mailto:hello@acreativeblock.com">Book a call</a></div>
+    </div></div>
+  </div>
+  <div class="mm has-mega">
+    <button class="mmt">What We Do <svg class="car" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <div class="mega"><div class="cols">
+      <div><h5>How we help</h5><a href="#method">Coaching</a><a href="#method">Consultancy</a><a href="#method">1:1 sessions</a><a href="#method">Intensives</a></div>
+      <div><h5>The method</h5><a href="#method">Root first, then a path</a><a href="#value">The belief</a></div>
+      <div><h5>Read</h5><a href="manifesto.html">Insights</a><a href="manifesto.html">Resources</a></div>
+    </div></div>
+  </div>
+  <a class="mmt lnk" href="manifesto.html">Insights</a>
+  <span class="sp"></span>
+  <a href="#value" class="qbtn">Find your block</a>
+  <a href="mailto:hello@acreativeblock.com" class="bbtn">Book a call</a>
+</div></header>
+
+<!-- HERO (green full frame) -->
+<section class="frame f-green hero">
+  <div class="wrap">
+    <h1>Real human<br>support</h1>
+    <p class="sub">Creative-block coaching &amp; consultancy · Lisbon &amp; online</p>
+    <div class="acts"><a href="#value" class="pill dark">What we do</a><a href="mailto:hello@acreativeblock.com" class="pill white">Book a call</a></div>
+  </div>
+</section>
+
+<!-- STATEMENT (beige) -->
+<section class="frame f-beige stmt" id="value">
+  <div class="wrap">
+    <div class="eyebrow">The belief</div>
+    <h2>It's not a &ldquo;just do it&rdquo; problem. It's a disconnection.</h2>
+    <p class="lede">We treat the block as real — not a discipline failure — and give it the tools it actually needs.</p>
+  </div>
+</section>
+
+<!-- STATEMENT (green) -->
+<section class="frame f-green stmt center">
+  <div class="wrap">
+    <h2>One block.<br>One way through.</h2>
+    <p class="lede">We find the pattern with the most pull, name it accurately, and build the path across it — with you.</p>
+  </div>
+</section>
+
+<!-- STATS (beige) -->
+<section class="frame f-beige">
+  <div class="wrap numsplit">
+    <div>
+      <div class="eyebrow">By the numbers</div>
+      <h2>A few numbers behind the work we do.</h2>
+      <p class="lede">Not milestones — the shape of the practice. How we work, who it's for, and the care behind it.</p>
+    </div>
+    <div class="statcol">
+      <div class="statc white"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="big">6</span><p>Six kinds of stuck — usually a mix, with one that pulls hardest. Naming yours is where the work begins.</p></div>
+      <div class="statc coral"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg></span><span class="big">100%</span><p>No one is turned away for money. We consider your income, and we trust you — no proof required.</p></div>
+      <div class="statc green"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18M3 12h18"/></svg></span><span class="big">1:1</span><p>Real human support — coaching when it's about you, consultancy when it's about the work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT (coral) -->
+<section class="frame f-coral stmt center">
+  <div class="wrap">
+    <h2>You don't move<br>alone.</h2>
+    <p class="lede">Community, accountability and partnership — a disconnection is answered with connection.</p>
+  </div>
+</section>
+
+<!-- METHOD (beige) -->
+<section class="frame f-beige method" id="method">
+  <div class="wrap">
+    <div class="eyebrow">How we work · The method</div>
+    <h2>Root first, then a path.</h2>
+    <div class="msteps">
+      <div class="mstep"><div class="mn">1</div><h3>Find the root</h3><p>The stuck you feel is rarely the stuck that's there. We name which block is really in your way.</p></div>
+      <div class="mstep"><div class="mn">2</div><h3>Understand the why</h3><p>We look at what the block protects — fear, meaning, identity — so it loosens its grip.</p></div>
+      <div class="mstep"><div class="mn">3</div><h3>Build the way through</h3><p>A clear path, gentle structure and the accountability to keep going.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (yellow) -->
+<footer class="frame f-yellow foot" id="connect">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <p class="intro">Stuck on something that matters? We'd love to hear what you're working on — and show you the way through. Whenever you're ready.</p>
+        <a href="mailto:hello@acreativeblock.com" class="quote">Book a call <span class="arw"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="col"><h5>Explore</h5><a href="#value">What we do</a><a href="#method">Method</a><a href="manifesto.html">Manifesto</a><a href="manifesto.html">Insights</a></div>
+      <div class="col"><h5>More</h5><a href="manifesto.html">Resources</a><a href="https://sublime.app/collection/sublime-wall-of-love" target="_blank" rel="noopener">Wall of Love</a><a href="#">Privacy Policy</a><a href="#">Cookies</a></div>
+    </div>
+
+    <div class="big">
+      <div class="lc">Let's<br>Connect</div>
+      <div class="addr"><h6>Lisbon</h6><p>Sessions by appointment<br>Mon–Fri · CET</p><a class="em" href="mailto:hello@acreativeblock.com">hello@acreativeblock.com</a></div>
+      <div class="addr"><h6>Online</h6><p>Everywhere, wherever<br>the work is</p><a class="em" href="mailto:hello@acreativeblock.com">Book a session &rarr;</a></div>
+    </div>
+
+    <div class="bar">
+      <span>© 2026 A Creative Block · Understand the why, then move.</span>
+      <span class="badge">Lisbon · 2026</span>
+      <span><a href="#">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — Get unstuck, not stuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FA0CF7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Prototype stand-ins for ManyChat's proprietary fonts: Gabarito ≈ ManyChatGravity, Hanken Grotesk ≈ Rooftop, Space Mono ≈ CoFo Sans Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000;
+  --ink:#0B0B0B;
+  --paper:#FFFFFF;
+  --magenta:#FA0CF7;   /* primary accent */
+  --yellow:#FFF100;
+  --green:#007257;
+  --mint:#EDF2ED;
+  --blue:#3B42C4;
+  --muted:#5b615e;
+  --line:rgba(0,0,0,.12);
+  --disp:"Gabarito",-apple-system,BlinkMacSystemFont,sans-serif;   /* ManyChatGravity */
+  --body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif; /* Rooftop */
+  --mono:"Space Mono",ui-monospace,monospace;   /* CoFo Sans Mono */
+  --w:1360px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 clamp(18px,3vw,40px)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.96;color:var(--black)}
+.disp{font-family:var(--disp)}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+
+/* pill buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:700;border-radius:999px;padding:15px 30px;font-size:16px;cursor:pointer;border:2px solid transparent;transition:.15s;line-height:1}
+.btn-mag{background:var(--magenta);color:#fff;border-color:var(--magenta)}
+.btn-mag:hover{background:#d40bd1;border-color:#d40bd1}
+.btn-black{background:var(--black);color:#fff;border-color:var(--black)}
+.btn-black:hover{background:#222}
+.btn-yellow{background:var(--yellow);color:#000;border-color:#000}
+.btn-yellow:hover{background:#ffe600}
+.btn-out{background:transparent;color:#000;border-color:#000}
+.btn-out:hover{background:#000;color:#fff}
+.btn-white{background:#fff;color:#000;border-color:#fff}
+.btn-white:hover{background:#f0f0f0}
+.btn-sm{padding:11px 22px;font-size:15px}
+
+/* ---------- NAV (mega menu) ---------- */
+nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+nav .in{display:flex;align-items:center;gap:8px;height:70px;max-width:1500px;margin:0 auto;padding:0 clamp(18px,3vw,40px)}
+.brand{font-family:var(--disp);font-weight:900;font-size:21px;letter-spacing:-.03em;color:var(--black);margin-right:18px}
+.brand b{color:var(--magenta)}
+.mitem{position:relative}
+.mitem>button,.mlink{display:inline-flex;align-items:center;gap:6px;background:none;border:0;font-family:var(--body);font-weight:600;font-size:15.5px;color:var(--ink);padding:10px 13px;border-radius:10px;cursor:pointer}
+.mitem>button:hover,.mlink:hover{background:#f4f4f2}
+.car{width:11px;height:11px;transition:.2s}
+.mitem:hover .car{transform:rotate(180deg)}
+.mega{position:absolute;left:0;top:calc(100% + 6px);min-width:520px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 70px -30px rgba(0,0,0,.4);padding:22px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
+.mitem:hover .mega{opacity:1;visibility:visible;transform:none}
+.mega .cols{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+.mega h5{font-family:var(--mono);font-size:11px;color:var(--muted);grid-column:1/-1;margin:4px 0 6px}
+.mega a{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px}
+.mega a:hover{background:var(--mint)}
+.mega a .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;color:#fff}
+.mega a b{font-family:var(--disp);font-weight:700;font-size:15px;display:block;color:var(--black)}
+.mega a span{font-size:13px;color:var(--muted);line-height:1.35}
+.nsp{flex:1}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang{font-family:var(--mono);font-size:12px;color:var(--muted);padding:0 8px}
+.signin{font-weight:700;font-size:15.5px;padding:8px 10px}
+@media(max-width:1000px){.mitem,.signin,.lang{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--green);border-radius:0 0 40px 40px;padding:clamp(60px,8vw,110px) 0 clamp(70px,9vw,120px);position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero .eyebrow{display:inline-block;font-family:var(--mono);font-size:13px;color:#fff;background:rgba(255,255,255,.16);padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.hero h1{color:#fff;font-size:clamp(48px,8vw,104px);font-weight:900;letter-spacing:-.045em}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero .sub{color:rgba(255,255,255,.9);font-size:clamp(18px,1.6vw,22px);margin-top:26px;max-width:44ch}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .fine{margin-top:18px;color:rgba(255,255,255,.75);font-size:14px}
+/* chat mock card */
+.chat{background:#fff;border-radius:26px;padding:22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);transform:rotate(2deg)}
+.chat .top{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.chat .av{width:42px;height:42px;border-radius:50%;background:var(--magenta);display:grid;place-items:center;color:#fff;font-family:var(--disp);font-weight:800}
+.chat .top b{font-family:var(--disp);font-size:15px}
+.chat .top span{font-size:12px;color:var(--muted)}
+.bub{max-width:82%;padding:13px 16px;border-radius:18px;font-size:15px;margin-top:12px;line-height:1.4}
+.bub.them{background:var(--mint);border-bottom-left-radius:5px}
+.bub.me{background:var(--green);color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+.chat .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chat .chip{border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600}
+.chat .chip.on{background:var(--yellow);border-color:#000}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:clamp(64px,8vw,110px) 0}
+.eyebrow2{font-family:var(--mono);font-size:13px;color:var(--magenta)}
+.sec-head h2{font-size:clamp(34px,5.5vw,72px);font-weight:900;letter-spacing:-.04em;margin-top:14px;max-width:16ch}
+.sec-head .lead{font-size:clamp(17px,1.4vw,20px);color:var(--muted);margin-top:18px;max-width:52ch}
+.on-color .sec-head h2,.on-color .eyebrow2{color:#000}
+
+/* colored bands */
+.band{border-radius:40px;padding:clamp(44px,6vw,88px) clamp(28px,5vw,72px);margin:clamp(16px,3vw,28px) 0}
+.band-yellow{background:var(--yellow)}
+.band-blue{background:var(--blue);color:#fff}
+.band-blue h2,.band-blue h3{color:#fff}.band-blue .eyebrow2{color:#fff}
+.band-mint{background:var(--mint)}
+.band-black{background:var(--black);color:#fff;text-align:center}
+.band-black h2{color:#fff}
+
+/* feature trio */
+.trio{margin-top:clamp(34px,4vw,56px);display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fcard{background:#fff;border:2px solid #000;border-radius:24px;padding:30px}
+.fcard .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;color:#fff}
+.fcard h3{font-size:24px;font-weight:800}
+.fcard p{margin-top:10px;font-size:16px;color:var(--muted);line-height:1.5}
+
+/* six blocks */
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(34px,4vw,56px)}
+.bk{border-radius:24px;padding:30px;border:2px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06)}
+.bk .n{font-family:var(--mono);font-size:13px;opacity:.75}
+.bk h3{font-size:23px;font-weight:800;margin-top:12px}
+.bk p{margin-top:10px;font-size:15.5px;opacity:.85;line-height:1.5}
+.bk .dot{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;background:var(--yellow);color:#000;font-family:var(--disp);font-weight:800}
+
+/* method steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:clamp(34px,4vw,56px)}
+.stp .num{font-family:var(--disp);font-weight:900;font-size:40px;color:var(--magenta)}
+.stp h3{font-size:22px;font-weight:800;margin-top:8px}
+.stp p{margin-top:8px;color:var(--muted);font-size:16px;line-height:1.5}
+
+/* big cta band */
+.band-black h2{font-size:clamp(34px,5.5vw,76px);letter-spacing:-.04em;max-width:18ch;margin:0 auto}
+.band-black p{color:rgba(255,255,255,.8);max-width:50ch;margin:20px auto 0;font-size:19px}
+.band-black .cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* faq */
+.faq{max-width:900px;margin:clamp(34px,4vw,50px) auto 0}
+.qi{border-top:2px solid #000;padding:26px 4px}
+.qi:last-child{border-bottom:2px solid #000}
+.qi h3{font-size:22px;font-weight:800}
+.qi p{margin-top:10px;color:var(--muted);font-size:16.5px;line-height:1.6}
+
+/* footer */
+footer{background:var(--black);color:#fff;border-radius:40px 40px 0 0;margin-top:20px;padding:clamp(56px,7vw,96px) 0 44px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+.fbrand{font-family:var(--disp);font-weight:900;font-size:26px}
+.fbrand b{color:var(--magenta)}
+.fabout p{color:rgba(255,255,255,.7);margin-top:14px;max-width:32ch;line-height:1.6;font-size:15px}
+.fcol h5{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px}
+.fcol a{display:block;color:rgba(255,255,255,.85);padding:6px 0;font-size:15px}
+.fcol a:hover{color:var(--yellow)}
+.fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.6);font-size:14px}
+.fbar a{color:rgba(255,255,255,.6)}.fbar a:hover{color:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid,.trio,.blocks,.steps,.fgrid{grid-template-columns:1fr}.chat{transform:none;margin-top:30px}}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+  <a class="brand" href="index.html">A Creative <b>Block</b></a>
+  <div class="mitem">
+    <button>What we do <svg class="car" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <div class="mega"><div class="cols">
+      <h5>The practice</h5>
+      <a href="method.html"><span class="ic" style="background:var(--magenta)">◆</span><span><b>Coaching</b><span>When the block is about you</span></span></a>
+      <a href="method.html"><span class="ic" style="background:var(--green)">▲</span><span><b>Consultancy</b><span>When it's about the work</span></span></a>
+      <a href="method.html"><span class="ic" style="background:var(--blue)">●</span><span><b>1:1 sessions</b><span>An ongoing rhythm</span></span></a>
+      <a href="method.html"><span class="ic" style="background:#000">■</span><span><b>Intensives</b><span>Move something now</span></span></a>
+    </div></div>
+  </div>
+  <div class="mitem">
+    <button>The six blocks <svg class="car" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <div class="mega"><div class="cols">
+      <h5>Which one is yours?</h5>
+      <a href="blocks.html"><span class="ic" style="background:var(--magenta)">1</span><span><b>Directional</b><span>No clear direction</span></span></a>
+      <a href="blocks.html"><span class="ic" style="background:var(--green)">2</span><span><b>Structural</b><span>No system holding it</span></span></a>
+      <a href="blocks.html"><span class="ic" style="background:var(--blue)">3</span><span><b>Execution</b><span>Can't start</span></span></a>
+      <a href="blocks.html"><span class="ic" style="background:#000">4</span><span><b>Identity</b><span>About self, not task</span></span></a>
+      <a href="blocks.html"><span class="ic" style="background:#e0a800;color:#000">5</span><span><b>Skill</b><span>A real gap — yet</span></span></a>
+      <a href="blocks.html"><span class="ic" style="background:var(--green)">6</span><span><b>Environmental</b><span>Life in the way</span></span></a>
+    </div></div>
+  </div>
+  <a class="mlink" href="pricing.html">Pricing</a>
+  <a class="mlink" href="faq.html">FAQ</a>
+  <span class="nsp"></span>
+  <div class="nav-right">
+    <span class="lang">EN</span>
+    <a class="signin" href="mailto:hello@acreativeblock.com">Sign in</a>
+    <a class="btn btn-mag btn-sm" href="questionnaire.html">Get started</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <span class="eyebrow">Coaching &amp; consultancy for creatives</span>
+      <h1>Get unstuck,<br>not <em>stuck</em>.</h1>
+      <p class="sub">Stop fighting the block with willpower. We find the real reason you've stalled — then build the path, structure and support to move.</p>
+      <div class="cta">
+        <a class="btn btn-mag" href="questionnaire.html">Find your block — free</a>
+        <a class="btn btn-white" href="method.html">See how it works</a>
+      </div>
+      <p class="fine">Sliding scale · we trust you on income · no one turned away.</p>
+    </div>
+    <div class="chat">
+      <div class="top"><span class="av">A</span><div><b>A Creative Block</b><br><span>Typically replies in a day</span></div></div>
+      <div class="bub them">Which of these feels most true right now?</div>
+      <div class="bub me">I know what to do… but I just can't start.</div>
+      <div class="bub them">Sounds like an <b>Execution</b> block. Let's look at what it's protecting.</div>
+      <div class="chips"><span class="chip on">Execution</span><span class="chip">Directional</span><span class="chip">Identity</span></div>
+    </div>
+  </div></div>
+</header>
+
+<!-- YELLOW: why it works -->
+<section>
+  <div class="wrap">
+    <div class="band band-yellow on-color reveal">
+      <div class="sec-head">
+        <div class="eyebrow2">A practice like no other</div>
+        <h2>Root first, then a path.</h2>
+        <p class="lead" style="color:#222">Most advice hands you a system and steps away. We start with the <em>why</em> beneath the block — then build the structure to move through it, together.</p>
+      </div>
+      <div class="trio">
+        <div class="fcard"><div class="ic" style="background:var(--magenta)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.5 6.5L7 17l2.5-6.5z"/></svg></div><h3>Find the real block</h3><p>The stuck you feel is rarely the stuck that's there. We name which of the six is actually in your way.</p></div>
+        <div class="fcard"><div class="ic" style="background:var(--green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5A6 6 0 1 0 6 8c0 1 .2 2.2 1.5 3.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><h3>Understand the why</h3><p>We look at what the block protects — fear, meaning, identity — so it loosens instead of being forced away.</p></div>
+        <div class="fcard"><div class="ic" style="background:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></div><h3>Move — accompanied</h3><p>A clear path and gentle structure, plus accountability and space. You're not handed a worksheet and left alone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUE: six blocks -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band band-blue reveal">
+      <div class="sec-head">
+        <div class="eyebrow2">The framework</div>
+        <h2>Six blocks. One is yours.</h2>
+        <p class="lead" style="color:rgba(255,255,255,.85)">Almost every creative stall is one of these six. Naming yours is most of the work.</p>
+      </div>
+      <div class="blocks">
+        <div class="bk"><div class="dot">01</div><div class="n">DIRECTIONAL</div><h3>No clear direction</h3><p>Too many paths, or none that feel right — so nothing moves.</p></div>
+        <div class="bk"><div class="dot">02</div><div class="n">STRUCTURAL</div><h3>No system holding it</h3><p>Good intentions with nowhere to land.</p></div>
+        <div class="bk"><div class="dot">03</div><div class="n">EXECUTION</div><h3>Can't start</h3><p>You know what to do and still can't begin. The plan-to-action gap.</p></div>
+        <div class="bk"><div class="dot">04</div><div class="n">IDENTITY</div><h3>“Who am I to make this?”</h3><p>The block is about self, not the task.</p></div>
+        <div class="bk"><div class="dot">05</div><div class="n">SKILL</div><h3>A real gap — yet</h3><p>Between the vision in your head and what your hands can do.</p></div>
+        <div class="bk"><div class="dot">06</div><div class="n">ENVIRONMENTAL</div><h3>Life in the way</h3><p>Time, money, noise, people — quietly working against the work.</p></div>
+      </div>
+      <div style="margin-top:34px"><a class="btn btn-yellow" href="questionnaire.html">Find your block →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- MINT: method -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band band-mint on-color reveal">
+      <div class="sec-head"><div class="eyebrow2">The method</div><h2>Three moves.</h2></div>
+      <div class="steps">
+        <div class="stp"><div class="num">01</div><h3>Find the root</h3><p>We name which of the six blocks has the most pull right now — the honest one, not the flattering one.</p></div>
+        <div class="stp"><div class="num">02</div><h3>Understand the why</h3><p>We look at what the block protects, so it can loosen instead of being forced away.</p></div>
+        <div class="stp"><div class="num">03</div><h3>Build the way through</h3><p>A path and gentle structure, plus accountability and space to keep going.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center"><div class="eyebrow2">Questions</div><h2 style="margin-left:auto;margin-right:auto">The honest ones.</h2></div>
+    <div class="faq">
+      <div class="qi"><h3>Do I have to be a professional creative?</h3><p>No. This is for anyone with a project that matters — a book, an album, a side idea. You don't need to make a living from it to get stuck, or unstuck.</p></div>
+      <div class="qi"><h3>Is this coaching or consultancy?</h3><p>Both. Sometimes the block is about you (identity, fear, direction) and we coach; sometimes it's about the work itself and we consult. Most people need a little of each.</p></div>
+      <div class="qi"><h3>What if I can't afford it?</h3><p>We price on a sliding scale, consider your income, and never ask you to prove it. No one is turned away for lack of money.</p></div>
+      <div class="qi"><h3>Where do sessions happen?</h3><p>Online, everywhere — and in person around Lisbon. What matters is the work, not the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLACK CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band band-black reveal">
+      <h2>Get to the why, then move.</h2>
+      <p>Start with a short, free look at which of the six is really in your way. No pressure, no jargon.</p>
+      <div class="cta">
+        <a class="btn btn-mag" href="questionnaire.html">Find your block — free</a>
+        <a class="btn btn-out" style="color:#fff;border-color:#fff" href="mailto:hello@acreativeblock.com">Book a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fabout">
+        <div class="fbrand">A Creative <b>Block</b></div>
+        <p>Understand the why beneath your block — then move through it. Lisbon &amp; online, everywhere.</p>
+      </div>
+      <div class="fcol"><h5>PRACTICE</h5><a href="blocks.html">The six blocks</a><a href="method.html">Method</a><a href="pricing.html">Pricing</a><a href="questionnaire.html">Find your block</a></div>
+      <div class="fcol"><h5>READ</h5><a href="faq.html">FAQ</a><a href="mailto:hello@acreativeblock.com">Manifesto</a><a href="mailto:hello@acreativeblock.com">Blog</a></div>
+      <div class="fcol"><h5>GET IN TOUCH</h5><a href="mailto:hello@acreativeblock.com">hello@acreativeblock.com</a><a href="mailto:hello@acreativeblock.com">Book a call</a><a href="mailto:hello@acreativeblock.com">Partner with us</a></div>
+    </div>
+    <div class="fbar"><span>© 2026 A Creative Block · Understand the why, then move.</span><div style="display:flex;gap:20px"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div></div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
