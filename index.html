@@ -3,197 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Creative Block — Website versions</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233b39e0'/%3E%3Cpath d='M16 5 L19 13 L27 16 L19 19 L16 27 L13 19 L5 16 L13 13 Z' fill='%23e7f6a0'/%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>A Creative Block</title>
+<meta name="description" content="A Creative Block — a new practice helping creatives get unstuck. Coming soon.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f0e6;--ink:#171615;--muted:#6f6a60;--blue:#3b39e0;--red:#fa4616;--line:rgba(23,22,21,.12);--paper:#fffdf7;--shadow:0 14px 40px rgba(23,22,21,.12)}
+:root{--bg:#FAF9F6;--ink:#232323;--muted:#6B7280;--accent:#4F46E5}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1480px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(16px,3vw,40px)}
-header.top{margin-bottom:clamp(28px,4vw,48px)}
-.kick{font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--muted);margin-bottom:12px}
-h1{font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:clamp(40px,8vw,104px)}
-.sub{font-size:clamp(16px,1.6vw,20px);font-weight:500;color:#3a372f;max-width:680px;margin-top:18px}
-.count{margin-top:18px;font-size:14px;font-weight:700;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(18px,2.4vw,30px)}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
-.card:hover{transform:translateY(-5px);box-shadow:0 22px 56px rgba(23,22,21,.18)}
-.card.is-fav{border-color:#ff7d92;box-shadow:0 14px 40px rgba(255,59,92,.18)}
-.thumb{position:relative;width:100%;aspect-ratio:1280/860;overflow:hidden;background:#e9e4d8;border-bottom:1px solid var(--line)}
-.thumb iframe{position:absolute;top:0;left:0;width:1280px;height:860px;border:0;transform-origin:top left;pointer-events:none;background:#fff}
-.thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;color:var(--muted);font-size:14px;text-align:center;padding:20px}
-.thumb .vtag{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-weight:900;font-size:13px;letter-spacing:.5px;padding:6px 12px;border-radius:30px;z-index:2}
-.thumb .favflag{position:absolute;top:12px;right:12px;z-index:2;width:30px;height:30px;border-radius:50%;background:#fff;display:none;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-.card.is-fav .thumb .favflag{display:grid}
-.thumb .favflag svg{width:16px;height:16px;fill:#ff3b5c}
-.thumb a.full{position:absolute;inset:0;z-index:3}
-.meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.meta .row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.meta h3{font-weight:900;font-size:19px;letter-spacing:-.02em;line-height:1.05}
-.meta .date{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
-.meta p{font-size:14px;font-weight:500;color:#3a372f;line-height:1.45}
-.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
-.badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:30px;background:#eceaff;color:var(--blue)}
-.badge.site{background:#ffe7df;color:var(--red)}
-.actions{margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:8px}
-a{text-decoration:none;color:inherit}
-.open{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:30px;transition:transform .15s;margin-right:auto}
-.open:hover{transform:translateY(-2px)}
-.iconbtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .15s,border-color .15s,background .15s;flex-shrink:0;color:var(--muted)}
-.iconbtn:hover{border-color:var(--ink);transform:translateY(-2px);color:var(--ink)}
-.iconbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.fav.on{background:#ffe1e6;border-color:#ff6b81;color:#ff3b5c}
-.fav.on svg{fill:#ff3b5c;stroke:#ff3b5c}
-.archsec{margin-top:clamp(40px,6vw,72px)}
-.archhead{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;border-top:2px solid var(--line);padding-top:22px}
-.archhead h2{font-weight:900;font-size:22px;letter-spacing:-.02em}
-.archhead .chev{margin-left:auto;font-size:14px;font-weight:800;color:var(--muted)}
-.archsec.collapsed #archGrid{display:none}
-#archGrid{margin-top:22px;opacity:.85}
-.archsec.collapsed .archhead .chev:after{content:"Show"}
-.archsec:not(.collapsed) .archhead .chev:after{content:"Hide"}
-footer{margin-top:40px;font-size:13px;color:var(--muted);font-weight:600;line-height:1.6}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;padding:32px}
+.card{max-width:560px;width:100%;text-align:center}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.01em;margin-bottom:34px}
+.brand .dot{color:var(--accent)}
+h1{font-size:clamp(28px,6vw,42px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:20px}
+p{color:var(--muted);font-size:17px;max-width:44ch;margin:0 auto 16px}
+.tag{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);background:rgba(79,70,229,.09);padding:7px 14px;border-radius:999px;margin-bottom:26px}
+.contact{margin-top:34px;padding-top:26px;border-top:1px solid #E5E7EB}
+.contact a{color:var(--ink);font-weight:600;font-size:17px;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+.contact a:hover{color:var(--accent)}
+.foot{margin-top:40px;font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <div class="kick">A Creative Block</div>
-    <h1>Website versions</h1>
-    <p class="sub">Every design direction we've built. Each card is a live preview of its home page — click to open the full version, heart your favorites, or archive the ones you're done with.</p>
-    <div class="count" id="count"></div>
-  </header>
-  <div class="grid" id="grid"></div>
-
-  <section class="archsec collapsed" id="archsec" style="display:none">
-    <div class="archhead" id="archHead"><h2>Archived</h2><span class="chev" id="chev"></span></div>
-    <div class="grid" id="archGrid"></div>
-  </section>
-
-  <footer id="foot"></footer>
-</div>
-
-<script>
-/* ===== Add a new entry at the TOP whenever a version is created ===== */
-const VERSIONS = [
-  {v:"44",   tag:"ManyChat",               date:"2026-07-14", site:true, home:"v44-manychat/index.html",   desc:"A ManyChat-style take: huge chunky rounded display type (Gabarito standing in for ManyChatGravity, Hanken Grotesk for Rooftop, Space Mono for CoFo mono), bold full-colour rounded bands — deep green #007257 hero, yellow #FFF100, blue #3B42C4 and black — with the signature magenta #FA0CF7 pill CTAs. Mega-menu nav, a tilted chat-bubble mock in the hero, three-up feature cards, the six blocks as colour cards, method steps and a big black footer."},
-  {v:"43",   tag:"Tally",                  date:"2026-07-14", site:true, home:"v43-tally/index.html",       desc:"A faithful take on Tally.so's design: Inter throughout, a tight 976px centred column on near-white #FEFEFE, big black headings with -0.045em tracking, a single blue #0070D7 accent and small 8px radii. Signature floating face illustrations (recreated as original SVGs) flank a centred hero, a browser-framed one-question mock stands in for the 'form', then clean three-up feature/method rows, a six-blocks grid, a blue sliding-scale callout and a minimal footer."},
-  {v:"42",   tag:"Hello · indigo",         date:"2026-07-13", site:true, home:"v42-indigo/index.html",     desc:"The v40 'Hello' card system re-skinned in Inter on a soft off-white #FAF9F6 ground with white surfaces and cool grey borders. A refined palette led by indigo #4F46E5 (highlighted words, numbers, buttons), coral #F9735B period accents and sage #8CBF9F secondary cards — same rounded header card, live Lisbon clock, tall numbered blocks, method list and dark footer as v40, but calmer and more contemporary."},
-  {v:"41",   tag:"MindMarket kit",         date:"2026-07-13", site:true, home:"v41-mindmarket/index.html", desc:"A MindMarket-style kit in the Cy Grotesk typeface: a white pill menu on a beige ground, a bright-green rounded hero ('Real human support'), beige stat sections with tilted rounded number cards (white/green/yellow) and hand-wavy underline accents, the six blocks and method as colour cards, and a big yellow 'Let's Connect' footer with a green wavy underline, link columns and locations."},
-  {v:"40",   tag:"Hello · vertical cards", date:"2026-07-11", site:true, home:"v40-hello/index.html",       desc:"Carl Hauser's card system taken vertical and big, in the Raw Materials 'Hello' vibe: a cream #f4e9e1 ground, near-black type and a single orange #ff3d00 accent. A rounded header card with a plus-menu and live Lisbon clock, two large numbered statements (01 The belief / 02 The approach), the six blocks as tall portrait cards with date/ID metadata (two inverted to black), a calm method list and an oversized CTA — mostly minimal."},
-  {v:"39",   tag:"Raw Materials palette",  date:"2026-07-11", site:true, home:"v39-follow/index.html",     desc:"A copy of v17 recoloured with the real therawmaterials.com palette — cream base, near-black ink, and vivid yellow #ffff00, red #ff003d, blue #2835f8, orange #ff3d00, green #05ff00 and pink #fa89a8 accents. Over a #f9f2e9 ground sits a noise texture using their exact recipe (color-burn blend, cover)."},
-  {v:"38",   tag:"Mind Room mega-menu",   date:"2026-07-11", site:true, home:"v38-megamenu/index.html",   desc:"The Mind Room-style header: few top-level items (About, What We Do, Library, Book a call, search) with a full-width mega-menu that drops down on hover — columns for how we help, the six blocks, learn, and a featured panel — plus a circular cyan badge logo. Clean calm body in the die-grotesk font (kept from v37), and a big Abbotsford Convent-style dark footer with a statement, newsletter signup, full sitemap, follow, and legal links."},
-  {v:"37",   tag:"WAM Studio style",      date:"2026-07-11", site:true, home:"v37-wam/index.html",        desc:"wam.studio style: clean white ground with the real die-grotesk typeface (large regular-weight display), and their muted-vibrant colour-block palette (cyan, yellow, rose, orange, green, maroon) used as graphic panels instead of photos — the six blocks become six colour panels, plus a colour-bar band and a full-bleed maroon statement. Less image-based, more type-and-colour."},
-  {v:"36",   tag:"AngelList 2023 style",  date:"2026-07-11", site:true, home:"v36-scrollcolor/index.html", desc:"angellist.com/2023 'Year in Review' style: dark teal #001d21 base under a fine dot-grid, salmon #fb8569 accent, Space Mono part-labels ('PART [01]') and thin salmon rules, huge Space Grotesk display type, a bordered stat-grid of the six blocks. The background colour shifts as you scroll — teal → indigo → warm cream → plum → teal — and the text auto-inverts to stay readable."},
-  {v:"35",   tag:"Carl Hauser style",     date:"2026-07-11", site:true,  home:"v35-carlhauser/index.html", desc:"carlhauser.com 'theprocess' style: light-grey #e6e6e6 canvas of rounded cards, Inter SemiBold with tight tracking, a header card with a plus-bulleted menu, social links and a live Lisbon clock, then a monochrome masonry of the six blocks as archive cards with date/ID metadata, plus manifesto and quote notes."},
-  {v:"34",   tag:"Human Voiceover style", date:"2026-07-11", site:true,  home:"v34-humanvoice/index.html",  desc:"humanvoiceover.com style: clean near-white ground with soft #f8fafd panels and periwinkle (#b8cce7) tints, dark #25292e text, and enormous Switzer Medium display type. Opens with their signature counter loading intro ('Finding your perfect block…' 0→100), a sticky glass nav, a giant-type six-block list, three soft method cards, a full-bleed dark statement and an oversized CTA."},
-  {v:"33",   tag:"Creative Boom style",   date:"2026-07-11", site:true,  home:"v33-creativeboom/index.html", desc:"Creative Boom / The Studio community style: friendly editorial layout, warm cream hero band, Hanken Grotesk (standing in for ABC Diatype), bold flat character illustrations and photos borrowed from Creative Boom as placeholders, a playful green/yellow/orange/pink/blue palette, pill buttons, thin-rule three-column feature grid, rounded six-block cards, a green statement band and yellow CTA."},
-  {v:"32",   tag:"WE MAKE THINGS style",  date:"2026-07-11", site:true,  home:"v32-wmt/index.html",       desc:"wemakethings.de style: pure black-on-white, hard 1px black hairlines dividing every section into a Swiss modular grid, uppercase neo-grotesque type (Geist, standing in for the proprietary Maison Neue), a numbered 01–06 block-list that inverts to black on hover, a scrolling marquee band, and a bordered four-column contact grid."},
-  {v:"19",   tag:"CTRL muted style",  date:"2026-06-15", site:true,  home:"v19-ctrl/index.html",      desc:"A copy of v17 restyled to ctrl.xyz: an off-white canvas, Schibsted Grotesk medium-weight type in normal case, a muted palette with colour used only as small accents, 2px-outlined rounded cards and pills, a clean top nav, and a big FAQ accordion at the bottom."},
-  {v:"31",   tag:"Craft.do style",       date:"2026-06-15", site:true,  home:"v31-craft/index.html",      desc:"Craft.do layout: warm off-white, centered serif headlines (Newsreader) over an Inter body, and every section built from the exact same template — centred eyebrow + heading + sub + one big rounded soft-pastel panel (blue/green/peach/lilac/yellow/cream) with a visual. Stills photos."},
-  {v:"30",   tag:"Corners style",        date:"2026-06-15", site:true,  home:"v30-corners/index.html",    desc:"Corners New York style: minimal Helvetica on white, classic hyperlink-blue (#0000ee) underlined links and orange (#fe531d) accents, a simple text-link menu, an art-store catalogue grid for the six blocks, and a Visit-style info list. Stills placeholder photos."},
-  {v:"29",   tag:"★ Claude pick",        date:"2026-06-15", site:true,  home:"v29-claude-pick/index.html", desc:"The synthesis, now joyful: vibrant gradient block-cards in a one-at-a-time slider, colour-blob hero, a psychedelic statement band, marker highlights and playful motion — professional but full of colour. Complete multi-page site with the o-p-e-n voice and real photography."},
-  {v:"28",   tag:"Stills style",         date:"2026-06-15", site:true,  home:"v28-stills/index.html",     desc:"Stills.com layout: warm off-white, huge light-serif headlines (Fraunces) over an Inter body, a full-bleed image showcase, three feature notes, and the signature masonry image gallery (the six blocks) \u2014 same o-p-e-n voice, images in colour."},
-  {v:"27",   tag:"PhMuseum style",      date:"2026-06-15", site:true,  home:"v27-phmuseum/index.html",   desc:"PhMuseum-style editorial layout: a left sidebar menu with a sub-menu, black-on-warm-white, a fact-list intro, an outlined six-block grid and a tag-pill row \u2014 broken up by full-width muted colour bands (slate/terracotta/olive) so it breathes. Copy in the o-p-e-n voice."},
-  {v:"26",   tag:"OPEN language",       date:"2026-06-15", site:true,  home:"v26-open/index.html",      desc:"v13 stripped to a minimal monochrome wireframe — hairline boxes, no colour, typography-led — with all the homepage copy rewritten in o-p-e-n.com\u2019s calm, spacious, present-tense voice."},
-  {v:"25",   tag:"Follow.art style",    date:"2026-06-15", site:true,  home:"v25-follow/index.html",     desc:"Follow.art vibe: full-width orange nav, full-screen sections that stack on scroll with square corners, the exact orange \u2192 sage-green \u2192 blue-grey \u2192 dusty-pink colour sequence, thin white hairlines inside blocks, hand-drawn doodles, and scroll + doodle animations."},
-  {v:"24",   tag:"Dupez Studio style",  date:"2026-06-15", site:true,  home:"v24-dupez/index.html",      desc:"Bold studio-agency look: a thick orange frame on white, heavy Archivo headings in orange with little italic-serif section labels, a centred hero statement, outlined block cards, a numbered process, a contact form, and a giant footer wordmark."},
-  {v:"23",   tag:"Headspace style",    date:"2026-06-15", site:true,  home:"v23-headspace/index.html", desc:"Headspace-style: warm cream canvas, a friendly geometric grotesk (Hanken ≈ Apercu), soft blobby illustration, pill buttons, a horizontal moment-slider of the six blocks, three colourful quote cards, and a clean FAQ accordion."},
-  {v:"22",   tag:"Primer style",      date:"2026-06-15", site:true,  home:"v22-primer/index.html",    desc:"The v13 content in primer.com\u2019s editorial style: black-on-white, a Fraunces serif display in Title Case with an Inter grotesk body, sharp square corners, a visible flat top nav, full-bleed yellow/blue/black accent blocks, and square placeholder images."},
-  {v:"21",   tag:"Stormlikes style",  date:"2026-06-15", site:true,  home:"v21-stormlikes/index.html", desc:"The full v13 site in a chunky cartoon style: white canvas, thick black outlines and hard offset shadows, vibrant bordered cards, a white pill nav, and a hand-drawn block mascot \u2014 plus a custom character for each of the six blocks."},
-  {v:"20",   tag:"Navigate style",   date:"2026-06-14", site:true,  home:"v20-navigate/index.html",  desc:"The full v13 site reskinned to the Navigate look: dark canvas, a big rounded cream card, a compact dark pill nav with green CTA, heavy black grotesk headlines, and orange/periwinkle/green accent blocks."},
-  {v:"18",   tag:"MindMarket style",   date:"2026-06-15", site:true,  home:"v18-mindmarket/index.html", desc:"Rebuilt as the full v13 site in mindmarket.com’s style: Inter medium with giant tight headlines, a cream canvas, a green hero, big rounded accent cards, the six blocks as an overlapping rounded-card stack, and a yellow “Let’s Connect” footer with a wavy underline."},
-    {v:"17",   tag:"Raw Materials style",   date:"2026-06-14", site:true,  home:"v17-raw-materials/index.html",  desc:"The full v13 site (all pages, full content) reskinned to Raw Materials: warm cream canvas, orange-red accent, big regular-weight type, and a left index menu with colored active state."},
-  {v:"16",   tag:"Slush style",       date:"2026-06-15", site:true,  home:"v16-slush/index.html",     desc:"Rebuilt as the full v13 site in slush.app’s language: a true-black base with vibrant blue/yellow/lavender/mint/orange/indigo colour blocks, a wide bold display face (Bricolage ≈ Lateral) over an Inter body, pill buttons, a moving marquee, and a giant footer wordmark."},
-  {v:"15",   tag:"Superhuman style",   date:"2026-06-14", site:false, home:"v15-superhuman/index.html",                   desc:"Dark, Superhuman-inspired single page. The six blocks become a sticky-tab, scroll-synced 'suite' — each block explained as you scroll. v13 content."},
-  {v:"14",   tag:"Warm (why-led)",    date:"2026-06-14", site:true,  home:"v14-warm-why-led/index.html",                desc:"v13's exact content and structure, reskinned with Version 6's warm palette and Anton display type — a warmer, poster-flavoured take."},
-  {v:"13",   tag:"Why-led",           date:"2026-06-14", site:true,  home:"v13-why-led/index.html",            desc:"The bold-color site, repositioned: leads with WHY you keep getting stuck (psychological depth), with structure and accountability as the reassurance. Current direction."},
-  {v:"12",   tag:"Bold color",        date:"2026-06-13", site:true,  home:"v12-bold-color/index.html",        desc:"Vivid color blocks, huge grotesk type, photos masked into stars and blobs. The 'get unstuck, then move' framing."},
-  {v:"11",   tag:"Editorial",         date:"2026-06-13", site:true,  home:"v11-editorial/index.html",          desc:"Calm, magazine-style layout with refined serif headlines and lots of white space."},
-  {v:"10.1", tag:"Playful (rounded)", date:"2026-06-12", site:true,  home:"v10-1-playful-rounded/index.html",desc:"Friendly rounded cards and soft pills — the playful style built out as a full multi-page site."},
-  {v:"10",   tag:"Playful (flat)",    date:"2026-06-11", site:false, home:"v10-playful-flat/index.html",           desc:"First take on the playful style — flatter corners, single landing page."},
-  {v:"9",    tag:"Warm",              date:"2026-06-11", site:false, home:"v9-warm/index.html",                      desc:"Early warm, earthy multi-page home concept (its inner pages later became Version 10.1)."},
-  {v:"8",    tag:"Bold knowledge",    date:"2026-06-11", site:false, home:"v8-bold-knowledge/index.html",            desc:"Learning-led, confident layout — 'learn, unblock, create'."},
-  {v:"7",    tag:"Maximal",           date:"2026-06-08", site:false, home:"v7-maximal/index.html",                   desc:"Busy, expressive, lots going on — a maximalist exploration."},
-  {v:"6.1",  tag:"Warm serif (live)", date:"2026-06-07", site:false, home:"v6-1-warm-serif-live/index.html",       desc:"Refined, interactive variation of the warm-serif direction."},
-  {v:"6",    tag:"Warm serif",        date:"2026-06-07", site:false, home:"v6-warm-serif/index.html",                desc:"Warm serif headlines — 'where stuck becomes moving'."},
-  {v:"5",    tag:"Friendly",          date:"2026-06-07", site:false, home:"v5-friendly/index.html",                  desc:"Approachable, rounded and welcoming first concept."},
-  {v:"4",    tag:"Clean",             date:"2026-06-06", site:false, home:"v4-clean/index.html",                     desc:"Stripped-back, tidy layout — 'find the block, then move'."},
-  {v:"3",    tag:"Minimal",           date:"2026-06-06", site:false, home:"v3-minimal/index.html",                   desc:"Quiet, minimal type-led concept."},
-  {v:"2",    tag:"Bright editorial",  date:"2026-06-06", site:false, home:"v2-bright-editorial/index.html",          desc:"Bright, energetic editorial concept — 'real momentum wins'."},
-  {v:"1",    tag:"Original",          date:"2026-06-06", site:false, home:"v1-original/index.html",                  desc:"The very first concept — 'get unstuck, then move'."},
-];
-
-const HEART='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.6 2 5 5.5 5 8 5 9.5 6.8 12 9c2.5-2.2 4-4 6.5-4C22 5 23.6 8.6 22 11.8 19.5 16.4 12 21 12 21z"/></svg>';
-const ARCH='<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>';
-const RESTORE='<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg>';
-
-const grid=document.getElementById('grid'), archGrid=document.getElementById('archGrid'), archsec=document.getElementById('archsec');
-const KEY_F='tcb_favs', KEY_A='tcb_arch';
-function load(k){try{return JSON.parse(localStorage.getItem(k))||[]}catch(e){return[]}}
-function save(k,a){try{localStorage.setItem(k,JSON.stringify(a))}catch(e){}}
-let favs=load(KEY_F), arch=load(KEY_A);
-const fmt=d=>{const[y,m,da]=d.split('-').map(Number);return new Date(y,m-1,da).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});};
-
-function card(x,archived){
-  const enc=encodeURI(x.home), fav=favs.includes(x.v);
-  return `<div class="card${fav?' is-fav':''}" data-v="${x.v}">
-    <div class="thumb">
-      <span class="vtag">v${x.v}</span>
-      <span class="favflag">${HEART}</span>
-      <div class="ph">${x.tag}</div>
-      <iframe loading="lazy" scrolling="no" src="${enc}" title="${x.tag} preview"></iframe>
-      <a class="full" href="${enc}" title="Open ${x.tag}"></a>
+  <main class="card">
+    <div class="brand">A Creative Block<span class="dot">.</span></div>
+    <div class="tag">Coming soon</div>
+    <h1>Getting stuck isn't a flaw. It's a signal.</h1>
+    <p>A Creative Block is a new coaching &amp; consultancy practice helping creatives get moving again when the work stalls — by finding the real reason behind the block, not just pushing harder.</p>
+    <p>We're building it right now, and shaping it around what creatives actually need.</p>
+    <div class="contact">
+      <p style="margin-bottom:12px">Want in early, or just to say hello?</p>
+      <a href="mailto:hello@acreativeblock.com">hello@acreativeblock.com</a>
     </div>
-    <div class="meta">
-      <div class="row"><h3>Version ${x.v} — ${x.tag}</h3><span class="date">${fmt(x.date)}</span></div>
-      <div class="badges"><span class="badge ${x.site?'site':''}">${x.site?'Full site':'Single page'}</span></div>
-      <p>${x.desc}</p>
-      <div class="actions">
-        <a class="open" href="${enc}">Open →</a>
-        <button class="iconbtn fav${fav?' on':''}" data-act="fav" title="${fav?'Unfavorite':'Add to favorites'}">${HEART}</button>
-        <button class="iconbtn arch" data-act="${archived?'restore':'arch'}" title="${archived?'Restore from archive':'Archive (hide)'}">${archived?RESTORE:ARCH}</button>
-      </div>
-    </div>
-  </div>`;
-}
-
-function render(){
-  const active=VERSIONS.filter(x=>!arch.includes(x.v));
-  active.sort((a,b)=>(favs.includes(b.v)?1:0)-(favs.includes(a.v)?1:0));
-  const archived=VERSIONS.filter(x=>arch.includes(x.v));
-  grid.innerHTML=active.map(x=>card(x,false)).join('');
-  archGrid.innerHTML=archived.map(x=>card(x,true)).join('');
-  archsec.style.display=archived.length?'block':'none';
-  document.getElementById('count').textContent=active.length+' shown'+(favs.length?' · '+favs.length+' favorite'+(favs.length>1?'s':''):'')+(archived.length?' · '+archived.length+' archived':'');
-  document.querySelector('#archHead h2').textContent='Archived ('+archived.length+')';
-  sizeThumbs();
-}
-
-function onClick(e){
-  const btn=e.target.closest('.iconbtn'); if(!btn) return;
-  e.preventDefault();
-  const v=btn.closest('.card').dataset.v, act=btn.dataset.act;
-  if(act==='fav'){ favs=favs.includes(v)?favs.filter(x=>x!==v):[...favs,v]; save(KEY_F,favs); }
-  else if(act==='arch'){ if(!arch.includes(v))arch=[...arch,v]; save(KEY_A,arch); }
-  else if(act==='restore'){ arch=arch.filter(x=>x!==v); save(KEY_A,arch); }
-  render();
-}
-grid.addEventListener('click',onClick);
-archGrid.addEventListener('click',onClick);
-document.getElementById('archHead').addEventListener('click',()=>{archsec.classList.toggle('collapsed');requestAnimationFrame(sizeThumbs);setTimeout(sizeThumbs,80);});
-
-function sizeThumbs(){
-  document.querySelectorAll('.thumb').forEach(t=>{
-    const f=t.querySelector('iframe'); if(f && t.clientWidth>0) f.style.transform='scale('+(t.clientWidth/1280)+')';
-  });
-}
-window.addEventListener('resize',sizeThumbs);
-window.addEventListener('load',sizeThumbs);
-
-document.getElementById('foot').innerHTML="Previews render live from each version's home page. Favorites and archived state are remembered in this browser. Archiving hides a version here without deleting anything — ask me to physically move a folder into <b>archive/</b> if you want to declutter the files on disk.";
-render();
-</script>
+    <div class="foot">© 2026 A Creative Block · Lisbon &amp; online</div>
+  </main>
 </body>
 </html>

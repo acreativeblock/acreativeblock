@@ -1,0 +1,7 @@
+# OS / editor junk — never deploy these
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
