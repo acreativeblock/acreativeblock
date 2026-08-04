@@ -83,35 +83,41 @@ textarea{min-height:88px}
     <!-- YOU & THE PROBLEM -->
     <div class="sec"><div class="sec-h">You &amp; the problem</div>
 
-      <div class="q core" data-req><span class="qt">1. What is your main creative field or discipline? <span class="req">*</span></span>
-        <input type="text" name="q1" placeholder="e.g. illustration, music, writing, design…">
+      <div class="q core" data-req><span class="qt">1. What creative field(s) do you work in? <span class="req">*</span></span>
+        <div class="hint">List as many as you like.</div>
+        <input type="text" name="q1" placeholder="e.g. illustration &amp; music · writing · design · film…">
       </div>
 
-      <div class="q core" data-req><span class="qt">2. How often do you feel creatively blocked or stuck? <span class="req">*</span></span>
-        <div class="opts" data-single="q2">
-          <label class="opt"><input type="radio" name="q2" value="Rarely">Rarely</label>
-          <label class="opt"><input type="radio" name="q2" value="A few times a year">A few times a year</label>
-          <label class="opt"><input type="radio" name="q2" value="Monthly">Monthly</label>
-          <label class="opt"><input type="radio" name="q2" value="Weekly">Weekly</label>
-          <label class="opt"><input type="radio" name="q2" value="Almost daily">Almost daily</label>
-        </div>
+      <div class="q core"><span class="qt">2. What's the last project you got stuck on?</span>
+        <div class="hint">Whatever it was for you — e.g. writing a book, a dance piece, an album, a documentary, editing a photo set.</div>
+        <input type="text" name="q2" placeholder="The project you were working on when you felt stuck…">
       </div>
 
-      <div class="q core" data-req><span class="qt">3. Which type of block hits you the most? <span class="req">*</span></span>
-        <div class="hint">Pick the one with the most pull right now.</div>
+      <div class="q core" data-req><span class="qt">3. How often do you feel creatively blocked or stuck? <span class="req">*</span></span>
         <div class="opts" data-single="q3">
-          <label class="opt"><input type="radio" name="q3" value="Directional">Directional — no clear direction</label>
-          <label class="opt"><input type="radio" name="q3" value="Structural">Structural — the project is too chaotic</label>
-          <label class="opt"><input type="radio" name="q3" value="Execution">Execution — you avoid doing it</label>
-          <label class="opt"><input type="radio" name="q3" value="Identity">Identity — fear you're not good enough</label>
-          <label class="opt"><input type="radio" name="q3" value="Skill">Skill — a technique you lack</label>
-          <label class="opt"><input type="radio" name="q3" value="Environmental">Environmental — burnout / time / space</label>
+          <label class="opt"><input type="radio" name="q3" value="Rarely">Rarely</label>
+          <label class="opt"><input type="radio" name="q3" value="A few times a year">A few times a year</label>
+          <label class="opt"><input type="radio" name="q3" value="Monthly">Monthly</label>
+          <label class="opt"><input type="radio" name="q3" value="Weekly">Weekly</label>
+          <label class="opt"><input type="radio" name="q3" value="Almost daily">Almost daily</label>
         </div>
       </div>
 
-      <div class="q core"><span class="qt">4. How do creative blocks affect you?</span>
+      <div class="q core" data-req><span class="qt">4. Which type of block hits you the most? <span class="req">*</span></span>
+        <div class="hint">Pick the one with the most pull right now.</div>
+        <div class="opts" data-single="q4">
+          <label class="opt"><input type="radio" name="q4" value="Directional">Directional — no clear direction</label>
+          <label class="opt"><input type="radio" name="q4" value="Structural">Structural — the project is too chaotic</label>
+          <label class="opt"><input type="radio" name="q4" value="Execution">Execution — you avoid doing it</label>
+          <label class="opt"><input type="radio" name="q4" value="Identity">Identity — fear you're not good enough</label>
+          <label class="opt"><input type="radio" name="q4" value="Skill">Skill — a technique you lack</label>
+          <label class="opt"><input type="radio" name="q4" value="Environmental">Environmental — burnout / time / space</label>
+        </div>
+      </div>
+
+      <div class="q core"><span class="qt">5. How do creative blocks affect you?</span>
         <div class="hint">Select all that apply.</div>
-        <div class="opts" data-multi="q4">
+        <div class="opts" data-multi="q5">
           <label class="opt"><input type="checkbox" value="Lost income">Lost income</label>
           <label class="opt"><input type="checkbox" value="Missed deadlines">Missed deadlines</label>
           <label class="opt"><input type="checkbox" value="Lower confidence">Lower confidence</label>
@@ -124,13 +130,13 @@ textarea{min-height:88px}
 
     <!-- WHAT YOU DO NOW -->
     <div class="sec"><div class="sec-h">What you do now</div>
-      <div class="q core"><span class="qt">5. Have you ever paid for personal support or guidance?</span>
+      <div class="q core"><span class="qt">6. Have you ever paid for personal support or guidance?</span>
         <div class="hint">Of any kind — a coach, therapist, mentor, course, programme, membership…</div>
-        <div class="opts inline" data-single="q5">
-          <label class="opt"><input type="radio" name="q5" value="Yes">Yes</label>
-          <label class="opt"><input type="radio" name="q5" value="No">No</label>
+        <div class="opts inline" data-single="q6">
+          <label class="opt"><input type="radio" name="q6" value="Yes">Yes</label>
+          <label class="opt"><input type="radio" name="q6" value="No">No</label>
         </div>
-        <input type="text" name="q5b" style="margin-top:10px" placeholder="If yes — what, and roughly how much?">
+        <input type="text" name="q6b" style="margin-top:10px" placeholder="If yes — what, and roughly how much?">
       </div>
     </div>
 
@@ -138,24 +144,24 @@ textarea{min-height:88px}
     <div class="sec"><div class="sec-h">The concept</div>
       <div class="concept">A Creative Block helps creatives move forward when they're stuck — by diagnosing the real <b>type</b> of block, reducing friction, and creating clarity and momentum (1:1 sessions, groups, workshops, community).</div>
 
-      <div class="q core" data-req><span class="qt">6. Would you use a service like this? <span class="req">*</span></span>
-        <div class="opts" data-single="q6">
-          <label class="opt"><input type="radio" name="q6" value="Definitely">Definitely</label>
-          <label class="opt"><input type="radio" name="q6" value="Probably">Probably</label>
-          <label class="opt"><input type="radio" name="q6" value="Maybe">Maybe</label>
-          <label class="opt"><input type="radio" name="q6" value="Probably not">Probably not</label>
-          <label class="opt"><input type="radio" name="q6" value="No">No</label>
+      <div class="q core" data-req><span class="qt">7. Would you use a service like this? <span class="req">*</span></span>
+        <div class="opts" data-single="q7">
+          <label class="opt"><input type="radio" name="q7" value="Definitely">Definitely</label>
+          <label class="opt"><input type="radio" name="q7" value="Probably">Probably</label>
+          <label class="opt"><input type="radio" name="q7" value="Maybe">Maybe</label>
+          <label class="opt"><input type="radio" name="q7" value="Probably not">Probably not</label>
+          <label class="opt"><input type="radio" name="q7" value="No">No</label>
         </div>
       </div>
 
-      <div class="q core"><span class="qt">7. How needed is a service like this — for you and creatives like you?</span>
-        <div class="scale" data-single="q7"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
-        <input type="hidden" name="q7"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
+      <div class="q core"><span class="qt">8. How needed is a service like this — for you and creatives like you?</span>
+        <div class="scale" data-single="q8"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
+        <input type="hidden" name="q8"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
       </div>
 
-      <div class="q core"><span class="qt">8. Which formats appeal to you?</span>
+      <div class="q core"><span class="qt">9. Which formats appeal to you?</span>
         <div class="hint">Select all that apply.</div>
-        <div class="opts" data-multi="q8">
+        <div class="opts" data-multi="q9">
           <label class="opt"><input type="checkbox" value="1:1 coaching">1:1 coaching</label>
           <label class="opt"><input type="checkbox" value="Group sessions">Group sessions</label>
           <label class="opt"><input type="checkbox" value="Workshop">Workshop</label>
@@ -166,18 +172,18 @@ textarea{min-height:88px}
         </div>
       </div>
 
-      <div class="q core"><span class="qt">9. Would you rather work with a coach or a consultant?</span>
-        <div class="opts" data-single="q9">
-          <label class="opt"><input type="radio" name="q9" value="Coach"><span><b>Coach</b> <span class="od">— helps you reflect and work through what's really in the way, a bit like therapy.</span></span></label>
-          <label class="opt"><input type="radio" name="q9" value="Consultant"><span><b>Consultant</b> <span class="od">— works alongside you, hands-on, to find solutions and move the actual work forward.</span></span></label>
-          <label class="opt"><input type="radio" name="q9" value="Both"><span><b>Both</b></span></label>
-          <label class="opt"><input type="radio" name="q9" value="Depends"><span><b>Depends</b></span></label>
+      <div class="q core"><span class="qt">10. Would you rather work with a coach or a consultant?</span>
+        <div class="opts" data-single="q10">
+          <label class="opt"><input type="radio" name="q10" value="Coach"><span><b>Coach</b> <span class="od">— helps you reflect and work through what's really in the way, a bit like therapy.</span></span></label>
+          <label class="opt"><input type="radio" name="q10" value="Consultant"><span><b>Consultant</b> <span class="od">— works alongside you, hands-on, to find solutions and move the actual work forward.</span></span></label>
+          <label class="opt"><input type="radio" name="q10" value="Both"><span><b>Both</b></span></label>
+          <label class="opt"><input type="radio" name="q10" value="Depends"><span><b>Depends</b></span></label>
         </div>
       </div>
 
-      <div class="q core"><span class="qt">10. When you picture getting help, what matters most to you?</span>
+      <div class="q core"><span class="qt">11. When you picture getting help, what matters most to you?</span>
         <div class="hint">Select all that apply.</div>
-        <div class="opts" data-multi="q10">
+        <div class="opts" data-multi="q11">
           <label class="opt"><input type="checkbox" value="Accountability">Accountability — someone expecting you to show up</label>
           <label class="opt"><input type="checkbox" value="Community">Community with other creatives</label>
           <label class="opt"><input type="checkbox" value="A clear plan / structure">A clear plan or structure</label>
@@ -187,51 +193,53 @@ textarea{min-height:88px}
         </div>
       </div>
 
-      <div class="q core"><span class="qt">11. What single outcome would make this genuinely worth paying for?</span>
-        <textarea name="q11"></textarea>
-      </div>
-
-      <div class="q core"><span class="qt">12. What do you feel is missing from the kind of support that already exists?</span>
+      <div class="q core"><span class="qt">12. What single outcome would make this genuinely worth paying for?</span>
         <textarea name="q12"></textarea>
       </div>
 
-      <div class="q core"><span class="qt">13. What would make you hesitant or skeptical about it?</span>
+      <div class="q core"><span class="qt">13. What do you feel is missing from the kind of support that already exists?</span>
         <textarea name="q13"></textarea>
       </div>
 
-      <div class="q core"><span class="qt">14. What would have to be true for you to invest in help with this?</span>
+      <div class="q core"><span class="qt">14. What would make you hesitant or skeptical about it?</span>
         <textarea name="q14"></textarea>
+      </div>
+
+      <div class="q core"><span class="qt">15. What would have to be true for you to invest in help with this?</span>
+        <textarea name="q15"></textarea>
       </div>
     </div>
 
     <!-- PRICING -->
     <div class="sec"><div class="sec-h">Pricing</div>
 
-      <div class="q core"><span class="qt">15. For a single 90-minute "unblock" session, what feels fair to pay?</span>
-        <div class="opts inline" data-single="q15">
-          <label class="opt"><input type="radio" name="q15" value="€0">€0</label>
-          <label class="opt"><input type="radio" name="q15" value="€1–30">€1–30</label>
-          <label class="opt"><input type="radio" name="q15" value="€31–60">€31–60</label>
-          <label class="opt"><input type="radio" name="q15" value="€61–100">€61–100</label>
-          <label class="opt"><input type="radio" name="q15" value="€101–150">€101–150</label>
-          <label class="opt"><input type="radio" name="q15" value="€150+">€150+</label>
-        </div>
-      </div>
-
-      <div class="q core"><span class="qt">16. For a multi-session package (4–8 sessions), what would you pay in total?</span>
+      <div class="q core"><span class="qt">16. If you decided to go for it, what would you pay for a single 90-minute "unblock" session?</span>
+        <div class="hint">Picture a normal month, not a broke one — the price you'd genuinely pay.</div>
         <div class="opts inline" data-single="q16">
           <label class="opt"><input type="radio" name="q16" value="€0">€0</label>
-          <label class="opt"><input type="radio" name="q16" value="under €150">under €150</label>
-          <label class="opt"><input type="radio" name="q16" value="€150–400">€150–400</label>
-          <label class="opt"><input type="radio" name="q16" value="€401–800">€401–800</label>
-          <label class="opt"><input type="radio" name="q16" value="€800+">€800+</label>
+          <label class="opt"><input type="radio" name="q16" value="€1–30">€1–30</label>
+          <label class="opt"><input type="radio" name="q16" value="€31–60">€31–60</label>
+          <label class="opt"><input type="radio" name="q16" value="€61–100">€61–100</label>
+          <label class="opt"><input type="radio" name="q16" value="€101–150">€101–150</label>
+          <label class="opt"><input type="radio" name="q16" value="€150+">€150+</label>
         </div>
       </div>
 
-      <div class="q core"><span class="qt">17. At what price would it feel <em>too expensive</em> — and <em>too cheap</em> to trust?</span>
+      <div class="q core"><span class="qt">17. And for a package of 4–8 sessions, what would you pay in total?</span>
+        <div class="opts inline" data-single="q17">
+          <label class="opt"><input type="radio" name="q17" value="€0">€0</label>
+          <label class="opt"><input type="radio" name="q17" value="under €150">under €150</label>
+          <label class="opt"><input type="radio" name="q17" value="€150–400">€150–400</label>
+          <label class="opt"><input type="radio" name="q17" value="€401–800">€401–800</label>
+          <label class="opt"><input type="radio" name="q17" value="€800+">€800+</label>
+        </div>
+      </div>
+
+      <div class="q core"><span class="qt">18. A different angle: at what price would it feel <em>too expensive to bother</em> — and <em>so cheap you'd doubt it's any good</em>?</span>
+        <div class="hint">Roughly — the point where it's a "no" either way.</div>
         <div class="two-num">
-          <input type="text" name="q17a" placeholder="Too expensive (€)">
-          <input type="text" name="q17b" placeholder="Too cheap (€)">
+          <input type="text" name="q18a" placeholder="Too expensive (€)">
+          <input type="text" name="q18b" placeholder="Too cheap (€)">
         </div>
       </div>
     </div>
@@ -240,8 +248,8 @@ textarea{min-height:88px}
     <div class="sec"><div class="sec-h">Staying in touch</div>
       <div class="q"><span class="qt">Leave your email? (optional)</span>
         <div class="hint">Only if you'd like to stay in the loop. We'll never share it.</div>
-        <input type="email" name="q18" placeholder="you@email.com">
-        <div class="opts" style="margin-top:12px" data-multi="q19">
+        <input type="email" name="q19" placeholder="you@email.com">
+        <div class="opts" style="margin-top:12px" data-multi="q20">
           <label class="opt"><input type="checkbox" value="Free pilot">I'd be up for a <b>free pilot session</b>, in exchange for honest feedback</label>
           <label class="opt"><input type="checkbox" value="Updates">Send me the occasional <b>update</b> as this takes shape</label>
         </div>
@@ -249,7 +257,7 @@ textarea{min-height:88px}
 
       <div class="q"><span class="qt">Anything else you'd like to tell us? (optional)</span>
         <div class="hint">Anything at all — a story, a gripe, an idea. This is your space.</div>
-        <textarea name="q20" placeholder="Write whatever you want…"></textarea>
+        <textarea name="q21" placeholder="Write whatever you want…"></textarea>
       </div>
     </div>
 
@@ -273,7 +281,6 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuTuOV1-ZkQV4x_sXVM
 const core=[...document.querySelectorAll('.q.core')];
 document.getElementById('ptotal').textContent=core.length;
 
-// selection styling
 document.querySelectorAll('.opts').forEach(g=>g.addEventListener('change',()=>{g.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked));updateProgress();}));
 document.querySelectorAll('.scale').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('.sc');if(!b)return;s.querySelectorAll('.sc').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');s.parentElement.querySelector('input[type=hidden]').value=b.dataset.v;updateProgress();}));
 document.querySelectorAll('input,textarea').forEach(t=>t.addEventListener('input',updateProgress));

@@ -8,25 +8,26 @@
 
 var HEADERS = [
   'Submitted at',
-  'Q1 Creative field',
-  'Q2 Block frequency',
-  'Q3 Main block type',
-  'Q4 Effects (multi)',
-  'Q5 Paid for support before',
-  'Q5 — what & how much',
-  'Q6 Would use it',
-  'Q7 How needed (1-5)',
-  'Q8 Formats (multi)',
-  'Q9 Coach / consultant',
-  'Q10 What matters most (multi)',
-  'Q11 Outcome worth paying for',
-  'Q12 Missing from existing support',
-  'Q13 Hesitations',
-  'Q14 What would make you invest',
-  'Q15 Session price',
-  'Q16 Package price',
-  'Q17 Too expensive (€)',
-  'Q17 Too cheap (€)',
+  'Q1 Creative field(s)',
+  'Q2 Last project stuck on',
+  'Q3 Block frequency',
+  'Q4 Main block type',
+  'Q5 Effects (multi)',
+  'Q6 Paid for support before',
+  'Q6 — what & how much',
+  'Q7 Would use it',
+  'Q8 How needed (1-5)',
+  'Q9 Formats (multi)',
+  'Q10 Coach / consultant',
+  'Q11 What matters most (multi)',
+  'Q12 Outcome worth paying for',
+  'Q13 Missing from existing support',
+  'Q14 Hesitations',
+  'Q15 What would make you invest',
+  'Q16 Session price',
+  'Q17 Package price',
+  'Q18 Too expensive (€)',
+  'Q18 Too cheap (€)',
   'Email',
   'Contact me about (pilot / updates)',
   'Anything else'
@@ -34,8 +35,8 @@ var HEADERS = [
 
 var FIELDS = [
   'submitted_at',
-  'q1','q2','q3','q4','q5','q5b','q6','q7','q8','q9','q10','q11','q12','q13','q14',
-  'q15','q16','q17a','q17b','q18','q19','q20'
+  'q1','q2','q3','q4','q5','q6','q6b','q7','q8','q9','q10','q11','q12','q13','q14','q15',
+  'q16','q17','q18a','q18b','q19','q20','q21'
 ];
 
 function doPost(e) {
