@@ -1,9 +1,11 @@
 /**
  * A Creative Block — Validation Survey → Google Sheets
  *
- * Paste into your Google Sheet → Extensions → Apps Script, then
- * Deploy → Manage deployments → Edit → New version (URL stays the same).
- * If the sheet has older test rows, clear them so the columns line up.
+ * 1. Paste this whole file into your Sheet → Extensions → Apps Script (replace everything).
+ * 2. Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy.
+ *    (Editing the existing deployment keeps the same /exec URL, so the form still works.)
+ * 3. Clear the sheet: delete every row INCLUDING the header row, or delete the
+ *    "Responses" tab. The correct header is rebuilt on the next submission.
  */
 
 var HEADERS = [
@@ -24,10 +26,8 @@ var HEADERS = [
   'Q13 Missing from existing support',
   'Q14 Hesitations',
   'Q15 What would make you invest',
-  'Q16 Session price',
-  'Q17 Package price',
-  'Q18 Too expensive (€)',
-  'Q18 Too cheap (€)',
+  'Q16 What you could pay (€)',
+  'Q16 What feels fair (€)',
   'Email',
   'Contact me about (pilot / updates)',
   'Anything else'
@@ -36,7 +36,7 @@ var HEADERS = [
 var FIELDS = [
   'submitted_at',
   'q1','q2','q3','q4','q5','q6','q6b','q7','q8','q9','q10','q11','q12','q13','q14','q15',
-  'q16','q17','q18a','q18b','q19','q20','q21'
+  'q16a','q16b','q17','q18','q19'
 ];
 
 function doPost(e) {
