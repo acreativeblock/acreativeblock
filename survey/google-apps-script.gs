@@ -22,10 +22,14 @@ var HEADERS = [
   'Q9 Formats (multi)',
   'Q10 Coach / consultant',
   'Q11 What matters most (multi)',
-  'Q12 Outcome worth paying for',
-  'Q13 Missing from existing support',
-  'Q14 Hesitations',
-  'Q15 What would make you invest',
+  'Q12 Worth paying for (multi)',
+  'Q12 — other',
+  'Q13 Missing from support (multi)',
+  'Q13 — other',
+  'Q14 Hesitations (multi)',
+  'Q14 — other',
+  'Q15 What would make you invest (multi)',
+  'Q15 — other',
   'Q16 What you could pay (€)',
   'Q16 What feels fair (€)',
   'Email',
@@ -35,7 +39,8 @@ var HEADERS = [
 
 var FIELDS = [
   'submitted_at',
-  'q1','q2','q3','q4','q5','q6','q6b','q7','q8','q9','q10','q11','q12','q13','q14','q15',
+  'q1','q2','q3','q4','q5','q6','q6b','q7','q8','q9','q10','q11',
+  'q12','q12o','q13','q13o','q14','q14o','q15','q15o',
   'q16a','q16b','q17','q18','q19'
 ];
 
