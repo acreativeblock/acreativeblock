@@ -18,63 +18,46 @@
 html{-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .wrap{max-width:680px;margin:0 auto;padding:0 18px}
-
-/* progress bar */
 .prog{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 10px}
 .prog .bar{height:6px;background:var(--line);border-radius:999px;overflow:hidden}
 .prog .bar i{display:block;height:100%;width:0;background:var(--primary);border-radius:999px;transition:width .3s}
 .prog .lab{font-size:12.5px;color:var(--muted);margin-top:7px;font-weight:500}
-
-/* header */
 header.top{padding:36px 0 8px;text-align:center}
 .brand{font-weight:800;font-size:19px;letter-spacing:-.02em}
 .tagline{color:var(--muted);font-size:15.5px;line-height:1.5;max-width:44ch;margin:12px auto 0}
 header.top h1{font-size:clamp(26px,5.5vw,36px);font-weight:800;letter-spacing:-.03em;margin:22px 0 12px;line-height:1.1}
 header.top p{color:var(--muted);font-size:16px;max-width:46ch;margin:0 auto}
-
-/* section */
 .sec{margin-top:30px}
 .sec-h{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin:0 4px 10px}
 .q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;margin-bottom:14px}
-.q > label.qt, .q .qt{display:block;font-weight:600;font-size:17px;margin-bottom:4px}
+.q .qt{display:block;font-weight:600;font-size:17px;margin-bottom:4px}
 .q .hint{color:var(--muted);font-size:14px;margin-bottom:14px}
 .q .req{color:var(--primary)}
-
-/* options */
 .opts{display:flex;flex-direction:column;gap:9px}
-.opt{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:11px;padding:13px 15px;cursor:pointer;transition:.12s;font-size:15.5px}
+.opt{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:11px;padding:13px 15px;cursor:pointer;transition:.12s;font-size:15.5px;line-height:1.4}
 .opt:hover{border-color:#c7c9f0;background:#fafaff}
-.opt input{accent-color:var(--primary);width:18px;height:18px;flex:none}
+.opt input{accent-color:var(--primary);width:18px;height:18px;flex:none;margin-top:2px}
 .opt.sel{border-color:var(--primary);background:rgba(79,70,229,.05)}
+.opt .od{color:var(--muted);font-size:14px}
 .opts.inline{flex-direction:row;flex-wrap:wrap}
-.opts.inline .opt{flex:1;min-width:120px;justify-content:center;text-align:center}
-
-/* scale 1-5 */
+.opts.inline .opt{flex:1;min-width:120px;justify-content:center;text-align:center;align-items:center}
 .scale{display:flex;gap:8px}
 .scale .sc{flex:1;border:1px solid var(--line);border-radius:11px;padding:14px 0;text-align:center;font-weight:600;cursor:pointer;transition:.12s;font-size:16px}
 .scale .sc:hover{border-color:#c7c9f0}
 .scale .sc.sel{background:var(--primary);color:#fff;border-color:var(--primary)}
 .scale-ends{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:8px}
-
-/* text inputs */
 textarea,input[type=text],input[type=email]{width:100%;border:1px solid var(--line);border-radius:11px;padding:13px 15px;font-family:var(--font);font-size:15.5px;color:var(--ink);background:#fff;resize:vertical}
 textarea:focus,input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
 textarea{min-height:88px}
 .two-num{display:flex;gap:10px}.two-num input{flex:1}
-
-/* concept callout */
 .concept{background:var(--primary);color:#fff;border-radius:16px;padding:22px 20px;margin-bottom:14px;font-size:16px;line-height:1.5}
 .concept b{font-weight:700}
-
-/* submit */
 .actions{margin:22px 0 60px;text-align:center}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--primary);color:#fff;border:0;border-radius:999px;padding:16px 40px;font-family:var(--font);font-size:16.5px;font-weight:700;cursor:pointer;transition:.15s;width:100%;max-width:420px}
 .btn:hover{background:var(--primary-d)}
 .btn:disabled{opacity:.6;cursor:default}
 .err{color:#dc2626;font-size:14px;margin-top:12px;min-height:18px}
 .foot{color:var(--muted);font-size:13px;text-align:center;padding-bottom:40px}
-
-/* thank you */
 .thanks{display:none;text-align:center;padding:80px 0 100px}
 .thanks .ic{width:66px;height:66px;border-radius:50%;background:var(--primary);display:grid;place-items:center;margin:0 auto 24px}
 .thanks h2{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
@@ -84,84 +67,51 @@ textarea{min-height:88px}
 </head>
 <body>
 
-<div class="prog"><div class="wrap"><div class="bar"><i id="pbar"></i></div><div class="lab"><span id="pcount">0</span> of 27 answered</div></div></div>
+<div class="prog"><div class="wrap"><div class="bar"><i id="pbar"></i></div><div class="lab"><span id="pcount">0</span> of <span id="ptotal">0</span> answered</div></div></div>
 
 <div class="wrap">
   <header class="top">
     <div class="brand">A Creative Block</div>
     <p class="tagline">A new practice helping creatives get moving again when the work stalls. It's early days and we're still shaping what it becomes — which is exactly why your honest answers matter.</p>
     <h1>A few honest questions</h1>
-    <p>We're testing whether this practice is genuinely needed. It takes ~6 minutes. Honest answers beat polite ones — there are no wrong ones.</p>
+    <p>Takes about 5 minutes. Honest answers beat polite ones — there are no wrong ones.</p>
   </header>
 
   <form id="survey" autocomplete="off">
     <input type="text" class="hp" name="website" tabindex="-1" aria-hidden="true">
 
-    <!-- ABOUT YOU -->
-    <div class="sec"><div class="sec-h">About you</div>
+    <!-- YOU & THE PROBLEM -->
+    <div class="sec"><div class="sec-h">You &amp; the problem</div>
 
-      <div class="q" data-q><span class="qt">1. Which age group are you in? <span class="req">*</span></span>
-        <div class="opts inline" data-single="q1">
-          <label class="opt"><input type="radio" name="q1" value="Under 18">Under 18</label>
-          <label class="opt"><input type="radio" name="q1" value="18–24">18–24</label>
-          <label class="opt"><input type="radio" name="q1" value="25–34">25–34</label>
-          <label class="opt"><input type="radio" name="q1" value="35–44">35–44</label>
-          <label class="opt"><input type="radio" name="q1" value="45–54">45–54</label>
-          <label class="opt"><input type="radio" name="q1" value="55+">55+</label>
+      <div class="q core" data-req><span class="qt">1. What is your main creative field or discipline? <span class="req">*</span></span>
+        <input type="text" name="q1" placeholder="e.g. illustration, music, writing, design…">
+      </div>
+
+      <div class="q core" data-req><span class="qt">2. How often do you feel creatively blocked or stuck? <span class="req">*</span></span>
+        <div class="opts" data-single="q2">
+          <label class="opt"><input type="radio" name="q2" value="Rarely">Rarely</label>
+          <label class="opt"><input type="radio" name="q2" value="A few times a year">A few times a year</label>
+          <label class="opt"><input type="radio" name="q2" value="Monthly">Monthly</label>
+          <label class="opt"><input type="radio" name="q2" value="Weekly">Weekly</label>
+          <label class="opt"><input type="radio" name="q2" value="Almost daily">Almost daily</label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">2. What is your main creative field or discipline? <span class="req">*</span></span>
-        <input type="text" name="q2" data-text placeholder="e.g. illustration, music, writing, design…">
-      </div>
-
-      <div class="q" data-q><span class="qt">3. Roughly what share of your income comes from creative work?</span>
-        <div class="opts inline" data-single="q3">
-          <label class="opt"><input type="radio" name="q3" value="None">None</label>
-          <label class="opt"><input type="radio" name="q3" value="Under 25%">Under 25%</label>
-          <label class="opt"><input type="radio" name="q3" value="25–50%">25–50%</label>
-          <label class="opt"><input type="radio" name="q3" value="50–75%">50–75%</label>
-          <label class="opt"><input type="radio" name="q3" value="75–100%">75–100%</label>
-        </div>
-      </div>
-
-      <div class="q" data-q><span class="qt">4. How central is creativity to your sense of identity?</span>
-        <div class="scale" data-single="q4">
-          <div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div>
-        </div>
-        <input type="hidden" name="q4">
-        <div class="scale-ends"><span>A minor part of me</span><span>It's who I am</span></div>
-      </div>
-    </div>
-
-    <!-- THE PROBLEM -->
-    <div class="sec"><div class="sec-h">The problem</div>
-
-      <div class="q" data-q><span class="qt">5. How often do you feel creatively blocked or stuck? <span class="req">*</span></span>
-        <div class="opts" data-single="q5">
-          <label class="opt"><input type="radio" name="q5" value="Rarely">Rarely</label>
-          <label class="opt"><input type="radio" name="q5" value="A few times a year">A few times a year</label>
-          <label class="opt"><input type="radio" name="q5" value="Monthly">Monthly</label>
-          <label class="opt"><input type="radio" name="q5" value="Weekly">Weekly</label>
-          <label class="opt"><input type="radio" name="q5" value="Almost daily">Almost daily</label>
-        </div>
-      </div>
-
-      <div class="q" data-q><span class="qt">6. Which type of block hits you the most? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">3. Which type of block hits you the most? <span class="req">*</span></span>
         <div class="hint">Pick the one with the most pull right now.</div>
-        <div class="opts" data-single="q6">
-          <label class="opt"><input type="radio" name="q6" value="Directional">Directional — no clear direction</label>
-          <label class="opt"><input type="radio" name="q6" value="Structural">Structural — the project is too chaotic</label>
-          <label class="opt"><input type="radio" name="q6" value="Execution">Execution — you avoid doing it</label>
-          <label class="opt"><input type="radio" name="q6" value="Identity">Identity — fear you're not good enough</label>
-          <label class="opt"><input type="radio" name="q6" value="Skill">Skill — a technique you lack</label>
-          <label class="opt"><input type="radio" name="q6" value="Environmental">Environmental — burnout / time / space</label>
+        <div class="opts" data-single="q3">
+          <label class="opt"><input type="radio" name="q3" value="Directional">Directional — no clear direction</label>
+          <label class="opt"><input type="radio" name="q3" value="Structural">Structural — the project is too chaotic</label>
+          <label class="opt"><input type="radio" name="q3" value="Execution">Execution — you avoid doing it</label>
+          <label class="opt"><input type="radio" name="q3" value="Identity">Identity — fear you're not good enough</label>
+          <label class="opt"><input type="radio" name="q3" value="Skill">Skill — a technique you lack</label>
+          <label class="opt"><input type="radio" name="q3" value="Environmental">Environmental — burnout / time / space</label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">7. How do creative blocks affect you?</span>
+      <div class="q core"><span class="qt">4. How do creative blocks affect you?</span>
         <div class="hint">Select all that apply.</div>
-        <div class="opts" data-multi="q7">
+        <div class="opts" data-multi="q4">
           <label class="opt"><input type="checkbox" value="Lost income">Lost income</label>
           <label class="opt"><input type="checkbox" value="Missed deadlines">Missed deadlines</label>
           <label class="opt"><input type="checkbox" value="Lower confidence">Lower confidence</label>
@@ -170,48 +120,17 @@ textarea{min-height:88px}
           <label class="opt"><input type="checkbox" value="Other">Other</label>
         </div>
       </div>
-
-      <div class="q" data-q><span class="qt">8. When you're blocked, what's actually going on — what stops you?</span>
-        <textarea name="q8" data-text placeholder="In your own words…"></textarea>
-      </div>
     </div>
 
     <!-- WHAT YOU DO NOW -->
     <div class="sec"><div class="sec-h">What you do now</div>
-
-      <div class="q" data-q><span class="qt">9. What do you currently do to get unstuck — and does it work?</span>
-        <textarea name="q9" data-text></textarea>
-      </div>
-
-      <div class="q" data-q><span class="qt">10. Have you ever worked with a coach, mentor, or therapist for creative challenges?</span>
-        <div class="opts inline" data-single="q10">
-          <label class="opt"><input type="radio" name="q10" value="Yes">Yes</label>
-          <label class="opt"><input type="radio" name="q10" value="No">No</label>
+      <div class="q core"><span class="qt">5. Have you ever paid for personal support or guidance?</span>
+        <div class="hint">Of any kind — a coach, therapist, mentor, course, programme, membership…</div>
+        <div class="opts inline" data-single="q5">
+          <label class="opt"><input type="radio" name="q5" value="Yes">Yes</label>
+          <label class="opt"><input type="radio" name="q5" value="No">No</label>
         </div>
-        <input type="text" name="q10b" data-text style="margin-top:10px" placeholder="If yes — which?">
-      </div>
-
-      <div class="q" data-q><span class="qt">11. If yes, what helped — and what didn't?</span>
-        <textarea name="q11" data-text></textarea>
-      </div>
-
-      <div class="q" data-q><span class="qt">12. What do you feel is missing from the support that already exists?</span>
-        <textarea name="q12" data-text></textarea>
-      </div>
-
-      <div class="q" data-q><span class="qt">13. Roughly how much do you spend per month on creative growth?</span>
-        <div class="hint">Courses, tools, coaching, memberships, books.</div>
-        <div class="opts inline" data-single="q13">
-          <label class="opt"><input type="radio" name="q13" value="€0">€0</label>
-          <label class="opt"><input type="radio" name="q13" value="€1–25">€1–25</label>
-          <label class="opt"><input type="radio" name="q13" value="€26–75">€26–75</label>
-          <label class="opt"><input type="radio" name="q13" value="€76–150">€76–150</label>
-          <label class="opt"><input type="radio" name="q13" value="€150+">€150+</label>
-        </div>
-      </div>
-
-      <div class="q" data-q><span class="qt">14. What would have to be true for you to invest in help with this?</span>
-        <textarea name="q14" data-text></textarea>
+        <input type="text" name="q5b" style="margin-top:10px" placeholder="If yes — what, and roughly how much?">
       </div>
     </div>
 
@@ -219,29 +138,24 @@ textarea{min-height:88px}
     <div class="sec"><div class="sec-h">The concept</div>
       <div class="concept">A Creative Block helps creatives move forward when they're stuck — by diagnosing the real <b>type</b> of block, reducing friction, and creating clarity and momentum (1:1 sessions, groups, workshops, community).</div>
 
-      <div class="q" data-q><span class="qt">15. Would you use a service like this? <span class="req">*</span></span>
-        <div class="opts" data-single="q15">
-          <label class="opt"><input type="radio" name="q15" value="Definitely">Definitely</label>
-          <label class="opt"><input type="radio" name="q15" value="Probably">Probably</label>
-          <label class="opt"><input type="radio" name="q15" value="Maybe">Maybe</label>
-          <label class="opt"><input type="radio" name="q15" value="Probably not">Probably not</label>
-          <label class="opt"><input type="radio" name="q15" value="No">No</label>
+      <div class="q core" data-req><span class="qt">6. Would you use a service like this? <span class="req">*</span></span>
+        <div class="opts" data-single="q6">
+          <label class="opt"><input type="radio" name="q6" value="Definitely">Definitely</label>
+          <label class="opt"><input type="radio" name="q6" value="Probably">Probably</label>
+          <label class="opt"><input type="radio" name="q6" value="Maybe">Maybe</label>
+          <label class="opt"><input type="radio" name="q6" value="Probably not">Probably not</label>
+          <label class="opt"><input type="radio" name="q6" value="No">No</label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">16. How much is a service like this needed — for you personally?</span>
-        <div class="scale" data-single="q16"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
-        <input type="hidden" name="q16"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
+      <div class="q core"><span class="qt">7. How needed is a service like this — for you and creatives like you?</span>
+        <div class="scale" data-single="q7"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
+        <input type="hidden" name="q7"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
       </div>
 
-      <div class="q" data-q><span class="qt">17. How much do you think it's needed for creatives in general?</span>
-        <div class="scale" data-single="q17"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
-        <input type="hidden" name="q17"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
-      </div>
-
-      <div class="q" data-q><span class="qt">18. Which formats appeal to you?</span>
+      <div class="q core"><span class="qt">8. Which formats appeal to you?</span>
         <div class="hint">Select all that apply.</div>
-        <div class="opts" data-multi="q18">
+        <div class="opts" data-multi="q8">
           <label class="opt"><input type="checkbox" value="1:1 coaching">1:1 coaching</label>
           <label class="opt"><input type="checkbox" value="Group sessions">Group sessions</label>
           <label class="opt"><input type="checkbox" value="Workshop">Workshop</label>
@@ -252,74 +166,90 @@ textarea{min-height:88px}
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">19. Do you want someone to help you reflect (coach) or fix the project directly (consultant)?</span>
-        <div class="opts inline" data-single="q19">
-          <label class="opt"><input type="radio" name="q19" value="Coach">Coach</label>
-          <label class="opt"><input type="radio" name="q19" value="Consultant">Consultant</label>
-          <label class="opt"><input type="radio" name="q19" value="Both">Both</label>
-          <label class="opt"><input type="radio" name="q19" value="Depends">Depends</label>
+      <div class="q core"><span class="qt">9. Would you rather work with a coach or a consultant?</span>
+        <div class="opts" data-single="q9">
+          <label class="opt"><input type="radio" name="q9" value="Coach"><span><b>Coach</b> <span class="od">— helps you reflect and work through what's really in the way, a bit like therapy.</span></span></label>
+          <label class="opt"><input type="radio" name="q9" value="Consultant"><span><b>Consultant</b> <span class="od">— works alongside you, hands-on, to find solutions and move the actual work forward.</span></span></label>
+          <label class="opt"><input type="radio" name="q9" value="Both"><span><b>Both</b></span></label>
+          <label class="opt"><input type="radio" name="q9" value="Depends"><span><b>Depends</b></span></label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">20. How important is external accountability to you actually finishing things?</span>
-        <div class="scale" data-single="q20"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
-        <input type="hidden" name="q20"><div class="scale-ends"><span>Not important</span><span>Essential</span></div>
+      <div class="q core"><span class="qt">10. When you picture getting help, what matters most to you?</span>
+        <div class="hint">Select all that apply.</div>
+        <div class="opts" data-multi="q10">
+          <label class="opt"><input type="checkbox" value="Accountability">Accountability — someone expecting you to show up</label>
+          <label class="opt"><input type="checkbox" value="Community">Community with other creatives</label>
+          <label class="opt"><input type="checkbox" value="A clear plan / structure">A clear plan or structure</label>
+          <label class="opt"><input type="checkbox" value="Expert guidance">Expert guidance</label>
+          <label class="opt"><input type="checkbox" value="A space to think">A safe space to think it through</label>
+          <label class="opt"><input type="checkbox" value="Motivation">Motivation to keep going</label>
+        </div>
       </div>
 
-      <div class="q" data-q><span class="qt">21. How important is being part of a community of other creatives?</span>
-        <div class="scale" data-single="q21"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
-        <input type="hidden" name="q21"><div class="scale-ends"><span>Not important</span><span>Essential</span></div>
+      <div class="q core"><span class="qt">11. What single outcome would make this genuinely worth paying for?</span>
+        <textarea name="q11"></textarea>
       </div>
 
-      <div class="q" data-q><span class="qt">22. What single outcome would make this genuinely worth paying for?</span>
-        <textarea name="q22" data-text></textarea>
+      <div class="q core"><span class="qt">12. What do you feel is missing from the kind of support that already exists?</span>
+        <textarea name="q12"></textarea>
       </div>
 
-      <div class="q" data-q><span class="qt">23. What would make you hesitant or skeptical about it?</span>
-        <textarea name="q23" data-text></textarea>
+      <div class="q core"><span class="qt">13. What would make you hesitant or skeptical about it?</span>
+        <textarea name="q13"></textarea>
+      </div>
+
+      <div class="q core"><span class="qt">14. What would have to be true for you to invest in help with this?</span>
+        <textarea name="q14"></textarea>
       </div>
     </div>
 
     <!-- PRICING -->
     <div class="sec"><div class="sec-h">Pricing</div>
 
-      <div class="q" data-q><span class="qt">24. For a single 90-minute "unblock" session, what feels fair to pay?</span>
-        <div class="opts inline" data-single="q24">
-          <label class="opt"><input type="radio" name="q24" value="€0">€0</label>
-          <label class="opt"><input type="radio" name="q24" value="€1–30">€1–30</label>
-          <label class="opt"><input type="radio" name="q24" value="€31–60">€31–60</label>
-          <label class="opt"><input type="radio" name="q24" value="€61–100">€61–100</label>
-          <label class="opt"><input type="radio" name="q24" value="€101–150">€101–150</label>
-          <label class="opt"><input type="radio" name="q24" value="€150+">€150+</label>
+      <div class="q core"><span class="qt">15. For a single 90-minute "unblock" session, what feels fair to pay?</span>
+        <div class="opts inline" data-single="q15">
+          <label class="opt"><input type="radio" name="q15" value="€0">€0</label>
+          <label class="opt"><input type="radio" name="q15" value="€1–30">€1–30</label>
+          <label class="opt"><input type="radio" name="q15" value="€31–60">€31–60</label>
+          <label class="opt"><input type="radio" name="q15" value="€61–100">€61–100</label>
+          <label class="opt"><input type="radio" name="q15" value="€101–150">€101–150</label>
+          <label class="opt"><input type="radio" name="q15" value="€150+">€150+</label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">25. For a multi-session package (4–8 sessions), what would you pay in total?</span>
-        <div class="opts inline" data-single="q25">
-          <label class="opt"><input type="radio" name="q25" value="€0">€0</label>
-          <label class="opt"><input type="radio" name="q25" value="under €150">under €150</label>
-          <label class="opt"><input type="radio" name="q25" value="€150–400">€150–400</label>
-          <label class="opt"><input type="radio" name="q25" value="€401–800">€401–800</label>
-          <label class="opt"><input type="radio" name="q25" value="€800+">€800+</label>
+      <div class="q core"><span class="qt">16. For a multi-session package (4–8 sessions), what would you pay in total?</span>
+        <div class="opts inline" data-single="q16">
+          <label class="opt"><input type="radio" name="q16" value="€0">€0</label>
+          <label class="opt"><input type="radio" name="q16" value="under €150">under €150</label>
+          <label class="opt"><input type="radio" name="q16" value="€150–400">€150–400</label>
+          <label class="opt"><input type="radio" name="q16" value="€401–800">€401–800</label>
+          <label class="opt"><input type="radio" name="q16" value="€800+">€800+</label>
         </div>
       </div>
 
-      <div class="q" data-q><span class="qt">26. At what price would it feel <em>too expensive</em> to consider — and <em>too cheap</em> to trust?</span>
+      <div class="q core"><span class="qt">17. At what price would it feel <em>too expensive</em> — and <em>too cheap</em> to trust?</span>
         <div class="two-num">
-          <input type="text" name="q26a" data-text placeholder="Too expensive (€)">
-          <input type="text" name="q26b" data-text placeholder="Too cheap (€)">
+          <input type="text" name="q17a" placeholder="Too expensive (€)">
+          <input type="text" name="q17b" placeholder="Too cheap (€)">
         </div>
       </div>
     </div>
 
-    <!-- NEXT STEP -->
-    <div class="sec"><div class="sec-h">Next step</div>
-      <div class="q" data-q><span class="qt">27. Would you be open to a free pilot session in exchange for honest feedback?</span>
-        <div class="opts inline" data-single="q27">
-          <label class="opt"><input type="radio" name="q27" value="Yes">Yes</label>
-          <label class="opt"><input type="radio" name="q27" value="No">No</label>
+    <!-- STAYING IN TOUCH -->
+    <div class="sec"><div class="sec-h">Staying in touch</div>
+      <div class="q"><span class="qt">Leave your email? (optional)</span>
+        <div class="hint">Only if you'd like to stay in the loop. We'll never share it.</div>
+        <input type="email" name="q18" placeholder="you@email.com">
+        <div class="opts" style="margin-top:12px" data-multi="q19">
+          <label class="opt"><input type="checkbox" value="Free pilot">I'd be up for a <b>free pilot session</b>, in exchange for honest feedback</label>
+          <label class="opt"><input type="checkbox" value="Updates">Send me the occasional <b>update</b> as this takes shape</label>
         </div>
-        <input type="text" name="q27b" data-text style="margin-top:10px" placeholder="If yes — email or how to reach you">
+      </div>
+
+      <div class="q"><span class="qt">Anything else you'd like to tell us? (optional)</span>
+        <div class="hint">Anything at all — a story, a gripe, an idea. This is your space.</div>
+        <textarea name="q20" placeholder="Write whatever you want…"></textarea>
       </div>
     </div>
 
@@ -338,77 +268,46 @@ textarea{min-height:88px}
 </div>
 
 <script>
-/* ====== PASTE YOUR GOOGLE APPS SCRIPT WEB-APP URL BELOW ====== */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuTuOV1-ZkQV4x_sXVMYcswzYc_97fFrUUPTBYY6NP9EX9ewC4uO50pxpolyu0ke-Z/exec";
 
-// selection styling + scales
-document.querySelectorAll('.opts').forEach(g=>{
-  g.addEventListener('change',()=>{
-    if(g.dataset.single){g.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked));}
-    else{g.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked));}
-    updateProgress();
-  });
-});
-document.querySelectorAll('.scale').forEach(s=>{
-  s.addEventListener('click',e=>{const b=e.target.closest('.sc');if(!b)return;
-    s.querySelectorAll('.sc').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');
-    s.parentElement.querySelector('input[type=hidden]').value=b.dataset.v;updateProgress();});
-});
-document.querySelectorAll('[data-text]').forEach(t=>t.addEventListener('input',updateProgress));
+const core=[...document.querySelectorAll('.q.core')];
+document.getElementById('ptotal').textContent=core.length;
 
-// progress: count answered of 27 main questions (q1..q27)
-function answered(n){
-  const single=document.querySelector('[data-single="q'+n+'"]');
-  if(single){ if(single.classList.contains('scale')) return !!single.parentElement.querySelector('input[type=hidden]').value;
-    return !!single.querySelector('input:checked'); }
-  const multi=document.querySelector('[data-multi="q'+n+'"]');
-  if(multi) return !!multi.querySelector('input:checked');
-  const txt=document.querySelector('[name="q'+n+'"][data-text]');
-  if(txt) return txt.value.trim().length>0;
-  return false;
-}
-function updateProgress(){
-  let c=0;for(let i=1;i<=27;i++) if(answered(i)) c++;
-  document.getElementById('pcount').textContent=c;
-  document.getElementById('pbar').style.width=(c/27*100)+'%';
-}
+// selection styling
+document.querySelectorAll('.opts').forEach(g=>g.addEventListener('change',()=>{g.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o.querySelector('input').checked));updateProgress();}));
+document.querySelectorAll('.scale').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('.sc');if(!b)return;s.querySelectorAll('.sc').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');s.parentElement.querySelector('input[type=hidden]').value=b.dataset.v;updateProgress();}));
+document.querySelectorAll('input,textarea').forEach(t=>t.addEventListener('input',updateProgress));
 
-// collect + submit
+function blockAnswered(b){
+  if(b.querySelector('input[type=radio]:checked, input[type=checkbox]:checked')) return true;
+  const hid=b.querySelector('input[type=hidden]'); if(hid && hid.value) return true;
+  return [...b.querySelectorAll('input[type=text],input[type=email],textarea')].some(t=>t.value.trim());
+}
+function updateProgress(){const c=core.filter(blockAnswered).length;document.getElementById('pcount').textContent=c;document.getElementById('pbar').style.width=(c/core.length*100)+'%';}
+
 const form=document.getElementById('survey');
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   const err=document.getElementById('err');err.textContent='';
-  // minimal required check
-  const required=[1,2,5,6,15];
-  const missing=required.filter(n=>!answered(n));
-  if(missing.length){err.textContent='Please answer the starred questions ('+missing.map(n=>'Q'+n).join(', ')+').';
-    document.querySelector('[data-single="q'+missing[0]+'"],[name="q'+missing[0]+'"]').scrollIntoView({behavior:'smooth',block:'center'});return;}
-  if(form.website.value){return;} // honeypot
+  const reqBlocks=[...document.querySelectorAll('.q[data-req]')];
+  const missing=reqBlocks.filter(b=>!blockAnswered(b));
+  if(missing.length){err.textContent='Please answer the starred questions before sending.';missing[0].scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(form.website.value){return;}
 
   const data=new URLSearchParams();
-  // singles + hidden scales + texts
-  form.querySelectorAll('input[type=radio]:checked, input[type=hidden], input[type=text], textarea').forEach(el=>{
-    if(el.name && el.name!=='website') data.append(el.name, el.value.trim());
-  });
-  // multis
-  document.querySelectorAll('[data-multi]').forEach(g=>{
-    const vals=[...g.querySelectorAll('input:checked')].map(i=>i.value);
-    data.append(g.dataset.multi, vals.join(' · '));
-  });
+  form.querySelectorAll('input[type=radio]:checked, input[type=hidden], input[type=text], input[type=email], textarea').forEach(el=>{ if(el.name && el.name!=='website') data.append(el.name, el.value.trim()); });
+  document.querySelectorAll('[data-multi]').forEach(g=>{const vals=[...g.querySelectorAll('input:checked')].map(i=>i.value);data.append(g.dataset.multi, vals.join(' · '));});
   data.append('submitted_at', new Date().toISOString());
 
   const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending…';
   try{
-    if(SCRIPT_URL.startsWith('http')){
-      await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:data});
-    }else{ await new Promise(r=>setTimeout(r,500)); } // demo mode if URL not set
+    if(SCRIPT_URL.startsWith('http')){ await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:data}); }
+    else{ await new Promise(r=>setTimeout(r,500)); }
     form.style.display='none';document.querySelector('header.top').style.display='none';document.querySelector('.prog').style.display='none';
     document.getElementById('thanks').style.display='block';window.scrollTo({top:0,behavior:'smooth'});
-  }catch(ex){
-    btn.disabled=false;btn.textContent='Send my answers';
-    err.textContent='Something went wrong sending. Please try again.';
-  }
+  }catch(ex){ btn.disabled=false;btn.textContent='Send my answers';err.textContent='Something went wrong sending. Please try again.'; }
 });
+updateProgress();
 </script>
 </body>
 </html>

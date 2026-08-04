@@ -1,71 +1,56 @@
 /**
  * A Creative Block — Validation Survey → Google Sheets
  *
- * Paste this into your Google Sheet's Apps Script editor (Extensions → Apps Script),
- * then Deploy → New deployment → Web app → Execute as: Me · Who has access: Anyone.
- * Copy the resulting Web app URL into index.html (the SCRIPT_URL constant).
+ * Paste into your Google Sheet → Extensions → Apps Script, then
+ * Deploy → Manage deployments → Edit → New version (URL stays the same).
+ * If the sheet has older test rows, clear them so the columns line up.
  */
 
-// Column order — the header row written on first run. Matches the form field names.
 var HEADERS = [
   'Submitted at',
-  'Q1 Age group',
-  'Q2 Creative field',
-  'Q3 Income from creative',
-  'Q4 Creativity centrality (1-5)',
-  'Q5 Block frequency',
-  'Q6 Main block type',
-  'Q7 Effects (multi)',
-  'Q8 What stops you',
-  'Q9 Current fixes / do they work',
-  'Q10 Prior coach/therapist',
-  'Q10 — which',
-  'Q11 What helped / didn\'t',
+  'Q1 Creative field',
+  'Q2 Block frequency',
+  'Q3 Main block type',
+  'Q4 Effects (multi)',
+  'Q5 Paid for support before',
+  'Q5 — what & how much',
+  'Q6 Would use it',
+  'Q7 How needed (1-5)',
+  'Q8 Formats (multi)',
+  'Q9 Coach / consultant',
+  'Q10 What matters most (multi)',
+  'Q11 Outcome worth paying for',
   'Q12 Missing from existing support',
-  'Q13 Monthly spend on growth',
-  'Q14 Would invest if…',
-  'Q15 Would use it',
-  'Q16 Needed for you (1-5)',
-  'Q17 Needed generally (1-5)',
-  'Q18 Formats (multi)',
-  'Q19 Coach / consultant',
-  'Q20 Accountability importance (1-5)',
-  'Q21 Community importance (1-5)',
-  'Q22 Outcome worth paying for',
-  'Q23 Hesitations / skepticism',
-  'Q24 Fair price — single session',
-  'Q25 Fair price — package',
-  'Q26 Too expensive (€)',
-  'Q26 Too cheap (€)',
-  'Q27 Open to free pilot',
-  'Q27 — contact'
+  'Q13 Hesitations',
+  'Q14 What would make you invest',
+  'Q15 Session price',
+  'Q16 Package price',
+  'Q17 Too expensive (€)',
+  'Q17 Too cheap (€)',
+  'Email',
+  'Contact me about (pilot / updates)',
+  'Anything else'
 ];
 
-// Maps the sheet columns to the form field names posted by index.html.
 var FIELDS = [
   'submitted_at',
-  'q1','q2','q3','q4','q5','q6','q7','q8','q9',
-  'q10','q10b','q11','q12','q13','q14','q15','q16','q17','q18',
-  'q19','q20','q21','q22','q23','q24','q25','q26a','q26b','q27','q27b'
+  'q1','q2','q3','q4','q5','q5b','q6','q7','q8','q9','q10','q11','q12','q13','q14',
+  'q15','q16','q17a','q17b','q18','q19','q20'
 ];
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
-  lock.waitLock(20000); // avoid two submissions colliding
+  lock.waitLock(20000);
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Responses')
              || SpreadsheetApp.getActiveSpreadsheet().insertSheet('Responses');
-
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(HEADERS);
       sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
       sheet.setFrozenRows(1);
     }
-
     var p = (e && e.parameter) ? e.parameter : {};
-    var row = FIELDS.map(function (f) { return p[f] || ''; });
-    sheet.appendRow(row);
-
+    sheet.appendRow(FIELDS.map(function (f) { return p[f] || ''; }));
     return ContentService.createTextOutput(JSON.stringify({ ok: true }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
@@ -76,7 +61,6 @@ function doPost(e) {
   }
 }
 
-// Lets you open the web-app URL in a browser to confirm it's live.
 function doGet() {
   return ContentService.createTextOutput('A Creative Block survey endpoint is running.');
 }
