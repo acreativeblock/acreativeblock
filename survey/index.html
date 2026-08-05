@@ -91,7 +91,7 @@ textarea{min-height:79.2px}
 
       <div class="q core" data-req><span class="qt">1. What field do you work in? <span class="req">*</span></span>
         <div class="hint">List as many as you like — it doesn't have to be a creative job in the usual sense of the word.</div>
-        <input type="text" name="q1" placeholder="e.g. illustration · writing · design · film · a startup · product…">
+        <input type="text" name="q1" placeholder="e.g. illustration · writing · design · film · product…">
       </div>
 
       <div class="q core" data-req><span class="qt">2. What's the last project you got stuck on? <span class="req">*</span></span>
@@ -136,7 +136,24 @@ textarea{min-height:79.2px}
 
     <!-- WHAT YOU DO NOW -->
     <div class="sec"><div class="sec-h">What you do now</div>
-      <div class="q core" data-req><span class="qt">6. Have you ever paid for personal support or guidance? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">6. What do you usually do when you feel stuck? <span class="req">*</span></span>
+        <div class="hint">Select all that apply.</div>
+        <div class="opts" data-multi="q5b">
+          <label class="opt"><input type="checkbox" value="Push through and force it">Push through and force it</label>
+          <label class="opt"><input type="checkbox" value="Take a break / step away">Take a break or step away</label>
+          <label class="opt"><input type="checkbox" value="Go for a walk / move">Go for a walk or move my body</label>
+          <label class="opt"><input type="checkbox" value="Talk to someone">Talk to a friend, peer or partner</label>
+          <label class="opt"><input type="checkbox" value="Switch to another task/project">Switch to a different task or project</label>
+          <label class="opt"><input type="checkbox" value="Wait and try again later">Wait it out and try again later</label>
+          <label class="opt"><input type="checkbox" value="Journal / write it out">Journal or write it out</label>
+          <label class="opt"><input type="checkbox" value="Mindmap / brainstorm on paper">Mindmap or brainstorm on paper</label>
+          <label class="opt"><input type="checkbox" value="Look for inspiration / references">Look for inspiration or references</label>
+          <label class="opt"><input type="checkbox" value="Make it badly on purpose">Let myself make it badly just to get going</label>
+          <label class="opt"><input type="checkbox" value="Nothing really helps">Nothing really helps</label>
+        </div>
+        <input type="text" name="q5bo" style="margin-top:10px" placeholder="Other — in your words (optional)">
+      </div>
+      <div class="q core" data-req><span class="qt">7. Have you ever paid for personal support or guidance? <span class="req">*</span></span>
         <div class="hint">Of any kind — a coach, therapist, mentor, course, programme, membership…</div>
         <div class="opts inline" data-single="q6">
           <label class="opt"><input type="radio" name="q6" value="Yes">Yes</label>
@@ -150,7 +167,7 @@ textarea{min-height:79.2px}
     <div class="sec"><div class="sec-h">The concept</div>
       <div class="concept">A Creative Block helps creatives move forward when they're stuck — by diagnosing the real <b>type</b> of block, reducing friction, and creating clarity and momentum (1:1 sessions, groups, workshops, community).</div>
 
-      <div class="q core" data-req><span class="qt">7. Would you use a service like this? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">8. Would you use a service like this? <span class="req">*</span></span>
         <div class="opts" data-single="q7">
           <label class="opt"><input type="radio" name="q7" value="Definitely">Definitely</label>
           <label class="opt"><input type="radio" name="q7" value="Probably">Probably</label>
@@ -160,12 +177,12 @@ textarea{min-height:79.2px}
         </div>
       </div>
 
-      <div class="q core" data-req><span class="qt">8. How needed is a service like this — for you and creatives like you? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">9. How needed is a service like this — for you and creatives like you? <span class="req">*</span></span>
         <div class="scale" data-single="q8"><div class="sc" data-v="1">1</div><div class="sc" data-v="2">2</div><div class="sc" data-v="3">3</div><div class="sc" data-v="4">4</div><div class="sc" data-v="5">5</div></div>
         <input type="hidden" name="q8"><div class="scale-ends"><span>Not needed</span><span>Badly needed</span></div>
       </div>
 
-      <div class="q core" data-req><span class="qt">9. Which formats appeal to you? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">10. Which formats appeal to you? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q9">
           <label class="opt"><input type="checkbox" value="1:1 coaching">1:1 coaching</label>
@@ -178,7 +195,7 @@ textarea{min-height:79.2px}
         </div>
       </div>
 
-      <div class="q core" data-req><span class="qt">10. Would you rather work with a coach or a consultant? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">11. Would you rather work with a coach or a consultant? <span class="req">*</span></span>
         <div class="opts" data-single="q10">
           <label class="opt"><input type="radio" name="q10" value="Coach"><span><b>Coach</b> <span class="od">— helps you reflect and work through what's really in the way, a bit like therapy.</span></span></label>
           <label class="opt"><input type="radio" name="q10" value="Consultant"><span><b>Consultant</b> <span class="od">— works alongside you, hands-on, to find solutions and move the actual work forward.</span></span></label>
@@ -187,7 +204,7 @@ textarea{min-height:79.2px}
         </div>
       </div>
 
-      <div class="q core" data-req><span class="qt">11. When you picture getting help, what matters most to you? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">12. When you picture getting help, what matters most to you? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q11">
           <label class="opt"><input type="checkbox" value="Accountability">Accountability — someone expecting you to show up</label>
@@ -199,7 +216,7 @@ textarea{min-height:79.2px}
         </div>
       </div>
 
-      <div class="q core" data-req><span class="qt">12. What would make this genuinely worth paying for? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">13. What would make this genuinely worth paying for? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q12">
           <label class="opt"><input type="checkbox" value="Finishing the thing I'm stuck on">Actually finishing the thing I'm stuck on</label>
@@ -213,7 +230,7 @@ textarea{min-height:79.2px}
         <input type="text" name="q12o" style="margin-top:10px" placeholder="Other — in your words (optional)">
       </div>
 
-      <div class="q core" data-req><span class="qt">13. What's missing from the support that already exists? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">14. What's missing from the support that already exists? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q13">
           <label class="opt"><input type="checkbox" value="Too generic / not for creatives">It's too generic — not made for creatives</label>
@@ -227,7 +244,7 @@ textarea{min-height:79.2px}
         <input type="text" name="q13o" style="margin-top:10px" placeholder="Other — in your words (optional)">
       </div>
 
-      <div class="q core" data-req><span class="qt">14. What would make you hesitant or skeptical about it? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">15. What would make you hesitant or skeptical about it? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q14">
           <label class="opt"><input type="checkbox" value="The price">The price</label>
@@ -241,7 +258,7 @@ textarea{min-height:79.2px}
         <input type="text" name="q14o" style="margin-top:10px" placeholder="Other — in your words (optional)">
       </div>
 
-      <div class="q core" data-req><span class="qt">15. What would have to be true for you to invest in it? <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">16. What would have to be true for you to invest in it? <span class="req">*</span></span>
         <div class="hint">Select all that apply.</div>
         <div class="opts" data-multi="q15">
           <label class="opt"><input type="checkbox" value="Proof it works">Proof it works — results or testimonials</label>
@@ -259,7 +276,7 @@ textarea{min-height:79.2px}
 
     <!-- PRICING -->
     <div class="sec"><div class="sec-h">Pricing</div>
-      <div class="q core" data-req><span class="qt">16. For one session to work through a project you're stuck on — two numbers: <span class="req">*</span></span>
+      <div class="q core" data-req><span class="qt">17. For one session to work through a project you're stuck on — two numbers: <span class="req">*</span></span>
         <div class="hint">What you could realistically pay, and what feels fair for the value. (A package would just scale from here.)</div>
         <div class="two-num">
           <input type="text" name="q16a" placeholder="What you could pay (€)">
