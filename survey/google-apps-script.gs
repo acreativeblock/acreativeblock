@@ -34,7 +34,6 @@ var HEADERS = [
   'Q16 What you could pay (€)',
   'Q16 What feels fair (€)',
   'Email',
-  'Contact me about (pilot / updates)',
   'Anything else'
 ];
 
@@ -42,7 +41,7 @@ var FIELDS = [
   'submitted_at',
   'q1','q2','q3','q4','q5','q5o','q6','q6b','q7','q8','q9','q10','q11',
   'q12','q12o','q13','q13o','q14','q14o','q15','q15o',
-  'q16a','q16b','q17','q18','q19'
+  'q16a','q16b','q17','q19'
 ];
 
 function doPost(e) {
