@@ -15,6 +15,7 @@ var HEADERS = [
   'Q3 Block frequency',
   'Q4 Main block type',
   'Q5 Effects (multi)',
+  'Q5 — other',
   'Q6 Paid for support before',
   'Q6 — what & how much',
   'Q7 Would use it',
@@ -39,7 +40,7 @@ var HEADERS = [
 
 var FIELDS = [
   'submitted_at',
-  'q1','q2','q3','q4','q5','q6','q6b','q7','q8','q9','q10','q11',
+  'q1','q2','q3','q4','q5','q5o','q6','q6b','q7','q8','q9','q10','q11',
   'q12','q12o','q13','q13o','q14','q14o','q15','q15o',
   'q16a','q16b','q17','q18','q19'
 ];
