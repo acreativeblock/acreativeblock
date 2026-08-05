@@ -13,7 +13,7 @@ var HEADERS = [
   'Q1 Field(s) you work in',
   'Q2 Last project stuck on',
   'Q3 Block frequency',
-  'Q4 Main block type',
+  'Q4 Block type(s) (multi)',
   'Q5 Effects (multi)',
   'Q5 — other',
   'Q6 What you do when stuck (multi)',
