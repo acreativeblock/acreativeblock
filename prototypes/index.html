@@ -16,10 +16,10 @@ header.top{margin-bottom:clamp(28px,4vw,48px)}
 h1{font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:clamp(40px,8vw,104px)}
 .sub{font-size:clamp(16px,1.6vw,20px);font-weight:500;color:#3a372f;max-width:680px;margin-top:18px}
 .count{margin-top:18px;font-size:14px;font-weight:700;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1vw,18px)}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.2vw,20px)}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:380px){.grid{grid-template-columns:1fr}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
 .card:hover{transform:translateY(-5px);box-shadow:0 22px 56px rgba(23,22,21,.18)}
@@ -32,21 +32,20 @@ h1{font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:clamp(40px,8vw
 .card.is-fav .thumb .favflag{display:grid}
 .thumb .favflag svg{width:16px;height:16px;fill:#ff3b5c}
 .thumb a.full{position:absolute;inset:0;z-index:3}
-.meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.meta .row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.meta h3{font-weight:900;font-size:19px;letter-spacing:-.02em;line-height:1.05}
-.meta .date{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.meta{padding:11px 13px 12px;display:flex;flex-direction:column;gap:9px;flex:1}
+.meta h3{font-weight:700;font-size:12.5px;letter-spacing:-.01em;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta .date{font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;margin-right:auto}
 .meta p{font-size:14px;font-weight:500;color:#3a372f;line-height:1.45}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
 .badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:30px;background:#eceaff;color:var(--blue)}
 .badge.site{background:#ffe7df;color:var(--red)}
-.actions{margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:8px}
+.actions{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:7px}
 a{text-decoration:none;color:inherit}
 .open{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:30px;transition:transform .15s;margin-right:auto}
 .open:hover{transform:translateY(-2px)}
-.iconbtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .15s,border-color .15s,background .15s;flex-shrink:0;color:var(--muted)}
+.iconbtn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .15s,border-color .15s,background .15s;flex-shrink:0;color:var(--muted)}
 .iconbtn:hover{border-color:var(--ink);transform:translateY(-2px);color:var(--ink)}
-.iconbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.iconbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .fav.on{background:#ffe1e6;border-color:#ff6b81;color:#ff3b5c}
 .fav.on svg{fill:#ff3b5c;stroke:#ff3b5c}
 .archsec{margin-top:clamp(40px,6vw,72px)}
@@ -154,11 +153,9 @@ function card(x,archived){
       <a class="full" href="${enc}" title="Open ${x.tag}"></a>
     </div>
     <div class="meta">
-      <div class="row"><h3>Version ${x.v} — ${x.tag}</h3><span class="date">${fmt(x.date)}</span></div>
-      <div class="badges"><span class="badge ${x.site?'site':''}">${x.site?'Full site':'Single page'}</span></div>
-      <p>${x.desc}</p>
+      <h3 title="Version ${x.v} — ${x.tag}">Version ${x.v} — ${x.tag}</h3>
       <div class="actions">
-        <a class="open" href="${enc}">Open →</a>
+        <span class="date">${fmt(x.date)}</span>
         <button class="iconbtn fav${fav?' on':''}" data-act="fav" title="${fav?'Unfavorite':'Add to favorites'}">${HEART}</button>
         <button class="iconbtn arch" data-act="${archived?'restore':'arch'}" title="${archived?'Restore from archive':'Archive (hide)'}">${archived?RESTORE:ARCH}</button>
       </div>
