@@ -16,7 +16,11 @@ header.top{margin-bottom:clamp(28px,4vw,48px)}
 h1{font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:clamp(40px,8vw,104px)}
 .sub{font-size:clamp(16px,1.6vw,20px);font-weight:500;color:#3a372f;max-width:680px;margin-top:18px}
 .count{margin-top:18px;font-size:14px;font-weight:700;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(18px,2.4vw,30px)}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1vw,18px)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
 .card:hover{transform:translateY(-5px);box-shadow:0 22px 56px rgba(23,22,21,.18)}
 .card.is-fav{border-color:#ff7d92;box-shadow:0 14px 40px rgba(255,59,92,.18)}
@@ -77,6 +81,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);font-weight:600;line-he
 <script>
 /* ===== Add a new entry at the TOP whenever a version is created ===== */
 const VERSIONS = [
+  {v:"47",   tag:"Mucho · red + blue boxes", date:"2026-08-06", site:true, home:"v47-mucho/index.html",  desc:"A Mucho-inspired take: black/white and a coral red #EB4B34 across the whole page in Space Grotesk, with pill-shaped outlined buttons and hairline black dividers. A red hero block split into three columns by thin black rules (statement · 'Let's talk about your block' · CTA), a big red-accented method statement, then the six blocks and an Insights row rendered as thick-bordered electric-blue #2B4EF6 press-clipping boxes (Helvetica, one black card for emphasis). Mucho-style footer with FOLLOW / SUBSCRIBE pills, socials, locations, language pills and a floating cookies card."},
   {v:"46",   tag:"Convent · It's Nice That", date:"2026-07-14", site:true, home:"v46-nicethat/index.html",  desc:"The v45 Convent layout re-skinned in an It's Nice That palette: a soft lavender-white #FBF8FF ground with warm near-black #34302E text and lines, a periwinkle-purple #937BF0 accent (block numbers, panel) and a full purple footer echoing their banner. Same ITC Garamond serif + Founders Grotesk, animated grain, staggered reveal and self-hosted fonts."},
   {v:"45",   tag:"Convent",                date:"2026-07-14", site:true, home:"v45-convent/index.html",   desc:"Faithful to Abbotsford Convent: their actual self-hosted fonts (Untitled Serif for big editorial headings, Founders Grotesk for body/UI), a warm off-white #FBFAF7 ground, near-black #17181A ink and very large type. Overlay two-row menu, an italic-serif hero, bright full-bleed accent bands (coral #F26B7B, yellow #FDD53C, teal #3EB8AE), the six blocks as a bordered what's-on tile grid, a serif method list, and a big dark footer with acknowledgement-style statement, newsletter, hours and columns."},
   {v:"44",   tag:"ManyChat",               date:"2026-07-14", site:true, home:"v44-manychat/index.html",   desc:"A ManyChat-style take: huge chunky rounded display type (Gabarito standing in for ManyChatGravity, Hanken Grotesk for Rooftop, Space Mono for CoFo mono), bold full-colour rounded bands — deep green #007257 hero, yellow #FFF100, blue #3B42C4 and black — with the signature magenta #FA0CF7 pill CTAs. Mega-menu nav, a tilted chat-bubble mock in the hero, three-up feature cards, the six blocks as colour cards, method steps and a big black footer."},
