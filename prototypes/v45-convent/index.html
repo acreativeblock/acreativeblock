@@ -39,7 +39,7 @@ em{font-style:italic}
 .eyebrow{font-family:var(--grot);font-size:13.2px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);opacity:.7}
 
 /* ---------- HEADER: logo left + two stacked right rows ---------- */
-.site-header{background:#232323;color:var(--bg);border-bottom:1px solid rgba(250,249,246,.28)}        /* dark band so the white logo shows */
+.site-header{border-bottom:1px solid var(--ink)}        /* full-width 82.5vw line */
 .site-header .inner{max-width:var(--w);margin:0 auto;padding:26.4px var(--pad) 24.75px;
   display:grid;grid-template-columns:29fr 71fr;gap:clamp(23.1px,3.718vw,66px);align-items:start}
 .logo{align-self:center;font-family:var(--grot);font-weight:400;font-size:clamp(33px,3.96vw,48.4px);line-height:.92;letter-spacing:-.02em}
@@ -49,10 +49,10 @@ em{font-style:italic}
 .hdr-top .clock{font-size:12.38px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}
 .hdr-top a{font-size:12.38px;letter-spacing:.05em;text-transform:uppercase}
 .hdr-top a:hover{opacity:.6}
-.hdr-top .pill{background:var(--bg);color:var(--ink);border-radius:824.18px;padding:8.25px 18.15px;letter-spacing:.05em}
-.hdr-top .pill:hover{opacity:.85}
+.hdr-top .pill{background:var(--ink);color:var(--bg);border-radius:824.18px;padding:8.25px 18.15px;letter-spacing:.05em}
+.hdr-top .pill:hover{background:#000;opacity:1}
 .hdr-top .search{width:18.15px;height:18.15px;display:grid;place-items:center}
-.hdr-divider{border-top:1px solid rgba(250,249,246,.28)}          /* smaller line, right column only */
+.hdr-divider{border-top:1px solid var(--ink)}          /* smaller line, right column only */
 /* big main-pages row */
 .hdr-main{display:flex;justify-content:space-between;gap:clamp(11.55px,1.32vw,26.4px);flex-wrap:wrap;padding-top:19.8px}
 .hdr-main a{font-family:var(--serif);font-size:clamp(15.68px,1.397vw,24.75px);line-height:1;letter-spacing:-.01em}
