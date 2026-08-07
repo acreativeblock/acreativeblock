@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — A living practice for getting unstuck</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/itc-garamond-book-cond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://abbotsfordconvent.com.au/app/themes/convent/dist/fonts/founders-grotesk-web-regular_2a71db01.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://abbotsfordconvent.com.au/app/themes/convent/dist/fonts/founders-grotesk-web-medium_44debd78.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=" preload";</script>
+<style>
+/* Abbotsford Convent's actual self-hosted fonts (prototype use) */
+@font-face{font-family:'ITC Garamond';src:url('fonts/itc-garamond-book-cond.woff2') format('woff2');font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:'Founders Grotesk';src:url('https://abbotsfordconvent.com.au/app/themes/convent/dist/fonts/founders-grotesk-web-regular_2a71db01.woff2') format('woff2');font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:'Founders Grotesk';src:url('https://abbotsfordconvent.com.au/app/themes/convent/dist/fonts/founders-grotesk-web-medium_44debd78.woff2') format('woff2');font-weight:500;font-style:normal;font-display:block}
+:root{
+  --ink:#FAF9F6;
+  --bg:#ff7f50;          /* Abbotsford single background colour + grain */
+  --coral:#232323;
+  --yellow:#232323;
+  --orange:#232323;
+  --line:rgba(23,24,26,.22);
+  --serif:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --grot:'Founders Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --w:1584px;
+  --pad:clamp(18.15px,2.882vw,52.8px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--grot);font-size:18.15px;line-height:1.32;font-weight:400}
+a{color:inherit;text-decoration:none}
+/* animated TV-static grain (canvas, redrawn each frame) */
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.24;mix-blend-mode:multiply;image-rendering:pixelated}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3,h4{font-weight:400;letter-spacing:-.015em}
+.serif{font-family:var(--serif)}
+em{font-style:italic}
+.eyebrow{font-family:var(--grot);font-size:13.2px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);opacity:.7}
+
+/* ---------- HEADER: logo left + two stacked right rows ---------- */
+.site-header{border-bottom:1px solid var(--ink)}        /* full-width 82.5vw line */
+.site-header .inner{max-width:var(--w);margin:0 auto;padding:26.4px var(--pad) 24.75px;
+  display:grid;grid-template-columns:29fr 71fr;gap:clamp(23.1px,3.718vw,66px);align-items:start}
+.logo{align-self:center;font-family:var(--grot);font-weight:400;font-size:clamp(33px,3.96vw,48.4px);line-height:.92;letter-spacing:-.02em}
+.hdr-right{display:flex;flex-direction:column;align-self:stretch}
+/* small top utility row */
+.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(13.2px,1.232vw,24.75px);padding-bottom:18.15px}
+.hdr-top .clock{font-size:12.38px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}
+.hdr-top a{font-size:12.38px;letter-spacing:.05em;text-transform:uppercase}
+.hdr-top a:hover{opacity:.6}
+.hdr-top .pill{background:var(--ink);color:var(--bg);border-radius:824.18px;padding:8.25px 18.15px;letter-spacing:.05em}
+.hdr-top .pill:hover{background:#000;opacity:1}
+.hdr-top .search{width:18.15px;height:18.15px;display:grid;place-items:center}
+.hdr-divider{border-top:1px solid var(--ink)}          /* smaller line, right column only */
+/* big main-pages row */
+.hdr-main{display:flex;justify-content:space-between;gap:clamp(11.55px,1.32vw,26.4px);flex-wrap:wrap;padding-top:19.8px}
+.hdr-main a{font-family:var(--serif);font-size:clamp(15.68px,1.397vw,24.75px);line-height:1;letter-spacing:-.01em}
+.hdr-main a:hover{opacity:.55}
+@media(max-width:891px){.hdr-top .clock{display:none}.hdr-main{gap:11.55px}.hdr-main a{font-size:15.68px}}
+
+/* ---------- HERO ---------- */
+.hero{padding:clamp(46.2px,6.6vw,107.25px) 0 clamp(39.6px,4.95vw,79.2px)}
+.hero h1{font-family:var(--serif);font-size:clamp(30.29px,4.099vw,60.59px);line-height:1.04;letter-spacing:-.02em;max-width:22ch}
+.hero .intro{font-family:var(--grot);font-size:clamp(15.68px,1.32vw,20.62px);line-height:1.34;max-width:44ch;margin-top:28.05px}
+.hero .cta{margin-top:33px;display:flex;gap:13.2px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8.25px;font-family:var(--grot);font-size:15.68px;padding:12.38px 26.4px;border-radius:824.18px;border:1px solid var(--ink);transition:.15s;cursor:pointer}
+.btn-fill{background:var(--ink);color:var(--bg)}
+.btn-fill:hover{background:#000}
+.btn-out:hover{background:var(--ink);color:var(--bg)}
+.btn-coral{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+.btn-coral:hover{background:#ef5568}
+
+/* ---------- SIX BLOCKS (editorial grid on the single bg) ---------- */
+.blocks-sec{padding:clamp(33px,4.125vw,66px) 0 clamp(49.5px,6.6vw,99px)}
+.blocks-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24.75px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:48px}
+.blocks-head h2{font-family:var(--serif);font-size:clamp(26.73px,3.208vw,48.11px);line-height:1.02;max-width:16ch}
+.blocks-head p{font-size:16.5px;max-width:34ch;opacity:.8}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--ink);border-top:1px solid var(--ink);margin-top:clamp(24.75px,3.3vw,46.2px)}
+.tile{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:clamp(23.1px,1.98vw,36.3px);min-height:247.5px;display:flex;flex-direction:column;transition:.2s}
+.tile:hover{background:rgba(251,250,247,.28)}
+.tile .num{font-family:var(--serif);font-size:clamp(46.2px,4.125vw,69.3px);line-height:.9;margin-bottom:auto}
+.tile h3{font-family:var(--serif);font-size:clamp(23.17px,1.782vw,30.29px);line-height:1.02;margin-top:24.75px}
+.tile p{font-size:14.85px;margin-top:11.55px;line-height:1.36;opacity:.82;max-width:34ch}
+.tile.c1 .num,.tile.c4 .num{color:var(--coral)}
+.tile.c2 .num,.tile.c5 .num{color:var(--ink)}
+.tile.c3 .num,.tile.c6 .num{color:var(--orange)}
+
+/* ---------- CLOSING CTA (same bg) ---------- */
+.close{padding:clamp(49.5px,6.6vw,99px) 0;text-align:center;border-top:1px solid var(--ink)}
+.close h2{font-family:var(--serif);font-size:clamp(30.29px,4.455vw,67.72px);line-height:1.02;max-width:20ch;margin:0 auto}
+.close .cta{margin-top:31.35px;display:flex;gap:13.2px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- FOOTER (Abbotsford style: dark, grotesk, big) ---------- */
+footer{background:#232323;color:#FAF9F6;padding:clamp(46.2px,4.95vw,75.9px) 0 clamp(39.6px,4.95vw,72.6px);position:relative;z-index:1;font-family:var(--grot)}
+.foot-lead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(33px,4.95vw,79.2px);padding-bottom:clamp(36.3px,4.125vw,59.4px);border-bottom:1px solid rgba(255,255,255,.28)}
+.ack{font-family:var(--grot);font-weight:400;font-size:clamp(19.8px,1.98vw,28.88px);line-height:1.14;max-width:26ch}
+.news h3{font-family:var(--grot);font-weight:400;font-size:clamp(19.8px,1.98vw,28.88px);line-height:1.14}
+.news p{font-size:clamp(14.85px,1.111vw,18.15px);color:rgba(255,255,255,.72);margin-top:13.2px;max-width:42ch;line-height:1.3}
+.news .in{display:flex;border-bottom:1px solid rgba(255,255,255,.5);max-width:346.5px;margin-top:16.5px}
+.news input{flex:1;background:transparent;border:0;color:#fff;font-family:var(--grot);font-size:16.5px;padding:9.9px 0}
+.news input::placeholder{color:rgba(255,255,255,.5)}
+.news button{background:transparent;border:0;color:#fff;font-family:var(--grot);font-size:16.5px;cursor:pointer;padding:0 4.95px}
+.news button:hover{color:var(--coral)}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:33px;padding-top:clamp(36.3px,4.125vw,59.4px)}
+.fcol a,.fcol span{display:block;font-size:14.85px;line-height:1.55;color:rgba(255,255,255,.7)}
+.fcol a:hover{color:#fff}
+.fcol .head{color:#fff;font-size:17.33px;margin-bottom:8.25px}
+.fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:13.2px;margin-top:clamp(36.3px,4.125vw,56.1px);padding-top:21.45px;border-top:1px solid rgba(255,255,255,.22);font-size:13.2px;color:rgba(255,255,255,.6)}
+.fbar a{color:rgba(255,255,255,.6)}.fbar a:hover{color:#fff}
+
+@media(max-width:742.5px){.tiles,.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- PAGE EXIT + STAGGERED CONTENT FADE-UP (hidden pre-paint, revealed on fonts-ready) ---------- */
+html.preload .page>*{opacity:0;transform:translateY(24px)}
+.page>*{transition:opacity .6s ease,transform .72s cubic-bezier(.2,.75,.25,1)}
+html.ready .page>*{opacity:1;transform:none}
+html.ready .page>*:nth-child(1){transition-delay:.02s}
+html.ready .page>*:nth-child(2){transition-delay:.10s}
+html.ready .page>*:nth-child(3){transition-delay:.18s}
+html.ready .page>*:nth-child(4){transition-delay:.26s}
+html.ready .page>*:nth-child(5){transition-delay:.34s}
+html.ready .page>*:nth-child(6){transition-delay:.42s}
+html.ready .page>*:nth-child(7){transition-delay:.50s}
+html.ready .page>*:nth-child(8){transition-delay:.58s}
+@media(prefers-reduced-motion:reduce){html.preload .page>*{opacity:1;transform:none}.page>*{transition:none}}
+/* ---------- HOME (v33 content, Convent styled) ---------- */
+.method{padding:clamp(33px,4.125vw,66px) 0}
+.method .usps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26.4px,3.3vw,52.8px);margin-top:clamp(24.75px,3.3vw,46.2px)}
+.usp{padding-top:4px}
+.usp .n{display:block;font-family:var(--serif);font-size:clamp(33px,2.86vw,46.2px);line-height:.9;color:var(--coral);margin-bottom:15.4px}
+.usp h3{font-family:var(--serif);font-size:clamp(23.17px,1.901vw,30.89px);line-height:1.05;margin-bottom:8.8px}
+.usp p{font-size:15.68px;line-height:1.42;opacity:.82;max-width:34ch}
+.strip{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30.8px,4.4vw,70.4px);align-items:center;padding:clamp(44px,5.5vw,88px) 0;border-top:1px solid var(--ink)}
+.strip h2{font-family:var(--serif);font-size:clamp(26.73px,3.208vw,48.11px);line-height:1.04;margin-bottom:15.4px;max-width:16ch}
+.strip p{font-size:clamp(16.5px,1.43vw,22px);line-height:1.4;max-width:44ch;margin-bottom:24.2px}
+.strip .panel{aspect-ratio:16/11;border:1px solid var(--ink);display:grid;place-items:center;padding:clamp(26.4px,3.3vw,48.4px);background:var(--coral)}
+.strip .panel span{font-family:var(--serif);font-size:clamp(23.76px,2.376vw,36.83px);line-height:1.14;text-align:center;color:var(--ink);max-width:20ch}
+.statement{padding:clamp(61.6px,8.8vw,127.6px) 0;border-top:1px solid var(--ink);text-align:center}
+.statement h2{font-family:var(--serif);font-size:clamp(30.89px,4.039vw,60.59px);line-height:1.06;max-width:22ch;margin:0 auto}
+.statement p{font-size:clamp(16.5px,1.485vw,23.1px);line-height:1.42;max-width:56ch;margin:19.8px auto 0;opacity:.85}
+@media(max-width:902px){.method .usps{grid-template-columns:1fr}.strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="page">
+<header class="site-header"><div class="inner">
+  <a class="logo" href="index.html"><img src="../_logo/blocky-white.png" alt="A Creative Block" style="height:74px;width:auto;display:block;max-width:100%"></a>
+  <div class="hdr-right">
+    <div class="hdr-top">
+      <span class="clock" id="clock">Lisbon</span>
+      <a href="blog.html">News</a>
+      <a href="faq.html">FAQ</a>
+      <a href="resources.html">Resources</a>
+      <a href="mailto:hello@acreativeblock.com">Support us</a>
+      <a class="pill" href="mailto:hello@acreativeblock.com">Book a session</a>
+    </div>
+    <div class="hdr-divider"></div>
+    <nav class="hdr-main">
+      <a href="questionnaire.html">What’s on</a>
+      <a href="blocks.html">The Six Blocks</a>
+      <a href="method.html">The Method</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="about.html">About</a>
+      <a href="mailto:hello@acreativeblock.com">Contact</a>
+    </nav>
+  </div>
+</div></header>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Coaching &amp; consultancy for creatives</div>
+    <h1 class="serif" style="margin-top:.28em">A place to understand why you keep getting <em>stuck</em>.</h1>
+    <p class="intro">A Creative Block is coaching &amp; consultancy for creatives who keep stalling on the work that matters. Getting stuck isn’t a flaw — it’s a signal.</p>
+    <div class="cta">
+      <a class="btn btn-fill" href="questionnaire.html">Find your block</a>
+      <a class="btn btn-out" href="#method">How we work</a>
+    </div>
+  </div>
+</header>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="blocks-head">
+      <h2 class="serif">Root first, then a path — and we stay in it with you.</h2>
+      <p>How we work — three moves, in order.</p>
+    </div>
+    <div class="usps">
+      <div class="usp"><span class="n serif">01</span><h3 class="serif">Find the root</h3><p>The stuck you feel is rarely the stuck that’s there. We name which of the six blocks is really in your way.</p></div>
+      <div class="usp"><span class="n serif">02</span><h3 class="serif">Understand the why</h3><p>We look at what the block protects — fear, meaning, identity — so it loosens its grip instead of being forced.</p></div>
+      <div class="usp"><span class="n serif">03</span><h3 class="serif">Build the way through</h3><p>A clear path, gentle structure, and the accountability to keep going — so moving stops taking everything you’ve got.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blocks-sec" id="blocks">
+  <div class="wrap">
+    <div class="blocks-head">
+      <h2 class="serif">Six kinds of stuck — usually a mix.</h2>
+      <p>Most creative block is one of six patterns, with one that pulls hardest right now. Naming yours accurately is where the work begins.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile c1"><div class="num serif">01</div><h3 class="serif">Directional</h3><p>Too many ideas, or none that pull. The block is a missing north — you need to know where, and why it’s yours.</p></div>
+      <div class="tile c2"><div class="num serif">02</div><h3 class="serif">Structural</h3><p>Work happens in bursts, then collapses. The block is scaffolding — a way to keep going without willpower.</p></div>
+      <div class="tile c3"><div class="num serif">03</div><h3 class="serif">Execution</h3><p>You know what to do and can’t start — or finish. Usually fear in a productivity costume. We find what it protects.</p></div>
+      <div class="tile c4"><div class="num serif">04</div><h3 class="serif">Identity</h3><p>“Am I even a real creative?” The block lives in the story about yourself, not the work.</p></div>
+      <div class="tile c5"><div class="num serif">05</div><h3 class="serif">Skill</h3><p>The gap between your taste and ability is real, and it hurts. Not a flaw — a stage. We build a path across it.</p></div>
+      <div class="tile c6"><div class="num serif">06</div><h3 class="serif">Environmental</h3><p>Your life, setup and people quietly work against the work. Sometimes the block is around you, not in you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding:0">
+  <div class="wrap">
+    <div class="strip">
+      <div>
+        <div class="eyebrow">Not a &ldquo;just do it&rdquo; thing</div>
+        <h2 class="serif" style="margin-top:.4em">You don’t get unstuck alone.</h2>
+        <p>People move through blocks in relationship — with community around them, accountability that expects them to keep going, and a space that treats their creativity as worth the effort.</p>
+        <a class="btn btn-out" href="manifesto.html">Read the manifesto</a>
+      </div>
+      <div class="panel"><span>Getting stuck isn’t a flaw. It’s a signal — and it deserves proper attention.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <h2 class="serif">Coaching when it’s about <em>you</em>. Consultancy when it’s about the <em>work</em>.</h2>
+    <p>Sometimes the block is personal — identity, fear, direction. Sometimes it’s practical — a project, a plan, a decision that won’t settle. Most people need a little of each.</p>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2 class="serif">Come back to the <em>work</em>.</h2>
+    <div class="cta">
+      <a class="btn btn-fill" href="questionnaire.html">Find your block</a>
+      <a class="btn btn-out" href="mailto:hello@acreativeblock.com">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-lead">
+      <p class="ack">A Creative Block is for anyone with a project that matters. Getting stuck isn’t a flaw — it’s a signal, and it deserves proper attention, not a slogan.</p>
+      <div class="news">
+        <h3>Sign up for more</h3>
+        <p>Keep up to date with an honest, occasional letter on creative block and how people get unstuck. No noise — just the letters worth opening.</p>
+        <form class="in" onsubmit="event.preventDefault();this.reset();this.querySelector('button').textContent='Thanks —';">
+          <input type="email" placeholder="Your email" aria-label="Email" required>
+          <button type="submit">Sign up →</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-cols">
+      <div class="fcol">
+        <a class="head" href="method.html">What we do</a>
+        <a href="blocks.html">The Six Blocks</a>
+        <a href="method.html">The Method</a>
+        <a href="method.html">Coaching</a>
+        <a href="method.html">Intensives</a>
+      </div>
+      <div class="fcol">
+        <a class="head" href="resources.html">Read</a>
+        <a href="about.html">Manifesto</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div class="fcol">
+        <a class="head" href="about.html">About</a>
+        <a href="questionnaire.html">Find your block</a>
+        <a href="faq.html">Pricing &amp; access</a>
+        <a href="mailto:hello@acreativeblock.com">Partner with us</a>
+      </div>
+      <div class="fcol">
+        <a class="head" href="mailto:hello@acreativeblock.com">Get in touch</a>
+        <a href="mailto:hello@acreativeblock.com">hello@acreativeblock.com</a>
+        <span>Lisbon &amp; online, everywhere</span>
+        <span>By appointment · Mon–Fri</span>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="fbar"><span>© 2026 A Creative Block · Understand the why, then move.</span><div style="display:flex;gap:22px"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cookies</a></div></div>
+  </div>
+</footer>
+</div>
+<canvas class="grain"></canvas>
+<script>
+// animated TV-static grain
+(function(){
+  const c=document.querySelector('canvas.grain'),x=c.getContext('2d');
+  const S=1.5; let W,H;            // ~1.5px grain
+  function resize(){W=c.width=Math.max(1,Math.ceil(innerWidth/S));H=c.height=Math.max(1,Math.ceil(innerHeight/S));}
+  resize(); addEventListener('resize',resize);
+  let last=0;
+  function frame(t){
+    if(t-last>60){                 // ~16fps flicker
+      const img=x.createImageData(W,H),d=img.data;
+      for(let i=0;i<d.length;i+=4){const v=(Math.random()*255)|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=(Math.random()*48)|0;}
+      x.putImageData(img,0,0); last=t;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+// live Lisbon clock — Abbotsford's DATE · TIME format
+(function(){
+  const el=document.getElementById('clock');if(!el)return;
+  function tick(){try{
+    const d=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',weekday:'short',day:'2-digit',month:'short'}).format(new Date());
+    const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit'}).format(new Date());
+    el.textContent='Lisbon · '+d+' · '+t;
+  }catch(e){el.textContent='Lisbon';}}
+  tick();setInterval(tick,10000);
+})();
+
+
+
+// smooth load: reveal once fonts are ready (no font-pop, no flash)
+(function(){
+  var el=document.documentElement;
+  function go(){el.classList.remove('preload');el.classList.add('ready');}
+  try{ if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go);} }catch(e){}
+  setTimeout(go,700);            // safety fallback
+  window.addEventListener('pageshow',function(ev){if(ev.persisted)go();});
+})();
+</script>
+</body>
+</html>
