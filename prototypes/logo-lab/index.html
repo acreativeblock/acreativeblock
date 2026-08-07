@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — Logo Lab</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23212324'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#FAFAFA;--ink:#212324;--muted:#8a8d8e;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+.hint{position:fixed;left:0;right:0;top:18px;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);z-index:5}
+/* sticky stage keeps the logo on screen while you scroll */
+.stage{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center}
+.logowrap{width:min(88vw,1000px)}
+svg{width:100%;height:auto;display:block;overflow:visible}
+/* scroll runway so there IS something to scroll */
+.runway{height:320vh}
+.foot{position:fixed;left:0;right:0;bottom:16px;text-align:center;font-size:12px;color:var(--muted);z-index:5}
+.foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="hint">Scroll to shake the blocks</div>
+
+<div class="stage">
+  <div class="logowrap">
+    <svg id="logo" width="2501" height="328" viewBox="0 0 2501 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1515.61 17.3076V43.0381H1411.02V108.86H1510.19V134.298H1411.02V204.954H1515.61V230.685H1382.65V17.3076H1515.61Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1205.94 17.3076L1206.18 17.9766L1268.51 195.835L1330.85 17.9766L1331.09 17.3076H1360.92L1360.42 18.6533L1282.49 230.03L1282.25 230.685H1254.78L1254.54 230.03L1176.61 18.6533L1176.11 17.3076H1205.94Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1154.38 17.3076V230.685H1126.01V17.3076H1154.38Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1100.18 17.3076V43.0381H1033.53V230.685H1005.16V43.0381H938.51V17.3076H1100.18Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M890.588 17.3076L890.829 17.9619L968.759 229.339L969.255 230.685H939.426L939.191 230.016L918.186 170.187H835.521L814.516 230.016L814.281 230.685H784.452L784.948 229.339L862.878 17.9619L863.119 17.3076H890.588ZM843.986 145.774H909.721L876.854 52.1533L843.986 145.774Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M107.57 17.3076L107.812 17.9619L185.741 229.339L186.237 230.685H156.408L156.174 230.016L135.168 170.187H52.5039L31.498 230.016L31.2637 230.685H1.43457L1.93066 229.339L79.8604 17.9619L80.1016 17.3076H107.57ZM60.9688 145.774H126.703L93.8359 52.1533L60.9688 145.774Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M768.869 17.3076V43.0381H664.279V108.86H763.449V134.298H664.279V204.954H768.869V230.685H635.912V17.3076H768.869Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M546.277 17.3076C566.842 17.3076 583.949 23.5981 595.923 34.7891C607.904 45.9862 614.66 62.0096 614.66 81.2959C614.66 110.706 598.91 133.726 572.645 142.515L620.979 229.197L621.808 230.685H588.602L588.317 230.16L543.338 147.042H494.396V230.685H466.029V17.3076H546.277ZM494.396 121.751H543.934C557.31 121.751 567.652 118.137 574.646 111.462C581.632 104.793 585.414 94.9397 585.414 82.1748C585.414 69.7273 581.391 59.9072 574.126 53.1914C566.851 46.4662 556.206 42.7451 542.762 42.7451H494.396V121.751Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M358.084 13.792C404.515 13.792 439.991 42.0734 446.815 84.7998L447.001 85.958H418.382L418.196 85.1943C411.576 57.9927 387.836 40.1084 358.084 40.1084C337.725 40.1084 320.986 48.3266 309.315 62.8604C297.628 77.4155 290.969 98.379 290.969 123.923C290.969 149.69 297.557 170.688 309.224 185.223C320.872 199.734 337.646 207.884 358.23 207.884C388.932 207.884 410.741 193.154 418.209 167.878L418.421 167.161H447.086L446.803 168.387C441.922 189.461 431.551 205.939 416.449 217.14C401.355 228.335 381.613 234.2 358.084 234.2C328.676 234.2 304.586 223.514 287.86 204.322C271.148 185.146 261.869 157.572 261.869 123.923C261.869 90.562 271.26 63.026 288.025 43.8154C304.803 24.5911 328.891 13.792 358.084 13.792Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M2375.55 76.9955L2337.05 172.663L2337.07 172.671L2461.73 112.036L2462.13 111.841L2495.52 125.277L2493.44 126.255L2378.69 180.289L2422.26 324.05L2422.86 326.047L2389.23 312.51L2389.09 312.05L2352.88 191.722L2323.68 205.883L2295.88 274.943L2269.57 264.352L2349.23 66.4045L2375.55 76.9955Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M2163.55 21.9107C2205.2 9.78466 2244.86 27.7474 2262.9 66.9504L2263.38 68.0043L2237.64 75.5006L2237.25 74.8027C2223.7 50.3796 2197.46 39.445 2170.91 47.1778C2152.73 52.4711 2140.06 64.6958 2133.68 81.6882C2127.28 98.7114 2127.18 120.585 2134.33 145.125C2141.54 169.879 2153.31 188.331 2167.82 199.247C2182.3 210.14 2199.56 213.577 2217.94 208.225C2231.68 204.226 2242.37 197.269 2249.59 188.068C2256.8 178.872 2260.58 167.378 2260.39 154.217L2260.38 153.456L2286.16 145.947L2286.25 147.183C2287.77 168.673 2283.1 187.197 2272.71 201.898C2262.31 216.598 2246.26 227.39 2225.17 233.53C2198.8 241.207 2174.22 237.214 2153.88 223.142C2133.56 209.087 2117.55 185.039 2108.15 152.747C2098.83 120.733 2099.53 91.858 2109.17 69.0436C2118.82 46.2049 2137.38 29.5321 2163.55 21.9107Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1874.29 173.943C1873.14 143.761 1882.83 118.735 1901.34 100.94C1919.83 83.1569 1947.03 72.6866 1980.73 71.4019C2014.44 70.1172 2042.32 78.4884 2062.08 94.8137C2081.85 111.15 2093.38 135.366 2094.53 165.548C2095.68 195.729 2086.03 220.753 2067.55 238.547C2049.1 256.329 2021.93 266.799 1988.23 268.083C1954.53 269.368 1926.61 260.999 1906.82 244.675C1887.01 228.341 1875.44 204.125 1874.29 173.943ZM1900.58 172.941C1901.4 194.257 1910.14 211.224 1925.06 222.635C1940 234.064 1961.23 239.992 1987.12 239.005C2012.94 238.021 2033.63 230.495 2047.64 217.963C2061.63 205.449 2069.05 187.866 2068.24 166.55C2067.42 145.234 2058.68 128.267 2043.78 116.855C2028.86 105.425 2007.66 99.4962 1981.84 100.48C1955.95 101.467 1935.23 108.995 1921.2 121.527C1907.19 134.042 1899.77 151.624 1900.58 172.941Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1850.35 94.3919L1827.36 280.624L1928.54 293.118L1925.39 318.654L1796.05 302.685L1822.2 90.9158L1850.35 94.3919Z" fill="black" stroke="black" stroke-width="2"/>
+<path d="M1716.91 12.4545C1735.18 11.8152 1750.77 16.6025 1761.95 25.6336C1773.14 34.6753 1779.84 47.9139 1780.4 64C1781.15 85.5894 1766.62 106.369 1746.98 111.851C1760.59 113.553 1771.99 119.059 1780.24 127.514C1788.94 136.443 1794.06 148.602 1794.56 162.882C1795.22 181.731 1788.98 197.089 1776.81 207.916C1764.66 218.721 1746.7 224.919 1724.08 225.711L1643.3 228.538L1635.83 15.2919L1716.91 12.4545ZM1670.76 202.271L1719.24 200.574C1735.02 200.022 1746.77 196.405 1754.45 190.041C1762.09 183.713 1765.85 174.557 1765.43 162.582C1765.01 150.622 1760.49 141.873 1752.06 136.213C1743.57 130.513 1730.97 127.852 1714.23 128.438L1668.24 130.047L1670.76 202.271ZM1667.37 105.357L1705.9 104.009C1721.38 103.467 1733.07 99.9616 1740.77 93.8945C1748.43 87.8645 1752.25 79.2166 1751.86 68.0767C1751.51 57.856 1747.74 50.1606 1741.04 45.1023C1734.31 40.0188 1724.47 37.4965 1711.79 37.9401L1665.07 39.5753L1667.37 105.357Z" fill="black" stroke="black" stroke-width="2"/>
+<circle id="dot" cx="1984.51" cy="169.847" r="27" fill="black"/>
+    </svg>
+  </div>
+</div>
+<div class="runway"></div>
+<div class="foot">Physics demo · <b>BLOCK</b> letters fall in on load, bounce on scroll · the dot lives inside the O</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // ---- tunables ----
+  var SPRING=0.019;     // pull back toward home
+  var FRICTION=0.94;    // velocity damping (higher = calmer, settles sooner)
+  var WALL_E=0.5;       // bounce off walls
+  var COLL_E=0.45;      // bounce off other letters
+  var GRAV=0.35;        // gravity strength during a "burst"
+  var ROT_K=0.14;       // tilt from horizontal motion
+  var ROT_SPRING=0.022; // rotation springs back to the crooked home
+  var ROT_FRIC=0.9;     // angular damping
+  var ROT_IMP=0.02;     // spin imparted when letters collide
+  var MAXV=13;          // clamp speed so nothing goes wild
+  var POKE_R=64;        // how far the mouse poke reaches past a letter
+  var POKE=1.9;         // mouse poke strength
+  var THRESH_X=1680;    // paths with centre-x beyond this are the BLOCK letters
+
+  var svg=document.getElementById('logo');
+  var dotEl=document.getElementById('dot');
+  var paths=[].slice.call(svg.querySelectorAll('path'));
+
+  function boot(){
+    // classify BLOCK letters via geometry bbox
+    var blocks=[], minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
+    paths.forEach(function(p){
+      var b=p.getBBox(); var cx=b.x+b.width/2;
+      if(cx>THRESH_X){
+        var body={el:p, cx0:cx, cy0:b.y+b.height/2, w:b.width, h:b.height,
+          r:Math.max(18,0.42*Math.min(b.width,b.height)),
+          ox:0,oy:0,vx:0,vy:0,rot:0,va:0, released:false, releaseAt:0};
+        blocks.push(body);
+        if(b.x<minX)minX=b.x; if(b.x+b.width>maxX)maxX=b.x+b.width;
+        if(b.y<minY)minY=b.y; if(b.y+b.height>maxY)maxY=b.y+b.height;
+      }
+    });
+
+    // the O = the block whose bbox contains the dot's centre
+    var dcx=+dotEl.getAttribute('cx'), dcy=+dotEl.getAttribute('cy'), dr=+dotEl.getAttribute('r');
+    var O=null;
+    blocks.forEach(function(bd){
+      if(Math.abs(dcx-bd.cx0)<bd.w/2 && Math.abs(dcy-bd.cy0)<bd.h/2){ O=bd; }
+    });
+    // dot as a body confined inside the O
+    var dot={C0x:(O?O.cx0:dcx), C0y:(O?O.cy0:dcy),
+      R:Math.max(6, (O?0.30*Math.min(O.w,O.h):40) - dr),
+      px:dcx-(O?O.cx0:dcx), py:dcy-(O?O.cy0:dcy), vx:0, vy:0};
+
+    // limited play space (a bit roomier than the letters at rest)
+    var wall={l:minX-14, r:Math.min(2501,maxX+14), t:0, b:maxY+18};
+
+    if(reduce){ // no motion: just leave everything at home
+      return;
+    }
+
+    // start each letter above its home, released in a quick stagger -> "falls into place"
+    blocks.forEach(function(bd,i){
+      bd.oy = -(bd.cy0 + bd.h/2 + 40);       // sit just above the top edge (clipped)
+      bd.ox = (Math.random()-0.5)*30;
+      bd.vy = 0;
+      bd.releaseAt = performance.now() + 90*i; // left-to-right-ish stagger
+    });
+    var gravityUntil = performance.now() + 1600; // gravity burst for the fall-in
+
+    // scroll shakes them
+    var lastY = window.pageYOffset;
+    function onScroll(){
+      var y=window.pageYOffset, d=y-lastY; lastY=y;
+      var s=Math.min(Math.abs(d)*0.4, 8);
+      if(s<0.6) return;
+      gravityUntil = performance.now() + 600;    // brief gentle arc
+      blocks.forEach(function(bd){
+        bd.vx += (Math.random()-0.5)*s*0.55;
+        bd.vy += (d>0? -0.3:0.3)*s + (Math.random()-0.5)*s*0.35; // gentle kick
+        bd.va += (Math.random()-0.5)*s*0.14;                     // a little spin
+      });
+      dot.vx += (Math.random()-0.5)*s*0.45;
+      dot.vy += (d>0?-0.3:0.3)*s*0.5 + (Math.random()-0.5)*s*0.35;
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+
+    // mouse poke: nudge letters (and the dot) away from the cursor
+    function onPoke(e){
+      var rect=svg.getBoundingClientRect();
+      var mx=(e.clientX-rect.left)/rect.width*2501, my=(e.clientY-rect.top)/rect.height*328;
+      blocks.forEach(function(bd){
+        if(!bd.released) return;
+        var dx=(bd.cx0+bd.ox)-mx, dy=(bd.cy0+bd.oy)-my, dist=Math.hypot(dx,dy)||0.001, reach=bd.r+POKE_R;
+        if(dist<reach){ var f=(1-dist/reach)*POKE; bd.vx+=(dx/dist)*f; bd.vy+=(dy/dist)*f; bd.va+=(Math.random()-0.5)*f*0.5; gravityUntil=performance.now()+450; }
+      });
+      var Ox=(O?O.cx0+O.ox:dot.C0x), Oy=(O?O.cy0+O.oy:dot.C0y);
+      var ex=(Ox+dot.px)-mx, ey=(Oy+dot.py)-my, ed=Math.hypot(ex,ey)||0.001, er=dot.R+POKE_R;
+      if(ed<er){ var g=(1-ed/er)*POKE; dot.vx+=(ex/ed)*g; dot.vy+=(ey/ed)*g; }
+    }
+    svg.addEventListener('pointermove', onPoke, {passive:true});
+
+    function collide(a,b){
+      var dx=(b.cx0+b.ox)-(a.cx0+a.ox), dy=(b.cy0+b.oy)-(a.cy0+a.oy);
+      var dist=Math.hypot(dx,dy)||0.001, min=a.r+b.r;
+      if(dist<min){
+        var nx=dx/dist, ny=dy/dist, overlap=(min-dist);
+        a.ox-=nx*overlap/2; a.oy-=ny*overlap/2;
+        b.ox+=nx*overlap/2; b.oy+=ny*overlap/2;
+        // exchange velocity along the normal
+        var avn=a.vx*nx+a.vy*ny, bvn=b.vx*nx+b.vy*ny;
+        var m=(avn-bvn)*COLL_E;
+        if(avn-bvn>0){
+          a.vx-=nx*m; a.vy-=ny*m; b.vx+=nx*m; b.vy+=ny*m;
+        }
+        // spin from the glancing (tangential) part of the hit
+        var tx=-ny, ty=nx, vt=(a.vx-b.vx)*tx+(a.vy-b.vy)*ty;
+        a.va += vt*ROT_IMP; b.va -= vt*ROT_IMP;
+      }
+    }
+
+    function frame(now){
+      var gOn = now < gravityUntil;
+      // integrate letters
+      blocks.forEach(function(bd){
+        if(!bd.released){ if(now>=bd.releaseAt) bd.released=true; else { bd.el.setAttribute('transform','translate('+bd.ox+' '+bd.oy+')'); return; } }
+        // forces
+        bd.vx += -SPRING*bd.ox;
+        bd.vy += -SPRING*bd.oy + (gOn?GRAV:0);
+        bd.vx *= FRICTION; bd.vy *= FRICTION;
+        if(bd.vx>MAXV)bd.vx=MAXV; else if(bd.vx<-MAXV)bd.vx=-MAXV;
+        if(bd.vy>MAXV)bd.vy=MAXV; else if(bd.vy<-MAXV)bd.vy=-MAXV;
+        bd.ox += bd.vx; bd.oy += bd.vy;
+        // walls (limited space)
+        var cx=bd.cx0+bd.ox, cy=bd.cy0+bd.oy;
+        if(cx-bd.r<wall.l){ bd.ox+=(wall.l-(cx-bd.r)); bd.vx=-bd.vx*WALL_E; }
+        if(cx+bd.r>wall.r){ bd.ox-=((cx+bd.r)-wall.r); bd.vx=-bd.vx*WALL_E; }
+        if(cy-bd.r<wall.t){ bd.oy+=(wall.t-(cy-bd.r)); bd.vy=-bd.vy*WALL_E; }
+        if(cy+bd.r>wall.b){ bd.oy-=((cy+bd.r)-wall.b); bd.vy=-bd.vy*WALL_E; }
+        // angular motion: tilt from movement + spin from hits, always springs back to crooked home
+        bd.va += bd.vx*ROT_K*0.03;
+        bd.va += -ROT_SPRING*bd.rot;
+        bd.va *= ROT_FRIC;
+        bd.rot += bd.va;
+        if(bd.rot>20)bd.rot=20; else if(bd.rot<-20)bd.rot=-20;
+      });
+      // letter-letter collisions
+      for(var i=0;i<blocks.length;i++) for(var j=i+1;j<blocks.length;j++) collide(blocks[i],blocks[j]);
+      // apply transforms
+      blocks.forEach(function(bd){
+        bd.el.setAttribute('transform','translate('+bd.ox.toFixed(2)+' '+bd.oy.toFixed(2)+') rotate('+bd.rot.toFixed(2)+' '+bd.cx0+' '+bd.cy0+')');
+      });
+      // dot bounces inside the O (follows the O's motion + its own little orbit)
+      dot.vx += -0.02*dot.px; dot.vy += -0.02*dot.py + (gOn?GRAV*0.7:0);
+      dot.vx*=FRICTION; dot.vy*=FRICTION;
+      var dm=MAXV*0.9; if(dot.vx>dm)dot.vx=dm; else if(dot.vx<-dm)dot.vx=-dm; if(dot.vy>dm)dot.vy=dm; else if(dot.vy<-dm)dot.vy=-dm;
+      dot.px += dot.vx; dot.py += dot.vy;
+      var pd=Math.hypot(dot.px,dot.py);
+      if(pd>dot.R){ // reflect off the inner wall of the O
+        var nx=dot.px/pd, ny=dot.py/pd;
+        dot.px=nx*dot.R; dot.py=ny*dot.R;
+        var vn=dot.vx*nx+dot.vy*ny; dot.vx-=(1+WALL_E)*vn*nx; dot.vy-=(1+WALL_E)*vn*ny;
+      }
+      var Oox=O?O.ox:0, Ooy=O?O.oy:0;
+      var tx=(dot.C0x+Oox+dot.px)-dcx, ty=(dot.C0y+Ooy+dot.py)-dcy;
+      dotEl.setAttribute('transform','translate('+tx.toFixed(2)+' '+ty.toFixed(2)+')');
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // getBBox needs the SVG laid out
+  if(document.readyState==='complete') requestAnimationFrame(boot);
+  else window.addEventListener('load', function(){ requestAnimationFrame(boot); });
+})();
+</script>
+</body>
+</html>
