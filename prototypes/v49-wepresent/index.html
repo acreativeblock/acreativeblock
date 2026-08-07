@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#FAFAFA; --ink:#212324; --muted:#6B6E70; --line:#E7E7E5; --card:#FFFFFF;
-  --blue:#4890D8; --orange:#D86030; --lime:#C9C94E; --pink:#E0A9B0; --green:#5FA85F; --sky:#78C0D8; --navy:#181890;
+  --blue:#4890D8; --orange:#D86030; --lime:#C9C94E; --pink:#E0A9B0; --green:#5FA85F; --sky:#78C0D8;
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -17,9 +17,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,52px)}
 
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+/* v6.1 motion kit */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.rv-scale{transform:scale(.965);transition-duration:.9s}
+  .reveal.rv-scale.in{transform:scale(1)}
+}
 
 .pill{display:inline-flex;align-items:center;gap:8px;border:1.4px solid var(--ink);border-radius:999px;padding:12px 26px;font-size:14px;font-weight:600;cursor:pointer;transition:.18s;background:transparent}
 .pill:hover{background:var(--ink);color:var(--bg)}
@@ -27,14 +31,14 @@ a{color:inherit;text-decoration:none}
 .pill.fill:hover{background:var(--blue);border-color:var(--blue)}
 
 /* MASTHEAD */
-.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(18px,3vw,40px);padding:clamp(30px,4vw,52px) 0 clamp(26px,3vw,40px)}
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(18px,3vw,40px);padding:clamp(28px,3.5vw,44px) 0 clamp(24px,3vw,36px)}
 .mast nav{display:flex;gap:clamp(16px,2vw,30px);font-size:14.5px;font-weight:500}
 .mast nav.left{justify-content:flex-start}
 .mast nav.right{justify-content:flex-end}
 .mast nav a{color:var(--muted);transition:.15s}
 .mast nav a:hover{color:var(--ink)}
 .mast .brand{justify-self:center}
-.mast .brand img{height:clamp(30px,3.6vw,42px);display:block}
+.mast .brand img{height:clamp(54px,6.5vw,82px);display:block}
 @media(max-width:760px){
   .mast{grid-template-columns:1fr;justify-items:center;gap:18px}
   .mast .brand{order:-1}
@@ -43,43 +47,47 @@ a{color:inherit;text-decoration:none}
 .rule{height:1px;background:var(--line)}
 
 /* INTRO */
-.intro{text-align:center;padding:clamp(70px,11vw,150px) 0 clamp(50px,8vw,110px);max-width:20ch;margin:0 auto}
+.intro{text-align:center;padding:clamp(70px,11vw,150px) 0 clamp(50px,8vw,110px)}
 .intro .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:26px}
-.intro h1{font-size:clamp(34px,6vw,72px);font-weight:600;line-height:1.02;letter-spacing:-.03em;max-width:16ch;margin:0 auto}
+.intro h1{font-size:clamp(34px,6vw,74px);font-weight:600;line-height:1.02;letter-spacing:-.03em;max-width:15ch;margin:0 auto}
 .intro h1 em{font-style:normal;color:var(--orange)}
-.intro p{font-size:clamp(16px,1.7vw,20px);color:var(--muted);line-height:1.5;max-width:32ch;margin:26px auto 0}
+.intro p{font-size:clamp(16px,1.7vw,20px);color:var(--muted);line-height:1.5;max-width:34ch;margin:26px auto 0}
 .intro .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:38px}
 
-/* SECTION HEADER */
-.sec{padding:clamp(30px,5vw,60px) 0}
-.sechead{text-align:center;max-width:34ch;margin:0 auto clamp(34px,4vw,56px)}
+/* SECTION */
+.sec{padding:clamp(34px,5vw,64px) 0}
+.sechead{text-align:center;max-width:36ch;margin:0 auto clamp(34px,4vw,56px)}
 .sechead h2{font-size:clamp(26px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1.06}
 .sechead p{color:var(--muted);font-size:16px;margin-top:14px}
 
-/* BLOCK TILES — colourful but soft */
+/* BLOCK TILES — colourful but soft, no dots */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
 @media(max-width:840px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.tiles{grid-template-columns:1fr}}
-.tile{border-radius:26px;padding:clamp(26px,3vw,40px);min-height:220px;display:flex;flex-direction:column;transition:transform .25s}
+.tile{border-radius:26px;padding:clamp(26px,3vw,40px);min-height:210px;display:flex;flex-direction:column;transition:transform .25s}
 .tile:hover{transform:translateY(-5px)}
-.tile .dot{width:14px;height:14px;border-radius:50%;margin-bottom:auto}
-.tile h3{font-size:clamp(23px,2.2vw,30px);font-weight:600;letter-spacing:-.01em;margin-top:26px}
+.tile h3{font-size:clamp(23px,2.2vw,30px);font-weight:600;letter-spacing:-.01em;margin-top:auto}
 .tile p{font-size:15.5px;color:#4a4c4d;line-height:1.45;margin-top:9px}
-.t-dir{background:#E3ECF7} .t-dir .dot{background:var(--blue)}
-.t-str{background:#F7E6DA} .t-str .dot{background:var(--orange)}
-.t-exe{background:#F1F2D6} .t-exe .dot{background:var(--lime)}
-.t-idn{background:#F8EBED} .t-idn .dot{background:var(--pink)}
-.t-skl{background:#E4EFDF} .t-skl .dot{background:var(--green)}
-.t-env{background:#E3EEF3} .t-env .dot{background:var(--sky)}
+.t-dir{background:#E3ECF7} .t-str{background:#F7E6DA} .t-exe{background:#F1F2D6}
+.t-idn{background:#F8EBED} .t-skl{background:#E4EFDF} .t-env{background:#E3EEF3}
 
-/* HOW — calm three steps */
+/* HOW / DUO steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
 @media(max-width:760px){.steps{grid-template-columns:1fr;gap:28px}}
 .step .n{font-size:14px;font-weight:600;color:var(--blue)}
 .step h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:12px 0 8px}
 .step p{color:var(--muted);font-size:15.5px;line-height:1.5}
 
-/* QUOTE band */
+/* COACH vs CONSULT statement */
+.ways{text-align:center;max-width:900px;margin:0 auto}
+.ways h2{font-size:clamp(28px,3.8vw,50px);font-weight:600;letter-spacing:-.025em;line-height:1.1;max-width:22ch;margin:0 auto}
+.ways p{color:var(--muted);font-size:clamp(16px,1.7vw,20px);line-height:1.55;max-width:44ch;margin:22px auto 0}
+
+/* WHO — soft pill tags */
+.who{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:48ch;margin:0 auto}
+.who span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 22px;font-size:15px;font-weight:500}
+
+/* QUOTE */
 .quote{text-align:center;padding:clamp(50px,7vw,100px) 0}
 .quote blockquote{font-size:clamp(24px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1.14;max-width:20ch;margin:0 auto}
 .quote .big{color:var(--orange)}
@@ -90,8 +98,16 @@ a{color:inherit;text-decoration:none}
 
 /* FOOTER */
 .foot{padding:clamp(50px,6vw,90px) 0 46px;border-top:1px solid var(--line);margin-top:clamp(30px,4vw,60px)}
+.news{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--ink);color:var(--bg);border-radius:28px;padding:clamp(30px,4vw,52px);margin-bottom:clamp(40px,5vw,64px)}
+.news h3{font-size:clamp(22px,2.6vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.1;max-width:18ch}
+.news h3 em{font-style:normal;color:var(--lime)}
+.news-r{display:flex;gap:10px;flex-wrap:wrap}
+.news input{border:1.4px solid #3a3c3d;background:transparent;color:var(--bg);border-radius:999px;padding:13px 20px;font-family:var(--font);font-size:14px;min-width:220px}
+.news input:focus{outline:none;border-color:var(--bg)}
+.news .pill{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.news .pill:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 .foot .top{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap}
-.foot .brand img{height:30px;display:block;margin-bottom:14px}
+.foot .brand img{height:24px;display:block;margin-bottom:14px}
 .foot .brand p{color:var(--muted);font-size:14.5px;max-width:30ch;line-height:1.5}
 .foot .cols{display:flex;gap:clamp(30px,5vw,72px);flex-wrap:wrap}
 .foot .col h5{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9c9d;margin-bottom:14px}
@@ -111,9 +127,9 @@ a{color:inherit;text-decoration:none}
     <nav class="left">
       <a href="#method">Method</a>
       <a href="#blocks">The Blocks</a>
-      <a href="#insights">Insights</a>
+      <a href="#who">Who it's for</a>
     </nav>
-    <a class="brand" href="#top"><img src="../_logo/wordmark-color-t.png" alt="A Creative Block"></a>
+    <a class="brand" href="#top"><img src="../_logo/blocky-black.png" alt="A Creative Block"></a>
     <nav class="right">
       <a href="#about">About</a>
       <a href="mailto:hello@acreativeblock.com">Contact</a>
@@ -133,19 +149,19 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- BLOCKS as soft colour tiles -->
+  <!-- BLOCKS -->
   <section class="sec" id="blocks">
     <div class="sechead reveal">
       <h2>Every block is a different animal</h2>
-      <p>Getting unstuck starts with knowing which one you're dealing with.</p>
+      <p>Getting moving again starts with knowing which one you're dealing with.</p>
     </div>
     <div class="tiles">
-      <div class="tile t-dir reveal"><span class="dot"></span><h3>Directional</h3><p>You're not sure what to make, or which way to take it.</p></div>
-      <div class="tile t-str reveal" style="transition-delay:.05s"><span class="dot"></span><h3>Structural</h3><p>The project feels too big or chaotic to get a grip on.</p></div>
-      <div class="tile t-exe reveal" style="transition-delay:.1s"><span class="dot"></span><h3>Execution</h3><p>You avoid starting, or aren't sure what the next step is.</p></div>
-      <div class="tile t-idn reveal"><span class="dot"></span><h3>Identity</h3><p>Self-doubt — impostor feelings, unsure of your voice.</p></div>
-      <div class="tile t-skl reveal" style="transition-delay:.05s"><span class="dot"></span><h3>Skill</h3><p>A specific technique or ability you haven't learned yet.</p></div>
-      <div class="tile t-env reveal" style="transition-delay:.1s"><span class="dot"></span><h3>Environmental</h3><p>No time, distractions, or an uninspiring space to work.</p></div>
+      <div class="tile t-dir reveal"><h3>Directional</h3><p>You're not sure what to make, or which way to take it.</p></div>
+      <div class="tile t-str reveal" style="transition-delay:.05s"><h3>Structural</h3><p>The project feels too big or chaotic to get a grip on.</p></div>
+      <div class="tile t-exe reveal" style="transition-delay:.1s"><h3>Execution</h3><p>You avoid starting, or aren't sure what the next step is.</p></div>
+      <div class="tile t-idn reveal"><h3>Identity</h3><p>Self-doubt — impostor feelings, unsure of your voice.</p></div>
+      <div class="tile t-skl reveal" style="transition-delay:.05s"><h3>Skill</h3><p>A specific technique or ability you haven't learned yet.</p></div>
+      <div class="tile t-env reveal" style="transition-delay:.1s"><h3>Environmental</h3><p>No time, distractions, or an uninspiring space to work.</p></div>
     </div>
   </section>
 
@@ -159,26 +175,49 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- QUOTE -->
+  <!-- COACH vs CONSULT -->
+  <section class="sec">
+    <div class="ways reveal">
+      <h2>Coaching when it's about you. Consultancy when it's about the work.</h2>
+      <p>Sometimes the block is personal — identity, fear, direction. Sometimes it's practical — a project, a plan, a decision that won't settle. Most people need a little of each.</p>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="sec" id="who">
+    <div class="sechead reveal"><h2>Who it's for</h2><p>If you make or build things and you've stalled, this is for you.</p></div>
+    <div class="who reveal">
+      <span>Designers</span><span>Writers</span><span>Directors</span><span>Founders</span><span>Artists</span><span>Freelancers</span><span>Students</span><span>Anyone building something</span>
+    </div>
+  </section>
+
+  <!-- QUOTE (the 78%) -->
   <section class="quote">
     <blockquote class="reveal"><span class="big">78%</span> of professional creatives hit a serious block. Being stuck isn't a flaw — it's a signal, and it's workable.</blockquote>
   </section>
 
   <!-- CTA -->
-  <section class="cta reveal" id="insights">
+  <section class="cta reveal rv-scale">
     <h2>Not sure which block is yours? Let's find out.</h2>
     <a class="pill fill" href="../../survey/">Take the survey</a>
   </section>
 
   <!-- FOOTER -->
   <footer class="foot" id="about">
+    <div class="news reveal rv-scale">
+      <h3>Get the occasional note <em>as we build this</em>.</h3>
+      <div class="news-r">
+        <input type="email" placeholder="you@email.com">
+        <button class="pill">Subscribe</button>
+      </div>
+    </div>
     <div class="top">
       <div class="brand">
-        <img src="../_logo/wordmark-color-t.png" alt="A Creative Block">
+        <img src="../_logo/oneliner-black.png" alt="A Creative Block">
         <p>Coaching &amp; consultancy for creatives who keep stalling on the work that matters.</p>
       </div>
       <div class="cols">
-        <div class="col"><h5>Explore</h5><a href="#method">Method</a><a href="#blocks">The Blocks</a><a href="#insights">Insights</a></div>
+        <div class="col"><h5>Explore</h5><a href="#method">Method</a><a href="#blocks">The Blocks</a><a href="#who">Who it's for</a></div>
         <div class="col"><h5>Get in touch</h5><a href="mailto:hello@acreativeblock.com">Contact</a><a href="../../survey/">Survey</a></div>
         <div class="col"><h5>Where</h5><a href="#">Lisbon</a><a href="#">Online</a></div>
       </div>
