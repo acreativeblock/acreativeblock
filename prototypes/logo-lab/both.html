@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — Logo Lab (both)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23212324'/%3E%3C/svg%3E">
+<style>
+:root{--font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font)}
+.hint{position:fixed;left:0;right:0;top:16px;text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a8d8e;z-index:5;mix-blend-mode:difference}
+.split{position:sticky;top:0;height:100vh;display:flex}
+.half{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;position:relative;overflow:hidden}
+.half.light{background:#FAFAFA;color:#212324}
+.half.dark{background:#212324;color:#FAFAFA}
+.half + .half{border-left:1px solid rgba(128,128,128,.35)}
+.label{position:absolute;top:22px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
+.runway{height:300vh}
+.foot{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-size:12px;color:#8a8d8e;z-index:5;mix-blend-mode:difference}
+</style>
+</head>
+<body>
+
+<div class="hint">Scroll to crash · hover to whack</div>
+
+<div class="split">
+  <div class="half light">
+    <span class="label">1 line</span>
+    <span class="acb-logo-mount" data-acb-logo="1line" style="display:inline-block;height:min(7vh,46px);color:#212324"></span>
+  </div>
+  <div class="half dark">
+    <span class="label">3 lines</span>
+    <span class="acb-logo-mount" data-acb-logo="3lines" style="display:inline-block;height:min(34vh,260px);color:#FAFAFA"></span>
+  </div>
+</div>
+<div class="runway"></div>
+<div class="foot">Both logos share one physics script · scroll = gravity crash · cursor = whack &amp; scatter</div>
+
+<script src="../_logo/logo-anim.js"></script>
+</body>
+</html>

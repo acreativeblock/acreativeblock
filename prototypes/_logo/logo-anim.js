@@ -39,9 +39,9 @@
 +'<circle cx="571.64" cy="637.142" r="27" fill="currentColor"/></svg>';
 
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var SPRING=0.019, FRICTION=0.94, WALL_E=0.5, COLL_E=0.45, GRAV=0.35;
-  var ROT_K=0.24, ROT_SPRING=0.019, ROT_FRIC=0.91, ROT_IMP=0.04;
-  var MAXV=13, POKE_R=64, POKE=1.9;
+  var SPRING=0.032, FRICTION=0.94, WALL_E=0.32, COLL_E=0.32, GRAV=1.0;
+  var ROT_K=0.24, ROT_SPRING=0.028, ROT_FRIC=0.91, ROT_IMP=0.04;
+  var MAXV=20, POKE_R=85, POKE=4.5;
 
   function animate(svg){
     var vb=svg.viewBox.baseVal, VBW=(vb&&vb.width)||1000, VBH=(vb&&vb.height)||300;
@@ -49,8 +49,16 @@
     if(paths.length<5 || !dotEl){ svg.style.visibility='visible'; return; }
     var dcx=+dotEl.getAttribute('cx'), dcy=+dotEl.getAttribute('cy'), dr=+dotEl.getAttribute('r');
     var info=paths.map(function(p){ var b=p.getBBox(); return {el:p,cx:b.x+b.width/2,cy:b.y+b.height/2,w:b.width,h:b.height,x:b.x,y:b.y}; });
-    info.sort(function(a,b){ return Math.hypot(a.cx-dcx,a.cy-dcy)-Math.hypot(b.cx-dcx,b.cy-dcy); });
-    var blk=info.slice(0,5), blocks=[], minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
+    // group letters into their lines by vertical centre, then take BLOCK from the dot's line
+    var byY=info.slice().sort(function(a,b){return a.cy-b.cy;});
+    var avgH=info.reduce(function(s,m){return s+m.h;},0)/info.length, lineGap=avgH*0.6;
+    var lines=[], cur=[byY[0]];
+    for(var k=1;k<byY.length;k++){ if(byY[k].cy-byY[k-1].cy>lineGap){ lines.push(cur); cur=[byY[k]]; } else cur.push(byY[k]); }
+    lines.push(cur);
+    var dotLine=lines[0], bestd=1e9;
+    lines.forEach(function(ln){ var cy=0; ln.forEach(function(m){cy+=m.cy;}); cy/=ln.length; var d=Math.abs(cy-dcy); if(d<bestd){bestd=d;dotLine=ln;} });
+    var blk=dotLine.slice().sort(function(a,b){return Math.hypot(a.cx-dcx,a.cy-dcy)-Math.hypot(b.cx-dcx,b.cy-dcy);}).slice(0,5);
+    var blocks=[], minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
     blk.forEach(function(m){
       blocks.push({el:m.el,cx0:m.cx,cy0:m.cy,w:m.w,h:m.h,r:Math.max(14,0.42*Math.min(m.w,m.h)),ox:0,oy:0,vx:0,vy:0,rot:0,va:0});
       if(m.x<minX)minX=m.x; if(m.x+m.w>maxX)maxX=m.x+m.w; if(m.y<minY)minY=m.y; if(m.y+m.h>maxY)maxY=m.y+m.h;
@@ -58,48 +66,53 @@
     var O=null; blocks.forEach(function(bd){ if(Math.abs(dcx-bd.cx0)<bd.w/2 && Math.abs(dcy-bd.cy0)<bd.h/2) O=bd; });
     var dot={C0x:(O?O.cx0:dcx),C0y:(O?O.cy0:dcy),R:Math.max(6,(O?0.30*Math.min(O.w,O.h):40)-dr),px:dcx-(O?O.cx0:dcx),py:dcy-(O?O.cy0:dcy),vx:0,vy:0};
     var bandH=maxY-minY, pad=Math.max(50,bandH*0.55);
-    var wall={l:minX-14,r:maxX+14,t:minY-pad,b:maxY+pad*0.4};
+    // ceiling = bottom of the line directly above BLOCK (e.g. CREATIVE) so BLOCK can't pass through it
+    var ceil=-1e9;
+    info.forEach(function(m){ if(blk.indexOf(m)<0 && m.cy<minY){ if(m.y+m.h>ceil) ceil=m.y+m.h; } });
+    var wall={l:minX-14,r:maxX+14,t:(ceil>-1e9?ceil:minY-pad),b:maxY+pad*0.85};
     if(reduce){ svg.style.visibility='visible'; return; }
     blocks.forEach(function(bd,i){
-      bd.oy=(wall.t-(bd.cy0-bd.h/2))-i*(pad*0.16);
+      bd.oy=(wall.t-(bd.cy0-bd.h/2))-Math.random()*8;
       bd.ox=(Math.random()-0.5)*Math.min(30,bandH*0.12);
       bd.vy=Math.max(3,pad*0.06);
       bd.el.setAttribute('transform','translate('+bd.ox+' '+bd.oy+')');
     });
     svg.style.visibility='visible';
-    var gravityUntil=performance.now()+1600, lastY=window.pageYOffset;
+    var gravityUntil=performance.now()+1400, crashUntil=0, lastY=window.pageYOffset;
     window.addEventListener('scroll',function(){
-      var y=window.pageYOffset,d=y-lastY; lastY=y; var s=Math.min(Math.abs(d)*0.4,8); if(s<0.6)return;
-      gravityUntil=performance.now()+600;
-      blocks.forEach(function(bd){ bd.vx+=(Math.random()-0.5)*s*0.55; bd.vy+=(d>0?-0.3:0.3)*s+(Math.random()-0.5)*s*0.35; bd.va+=(Math.random()-0.5)*s*0.24; });
-      dot.vx+=(Math.random()-0.5)*s*0.45; dot.vy+=(d>0?-0.3:0.3)*s*0.5+(Math.random()-0.5)*s*0.35;
+      var y=window.pageYOffset,d=y-lastY; lastY=y; var s=Math.min(Math.abs(d)*0.45,9); if(s<0.6)return;
+      var now=performance.now(); gravityUntil=now+900; crashUntil=now+900; // strong gravity + weak spring = crash DOWN
+      blocks.forEach(function(bd){ bd.vx+=(Math.random()-0.5)*s*0.7; bd.vy+=(Math.random()-0.5)*s*0.25; bd.va+=(Math.random()-0.5)*s*0.22; });
+      dot.vx+=(Math.random()-0.5)*s*0.5; dot.vy+=(Math.random()-0.5)*s*0.3;
     },{passive:true});
     svg.addEventListener('pointermove',function(e){
       var rect=svg.getBoundingClientRect(), mx=(e.clientX-rect.left)/rect.width*VBW, my=(e.clientY-rect.top)/rect.height*VBH;
       blocks.forEach(function(bd){ var dx=(bd.cx0+bd.ox)-mx,dy=(bd.cy0+bd.oy)-my,dist=Math.hypot(dx,dy)||0.001,reach=bd.r+POKE_R;
-        if(dist<reach){ var f=(1-dist/reach)*POKE; bd.vx+=(dx/dist)*f; bd.vy+=(dy/dist)*f; bd.va+=(Math.random()-0.5)*f*0.9; gravityUntil=performance.now()+450; } });
+        if(dist<reach){ var f=(1-dist/reach)*POKE; bd.vx+=(dx/dist)*f; bd.vy+=(dy/dist)*f; bd.va+=(Math.random()-0.5)*f*1.6; } }); // radial explosion; spring reassembles
       var Ox=(O?O.cx0+O.ox:dot.C0x),Oy=(O?O.cy0+O.oy:dot.C0y),ex=(Ox+dot.px)-mx,ey=(Oy+dot.py)-my,ed=Math.hypot(ex,ey)||0.001,er=dot.R+POKE_R;
       if(ed<er){ var g=(1-ed/er)*POKE; dot.vx+=(ex/ed)*g; dot.vy+=(ey/ed)*g; }
     },{passive:true});
+    svg.addEventListener('pointerleave',function(){ crashUntil=0; gravityUntil=0; },{passive:true}); // leave -> spring straight home
     function collide(a,b){ var dx=(b.cx0+b.ox)-(a.cx0+a.ox),dy=(b.cy0+b.oy)-(a.cy0+a.oy),dist=Math.hypot(dx,dy)||0.001,min=a.r+b.r;
       if(dist<min){ var nx=dx/dist,ny=dy/dist,ov=(min-dist); a.ox-=nx*ov/2; a.oy-=ny*ov/2; b.ox+=nx*ov/2; b.oy+=ny*ov/2;
         var avn=a.vx*nx+a.vy*ny,bvn=b.vx*nx+b.vy*ny,m=(avn-bvn)*COLL_E; if(avn-bvn>0){ a.vx-=nx*m; a.vy-=ny*m; b.vx+=nx*m; b.vy+=ny*m; }
         var tx=-ny,ty=nx,vt=(a.vx-b.vx)*tx+(a.vy-b.vy)*ty; a.va+=vt*ROT_IMP; b.va-=vt*ROT_IMP; } }
-    function frame(now){ var gOn=now<gravityUntil;
+    function frame(now){ var gOn=now<gravityUntil, crash=now<crashUntil;
       blocks.forEach(function(bd){
-        bd.vx+=-SPRING*bd.ox; bd.vy+=-SPRING*bd.oy+(gOn?GRAV:0); bd.vx*=FRICTION; bd.vy*=FRICTION;
+        var sp=crash?SPRING*0.16:SPRING, dp=crash?FRICTION:0.87;  // firmer damping on return = clean reassemble
+        bd.vx+=-sp*bd.ox; bd.vy+=-sp*bd.oy+(gOn?(crash?GRAV:0.28):0); bd.vx*=dp; bd.vy*=dp;
         if(bd.vx>MAXV)bd.vx=MAXV; else if(bd.vx<-MAXV)bd.vx=-MAXV; if(bd.vy>MAXV)bd.vy=MAXV; else if(bd.vy<-MAXV)bd.vy=-MAXV;
         bd.ox+=bd.vx; bd.oy+=bd.vy; var cx=bd.cx0+bd.ox,cy=bd.cy0+bd.oy;
         if(cx-bd.r<wall.l){ bd.ox+=(wall.l-(cx-bd.r)); bd.vx=-bd.vx*WALL_E; }
         if(cx+bd.r>wall.r){ bd.ox-=((cx+bd.r)-wall.r); bd.vx=-bd.vx*WALL_E; }
         if(cy-bd.r<wall.t){ bd.oy+=(wall.t-(cy-bd.r)); bd.vy=-bd.vy*WALL_E; }
         if(cy+bd.r>wall.b){ bd.oy-=((cy+bd.r)-wall.b); bd.vy=-bd.vy*WALL_E; }
-        bd.va+=bd.vx*ROT_K*0.03; bd.va+=-ROT_SPRING*bd.rot; bd.va*=ROT_FRIC; bd.rot+=bd.va;
+        bd.va+=bd.vx*ROT_K*0.03; bd.va+=-ROT_SPRING*bd.rot; bd.va*=(crash?ROT_FRIC:0.84); bd.rot+=bd.va;
         if(bd.rot>32)bd.rot=32; else if(bd.rot<-32)bd.rot=-32;
       });
       for(var i=0;i<blocks.length;i++) for(var j=i+1;j<blocks.length;j++) collide(blocks[i],blocks[j]);
       blocks.forEach(function(bd){ bd.el.setAttribute('transform','translate('+bd.ox.toFixed(2)+' '+bd.oy.toFixed(2)+') rotate('+bd.rot.toFixed(2)+' '+bd.cx0+' '+bd.cy0+')'); });
-      dot.vx+=-0.02*dot.px; dot.vy+=-0.02*dot.py+(gOn?GRAV*0.7:0); dot.vx*=FRICTION; dot.vy*=FRICTION;
+      dot.vx+=-0.02*dot.px; dot.vy+=-0.02*dot.py+(crash?GRAV*0.7:0); dot.vx*=FRICTION; dot.vy*=FRICTION;
       var dm=MAXV*0.9; if(dot.vx>dm)dot.vx=dm; else if(dot.vx<-dm)dot.vx=-dm; if(dot.vy>dm)dot.vy=dm; else if(dot.vy<-dm)dot.vy=-dm;
       dot.px+=dot.vx; dot.py+=dot.vy; var pd=Math.hypot(dot.px,dot.py);
       if(pd>dot.R){ var nx=dot.px/pd,ny=dot.py/pd; dot.px=nx*dot.R; dot.py=ny*dot.R; var vn=dot.vx*nx+dot.vy*ny; dot.vx-=(1+WALL_E)*vn*nx; dot.vy-=(1+WALL_E)*vn*ny; }
