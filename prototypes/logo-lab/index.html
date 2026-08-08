@@ -14,7 +14,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-
 /* sticky stage keeps the logo on screen while you scroll */
 .stage{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center}
 .logowrap{width:min(88vw,1000px)}
-svg{width:100%;height:auto;display:block;overflow:visible}
+svg{width:100%;height:auto;display:block;overflow:visible;visibility:hidden}
 /* scroll runway so there IS something to scroll */
 .runway{height:320vh}
 .foot{position:fixed;left:0;right:0;bottom:16px;text-align:center;font-size:12px;color:var(--muted);z-index:5}
@@ -59,10 +59,10 @@ svg{width:100%;height:auto;display:block;overflow:visible}
   var WALL_E=0.5;       // bounce off walls
   var COLL_E=0.45;      // bounce off other letters
   var GRAV=0.35;        // gravity strength during a "burst"
-  var ROT_K=0.14;       // tilt from horizontal motion
-  var ROT_SPRING=0.022; // rotation springs back to the crooked home
-  var ROT_FRIC=0.9;     // angular damping
-  var ROT_IMP=0.02;     // spin imparted when letters collide
+  var ROT_K=0.24;       // tilt from horizontal motion
+  var ROT_SPRING=0.019; // rotation springs back to the crooked home
+  var ROT_FRIC=0.91;    // angular damping
+  var ROT_IMP=0.04;     // spin imparted when letters collide
   var MAXV=13;          // clamp speed so nothing goes wild
   var POKE_R=64;        // how far the mouse poke reaches past a letter
   var POKE=1.9;         // mouse poke strength
@@ -101,17 +101,19 @@ svg{width:100%;height:auto;display:block;overflow:visible}
     // limited play space (a bit roomier than the letters at rest)
     var wall={l:minX-14, r:Math.min(2501,maxX+14), t:0, b:maxY+18};
 
-    if(reduce){ // no motion: just leave everything at home
-      return;
+    if(reduce){ // no motion: just show the logo at home
+      svg.style.visibility='visible'; return;
     }
 
     // start each letter above its home, released in a quick stagger -> "falls into place"
     blocks.forEach(function(bd,i){
-      bd.oy = -(bd.cy0 + bd.h/2 + 40);       // sit just above the top edge (clipped)
+      bd.oy = -(bd.cy0 + bd.h/2 + 30) - i*20; // staggered start heights -> natural cascade
       bd.ox = (Math.random()-0.5)*30;
-      bd.vy = 0;
-      bd.releaseAt = performance.now() + 90*i; // left-to-right-ish stagger
+      bd.vy = 5;                              // already moving: no static sit at the top
+      bd.released = true;
+      bd.el.setAttribute('transform','translate('+bd.ox+' '+bd.oy+')'); // position BEFORE reveal
     });
+    svg.style.visibility='visible';            // reveal only once positioned — no home-flash
     var gravityUntil = performance.now() + 1600; // gravity burst for the fall-in
 
     // scroll shakes them
@@ -124,7 +126,7 @@ svg{width:100%;height:auto;display:block;overflow:visible}
       blocks.forEach(function(bd){
         bd.vx += (Math.random()-0.5)*s*0.55;
         bd.vy += (d>0? -0.3:0.3)*s + (Math.random()-0.5)*s*0.35; // gentle kick
-        bd.va += (Math.random()-0.5)*s*0.14;                     // a little spin
+        bd.va += (Math.random()-0.5)*s*0.24;                     // spin
       });
       dot.vx += (Math.random()-0.5)*s*0.45;
       dot.vy += (d>0?-0.3:0.3)*s*0.5 + (Math.random()-0.5)*s*0.35;
@@ -138,7 +140,7 @@ svg{width:100%;height:auto;display:block;overflow:visible}
       blocks.forEach(function(bd){
         if(!bd.released) return;
         var dx=(bd.cx0+bd.ox)-mx, dy=(bd.cy0+bd.oy)-my, dist=Math.hypot(dx,dy)||0.001, reach=bd.r+POKE_R;
-        if(dist<reach){ var f=(1-dist/reach)*POKE; bd.vx+=(dx/dist)*f; bd.vy+=(dy/dist)*f; bd.va+=(Math.random()-0.5)*f*0.5; gravityUntil=performance.now()+450; }
+        if(dist<reach){ var f=(1-dist/reach)*POKE; bd.vx+=(dx/dist)*f; bd.vy+=(dy/dist)*f; bd.va+=(Math.random()-0.5)*f*0.9; gravityUntil=performance.now()+450; }
       });
       var Ox=(O?O.cx0+O.ox:dot.C0x), Oy=(O?O.cy0+O.oy:dot.C0y);
       var ex=(Ox+dot.px)-mx, ey=(Oy+dot.py)-my, ed=Math.hypot(ex,ey)||0.001, er=dot.R+POKE_R;
@@ -188,7 +190,7 @@ svg{width:100%;height:auto;display:block;overflow:visible}
         bd.va += -ROT_SPRING*bd.rot;
         bd.va *= ROT_FRIC;
         bd.rot += bd.va;
-        if(bd.rot>20)bd.rot=20; else if(bd.rot<-20)bd.rot=-20;
+        if(bd.rot>32)bd.rot=32; else if(bd.rot<-32)bd.rot=-32;
       });
       // letter-letter collisions
       for(var i=0;i<blocks.length;i++) for(var j=i+1;j<blocks.length;j++) collide(blocks[i],blocks[j]);
@@ -216,9 +218,9 @@ svg{width:100%;height:auto;display:block;overflow:visible}
     requestAnimationFrame(frame);
   }
 
-  // getBBox needs the SVG laid out
-  if(document.readyState==='complete') requestAnimationFrame(boot);
-  else window.addEventListener('load', function(){ requestAnimationFrame(boot); });
+  // run as early as the inline SVG is laid out (kills the launch flash)
+  if(document.readyState!=='loading') requestAnimationFrame(boot);
+  else document.addEventListener('DOMContentLoaded', function(){ requestAnimationFrame(boot); });
 })();
 </script>
 </body>

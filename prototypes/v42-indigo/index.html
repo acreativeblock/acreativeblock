@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="topnav"><nav class="card in">
-  <a class="tn tn-brand" href="index.html"><img src="../_logo/oneliner-black.png" alt="A Creative Block" style="height:22px;width:auto;display:block;max-width:100%"></a>
+  <a class="tn tn-brand" href="index.html"><span class="acb-logo-mount" data-acb-logo="1line" style="display:inline-block;height:22px;color:#0A0A0A;vertical-align:middle"></span></a>
   <div class="tn-item has-mega">
     <button class="tn">About <svg class="car" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     <div class="mega"><div class="cols">
@@ -160,5 +160,6 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="../_logo/logo-anim.js"></script>
 </body>
 </html>
