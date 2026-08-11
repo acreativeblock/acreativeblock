@@ -84,7 +84,7 @@ html.ready .page>[data-site-header].header-hidden,[data-site-header].header-hidd
 .craft{background:var(--v2-mint)}.craft-steps{border:0!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;margin-top:59.5px!important}
 .craft-step{border:0!important;border-left:1px solid rgba(23,23,23,.28)!important;padding:23.8px 20.4px!important;min-height:221px!important}.craft-step:first-child{border-left:0!important}.craft-step:hover{background:transparent!important}
 .statement.dark{background:var(--v2-tan)!important;color:var(--v2-ink)!important;text-align:left!important}.statement.dark .wrap{display:grid;grid-template-columns:31% minmax(0,1fr);gap:clamp(30.6px,4.25vw,68px)}.statement.dark .eyebrow{grid-column:1}.statement.dark h2,.statement.dark p,.statement.dark .cta{grid-column:2}.statement.dark h2{margin:0!important;max-width:16ch!important}.statement.dark p{margin-left:0!important}
-.close{background:var(--v2-indigo)!important;color:#fff!important}.close .btn-fill{background:#fff!important;color:var(--v2-indigo)!important;border-color:#fff!important}.close .btn-out{color:#fff!important;border-color:#fff!important}
+.close{background:var(--v2-coral)!important;color:#fff!important}.close .btn-fill{background:#fff!important;color:var(--v2-indigo)!important;border-color:#fff!important}.close .btn-out{color:#fff!important;border-color:#fff!important}
 .close h2{max-width:none!important;white-space:nowrap}
 
 /* Internal pages use the same sidebar/content rhythm and lighter scale. */
