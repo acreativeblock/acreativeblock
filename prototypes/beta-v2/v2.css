@@ -85,7 +85,7 @@ html.ready .page>[data-site-header].header-hidden,[data-site-header].header-hidd
 .craft-step{border:0!important;border-left:1px solid rgba(23,23,23,.28)!important;padding:23.8px 20.4px!important;min-height:221px!important}.craft-step:first-child{border-left:0!important}.craft-step:hover{background:transparent!important}
 .statement.dark{background:var(--v2-tan)!important;color:var(--v2-ink)!important;text-align:left!important}.statement.dark .wrap{display:grid;grid-template-columns:31% minmax(0,1fr);gap:clamp(30.6px,4.25vw,68px)}.statement.dark .eyebrow{grid-column:1}.statement.dark h2,.statement.dark p,.statement.dark .cta{grid-column:2}.statement.dark h2{margin:0!important;max-width:16ch!important}.statement.dark p{margin-left:0!important}
 .close{background:var(--v2-coral)!important;color:#fff!important}.close .btn-fill{background:#fff!important;color:var(--v2-indigo)!important;border-color:#fff!important}.close .btn-out{color:#fff!important;border-color:#fff!important}
-.close h2{max-width:none!important;white-space:nowrap}
+.close h2{max-width:none!important;white-space:nowrap;text-transform:uppercase;letter-spacing:-.05em}
 
 /* Internal pages use the same sidebar/content rhythm and lighter scale. */
 .page-hero{padding:clamp(78.2px,8.5vw,136px) 0!important;background:var(--v2-blush);border-bottom:0!important}
@@ -116,6 +116,8 @@ html.ready .page>[data-site-header].header-hidden,[data-site-header].header-hidd
 .home-research p{max-width:92ch;margin:0 auto;font-size:13px;line-height:1.6;text-align:left}
 .home-faq{padding:clamp(72px,8vw,126px) 0;background:#4f46e5;color:#fff}
 .home-faq .faq-category .offer-row{border-bottom-color:rgba(255,255,255,.38)!important}
+.home-faq .faq-more .btn-out{background:transparent!important;border-color:#fff!important;color:#fff!important}
+.home-faq .faq-more .btn-out:hover{background:#fff!important;color:var(--v2-indigo)!important}
 .home-faq h2{text-transform:uppercase}
 .home-faq .wrap{max-width:none!important;padding-left:max(clamp(28px,3.2vw,54px),calc((100vw - 1500px)/2 + 54px));padding-right:max(clamp(28px,3.2vw,54px),calc((100vw - 1500px)/2 + 54px))}
 .home-faq-grid{align-items:start;padding-top:0!important;padding-bottom:0!important}
@@ -150,3 +152,87 @@ html.ready .page>[data-site-header].header-hidden,[data-site-header].header-hidd
 }
 @media(max-width:600px){.hero-copy{padding:48px clamp(28px,3.2vw,54px)}.hero-photo{height:420px;min-height:0;margin:0;width:100%}.home-faq-grid>div:first-child{display:block}.home-faq h2{text-align:left;margin-top:10px}.close h2{white-space:normal}.content-photo-pair{grid-template-columns:1fr}.content-photo-pair figure{height:420px}}
 @media(max-width:600px){.original-footer .foot-lead,.original-footer .foot-cols{grid-template-columns:1fr}.original-footer .fbar-links{flex-wrap:wrap}}
+
+/* Beta V2 internal pages — derived from the homepage editorial system. */
+.internal-page .page-hero{
+  background:var(--v2-indigo)!important;color:#fff!important;
+  padding:clamp(78px,8vw,126px) 0!important;
+}
+.internal-page .page-hero .eyebrow,.internal-page .page-hero h1,.internal-page .page-hero p{color:#fff!important}
+.internal-page .page-hero h1{
+  max-width:19ch!important;text-transform:uppercase;letter-spacing:-.045em;
+  font-size:clamp(29px,3.2vw,49px)!important;line-height:1!important;
+}
+.internal-page .page-hero p{font-size:clamp(13px,1vw,16px)!important;line-height:1.5!important;max-width:56ch!important;margin-top:22px}
+.internal-page main>.section{padding:clamp(76px,8vw,126px) 0!important;background:#fff!important}
+.internal-page main>.section:nth-of-type(2){background:var(--v2-yellow)!important}
+.internal-page main>.section:nth-of-type(3){background:#fff!important}
+.internal-page main>.section:nth-of-type(4){background:var(--v2-coral)!important;color:#fff}
+.internal-page main>.section:nth-of-type(5){background:var(--v2-mint)!important;color:var(--v2-ink)}
+.internal-page main>.section:nth-of-type(6){background:#fff!important;color:var(--v2-ink)}
+.internal-page .section-head,.internal-page .content-grid{align-items:start!important}
+.internal-page .section-head .eyebrow,.internal-page .side-note{
+  font-size:11px!important;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;
+}
+.internal-page .section-head h2,.internal-page .prose h2{
+  text-transform:uppercase;letter-spacing:-.04em;font-weight:400!important;
+  font-size:clamp(21px,2.2vw,34px)!important;line-height:1.06!important;max-width:21ch;
+}
+.internal-page .section-head p,.internal-page .prose p,.internal-page .prose li{font-size:13px!important;line-height:1.58!important}
+.internal-page .prose h3{font-size:15px;line-height:1.25;text-transform:uppercase;letter-spacing:-.02em;margin-top:32px}
+.internal-page .btn{border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit}
+.internal-page .btn:hover{background:var(--v2-indigo)!important;border-color:var(--v2-indigo)!important;color:#fff!important}
+.internal-page .callout,.internal-page .callout.coral{
+  border-radius:0!important;background:var(--v2-indigo)!important;color:#fff!important;
+  padding:clamp(28px,3.2vw,48px)!important;margin-top:36px;
+}
+.internal-page .content-photo{height:clamp(380px,42vw,620px);margin:40px 0 0}
+.internal-page .price-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;background:transparent!important;margin-top:44px}
+.internal-page .price-card{
+  min-height:360px!important;padding:clamp(28px,3vw,46px)!important;background:#fff!important;
+  border:1px solid var(--v2-indigo)!important;color:var(--v2-indigo)!important;
+}
+.internal-page .price-card.featured{background:var(--v2-indigo)!important;color:#fff!important}
+.internal-page .price-card:nth-child(3){background:var(--v2-coral)!important;border-color:var(--v2-coral)!important;color:#fff!important}
+.internal-page .price-card h3{font-size:clamp(20px,2vw,30px);line-height:1.02;text-transform:uppercase;letter-spacing:-.035em;font-weight:400}
+.internal-page .price-card .amount{font-size:clamp(27px,3vw,45px);letter-spacing:-.04em}
+.internal-page .price-card p{font-size:13px;line-height:1.5}
+.internal-page .block-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;background:transparent!important}
+.internal-page .block-card{
+  min-height:270px!important;padding:clamp(26px,2.8vw,42px)!important;background:#fff!important;
+  border:1px solid var(--v2-indigo)!important;color:var(--v2-indigo)!important;
+}
+.internal-page .block-card:nth-child(3n+2){background:var(--v2-indigo)!important;color:#fff!important}
+.internal-page .block-card:nth-child(3n){background:var(--v2-coral)!important;border-color:var(--v2-coral)!important;color:#fff!important}
+.internal-page .block-card.mimic{background:var(--v2-yellow)!important;border-color:var(--v2-yellow)!important;color:var(--v2-ink)!important}
+.internal-page .block-card h3{font-size:clamp(19px,1.85vw,28px);font-weight:400;line-height:1.04;text-transform:uppercase;letter-spacing:-.035em}
+.internal-page .method-strip{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:0!important;background:var(--v2-indigo)!important}
+.internal-page .method-step{min-height:280px;padding:clamp(24px,2.6vw,40px)!important;background:transparent!important;color:#fff!important;border-left:1px solid rgba(255,255,255,.45)!important}
+.internal-page .method-step:first-child{border-left:0!important}.internal-page .method-step b{color:var(--v2-coral)!important}
+.internal-page .method-step h3{font-size:18px;text-transform:uppercase;font-weight:400}.internal-page .method-step p{font-size:12.5px;line-height:1.5}
+.internal-page .stats{display:grid;grid-template-columns:2fr 1fr 1fr;gap:0!important;background:var(--v2-coral)!important}
+.internal-page .stat,.internal-page .stat.big{background:transparent!important;color:#fff!important;border-left:1px solid rgba(255,255,255,.5)!important}
+.internal-page .stat:first-child{border-left:0!important}.internal-page .stat strong{color:#fff!important}
+.internal-page .offer-list{border-top:1px solid currentColor}.internal-page .offer-row{background:transparent!important;border:0!important;border-bottom:1px solid currentColor!important;border-radius:0!important}
+.internal-page .access-note{border-radius:0!important;border:1px solid currentColor!important;background:transparent!important}
+.internal-page .single-editorial{padding:0!important;background:#fff}.internal-page .single-editorial .wrap{max-width:none!important;padding:0!important;display:block!important}
+.internal-page .single-editorial figure{height:clamp(440px,60vw,760px);width:100%;margin:0}.internal-page .single-editorial img{object-position:center 30%}
+
+/* The manifesto uses older markup but follows the same system. */
+.internal-page header.hero{height:auto!important;min-height:0!important;padding:clamp(78px,8vw,126px) 0!important;background:var(--v2-indigo)!important;color:#fff!important}
+.internal-page header.hero .wrap{display:grid;grid-template-columns:31% minmax(0,1fr);gap:clamp(30px,4.25vw,68px);align-items:start}
+.internal-page header.hero .eyebrow{grid-column:1}.internal-page header.hero h1,.internal-page header.hero .intro{grid-column:2;text-align:left!important;margin-left:0!important;margin-right:0!important}
+.internal-page header.hero h1{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;text-transform:uppercase;letter-spacing:-.045em;max-width:19ch!important}
+.internal-page header.hero .intro{max-width:56ch!important}
+.internal-page>div>.prose{width:100%;max-width:none!important;padding:clamp(76px,8vw,126px) 0;background:var(--v2-yellow)}
+.internal-page>div>.prose .wrap{display:grid;grid-template-columns:31% minmax(0,1fr);gap:0 clamp(30px,4.25vw,68px)}
+.internal-page>div>.prose .wrap>*{grid-column:2;max-width:62ch}
+.internal-page>div>.prose h2{text-transform:uppercase;letter-spacing:-.04em;font-weight:400;font-size:clamp(21px,2.2vw,34px);line-height:1.06;margin-top:56px}
+
+@media(max-width:906.6667px){
+  .internal-page .price-grid,.internal-page .block-grid,.internal-page .method-strip,.internal-page .stats{grid-template-columns:1fr!important}
+  .internal-page .method-step,.internal-page .stat,.internal-page .stat.big{border-left:0!important;border-top:1px solid rgba(255,255,255,.45)!important}
+  .internal-page .method-step:first-child,.internal-page .stat:first-child{border-top:0!important}
+  .internal-page header.hero .wrap,.internal-page>div>.prose .wrap{grid-template-columns:1fr}
+  .internal-page header.hero .eyebrow,.internal-page header.hero h1,.internal-page header.hero .intro,.internal-page>div>.prose .wrap>*{grid-column:1}
+}
