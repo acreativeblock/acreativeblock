@@ -121,11 +121,60 @@
     }
     requestAnimationFrame(frame);
   }
+  /* ---- EYE MODE: the O blinks (an eyelid sweeps down), the dot is a pupil that follows the cursor ---- */
+  function animateEye(svg){
+    var NS='http://www.w3.org/2000/svg';
+    var vb=svg.viewBox.baseVal, VBW=(vb&&vb.width)||1000, VBH=(vb&&vb.height)||300;
+    var paths=[].slice.call(svg.querySelectorAll('path')), dotEl=svg.querySelector('circle');
+    svg.style.visibility='visible';
+    if(!dotEl) return;
+    var dcx=+dotEl.getAttribute('cx'), dcy=+dotEl.getAttribute('cy'), dr=+dotEl.getAttribute('r');
+    // the O = smallest letter whose bbox contains the dot's centre
+    var O=null; paths.forEach(function(p){ var b=p.getBBox();
+      if(dcx>=b.x&&dcx<=b.x+b.width&&dcy>=b.y&&dcy<=b.y+b.height){ if(!O || b.width*b.height<O.w*O.h) O={el:p,w:b.width,h:b.height,cx:b.x+b.width/2,cy:b.y+b.height/2}; } });
+    if(!O) return;
+    var holeR=0.4*Math.min(O.w,O.h);                   // the eye opening
+    var R=Math.max(4,(holeR-dr)*0.55);                 // pupil travel — kept well inside the O, subtle
+    // eyelid: a rect the logo colour, clipped to the eye opening, that drops from above
+    var uid='acbEye'+Math.floor(Math.random()*1e9);
+    var cp=document.createElementNS(NS,'clipPath'); cp.setAttribute('id',uid);
+    var cc=document.createElementNS(NS,'circle'); cc.setAttribute('cx',O.cx); cc.setAttribute('cy',O.cy); cc.setAttribute('r',holeR); cp.appendChild(cc);
+    var lid=document.createElementNS(NS,'rect');
+    lid.setAttribute('x',O.cx-holeR); lid.setAttribute('y',O.cy-holeR-1);
+    lid.setAttribute('width',holeR*2); lid.setAttribute('height',holeR*2+2);
+    lid.setAttribute('fill','currentColor'); lid.setAttribute('clip-path','url(#'+uid+')');
+    svg.appendChild(cp); svg.appendChild(lid);
+    var openY=-(holeR*2+2);                              // fully retracted (eye open)
+    lid.setAttribute('transform','translate(0 '+openY+')');
+    var fx=0,fy=0,tx=0,ty=0;
+    window.addEventListener('pointermove',function(e){
+      var rect=svg.getBoundingClientRect(); if(!rect.width) return;
+      var mx=(e.clientX-rect.left)/rect.width*VBW, my=(e.clientY-rect.top)/rect.height*VBH;
+      var dx=mx-O.cx, dy=my-O.cy, d=Math.hypot(dx,dy)||0.001, m=R*Math.tanh(d/(O.w*1.6)); // stays near centre unless cursor is far
+      tx=dx/d*m; ty=dy/d*m;
+    },{passive:true});
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var nextBlink=performance.now()+1200+Math.random()*2600, blinkStart=-1, DUR=170;
+    function frame(now){
+      fx+=(tx-fx)*0.18; fy+=(ty-fy)*0.18;
+      dotEl.setAttribute('transform','translate('+fx.toFixed(2)+' '+fy.toFixed(2)+')');
+      var ly=openY;
+      if(!reduce){
+        if(blinkStart<0 && now>=nextBlink) blinkStart=now;
+        if(blinkStart>=0){ var p=(now-blinkStart)/DUR; if(p>=1){ blinkStart=-1; nextBlink=now+1600+Math.random()*3600; } else { ly=openY*(1-Math.sin(p*Math.PI)); } }
+      }
+      lid.setAttribute('transform','translate(0 '+ly.toFixed(2)+')');
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
   function init(){
     [].slice.call(document.querySelectorAll('[data-acb-logo]')).forEach(function(m){
       if(m.querySelector('svg')) return;
       m.innerHTML = (m.getAttribute('data-acb-logo')==='3lines') ? SVG3 : SVG1;
-      var svg=m.querySelector('svg'); if(svg) requestAnimationFrame(function(){ animate(svg); });
+      var svg=m.querySelector('svg'); if(!svg) return;
+      var mode=m.getAttribute('data-acb-mode');
+      requestAnimationFrame(function(){ if(mode==='eye') animateEye(svg); else animate(svg); });
     });
   }
   if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded', init);
