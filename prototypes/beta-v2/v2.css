@@ -9,8 +9,10 @@
   --v2-mint:#A9E2D4;
   --v2-white:#FFFFFF;
 }
-html,body{background:var(--v2-white);color:var(--v2-ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden;background:var(--v2-white);color:var(--v2-ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{font-size:13px}
+.page,.site,.shell{width:100%;max-width:100%;min-width:0;margin:0}
+.page>*,.site>*,.shell>*{max-width:100%}
 em,i{font-style:normal!important}
 .grain{display:block!important;position:fixed!important;inset:0!important;width:100%!important;height:100%!important;z-index:30!important;pointer-events:none!important;opacity:.2!important;mix-blend-mode:multiply!important}
 .wrap,.site-header .inner{max-width:1500px;padding-left:clamp(28px,3.2vw,54px);padding-right:clamp(28px,3.2vw,54px)}
@@ -199,12 +201,12 @@ html.ready .page>[data-site-header].header-hidden,[data-site-header].header-hidd
 .site-header .quiz-pill{background:transparent!important;color:var(--v2-indigo)!important;border:1px solid var(--v2-indigo)!important;padding-top:6px!important;padding-bottom:6px!important}
 .site-header .quiz-pill:hover{background:var(--v2-indigo)!important;color:#fff!important}
 
-@media(max-width:684px){
+@media(max-width:900px){
   .site-header{height:auto!important}.site-header .inner{height:auto!important;display:block!important}.site-header .hdr-right{margin-top:15px}.site-header .hdr-top{height:auto!important;min-height:0!important;display:flex!important;flex-wrap:wrap!important}.site-header .hdr-top .clock{display:none}.site-header .hdr-main{height:auto!important;justify-content:flex-start!important}
 }
 
 /* Mobile header/pricing correction — authoritative final rules. */
-@media(max-width:684px){
+@media(max-width:900px){
   [data-site-header],.site-header{overflow:visible!important}
   [data-site-header]{height:70px!important;transform:none!important}
   .site-header,.site-header .inner{height:70px!important;min-height:70px!important}
@@ -253,7 +255,7 @@ html.ready main,html.ready [data-site-footer]{opacity:1!important;transform:none
 
 .mobile-logo,.mobile-menu-toggle{display:none}
 
-@media(max-width:684px){
+@media(max-width:900px){
   html,body{max-width:100%;overflow-x:hidden}
   html.menu-open{overflow:hidden}
   [data-site-header]{height:78px!important;z-index:500!important}
