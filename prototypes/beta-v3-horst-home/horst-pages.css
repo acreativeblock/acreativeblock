@@ -68,3 +68,18 @@ html.horst-v3 [data-site-header]::after{content:"";position:absolute;z-index:999
 /* Final Horst header treatment: solid black, with no bottom rules. */
 html.horst-v3 [data-site-header],html.horst-v3 header.site-header.horst-header,html.horst-v3 header.site-header.horst-header>.inner,html.horst-v3 .horst-header .hdr-main{background:#090909!important;border-bottom:0!important}
 html.horst-v3 [data-site-header]::after{display:none!important}
+
+@media(max-width:900px){
+  html.menu-open{overflow:hidden!important}
+  html.horst-v3 .horst-header .inner{grid-template-columns:minmax(0,1fr) auto!important;padding-right:10px!important}
+  html.horst-v3 .horst-header .horst-actions{margin-left:auto!important;justify-self:end!important}
+  html.horst-v3 .horst-header .mobile-menu-toggle{margin-left:auto!important}
+  html.horst-v3 .horst-header .hdr-main{inset:58px 0 0!important;width:100%!important;height:calc(100dvh - 58px)!important;justify-content:flex-start!important;align-items:stretch!important;padding:12px 20px 40px!important;background:#090909!important;color:#fff!important;text-align:left!important;transition:opacity .42s ease,visibility .42s ease!important}
+  html.horst-v3 .horst-header .navitem{height:auto!important;display:block!important;align-items:initial!important;border-bottom:1px solid rgba(255,255,255,.32)!important}
+  html.horst-v3 .horst-header .navbutton{position:relative!important;width:100%!important;height:auto!important;display:block!important;padding:18px 0 14px!important;color:#fff!important;text-align:left!important;font-size:clamp(28px,8vw,42px)!important;line-height:1!important;pointer-events:auto!important}
+  html.horst-v3 .horst-header .navbutton::after{content:"+";position:absolute;right:0;top:50%;font-size:.75em;transform:translateY(-50%) rotate(0);transition:transform .8s cubic-bezier(.22,1.28,.36,1)}
+  html.horst-v3 .horst-header .navitem.submenu-open .navbutton::after{transform:translateY(-50%) rotate(45deg)}
+  html.horst-v3 .horst-header .submenu{position:static!important;width:100%!important;max-height:0!important;display:block!important;padding:0!important;overflow:hidden!important;text-align:left!important;opacity:0!important;visibility:visible!important;transform:translateY(-8px)!important;transition:max-height .9s cubic-bezier(.22,1.28,.36,1),opacity .42s ease,transform .8s cubic-bezier(.22,1.28,.36,1),padding .7s ease!important}
+  html.horst-v3 .horst-header .navitem.submenu-open .submenu{max-height:420px!important;padding:0 0 18px!important;opacity:1!important;transform:translateY(0)!important}
+  html.horst-v3 .horst-header .submenu a{color:#fff!important;text-align:left!important;font-size:20px!important}
+}
