@@ -58,3 +58,5 @@ html.horst-v3 .individuals-page .reel-sticky{top:64px!important;height:calc(100s
 @media(max-width:900px){.horst-logo{width:min(180px,52vw)!important;height:24px!important}.horst-find{display:none!important}}
 @media(max-width:900px){html.horst-v3 .horst-header .inner{padding-right:10px!important}}
 html.horst-v3 [data-site-header],html.horst-v3 .site-header.horst-header,html.horst-v3 .horst-header .inner,html.horst-v3 .horst-header .hdr-main{background:#4f46e5!important}html.horst-v3 [data-site-header]{border-bottom:1px solid #090909!important}
+html.horst-v3 h1,html.horst-v3 h2,html.horst-v3 h3{text-transform:uppercase!important}
+html.horst-v3 header.site-header.horst-header{border-bottom:1px solid #090909!important}

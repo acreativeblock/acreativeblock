@@ -48,3 +48,39 @@ a{color:inherit;text-decoration:none}img{display:block;width:100%}button{font:in
 
 /* Black rule below the Horst header. */
 html.horst-v3 [data-site-header],html.horst-v3 .site-header.horst-header{border-bottom:1px solid #090909!important}
+html.horst-v3 header.site-header.horst-header{border-bottom:1px solid #090909!important}
+
+/* Homepage hero: equal horizontal halves, image above and copy below. */
+.v2h-hero{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:1fr 1fr;
+  height:calc(100svh - 65px);
+  min-height:720px;
+  overflow:hidden;
+}
+.v2h-hero figure{
+  grid-column:1;
+  grid-row:1;
+  width:100%;
+  height:100%;
+  min-height:0;
+  border:0;
+  border-bottom:1px solid #090909;
+}
+.v2h-hero-copy{
+  grid-column:1;
+  grid-row:2;
+  min-height:0;
+  padding:clamp(22px,2.4vw,40px) var(--pad);
+  justify-content:center;
+}
+.v2h-hero h1{max-width:17ch;font-size:clamp(58px,7vw,112px)}
+.v2h-hero-copy>p{max-width:58ch;margin-top:clamp(16px,1.8vw,28px);font-size:clamp(15px,1.2vw,19px)}
+.v2h-hero-copy .v2h-kicker{margin-bottom:clamp(10px,1.3vw,20px)}
+.v2h-hero-copy .v2h-actions{margin-top:clamp(16px,1.8vw,28px)}
+@media(max-width:800px){
+  .v2h-hero{height:calc(100svh - 59px);min-height:640px;grid-template-rows:1fr 1fr}
+  .v2h-hero figure{grid-row:1;height:100%;min-height:0;border-top:0;border-bottom:1px solid #090909}
+  .v2h-hero-copy{grid-row:2;height:100%;padding:16px var(--pad)}
+}
