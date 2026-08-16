@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Block domain — A Creative Block</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="site.css?v=12">
+<link rel="stylesheet" href="v2.css?v=62">
+<style>
+.block-sci{font-family:var(--serif,inherit);font-size:.9em;letter-spacing:.02em;text-transform:uppercase;opacity:.6;margin-top:.35em}
+.sign-list{list-style:none;padding:0;margin:0 0 1.6em}
+.sign-list li{position:relative;padding:.5em 0 .5em 1.4em;border-bottom:1px solid var(--line,rgba(30,30,30,.14));font-size:1.02em}
+.sign-list li:before{content:"—";position:absolute;left:0;opacity:.5}
+.howhelp-lead{font-style:italic;opacity:.85;margin-top:.6em}
+</style>
+</head><body class="internal-page"><canvas class="grain"></canvas><div class="site"><div data-site-header></div><main>
+<section class="page-hero"><div class="wrap"><div class="eyebrow">One part of the map</div><h1 class="display" id="title">Starting &amp; Doing</h1><p class="block-sci" id="sci"></p><p id="intro"></p></div></section>
+<section class="section"><div class="wrap content-grid">
+  <div class="side-note">Does this sound like you?</div>
+  <div class="prose">
+    <ul class="sign-list" id="signs"></ul>
+    <h2>What's often underneath</h2><p id="body"></p>
+    <h2 style="margin-top:1.5em">How we help</h2><p id="help"></p>
+    <p class="howhelp-lead">Naming it is most of the clarity — shifting it is what we do together.</p>
+    <div class="callout coral"><strong>A question to sit with</strong><p id="question" style="margin-top:10.8px"></p></div>
+    <p class="fine" style="margin-top:1.4em">A domain never tells us what to do on its own. Blocks overlap; we clarify what's happening, check your capacity and context, and test a response that fits — rather than giving everyone the same advice.</p>
+    <div class="cta" style="margin-top:25.2px"><a class="btn btn-fill" href="Questionnaire.html">Find your block type</a><a class="btn btn-out" href="method.html">How we work</a></div>
+  </div>
+</div></section>
+</main><div data-site-footer></div></div>
+<script src="site.js?v=27"></script><script src="../_logo/logo-anim.js?v=10"></script>
+<script>
+var D={
+ execution:{t:'Starting & Doing',sci:'Execution',intro:'You want to move, but intention keeps not becoming action.',
+  signs:['You keep preparing, researching or tidying instead of starting.','You lose traction and restart the same thing.','You’re not sure what the next concrete step actually is.','You’re busy with everything except the work that matters.'],
+  body:'Knowing isn’t the same as moving. Usually there’s friction right at the point of starting — the step is too big, too vague, or too exposed — and willpower isn’t the missing ingredient.',
+  help:'We find the friction rather than demand more discipline: make the next step smaller, clearer or safer, and build a way of starting you can repeat. Some of this is temperament (fairly fixed) and some is habit and setup (very changeable), so we work on what actually moves for you — not a generic “just start”.',
+  q:'What becomes possible if the next step were made smaller, clearer or safer?'},
+ identity:{t:'Confidence & Exposure',sci:'Identity',intro:'The work has become tangled up with who you are and how you might be seen.',
+  signs:['You abandon things at ~90%, right before they’d be seen.','Perfectionism keeps the work permanently “not ready”.','You’re unsure of your voice, or you compare constantly.','A harsh review or a past success made it worse.'],
+  body:'When making becomes self-exposure, every decision feels like evidence about your worth — so finishing and sharing feel genuinely risky, not just hard.',
+  help:'We work on the fear and the self-story (coaching territory) and make exposure tolerable in practical steps. Some of what shapes this is stable (how you’re wired); a lot — the meaning you attach to judgement — is changeable.',
+  q:'What is the work asking you to risk, and what would make that risk tolerable?'},
+ direction:{t:'Direction & Meaning',sci:'Direction',intro:'There are options, but no direction has enough pull.',
+  signs:['Too many ideas, none of them chosen.','You’ve lost the point of the project.','You’re unsure what your real strengths even are.','You feel movement, but no progress.'],
+  body:'A project needs a reason as well as a route. When aims conflict or meaning drains away, you get motion without progress — or a full stop.',
+  help:'We help you choose a direction imperfectly and on purpose, clarify what actually matters to you, and tie the work to it (often coaching, sometimes strategy). This is where a block looks least like “can’t paint” and most like “I can’t find what I’m meant to build.”',
+  q:'What would make this project worth choosing — now?'},
+ depletion:{t:'Energy & Recovery',sci:'Depletion',intro:'The work is asking for resources you don’t currently have.',
+  signs:['You’re tired in a way rest hasn’t fixed.','Everything feels heavy rather than scary.','You crashed after a big push or a launch.','Effort that used to be easy now isn’t.'],
+  body:'Capacity is part of the creative system. Exhaustion and sustained load look like avoidance from outside — but the response is recovery or reduced demand, not another productivity technique.',
+  help:'We cut the load, protect real recovery and re-enter through low-stakes making. We also screen gently — if this is more than tiredness, we’ll say so and point you to the right support. Pushing harder here makes it worse.',
+  q:'What does the work need from you — and is that resource genuinely available right now?'},
+ process:{t:'The Work Itself',sci:'Process (craft)',intro:'The idea, brief, material or approach itself isn’t yielding.',
+  signs:['You stall at the same spot every time.','Other projects flow, but this one won’t.','You keep reworking the same part.','There’s a decision about the work you keep avoiding.'],
+  body:'Sometimes the problem is genuinely in the project, not in you — a weak premise, the wrong structure, unhelpful constraints, or an approach that’s quietly wrong. It feels emotional, but it’s a craft problem.',
+  help:'This is where direct creative consulting often beats turning inward: we interrogate the premise, the constraints and the structure, and test a different approach. (This “craft” problem is the Process domain — not to be confused with our CRAFT method.)',
+  q:'What assumption about the work have you not yet tested?'},
+ systems:{t:'Structure & Workflow',sci:'Systems',intro:'The project is too big, chaotic or badly sequenced to get a grip on.',
+  signs:['The scope has ballooned.','You don’t know what to do first.','Decisions and priorities keep colliding.','Your workflow eats the energy you need to create.'],
+  body:'Good work needs a structure it can live inside. Unclear decisions, bloated scope or an unreliable process create repeated friction even when motivation is fine.',
+  help:'We redesign the container — scope, sequence, decisions, workflow — so the work has somewhere to happen. Mostly practical (consulting), sometimes paired with coaching when the mess is doing an emotional job too.',
+  q:'Which part of the system keeps recreating the same block?'},
+ context:{t:'Context & Support',sci:'Context',intro:'The world around the work is working against it.',
+  signs:['No time, or no protected space.','Constant distractions and interruptions.','The setup or tools are wrong for the work.','You’re isolated, or the feedback culture feels unsafe.'],
+  body:'Creativity never happens in a vacuum. Time, space, tools, relationships and feedback can make a perfectly workable project feel impossible — and this is often the single biggest cause.',
+  help:'We change what’s around the work: engineer time and space, fix the setup, and build in the right people and support. Environment is one of the most changeable factors — so this is often where the fastest wins are.',
+  q:'What needs to change around the work — not inside you?'},
+ skill:{t:'A Skill Gap',sci:'Skill · a look-alike, not a true block',intro:'Sometimes the honest answer is that a specific ability hasn’t been learned yet.',
+  signs:['You can name exactly what you can’t do.','You’ve genuinely never done this before.','It isn’t fear — it’s unfamiliar.','More confidence wouldn’t close the gap.'],
+  body:'By the strict definition, a block is being stuck for reasons other than lack of skill — so a skill gap is technically not a block. Treating it like one wastes months of self-work on the wrong problem.',
+  help:'We name it honestly and point you to the fastest way to learn, or to specialist help — and save you from psychologising a practical gap. That honesty is part of the service.',
+  q:'Can you name the exact thing you don’t yet know how to do?'}
+};
+var k=new URLSearchParams(location.search).get('type')||'execution',d=D[k]||D.execution;
+document.title=d.t+' — A Creative Block';
+title.textContent=d.t; sci.textContent=d.sci; intro.textContent=d.intro;
+signs.innerHTML=d.signs.map(function(s){return '<li>'+s+'</li>'}).join('');
+body.textContent=d.body; help.textContent=d.help; question.textContent=d.q;
+</script></body></html>

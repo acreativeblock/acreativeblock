@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Creative Block — A living practice for getting unstuck</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="images/hero-portrait.jpg" as="image" type="image/jpeg" fetchpriority="high">
+<script>document.documentElement.className+=" preload";</script>
+<style>
+:root{
+  --ink:#4F46E5;
+  --bg:#FFFFFF;
+  --coral:#FF7F50;
+  --yellow:#FF7F50;
+  --orange:#FF7F50;
+  --line:rgba(23,24,26,.22);
+  --serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --grot:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --w:1425.6px;
+  --pad:clamp(16.335px,2.594vw,47.52px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--grot);font-size:16.335px;line-height:1.32;font-weight:400}
+a{color:inherit;text-decoration:none}
+/* animated TV-static grain (canvas, redrawn each frame) */
+.grain{display:none}
+.acb-logo-mount svg rect[clip-path]{display:none!important}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3,h4{font-weight:400;letter-spacing:-.015em}
+strong,b{font-weight:500}
+.serif{font-family:var(--serif)}
+em{font-style:italic}
+.eyebrow{font-family:var(--grot);font-size:11.88px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);opacity:.7}
+
+/* ---------- HEADER:logo left + two stacked right rows ---------- */
+.site-header{border-bottom:1px solid var(--ink)}
+.site-header .inner{max-width:var(--w);margin:0 auto;padding:23.76px var(--pad) 22.275px;
+  display:grid;grid-template-columns:29fr 71fr;gap:clamp(20.79px,3.346vw,59.4px);align-items:start}
+.logo{align-self:center;font-family:var(--grot);font-weight:400;font-size:clamp(29.7px,3.564vw,43.56px);line-height:.92;letter-spacing:-.02em}
+.hdr-right{display:flex;flex-direction:column;align-self:stretch}
+/* small top utility row */
+.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(11.88px,1.109vw,22.275px);padding-bottom:16.335px}
+.hdr-top .clock{font-size:11.142px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}
+.hdr-top a{font-size:11.142px;letter-spacing:.05em;text-transform:uppercase}
+.hdr-top a:hover{opacity:.6}
+.hdr-top .pill{background:var(--ink);color:var(--bg);border-radius:824.18px;padding:7.425px 16.335px;letter-spacing:.05em}
+.hdr-top .pill:hover{background:#000;opacity:1}
+.hdr-top .search{width:16.335px;height:16.335px;display:grid;place-items:center}
+.hdr-divider{border-top:1px solid var(--ink)}          /* smaller line, right column only */
+/* big main-pages row */
+.hdr-main{display:flex;justify-content:space-between;gap:clamp(10.395px,1.188vw,23.76px);flex-wrap:wrap;padding-top:17.82px}
+.hdr-main a{font-family:var(--serif);font-size:clamp(12.6px,1.008vw,17.82px);line-height:1;letter-spacing:-.01em}
+.hdr-main a:hover{opacity:.55}
+@media(max-width:801.9px){.hdr-top .clock{display:none}.hdr-main{gap:10.395px}.hdr-main a{font-size:14.112px}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:74svh;padding:clamp(50px,6.4vw,92px) 0;display:flex;align-items:center}
+.hero h1{font-family:var(--serif);font-size:clamp(27.261px,3.689vw,54.531px);line-height:1.04;letter-spacing:-.02em;max-width:22ch}
+.hero .intro{font-family:var(--grot);font-size:clamp(14.112px,1.188vw,18.558px);line-height:1.34;max-width:44ch;margin-top:25.245px}
+.hero .cta{margin-top:29.7px;display:flex;gap:11.88px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7.425px;font-family:var(--grot);font-size:14.112px;padding:11.142px 23.76px;border-radius:824.18px;border:1px solid var(--ink);transition:.15s;cursor:pointer}
+.btn-fill{background:var(--ink);color:var(--bg)}
+.btn-fill:hover{background:#000}
+.btn-out:hover{background:var(--ink);color:var(--bg)}
+.btn-coral{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+.btn-coral:hover{background:#ef5568}
+
+/* ---------- SIX BLOCKS (editorial grid on the single bg) ---------- */
+.blocks-sec{padding:clamp(29.7px,3.712vw,59.4px) 0 clamp(44.55px,5.94vw,89.1px)}
+.blocks-head{display:flex;justify-content:space-between;align-items:flex-end;gap:22.275px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:43.2px}
+.blocks-head h2{font-family:var(--serif);font-size:clamp(24.057px,2.887vw,43.299px);line-height:1.02;max-width:16ch}
+.blocks-head p{font-size:14.85px;max-width:34ch;opacity:.8}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--ink);border-top:1px solid var(--ink);margin-top:clamp(22.275px,2.97vw,41.58px)}
+.tile{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:clamp(20.79px,1.782vw,32.67px);min-height:222.75px;display:flex;flex-direction:column;transition:.2s}
+.tile:hover{background:rgba(251,250,247,.28)}
+.tile .num{font-family:var(--serif);font-size:clamp(41.58px,3.712vw,62.37px);line-height:.9;margin-bottom:auto}
+.tile h3{font-family:var(--serif);font-size:clamp(20.853px,1.604vw,27.261px);line-height:1.02;margin-top:22.275px}
+.tile p{font-size:13.365px;margin-top:10.395px;line-height:1.36;opacity:.82;max-width:34ch}
+.tile.c1 .num,.tile.c4 .num{color:var(--coral)}
+.tile.c2 .num,.tile.c5 .num{color:var(--ink)}
+.tile.c3 .num,.tile.c6 .num{color:var(--orange)}
+
+/* ---------- CLOSING CTA (same bg) ---------- */
+.close{padding:clamp(44.55px,5.94vw,89.1px) 0;text-align:center;border-top:1px solid var(--ink)}
+.close h2{font-family:var(--serif);font-size:clamp(27.261px,4.01vw,60.948px);line-height:1.02;max-width:20ch;margin:0 auto}
+.close .cta{margin-top:28.215px;display:flex;gap:11.88px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- FOOTER (Abbotsford style:dark, grotesk, big) ---------- */
+footer{background:#232323;color:#FAF9F6;padding:clamp(41.58px,4.455vw,68.31px) 0 clamp(35.64px,4.455vw,65.34px);position:relative;z-index:1;font-family:var(--grot)}
+.foot-lead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(29.7px,4.455vw,71.28px);padding-bottom:clamp(32.67px,3.712vw,53.46px);border-bottom:1px solid rgba(255,255,255,.28)}
+.ack{font-family:var(--grot);font-weight:400;font-size:clamp(17.82px,1.782vw,25.992px);line-height:1.14;max-width:26ch}
+.news h3{font-family:var(--grot);font-weight:400;font-size:clamp(17.82px,1.782vw,25.992px);line-height:1.14}
+.news p{font-size:clamp(13.365px,1vw,16.335px);color:rgba(255,255,255,.72);margin-top:11.88px;max-width:42ch;line-height:1.3}
+.news .in{display:flex;border-bottom:1px solid rgba(255,255,255,.5);max-width:311.85px;margin-top:14.85px}
+.news input{flex:1;background:transparent;border:0;color:#fff;font-family:var(--grot);font-size:14.85px;padding:8.91px 0}
+.news input::placeholder{color:rgba(255,255,255,.5)}
+.news button{background:transparent;border:0;color:#fff;font-family:var(--grot);font-size:14.85px;cursor:pointer;padding:0 4.455px}
+.news button:hover{color:var(--coral)}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:29.7px;padding-top:clamp(32.67px,3.712vw,53.46px)}
+.fcol a,.fcol span{display:block;font-size:13.365px;line-height:1.55;color:rgba(255,255,255,.7)}
+.fcol a:hover{color:#fff}
+.fcol .head{color:#fff;font-size:15.597px;margin-bottom:7.425px}
+.fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:11.88px;margin-top:clamp(32.67px,3.712vw,50.49px);padding-top:19.305px;border-top:1px solid rgba(255,255,255,.22);font-size:11.88px;color:rgba(255,255,255,.6)}
+.fbar a{color:rgba(255,255,255,.6)}.fbar a:hover{color:#fff}
+
+@media(max-width:668.25px){.tiles,.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- PAGE EXIT + STAGGERED CONTENT FADE-UP (hidden pre-paint, revealed on fonts-ready) ---------- */
+html.preload .page>*{opacity:0;transform:translateY(21.6px)}
+.page>*{transition:opacity .6s ease,transform .72s cubic-bezier(.2,.75,.25,1)}
+html.ready .page>*{opacity:1;transform:none}
+html.ready .page>*:nth-child(1){transition-delay:.02s}
+html.ready .page>*:nth-child(2){transition-delay:.10s}
+html.ready .page>*:nth-child(3){transition-delay:.18s}
+html.ready .page>*:nth-child(4){transition-delay:.26s}
+html.ready .page>*:nth-child(5){transition-delay:.34s}
+html.ready .page>*:nth-child(6){transition-delay:.42s}
+html.ready .page>*:nth-child(7){transition-delay:.50s}
+html.ready .page>*:nth-child(8){transition-delay:.58s}
+@media(prefers-reduced-motion:reduce){html.preload .page>*{opacity:1;transform:none}.page>*{transition:none}}
+/* ---------- HOME (v33 content, Convent styled) ---------- */
+.method{padding:clamp(29.7px,3.712vw,59.4px) 0}
+.method .usps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(23.76px,2.97vw,47.52px);margin-top:clamp(22.275px,2.97vw,41.58px)}
+.usp{padding-top:3.6px}
+.usp .n{display:block;font-family:var(--serif);font-size:clamp(29.7px,2.574vw,41.58px);line-height:.9;color:var(--coral);margin-bottom:13.86px}
+.usp h3{font-family:var(--serif);font-size:clamp(20.853px,1.711vw,27.801px);line-height:1.05;margin-bottom:7.92px}
+.usp p{font-size:14.112px;line-height:1.42;opacity:.82;max-width:34ch}
+.strip{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(27.72px,3.96vw,63.36px);align-items:center;padding:clamp(39.6px,4.95vw,79.2px) 0;border-top:1px solid var(--ink)}
+.strip h2{font-family:var(--serif);font-size:clamp(24.057px,2.887vw,43.299px);line-height:1.04;margin-bottom:13.86px;max-width:16ch}
+.strip p{font-size:clamp(14.85px,1.287vw,19.8px);line-height:1.4;max-width:44ch;margin-bottom:21.78px}
+.strip .panel{aspect-ratio:16/11;border:1px solid var(--ink);display:grid;place-items:center;padding:clamp(23.76px,2.97vw,43.56px);background:var(--coral)}
+.strip .panel span{font-family:var(--serif);font-size:clamp(21.384px,2.138vw,33.147px);line-height:1.14;text-align:center;color:var(--ink);max-width:20ch}
+.statement{padding:clamp(55.44px,7.92vw,114.84px) 0;border-top:1px solid var(--ink);text-align:center}
+.statement h2{font-family:var(--serif);font-size:clamp(27.801px,3.635vw,54.531px);line-height:1.06;max-width:22ch;margin:0 auto}
+.statement p{font-size:clamp(14.85px,1.337vw,20.79px);line-height:1.42;max-width:56ch;margin:17.82px auto 0;opacity:.85}
+.indigo{background:#4F46E5;color:#fff}
+.coral{background:#FF7F50;color:#1E1E1E}
+.dark{background:#1E1E1E;color:#fff}
+.menu{position:relative;padding-bottom:10.8px;margin-bottom:-10.8px}
+.menu>button{appearance:none;border:0;background:none;color:inherit;font-family:var(--serif);font-size:clamp(12.6px,1.008vw,17.82px);line-height:1;letter-spacing:-.01em;cursor:pointer;transition:color .22s ease}
+.submenu{position:absolute;top:100%;left:-16.2px;z-index:50;display:block;visibility:hidden;opacity:0;transform:translateY(6.3px);min-width:211.5px;padding:12.6px 16.2px;background:var(--bg);color:var(--ink);border:1px solid var(--ink);transition:opacity .22s ease,transform .28s cubic-bezier(.2,.7,.2,1),visibility .22s}
+.submenu a{display:block!important;font-family:var(--grot)!important;font-size:12.6px!important;padding:6.3px 0}
+.menu:hover .submenu,.menu:focus-within .submenu{visibility:visible;opacity:1;transform:none}
+.menu:hover>button,.hdr-main>a:hover{color:var(--coral);opacity:1}.submenu a{transition:color .2s ease,transform .2s ease}.submenu a:hover{color:var(--coral);transform:translateX(2.7px)}
+.proof{padding:clamp(39.6px,5.4vw,82.8px) 0;border-top:1px solid var(--ink)}
+.proof-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:0.9px;background:var(--ink);border:1px solid var(--ink)}
+.proof-copy,.proof-stat{padding:clamp(27px,4.5vw,68.4px);background:var(--bg)}
+.proof-copy h2,.offers h2,.craft h2{font-size:clamp(27px,3.6vw,54.9px);line-height:1.02;max-width:18ch}
+.proof-copy p{max-width:55ch;margin-top:18px}
+.proof-stat{background:#4F46E5;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.proof-stat strong{font-family:var(--serif);font-size:clamp(79.2px,10.8vw,171px);line-height:.75;font-weight:400;letter-spacing:-.06em}
+.proof-stat p{font-size:16.2px;max-width:28ch;margin-top:28.8px}
+.offers{padding:clamp(39.6px,5.4vw,82.8px) 0;border-top:1px solid var(--ink)}
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14.4px;margin-top:34.2px}
+.offer-card{border:1px solid currentColor;padding:clamp(25.2px,3.6vw,54px);min-height:558px;display:flex;flex-direction:column}
+.offer-card h3{font-size:clamp(30.6px,3.6vw,52.2px);line-height:.95}
+.offer-card>p{font-size:16.2px;max-width:43ch;margin:18px 0 27px}
+.offer-row{border-top:1px solid currentColor;padding:16.2px 0;display:grid;grid-template-columns:1fr auto;gap:18px}
+.offer-row b{font-weight:500}.offer-row span{opacity:.8}
+.offer-card .btn{margin-top:auto;align-self:flex-start}
+.access{border-top:1px solid currentColor;margin-top:27px;padding-top:18px;font-size:13.5px;max-width:62ch}
+.craft{padding:clamp(46.8px,6.3vw,99px) 0;border-top:1px solid var(--ink)}
+.craft-steps{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--ink);margin-top:36px}
+.craft-step{padding:22.5px 18px;min-height:198px;border-right:1px solid var(--ink)}
+.craft-step:last-child{border-right:0}.craft-step strong{font-family:var(--serif);font-size:46.8px;font-weight:400}.craft-step h3{font-size:21.6px;margin:25.2px 0 7.2px}.craft-step p{font-size:12.6px;opacity:.8}
+.evidence-note{margin-top:28.8px;max-width:75ch;font-size:13.5px;opacity:.82}
+.tile,.offer-card,.craft-step,.proof-grid{transition:background-color .25s ease,color .25s ease,transform .35s cubic-bezier(.2,.7,.2,1)}.tile:hover,.craft-step:hover{background:rgba(79,70,229,.055)}.btn{transition:background-color .22s ease,color .22s ease,transform .22s ease}.btn:hover{transform:translateY(-1.8px)}
+.calm-reveal{opacity:0;transform:translateY(10.8px);transition:opacity .65s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.calm-reveal.in{opacity:1;transform:none}
+@media(max-width:811.8px){.method .usps{grid-template-columns:1fr}.strip{grid-template-columns:1fr}}
+@media(max-width:684px){.site-header .inner{display:block}.hdr-right{margin-top:18px}.hdr-top{justify-content:flex-start;flex-wrap:wrap}.hdr-main{justify-content:flex-start}.proof-grid,.offer-grid{grid-template-columns:1fr}.offer-card{min-height:auto}.craft-steps{grid-template-columns:1fr}.craft-step{border-right:0;border-bottom:1px solid var(--ink);min-height:0}.craft-step:last-child{border-bottom:0}.tiles{grid-template-columns:1fr}.submenu{position:fixed;left:16.2px;right:16.2px;top:auto}.foot-lead,.foot-cols{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="v2.css?v=62">
+</head>
+<body>
+
+<div class="page">
+<div data-site-header></div>
+
+<header class="hero">
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <div class="eyebrow">Coaching &amp; creative consulting</div>
+      <h1 class="serif" style="margin-top:.28em">Understand what is stopping the work. Then get it <em>moving</em>.</h1>
+      <p class="intro">For anyone blocked on a project that matters — founders, strategists, researchers and makers, not only artists. Creativity is the process of bringing something into existence, and getting stuck on <em>direction</em> counts just as much as a blank page.</p>
+      <div class="cta">
+        <a class="btn btn-fill" href="Questionnaire.html">Find your block</a>
+        <a class="btn btn-out" href="method.html">How we work</a>
+      </div>
+    </div>
+    <figure class="hero-photo"><img src="images/hero-portrait.jpg" width="1600" height="1066" fetchpriority="high" decoding="async" alt="Portrait from the A Creative Block series"></figure>
+  </div>
+</header>
+
+<section class="method" id="why"><div class="wrap"><div class="strip">
+  <div>
+    <div class="eyebrow">Why we don’t just say “push through”</div>
+    <h2 class="serif">A block isn’t one thing — and it isn’t a discipline problem.</h2>
+    <p>“Just do it” fails because the cause is different every time. Some of how you create is fairly fixed — your temperament, how your brain is wired. Much more is changeable — your energy, your systems, the space around the work. We find the actual cause and match the response, instead of handing everyone the same advice.</p>
+    <a class="btn btn-out" href="method.html">See how we work →</a>
+  </div>
+  <div class="panel"><span>Understand the cause. Match the response.</span></div>
+</div></div></section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-copy"><div class="eyebrow">Creative block is real</div><h2 class="serif" style="margin-top:.35em">Common enough to matter.<br>Complex enough to investigate.</h2><p>Creative block is not laziness or a lack of discipline. It can come from identity, direction, energy, process, systems or the context around the work—and different causes need different responses.</p></div>
+      <div class="proof-stat"><strong>78%</strong><p>reported experiencing creative block in one survey of 271 professionally active artists and writers.*</p></div>
+    </div>
+    <p class="evidence-note">*That number describes this specific sample, not every creative profession. Creative block remains under-researched; we use the evidence carefully and say where its limits are.</p>
+  </div>
+</section>
+
+<section class="blocks-sec" id="blocks">
+  <div class="wrap blocks-feature">
+    <div class="blocks-feature-copy">
+      <div class="blocks-feature-title"><h2 class="serif">What might be stopping the work?</h2></div>
+      <div class="blocks-feature-body">
+        <p>Our working map looks across seven practical domains. They can overlap, change over time and point towards different kinds of support.</p>
+        <div class="block-tags" aria-label="Examples of what can get in the way">
+          <span>I keep avoiding it</span><span>I don’t know the next step</span><span>Too many directions</span><span>The project is too big</span><span>Chaotic workflow</span><span>Perfectionism</span><span>Fear of judgement</span><span>Impostor feelings</span><span>I can’t find my voice</span><span>Unclear strengths</span><span>The idea isn’t working</span><span>An unclear brief</span><span>Feedback knocked my confidence</span><span>Too many decision-makers</span><span>No time</span><span>Low energy</span><span>Constant distractions</span><span>The wrong setup</span><span>Missing support</span><span>A skill gap</span>
+        </div>
+        <div class="cta" style="margin-top:28.8px"><a class="btn btn-fill" href="Questionnaire.html">Find your block type</a><a class="btn btn-out" href="blocks.html">Explore the block map</a><a class="btn btn-out" href="evidence.html">What a block is—and is not</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offers" id="offers">
+  <div class="wrap">
+    <div class="offer-grid offer-grid-three">
+      <div class="offer-intro-column"><div class="eyebrow">Ways to work together</div><h2 class="serif">Support for the person—and the work around them.</h2><p>Coaching when the block is internal. Creative consulting when the project needs direct thinking. Often, a considered mix of both.</p></div>
+      <article class="offer-card coral"><h3 class="serif">For individuals</h3><p>Focused support for a project that matters: understand what is happening, decide what kind of help fits, and build movement that lasts beyond the conversation.</p>
+        <div class="offer-row"><b>Project Session · 90 min</b><span>€150</span></div><div class="offer-row"><b>Momentum Pack · 3 × 60 min</b><span>€390</span></div><div class="offer-row"><b>Deeper Process · 6 × 60 min</b><span>€600–1,200</span></div>
+        <p class="access">We reserve reduced-fee places for people facing financial difficulty and those underrepresented in creative industries. Tell us what is realistic—no payslips or invasive proof.</p><a class="btn btn-out" href="individuals.html">Explore individual support</a>
+      </article>
+      <article class="offer-card indigo"><h3 class="serif">For organisations</h3><p>Practical interventions for creative teams, leaders and institutions where feedback, decisions, confidence, process or working conditions are getting in the way.</p>
+        <div class="offer-row"><b>Better Creative Feedback · 90 min</b><span>€900–1,200</span></div><div class="offer-row"><b>Team Workshop · 3 hours</b><span>from €1,500</span></div><div class="offer-row"><b>Creative Team Reset · full day</b><span>from €3,000</span></div>
+        <p class="access">Longer workshop series, four-week resets, talks and ongoing advisory are scoped around the team and the work—not sold as an off-the-shelf cure.</p><a class="btn btn-out" href="organisations.html">Explore organisation support</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="home-faq" id="faq"><div class="wrap home-faq-grid faq-category"><div class="faq-category-label"><span>FAQ</span><h2>Questions are part of the process.</h2></div><div class="offer-list">
+<div class="offer-row"><button class="offer-toggle"><span>Do I need to be an artist?</span><span>+</span></button><div class="offer-body"><div><p>No. Creativity is the process of bringing something into existence. We work with anyone blocked on a project—from artists and designers to founders, researchers, strategists and teams.</p></div></div></div>
+<div class="offer-row"><button class="offer-toggle"><span>Is this coaching or consulting?</span><span>+</span></button><div class="offer-body"><div><p>It can be either, or a thoughtful combination. Coaching helps you examine internal barriers and find your own way forward. Creative consulting brings direct thinking, challenge and practical support to the project itself.</p></div></div></div>
+<div class="offer-row"><button class="offer-toggle"><span>How many sessions will I need?</span><span>+</span></button><div class="offer-body"><div><p>It depends on the block and the work. You can begin with one focused session, then decide whether a three- or six-session process would be useful.</p></div></div></div>
+<div class="offer-row"><button class="offer-toggle"><span>Is your framework scientifically validated?</span><span>+</span></button><div class="offer-body"><div><p>Creative block is under-researched relative to how common it appears to be. There is no agreed scientific taxonomy, and some of the strongest evidence comes from writing, academic and artist samples. Our framework brings that evidence together with established theory and creative practice. It is an evidence-informed practitioner method—not a validated clinical diagnostic system.</p></div></div></div>
+<div class="offer-row"><button class="offer-toggle"><span>What if I cannot afford the listed price?</span><span>+</span></button><div class="offer-body"><div><p>Reduced-fee places support people facing financial difficulty and people underrepresented in creative industries. Tell us what is realistic for you—no payslips or invasive proof required.</p></div></div></div>
+<div class="faq-more"><a class="btn btn-out" href="faq.html">See more questions</a></div>
+</div></div></section>
+
+<section class="close">
+  <div class="wrap">
+    <h2 class="serif">Make space for the work to move.</h2>
+    <div class="cta">
+      <a class="btn btn-fill" href="#offers">See ways to work together</a>
+      <a class="btn btn-out" href="mailto:hello@acreativeblock.com">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<div data-site-footer></div>
+</div>
+<canvas class="grain"></canvas>
+<script>
+// live Lisbon clock — Abbotsford's DATE · TIME format
+(function(){
+  const el=document.getElementById('clock');if(!el)return;
+  function tick(){try{
+    const d=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',weekday:'short',day:'2-digit',month:'short'}).format(new Date());
+    const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit'}).format(new Date());
+    el.textContent='Lisbon · '+d+' · '+t;
+  }catch(e){el.textContent='Lisbon';}}
+  tick();setInterval(tick,10000);
+})();
+
+
+
+// smooth load:reveal once fonts are ready (no font-pop, no flash)
+(function(){
+  var el=document.documentElement;
+  function go(){el.classList.remove('preload');el.classList.add('ready');}
+  try{ if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go);} }catch(e){}
+  setTimeout(go,700);            // safety fallback
+  window.addEventListener('pageshow',function(ev){if(ev.persisted)go();});
+})();
+// restrained scroll reveals for editorial modules
+(function(){var els=[].slice.call(document.querySelectorAll('.proof-grid,.tile,.offer-card,.craft-step,.statement .wrap'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5%'});els.forEach(function(e,i){e.classList.add('calm-reveal');e.style.transitionDelay=(i%4)*45+'ms';io.observe(e)})})();
+</script>
+<script src="site.js?v=27"></script>
+<script src="../_logo/logo-anim.js?v=10"></script>
+</body>
+</html>
