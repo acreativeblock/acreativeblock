@@ -1,6 +1,5 @@
 (function(){
   var headerActions=document.querySelector('.horst-actions');
-  if(headerActions&&!headerActions.querySelector('.horst-find'))headerActions.insertAdjacentHTML('afterbegin','<a class="horst-find" href="Questionnaire.html">Find your block</a>');
   var logoMount=document.querySelector('.horst-logo .acb-logo-mount');
   if(logoMount)requestAnimationFrame(function waitForLogo(){
     var svg=logoMount.querySelector('svg');
@@ -11,6 +10,8 @@
     if(eye&&pupil){eye.el.style.transformBox='fill-box';eye.el.style.transformOrigin='center';(function blink(){setTimeout(function(){eye.el.animate([{transform:'scaleY(1)'},{transform:'scaleY(.08)',offset:.48},{transform:'scaleY(1)'}],{duration:180,easing:'cubic-bezier(.4,0,.2,1)'});pupil.animate([{opacity:1},{opacity:0,offset:.4},{opacity:0,offset:.58},{opacity:1}],{duration:180});blink()},1900+Math.random()*3600)})()}
   });
   var nav=document.querySelector('.horst-header'),menu=document.querySelector('.mobile-menu-toggle');
+  var readExplore=[].slice.call(document.querySelectorAll('.horst-header .navbutton')).find(function(button){return button.textContent.trim()==='Read + explore'});if(readExplore)readExplore.textContent='Read & explore';
+  var researchItems=document.querySelectorAll('.horst-header .hdr-main>.navitem');if(researchItems.length>1){researchItems[0].querySelector('.navbutton').textContent='Our research';researchItems[0].querySelector('.submenu').innerHTML='<a href="blocks.html"><strong>The 7+1 map</strong></a><a href="evidence.html"><strong>Evidence + limits</strong></a><a href="method.html"><strong>The CRAFT method</strong></a>';researchItems[1].remove()}var aboutButton=[].slice.call(document.querySelectorAll('.horst-header .navbutton')).find(function(button){return button.textContent.trim()==='About'});if(aboutButton){var aboutMenu=aboutButton.parentElement.querySelector('.submenu');if(aboutMenu&&!aboutMenu.querySelector('a[href="manifesto.html"]'))aboutMenu.insertAdjacentHTML('beforeend','<a href="manifesto.html"><strong>Manifesto</strong></a>')}var findButton=document.querySelector('.horst-header .horst-find');if(findButton)findButton.remove();
   if(menu)menu.addEventListener('click',function(){var open=nav.classList.toggle('mobile-open');menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close menu':'Open menu');menu.textContent=open?'Close':'Menu'});
   document.querySelectorAll('.horst-header a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('mobile-open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu'})});
   var els=[].slice.call(document.querySelectorAll('.h-story,.h-situations>a,.h-world'));

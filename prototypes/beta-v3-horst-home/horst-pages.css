@@ -60,3 +60,11 @@ html.horst-v3 .individuals-page .reel-sticky{top:64px!important;height:calc(100s
 html.horst-v3 [data-site-header],html.horst-v3 .site-header.horst-header,html.horst-v3 .horst-header .inner,html.horst-v3 .horst-header .hdr-main{background:#4f46e5!important}html.horst-v3 [data-site-header]{border-bottom:1px solid #090909!important}
 html.horst-v3 h1,html.horst-v3 h2,html.horst-v3 h3{text-transform:uppercase!important}
 html.horst-v3 header.site-header.horst-header{border-bottom:1px solid #090909!important}
+html.horst-v3 [data-site-header],html.horst-v3 header.site-header.horst-header,html.horst-v3 header.site-header.horst-header>.inner{border-bottom:1px solid #090909!important}
+html.horst-v3 .horst-header .navbutton{font-size:14px!important;text-transform:uppercase!important;white-space:nowrap!important}
+html.horst-v3 [data-site-header]{position:sticky!important}
+html.horst-v3 [data-site-header]::after{content:"";position:absolute;z-index:9999;left:0;right:0;bottom:0;height:1px;background:#090909;pointer-events:none}
+
+/* Final Horst header treatment: solid black, with no bottom rules. */
+html.horst-v3 [data-site-header],html.horst-v3 header.site-header.horst-header,html.horst-v3 header.site-header.horst-header>.inner,html.horst-v3 .horst-header .hdr-main{background:#090909!important;border-bottom:0!important}
+html.horst-v3 [data-site-header]::after{display:none!important}
