@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>The factors — A Creative Block</title>
+  <meta name="description" content="The stable and malleable factors that shape creative blocks, plus a simple reflection on energy and pressure.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=12">
+  <link rel="stylesheet" href="v2.css?v=70">
+  <link rel="stylesheet" href="factors-horst.css?v=1">
+</head>
+<body class="internal-page factors-horst-page">
+  <div class="site"><div data-site-header></div><main>
+    <section class="factors-hero">
+      <span>Research · The factors</span>
+      <h1>The block is only one layer.</h1>
+      <p>How you tend to operate, the conditions around the work and your state today all shape what becomes difficult—and what kind of response can help.</p>
+    </section>
+
+    <section class="factor-terrain">
+      <header><span>The terrain</span><h2>Design around what is stable. Work on what can move.</h2><p>Stable does not mean fixed forever. Malleable does not mean easy to change. The distinction helps us stop blaming people for their wiring—and stop treating changeable conditions as destiny.</p></header>
+      <div class="factor-columns">
+        <article class="factor-group stable">
+          <span>01 · Relatively stable</span><h3>The background you bring.</h3><p>Longer-standing patterns that shape vulnerability. We understand and design around them rather than trying to “fix” the person.</p>
+          <div><h4>Personality</h4><p>Temperament, sensitivity to evaluation and preferences for novelty, certainty or structure.</p></div>
+          <div><h4>Cognition</h4><p>Attention, working memory, processing style and neurodivergence in complex creative work.</p></div>
+          <div><h4>Mental-health context</h4><p>Relevant background that can affect the work and may require qualified support beyond our scope.</p></div>
+        </article>
+        <article class="factor-group malleable">
+          <span>02 · More malleable</span><h3>The conditions we can influence.</h3><p>Factors that may shift through decisions, recovery, experimentation, boundaries or system redesign.</p>
+          <div><h4>Motivation</h4><p>Meaning, autonomy, reward, conflict and whether the project still has enough pull.</p></div>
+          <div><h4>Mood &amp; energy</h4><p>Available fuel, stress load, recovery and the emotional conditions around the task.</p></div>
+          <div><h4>Environment</h4><p>Time, space, tools, feedback, relationships, decision rights and practical support.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="state-lab">
+      <div class="state-copy"><span>Try the state dial</span><h2>What state are you bringing to the work?</h2><p>Move both sliders based on how you feel around one specific project today. This is a reflection tool—not a diagnosis or another block type.</p></div>
+      <div class="state-tool">
+        <div class="state-control"><div><label for="energy">Available energy</label><output id="energyValue">5 / 10</output></div><input id="energy" type="range" min="0" max="10" value="5" step="1"><p><span>Empty / depleted</span><span>Energised</span></p></div>
+        <div class="state-control"><div><label for="pressure">Pressure or threat</label><output id="pressureValue">5 / 10</output></div><input id="pressure" type="range" min="0" max="10" value="5" step="1"><p><span>Calm / safe</span><span>Flooded / anxious</span></p></div>
+        <div class="state-result" data-state="regulated"><span>Your current reflection</span><h3 id="stateName">Regulated</h3><p id="stateCopy">There may be enough energy and safety to enquire, decide, experiment and engage with the work.</p><p><strong>Try first:</strong> <span id="stateAction">Work directly on the active block and choose a proportionate next experiment.</span></p></div>
+      </div>
+    </section>
+
+    <section class="factor-equation">
+      <span>How the layers connect</span>
+      <div><strong>Terrain</strong><p>shapes vulnerability</p></div>
+      <div><strong>State</strong><p>shapes timing</p></div>
+      <div><strong>The block</strong><p>names the mechanism</p></div>
+      <p>We work on what can change, design around what cannot, and avoid giving the same advice to everyone.</p>
+    </section>
+
+    <section class="close"><div class="wrap"><h2>Read the conditions before pushing the work.</h2><div class="cta"><a class="btn btn-fill" href="Questionnaire.html">Find your block</a><a class="btn btn-out" href="blocks.html">Explore the block map</a></div></div></section>
+  </main><div data-site-footer></div></div>
+  <script src="site.js?v=35"></script>
+  <script>(function(){var energy=document.getElementById('energy'),pressure=document.getElementById('pressure'),ev=document.getElementById('energyValue'),pv=document.getElementById('pressureValue'),box=document.querySelector('.state-result'),name=document.getElementById('stateName'),copy=document.getElementById('stateCopy'),action=document.getElementById('stateAction');function update(){var e=+energy.value,p=+pressure.value,state='regulated',title='Regulated',text='There may be enough energy and safety to enquire, decide, experiment and engage with the work.',next='Work directly on the active block and choose a proportionate next experiment.';ev.value=e+' / 10';pv.value=p+' / 10';if(e<=3&&p>=7){state='mixed';title='Empty + flooded';text='You may be low on fuel while also carrying high pressure. Pushing harder can deepen both sides of the problem.';next='Reduce threat and demand, protect recovery, and make the next contact with the work very small.'}else if(p>=7){state='flooded';title='Flooded';text='Pressure, anxiety or threat may be too high for useful experimentation right now.';next='Lower the stakes, regulate first, and separate the next action from the final verdict.'}else if(e<=3){state='empty';title='Empty';text='Fuel, interest or capacity may be too low. This is not automatically a motivation or discipline problem.';next='Check recovery and demand, then use gentle activation rather than more pressure.'}box.dataset.state=state;name.textContent=title;copy.textContent=text;action.textContent=next}energy.addEventListener('input',update);pressure.addEventListener('input',update);update()})();</script>
+  <script src="../_logo/logo-anim.js?v=10"></script>
+</body>
+</html>

@@ -297,7 +297,7 @@ html.ready .page>*:nth-child(8){transition-delay:.58s}
 // restrained scroll reveals for editorial modules
 (function(){var els=[].slice.call(document.querySelectorAll('.proof-grid,.tile,.offer-card,.craft-step,.statement .wrap'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5%'});els.forEach(function(e,i){e.classList.add('calm-reveal');e.style.transitionDelay=(i%4)*45+'ms';io.observe(e)})})();
 </script>
-<script src="site.js?v=28"></script>
+<script src="site.js?v=35"></script>
 <script src="../_logo/logo-anim.js?v=10"></script>
 </body>
 </html>
