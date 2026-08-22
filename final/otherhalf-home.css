@@ -76,13 +76,12 @@ img{max-width:100%;display:block}
 .oh-nav button.navbutton::after{content:"";display:inline-block;width:.42em;height:.42em;margin-left:.55em;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .18s}
 .oh-nav .navitem:hover button.navbutton::after,.oh-nav .navitem.is-open button.navbutton::after{transform:translateY(1px) rotate(-135deg)}
 .oh-nav .navitem{position:relative}
-.oh-nav .navbutton{padding:34px 12px;line-height:1}
+.oh-nav .navbutton{padding:9px 12px;line-height:1}
 .oh-nav .navitem:hover .navbutton{color:rgba(255,255,255,.68)}
-.oh-nav .navitem{position:relative}
-.oh-nav .navitem.is-active>.navbutton{color:var(--yellow)}
-.oh-nav .navitem.is-active>.navbutton::before{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--yellow)}
+.oh-nav .navitem.is-active>.navbutton{color:var(--yellow);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.oh-nav .navitem:hover .navbutton{text-decoration:none}
 .oh-sub{position:absolute;top:100%;left:0;min-width:230px;background:var(--blue);color:#fff;border:1px solid rgba(255,255,255,.7);padding:12px 16px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
-.oh-sub::before{content:"";position:absolute;left:0;right:0;top:-20px;height:22px}
+.oh-sub::before{content:"";position:absolute;left:0;right:0;top:-12px;height:14px}
 .oh-sub a{font-size:13px;padding:8px 0;letter-spacing:.02em}
 .oh-sub a:hover{color:rgba(255,255,255,.68)}
 .oh-nav .navitem:hover .oh-sub{opacity:1;visibility:visible;transform:none}
@@ -243,7 +242,7 @@ img{max-width:100%;display:block}
 .oh-evidence-note a{color:#fff;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .oh-evidence-note a:hover{color:var(--yellow)}
 
-.oh-block-preview{padding:clamp(54.4px,7.65vw,120.7px) 0;background:var(--paper)}
+.oh-block-preview{padding:clamp(54.4px,7.65vw,120.7px) 0}
 .oh-block-preview h2{margin:15.3px 0 23.8px}
 .oh-block-preview .oh-two-col>div:first-child{display:flex;flex-direction:column;align-items:flex-start}
 .oh-preview-actions{display:flex;align-items:center;gap:20.4px;flex-wrap:wrap;margin-top:28.9px}
