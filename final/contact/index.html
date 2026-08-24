@@ -4,21 +4,41 @@
   <span class="mono">Contact</span>
   <h1><span class="ln">Tell us what is stuck.</span></h1>
   <p>You do not need a diagnosis or a polished brief. A real project, decision or situation is enough to begin.</p>
-  <div class="cta"><a class="btn" href="mailto:hello@acreativeblock.com?subject=A%20Creative%20Block%20enquiry">hello@acreativeblock.com</a><a class="btn-out" href="../find-your-block/">Find your block</a></div>
 </div></section>
 
 <section class="section tint"><div class="wrap"><div class="split">
-  <div class="prose"><span class="side-note">Get in touch</span><h2>Start with a short email.</h2><p>Tell us what you are trying to move, what keeps happening instead, and whether you are enquiring as an individual or for an organisation. That is more than enough for a first reply.</p><a class="btn" href="mailto:hello@acreativeblock.com?subject=A%20Creative%20Block%20enquiry">Email hello@acreativeblock.com</a></div>
-  <div class="prose"><span class="side-note">Where &amp; when</span><h2>Based in Lisbon.</h2><p>Individual work can happen online or in person by appointment. Organisation work can be online, in person or hybrid.</p><p>By appointment, Monday to Friday. We reply to everything, usually within a couple of days.</p></div>
+  <div>
+    <span class="side-note">Send a message</span>
+    <form class="cform" action="https://formsubmit.co/hello@acreativeblock.com" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry — A Creative Block">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://acreativeblock.com/final/contact/">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row2">
+        <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Your email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <label>Enquiring as
+        <select name="Enquiring as">
+          <option value="An individual">An individual</option>
+          <option value="An organisation">An organisation</option>
+        </select>
+      </label>
+      <label>What is stuck?<textarea name="message" placeholder="What are you trying to move, and what keeps happening instead?" required></textarea></label>
+      <label class="cform-consent"><input type="checkbox" name="consent" value="I agree to the privacy policy" required><span>I agree to A Creative Block handling my details to reply to this enquiry, as described in the <a href="../privacy/">privacy policy</a>.</span></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="note" style="margin:0">Goes straight to hello@acreativeblock.com. We reply to everything, usually within a couple of days.</p>
+    </form>
+  </div>
+  <div class="contact-side">
+    <span class="side-note">Or just text us</span>
+    <h2 style="margin:.2em 0 .5em">Based in Lisbon.</h2>
+    <p class="note" style="margin:0 0 18px">Prefer to write from your own email? Reach us directly—individual work happens online or in person by appointment; organisation work can be online, in person or hybrid.</p>
+    <a class="mail-big" href="mailto:hello@acreativeblock.com?subject=A%20Creative%20Block%20enquiry">hello@acreativeblock.com</a>
+    <p class="note" style="margin:18px 0 0">By appointment · Monday to Friday · Lisbon</p>
+  </div>
 </div></div></section>
 
-<section class="section"><div class="wrap"><div class="section-head center"><div class="eyebrow">Not sure where to start?</div><div><h2 class="display">Two easy first steps.</h2></div></div>
-  <div class="trio">
-    <div class="card hl"><h3>Find your block</h3><p>A short questionnaire that points to the most likely mechanism and a sensible next move.</p><a class="btn" href="../find-your-block/" style="margin-top:14px">Start</a></div>
-    <div class="card"><h3>Book a call</h3><p>A brief, no-pressure conversation to see whether and how we can help.</p><a class="btn" href="mailto:hello@acreativeblock.com?subject=Book%20a%20call" style="margin-top:14px">Book</a></div>
-  </div>
-</div></section>
-
-<section class="oh-close-sub"><div class="wrap"><h2>Make space for the work to move.</h2><div class="cta"><a class="btn dark" href="mailto:hello@acreativeblock.com?subject=A%20Creative%20Block%20enquiry">Email us</a><a class="btn-out" href="../for-individuals/">See how we work</a></div></div></section>
-
-</main><div data-site-footer></div></div><script src="../site.js?v=43"></script><script src="../otherhalf-logo.js?v=3"></script></body></html>
+</main><div data-site-footer></div></div>
+<script src="../site.js?v=43"></script><script src="../otherhalf-logo.js?v=3"></script></body></html>
