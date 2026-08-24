@@ -371,3 +371,12 @@ a.resitem:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0
   .blog-card.featured{grid-column:span 1}
   .resitem{flex-direction:column;gap:5.1px}
 }
+
+/* ---------- references appendix ---------- */
+.ref-note{max-width:820px;margin:0 0 clamp(22px,3vw,36px);font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:var(--ink-soft)}
+ol.refs{max-width:900px;margin:0;padding:0;list-style:none;counter-reset:ref}
+ol.refs li{counter-increment:ref;position:relative;padding:13px 0 13px 42px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+ol.refs li::before{content:counter(ref);position:absolute;left:0;top:13px;font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.04em}
+ol.refs li b{color:var(--ink);font-weight:600}
+sup.cite{font-size:.62em;font-weight:600;color:var(--blue);vertical-align:super;margin-left:1px}
+.section.blue sup.cite{color:#fff}
