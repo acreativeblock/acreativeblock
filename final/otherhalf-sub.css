@@ -611,3 +611,11 @@ sup.cite{font-size:.62em;font-weight:600;color:var(--blue);vertical-align:super;
 .refpanel .bd-under{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.82);margin:0}
 .refpanel .bd-under b{color:#fff;font-weight:600}
 .bd-src{display:none}
+
+/* 7+1 rows: taller portrait image, bigger name + subtitle, tighter hero */
+.brow2{gap:clamp(20px,3.2vw,56px);padding:clamp(18px,2vw,30px) clamp(18px,2.4vw,40px)}
+.brow2-img{width:clamp(96px,10.5vw,158px);aspect-ratio:3/4}
+.brow2-name .sci{font-size:clamp(11px,1vw,14px);margin-bottom:9px}
+.brow2-name h3{font-size:clamp(30px,4.4vw,66px);line-height:.98}
+.brow2-tags li{font-size:clamp(10.5px,0.8vw,12px)}
+.blocks-page .center-hero{padding-bottom:clamp(30px,4vw,60px)}
