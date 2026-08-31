@@ -166,3 +166,11 @@ body.home-page,body.home-page *{font-family:'Manrope',-apple-system,BlinkMacSyst
 .hv-faq .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .hv-faq .faq-item.open .faq-a{max-height:244.8px}
 .hv-faq .faq-a p{padding:0 0 16.83px;font-size:11.475px;line-height:1.55;color:var(--ink-soft);margin:0;max-width:74ch}
+
+/* dark "Looking at what you carry" teaser */
+.hv-look{background:#034748;color:#fff;text-align:center;padding:clamp(84px,13vh,150px) 0}
+.hv-look h2{font-family:var(--sans);font-weight:500;font-size:clamp(30px,5vw,72px);line-height:1.04;letter-spacing:-.03em;margin:0 auto;max-width:20ch;color:#fff}
+.hv-look p{margin:clamp(20px,2.6vw,32px) auto 0;max-width:52ch;font-size:16px;line-height:1.6;color:rgba(255,255,255,.82);text-wrap:pretty}
+.hv-look .cta{margin-top:clamp(26px,3vw,42px);display:flex;justify-content:center}
+.hv-look .pill.alt{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.hv-look .pill.alt:hover{background:#fff;color:var(--ink);border-color:#fff}
