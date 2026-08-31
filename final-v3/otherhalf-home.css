@@ -502,3 +502,13 @@ body.home-page{background-color:#fff;background-image:radial-gradient(rgba(8,19,
 
 /* final-v3: header content matches page content width (bg stays full width) */
 @media(min-width:861px){.oh-header .inner{max-width:var(--wrap)!important;margin-left:auto!important;margin-right:auto!important}}
+
+/* ===== type normalization: body 16px, eyebrows + header nav 12px ===== */
+body{font-size:16px}
+.oh-nav .navbutton{font-size:12px}
+.mono,.eyebrow,.side-note,.hv-eyebrow,.faqx-nav .lbl{font-size:12px}
+.prose p,.hv-lead,.oh-two-col p,.oh-hero .lead,.hv-hero .sub,.section-head p,.offer-body p,.faq-a p{font-size:16px}
+
+/* ===== no widow words: balance headings, prevent orphan last-line words ===== */
+h1,h2,h3,.display,.hv-h2,.hv-say p,.hv-panel h2,.hv-card h3{text-wrap:balance}
+p,.pbody,.sub,.hv-lead,.faq-a p{text-wrap:pretty}
