@@ -74,3 +74,24 @@
   window.addEventListener('pageshow',function(ev){if(ev.persisted)document.body.classList.remove('oh-leaving');});
   if(document.readyState!=='loading')anim(); else document.addEventListener('DOMContentLoaded',anim);
 })();
+
+/* subtle cascade reveal on scroll (all pages) */
+(function(){
+  try{
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(!('IntersectionObserver' in window))return;
+    var sel='.section-head,.familiar .content,.trio>*,.price-card,.pack-card,.arc-card,.faq-item,.bmcard,.fxcard,.hv-panel,.hv-num,.oh-proof-grid>*,.access-note,.method-strip .method-step,.terrain-cols .tcol,.hv-tile,.hv-card';
+    var items=[].slice.call(document.querySelectorAll(sel));
+    if(!items.length)return;
+    items.forEach(function(el){el.classList.add('rvl');});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target,sibs=[].slice.call(el.parentNode.children).filter(function(n){return n.classList&&n.classList.contains('rvl');}),idx=sibs.indexOf(el);
+        el.style.transitionDelay=(Math.max(0,idx)*70)+'ms';
+        el.classList.add('rvl-in');io.unobserve(el);
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){io.observe(el);});
+  }catch(e){}
+})();
