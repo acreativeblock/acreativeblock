@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="otherhalf-home.css?v=44">
+  <link rel="stylesheet" href="otherhalf-home.css?v=46">
   <link rel="stylesheet" href="home-v3.css?v=10">
 </head>
 <body class="home-page">
@@ -118,12 +118,22 @@
     <div class="bottom"><span>© 2026 A Creative Block · Understand the why, then move.</span><div><span>Lisbon</span><span>By appointment · Mon–Fri</span></div></div>
   </div></footer>
 
-  <script src="otherhalf-logo.js?v=5"></script>
+  <script src="otherhalf-logo.js?v=6"></script>
   <script>
     document.querySelectorAll('.oh-newsletter').forEach(function(form){form.addEventListener('submit',function(event){event.preventDefault();var button=form.querySelector('button');button.textContent='Thank you';})});
     (function(){var header=document.querySelector('.oh-header'),toggle=document.querySelector('.mobile-menu-toggle');if(!header||!toggle)return;toggle.addEventListener('click',function(){var open=header.classList.toggle('oh-menu-open');toggle.textContent=open?'Close':'Menu';document.documentElement.style.overflow=open?'hidden':'';});header.querySelectorAll('.navbutton').forEach(function(button){button.addEventListener('click',function(){if(innerWidth>1060)return;button.parentElement.classList.toggle('is-open');});});})();
     document.querySelectorAll('.hv-faq .faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});});
-    (function(){var t=document.querySelector('[data-carotrack]');if(!t)return;var step=function(){var c=t.querySelector('.ccard');return c?c.getBoundingClientRect().width+16:320;};document.querySelectorAll('[data-caro]').forEach(function(b){b.addEventListener('click',function(){t.scrollBy({left:(b.getAttribute('data-caro')==='next'?1:-1)*step()*1.5,behavior:'smooth'});});});})();
+    (function(){var t=document.querySelector('[data-carotrack]');if(!t)return;
+      function step(){var c=t.querySelector('.ccard');return c?c.getBoundingClientRect().width+16:320;}
+      function maxL(){return t.scrollWidth-t.clientWidth;}
+      document.querySelectorAll('[data-caro]').forEach(function(b){b.addEventListener('click',function(){var d=b.getAttribute('data-caro')==='next'?1:-1;if(d>0&&t.scrollLeft>=maxL()-2){t.scrollTo({left:0,behavior:'smooth'});}else if(d<0&&t.scrollLeft<=2){t.scrollTo({left:maxL(),behavior:'smooth'});}else{t.scrollBy({left:d*step(),behavior:'smooth'});}});});
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)return;
+      var active=false,paused=false;
+      new IntersectionObserver(function(es){es.forEach(function(e){active=e.isIntersecting;});},{threshold:.3}).observe(t.closest('.hv-carousel')||t);
+      ['mouseenter','pointerdown','touchstart'].forEach(function(ev){t.addEventListener(ev,function(){paused=true;});});
+      t.addEventListener('mouseleave',function(){paused=false;});
+      (function tick(){if(active&&!paused){if(t.scrollLeft>=maxL()-1){t.scrollLeft=0;}else{t.scrollLeft+=0.4;}}requestAnimationFrame(tick);})();
+    })();
   </script>
 </body>
 </html>

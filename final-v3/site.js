@@ -1,6 +1,6 @@
 (function(){
   document.documentElement.classList.add('horst-v3');
-  if(!document.querySelector('link[href*="otherhalf-home.css"]')){var ohHome=document.createElement('link');ohHome.rel='stylesheet';ohHome.href='../otherhalf-home.css?v=39';document.head.appendChild(ohHome)}
+  if(!document.querySelector('link[href*="otherhalf-home.css"]')){var ohHome=document.createElement('link');ohHome.rel='stylesheet';ohHome.href='../otherhalf-home.css?v=46';document.head.appendChild(ohHome)}
   if(!document.querySelector('link[href*="otherhalf-sub.css"]')){var ohSub=document.createElement('link');ohSub.rel='stylesheet';ohSub.href='../otherhalf-sub.css?v=24';document.head.appendChild(ohSub)}
   var headerHost=document.querySelector('[data-site-header]'),footerHost=document.querySelector('[data-site-footer]');
   var instagram='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.7" r="1.1"/></svg>',linkedin='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.6" cy="8" r="1.2"/><path d="M6.5 10.5v7M10.5 10.5v7M10.5 13.6c.8-2.3 5.1-2.5 5.1 1v2.9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
@@ -23,7 +23,7 @@
   document.querySelectorAll('.navbutton').forEach(function(b){b.addEventListener('click',function(e){if(b.tagName==='A')return;e.preventDefault();if(innerWidth<=1050){document.querySelectorAll('.navitem.open').forEach(function(n){if(n!==b.parentElement)n.classList.remove('open')});b.parentElement.classList.toggle('open')}else{b.blur()}})});
   document.querySelectorAll('.submenu a').forEach(function(a){a.addEventListener('click',function(){document.querySelectorAll('.navitem.open').forEach(function(n){n.classList.remove('open')});if(document.activeElement)document.activeElement.blur()})});
   document.querySelectorAll('.offer-toggle,.faq-q').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('open')})});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5%'});document.querySelectorAll('main section,.reveal').forEach(function(x,i){x.classList.add('reveal');x.style.transitionDelay=(i%3)*45+'ms';io.observe(x)});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -16%'});document.querySelectorAll('main section,.reveal').forEach(function(x,i){x.classList.add('reveal');x.style.transitionDelay=(i%3)*45+'ms';io.observe(x)});
   document.querySelectorAll('.newsletter').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button');b.textContent='Thank you';setTimeout(function(){b.textContent='Join'},1800)})});
   var consentKey='acb-cookie-consent-v1',consent=localStorage.getItem(consentKey),banner=document.createElement('aside');
   banner.className='cookie-banner';

@@ -561,3 +561,58 @@ html,body{background-image:none!important}
 /* CTA: arrow inside buttons + supporting line */
 .oh-close .btn::after,.oh-close-sub .btn::after,.oh-close .pill::after,.oh-close-sub .btn-out::after,.oh-close .btn-out::after{content:"↗";font-size:1.05em;margin-left:3px}
 .oh-close .note,.oh-close-sub .note{font-size:clamp(15px,1.2vw,17px);line-height:1.55;color:var(--ink);max-width:48ch;margin:0}
+
+/* ================= refinements (v45) ================= */
+/* buttons a touch smaller again */
+.btn,.btn-out,.pill,.oh-utility-pill{font-size:12.5px!important;padding:13px 24px!important}
+.pill.big,.btn.big{font-size:13.5px!important;padding:15px 28px!important}
+/* header: blue bar a little less tall */
+.oh-header .inner{padding-top:8px!important;padding-bottom:8px!important}
+.oh-logo .acb-logo-mount{height:38px!important}
+/* hero secondary button must not turn blue on hover */
+.hv-hero .pill.alt:hover,.hv-cta .pill.alt:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+/* highlight: keep box within the line so it never covers letters above */
+.hl,.ht,.hly{line-height:1.05}
+/* grain baked into background colours (NOT images/photos) */
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")!important;background-repeat:repeat!important;background-size:140px 140px!important;background-blend-mode:multiply!important}
+.section,.hv,.hv-look,.hv-marq,.secpad,.bmap,.oh-close,.oh-close-sub,.fam-hero,.center-hero,.familiar-sec,.ssec,.s-state,.s-stuck,.carry-panel,.startcard,.arc-sec,.craft-close,.section-head+*,.oh-proof-copy,.trio .card,.price-card,.tcard,.bm-faq,.bm-hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");background-repeat:repeat;background-size:140px 140px;background-blend-mode:multiply}
+/* home: force equal top/bottom padding on Questions and every hv section */
+.home-page .hv-faq{padding-top:clamp(72px,9vw,120px)!important;padding-bottom:clamp(72px,9vw,120px)!important}
+.home-page .hv-faq .hv-head{margin-bottom:clamp(24px,3vw,40px)}
+
+/* ================= final-v3 consistency pass (v46) ================= */
+/* slightly quieter controls */
+.btn,.btn-out,.pill,.oh-utility-pill{font-size:12px!important;padding:12px 22px!important}
+.pill.big,.btn.big{font-size:13px!important;padding:14px 26px!important}
+
+/* reduce only the blue header band's height, not its internal scale */
+.oh-header .inner{padding-top:6px!important;padding-bottom:6px!important}
+.oh-logo .acb-logo-mount{height:35px!important}
+
+/* highlights sit inside the line box and cannot cover neighbouring lines */
+.hl,.ht,.hly{
+  padding:0 .09em!important;
+  line-height:inherit!important;
+  background:linear-gradient(to bottom,transparent 10%,var(--yellow) 10%,var(--yellow) 88%,transparent 88%)!important;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+.ht{background:linear-gradient(to bottom,transparent 10%,var(--tint) 10%,var(--tint) 88%,transparent 88%)!important}
+.scrolltext{line-height:1.28!important}
+
+/* keep the secondary hero action neutral on hover */
+.hv-hero .pill.alt:hover,.hv-cta .pill.alt:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+
+/* the same, subtle background grain across colour fields; images remain untouched */
+body,.section,.hv,.hv-look,.hv-marq,.secpad,.bmap,.oh-close,.oh-close-sub,.fam-hero,.center-hero,.familiar-sec,.ssec,.s-state,.s-stuck,.carry-panel,.startcard,.arc-sec,.craft-close,.oh-proof-copy,.trio .card,.price-card,.tcard,.bm-faq,.bm-hero{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.23'/%3E%3C/svg%3E")!important;
+  background-repeat:repeat!important;background-size:120px 120px!important;background-blend-mode:multiply!important;
+}
+img,.fam-img,.bmcard-img,.hv-hero-img,.oh-proof-image{background-image:none!important;background-blend-mode:normal!important}
+
+/* balanced section rhythm */
+.home-page .hv:not(.hv-hero),.home-page .hv-say,.home-page .oh-proof,.home-page .hv-look,.home-page .hv-faq{
+  padding-top:clamp(72px,9vw,120px)!important;padding-bottom:clamp(72px,9vw,120px)!important;
+}
+
+/* calmer, later cascade: content is already comfortably visible before revealing */
+.rvl{transform:translateY(12px);transition:opacity .68s ease,transform .72s cubic-bezier(.2,.75,.2,1)}

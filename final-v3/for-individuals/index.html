@@ -1,13 +1,19 @@
-<!doctype html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For individuals — A Creative Block</title><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../otherhalf-home.css?v=44"><link rel="stylesheet" href="../otherhalf-sub.css?v=25">
+<!doctype html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For individuals — A Creative Block</title><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../otherhalf-home.css?v=46"><link rel="stylesheet" href="../otherhalf-sub.css?v=25">
 <style>
-.fam-hero{padding:clamp(96px,15vh,190px) var(--pad) clamp(50px,7vh,90px)}
-.fam-hero .mono{color:var(--blue);display:block;margin-bottom:clamp(16px,2vw,26px)}
-.fam-h1{font-family:var(--sans);font-weight:500;font-size:clamp(32px,5.4vw,86px);line-height:1.05;letter-spacing:-.035em;color:var(--ink);margin:0;max-width:22ch}
+.fam-hero{padding:0}
+.fam-hero>.wrap{max-width:none;padding:0}
+.fam-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch;min-height:clamp(500px,70vh,720px)}
+.fam-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,6vh,78px) var(--pad);padding-left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)))}
+.fam-copy .mono{color:var(--blue);display:block;margin-bottom:clamp(16px,2vw,26px)}
+.fam-img{overflow:hidden;background:var(--tint);min-height:100%}
+.fam-img img{width:100%;height:100%;min-height:100%;object-fit:cover;display:block}
+.fam-h1{font-family:var(--sans);font-weight:500;font-size:clamp(30px,4vw,66px);line-height:1.05;letter-spacing:-.035em;color:var(--ink);margin:0;max-width:18ch;width:100%}
 .fam-h1 .l1{display:block}
-.fam-h1 .rotline{display:block;margin-top:.34em;min-height:2.1em}
-.rot{background:var(--yellow);color:var(--ink);padding:0 .1em;line-height:1.14;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:opacity .4s ease}
+.fam-h1 .rotline{display:block;margin-top:.3em;min-height:2.2em;width:100%}
+.rot{background:var(--yellow);color:var(--ink);padding:0 .1em;line-height:1.0;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:opacity .4s ease}
 .rot.out{opacity:0}
-.fam-hero .cta{display:flex;gap:14px;margin-top:clamp(26px,3vw,40px);flex-wrap:wrap}
+.fam-copy .cta{display:flex;gap:14px;margin-top:clamp(26px,3vw,40px);flex-wrap:wrap}
+@media(max-width:860px){.fam-grid{grid-template-columns:1fr;min-height:0}.fam-img{order:2;min-height:44vh}.fam-copy{padding:clamp(46px,11vw,80px) var(--pad)}.fam-h1{max-width:19ch}.fam-h1 .rotline{min-height:2.25em}}
 
 .secpad{padding:clamp(72px,10vh,130px) var(--pad)}
 .secpad>.in{max-width:var(--wrap);margin:0 auto}
@@ -41,11 +47,14 @@
 </style>
 </head><body class="internal-page individuals-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
 
-<section class="fam-hero"><div class="wrap">
-  <span class="mono">For individuals</span>
-  <h1 class="fam-h1"><span class="l1">Sound familiar?</span><span class="rotline"><span class="rot" data-rot>You keep preparing instead of starting</span></span></h1>
-  <div class="cta"><a class="btn" href="../contact/">Book a call</a><a class="btn-out" href="../find-your-block/">Find your block</a></div>
-</div></section>
+<section class="fam-hero"><div class="wrap"><div class="fam-grid">
+  <div class="fam-copy">
+    <span class="mono">For individuals</span>
+    <h1 class="fam-h1"><span class="l1">Sound familiar?</span><span class="rotline"><span class="rot" data-rot>You keep preparing instead of starting</span></span></h1>
+    <div class="cta"><a class="btn" href="../contact/">Book a call</a><a class="btn-out" href="../find-your-block/">Find your block</a></div>
+  </div>
+  <figure class="fam-img"><img src="../images/man-in-pool.webp" width="1600" height="1066" fetchpriority="high" decoding="async" alt="Portrait from the A Creative Block series"></figure>
+</div></div></section>
 
 <section class="secpad audsay dark centered"><div class="in">
   <span class="aud-eyebrow">How we support you</span>
@@ -92,4 +101,4 @@
   setInterval(function(){i=(i+1)%words.length;el.classList.add('out');setTimeout(function(){el.textContent=words[i];el.classList.remove('out');},420);},2800);
 })();
 </script>
-<script src="../site.js?v=43"></script><script src="../otherhalf-logo.js?v=5"></script></body></html>
+<script src="../site.js?v=46"></script><script src="../otherhalf-logo.js?v=6"></script></body></html>
