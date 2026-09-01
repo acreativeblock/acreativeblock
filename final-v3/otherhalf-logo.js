@@ -95,3 +95,41 @@
     items.forEach(function(el){io.observe(el);});
   }catch(e){}
 })();
+
+/* scroll-driven word reveal for .scrolltext statements (all pages) */
+(function(){
+  try{
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var nodes=[].slice.call(document.querySelectorAll('.scrolltext'));
+    if(!nodes.length)return;
+    function wrap(node){
+      [].slice.call(node.childNodes).forEach(function(k){
+        if(k.nodeType===3){
+          if(!k.textContent.trim())return;
+          var frag=document.createDocumentFragment();
+          k.textContent.split(/(\s+)/).forEach(function(p){
+            if(!p.trim()){frag.appendChild(document.createTextNode(p));return;}
+            var s=document.createElement('span');s.className='w';s.textContent=p;s.style.transition='opacity .25s ease';s.style.opacity='.14';frag.appendChild(s);
+          });
+          node.replaceChild(frag,k);
+        }else if(k.nodeType===1){
+          if(k.classList&&k.classList.contains('hl')){k.classList.add('w');k.style.transition='opacity .25s ease';k.style.opacity='.14';}
+          else wrap(k);
+        }
+      });
+    }
+    nodes.forEach(function(el){wrap(el);el._w=[].slice.call(el.querySelectorAll('.w'));});
+    function update(){
+      var vh=window.innerHeight;
+      nodes.forEach(function(el){
+        var r=el.getBoundingClientRect(),start=vh*0.9,end=vh*0.4;
+        var prog=(start-r.top)/(start-end);prog=Math.min(1,Math.max(0,prog));
+        var n=el._w.length;
+        el._w.forEach(function(w,i){var t=prog*(n+2)-i;w.style.opacity=Math.min(1,Math.max(.14,t)).toFixed(3);});
+      });
+    }
+    window.addEventListener('scroll',update,{passive:true});
+    window.addEventListener('resize',update);
+    window.addEventListener('load',update);update();
+  }catch(e){}
+})();

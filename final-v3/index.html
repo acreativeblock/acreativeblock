@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="otherhalf-home.css?v=43">
-  <link rel="stylesheet" href="home-v3.css?v=9">
+  <link rel="stylesheet" href="otherhalf-home.css?v=44">
+  <link rel="stylesheet" href="home-v3.css?v=10">
 </head>
 <body class="home-page">
   <header class="oh-header">
@@ -48,7 +48,7 @@
 
     <section class="hv hv-say"><div class="wrap">
       <span class="hv-eyebrow">Our approach</span>
-      <p>Most advice answers the wrong question—how to push harder. We start earlier, and treat the block as <span class="hl">a symptom worth understanding before it's worth fixing</span>. <span class="cln">Coaching for the person, consulting for the project, often both.</span></p>
+      <p class="scrolltext">Most advice answers the wrong question—how to push harder. We start earlier, and treat the block as <span class="hl">a symptom worth understanding before it's worth fixing</span>. <span class="cln">Coaching for the person, consulting for the project, often both.</span></p>
     </div></section>
 
     <section class="oh-proof"><div class="wrap">
@@ -62,6 +62,27 @@
       <h2>We look at what you carry, and how you are feeling.</h2>
       <p>There is not a fit-for-all solution, and that is a problem. We look into who you are—your personality, the way your attention and memory work, and your mental-health context—and how regulated your state is on the day.</p>
       <div class="cta"><a class="pill big alt" href="our-method/">Look how we work</a></div>
+    </div></section>
+
+    <section class="hv hv-carousel"><div class="wrap">
+      <div class="caro-head">
+        <div><span class="hv-eyebrow">The working map</span><h2 class="hv-h2">What might be stopping the work?</h2></div>
+        <p class="caro-intro">Seven domains where creative work gets stuck, plus one look-alike that isn't a block at all. The same stuck feeling can have very different causes—so we name the mechanism first.</p>
+      </div>
+      <div class="caro">
+        <div class="caro-navs"><button class="caro-nav" data-caro="prev" type="button" aria-label="Previous">←</button><button class="caro-nav" data-caro="next" type="button" aria-label="Next">→</button></div>
+        <div class="caro-track" data-carotrack>
+          <div class="ccard"><span class="cnum" style="color:#f2c94c">01</span><h3>Starting &amp; Doing</h3><p>Intention that won't become action.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#ef9f5e">02</span><h3>Confidence &amp; Exposure</h3><p>When the work feels like a verdict.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#e35d54">03</span><h3>Direction &amp; Meaning</h3><p>Too many paths, or none that pull.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#c9a0f0">04</span><h3>Energy &amp; Recovery</h3><p>The tank is empty.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#9a8ff2">05</span><h3>The Work Itself</h3><p>A real problem inside the work.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#a9d5f5">06</span><h3>Structure &amp; Workflow</h3><p>The setup trips you up.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#5f9dd6">07</span><h3>Context &amp; Support</h3><p>The conditions work against it.</p></div>
+          <div class="ccard"><span class="cnum" style="color:#909090">+1</span><h3>A Skill Gap</h3><p>Not a block—learn it, or rule it out.</p></div>
+        </div>
+      </div>
+      <div class="caro-more"><a class="pill" href="the-block-map/">See the full 7+1 map →</a></div>
     </div></section>
 
     <section class="hv"><div class="wrap">
@@ -81,7 +102,7 @@
       </div>
     </div></section>
 
-    <section class="oh-close"><div class="wrap"><h2 class="serif">Make space for the work to move.</h2><div><a class="pill big" href="find-your-block/">Find your block</a><a class="pill big is-outline" href="contact/">Book a session</a></div></div></section>
+    <section class="oh-close"><div class="wrap"><h2 class="serif">Make space for the work to move.</h2><p class="note">Bring the project that matters, and we'll find what is really keeping it stuck—coaching for the person, consulting for the project, often both.</p><div><a class="pill big" href="find-your-block/">Find your block</a><a class="pill big is-outline" href="contact/">Book a session</a></div></div></section>
 
   </main>
 
@@ -97,11 +118,12 @@
     <div class="bottom"><span>© 2026 A Creative Block · Understand the why, then move.</span><div><span>Lisbon</span><span>By appointment · Mon–Fri</span></div></div>
   </div></footer>
 
-  <script src="otherhalf-logo.js?v=4"></script>
+  <script src="otherhalf-logo.js?v=5"></script>
   <script>
     document.querySelectorAll('.oh-newsletter').forEach(function(form){form.addEventListener('submit',function(event){event.preventDefault();var button=form.querySelector('button');button.textContent='Thank you';})});
     (function(){var header=document.querySelector('.oh-header'),toggle=document.querySelector('.mobile-menu-toggle');if(!header||!toggle)return;toggle.addEventListener('click',function(){var open=header.classList.toggle('oh-menu-open');toggle.textContent=open?'Close':'Menu';document.documentElement.style.overflow=open?'hidden':'';});header.querySelectorAll('.navbutton').forEach(function(button){button.addEventListener('click',function(){if(innerWidth>1060)return;button.parentElement.classList.toggle('is-open');});});})();
     document.querySelectorAll('.hv-faq .faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});});
+    (function(){var t=document.querySelector('[data-carotrack]');if(!t)return;var step=function(){var c=t.querySelector('.ccard');return c?c.getBoundingClientRect().width+16:320;};document.querySelectorAll('[data-caro]').forEach(function(b){b.addEventListener('click',function(){t.scrollBy({left:(b.getAttribute('data-caro')==='next'?1:-1)*step()*1.5,behavior:'smooth'});});});})();
   </script>
 </body>
 </html>

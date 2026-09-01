@@ -520,9 +520,9 @@ html,body{background-image:none!important}
 /* 2 · every button has square corners (pills included) */
 .pill,.pill.big,.pill.alt,.pill.is-outline,.btn,.btn.big,.btn.dark,.btn-out,.oh-utility-pill,.mobile-menu-toggle,.refbar,.refbar-btn,.oh-newsletter button,.oh-promo{border-radius:0!important}
 /* 3 · highlighter — background behind the important words, not coloured text */
-.hl{background:var(--yellow)!important;color:var(--ink)!important;box-shadow:none!important;padding:.02em .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.ht{background:var(--tint)!important;color:var(--ink)!important;padding:.02em .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.hly{background:var(--yellow)!important;color:var(--ink)!important;padding:.02em .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl{background:var(--yellow)!important;color:var(--ink)!important;box-shadow:none!important;padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ht{background:var(--tint)!important;color:var(--ink)!important;padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hly{background:var(--yellow)!important;color:var(--ink)!important;padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* 4 · CTA before footer = full-width yellow bar, heading left / buttons right */
 .oh-close,.oh-close-sub{background:var(--yellow)!important;color:var(--ink)!important;padding:clamp(44px,6vh,84px) 0!important}
 .oh-close>.wrap,.oh-close-sub>.wrap{display:flex!important;flex-direction:column;align-items:center;text-align:center;gap:clamp(22px,3vw,38px)}
@@ -541,11 +541,23 @@ html,body{background-image:none!important}
 .rvl-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rvl{opacity:1!important;transform:none!important}}
 /* home: every section shares the same vertical rhythm */
-.home-page .hv,.home-page .hv-say,.home-page .oh-proof,.home-page .hv-look{padding-top:clamp(72px,9vw,120px)!important;padding-bottom:clamp(72px,9vw,120px)!important}
-/* home: the approach statement — narrower, coaching sentence on its own line */
-.home-page .hv-say p{max-width:28ch!important}
+.home-page .hv:not(.hv-hero),.home-page .hv-say,.home-page .oh-proof,.home-page .hv-look{padding-top:clamp(72px,9vw,120px)!important;padding-bottom:clamp(72px,9vw,120px)!important}
+.home-page .hv-hero{padding:0!important}
+/* home: the approach statement — coaching sentence on its own line */
+.home-page .hv-say p{max-width:38ch!important}
 .home-page .hv-say .cln{display:block;margin-top:.35em}
 /* home: offers — clearer labels + aligned lists */
 .home-page .hv-offer .hv-panel .pe{font-size:13px!important;font-weight:600;letter-spacing:.08em;opacity:1}
 .home-page .hv-offer .hv-panel .pbody{min-height:clamp(96px,8.5vw,138px)}
 .home-page .hv-offer .hv-panel .plist{margin-top:0}
+
+/* ================= buttons: bigger, clearer (v44) ================= */
+.btn,.btn-out,.pill,.oh-utility-pill{font-size:13.5px!important;letter-spacing:.05em;padding:15px 28px!important;line-height:1}
+.pill.big,.btn.big{font-size:15px!important;padding:17px 34px!important}
+.btn,.pill{display:inline-flex;align-items:center;gap:9px}
+/* highlight breathing without changing line-height: soft vertical inset via shadow */
+.hl,.ht,.hly{box-shadow:0 0 0 .5px transparent}
+
+/* CTA: arrow inside buttons + supporting line */
+.oh-close .btn::after,.oh-close-sub .btn::after,.oh-close .pill::after,.oh-close-sub .btn-out::after,.oh-close .btn-out::after{content:"↗";font-size:1.05em;margin-left:3px}
+.oh-close .note,.oh-close-sub .note{font-size:clamp(15px,1.2vw,17px);line-height:1.55;color:var(--ink);max-width:48ch;margin:0}
