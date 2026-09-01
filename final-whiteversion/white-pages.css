@@ -1,0 +1,147 @@
+/* final-whiteversion — shared calm system for every internal page */
+:root{
+  --white:#fff;--quiet:#f3f3f1;--quiet-2:#e8e8e5;--copy:#1e1e1e;--muted:#666;
+  --brand:#4f46e5;--action:#F7FF89;--b1:#f2c94c;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
+  --b5:#9a8ff2;--b6:#a9d5f5;--b7:#5f9dd6;--b8:#909090;
+}
+html{background:#fff}
+body:not(.home-page){background:#fff!important;background-image:none!important;color:var(--copy)}
+body:not(.home-page) .grain{display:none!important}
+
+/* One calm header on every page. */
+body:not(.home-page) .oh-header{background:var(--brand)!important;color:#fff!important;border-bottom:1px solid var(--brand)!important;backdrop-filter:blur(14px)}
+body:not(.home-page) .oh-header .inner{padding-top:8px!important;padding-bottom:8px!important}
+body:not(.home-page) .oh-logo,body:not(.home-page) .oh-logo .acb-logo-mount{color:#fff!important}
+body:not(.home-page) .oh-logo .acb-logo-mount{height:42px!important}
+body:not(.home-page) .oh-nav .navbutton,body:not(.home-page) .oh-social a{color:#fff!important}
+body:not(.home-page) .oh-nav .navitem:hover .navbutton,body:not(.home-page) .oh-social a:hover{color:var(--action)!important}
+body:not(.home-page) .oh-sub{background:#fff!important;color:var(--copy)!important;border:1px solid var(--quiet-2)!important;box-shadow:0 12px 36px rgba(0,0,0,.06)}
+body:not(.home-page) .oh-sub a:hover{color:var(--brand)!important}
+body:not(.home-page) .mobile-menu-toggle{color:#fff!important;border-color:#fff!important}
+
+/* Labels: blue field, white type. */
+body:not(.home-page) :is(.mono,.eyebrow,.side-note,.aud-eyebrow,.eyebrow2,.hv-eyebrow,.k,.pe,.reslabel,.post-tag){
+  display:inline-block;width:max-content;max-width:100%;background:var(--brand)!important;color:#fff!important;
+  padding:7px 11px!important;line-height:1!important;letter-spacing:.08em;
+}
+
+/* All actions share the yellow/blue logic and arrow behaviour. */
+body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn){
+  background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;
+  border-radius:0!important;box-shadow:none!important;
+}
+body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):hover{
+  background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important;transform:none!important;
+}
+body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):not(:empty)::after{
+  content:" ↗";display:inline-block;margin-left:7px;font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1);
+}
+body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):hover::after{transform:translate(2px,-2px)}
+
+/* White and pale-grey editorial rhythm; block colours remain attached to blocks. */
+body:not(.home-page) main>section:nth-of-type(odd){background-color:#fff!important;background-image:none!important}
+body:not(.home-page) main>section:nth-of-type(even){background-color:var(--quiet)!important;background-image:none!important}
+body:not(.home-page) :is(.dark,.blue,.yellow,.tint,.coral,.mint){color:var(--copy)!important}
+body:not(.home-page) :is(.dark,.blue,.yellow,.tint,.coral,.mint) :is(h1,h2,h3,h4,p,li){color:inherit!important}
+body:not(.home-page) :is(.card,.startcard,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card){background:#fff!important;border-color:var(--quiet-2)!important;color:var(--copy)!important;box-shadow:none!important}
+body:not(.home-page) :is(.card,.startcard,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card) p{color:var(--muted)!important}
+body:not(.home-page) main img{filter:none!important}
+
+/* Main service pages. */
+body:not(.home-page) .fam-hero{background:#fff!important}
+body:not(.home-page) .fam-copy{background:#fff!important}
+body:not(.home-page) .fam-img{background:var(--quiet)!important}
+body:not(.home-page) .rot{background:var(--b1)!important;color:var(--copy)!important}
+body:not(.home-page) .secpad.dark{background:var(--quiet)!important;color:var(--copy)!important}
+body:not(.home-page) .leave{background:var(--quiet)!important}
+body:not(.home-page) .access-note{background:var(--quiet)!important;border-color:var(--quiet-2)!important;color:var(--copy)!important;border-radius:0!important}
+
+/* Highlights stay inside their own line box: no solid rectangle can cover the line above. */
+body:not(.home-page) :is(.hl,.ht,.hly,.rot){
+  padding:0 .08em!important;line-height:inherit!important;
+  background:linear-gradient(to bottom,transparent 12%,var(--action) 12%,var(--action) 88%,transparent 88%)!important;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+body:not(.home-page) .fam-h1{line-height:1.08!important}
+body:not(.home-page) .fam-h1 .rotline{min-height:2.45em!important;margin-top:.22em!important}
+
+/* Block map: neutral field, colour stays on each block card. */
+body.blocks-page .bm-hero,body.blocks-page .bm-faq{background:#fff!important}
+body.blocks-page .bmap{background:var(--quiet)!important;color:var(--copy)!important}
+body.blocks-page .bmap-head h2{color:var(--copy)!important}
+body.blocks-page .bmcard{background:#fff!important;border:1px solid var(--quiet-2)!important;color:var(--copy)!important}
+body.blocks-page .bmcard:hover{box-shadow:inset 0 6px 0 var(--c),0 18px 38px rgba(0,0,0,.07)!important;transform:translateY(-4px)}
+body.blocks-page .bmcard-arr{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+body.blocks-page .bmcard:hover .bmcard-arr{transform:translateX(9px)}
+
+/* Evidence, method, factors, about, resources, blog and legal pages. */
+body:not(.home-page) :is(.center-hero,.page-hero,.blog-hero,.bm-hero){background:#fff!important;color:var(--copy)!important}
+body:not(.home-page) :is(.center-hero,.page-hero,.blog-hero,.bm-hero) :is(h1,h2,p){color:inherit!important}
+body:not(.home-page) :is(.stats,.method-strip,.terrain-cols,.blog-grid,.resgrid){background:transparent!important}
+body:not(.home-page) .faq-item{border-color:var(--quiet-2)!important}
+body:not(.home-page) .faq-q::after{color:var(--brand)!important}
+body:not(.home-page) main section:has(.faq-list),body:not(.home-page) .faq-list,body:not(.home-page) .faq-item,body:not(.home-page) .faq-q,body:not(.home-page) .faq-a{background:#fff!important;background-image:none!important}
+
+/* Faster-to-scan outcomes on both service pages. */
+body:not(.home-page) .leave{text-align:center!important}
+body:not(.home-page) .leave .in{display:flex;flex-direction:column;align-items:center}
+body:not(.home-page) .outcome-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:min(100%,1080px)}
+body:not(.home-page) .outcome-list li{background:#fff;border:1px solid var(--quiet-2);padding:clamp(24px,3vw,42px);font-size:clamp(19px,2vw,28px);line-height:1.12;letter-spacing:-.02em;color:var(--copy)!important}
+
+/* Contact is one continuous white page: introduction, form, then direct email. */
+body.contact-page .contact-unified{background:#fff!important;padding:clamp(64px,8vw,120px) 0}
+body.contact-page .contact-unified>.wrap{max-width:1060px}
+body.contact-page .contact-intro{max-width:900px;margin-bottom:clamp(46px,6vw,76px)}
+body.contact-page .contact-intro h1{font-size:clamp(52px,7vw,108px);line-height:.92;letter-spacing:-.055em}
+body.contact-page .contact-intro p{max-width:670px;margin-top:24px;font-size:clamp(19px,1.7vw,25px);line-height:1.35;color:var(--muted)}
+body.contact-page .contact-form-wrap{max-width:920px}
+body.contact-page .contact-side{max-width:920px;margin-top:clamp(54px,7vw,90px);padding-top:clamp(34px,4vw,52px);border-top:1px solid var(--quiet-2);background:transparent!important}
+body.contact-page .contact-side .note,body.contact-page .cform .note{font-size:clamp(16px,1.25vw,19px)!important;line-height:1.5!important;color:var(--muted)!important}
+body.contact-page .contact-side h2{font-size:clamp(34px,4vw,58px)!important;line-height:1!important}
+body.contact-page .mail-big{font-size:clamp(19px,2.15vw,32px)!important}
+body.contact-page .cform{max-width:none}
+
+/* Every internal closing CTA uses the same pale field as the homepage ending. */
+body:not(.home-page) .oh-close-sub{background:var(--quiet)!important;background-image:none!important;border-top:1px solid var(--quiet-2)}
+
+body.organisations-page main>section.talks-section{background:#071321!important;color:#fff!important}
+body.organisations-page .talks-section .talks :is(h2,p){color:#fff!important}
+body.organisations-page .talks-section .aud-eyebrow{background:var(--action)!important;color:#071321!important}
+
+/* Dark ending, exactly as the primary version. */
+body:not(.home-page) .oh-footer{background:#071321!important;color:#fff!important;border-top:0!important}
+body:not(.home-page) .oh-footer .acb-logo-mount{color:#fff!important}
+body:not(.home-page) .oh-footer .top,body:not(.home-page) .oh-footer .bottom{border-color:rgba(255,255,255,.25)!important}
+body:not(.home-page) .oh-footer :is(b,.col a,.news p,.bottom,.bottom a){color:#fff!important}
+body:not(.home-page) .oh-footer .col a:hover{color:var(--b1)!important}
+body:not(.home-page) .oh-newsletter{border-color:rgba(255,255,255,.45)!important}
+body:not(.home-page) .oh-newsletter :is(input,button){color:#fff!important}
+
+body:not(.home-page) .acb-footer .foot-lead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,78px);padding-bottom:clamp(30px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.25)}
+body:not(.home-page) .acb-footer .mark{display:block!important;padding:0!important}
+body:not(.home-page) .acb-footer .mark .acb-logo-mount{height:58px!important}
+body:not(.home-page) .acb-footer .ack{max-width:29ch;margin:24px 0 0;font-size:clamp(18px,1.55vw,25px);line-height:1.18;color:#fff}
+body:not(.home-page) .acb-footer .oh-footer-news{display:block!important;padding:0!important;border:0!important}
+body:not(.home-page) .acb-footer .oh-footer-news h3{font-family:var(--sans)!important;font-size:clamp(22px,2vw,30px)!important;font-weight:400;white-space:normal!important;color:#fff}
+body:not(.home-page) .acb-footer .oh-footer-news p{font-size:clamp(14px,1vw,17px)!important;max-width:44ch!important;margin:12px 0 18px!important;line-height:1.4!important}
+body:not(.home-page) .acb-footer .oh-newsletter{display:flex!important;margin:0!important;max-width:520px}
+body:not(.home-page) .acb-footer .top.oh-footer-links{padding-top:clamp(30px,4vw,56px)!important}
+
+/* Gentle Arcturis-inspired entrance: no jump, just layered opacity and a tiny scale. */
+.white-reveal{opacity:0;transform:translateY(14px) scale(.994);transition:opacity .78s ease,transform .9s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
+.white-reveal.white-in{opacity:1;transform:none}
+.reveal{opacity:0!important;transform:translateY(12px) scale(.996)!important;transition:opacity .8s ease,transform .95s cubic-bezier(.16,1,.3,1)!important}
+.reveal.in{opacity:1!important;transform:none!important}
+.white-line-reveal{overflow:hidden}
+.white-line-reveal>*{opacity:0;transform:translateY(1.05em);transition:opacity .72s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+.white-line-reveal.white-in>*{opacity:1;transform:none}
+
+@media(max-width:900px){
+  body:not(.home-page) .oh-header.mobile-open{background:var(--brand)!important;color:#fff!important}
+  body:not(.home-page) .oh-header.mobile-open .oh-head-right{background:var(--brand)!important;color:#fff!important}
+  body:not(.home-page) .oh-header.mobile-open .oh-nav{background:var(--brand)!important}
+  body:not(.home-page) .oh-header.mobile-open .navitem{border-color:var(--quiet-2)!important}
+}
+@media(max-width:760px){body:not(.home-page) .outcome-list{grid-template-columns:1fr}}
+@media(max-width:700px){body:not(.home-page) .acb-footer .foot-lead{grid-template-columns:1fr}body:not(.home-page) .acb-footer .mark .acb-logo-mount{height:50px!important}}
+@media(prefers-reduced-motion:reduce){.white-reveal,.white-line-reveal>*{opacity:1!important;transform:none!important;transition:none!important}}

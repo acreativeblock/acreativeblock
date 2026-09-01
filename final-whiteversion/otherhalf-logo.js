@@ -51,14 +51,14 @@
   function anim(){
     document.body.classList.add('oh-fade');
     if(rm)return;
-    var sel='.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.oh-close-sub .wrap,.oh-two-col>*,.oh-offer-cards>*,.oh-proof-grid>*,.oh-block-tags,.rescat';
+    var sel='main section>div,main section h1,main section h2,main section h3,.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.oh-close-sub .wrap,.oh-two-col>*,.oh-offer-cards>*,.oh-proof-grid>*,.oh-block-tags,.rescat,.blog-card,.resitem,.bmcard,.faq-item';
     var els=[].slice.call(document.querySelectorAll(sel));
     if(!els.length)return;
     els.forEach(function(el){el.classList.add('rv');});
     if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
     var io=new IntersectionObserver(function(ents){
       ents.forEach(function(e){if(e.isIntersecting){var el=e.target,p=el.parentNode,idx=p?[].indexOf.call(p.children,el):0;el.style.transitionDelay=((idx%8)*0.06)+'s';el.classList.add('in');io.unobserve(el);}});
-    },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+    },{rootMargin:'0px 0px -18% 0px',threshold:0.14});
     els.forEach(function(el){io.observe(el);});
   }
   document.addEventListener('click',function(e){
@@ -91,7 +91,7 @@
         el.style.transitionDelay=(Math.max(0,idx)*70)+'ms';
         el.classList.add('rvl-in');io.unobserve(el);
       });
-    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    },{threshold:.16,rootMargin:'0px 0px -18% 0px'});
     items.forEach(function(el){io.observe(el);});
   }catch(e){}
 })();
@@ -100,7 +100,7 @@
 (function(){
   try{
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var nodes=[].slice.call(document.querySelectorAll('.scrolltext,.section-head p,.bm-lead,.audsay .body,.leave p'));
+    var nodes=[].slice.call(document.querySelectorAll('.scrolltext,.audsay .body,.approach p,.hv-say p'));
     if(!nodes.length)return;
     function wrap(node){
       [].slice.call(node.childNodes).forEach(function(k){
@@ -122,7 +122,7 @@
     function update(){
       var vh=window.innerHeight;
       nodes.forEach(function(el){
-        var r=el.getBoundingClientRect(),start=vh*0.72,end=vh*0.42;
+        var r=el.getBoundingClientRect(),start=vh*0.61,end=vh*0.31;
         var prog=(start-r.top)/(start-end);prog=Math.min(1,Math.max(0,prog));
         var n=el._w.length;
         el._w.forEach(function(w,i){var t=prog*(n+2)-i;w.style.opacity=Math.min(1,Math.max(.14,t)).toFixed(3);});
