@@ -1,6 +1,5 @@
 /* final-whiteversion — shared calm system for every internal page */
 :root{
-  --acb-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
   --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#071321;--muted:#071321;
   --brand:#4f46e5;--action:#F7FF89;--b1:#F6D65D;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
   --b5:#9a8ff2;--b6:#a9d5f5;--b7:#5f9dd6;--b8:#909090;
@@ -111,11 +110,12 @@ body.contact-page .mail-big{font-size:clamp(19px,2.15vw,32px)!important}
 body.contact-page .cform{max-width:none}
 
 /* Every internal closing CTA uses the same pale field as the homepage ending. */
-body:not(.home-page) .oh-close-sub{background:#F7FF89!important;background-color:#F7FF89!important;background-image:var(--acb-grain)!important;border-top:0!important}
-body:not(.home-page) .oh-close-sub>.wrap{gap:12px!important}
-body:not(.home-page) .oh-close-sub .note{margin:0 0 12px!important}
-body:not(.home-page) .oh-close-sub :is(.btn,.btn-out){background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
-body:not(.home-page) .oh-close-sub :is(.btn,.btn-out):hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close){background:#F7FF89!important;background-color:#F7FF89!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close)>.wrap{gap:12px!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close) .note{margin:0 0 12px!important;color:var(--copy)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close) h2{color:var(--copy)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close) :is(.btn,.btn-out){background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close) :is(.btn,.btn-out):hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
 
 body.organisations-page main>section.talks-section{background:#071321!important;color:#fff!important}
 body.organisations-page .talks-section .talks :is(h2,p){color:#fff!important}
@@ -157,7 +157,7 @@ body.evidence-page main>section:nth-of-type(3){background:var(--brand)!important
 body.evidence-page main>section:nth-of-type(4){background:#fff!important}
 body.evidence-page main>section:nth-of-type(5){background:whitesmoke!important}
 body.evidence-page main>section:nth-of-type(6){background:#fff!important}
-body.evidence-page main>section:nth-of-type(2) .card{background:transparent!important}
+body.evidence-page main>section:nth-of-type(2) .card{background:#fff!important;background-image:none!important}
 body.evidence-page .section.blue{background:var(--brand)!important}
 body.evidence-page .section.blue :is(h2,h3,p,.side-note){color:#fff!important}
 body.evidence-page .section.blue .side-note{background:var(--action)!important;color:var(--copy)!important}
@@ -206,7 +206,7 @@ body:not(.home-page) .acb-footer .oh-footer-news h3{font-family:var(--sans)!impo
 body:not(.home-page) .acb-footer .oh-footer-news p{font-size:clamp(14px,1vw,17px)!important;max-width:44ch!important;margin:12px 0 18px!important;line-height:1.4!important}
 body:not(.home-page) .acb-footer .oh-newsletter{display:flex!important;margin:0!important;max-width:520px}
 body:not(.home-page) .acb-footer .top.oh-footer-links{padding-top:clamp(30px,4vw,56px)!important}
-body:not(.home-page) main>section,.oh-header,.oh-footer{background-image:var(--acb-grain)!important;background-repeat:repeat!important;background-size:140px 140px!important;background-blend-mode:multiply}
+body:not(.home-page) main>section,.oh-header,.oh-footer{background-image:none!important}
 body:not(.home-page) figure,body:not(.home-page) img{background-image:none!important}
 body.legal-page main>section{background:#fff!important;background-image:none!important}
 
@@ -231,7 +231,7 @@ body.legal-page main>section{background:#fff!important;background-image:none!imp
 @keyframes menuCalmIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 
 body.questionnaire-page,body.questionnaire-page button,body.questionnaire-page input,body.questionnaire-page textarea,body.questionnaire-page select{font-family:'Manrope',sans-serif!important}
-body.questionnaire-page{--ink:#071321;--yellow:#F6D65D;background:var(--brand)!important;color:#fff!important;background-image:var(--acb-grain)!important}
+body.questionnaire-page{--ink:#071321;--yellow:#F6D65D;background:var(--brand)!important;color:#fff!important;background-image:none!important}
 body.questionnaire-page .quiz-logo{height:52px!important}
 body.questionnaire-page :is(h1,h2,h3,p,.qtext,.bar){color:#fff!important}
 body.questionnaire-page .top{background:var(--brand)!important;border-color:rgba(255,255,255,.4)!important}

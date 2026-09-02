@@ -23,7 +23,6 @@ em{font-style:italic}
 .survey-logo{display:block;width:118px;height:auto;margin:0 auto 14px;color:var(--on)}
 .survey-logo svg{display:block;width:100%;height:auto}
 .logo-svg path,.logo-svg circle{fill:var(--on);stroke:var(--on)}
-canvas.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60;opacity:.16;mix-blend-mode:multiply;image-rendering:pixelated}
 .wrap{position:relative;z-index:1;max-width:612.0px;margin:0 auto;padding:0 16.2px}
 .prog{position:sticky;top:0;z-index:20;background:var(--bg);padding:12.6px 0 9.0px}
 .prog .bar{height:5.4px;background:var(--onborder);border-radius:899.1px;overflow:hidden}
@@ -354,18 +353,7 @@ textarea{min-height:79.2px}
   </div>
 </div>
 
-<canvas class="grain"></canvas>
 <script>
-// grain, matching the home page
-(function(){
-  var c=document.querySelector('canvas.grain'),x=c.getContext('2d'),S=1.5,W,H;
-  function resize(){W=c.width=Math.max(1,Math.ceil(innerWidth/S));H=c.height=Math.max(1,Math.ceil(innerHeight/S));}
-  resize(); addEventListener('resize',resize);
-  var last=0;
-  function frame(t){ if(t-last>60){var img=x.createImageData(W,H),d=img.data;for(var i=0;i<d.length;i+=4){var v=(Math.random()*255)|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=(Math.random()*48)|0;}x.putImageData(img,0,0);last=t;} requestAnimationFrame(frame); }
-  requestAnimationFrame(frame);
-})();
-
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuTuOV1-ZkQV4x_sXVMYcswzYc_97fFrUUPTBYY6NP9EX9ewC4uO50pxpolyu0ke-Z/exec";
 
 const core=[...document.querySelectorAll('.q.core')];
