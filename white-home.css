@@ -58,6 +58,11 @@ body.home-page{
 .home-page .pill:not(:empty)::after{content:" ↗";font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
 .home-page .pill:hover::after{transform:translate(2px,-2px)}
 
+/* Buttons keep their colour; hover motion belongs to the arrow only. */
+.home-page :is(.pill,.oh-utility-pill,.caro-nav):hover{
+  background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;
+}
+
 /* Every phrase in the moving block symptom line inherits its block colour. */
 .home-page .hv-marq{background:var(--quiet)!important;color:var(--copy)!important;border-top:1px solid var(--quiet-2);border-bottom:1px solid var(--quiet-2);padding:clamp(14px,1.5vw,22px) 0}
 .home-page .hv-marq .track{font-size:clamp(15px,1.65vw,24px)}

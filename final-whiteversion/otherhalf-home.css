@@ -516,7 +516,8 @@ p,.pbody,.sub,.hv-lead,.faq-a p{text-wrap:pretty}
 /* ================= global refinements (v42) ================= */
 /* 1 · no dotted background anywhere */
 html,body{background-image:none!important}
-.grain{display:none!important}
+.grain{display:block!important;position:fixed!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none!important;z-index:20!important;opacity:.15!important;mix-blend-mode:multiply!important;image-rendering:pixelated!important}
+.home-page img,.home-page picture,.home-page video{position:relative;z-index:21}
 /* 2 · every button has square corners (pills included) */
 .pill,.pill.big,.pill.alt,.pill.is-outline,.btn,.btn.big,.btn.dark,.btn-out,.oh-utility-pill,.mobile-menu-toggle,.refbar,.refbar-btn,.oh-newsletter button,.oh-promo{border-radius:0!important}
 /* 3 · highlighter — background behind the important words, not coloured text */
