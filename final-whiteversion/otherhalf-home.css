@@ -13,8 +13,8 @@
   --blue:#006FDA;
   --yellow:#F7FF89;
   --pink:#FFB8CB;
-  --ink:#081321;
-  --ink-soft:#4a5560;
+  --ink:#071321;
+  --ink-soft:#071321;
   --tint:#EAF1F8;
   /* legacy aliases kept so old references resolve to the canonical colours */
   --blue-deep:var(--blue);

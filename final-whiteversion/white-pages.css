@@ -1,8 +1,8 @@
 /* final-whiteversion — shared calm system for every internal page */
 :root{
   --acb-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
-  --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#1e1e1e;--muted:#666;
-  --brand:#4f46e5;--action:#F7FF89;--b1:#f2c94c;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
+  --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#071321;--muted:#071321;
+  --brand:#4f46e5;--action:#F7FF89;--b1:#F6D65D;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
   --b5:#9a8ff2;--b6:#a9d5f5;--b7:#5f9dd6;--b8:#909090;
 }
 html{background:#fff}
@@ -231,7 +231,7 @@ body.legal-page main>section{background:#fff!important;background-image:none!imp
 @keyframes menuCalmIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 
 body.questionnaire-page,body.questionnaire-page button,body.questionnaire-page input,body.questionnaire-page textarea,body.questionnaire-page select{font-family:'Manrope',sans-serif!important}
-body.questionnaire-page{background:var(--brand)!important;color:#fff!important;background-image:var(--acb-grain)!important}
+body.questionnaire-page{--ink:#071321;--yellow:#F6D65D;background:var(--brand)!important;color:#fff!important;background-image:var(--acb-grain)!important}
 body.questionnaire-page .quiz-logo{height:52px!important}
 body.questionnaire-page :is(h1,h2,h3,p,.qtext,.bar){color:#fff!important}
 body.questionnaire-page .top{background:var(--brand)!important;border-color:rgba(255,255,255,.4)!important}

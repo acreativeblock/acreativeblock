@@ -40,7 +40,7 @@
     var body=document.createElement('span');body.className='resbody';
     while(el.firstChild)body.appendChild(el.firstChild);
     var icon=document.createElement('span');icon.className='resico';
-    function badge(){icon.textContent=(body.querySelector('b')?.textContent||'?').trim().charAt(0);icon.style.background=['#4F46E5','#FF7F50','#f4dc55','#bde7d5'][i%4];icon.style.color=i%4===2||i%4===3?'#1E1E1E':'#fff'}
+    function badge(){icon.textContent=(body.querySelector('b')?.textContent||'?').trim().charAt(0);icon.style.background=['#4F46E5','#FF7F50','#F6D65D','#bde7d5'][i%4];icon.style.color=i%4===2||i%4===3?'#071321':'#fff'}
     var href=el.tagName==='A'&&el.getAttribute('href'),host='';
     if(href)try{host=new URL(href,location.href).hostname}catch(err){}
     if(host){var img=document.createElement('img');img.alt='';img.loading='lazy';img.src='https://www.google.com/s2/favicons?domain='+encodeURIComponent(host)+'&sz=64';img.onerror=function(){img.remove();badge()};icon.appendChild(img)}else badge();

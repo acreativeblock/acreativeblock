@@ -4,11 +4,11 @@
   --white:#fff;
   --quiet:whitesmoke;
   --quiet-2:#e8e8e5;
-  --copy:#1e1e1e;
-  --muted:#666;
+  --copy:#071321;
+  --muted:#071321;
   --brand:#4f46e5;
   --action:#F7FF89;
-  --b1:#f2c94c;
+  --b1:#F6D65D;
   --b2:#ef9f5e;
   --b3:#e35d54;
   --b4:#c9a0f0;
@@ -70,7 +70,7 @@ body.home-page{
 .home-page .hv-marq .track span:nth-of-type(8n+5){color:#6257c4}
 .home-page .hv-marq .track span:nth-of-type(8n+6){color:#347eac}
 .home-page .hv-marq .track span:nth-of-type(8n+7){color:#3674ae}
-.home-page .hv-marq .track span:nth-of-type(8n){color:#666}
+.home-page .hv-marq .track span:nth-of-type(8n){color:#909090}
 
 /* Editorial white/grey section rhythm. */
 .home-page .hv-say,.home-page .oh-proof,.home-page .hv-carousel,.home-page .hv-faq{background:var(--white)!important;background-image:none!important}
