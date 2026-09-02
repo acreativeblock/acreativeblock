@@ -1,108 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Creative Block — coming soon</title>
-<!-- deploy nudge: fresh build after actions incident -->
-
-<meta name="description" content="A Creative Block — a new practice helping creatives get unstuck. Coming soon.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://acreativeblock.com/">
-<link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-@font-face{font-family:'ITC Garamond';src:url('fonts/itc-garamond-book-cond.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-:root{
-  --bg:#4F46E5; --ink:#FAF9F6; --muted:rgba(250,249,246,.72); --line:rgba(250,249,246,.28);
-  --serif:'ITC Garamond',Georgia,'Times New Roman',serif;
-  --grot:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--bg)}
-body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--grot);
-  line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;
-  display:flex;flex-direction:column}
-a{color:inherit;text-decoration:none}
-em{font-style:italic}
-.serif{font-family:var(--serif)}
-
-/* animated grain, like v45 */
-canvas.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50;opacity:.22;mix-blend-mode:multiply;image-rendering:pixelated}
-
-.wrap{width:100%;max-width:675.0px;margin:0 auto;padding:clamp(14.85px,2.7vw,36.45px);flex:1;display:flex;flex-direction:column}
-
-/* top bar */
-.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:13.5px}
-.logo{font-family:var(--grot);font-weight:500;font-size:clamp(12.15px,1.35vw,14.85px);letter-spacing:-.02em}
-.eyebrow{font-size:8.44px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
-/* hero centre */
-.hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(27.0px,5.4vw,60.75px) 0}
-.hero h1{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;
-  font-size:clamp(29.7px,6.075vw,81.0px);line-height:0.9;max-width:16ch}
-.hero h1 em{font-style:normal;font-weight:400}
-.hero .intro{font-family:var(--grot);font-size:clamp(11.47px,1.147vw,14.85px);line-height:1.5;
-  color:var(--muted);max-width:46ch;margin-top:clamp(17.55px,2.363vw,27.0px)}
-.cta{margin-top:clamp(20.25px,2.7vw,29.7px);display:flex;align-items:center;gap:12.15px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;background:var(--ink);color:var(--bg);
-  border-radius:674.33px;padding:10.12px 20.25px;font-size:10.8px;font-weight:600;letter-spacing:-.01em;transition:.15s}
-.btn:hover{background:#fff}
-.cta .say{color:var(--muted);font-size:10.12px}
-.hello{margin-top:clamp(12.15px,1.62vw,17.55px);color:var(--muted);font-size:clamp(10.12px,0.9vw,12.15px);line-height:1.7}
-.hello a{color:var(--ink);text-decoration:underline;text-underline-offset:1.8px}
-.hello a:hover{color:#fff}
-
-/* footer */
-.foot{border-top:1px solid var(--line);padding-top:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8.1px;
-  font-size:8.78px;color:var(--muted)}
-
-.rise{opacity:0;transform:translateY(10.8px);animation:rise .7s cubic-bezier(.2,.75,.25,1) forwards}
-.rise.d1{animation-delay:.05s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.27s}.rise.d4{animation-delay:.38s}
-@keyframes rise{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>A Creative Block — Understand what is stopping the work</title>
+  <meta name="description" content="Coaching and creative consulting for anyone blocked on a project that matters.">
+  <link rel="canonical" href="https://acreativeblock.com/">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="otherhalf-home.css?v=44">
+  <link rel="stylesheet" href="home-v3.css?v=10">
+  <link rel="stylesheet" href="white-home.css?v=5">
 </head>
-<body>
-  <div class="wrap">
-    <div class="top rise d1">
-      <span class="logo">A Creative Block</span>
-      <span class="eyebrow">Coming soon</span>
-    </div>
-
-    <div class="hero">
-      <h1 class="serif rise d2">The work you keep not doing is <em>closer</em> than it feels.</h1>
-      <p class="intro rise d3">A new coaching &amp; consultancy practice that gets to the real reason behind the block, then helps you move — not by pushing harder, but by understanding why you've stalled. We're building it right now, and shaping it around what creatives actually need.</p>
-      <div class="cta rise d4">
-        <a class="btn" href="survey/">Take the survey</a>
+<body class="home-page">
+  <header class="oh-header">
+    <div class="inner">
+      <a class="oh-logo" href="index.html" aria-label="A Creative Block home"><span class="acb-logo-mount" data-acb-logo="3lines" data-acb-mode="none" style="color:#FFFFFF"></span></a>
+      <div class="oh-head-right">
+        <nav class="oh-nav" aria-label="Main navigation">
+          <span class="navitem"><a class="navbutton" href="for-individuals/">For individuals</a></span>
+          <span class="navitem"><a class="navbutton" href="for-organisations/">For organisations</a></span>
+          <span class="navitem"><button class="navbutton">Research &amp; method</button><span class="oh-sub"><a href="our-method/">How we work</a><a href="the-block-map/">Our blocks' map</a><a href="the-factors/">The factors</a><a href="evidence/">The evidence</a></span></span>
+          <span class="navitem"><button class="navbutton">About us</button><span class="oh-sub"><a href="about/">Our story</a><a href="contact/">Contact</a><a href="faq/">FAQ</a></span></span>
+        </nav>
+        <div class="oh-actions"><span class="oh-social"><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.06c.53-.95 1.83-1.95 3.76-1.95 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.03-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg></a><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a></span><a class="oh-utility-pill" href="contact/">Book a call</a></div>
       </div>
-      <p class="hello rise d4">Want in early, or just to say hello?<br><a href="mailto:hello@acreativeblock.com">hello@acreativeblock.com</a></p>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu">Menu</button>
     </div>
+  </header>
 
-    <div class="foot rise d4">
-      <span>© 2026 A Creative Block</span>
-      <span>Lisbon &amp; online, everywhere</span>
-    </div>
-  </div>
+  <main>
 
-  <canvas class="grain"></canvas>
+    <section class="hv hv-hero"><div class="wrap"><div class="hv-hero-grid">
+      <div class="hv-hero-copy">
+        <h1>Understand what is stopping the work. Then get it moving.</h1>
+        <p class="sub">Coaching and creative consulting for anyone blocked<br>on a project that matters.</p>
+        <div class="hv-cta"><a class="pill big" href="find-your-block/">Find your block</a><a class="pill big alt" href="our-method/">How we work</a></div>
+      </div>
+      <figure class="hv-hero-img"><img src="images/hero-portrait.jpg" width="1600" height="1066" fetchpriority="high" decoding="async" alt="Portrait from the A Creative Block series"></figure>
+    </div></div></section>
+
+    <section class="hv-marq"><div class="track">
+      <span>I keep avoiding it</span><em>•</em><span>Too many directions</span><em>•</em><span>Perfectionism</span><em>•</em><span>Running on empty</span><em>•</em><span>The idea isn't working</span><em>•</em><span>Feedback knocked me</span><em>•</em><span>Impostor feelings</span><em>•</em><span>The project is too big</span><em>•</em><span>Chaotic workflow</span><em>•</em><span>Low energy</span><em>•</em>
+      <span>I keep avoiding it</span><em>•</em><span>Too many directions</span><em>•</em><span>Perfectionism</span><em>•</em><span>Running on empty</span><em>•</em><span>The idea isn't working</span><em>•</em><span>Feedback knocked me</span><em>•</em><span>Impostor feelings</span><em>•</em><span>The project is too big</span><em>•</em><span>Chaotic workflow</span><em>•</em><span>Low energy</span><em>•</em>
+    </div></section>
+
+    <section class="hv hv-say"><div class="wrap">
+      <span class="hv-eyebrow">Our approach</span>
+      <p class="scrolltext">Most advice answers the wrong question—how to push harder. We start earlier, and treat the block as <span class="hl">a symptom worth understanding before it's worth fixing</span>. <span class="cln">Coaching for the person, consulting for the project, often both.</span></p>
+    </div></section>
+
+    <section class="oh-proof"><div class="wrap">
+      <div class="oh-proof-grid">
+        <div class="oh-proof-copy"><span class="mono">The symptom and the cause</span><h2 class="serif">Common enough to matter.<br>Complex enough to investigate.</h2><p>Creative block remains under-researched, even if so many experience it. Occupational-psychology research points to burnout, perfectionism and identity fusion as the deeper drivers of distress in creative work—creative block is often the visible symptom, not the cause. We use the evidence carefully and say where its limits are.</p></div>
+        <figure class="oh-proof-image"><img src="images/woman-pensive.webp" loading="lazy" decoding="async" alt="Portrait from the A Creative Block series"></figure>
+      </div>
+    </div></section>
+
+    <section class="hv hv-look"><div class="wrap">
+      <h2>We look at what you carry, and how you are feeling.</h2>
+      <p>There is not a fit-for-all solution, and that is a problem. We look into who you are—your personality, the way your attention and memory work, and your mental-health context—and how regulated your state is on the day.</p>
+      <div class="cta"><a class="pill big alt" href="our-method/">Look how we work</a></div>
+    </div></section>
+
+    <section class="hv hv-carousel"><div class="wrap">
+      <div class="caro-head">
+        <div><span class="hv-eyebrow">The working map</span><h2 class="hv-h2">What might be stopping the work?</h2></div>
+        <p class="caro-intro">Seven domains where creative work gets stuck, plus one look-alike that isn't a block at all. The same stuck feeling can have very different causes—so we name the mechanism first.</p>
+      </div>
+      <div class="caro">
+        <div class="caro-navs"><button class="caro-nav" data-caro="prev" type="button" aria-label="Previous">←</button><button class="caro-nav" data-caro="next" type="button" aria-label="Next">→</button></div>
+        <div class="caro-track" data-carotrack>
+          <div class="ccard" style="--c:#f2c94c"><span class="clabel">Execution</span><span class="cnum" style="color:#f2c94c">01</span><h3>Starting &amp; Doing</h3><p>Intention that won't become action.</p></div>
+          <div class="ccard" style="--c:#ef9f5e"><span class="clabel">Identity</span><span class="cnum" style="color:#ef9f5e">02</span><h3>Confidence &amp; Exposure</h3><p>When the work feels like a verdict.</p></div>
+          <div class="ccard" style="--c:#e35d54"><span class="clabel">Direction</span><span class="cnum" style="color:#e35d54">03</span><h3>Direction &amp; Meaning</h3><p>Too many paths, or none that pull.</p></div>
+          <div class="ccard" style="--c:#c9a0f0"><span class="clabel">Depletion</span><span class="cnum" style="color:#c9a0f0">04</span><h3>Energy &amp; Recovery</h3><p>The tank is empty.</p></div>
+          <div class="ccard" style="--c:#9a8ff2"><span class="clabel">Process</span><span class="cnum" style="color:#9a8ff2">05</span><h3>The Work Itself</h3><p>A real problem inside the work.</p></div>
+          <div class="ccard" style="--c:#a9d5f5"><span class="clabel">Systems</span><span class="cnum" style="color:#a9d5f5">06</span><h3>Structure &amp; Workflow</h3><p>The setup trips you up.</p></div>
+          <div class="ccard" style="--c:#5f9dd6"><span class="clabel">Context</span><span class="cnum" style="color:#5f9dd6">07</span><h3>Context &amp; Support</h3><p>The conditions work against it.</p></div>
+          <div class="ccard" style="--c:#909090"><span class="clabel">Trapdoor</span><span class="cnum" style="color:#909090">+1</span><h3>A Skill Gap</h3><p>Not a block—learn it, or rule it out.</p></div>
+        </div>
+      </div>
+      <div class="caro-more"><a class="pill" href="the-block-map/">See the full 7+1 map</a></div>
+    </div></section>
+
+    <section class="hv"><div class="wrap">
+      <div class="hv-head"><span class="hv-eyebrow">Work with us</span><h2 class="hv-h2">Two ways in, one honest approach.</h2></div>
+      <div class="hv-offer">
+      <div class="hv-panel blue"><span class="pe" style="color:var(--yellow);opacity:1">◆ For individuals</span><h2>Bring the project that matters.</h2><p class="pbody">Feeling behind on where you think you should be, or measuring your work against everyone else's? Stuck because every choice feels like the wrong one? That is not failure—it is the signal underneath the block, and where things can start to move.</p><ul class="plist"><li><strong>Project Session</strong><span>One focused 90-minute session.</span></li><li><strong>Momentum Pack</strong><span>Three sessions to test and adjust.</span></li><li><strong>The Big Block</strong><span>A deeper six-session process.</span></li></ul><a class="pill" href="for-individuals/">Explore individual support</a></div>
+      <div class="hv-panel pink"><span class="pe">◆ For organisations</span><h2>Unstick the whole team.</h2><p class="pbody">We build tailored programmes so your creative people stay supported, empowered and engaged. No box-ticking—working together, you see real gains in both the work and how people feel doing it.</p><ul class="plist"><li><strong>Team Workshop</strong><span>A focused half or full day.</span></li><li><strong>Creative Reset</strong><span>A multi-week team intervention.</span></li><li><strong>Ongoing Advisory</strong><span>Continued support as work evolves.</span></li></ul><a class="pill" href="for-organisations/">Explore organisation support</a></div>
+    </div></div></section>
+
+    <section class="hv hv-faq"><div class="wrap">
+      <div class="hv-head"><span class="hv-eyebrow">Questions</span><h2 class="hv-h2">The things people ask first.</h2></div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q" type="button">Is this coaching or therapy?</button><div class="faq-a"><p>Coaching and creative consulting—not therapy. We work on the block and the project in front of you. If something sits deeper than our remit, we will say so and help you find the right support.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Do I need to be a professional artist?</button><div class="faq-a"><p>No. If you make things—work, research, a business, a body of writing—and you are stuck on something that matters, this is for you. You do not need to call yourself an artist.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">What actually happens in a session?</button><div class="faq-a"><p>We find the most likely mechanism behind the stuckness, read the terrain around it, and match a response—coaching, consulting, learning or recovery. You leave with a clear read and a sensible first move.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Can you help a whole team?</button><div class="faq-a"><p>Yes. For organisations we run workshops, resets and ongoing advisory—working on briefs, feedback, roles and pace, not just individual output.</p></div></div>
+      </div>
+    </div></section>
+
+    <section class="oh-close"><div class="wrap"><h2 class="serif">Make space for the work to move.</h2><p class="note">Bring the project that matters, and we'll find what is really keeping it stuck—coaching for the person, consulting for the project, often both.</p><div><a class="pill big" href="contact/">Contact us</a></div></div></section>
+
+  </main>
+
+  <footer class="oh-footer acb-footer"><div class="wrap">
+    <div class="foot-lead"><div class="mark"><a href="index.html" aria-label="A Creative Block home"><span class="acb-logo-mount" data-acb-logo="3lines" data-acb-mode="none" style="color:#FEFDF9"></span></a><p class="ack">For anyone trying to make, finish or clarify creative work.</p></div><div class="news oh-footer-news"><h3>Sign up for more</h3><p>An honest, occasional letter about creative work and how people get moving.</p><form class="oh-newsletter"><input type="email" name="email" placeholder="Your email" aria-label="Your email" required><button type="submit">Sign up ↗</button></form></div></div>
+    <div class="top oh-footer-links"><div class="col"><b>Work together</b><a href="for-individuals/">For individuals</a><a href="for-organisations/">For organisations</a><a href="contact/">Contact</a></div><div class="col"><b>Research &amp; method</b><a href="our-method/">How we work</a><a href="the-block-map/">The 7+1 map</a><a href="the-factors/">The factors</a><a href="evidence/">The evidence</a></div><div class="col"><b>Read &amp; explore</b><a href="blog/">Blog</a><a href="resources/">Resources</a><a href="playroom/">Playroom</a><a href="find-your-block/">Find your block</a></div><div class="col"><b>About us</b><a href="about/">Our story</a><a href="faq/">FAQ</a><a href="https://www.instagram.com/a.creative.block/">Instagram</a><a href="https://www.linkedin.com/company/acreativeblock/">LinkedIn</a></div></div>
+    <div class="bottom"><span>© 2026 A Creative Block · Understand the why, then move.</span><div><a href="terms/">Terms &amp; Conditions</a><a href="privacy/">Privacy Policy</a><a href="cookies/">Cookies</a></div></div>
+  </div></footer>
+
+  <script src="otherhalf-logo.js?v=6"></script>
   <script>
-  (function(){
-    var c=document.querySelector('canvas.grain'),x=c.getContext('2d');
-    var S=1.5,W,H;
-    function resize(){W=c.width=Math.max(1,Math.ceil(innerWidth/S));H=c.height=Math.max(1,Math.ceil(innerHeight/S));}
-    resize(); addEventListener('resize',resize);
-    var last=0;
-    function frame(t){
-      if(t-last>60){var img=x.createImageData(W,H),d=img.data;
-        for(var i=0;i<d.length;i+=4){var v=(Math.random()*255)|0;d[i]=d[i+1]=d[i+2]=v;d[i+3]=(Math.random()*48)|0;}
-        x.putImageData(img,0,0);last=t;}
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  })();
+    document.querySelectorAll('.oh-newsletter').forEach(function(form){form.addEventListener('submit',function(event){event.preventDefault();var button=form.querySelector('button');button.textContent='Thank you';})});
+    (function(){var header=document.querySelector('.oh-header'),toggle=document.querySelector('.mobile-menu-toggle');if(!header||!toggle)return;toggle.addEventListener('click',function(){var open=header.classList.toggle('oh-menu-open');toggle.textContent=open?'Close':'Menu';document.documentElement.style.overflow=open?'hidden':'';});header.querySelectorAll('.navbutton').forEach(function(button){button.addEventListener('click',function(){if(innerWidth>1060)return;button.parentElement.classList.toggle('is-open');});});})();
+    document.querySelectorAll('.hv-faq .faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});});
+    (function(){var t=document.querySelector('[data-carotrack]');if(!t)return;
+      var cards=[].slice.call(t.querySelectorAll('.ccard')),index=0,active=false,paused=false,timer=0;
+      function leftFor(i){var c=cards[i];return c?c.offsetLeft-t.offsetLeft:0;}
+      function go(i){if(!cards.length)return;index=(i+cards.length)%cards.length;t.scrollTo({left:leftFor(index),behavior:'smooth'});}
+      document.querySelectorAll('[data-caro]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();go(index+(b.dataset.caro==='next'?1:-1));restart();});});
+      function restart(){clearInterval(timer);timer=setInterval(function(){if(active&&!paused)go(index+1);},3300);}
+      new IntersectionObserver(function(es){es.forEach(function(e){active=e.isIntersecting;});},{threshold:.28}).observe(t.closest('.hv-carousel')||t);
+      ['mouseenter','pointerdown','touchstart','focusin'].forEach(function(ev){t.addEventListener(ev,function(){paused=true;});});
+      ['mouseleave','pointerup','touchend','focusout'].forEach(function(ev){t.addEventListener(ev,function(){paused=false;});});
+      t.addEventListener('scroll',function(){clearTimeout(t._caroSettle);t._caroSettle=setTimeout(function(){var x=t.scrollLeft,best=0,dist=Infinity;cards.forEach(function(c,i){var d=Math.abs(leftFor(i)-x);if(d<dist){dist=d;best=i;}});index=best;},100);},{passive:true});
+      if(!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))restart();
+    })();
   </script>
 </body>
 </html>
