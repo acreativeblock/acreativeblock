@@ -124,7 +124,7 @@ body.v3-page,body.v3-page .oh-header,body.v3-page .oh-footer{font-family:'Manrop
 .v3-foot-brand{font-family:var(--sans);font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--blue)}
 .v3-foot-col b{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;opacity:.7}
 .v3-foot-col a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:500;color:var(--blue);padding:4px 0;text-decoration:none}
-.v3-foot-col a::after{content:"↗";font-size:.85em;opacity:.6}
+.v3-foot-col a::after{content:"→";font-size:.85em;opacity:.6}
 .v3-foot-col a:hover{opacity:.7}
 .v3-foot-legal{text-align:right}
 .v3-foot-legal a{display:block;font-size:14px;color:var(--blue);padding:4px 0;text-decoration:none}

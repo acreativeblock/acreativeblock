@@ -559,7 +559,7 @@ html,body{background-image:none!important}
 .hl,.ht,.hly{box-shadow:0 0 0 .5px transparent}
 
 /* CTA: arrow inside buttons + supporting line */
-.oh-close .btn::after,.oh-close-sub .btn::after,.oh-close .pill::after,.oh-close-sub .btn-out::after,.oh-close .btn-out::after{content:"↗";font-size:1.05em;margin-left:3px}
+.oh-close .btn::after,.oh-close-sub .btn::after,.oh-close .pill::after,.oh-close-sub .btn-out::after,.oh-close .btn-out::after{content:"→";font-size:1.05em;margin-left:3px}
 .oh-close .note,.oh-close-sub .note{font-size:clamp(15px,1.2vw,17px);line-height:1.55;color:var(--ink);max-width:48ch;margin:0}
 
 /* ================= refinements (v45) ================= */
