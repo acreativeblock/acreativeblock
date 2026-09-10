@@ -9,7 +9,8 @@ html body#acb-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important
 @media(min-width:1061px){html body#acb-design .oh-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}}
 html body#acb-design .oh-header .oh-nav{gap:32px;align-items:center}
 html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:Manrope,sans-serif!important;font-weight:500!important;font-size:18px!important;letter-spacing:0!important;border-radius:8px!important;transition:background-color .2s ease,color .2s ease!important}
-html body#acb-design .oh-header .navitem:hover .navbutton{color:#4f46e5!important;background:#eef2ff!important}
+html body#acb-design .oh-header .navitem:hover .navbutton,
+html body#acb-design .oh-header .navitem.is-active>.navbutton{color:#4f46e5!important;background:#eef2ff!important;text-decoration:none!important}
 html body#acb-design .oh-header .oh-social a:hover{color:#4f46e5!important}
 html body#acb-design .oh-header .oh-actions{display:flex;gap:24px;align-items:center;margin:0!important}
 html body#acb-design .oh-header .oh-sub{background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a}
