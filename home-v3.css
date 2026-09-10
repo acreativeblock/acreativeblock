@@ -127,7 +127,7 @@ body.home-page,body.home-page *{font-family:'Plus Jakarta Sans',-apple-system,Bl
 @media(max-width:520px){.hv-map-grid{grid-template-columns:1fr}}
 
 /* symptom & cause: no top padding */
-.oh-proof{padding-top:0}
+.acb-proof{padding-top:0}
 
 /* "You might be blocked by …" — animated rotating block name (Feeld-style) */
 .hv-blocked{text-align:center}

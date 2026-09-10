@@ -52,9 +52,9 @@
 (function(){
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   function anim(){
-    document.body.classList.add('oh-fade');
+    document.body.classList.add('acb-fade');
     if(rm)return;
-    var sel='main section>div:not(.track),main section h1,main section h2,main section h3,.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.oh-close-sub .wrap,.oh-two-col>*,.oh-offer-cards>*,.oh-proof-grid>*,.oh-block-tags,.rescat,.blog-card,.resitem,.bmcard,.faq-item';
+    var sel='main section>div:not(.track),main section h1,main section h2,main section h3,.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.acb-close-sub .wrap,.acb-two-col>*,.acb-offer-cards>*,.acb-proof-grid>*,.acb-block-tags,.rescat,.blog-card,.resitem,.bmcard,.faq-item';
     var els=[].slice.call(document.querySelectorAll(sel));
     if(!els.length)return;
     els.forEach(function(el){el.classList.add('rv');});
@@ -71,10 +71,10 @@
     var href=a.getAttribute('href')||'';
     if(a.target==='_blank'||a.hasAttribute('download'))return;
     if(!href||href.charAt(0)==='#'||/^(https?:|mailto:|tel:)/i.test(href))return;
-    e.preventDefault();document.body.classList.add('oh-leaving');
+    e.preventDefault();document.body.classList.add('acb-leaving');
     setTimeout(function(){location.href=href;},230);
   },true);
-  window.addEventListener('pageshow',function(ev){if(ev.persisted)document.body.classList.remove('oh-leaving');});
+  window.addEventListener('pageshow',function(ev){if(ev.persisted)document.body.classList.remove('acb-leaving');});
   if(document.readyState!=='loading')anim(); else document.addEventListener('DOMContentLoaded',anim);
 })();
 
@@ -83,7 +83,7 @@
   try{
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     if(!('IntersectionObserver' in window))return;
-    var sel='.section-head,.familiar .content,.trio>*,.price-card,.pack-card,.arc-card,.faq-item,.bmcard,.fxcard,.hv-panel,.hv-num,.oh-proof-grid>*,.access-note,.method-strip .method-step,.terrain-cols .tcol,.hv-tile,.hv-card';
+    var sel='.section-head,.familiar .content,.trio>*,.price-card,.pack-card,.arc-card,.faq-item,.bmcard,.fxcard,.hv-panel,.hv-num,.acb-proof-grid>*,.access-note,.method-strip .method-step,.terrain-cols .tcol,.hv-tile,.hv-card';
     var items=[].slice.call(document.querySelectorAll(sel));
     if(!items.length)return;
     items.forEach(function(el){el.classList.add('rvl');});
