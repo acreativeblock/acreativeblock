@@ -123,7 +123,7 @@
     }
     nodes.forEach(function(el){wrap(el);el._w=[].slice.call(el.querySelectorAll('.w'));el._hl=[].slice.call(el.querySelectorAll('.hl'));});
     function update(){
-      var vh=window.innerHeight,start=vh*0.61,end=vh*0.31;
+      var vh=window.innerHeight,start=vh*0.61,end=vh*0.5;
       nodes.forEach(function(el){
         var r=el.getBoundingClientRect();
         var prog=(start-r.top)/(start-end);prog=Math.min(1,Math.max(0,prog));

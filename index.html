@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="base.css?v=46">
   <link rel="stylesheet" href="home-v3.css?v=10">
   <link rel="stylesheet" href="white-home.css?v=8">
-<link rel="stylesheet" href="acb.css?v=34"></head>
+<link rel="stylesheet" href="acb.css?v=35"></head>
 <body id="acb-design" class="home-page">
   <header class="oh-header">
     <div class="inner">
@@ -123,7 +123,7 @@
 
   <canvas class="grain" aria-hidden="true"></canvas>
   <script src="grain.js?v=1"></script>
-  <script src="logo.js?v=8"></script>
+  <script src="logo.js?v=9"></script>
   <script>
     document.querySelectorAll('.oh-newsletter').forEach(function(form){form.addEventListener('submit',function(event){event.preventDefault();var button=form.querySelector('button');button.textContent='Thank you!';button.disabled=true;})});
     (function(){var header=document.querySelector('.oh-header'),toggle=document.querySelector('.mobile-menu-toggle');if(!header||!toggle)return;toggle.addEventListener('click',function(){var open=header.classList.toggle('oh-menu-open');toggle.textContent=open?'Close':'Menu';document.documentElement.style.overflow=open?'hidden':'';});header.querySelectorAll('.navbutton').forEach(function(button){button.addEventListener('click',function(){if(innerWidth>1060)return;button.parentElement.classList.toggle('is-open');});});})();
