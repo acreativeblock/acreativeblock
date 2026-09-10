@@ -47,7 +47,7 @@ html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n){color:#90909
 /* The reference's yellow/red split feature panel. */
 html body#acb-design.home-page main>.oh-proof>.wrap{padding:0!important;overflow:hidden;background:var(--acb-yellow)}
 html body#acb-design.home-page .oh-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0!important}
-html body#acb-design.home-page .oh-proof-copy{background:var(--acb-yellow)!important;min-height:0;padding:27.54px!important;justify-content:flex-start;gap:18.36px;color:var(--acb-red)}
+html body#acb-design.home-page .oh-proof-copy{background:var(--acb-yellow)!important;min-height:0;padding:clamp(20px,3vw,30px)!important;justify-content:flex-start;gap:18.36px;color:var(--acb-red)}
 html body#acb-design.home-page .oh-proof-copy h2{font-size:clamp(27.54px,4vw,53.24px)!important;line-height:.98;white-space:normal;letter-spacing:-.04em;margin:0!important;color:var(--acb-red)}
 html body#acb-design.home-page .oh-proof-copy .mono{color:var(--acb-red)!important;margin:0!important}
 html body#acb-design.home-page .oh-proof-copy p{font-size:20.2px!important;line-height:1.2;max-width:none;margin:0;color:var(--acb-red)}
@@ -594,10 +594,12 @@ html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:55.08px
 html body#acb-design,html body#acb-design *{font-weight:500!important}
 
 /* Less breathing room inside each section, top/bottom especially —
-   horizontal padding untouched. */
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding-top:34px!important;padding-bottom:34px!important}
-html body#acb-design:not(.home-page) :is(.secpad,.oh-section,.section){padding-top:34px!important;padding-bottom:34px!important}
-html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:34px!important;padding-bottom:34px!important}
+   horizontal padding untouched. Responsive: 20px on small screens up
+   to 30px at wider ones, matching the 30px target on a normal desktop
+   viewport. */
+html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding-top:clamp(20px,3vw,30px)!important;padding-bottom:clamp(20px,3vw,30px)!important}
+html body#acb-design:not(.home-page) :is(.secpad,.oh-section,.section){padding-top:clamp(20px,3vw,30px)!important;padding-bottom:clamp(20px,3vw,30px)!important}
+html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:clamp(20px,3vw,30px)!important;padding-bottom:clamp(20px,3vw,30px)!important}
 
 /* Header must never hide on scroll — same always-visible behavior on
    every page as the home page already has. */
@@ -634,3 +636,4 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big{font
 html body#acb-design:is(.individuals-page,.organisations-page) .leave p{font-size:clamp(24px,3.6vw,48px)!important;font-weight:700!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{font-weight:700!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-weight:700!important}
+html body#acb-design.home-page .oh-proof-copy{padding:clamp(20px,3vw,30px)!important}
