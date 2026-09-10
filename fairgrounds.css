@@ -7,8 +7,8 @@ html,html body#fairgrounds-design.home-page,html body#fairgrounds-design:not(.ho
 html body#fairgrounds-design .grain{display:none!important}
 html body#fairgrounds-design .oh-header{position:sticky!important;top:30px!important;width:calc(100% - 60px)!important;max-width:none!important;margin:30px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#fairgrounds-design .oh-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:10px 30px!important;gap:24px!important;min-height:56px}
-html body#fairgrounds-design .oh-header .oh-logo{background:none!important;padding:0!important;border-radius:0!important;flex-shrink:0;color:#4f46e5!important}
-html body#fairgrounds-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:36px!important}
+html body#fairgrounds-design .oh-header .oh-logo{background:#fff!important;padding:5px 13px!important;border-radius:12px!important;flex-shrink:0;color:#4f46e5!important}
+html body#fairgrounds-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
 html body#fairgrounds-design .oh-head-right{display:flex;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}
 html body#fairgrounds-design .oh-header .oh-nav{gap:32px;align-items:center}
 html body#fairgrounds-design .oh-header .navbutton,html body#fairgrounds-design .oh-header .oh-social a{color:#000!important;font-family:Inter,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important}
@@ -27,7 +27,7 @@ html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv
 html body#fairgrounds-design.home-page main>section:not(.hv-hero) *,html body#fairgrounds-design .oh-footer *{font-family:Inter,sans-serif!important;font-weight:400!important}
 html body#fairgrounds-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:Inter,sans-serif!important;letter-spacing:-.035em}
 html body#fairgrounds-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#fairgrounds-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:12px!important;font-family:Inter,sans-serif!important;font-size:16px!important;letter-spacing:0;padding:16px 20px!important;line-height:1.4}
-html body#fairgrounds-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--fg-teal)!important;padding:0!important;font-size:24px!important;line-height:1.2!important;letter-spacing:0!important;text-transform:none!important;margin:0 0 25px!important}
+html body#fairgrounds-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--fg-teal)!important;padding:0!important;font-size:14px!important;line-height:1.2!important;letter-spacing:.09em!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 20px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#fairgrounds-design.home-page main>.hv-say>.wrap{padding:48px 30px!important;text-align:left;display:block}
 html body#fairgrounds-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:40px!important;line-height:1.15!important;letter-spacing:0!important;text-wrap:wrap!important;color:#000!important}
@@ -240,7 +240,7 @@ html body#fairgrounds-design.home-page .oh-header{position:fixed!important;left:
 
 /* Taller hero with the text bubble centred (both axes). */
 html body#fairgrounds-design.home-page .hv-hero-grid{min-height:clamp(640px,88vh,920px)!important;align-items:center!important;justify-items:center!important;padding:40px calc((100vw - var(--site-width)) / 2)!important}
-html body#fairgrounds-design.home-page .hv-hero-copy{width:min(1060px,94%)!important;text-align:center!important;margin:0!important;padding:24px!important}
+html body#fairgrounds-design.home-page .hv-hero-copy{width:fit-content!important;max-width:min(94vw,900px)!important;text-align:center!important;margin:0!important;padding:24px 32px!important}
 html body#fairgrounds-design.home-page .hv-hero h1{font-size:18px!important;line-height:1.45!important;letter-spacing:-.01em!important;font-weight:400!important;white-space:nowrap!important}
 html body#fairgrounds-design.home-page .hv-hero .hv-cta{justify-content:center!important;margin-top:18px!important}
 
@@ -301,4 +301,19 @@ html body#fairgrounds-design.home-page .hv-say p .hl{
 }
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 48px). */
-html body#fairgrounds-design .oh-logo .acb-logo-mount{height:36px!important}
+html body#fairgrounds-design .oh-logo .acb-logo-mount{height:42px!important}
+
+/* ==========================================================================
+   SUBPAGE SECTION FRAMING — content pages match the home: grey field with
+   white 12px rounded section cards. Heroes and the yellow CTA are excluded.
+   Custom-layout pages keep their structure (they get typography/radius only).
+   ========================================================================== */
+html body#fairgrounds-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page){background:#f6f6f6!important}
+html body#fairgrounds-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section{background:#f6f6f6!important;background-image:none!important;margin:30px 0!important;padding:0!important;border:0!important}
+html body#fairgrounds-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.oh-close-sub):not(.close):not(.talks-section) > :is(.wrap,.in){
+  background:#fff!important;border-radius:12px!important;padding:clamp(28px,4vw,54px)!important;max-width:none!important;width:100%!important;box-shadow:none!important;
+}
+/* Section images sit flush and rounded like the home cards. */
+html body#fairgrounds-design.internal-page :is(figure,.split-img,.fam-img) img{border-radius:12px!important;display:block;width:100%}
+/* Consistent block colour cards still read on the white field. */
+html body#fairgrounds-design.internal-page :is(.card,.tcard,.startcard,.trio>*){background:#fff!important;border:1px solid #ececec!important}
