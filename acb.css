@@ -572,3 +572,11 @@ html body#acb-design:is(.individuals-page,.organisations-page) .startgrid .start
   html body#acb-design:is(.individuals-page,.organisations-page) .startgrid .startcard:nth-child(2){transform:none}
   html body#acb-design:is(.individuals-page,.organisations-page) .startgrid .startcard:nth-child(2):hover{transform:translateY(-6px)}
 }
+
+/* Tighten the internal-page section gap to match the home page's 60px
+   rhythm (was riding the shared --section-space var at 72-120px, which
+   is also used for the home cards' own internal padding — decoupled
+   here so that value stays untouched). */
+html body#acb-design:not(.home-page) :is(.secpad,.oh-section){padding-top:60px!important;padding-bottom:60px!important}
+html body#acb-design:not(.home-page) .section{padding-top:60px!important;padding-bottom:60px!important}
+html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:60px!important;padding-bottom:60px!important}
