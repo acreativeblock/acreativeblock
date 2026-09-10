@@ -30,7 +30,7 @@ html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover)
 html body#acb-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:12.85px!important;line-height:1.2!important;letter-spacing:.09em!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 18.36px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.hv-say>.wrap{padding:44.06px 27.54px!important;text-align:left;display:block}
-html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:36.72px!important;line-height:1.15!important;letter-spacing:0!important;text-wrap:wrap!important;color:var(--ink)!important}
+html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:36.72px!important;line-height:1.15!important;letter-spacing:-.03em!important;text-wrap:wrap!important;color:var(--ink)!important}
 html body#acb-design.home-page .hv-say p .hl{color:var(--ink)!important}
 html body#acb-design.home-page .hv-say .cln{display:block!important;margin-top:36.72px!important}
 html body#acb-design.home-page .hv-marq{background:#fff!important;border:0!important;padding:14.69px 0!important}
@@ -400,7 +400,7 @@ html body#acb-design.home-page main section.hv-banner .banner-in .pill{
   flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;
   width:100%;background:#4f46e5!important;color:#fff!important;border:0!important;
   border-radius:20.2px!important;font-size:clamp(25.7px,4.6vw,51.41px)!important;font-weight:700!important;
-  letter-spacing:-.02em!important;padding:clamp(23.87px,3.6vw,40.39px) 33.05px!important;
+  letter-spacing:-.045em!important;padding:clamp(23.87px,3.6vw,40.39px) 33.05px!important;
 }
 html body#acb-design.home-page main section.hv-banner .banner-in .pill:hover{background:#3f37c4!important}
 
@@ -624,3 +624,13 @@ html body#acb-design .oh-header .inner{padding-left:9.18px!important;padding-rig
 html body#acb-design.home-page .hv-banner .pill::after{content:none!important}
 html body#acb-design.home-page .hv-banner .pill .banner-title::after{content:" ↗"!important}
 html body#acb-design.home-page .hv-banner .pill .banner-title{display:block}
+
+/* for-individuals/for-organisations: match home's specific brand
+   accents — teal eyebrows (not indigo), bigger bolder headlines. */
+html body#acb-design:is(.individuals-page,.organisations-page) .aud-eyebrow{color:var(--acb-teal)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .aud-eyebrow{color:#E4E244!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-copy .mono{color:var(--acb-teal)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big{font-size:clamp(24px,3.8vw,50px)!important;font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .leave p{font-size:clamp(24px,3.6vw,48px)!important;font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-weight:700!important}
