@@ -620,7 +620,7 @@ sup.cite{font-size:0.558em;font-weight:600;color:var(--blue);vertical-align:supe
 .brow2-tags li{font-size:clamp(9.45px,0.8vw,10.8px)}
 .blocks-page .center-hero{padding-bottom:clamp(27px,4vw,54px)}
 
-/* final-v3: Manrope + squared corners across all subpages */
-:root{--sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
-body.internal-page,body.blog-index,body.resources-page,body.internal-page *,body.blog-index *,body.resources-page *{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500!important}
+/* final-v3: "Plus Jakarta Sans" + squared corners across all subpages */
+:root{--sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+body.internal-page,body.blog-index,body.resources-page,body.internal-page *,body.blog-index *,body.resources-page *{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500!important}
 .card,.price-card,.tcard,.split-img,.flush-img,.content-photo,.blog-card,.blog-art,.refpanel,.brow2-img,.brow2,.door,.arc-card,.callout,.faq-item,.statnum,.terrain-cols .tcol,.method-strip .method-step,.cform input,.cform textarea,.cform select,.blocks-rows,.oh-close-sub{border-radius:0!important}
