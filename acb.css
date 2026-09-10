@@ -245,12 +245,17 @@ html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!im
 html body#acb-design .oh-footer .acb-logo-mount{color:#fff!important}
 html body#acb-design .oh-footer :is(.top,.bottom,.foot-lead,.oh-newsletter){border-color:rgba(255,255,255,.25)!important}
 html body#acb-design .oh-footer input::placeholder{color:rgba(255,255,255,.7)!important}
-/* Increase distance between panels while retaining their inner padding. */
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:50px!important;margin-bottom:50px!important}
-html body#acb-design .oh-footer{margin-top:50px!important}
+/* Even rhythm between panels: 60px everywhere (the average of the old 50px
+   section gap and the ~100px it actually came out to before the footer,
+   since .oh-footer sits in its own wrapper and its margin-top doesn't
+   collapse with the previous section's margin-bottom like every other
+   pair does — so the footer side gets 0 and leans on the section's own
+   margin-bottom to make the same 60px, instead of doubling it). */
+html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:60px!important;margin-bottom:60px!important}
+html body#acb-design .oh-footer{margin-top:0!important}
 @media(max-width:760px){
- html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:40px!important;margin-bottom:40px!important}
- html body#acb-design .oh-footer{margin-top:40px!important}
+ html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:60px!important;margin-bottom:60px!important}
+ html body#acb-design .oh-footer{margin-top:0!important}
 }
 
 /* Manrope across all live typography; logo remains its original vector artwork. */
@@ -411,7 +416,7 @@ html body#acb-design .oh-logo .acb-logo-mount{height:42px!important}
    Custom-layout pages keep their structure (they get typography/radius only).
    ========================================================================== */
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page){background:#f6f6f6!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section{background:#f6f6f6!important;background-image:none!important;margin:30px 0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section{background:#f6f6f6!important;background-image:none!important;margin:60px 0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.oh-close-sub):not(.close):not(.talks-section) > :is(.wrap,.in){
   background:#fff!important;border-radius:12px!important;padding:clamp(28px,4vw,54px)!important;max-width:none!important;width:100%!important;box-shadow:none!important;
 }
@@ -441,12 +446,56 @@ html body#acb-design .refpanel .bd-list li::before{color:var(--pc)!important}
 html body#acb-design .refpanel .bd-under{font-size:16px!important;line-height:1.6!important}
 html body#acb-design .refpanel-close:hover{color:var(--pc)!important}
 
-/* The factors — terrain cards get a small icon badge (indigo tint, matching
-   the block-color-badge language used on the block map cards). */
-html body#acb-design.factors-page .tcard{display:flex!important;flex-direction:column;align-items:flex-start}
-html body#acb-design.factors-page .tcard-ic{
+/* Terrain cards (the-factors, our-method) get a small icon badge (indigo
+   tint, matching the block-color-badge language used on the block map). */
+html body#acb-design:is(.factors-page,.method-page) .tcard{display:flex!important;flex-direction:column;align-items:flex-start}
+html body#acb-design:is(.factors-page,.method-page) .tcard-ic{
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
   width:44px;height:44px;margin-bottom:14px;border-radius:12px!important;
   background:#eef2ff;color:#4f46e5;
 }
-html body#acb-design.factors-page .tcard-ic svg{width:22px;height:22px}
+html body#acb-design:is(.factors-page,.method-page) .tcard-ic svg{width:22px;height:22px}
+
+/* Instagram handle strip between the FAQ and closing CTA — minimal, one line,
+   the handle itself doing most of the talking. */
+html body#acb-design.home-page .hv-social>.wrap{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  flex-wrap:wrap;gap:20px;padding:26px 34px!important;
+}
+html body#acb-design.home-page .social-handle{
+  font-family:Manrope,sans-serif!important;font-weight:600;font-size:clamp(22px,3vw,34px);
+  letter-spacing:-.02em;color:#000!important;
+}
+html body#acb-design.home-page .social-handle:hover{color:#4f46e5!important}
+html body#acb-design.home-page .pill.social-follow{
+  display:inline-flex!important;align-items:center;gap:8px;flex:0 0 auto;
+}
+html body#acb-design.home-page .pill.social-follow svg{width:16px;height:16px}
+
+/* How we work — CRAFT method: five numbered steps in a row, connected by a
+   thin line, each in the same rounded-card language as the rest of the site. */
+html body#acb-design.method-page .craft-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;
+}
+html body#acb-design.method-page .craft-step{
+  position:relative;background:#fff;border-radius:12px;padding:26px 20px;
+  display:flex;flex-direction:column;gap:10px;
+}
+html body#acb-design.method-page .craft-step:not(:last-child)::after{
+  content:"";position:absolute;top:38px;left:100%;width:16px;height:2px;
+  background:#e0deee;z-index:1;
+}
+html body#acb-design.method-page .craft-num{
+  display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:12px;background:#4f46e5;color:#fff;font-weight:600;font-size:17px;
+}
+html body#acb-design.method-page .craft-step h3{font-size:19px;font-weight:600;letter-spacing:-.015em;margin:0;color:#000}
+html body#acb-design.method-page .craft-step p{font-size:14px;line-height:1.45;color:var(--ink-soft);margin:0}
+@media(max-width:1000px){
+  html body#acb-design.method-page .craft-steps{grid-template-columns:1fr 1fr}
+  html body#acb-design.method-page .craft-step:nth-child(2)::after,html body#acb-design.method-page .craft-step:nth-child(4)::after{display:none}
+}
+@media(max-width:620px){
+  html body#acb-design.method-page .craft-steps{grid-template-columns:1fr}
+  html body#acb-design.method-page .craft-step::after{display:none!important}
+}

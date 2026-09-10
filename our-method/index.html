@@ -1,166 +1,54 @@
-<!doctype html><html lang="en"><head><meta name="robots" content="index,follow,max-image-preview:large"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How we work — A Creative Block</title><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css?v=46"><link rel="stylesheet" href="../sections.css?v=26">
-<style>
-.om main{overflow-x:clip}
-.om .oh-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:60}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+<!doctype html><html lang="en"><head><meta name="robots" content="index,follow,max-image-preview:large"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How we work — A Creative Block</title><link rel="icon" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css?v=46"><link rel="stylesheet" href="../sections.css?v=26"><link rel="stylesheet" href="../white-pages.css?v=8"><link rel="stylesheet" href="../acb.css?v=33"></head><body id="acb-design" class="internal-page method-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
 
-/* stacked sections — each is pinned and the next scrolls up over it */
-.stack{position:relative}
-.ssec{position:sticky;top:0;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(104px,14vh,150px) var(--pad) clamp(64px,9vh,104px);background:var(--paper);box-shadow:0 -24px 60px rgba(8,19,33,.07)}
-.ssec>.in{width:100%;max-width:var(--wrap);margin:0 auto}
-.stitle{font-family:var(--sans);font-weight:500;font-size:clamp(30px,5vw,80px);line-height:1.03;letter-spacing:-.035em;color:var(--ink);margin:0;text-wrap:balance}
-.stitle .dots{color:var(--blue)}
-.ssub{margin:clamp(16px,2vw,24px) 0 0;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:var(--ink-soft);max-width:52ch;text-wrap:pretty}
-.sdown{position:absolute;left:50%;bottom:clamp(16px,2.6vh,30px);transform:translateX(-50%);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;gap:5px}
-.sdown::after{content:"↓";font-size:18px;animation:bob 1.7s ease-in-out infinite}
+<section class="center-hero"><div class="wrap">
+  <span class="mono">How we work</span>
+  <h1><span class="ln">Understand the why.</span><br><span class="ln">Then move.</span></h1>
+  <p>One repeatable shape we follow across a handful of sessions—not a script, a way of reading what's actually going on before we respond to it.</p>
+</div></section>
 
-/* hero */
-.s-hero{text-align:center;background:var(--paper);box-shadow:none}
-.s-hero .mono{color:var(--blue);display:block;margin-bottom:clamp(16px,2vw,26px)}
-.s-hero h1{font-family:var(--sans);font-weight:500;font-size:clamp(40px,7vw,116px);line-height:1;letter-spacing:-.04em;margin:0 auto;max-width:14ch;color:var(--ink)}
-
-/* 1 · carrying — two offer-style panels with toggles */
-.s-carry .stitle{margin-bottom:clamp(28px,4vh,50px);max-width:20ch}
-.carry{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
-.carry-panel{padding:clamp(26px,2.6vw,42px);color:#fff}
-.carry-panel.fixed{background:var(--blue)}
-.carry-panel.move{background:var(--pink);color:var(--ink)}
-.carry-panel .pe{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;display:block;margin-bottom:clamp(16px,2vw,24px)}
-.carry-panel.fixed .pe{color:var(--yellow);opacity:1}
-.carry-item{border-top:1px solid rgba(255,255,255,.28)}
-.carry-panel.move .carry-item{border-top-color:rgba(18,18,18,.2)}
-.carry-item:last-child{border-bottom:1px solid rgba(255,255,255,.28)}
-.carry-panel.move .carry-item:last-child{border-bottom-color:rgba(18,18,18,.2)}
-.carry-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;color:inherit;font-family:var(--sans);font-weight:500;font-size:clamp(19px,1.9vw,28px);letter-spacing:-.015em;padding:clamp(14px,1.6vw,20px) 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.carry-q::after{content:"+";font-size:22px;line-height:1;opacity:.8}
-.carry-item.open .carry-q::after{content:"–"}
-.carry-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.carry-item.open .carry-a{max-height:200px}
-.carry-a p{margin:0;padding:0 0 clamp(16px,1.6vw,20px);font-size:14.5px;line-height:1.5;opacity:.9;max-width:44ch}
-@media(max-width:760px){.carry{grid-template-columns:1fr}}
-
-/* 2 · state scale (dark) */
-.s-state{background:#034748;color:#fff;text-align:center}
-.s-state .stitle{color:#fff;margin:0 auto;max-width:18ch}
-.scale{max-width:760px;margin:clamp(40px,7vh,90px) auto 0}
-.scale-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(16px,3vw,44px)}
-.scale-lab{font-size:clamp(14px,1.4vw,20px);color:rgba(255,255,255,.66)}
-.scale-beamwrap{position:relative;height:64px}
-.scale-beam{position:absolute;left:0;right:0;top:28px;height:6px;background:#fff;transform-origin:center;transform:rotate(-7deg);transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
-.scale-beam::before,.scale-beam::after{content:"";position:absolute;top:50%;width:13px;height:13px;border-radius:50%;background:#fff;transform:translateY(-50%)}
-.scale-beam::before{left:-2px}.scale-beam::after{right:-2px}
-.scale.bal .scale-beam{transform:rotate(0deg)}
-.scale-pivot{position:absolute;left:50%;top:31px;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-bottom:24px solid var(--yellow)}
-.scale-reg{margin-top:20px;font-family:var(--sans);font-weight:500;font-size:clamp(18px,1.8vw,26px);letter-spacing:-.01em;color:rgba(255,255,255,.5);transition:color .7s}
-.scale.bal .scale-reg{color:var(--yellow)}
-@media(max-width:520px){.scale-lab{font-size:13px}}
-
-/* 3 · stuck — big text + button */
-.s-stuck{background:var(--tint)}
-.s-stuck .in{max-width:1000px}
-.s-stuck .stitle{max-width:16ch}
-.s-stuck .cta{margin-top:clamp(28px,3.4vw,44px)}
-
-/* 4 · CRAFT — huge letters, hover reveals card, arrows */
-.s-craft{text-align:center}
-.s-craft .stitle{max-width:22ch;margin:0 auto}
-.s-craft .ssub{margin-left:auto;margin-right:auto;text-align:center}
-.craftbig{display:flex;align-items:flex-start;justify-content:center;gap:clamp(2px,.6vw,10px);flex-wrap:nowrap;margin-top:clamp(30px,5vh,64px)}
-.cl{display:flex;flex-direction:column;align-items:center;flex:0 0 auto;width:clamp(96px,15vw,210px)}
-.cl .L{font-family:var(--sans);font-weight:500;font-size:clamp(52px,9.5vw,168px);line-height:.78;letter-spacing:-.05em;color:var(--blue);transition:transform .25s}
-.cl:hover .L{transform:translateY(-4px)}
-.cl.c1 .L{color:#F6D65D}.cl.c2 .L{color:#e35d54}.cl.c3 .L{color:#9a8ff2}.cl.c4 .L{color:#5f9dd6}.cl.c5 .L{color:var(--ink)}
-.cc{margin-top:clamp(14px,1.8vw,24px);border:1px solid var(--line);background:#fff;padding:clamp(14px,1.4vw,20px) clamp(10px,1vw,16px);width:100%;min-height:clamp(112px,14vh,150px);display:flex;flex-direction:column;justify-content:center;opacity:.4;transition:opacity .3s,border-color .3s,transform .3s}
-.cl:hover .cc{opacity:1;border-color:var(--ink);transform:translateY(-3px)}
-.cc strong{display:block;font-family:var(--sans);font-weight:500;font-size:clamp(14px,1.3vw,19px);letter-spacing:-.01em;color:var(--ink);margin-bottom:6px}
-.cc span{font-size:12px;line-height:1.35;color:var(--ink-soft)}
-.carrow{align-self:flex-start;margin-top:clamp(24px,4.2vw,72px);font-size:clamp(20px,2.4vw,34px);color:var(--ink-soft);flex:0 0 auto}
-@media(max-width:760px){
-  .craftbig{flex-direction:column;align-items:stretch;max-width:360px;margin-left:auto;margin-right:auto;gap:0}
-  .cl{width:100%;flex-direction:row;align-items:center;gap:18px}
-  .cl .L{font-size:64px;width:1.4em;text-align:center}
-  .cc{opacity:1;min-height:0;text-align:left;margin-top:0}
-  .carrow{align-self:center;margin:6px 0;transform:rotate(90deg)}
-}
-
-/* FAQ + CTA (normal flow, after the stack) */
-.s-faq{padding:clamp(90px,12vh,150px) var(--pad)}
-.s-faq .in{max-width:var(--wrap);margin:0 auto}
-.s-faq .head{text-align:center;margin-bottom:clamp(30px,4vh,54px)}
-.s-faq .eyebrow{color:var(--blue)}
-.s-faq h2{font-family:var(--sans);font-weight:500;font-size:clamp(26px,3.6vw,50px);letter-spacing:-.03em;margin:6px 0 0;color:var(--ink)}
-</style>
-<link rel="stylesheet" href="../white-pages.css?v=8"><link rel="stylesheet" href="../acb.css?v=29"></head><body id="acb-design" class="internal-page method-page om"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
-
-<div class="stack">
-
-  <!-- HERO -->
-  <section class="ssec s-hero" style="z-index:1"><div class="in">
-    <span class="mono">How we work</span>
-    <h1>Understand the why. Then move.</h1>
-  </div><span class="sdown">Scroll to begin</span></section>
-
-  <!-- 1 · CARRYING -->
-  <section class="ssec s-carry" style="z-index:2"><div class="in">
-    <h2 class="stitle">First, we look at what you're carrying.</h2>
-    <div class="carry">
-      <div class="carry-panel fixed">
-        <span class="pe">What's fixed</span>
-        <div class="carry-item"><button class="carry-q" type="button">Personality</button><div class="carry-a"><p>Stable traits shaping how you meet uncertainty, evaluation and unfinished work. We design around your wiring, never against it.</p></div></div>
-        <div class="carry-item"><button class="carry-q" type="button">How your mind works</button><div class="carry-a"><p>Attention, memory and processing differ from person to person. We work with your mind, not against a template of someone else's.</p></div></div>
-        <div class="carry-item"><button class="carry-q" type="button">Mental-health context</button><div class="carry-a"><p>Anxiety or low mood change the ground you work on. We stay in scope, and refer on when a block is really something else.</p></div></div>
-      </div>
-      <div class="carry-panel move">
-        <span class="pe">What can move</span>
-        <div class="carry-item"><button class="carry-q" type="button">Motivation</button><div class="carry-a"><p>Why the work matters, and whether the reason still pulls. Motivation can be rebuilt, reconnected, or honestly renegotiated.</p></div></div>
-        <div class="carry-item"><button class="carry-q" type="button">Mood &amp; energy</button><div class="carry-a"><p>Your fuel on the day. Both flat and over-activated states narrow creative thinking—so we read it before pushing.</p></div></div>
-        <div class="carry-item"><button class="carry-q" type="button">Environment</button><div class="carry-a"><p>Time, space, interruptions, feedback and the people around the work. Often the fastest thing to change is the conditions, not the person.</p></div></div>
-      </div>
+<section class="section tint"><div class="wrap">
+  <div class="section-head stack"><div class="eyebrow">Step 1</div><div><h2 class="display">First, we look at what you're carrying.</h2><p>Some of it is fixed, some of it can move—naming which is which keeps us from prescribing before we understand.</p></div></div>
+  <div class="terrain-cols">
+    <div class="tcol"><span class="eyebrow">Mostly fixed</span>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a8 8 0 0 1 8 8v2.5"/><path d="M4 14.5V12a8 8 0 0 1 3-6.2"/><path d="M8 19c-1.2-2-1.8-4.2-1.8-6.5A5.8 5.8 0 0 1 12 6.7a5.8 5.8 0 0 1 5.8 5.8c0 1.6-.2 3-.7 4.3"/><path d="M9.6 19.3c-.7-1.7-1-3.3-1-5A3.4 3.4 0 0 1 12 10.9a3.4 3.4 0 0 1 3.4 3.4c0 1-.1 2-.4 3"/><path d="M12 14v2"/></svg></span><h3>Personality</h3><p>Stable traits shaping how you meet uncertainty, evaluation and unfinished work. We design around your wiring, never against it.</p></div>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5a3 3 0 0 0-3 3c0 .3 0 .6.1.9A3 3 0 0 0 5 11a3 3 0 0 0 1.3 2.5 3 3 0 0 0-.3 1.3A3 3 0 0 0 9 18h.2"/><path d="M15 4.5a3 3 0 0 1 3 3c0 .3 0 .6-.1.9a3 3 0 0 1 1.1 2.6 3 3 0 0 1-1.3 2.5c.2.4.3.8.3 1.3a3 3 0 0 1-3.2 3h-.2"/><path d="M9 4.5c.6-.7 1.6-1 3-1s2.4.3 3 1"/><path d="M9.2 18c.5.7 1.5 1 2.8 1s2.3-.3 2.8-1"/><path d="M12 4v14"/></svg></span><h3>How your mind works</h3><p>Attention, memory and processing differ from person to person. We work with your mind, not against a template of someone else's.</p></div>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.5s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 6.3 4.5 4.5 0 0 1 19.5 9.5c0 5.4-7.5 10-7.5 10Z"/><path d="M6.5 10.5h2.3l1.1-2 1.6 3.6 1-1.6h3"/></svg></span><h3>Mental-health context</h3><p>Anxiety or low mood change the ground you work on. We stay in scope, and refer on when a block is really something else.</p></div>
     </div>
-  </div><span class="sdown">Keep scrolling</span></section>
-
-  <!-- 2 · STATE SCALE -->
-  <section class="ssec s-state" style="z-index:3" data-scale><div class="in">
-    <h2 class="stitle"><span class="dots">…</span>and how you are feeling.</h2>
-    <div class="scale">
-      <div class="scale-row">
-        <span class="scale-lab">Empty</span>
-        <div class="scale-beamwrap"><div class="scale-beam"></div><div class="scale-pivot"></div></div>
-        <span class="scale-lab">Flooded</span>
-      </div>
-      <div class="scale-reg">Regulated</div>
+    <div class="tcol movable"><span class="eyebrow">More movable</span>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.5 2 .2 3.3-.8 4.6-1.2 1.5-2.7 2.6-2.7 5a3.5 3.5 0 0 0 7 0c0-1-.3-1.7-.8-2.4.9.6 1.3 1.6 1.3 2.9a4.5 4.5 0 0 1-9 0c0-3.7 2.2-5 3.3-6.6.7-1 1-2 .7-3.5Z"/></svg></span><h3>Motivation</h3><p>Why the work matters, and whether the reason still pulls. Motivation can be rebuilt, reconnected, or honestly renegotiated.</p></div>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M12 15l3.5-4"/><path d="M4 15h1.2M18.8 15H20M6.3 9.3l.9.9M17.7 9.3l-.9.9"/></svg></span><h3>Mood &amp; energy</h3><p>Your fuel on the day. Both flat and over-activated states narrow creative thinking—so we read it before pushing.</p></div>
+      <div class="tcard"><span class="tcard-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-7"/><path d="M12 13c0-3 2-5 5.5-5.3C17.3 11.3 15 13 12 13Z"/><path d="M12 15.5c0-2.5-1.7-4.2-4.7-4.5C7.5 14.3 9.3 15.8 12 15.5Z"/></svg></span><h3>Environment</h3><p>Time, space, interruptions, feedback and the people around the work. Often the fastest thing to change is the conditions, not the person.</p></div>
     </div>
-  </div><span class="sdown" style="color:rgba(255,255,255,.6)">Keep scrolling</span></section>
+  </div>
+</div></section>
 
-  <!-- 3 · STUCK / 7+1 intro -->
-  <section class="ssec s-stuck" style="z-index:4"><div class="in">
-    <h2 class="stitle"><span class="dots">…</span>now, where is the work really stuck?</h2>
-    <p class="ssub">The same stuck feeling can trace to very different causes. We name the mechanism—seven domains where creative work gets stuck, plus one look-alike that isn't a block at all—so we work on the real thing, not the surface.</p>
-    <div class="cta"><a class="btn" href="../the-block-map/">See the 7+1 map</a></div>
-  </div><span class="sdown">Keep scrolling</span></section>
+<section class="section"><div class="wrap">
+  <div class="section-head center"><div class="eyebrow">Step 2</div><div><h2 class="display">...and how you are feeling.</h2><p>Before anything else we read your state, because activation changes what the work needs right now.</p></div></div>
+  <div class="trio">
+    <div class="card"><h3>Flooded</h3><p>Pressure or threat is too high. The first move is to bring it down—not to demand more effort.</p></div>
+    <div class="card"><h3>Empty</h3><p>Fuel or engagement is too low. The first move is to restore capacity—not to push through.</p></div>
+    <div class="card"><h3>Regulated</h3><p>Enough activation to engage without overwhelm. This is where real creative work happens.</p></div>
+  </div>
+</div></section>
 
-  <!-- 4 · CRAFT -->
-  <section class="ssec s-craft" style="z-index:5"><div class="in">
-    <h2 class="stitle"><span class="dots">…</span>and how do we do all of this?</h2>
-    <p class="ssub">One repeatable shape we follow across a handful of sessions. Hover a letter to see the step.</p>
-    <div class="craftbig">
-      <div class="cl c1"><span class="L">C</span><div class="cc"><strong>Clarify</strong><span>What's stuck, and what only looks stuck.</span></div></div>
-      <span class="carrow">→</span>
-      <div class="cl c2"><span class="L">R</span><div class="cc"><strong>Regulate</strong><span>Settle your state so the work feels possible.</span></div></div>
-      <span class="carrow">→</span>
-      <div class="cl c3"><span class="L">A</span><div class="cc"><strong>Address</strong><span>Meet the real cause, not the symptom.</span></div></div>
-      <span class="carrow">→</span>
-      <div class="cl c4"><span class="L">F</span><div class="cc"><strong>Form</strong><span>Turn insight into one concrete next move.</span></div></div>
-      <span class="carrow">→</span>
-      <div class="cl c5"><span class="L">T</span><div class="cc"><strong>Test</strong><span>Try it, adjust—until you can do it without us.</span></div></div>
-    </div>
-  </div></section>
+<section class="section tint"><div class="wrap">
+  <div class="section-head center"><div class="eyebrow">Step 3</div><div><h2 class="display">...now, where is the work really stuck?</h2><p>The same stuck feeling can trace to very different causes. We name the mechanism—seven domains where creative work gets stuck, plus one look-alike that isn't a block at all—so we work on the real thing, not the surface.</p></div></div>
+  <div class="cta center" style="display:flex;justify-content:center"><a class="btn" href="../the-block-map/">See the 7+1 map</a></div>
+</div></section>
 
-</div>
+<section class="section"><div class="wrap">
+  <div class="section-head center"><div class="eyebrow">Step 4 · The CRAFT method</div><div><h2 class="display">...and how do we do all of this?</h2><p>One repeatable shape, across a handful of sessions.</p></div></div>
+  <div class="craft-steps">
+    <div class="craft-step"><span class="craft-num">1</span><h3>Clarify</h3><p>What's stuck, and what only looks stuck.</p></div>
+    <div class="craft-step"><span class="craft-num">2</span><h3>Regulate</h3><p>Settle your state so the work feels possible.</p></div>
+    <div class="craft-step"><span class="craft-num">3</span><h3>Address</h3><p>Meet the real cause, not the symptom.</p></div>
+    <div class="craft-step"><span class="craft-num">4</span><h3>Form</h3><p>Turn insight into one concrete next move.</p></div>
+    <div class="craft-step"><span class="craft-num">5</span><h3>Test</h3><p>Try it, adjust—until you can do it without us.</p></div>
+  </div>
+</div></section>
 
-<!-- FAQ -->
-<section class="s-faq"><div class="in">
-  <div class="head"><span class="eyebrow">Questions</span><h2>The things people ask about how we work.</h2></div>
+<section class="section"><div class="wrap">
+  <div class="section-head center"><div class="eyebrow">Questions</div><div><h2 class="display">The things people ask about how we work.</h2></div></div>
   <div class="faq-list">
     <div class="faq-item"><button class="faq-q" type="button">Is this coaching or therapy?</button><div class="faq-a"><p>Coaching and creative consulting—not therapy. We work on the block and the project in front of you, and if something sits deeper than our remit, we say so and help you find the right support.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button">Do I need to name my block before we start?</button><div class="faq-a"><p>No. A real project and a sense of what keeps happening instead is enough—naming the block is part of the work, not a prerequisite.</p></div></div>
@@ -172,15 +60,4 @@
 <section class="oh-close-sub"><div class="wrap"><h2>When you're ready, bring the work.</h2><div class="cta"><a class="btn dark" href="../contact/">Contact us</a></div></div></section>
 
 </main><div data-site-footer></div></div>
-<script>
-(function(){
-  // carrying toggles
-  document.querySelectorAll('.carry-q').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('open');});});
-  // state scale balances when the section comes into view
-  var scale=document.querySelector('[data-scale] .scale');
-  if(scale&&'IntersectionObserver' in window){
-    new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)scale.classList.add('bal');});},{threshold:.4}).observe(document.querySelector('[data-scale]'));
-  }else if(scale){scale.classList.add('bal');}
-})();
-</script>
 <script src="../site.js?v=46"></script><script src="../logo.js?v=8"></script></body></html>
