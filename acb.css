@@ -8,8 +8,9 @@ html body#acb-design .oh-header .oh-logo{background:#fff!important;padding:5px 1
 html body#acb-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
 @media(min-width:1061px){html body#acb-design .oh-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}}
 html body#acb-design .oh-header .oh-nav{gap:32px;align-items:center}
-html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:Manrope,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important}
-html body#acb-design .oh-header .navitem:hover .navbutton{color:#000!important}
+html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:Manrope,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important;border-radius:8px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .oh-header .navitem:hover .navbutton{color:#4f46e5!important;background:#eef2ff!important}
+html body#acb-design .oh-header .oh-social a:hover{color:#4f46e5!important}
 html body#acb-design .oh-header .oh-actions{display:flex;gap:24px;align-items:center;margin:0!important}
 html body#acb-design .oh-header .oh-sub{background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a}
 html body#acb-design .oh-header .oh-sub a{color:#000!important;font-family:Manrope,sans-serif!important;font-size:18px!important}
@@ -207,7 +208,7 @@ html body#acb-design .oh-header .navbutton{text-transform:none!important}
 html body#acb-design .oh-proof-grid{align-items:stretch}
 html body#acb-design .oh-proof-image{position:relative;min-height:440px;height:auto}
 html body#acb-design .oh-proof-image img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover}
-html body#acb-design .oh-header .navbutton{padding:0!important}
+html body#acb-design .oh-header .navbutton{padding:6px 10px!important;margin:-6px -10px!important}
 html body#acb-design .oh-header .oh-social{display:none}
 @media(max-width:760px){html body#acb-design .oh-proof-image{height:320px;min-height:0}}
 html body#acb-design .hv-say .hl{background:none!important;padding:0!important}
