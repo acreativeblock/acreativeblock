@@ -407,10 +407,10 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 }
 
 /* v17 — restored two-tier header and viewport-composed opening */
-:root{--oh-head-h:78.2px;--oh-marquee-h:68px;--oh-next-peek:222.7px}
+:root{--header-h:78.2px;--marquee-h:68px;--next-peek:222.7px}
 .oh-header{border-bottom:0}
 .oh-header .inner{
-  height:var(--oh-head-h);box-sizing:border-box;display:grid;
+  height:var(--header-h);box-sizing:border-box;display:grid;
   grid-template-columns:1fr auto 1fr;align-items:center;
   gap:clamp(12.24px,2.4vw,30.6px);padding-top:0;padding-bottom:0
 }
@@ -428,7 +428,7 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 .oh-nav a,.oh-nav button{font-size:9.18px}
 
 .oh-hero{
-  height:calc(100svh - var(--oh-head-h) - var(--oh-marquee-h) - var(--oh-next-peek));
+  height:calc(100svh - var(--header-h) - var(--marquee-h) - var(--next-peek));
   min-height:273.11px;padding:0
 }
 .oh-hero>.wrap{height:100%;max-width:none;padding:0}
@@ -438,19 +438,19 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 .oh-hero .lead{font-size:clamp(10.4px,1.062vw,13.01px);margin-top:13.01px}
 .oh-hero .cta{margin-top:18.21px}
 .oh-hero-img,.oh-hero-img img{width:100%;height:100%;min-height:0;border-radius:0}
-.oh-marquee{min-height:var(--oh-marquee-h);box-sizing:border-box;margin:0;padding:clamp(8.45px,1.275vw,13.01px) 0;display:flex;align-items:center}
+.oh-marquee{min-height:var(--marquee-h);box-sizing:border-box;margin:0;padding:clamp(8.45px,1.275vw,13.01px) 0;display:flex;align-items:center}
 .oh-marquee .track{font-size:15.61px;line-height:1}
 
 @media(max-width:1060px){
-  :root{--oh-head-h:66.3px;--oh-marquee-h:66.3px;--oh-next-peek:44.2px}
-  .oh-header .inner{height:var(--oh-head-h);display:flex;padding-top:9.18px;padding-bottom:9.18px}
+  :root{--header-h:66.3px;--marquee-h:66.3px;--next-peek:44.2px}
+  .oh-header .inner{height:var(--header-h);display:flex;padding-top:9.18px;padding-bottom:9.18px}
   .oh-head-right{display:none}.mobile-menu-toggle{display:inline-block;margin-left:auto}.oh-logo .acb-logo-mount{height:39.78px}
   .oh-header.oh-menu-open .oh-head-right{position:fixed;inset:0;z-index:61;display:flex;flex-direction:column;align-items:stretch;padding:80.33px 18.36px 26.01px;background:var(--blue);overflow-y:auto}
   .oh-header.oh-menu-open .oh-nav{order:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;border-top:0;padding-top:0}
   .oh-header.oh-menu-open .oh-actions{order:1;display:flex;flex-wrap:wrap;justify-content:flex-start;margin-top:21.42px;padding-top:18.36px;border-top:0.77px solid rgba(255,255,255,.35)}
 }
 @media(max-width:860px){
-  .oh-hero{height:calc(100svh - var(--oh-head-h) - var(--oh-marquee-h) - var(--oh-next-peek));min-height:325.12px}
+  .oh-hero{height:calc(100svh - var(--header-h) - var(--marquee-h) - var(--next-peek));min-height:325.12px}
   .oh-hero .grid{height:100%;grid-template-columns:1fr;grid-template-rows:52% 48%;gap:0}
   .oh-hero-copy{min-height:0;padding:14.31px var(--pad)}
   .oh-hero h1{font-size:clamp(18.21px,7.65vw,27.31px)}

@@ -1,24 +1,24 @@
 /* Measured from the live A Creative Block homepage. */
-:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--copy:#000;--muted:#000;--ink:#000;--ink-soft:#000;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:25.5px}
-html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:#000;background-image:none!important}
+:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--copy:#071321;--muted:#071321;--ink:#071321;--ink-soft:#071321;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:25.5px}
+html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
 html body#acb-design .grain{display:none!important}
-html body#acb-design .oh-header{position:sticky!important;top:20.4px!important;width:calc(100% - 51px)!important;max-width:none!important;margin:20.4px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:10.2px!important;box-shadow:0 1.7px 3.4px #a19ea81a;backdrop-filter:none!important;z-index:60}
+html body#acb-design .oh-header{position:sticky!important;top:20.4px!important;width:calc(100% - 51px)!important;max-width:none!important;margin:20.4px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:10.2px!important;box-shadow:0 1.7px 3.4px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#acb-design .oh-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:8.5px 25.5px!important;gap:20.4px!important;min-height:47.6px}
 html body#acb-design .oh-header .oh-logo{background:#fff!important;padding:4.25px 11.05px!important;border-radius:10.2px!important;flex-shrink:0;color:#4f46e5!important}
 html body#acb-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:35.7px!important}
 @media(min-width:1061px){html body#acb-design .oh-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:27.2px!important}}
 html body#acb-design .oh-header .oh-nav{gap:27.2px;align-items:center}
-html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:15.3px!important;letter-spacing:0!important;border-radius:6.8px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:var(--ink)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:15.3px!important;letter-spacing:0!important;border-radius:6.8px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .oh-header .navitem:hover .navbutton,
 html body#acb-design .oh-header .navitem.is-active>.navbutton{color:#4f46e5!important;background:#eef2ff!important;text-decoration:none!important}
 html body#acb-design .oh-header .oh-social a:hover{color:#4f46e5!important}
 html body#acb-design .oh-header .oh-actions{display:flex;gap:20.4px;align-items:center;margin:0!important}
-html body#acb-design .oh-header .oh-sub{background:#fff!important;color:#000!important;border:0!important;border-radius:10.2px!important;box-shadow:0 1.7px 3.4px #a19ea81a}
-html body#acb-design .oh-header .oh-sub a{color:#000!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:15.3px!important;border-radius:6.8px!important;padding:6.8px 8.5px!important;margin:0 -8.5px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .oh-header .oh-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:10.2px!important;box-shadow:0 1.7px 3.4px #a19ea81a}
+html body#acb-design .oh-header .oh-sub a{color:var(--ink)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:15.3px!important;border-radius:6.8px!important;padding:6.8px 8.5px!important;margin:0 -8.5px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .oh-header .oh-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
 html body#acb-design .oh-header .oh-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:8.5px 15.3px!important;border-radius:10.2px!important;white-space:nowrap}
 /* Original hero composition, image, copy and type. */
-html body#acb-design.home-page .hv-hero{--pad:clamp(17px,4vw,61.2px);--copy:#000000;--muted:#000000;--brand:#4f46e5;--action:#E4E244}
+html body#acb-design.home-page .hv-hero{--pad:clamp(17px,4vw,61.2px);--copy:var(--ink);--muted:var(--ink);--brand:#4f46e5;--action:#E4E244}
 html body#acb-design.home-page .hv-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
 html body#acb-design.home-page .hv-hero .pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
 /* A Creative Block uses 25.5px outer gutters, 10.2px corners and no panel outlines. */
@@ -30,8 +30,8 @@ html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover)
 html body#acb-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:11.9px!important;line-height:1.2!important;letter-spacing:.09em!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 17px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.hv-say>.wrap{padding:40.8px 25.5px!important;text-align:left;display:block}
-html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:34px!important;line-height:1.15!important;letter-spacing:0!important;text-wrap:wrap!important;color:#000!important}
-html body#acb-design.home-page .hv-say p .hl{color:#000!important}
+html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:34px!important;line-height:1.15!important;letter-spacing:0!important;text-wrap:wrap!important;color:var(--ink)!important}
+html body#acb-design.home-page .hv-say p .hl{color:var(--ink)!important}
 html body#acb-design.home-page .hv-say .cln{display:block!important;margin-top:34px!important}
 html body#acb-design.home-page .hv-marq{background:#fff!important;border:0!important;padding:13.6px 0!important}
 html body#acb-design.home-page .hv-marq .track{font-size:15.3px}
@@ -55,22 +55,22 @@ html body#acb-design.home-page .oh-proof-image{margin:0;height:100%;min-height:3
 html body#acb-design.home-page .oh-proof-image img{width:100%;height:100%;object-fit:cover}
 html body#acb-design.home-page .hv-look{text-align:left}
 html body#acb-design.home-page .hv-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:20.4px 25.5px}
-html body#acb-design.home-page .hv-look h2{grid-row:span 2;font-size:clamp(23.8px,3.6vw,44.2px);line-height:1.02;max-width:none;margin:0;color:#000!important}
-html body#acb-design.home-page .hv-look p{font-size:20.4px;line-height:1.25;max-width:none;margin:0;color:#000!important}
+html body#acb-design.home-page .hv-look h2{grid-row:span 2;font-size:clamp(23.8px,3.6vw,44.2px);line-height:1.02;max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .hv-look p{font-size:20.4px;line-height:1.25;max-width:none;margin:0;color:var(--ink)!important}
 html body#acb-design.home-page .hv-look .cta{justify-content:flex-start;margin:0}
 /* Wide carousel, without outlines or coloured text boxes. */
 html body#acb-design.home-page main>.hv-carousel>.wrap{background:transparent;padding:15.3px 0 0!important}
-html body#acb-design.home-page .hv-h2{font-size:clamp(25.5px,4.2vw,51px);line-height:.98;max-width:none;color:#000}
+html body#acb-design.home-page .hv-h2{font-size:clamp(25.5px,4.2vw,51px);line-height:.98;max-width:none;color:var(--ink)}
 html body#acb-design.home-page .caro-head{gap:25.5px;margin-bottom:25.5px}
 html body#acb-design.home-page .caro-intro{font-size:18.7px;line-height:1.25;max-width:none}
 html body#acb-design.home-page .ccard{border:0!important;border-radius:10.2px;min-height:221px;flex:0 0 31%;background:#fff;padding:25.5px;gap:13.6px}
-html body#acb-design.home-page .ccard .clabel{padding:0;background:none;color:#000;font-size:15.3px;letter-spacing:0;text-transform:none}
+html body#acb-design.home-page .ccard .clabel{padding:0;background:none;color:var(--ink);font-size:15.3px;letter-spacing:0;text-transform:none}
 html body#acb-design.home-page .ccard .cnum{font-family:"Plus Jakarta Sans",sans-serif!important;font-size:54.4px;color:var(--acb-teal)!important}
-html body#acb-design.home-page .ccard h3{font-size:25.5px;line-height:1.05;color:#000}
-html body#acb-design.home-page .ccard p{font-size:17px;line-height:1.2;color:#000}
+html body#acb-design.home-page .ccard h3{font-size:25.5px;line-height:1.05;color:var(--ink)}
+html body#acb-design.home-page .ccard p{font-size:17px;line-height:1.2;color:var(--ink)}
 html body#acb-design.home-page .caro-nav,html body#acb-design.home-page .caro-nav:hover{border:0!important;border-radius:10.2px;background:#4f46e5!important;color:#fff!important}
 html body#acb-design.home-page .hv-offer{gap:25.5px}
-html body#acb-design.home-page .hv-offer .hv-panel{border:0!important;border-radius:10.2px;background:#f6f6f6!important;padding:25.5px!important;color:#000!important}
+html body#acb-design.home-page .hv-offer .hv-panel{border:0!important;border-radius:10.2px;background:#f6f6f6!important;padding:25.5px!important;color:var(--ink)!important}
 html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2){background:#4f46e5!important;color:#f591b8!important}
 html body#acb-design.home-page .hv-panel h2{font-size:clamp(30.6px,4vw,52.7px);line-height:1.02;margin:17px 0}
 html body#acb-design.home-page .hv-panel .pe{font-size:20.4px;color:inherit!important;letter-spacing:0}
@@ -83,19 +83,19 @@ html body#acb-design.home-page .hv-offer .plist li span{font-size:15.3px;color:i
 html body#acb-design.home-page .hv-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:25.5px}
 html body#acb-design.home-page .hv-faq .hv-head{text-align:left;margin:0}
 html body#acb-design.home-page .hv-faq .faq-list{max-width:none;width:100%}
-html body#acb-design.home-page .hv-faq .faq-q{font-size:20.4px;padding:17px 0;color:#000}
+html body#acb-design.home-page .hv-faq .faq-q{font-size:20.4px;padding:17px 0;color:var(--ink)}
 html body#acb-design.home-page .hv-faq .faq-a p{font-size:17px;line-height:1.25;max-width:none}
-html body#acb-design.home-page main>.oh-close>.wrap{background:#3b9c9e;color:#000;display:grid!important;grid-template-columns:1fr 1fr;gap:20.4px 25.5px!important;text-align:left}
+html body#acb-design.home-page main>.oh-close>.wrap{background:#3b9c9e;color:var(--ink);display:grid!important;grid-template-columns:1fr 1fr;gap:20.4px 25.5px!important;text-align:left}
 html body#acb-design.home-page .oh-close h2{font-size:clamp(35.7px,5vw,64.6px);line-height:.95;max-width:none;margin:0;grid-row:span 2}
 html body#acb-design.home-page .oh-close .note{font-size:20.4px;line-height:1.25;max-width:none;margin:0!important}
-html body#acb-design .oh-footer{background:#fff!important;color:#000!important;margin:25.5px;border-radius:10.2px;padding:40.8px 25.5px!important}
+html body#acb-design .oh-footer{background:#fff!important;color:var(--ink)!important;margin:25.5px;border-radius:10.2px;padding:40.8px 25.5px!important}
 html body#acb-design .oh-footer>.wrap{padding:0!important;max-width:none}
-html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#000!important}
+html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
 html body#acb-design .oh-footer .acb-logo-mount{color:#4f46e5!important}
 html body#acb-design .oh-footer :is(.top,.bottom,.foot-lead,.oh-newsletter){border-color:#ddd!important}
 html body#acb-design .oh-footer :is(.col a,.news p){font-size:15.3px!important}
 html body#acb-design:not(.home-page) :is(.secpad,.oh-section){padding-top:40.8px!important;padding-bottom:40.8px!important}
-html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!important;z-index:65}
+html body#acb-design .mobile-menu-toggle{color:var(--ink)!important;border-color:var(--ink)!important;z-index:65}
 @media(max-width:1060px){
  html body#acb-design .oh-header .oh-head-right{display:none!important}
  html body#acb-design .oh-header .mobile-menu-toggle{display:block!important}
@@ -125,7 +125,7 @@ html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!
    border-radius:11.9px!important;
    font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600!important;
    font-size:clamp(22.1px,7.5vw,34px)!important;letter-spacing:-.02em!important;line-height:1!important;
-   color:#000!important;text-transform:none!important;text-align:left!important;
+   color:var(--ink)!important;text-transform:none!important;text-align:left!important;
    transition:background-color .2s ease,color .2s ease!important;
  }
  html body#acb-design .oh-header.oh-menu-open .navitem.is-active>a.navbutton,
@@ -251,7 +251,7 @@ html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.
 html body#acb-design .hv-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",sans-serif!important}
 /* Restore the original white-version map palette, supplied by each card. */
 html body#acb-design.home-page .ccard .cnum{color:var(--c)!important}
-html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:#000000!important;padding:4.25px 7.65px;font-size:11.9px;letter-spacing:.04em;line-height:1.2}
+html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:var(--ink)!important;padding:4.25px 7.65px;font-size:11.9px;letter-spacing:.04em;line-height:1.2}
 /* White-version near-black footer with readable white type and mark. */
 html body#acb-design .oh-footer{background:#000000!important;color:#fff!important}
 html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
@@ -372,7 +372,7 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv
 }
 /* "Plus Jakarta Sans" everywhere; dark headings with acb tracking. */
 html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:#000!important;font-weight:500!important}
+html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:var(--ink)!important;font-weight:500!important}
 /* Calmer heading scale. */
 html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1){font-size:clamp(28.9px,4.4vw,52.7px)!important;line-height:1.02!important}
 html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,.leave p){font-size:clamp(22.95px,3.5vw,40.8px)!important;line-height:1.04!important}
@@ -389,7 +389,7 @@ html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.oh-utility-pill,.ref
 @media(max-width:720px){html body#acb-design.home-page .hv-hero h1{white-space:normal!important}}
 /* "Find your block" banner: one big, bold, but compact full-width button —
    wide and confident rather than tall, with a small disclaimer underneath. */
-html body#acb-design.home-page .hv-banner>.wrap{background:#fff!important}
+html body#acb-design.home-page .hv-banner>.wrap{background:transparent!important;padding:0!important}
 html body#acb-design.home-page .hv-banner .banner-in{display:flex;flex-direction:column;align-items:center;gap:10.2px}
 html body#acb-design.home-page .hv-banner .banner-note{font-family:"Plus Jakarta Sans",sans-serif!important;font-size:11.05px!important;line-height:1.3;letter-spacing:-.005em!important;color:rgba(7,19,33,.65)!important;margin:0;max-width:none;text-align:center}
 html body#acb-design.home-page main section.hv-banner .banner-in .pill{
@@ -411,7 +411,7 @@ html body#acb-design.home-page .hv-say p .hl{
   background-size:calc(var(--hlp) * 100%) 100%!important;
   background-position:left center!important;
   transition:background-size .12s linear;
-  color:#000!important;padding:0 .05em!important;
+  color:var(--ink)!important;padding:0 .05em!important;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
 @media(prefers-reduced-motion:reduce){
@@ -448,16 +448,18 @@ html body#acb-design .refpanel{
   --pc:#818cf8;
   width:50%!important;min-width:357px!important;max-width:none!important;
   border-radius:13.6px 0 0 13.6px!important;
+  background:var(--pc)!important;color:var(--ink)!important;
 }
 @media(max-width:860px){html body#acb-design .refpanel{width:88%!important;min-width:0!important}}
-html body#acb-design .refpanel h3{font-size:clamp(20.4px,2.8vw,28.9px)!important;letter-spacing:-.02em!important}
-html body#acb-design .bd-sci{font-size:10.2px!important;letter-spacing:.1em!important}
-html body#acb-design .refpanel .bd-lead{font-size:14.45px!important;line-height:1.6!important}
-html body#acb-design .refpanel h4{color:var(--pc)!important;font-size:9.35px!important;letter-spacing:.1em!important}
-html body#acb-design .refpanel .bd-list li{font-size:12.75px!important;line-height:1.5!important}
-html body#acb-design .refpanel .bd-list li::before{color:var(--pc)!important}
-html body#acb-design .refpanel .bd-under{font-size:13.6px!important;line-height:1.6!important}
-html body#acb-design .refpanel-close:hover{color:var(--pc)!important}
+html body#acb-design .refpanel.refpanel h3{font-size:clamp(32px,4.2vw,52px)!important;font-weight:700!important;letter-spacing:-.025em!important;color:var(--ink)!important}
+html body#acb-design .bd-sci{font-size:13px!important;font-weight:700!important;letter-spacing:.08em!important;color:var(--ink)!important;opacity:.65}
+html body#acb-design .refpanel .bd-lead{font-size:19px!important;line-height:1.5!important;color:var(--ink)!important}
+html body#acb-design .refpanel h4{color:var(--ink)!important;opacity:.65;font-size:12px!important;font-weight:700!important;letter-spacing:.08em!important}
+html body#acb-design .refpanel .bd-list li{font-size:16px!important;font-weight:600!important;line-height:1.5!important;color:var(--ink)!important}
+html body#acb-design .refpanel .bd-list li::before{color:var(--ink)!important}
+html body#acb-design .refpanel .bd-under{font-size:17px!important;line-height:1.55!important;color:var(--ink)!important}
+html body#acb-design .refpanel-close{color:var(--ink)!important;opacity:.7}
+html body#acb-design .refpanel-close:hover{opacity:1}
 
 /* Terrain cards (the-factors, our-method) get a small icon badge (indigo
    tint, matching the block-color-badge language used on the block map). */
@@ -477,7 +479,7 @@ html body#acb-design.home-page .hv-social>.wrap{
 }
 html body#acb-design.home-page .social-handle{
   font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600;font-size:clamp(18.7px,3vw,28.9px);
-  letter-spacing:-.02em;color:#000!important;
+  letter-spacing:-.02em;color:var(--ink)!important;
 }
 html body#acb-design.home-page .social-handle:hover{color:#4f46e5!important}
 html body#acb-design.home-page .pill.social-follow{
@@ -502,7 +504,7 @@ html body#acb-design.method-page .craft-num{
   display:flex;align-items:center;justify-content:center;width:34px;height:34px;
   border-radius:10.2px;background:#4f46e5;color:#fff;font-weight:600;font-size:14.45px;
 }
-html body#acb-design.method-page .craft-step h3{font-size:16.15px;font-weight:600;letter-spacing:-.015em;margin:0;color:#000}
+html body#acb-design.method-page .craft-step h3{font-size:16.15px;font-weight:600;letter-spacing:-.015em;margin:0;color:var(--ink)}
 html body#acb-design.method-page .craft-step p{font-size:11.9px;line-height:1.45;color:var(--ink-soft);margin:0}
 @media(max-width:1000px){
   html body#acb-design.method-page .craft-steps{grid-template-columns:1fr 1fr}
@@ -517,6 +519,7 @@ html body#acb-design.method-page .craft-step p{font-size:11.9px;line-height:1.45
    bold black title, color used only as a small hint (the label text).
    Full saturated color is reserved for the detail panel on click. */
 html body#acb-design.blocks-page .bmcard{background:#fff!important;border:0!important}
+html body#acb-design.blocks-page .bmcard-img,
 html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
 
 /* Experiment: "Plus Jakarta Sans" on the home page only. Inter and "Plus Jakarta Sans"
@@ -580,3 +583,6 @@ html body#acb-design:is(.individuals-page,.organisations-page) .startgrid .start
 html body#acb-design:not(.home-page) :is(.secpad,.oh-section){padding-top:51px!important;padding-bottom:51px!important}
 html body#acb-design:not(.home-page) .section{padding-top:51px!important;padding-bottom:51px!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:51px!important;padding-bottom:51px!important}
+
+/* Font weight is always 500 — never lighter, never bolder, no exceptions. */
+html body#acb-design,html body#acb-design *{font-weight:500!important}
