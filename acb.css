@@ -3,7 +3,7 @@
 :root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--brand:#000;--action:#000;--copy:#000;--muted:#000;--ink:#000;--ink-soft:#000;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:30px}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:#000;background-image:none!important}
 html body#acb-design .grain{display:none!important}
-html body#acb-design .oh-header{position:sticky!important;top:30px!important;width:calc(100% - 60px)!important;max-width:none!important;margin:30px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a;backdrop-filter:none!important;z-index:60}
+html body#acb-design .oh-header{position:sticky!important;top:18px!important;width:calc(100% - 60px)!important;max-width:none!important;margin:18px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#acb-design .oh-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:10px 30px!important;gap:24px!important;min-height:56px}
 html body#acb-design .oh-header .oh-logo{background:#fff!important;padding:5px 13px!important;border-radius:12px!important;flex-shrink:0;color:#4f46e5!important}
 html body#acb-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
@@ -103,7 +103,7 @@ html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!
  html body#acb-design.home-page .hv-offer .plist{grid-template-columns:1fr;gap:16px}
 }
 @media(max-width:760px){
- html body#acb-design .oh-header{top:16px!important;width:calc(100% - 32px)!important;margin:16px auto!important}
+ html body#acb-design .oh-header{top:10px!important;width:calc(100% - 32px)!important;margin:10px auto!important}
  html body#acb-design .oh-header .inner{padding:10px 20px!important}
  html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:30px 16px!important}
  html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:24px 20px!important}
@@ -227,8 +227,11 @@ html body#acb-design :is(.pill,.pill.big,.pill.alt,.pill.is-outline,.btn,.btn.bi
   text-transform:none!important;
 }
 
-/* Home hero: header floats over it so the image touches the top/left/right edges. */
-html body#acb-design.home-page .oh-header{position:fixed!important;left:0;right:0;top:30px!important;margin:30px auto!important}
+/* Home hero: header floats over it so the image touches the top/left/right edges.
+   Fixed positioning uses margin-top:0 here because, unlike sticky, a fixed element's
+   top offset and margin-top stack — using both like the shared rule above would
+   double the gap and sit the header lower than on every other page. */
+html body#acb-design.home-page .oh-header{position:fixed!important;left:0;right:0;top:18px!important;margin:0 auto!important}
 
 /* Centre the nav in the header (desktop only); Book a call stays on the right. */
 @media(min-width:1061px){
@@ -239,7 +242,7 @@ html body#acb-design.home-page .oh-header{position:fixed!important;left:0;right:
 /* Taller hero with the text bubble centred (both axes). */
 html body#acb-design.home-page .hv-hero-grid{min-height:clamp(640px,88vh,920px)!important;align-items:center!important;justify-items:center!important;padding:40px calc((100vw - var(--site-width)) / 2)!important}
 html body#acb-design.home-page .hv-hero-copy{width:fit-content!important;max-width:min(94vw,900px)!important;text-align:center!important;margin:0!important;padding:24px 32px!important}
-html body#acb-design.home-page .hv-hero h1{font-size:18px!important;line-height:1.45!important;letter-spacing:-.01em!important;font-weight:400!important;white-space:nowrap!important}
+html body#acb-design.home-page .hv-hero h1{font-size:clamp(15px,2vw,21px)!important;line-height:1.45!important;letter-spacing:-.01em!important;font-weight:400!important;white-space:nowrap!important}
 html body#acb-design.home-page .hv-hero .hv-cta{justify-content:center!important;margin-top:18px!important}
 
 /* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
@@ -271,7 +274,7 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv
 html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:Inter,sans-serif!important}
 html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:#000!important;font-weight:400!important}
 /* Calmer heading scale. */
-html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1){font-size:clamp(34px,4.4vw,62px)!important;line-height:1.02!important}
+html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1){font-size:clamp(34px,4.4vw,62px)!important;line-height:1.02!important}
 html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,.leave p){font-size:clamp(27px,3.5vw,48px)!important;line-height:1.04!important}
 html body#acb-design.internal-page :is(.card h3,h3){font-size:clamp(20px,1.9vw,28px)!important;line-height:1.06!important}
 /* 12px rounded surfaces to match the home. */
@@ -290,12 +293,22 @@ html body#acb-design.home-page .hv-banner .banner-in{display:flex;align-items:ce
 html body#acb-design.home-page .hv-banner p{font-family:Inter,sans-serif!important;font-size:clamp(20px,2.4vw,30px);line-height:1.12;letter-spacing:-.02em;color:#071321;margin:0;max-width:24ch}
 html body#acb-design.home-page .hv-banner .pill{flex:0 0 auto}
 
-/* Our-approach: the .hl phrases fade in highlighted, in step with the word reveal.
-   Gradient band keeps the highlight inside its own line box. */
+/* Our-approach: the .hl phrases get drawn over by a highlighter-pen sweep as they
+   scroll into view (left-to-right, driven by --hlp from otherhalf-logo.js), instead
+   of the band just sitting there at full opacity. Words inside still fade in as
+   part of the normal word reveal. */
 html body#acb-design.home-page .hv-say p .hl{
-  background:linear-gradient(to bottom,transparent 8%,#E4E244 8%,#E4E244 92%,transparent 92%)!important;
+  --hlp:0;
+  background-image:linear-gradient(to bottom,transparent 8%,#E4E244 8%,#E4E244 92%,transparent 92%)!important;
+  background-repeat:no-repeat!important;
+  background-size:calc(var(--hlp) * 100%) 100%!important;
+  background-position:left center!important;
+  transition:background-size .12s linear;
   color:#000!important;padding:0 .05em!important;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+@media(prefers-reduced-motion:reduce){
+  html body#acb-design.home-page .hv-say p .hl{background-size:100% 100%!important}
 }
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 48px). */
