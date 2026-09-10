@@ -98,37 +98,44 @@ html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!
  html body#acb-design .oh-header .oh-head-right{display:none!important}
  html body#acb-design .oh-header .mobile-menu-toggle{display:block!important}
 
- /* Mobile menu, fully open: full-bleed brand panel, big stacked links. */
+ /* Mobile menu, fully open: white panel, big stacked indigo links —
+    same visual language as the desktop nav-hover pill. */
  html body#acb-design .oh-header.oh-menu-open,
- html body#acb-design .oh-header.mobile-open{background:#4f46e5!important}
+ html body#acb-design .oh-header.mobile-open{background:#fff!important}
  html body#acb-design .oh-header.oh-menu-open .oh-head-right,
  html body#acb-design .oh-header.mobile-open .oh-head-right{
    display:flex!important;position:fixed!important;inset:0!important;min-height:100dvh!important;
-   background:#4f46e5!important;padding:96px 28px 0!important;margin:0!important;
+   background:#fff!important;padding:96px 20px 0!important;margin:0!important;
    flex-direction:column!important;align-items:stretch!important;justify-content:space-between!important;
    overflow-y:auto!important;z-index:61!important;gap:0!important;
    animation:acbMenuIn .38s cubic-bezier(.16,1,.3,1);
  }
  html body#acb-design .oh-header.oh-menu-open .oh-nav,
- html body#acb-design .oh-header.mobile-open .oh-nav{display:flex!important;background:transparent!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;margin:0!important}
+ html body#acb-design .oh-header.mobile-open .oh-nav{display:flex!important;background:transparent!important;flex-direction:column!important;align-items:stretch!important;gap:2px!important;margin:0!important}
  html body#acb-design .oh-header.oh-menu-open .navitem,
- html body#acb-design .oh-header.mobile-open .navitem{border-bottom:1px solid rgba(255,255,255,.22)!important;padding:0!important}
- html body#acb-design .oh-header.oh-menu-open .navitem:first-child,
- html body#acb-design .oh-header.mobile-open .navitem:first-child{border-top:1px solid rgba(255,255,255,.22)!important}
+ html body#acb-design .oh-header.mobile-open .navitem{border:0!important;padding:0!important}
  html body#acb-design .oh-header.oh-menu-open .navitem>a.navbutton,
  html body#acb-design .oh-header.oh-menu-open .navitem>button.navbutton,
  html body#acb-design .oh-header.mobile-open .navitem>a.navbutton,
  html body#acb-design .oh-header.mobile-open .navitem>button.navbutton{
    display:flex!important;align-items:center!important;justify-content:space-between!important;
-   width:100%!important;padding:20px 0!important;margin:0!important;border:0!important;background:none!important;
+   width:100%!important;padding:16px!important;margin:0!important;border:0!important;background:none!important;
+   border-radius:14px!important;
    font-family:Manrope,sans-serif!important;font-weight:600!important;
-   font-size:clamp(30px,8vw,46px)!important;letter-spacing:-.02em!important;line-height:1!important;
-   color:#fff!important;text-transform:none!important;text-align:left!important;
+   font-size:clamp(26px,7.5vw,40px)!important;letter-spacing:-.02em!important;line-height:1!important;
+   color:#000!important;text-transform:none!important;text-align:left!important;
+   transition:background-color .2s ease,color .2s ease!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .navitem.is-active>a.navbutton,
+ html body#acb-design .oh-header.oh-menu-open .navitem.is-active>button.navbutton,
+ html body#acb-design .oh-header.mobile-open .navitem.is-active>a.navbutton,
+ html body#acb-design .oh-header.mobile-open .navitem.is-active>button.navbutton{
+   background:#eef2ff!important;color:#4f46e5!important;
  }
  html body#acb-design .oh-header.oh-menu-open .navitem>button.navbutton::after,
  html body#acb-design .oh-header.mobile-open .navitem>button.navbutton::after{
    content:"";width:11px;height:11px;flex-shrink:0;margin-left:12px;
-   border-right:2px solid rgba(255,255,255,.75)!important;border-bottom:2px solid rgba(255,255,255,.75)!important;
+   border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;opacity:.6;
    transform:rotate(45deg);transition:transform .3s cubic-bezier(.16,1,.3,1);
  }
  html body#acb-design .oh-header.oh-menu-open .navitem.is-open>button.navbutton::after,
@@ -148,35 +155,38 @@ html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!
  html body#acb-design .oh-header.oh-menu-open .oh-sub a,
  html body#acb-design .oh-header.mobile-open .oh-sub a,
  html body#acb-design .oh-header.mobile-open .submenu a{
-   display:block!important;padding:12px 0 12px 4px!important;border:0!important;
-   font-family:Manrope,sans-serif!important;font-size:19px!important;font-weight:500!important;
-   color:rgba(255,255,255,.82)!important;
+   display:block!important;padding:11px 16px!important;border:0!important;border-radius:10px!important;
+   font-family:Manrope,sans-serif!important;font-size:18px!important;font-weight:500!important;
+   color:rgba(0,0,0,.62)!important;transition:background-color .2s ease,color .2s ease!important;
  }
+ html body#acb-design .oh-header.oh-menu-open .oh-sub a:hover,
+ html body#acb-design .oh-header.mobile-open .oh-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
  html body#acb-design .oh-header.oh-menu-open .oh-actions,
  html body#acb-design .oh-header.mobile-open .oh-actions{
-   position:sticky!important;bottom:0!important;left:-28px!important;width:calc(100% + 56px)!important;
-   margin:24px 0 0!important;padding:22px 28px calc(22px + env(safe-area-inset-bottom))!important;
-   background:#fff!important;border:0!important;border-radius:0!important;
+   position:sticky!important;bottom:0!important;left:-20px!important;width:calc(100% + 40px)!important;
+   margin:24px 0 0!important;padding:22px 20px calc(22px + env(safe-area-inset-bottom))!important;
+   background:#4f46e5!important;border:0!important;border-radius:0!important;
    display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;
  }
  html body#acb-design .oh-header.oh-menu-open .oh-social a,
- html body#acb-design .oh-header.mobile-open .oh-social a{color:#000!important}
+ html body#acb-design .oh-header.mobile-open .oh-social a{color:#fff!important}
  html body#acb-design .oh-header.oh-menu-open .oh-utility-pill,
- html body#acb-design .oh-header.mobile-open .oh-utility-pill{background:#4f46e5!important;color:#fff!important}
+ html body#acb-design .oh-header.mobile-open .oh-utility-pill{background:#fff!important;color:#4f46e5!important}
  @keyframes acbMenuIn{from{opacity:0}to{opacity:1}}
 
- /* Close control: a real "×", not text, pinned top-right over the panel. */
+ /* Close control: a real "×", indigo on the now-white panel, pinned top-right. */
  html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle,
  html body#acb-design .oh-header.mobile-open .mobile-menu-toggle{
-   position:fixed!important;top:28px!important;right:28px!important;z-index:65!important;
+   position:fixed!important;top:24px!important;right:24px!important;z-index:65!important;
    width:44px!important;height:44px!important;padding:0!important;border:0!important;
-   font-size:0!important;color:transparent!important;background:transparent!important;
+   border-radius:12px!important;background:#eef2ff!important;
+   font-size:0!important;color:transparent!important;
  }
  html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::before,
  html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::after,
  html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::before,
  html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::after{
-   content:"";position:absolute;top:50%;left:50%;width:26px;height:2px;background:#fff;
+   content:"";position:absolute;top:50%;left:50%;width:22px;height:2.5px;background:#4f46e5;border-radius:2px;
  }
  html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::before,
  html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::before{transform:translate(-50%,-50%) rotate(45deg)}
