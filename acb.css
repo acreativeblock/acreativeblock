@@ -251,7 +251,7 @@ html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.
 html body#acb-design .hv-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",sans-serif!important}
 /* Restore the original white-version map palette, supplied by each card. */
 html body#acb-design.home-page .ccard .cnum{color:var(--c)!important}
-html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:var(--ink)!important;padding:4.59px 8.26px;font-size:12.85px;letter-spacing:.04em;line-height:1.2}
+html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:var(--ink)!important;padding:4.59px 8.26px;font-size:12.85px;letter-spacing:.04em;line-height:1.2;text-transform:uppercase!important;border-radius:6px;display:inline-block}
 /* White-version near-black footer with readable white type and mark. */
 html body#acb-design .oh-footer{background:#000000!important;color:#fff!important}
 html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
@@ -537,8 +537,10 @@ html body#acb-design.home-page,html body#acb-design.home-page *{font-family:"Plu
    big bold type), and the dark intro band moved from off-brand teal to
    indigo so it reads as part of the same site.
    ========================================================================== */
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark{background:#4f46e5!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark{background:transparent!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{background:#4f46e5!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .aud-eyebrow{color:#E4E244!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .body{color:rgba(255,255,255,.85)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .aud-eyebrow{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big,
 html body#acb-design:is(.individuals-page,.organisations-page) .leave p,
@@ -601,3 +603,17 @@ html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:34px!im
    every page as the home page already has. */
 html body#acb-design [data-site-header].header-hidden,
 html body#acb-design .oh-header.header-hidden{transform:none!important}
+
+/* Block map card label: a small colored pill badge (matching the home
+   carousel's .clabel), not the generic teal eyebrow style. */
+html body#acb-design.blocks-page .bmcard .lab{background:var(--c)!important;color:var(--ink)!important;width:auto!important;max-width:none!important;padding:4.59px 8.26px!important;border-radius:6px!important}
+
+/* More breathing room between the header and the top edge of the page. */
+html body#acb-design .oh-header{top:32px!important}
+html body#acb-design.home-page .oh-header{top:32px!important}
+html body#acb-design .oh-header{margin-top:32px!important}
+
+/* Header edge padding matches the "Book a call" button's own vertical
+   padding (9.18px), so the button sits the same distance from the
+   right edge as it does top/bottom — and the logo mirrors it on the left. */
+html body#acb-design .oh-header .inner{padding-left:9.18px!important;padding-right:9.18px!important}
