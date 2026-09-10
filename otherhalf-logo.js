@@ -54,7 +54,7 @@
   function anim(){
     document.body.classList.add('oh-fade');
     if(rm)return;
-    var sel='main section>div,main section h1,main section h2,main section h3,.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.oh-close-sub .wrap,.oh-two-col>*,.oh-offer-cards>*,.oh-proof-grid>*,.oh-block-tags,.rescat,.blog-card,.resitem,.bmcard,.faq-item';
+    var sel='main section>div:not(.track),main section h1,main section h2,main section h3,.center-hero .wrap,.section-head,.trio>*,.price-grid>*,.blockmap>*,.arc-card,.method-strip>*,.stats>*,.split>*,.familiar,.callout,.access-note,.oh-close-sub .wrap,.oh-two-col>*,.oh-offer-cards>*,.oh-proof-grid>*,.oh-block-tags,.rescat,.blog-card,.resitem,.bmcard,.faq-item';
     var els=[].slice.call(document.querySelectorAll(sel));
     if(!els.length)return;
     els.forEach(function(el){el.classList.add('rv');});

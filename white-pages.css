@@ -1,7 +1,7 @@
 /* final-whiteversion — shared calm system for every internal page */
 :root{
   --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#071321;--muted:#071321;
-  --brand:#4f46e5;--action:#F7FF89;--b1:#F6D65D;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
+  --brand:#4f46e5;--action:#E4E244;--b1:#F6D65D;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
   --b5:#9a8ff2;--b6:#a9d5f5;--b7:#5f9dd6;--b8:#909090;
 }
 html{background:#fff}
@@ -40,6 +40,11 @@ body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):not(:
   content:" ↗";display:inline-block;margin-left:7px;font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1);
 }
 body:not(.home-page) :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):hover::after{transform:translate(2px,-2px)}
+
+/* No action button changes colour on hover; only its arrow moves. */
+html body:not(.home-page) :is(a.btn,a.btn-out,a.pill,a.oh-utility-pill,button.btn,button.btn-out,button.pill):hover{
+  background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;
+}
 
 /* White and pale-grey editorial rhythm; block colours remain attached to blocks. */
 body:not(.home-page) main>section:nth-of-type(odd){background-color:#fff!important;background-image:none!important}
@@ -112,7 +117,7 @@ body.contact-page .mail-big{font-size:clamp(19px,2.15vw,32px)!important}
 body.contact-page .cform{max-width:none}
 
 /* Every internal closing CTA uses the same pale field as the homepage ending. */
-html body:not(.home-page) :is(.oh-close-sub,main>section.close){background:#F7FF89!important;background-color:#F7FF89!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close){background:#E4E244!important;background-color:#E4E244!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
 html body:not(.home-page) :is(.oh-close-sub,main>section.close)>.wrap{gap:12px!important}
 html body:not(.home-page) :is(.oh-close-sub,main>section.close) .note{margin:0 0 12px!important;color:var(--copy)!important}
 html body:not(.home-page) :is(.oh-close-sub,main>section.close) h2{color:var(--copy)!important}
@@ -123,7 +128,7 @@ body.organisations-page main>section.talks-section{background:#071321!important;
 body.organisations-page .talks-section .talks :is(h2,p){color:#fff!important}
 body.organisations-page .talks-section .aud-eyebrow{background:var(--action)!important;color:#071321!important}
 body.organisations-page #offers .big{letter-spacing:-.025em!important}
-body.individuals-page .access-note{background:#F7FF89!important;background-color:#F7FF89!important}
+body.individuals-page .access-note{background:#E4E244!important;background-color:#E4E244!important}
 
 /* Smoother block-map cards and a clear questionnaire prompt. */
 body.blocks-page .bmcard{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1)!important}
@@ -185,9 +190,43 @@ body.legal-page .legal-copy h2{margin:2.2em 0 .55em;font-size:clamp(27px,3vw,40p
 body.legal-page :is(.legal-placeholder,.legal-note){margin:28px 0;padding:22px;background:whitesmoke;border-left:4px solid var(--brand);font-size:15px;line-height:1.5}
 body.legal-page main>section{background:#fff!important;background-image:none!important}
 body.legal-page main section.reveal{opacity:1!important;transform:none!important;transition:none!important}
+body.legal-page{background:#fff!important}
+body.legal-page .legal-hero{padding:clamp(48px,6vw,76px) var(--pad)!important;text-align:left!important}
+body.legal-page .legal-hero .wrap{max-width:1180px!important;margin:0 auto!important}
+body.legal-page .legal-hero h1{font-size:clamp(34px,4vw,56px)!important;max-width:16ch!important;margin:0!important}
+body.legal-page .legal-section{padding-top:clamp(34px,5vw,66px)!important}
+body :is(.legal-nav,.faqx-nav) a.is-current{color:var(--brand)!important;font-weight:600!important}
+
+body.faq-page,body.faq-page main>section,body.faq-page .faqx-cat{background:#fff!important;background-image:none!important}
+
+/* Blog index: editorial type and cards that size to their own content. */
+body.blog-index .blog-grid{align-items:start!important;grid-auto-flow:row dense}
+body.blog-index .blog-card{align-self:start!important;height:auto!important}
+body.blog-index .blog-card .blog-art{aspect-ratio:4/3!important;font-size:clamp(18px,2vw,30px)!important;padding:clamp(18px,2vw,28px)!important}
+body.blog-index .blog-card.featured .blog-art{aspect-ratio:16/9!important}
+body.blog-index .blog-card h2{font-size:clamp(22px,2vw,32px)!important;line-height:1.08!important}
+body.blog-index .blog-card p{font-size:clamp(13px,1vw,16px)!important;line-height:1.5!important}
+body.blog-index .blog-meta{font-size:11px!important}
+
+/* Find Your Block: a complete, readable blue-and-white application surface. */
+body.questionnaire-page{background:whitesmoke!important;color:var(--copy)!important;min-height:100vh}
+body.questionnaire-page .top{height:96px!important;padding:20px var(--pad)!important;background:var(--brand)!important;border:0!important;color:#fff!important}
+body.questionnaire-page .stage{min-height:calc(100vh - 96px)!important;padding:clamp(38px,6vw,80px) var(--pad)!important;align-items:start!important}
+body.questionnaire-page .card{width:min(900px,100%)!important;background:#fff!important;border:1px solid var(--quiet-2)!important;padding:clamp(28px,5vw,64px)!important;color:var(--copy)!important}
+body.questionnaire-page :is(h1,h2,h3,p,.qtext,.bar,.labels,.note){color:var(--copy)!important}
+body.questionnaire-page .qmeta{display:inline-block;background:var(--brand)!important;color:#fff!important;padding:7px 11px!important;margin-bottom:22px!important}
+body.questionnaire-page .intro h1{font-size:clamp(42px,7vw,82px)!important;line-height:.94!important}
+body.questionnaire-page .intro p{font-size:clamp(17px,1.6vw,21px)!important;line-height:1.5!important}
+body.questionnaire-page .qtext{font-size:clamp(28px,4vw,48px)!important;line-height:1!important}
+body.questionnaire-page :is(.opt,.scale button,.result-card){background:#fff!important;color:var(--copy)!important;border:1px solid var(--brand)!important}
+body.questionnaire-page :is(.opt,.scale button):hover{background:#fff!important;color:var(--copy)!important}
+body.questionnaire-page :is(.opt,.scale button).sel{background:var(--brand)!important;color:#fff!important}
+body.questionnaire-page .state{background:var(--action)!important;color:var(--brand)!important}
+body.questionnaire-page .state :is(strong,p){color:var(--brand)!important}
+body.questionnaire-page :is(.btn,.btn.alt){background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 
 body.resources-page main,body.resources-page main>section{background-color:whitesmoke!important}
-body.resources-page .personals-intro{background:#F7FF89!important;padding:clamp(34px,4vw,56px) 0!important}
+body.resources-page .personals-intro{background:#E4E244!important;padding:clamp(34px,4vw,56px) 0!important}
 body.resources-page .personals-intro :is(h2,p){color:var(--copy)!important}
 
 /* Dark ending, exactly as the primary version. */
@@ -248,3 +287,19 @@ body.questionnaire-page .btn.alt{background:transparent!important;color:#fff!imp
 @media(max-width:860px){body:is(.individuals-page,.organisations-page) .fam-grid{grid-template-columns:1fr!important}body:is(.individuals-page,.organisations-page) .fam-h1{font-size:clamp(21px,5.7vw,50px)!important}body:is(.individuals-page,.organisations-page) .fam-h1 .rotline,body:is(.individuals-page,.organisations-page) .fam-h1 .l1{white-space:nowrap}body.blocks-page :is(.map-test-inline,.evidence-band .in){grid-template-columns:1fr}}
 @media(max-width:700px){body:not(.home-page) .acb-footer .foot-lead{grid-template-columns:1fr}body:not(.home-page) .acb-footer .mark .acb-logo-mount{height:50px!important}}
 @media(prefers-reduced-motion:reduce){.white-reveal,.white-line-reveal>*{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Final component invariants — intentionally last in the cascade. */
+html body:not(.home-page) :is(a.btn,a.btn-out,a.pill,a.oh-utility-pill,button.btn,button.btn-out,button.pill):hover{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
+html body:not(.home-page) :is(.oh-close-sub,main>section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+body.questionnaire-page{background:whitesmoke!important;color:var(--copy)!important;min-height:100vh}
+body.questionnaire-page .top{height:96px!important;padding:20px var(--pad)!important;background:var(--brand)!important;border:0!important;color:#fff!important}
+body.questionnaire-page .stage{min-height:calc(100vh - 96px)!important;padding:clamp(38px,6vw,80px) var(--pad)!important;align-items:start!important}
+body.questionnaire-page .card{width:min(900px,100%)!important;background:#fff!important;border:1px solid var(--quiet-2)!important;padding:clamp(28px,5vw,64px)!important;color:var(--copy)!important}
+body.questionnaire-page :is(h1,h2,h3,p,.qtext,.bar,.labels,.note){color:var(--copy)!important}
+body.questionnaire-page .qmeta{display:inline-block;background:var(--brand)!important;color:#fff!important;padding:7px 11px!important;margin-bottom:22px!important}
+body.questionnaire-page :is(.opt,.scale button,.result-card){background:#fff!important;color:var(--copy)!important;border:1px solid var(--brand)!important}
+body.questionnaire-page :is(.opt,.scale button):hover{background:#fff!important;color:var(--copy)!important}
+body.questionnaire-page :is(.opt,.scale button).sel{background:var(--brand)!important;color:#fff!important}
+body.questionnaire-page .state{background:var(--action)!important;color:var(--brand)!important}
+body.questionnaire-page .state :is(strong,p){color:var(--brand)!important}
+body.questionnaire-page :is(.btn,.btn.alt),body.questionnaire-page :is(.btn,.btn.alt):hover{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}

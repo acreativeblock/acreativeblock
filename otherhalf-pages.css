@@ -37,8 +37,8 @@ html.horst-v3 body .oh-header .oh-nav .navbutton,html.horst-v3 body .oh-header .
 .individuals-page .situations-reel{background:var(--oh-blue)!important;color:#fff!important}.individuals-page .reel-sticky{background:var(--oh-blue)!important}.individuals-page .reel-item,.individuals-page .reel-count{color:#fff!important}.individuals-page .reel-focus{border-color:rgba(255,255,255,.7)!important}
 @media(max-width:1100px){html.horst-v3 body .oh-header{height:78px!important}html.horst-v3 body .oh-header .inner{padding:12px var(--oh-pad)!important}}
 
-::selection{background:#F7FF89;color:#202124}
-::-moz-selection{background:#F7FF89;color:#202124}
+::selection{background:#E4E244;color:#202124}
+::-moz-selection{background:#E4E244;color:#202124}
 
 .oh-nav button.navbutton{display:inline-flex;align-items:center}
 .oh-nav button.navbutton::after{content:"";display:inline-block;width:.42em;height:.42em;margin-left:.55em;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}

@@ -1,0 +1,86 @@
+[
+  {
+    "image": "woman-pensive.webp",
+    "original": "image 11.png",
+    "before": [
+      1351,
+      1800
+    ],
+    "after": [
+      1775,
+      2365
+    ],
+    "pixel_match_error": 0.42,
+    "file": "woman-pensive-original.png"
+  },
+  {
+    "image": "woman-blue.webp",
+    "original": "image 13.png",
+    "before": [
+      1800,
+      1349
+    ],
+    "after": [
+      3030,
+      2271
+    ],
+    "pixel_match_error": 0.34,
+    "file": "woman-blue-original.png"
+  },
+  {
+    "image": "man-portrait.webp",
+    "original": "HMCato-L3-120mm-002 1.png",
+    "before": [
+      1437,
+      1800
+    ],
+    "after": [
+      1863,
+      2334
+    ],
+    "pixel_match_error": 0.72,
+    "file": "man-portrait-original.png"
+  },
+  {
+    "image": "woman-resting.webp",
+    "original": "AA017A-copia.jpgd 2.png",
+    "before": [
+      1800,
+      1200
+    ],
+    "after": [
+      3340,
+      2226
+    ],
+    "pixel_match_error": 0.62,
+    "file": "woman-resting-original.png"
+  },
+  {
+    "image": "man-in-pool.webp",
+    "original": "i-love-watering-dead-flowers-web-36 1.png",
+    "before": [
+      1800,
+      1468
+    ],
+    "after": [
+      2772,
+      2261
+    ],
+    "pixel_match_error": 0.56,
+    "file": "man-in-pool-original.png"
+  },
+  {
+    "image": "woman-outdoors.webp",
+    "original": "Screenshot 2026-08-21 at 19.15.19.png",
+    "before": [
+      1800,
+      1389
+    ],
+    "after": [
+      2818,
+      2174
+    ],
+    "pixel_match_error": 0.54,
+    "file": "woman-outdoors-original.png"
+  }
+]

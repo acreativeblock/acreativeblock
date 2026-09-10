@@ -1,0 +1,285 @@
+@font-face{font-family:Inter;src:url('fonts/inter-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+/* Measured from the live Fairgrounds homepage. */
+@font-face{font-family:FGSolina;src:url('fonts/solina.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:FGCamera;src:url('fonts/camera.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fg-bg:#f6f6f6;--fg-teal:#3b9c9e;--fg-red:#873030;--fg-yellow:#E4E244;--fg-blue:#4f46e5;--fg-pink:#f591b8;--brand:#000;--action:#000;--copy:#000;--muted:#000;--ink:#000;--ink-soft:#000;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:30px}
+html,html body#fairgrounds-design.home-page,html body#fairgrounds-design:not(.home-page){background:#f6f6f6!important;color:#000;background-image:none!important}
+html body#fairgrounds-design .grain{display:none!important}
+html body#fairgrounds-design .oh-header{position:sticky!important;top:30px!important;width:calc(100% - 60px)!important;max-width:none!important;margin:30px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a;backdrop-filter:none!important;z-index:60}
+html body#fairgrounds-design .oh-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:10px 30px!important;gap:24px!important;min-height:56px}
+html body#fairgrounds-design .oh-header .oh-logo{background:none!important;padding:0!important;border-radius:0!important;flex-shrink:0;color:#4f46e5!important}
+html body#fairgrounds-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:36px!important}
+html body#fairgrounds-design .oh-head-right{display:flex;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}
+html body#fairgrounds-design .oh-header .oh-nav{gap:32px;align-items:center}
+html body#fairgrounds-design .oh-header .navbutton,html body#fairgrounds-design .oh-header .oh-social a{color:#000!important;font-family:Inter,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important}
+html body#fairgrounds-design .oh-header .navitem:hover .navbutton{color:#000!important}
+html body#fairgrounds-design .oh-header .oh-actions{display:flex;gap:24px;align-items:center;margin:0!important}
+html body#fairgrounds-design .oh-header .oh-sub{background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a}
+html body#fairgrounds-design .oh-header .oh-sub a{color:#000!important;font-family:Inter,sans-serif!important;font-size:18px!important}
+html body#fairgrounds-design .oh-header .oh-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:10px 18px!important;border-radius:12px!important;white-space:nowrap}
+/* Original hero composition, image, copy and type. */
+html body#fairgrounds-design.home-page .hv-hero{--pad:clamp(20px,4vw,72px);--copy:#071321;--muted:#071321;--brand:#4f46e5;--action:#E4E244}
+html body#fairgrounds-design.home-page .hv-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
+html body#fairgrounds-design.home-page .hv-hero .pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
+/* Fairgrounds uses 30px outer gutters, 12px corners and no panel outlines. */
+html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:30px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
+html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:30px!important;max-width:none!important;width:100%;border:0!important;border-radius:12px;background:#fff}
+html body#fairgrounds-design.home-page main>section:not(.hv-hero) *,html body#fairgrounds-design .oh-footer *{font-family:Inter,sans-serif!important;font-weight:400!important}
+html body#fairgrounds-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:Inter,sans-serif!important;letter-spacing:-.035em}
+html body#fairgrounds-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#fairgrounds-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:12px!important;font-family:Inter,sans-serif!important;font-size:16px!important;letter-spacing:0;padding:16px 20px!important;line-height:1.4}
+html body#fairgrounds-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--fg-teal)!important;padding:0!important;font-size:24px!important;line-height:1.2!important;letter-spacing:0!important;text-transform:none!important;margin:0 0 25px!important}
+/* Restore the original long statement, edge-to-edge like About Us. */
+html body#fairgrounds-design.home-page main>.hv-say>.wrap{padding:48px 30px!important;text-align:left;display:block}
+html body#fairgrounds-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:40px!important;line-height:1.15!important;letter-spacing:0!important;text-wrap:wrap!important;color:#000!important}
+html body#fairgrounds-design.home-page .hv-say p .hl{color:#000!important}
+html body#fairgrounds-design.home-page .hv-say .cln{display:block!important;margin-top:40px!important}
+html body#fairgrounds-design.home-page .hv-marq{background:#f2f1ed!important;border-top:1px solid #e4e3de!important;border-bottom:1px solid #e4e3de!important;padding:16px 0!important}
+html body#fairgrounds-design.home-page .hv-marq .track{font-size:18px}
+html body#fairgrounds-design.home-page .hv-marq .track em{color:#b7b7b4!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+1){color:#a47a00!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+2){color:#bd6530!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+3){color:#b13e39!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+4){color:#8259ac!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+5){color:#6257c4!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+6){color:#347eac!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n+7){color:#3674ae!important}
+html body#fairgrounds-design.home-page .hv-marq .track span:nth-of-type(8n){color:#909090!important}
+/* The reference's yellow/red split feature panel. */
+html body#fairgrounds-design.home-page main>.oh-proof>.wrap{padding:0!important;overflow:hidden;background:var(--fg-yellow)}
+html body#fairgrounds-design.home-page .oh-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0!important}
+html body#fairgrounds-design.home-page .oh-proof-copy{background:var(--fg-yellow)!important;min-height:0;padding:30px!important;justify-content:flex-start;gap:20px;color:var(--fg-red)}
+html body#fairgrounds-design.home-page .oh-proof-copy h2{font-size:clamp(30px,4vw,58px)!important;line-height:.98;white-space:normal;letter-spacing:-.04em;margin:0!important;color:var(--fg-red)}
+html body#fairgrounds-design.home-page .oh-proof-copy .mono{color:var(--fg-red)!important;margin:0!important}
+html body#fairgrounds-design.home-page .oh-proof-copy p{font-size:22px!important;line-height:1.2;max-width:none;margin:0;color:var(--fg-red)}
+html body#fairgrounds-design.home-page .oh-proof-image{margin:0;height:100%;min-height:420px;overflow:hidden}
+html body#fairgrounds-design.home-page .oh-proof-image img{width:100%;height:100%;object-fit:cover}
+html body#fairgrounds-design.home-page .hv-look{text-align:left}
+html body#fairgrounds-design.home-page .hv-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px 30px}
+html body#fairgrounds-design.home-page .hv-look h2{grid-row:span 2;font-size:clamp(28px,3.6vw,52px);line-height:1.02;max-width:none;margin:0;color:#000!important}
+html body#fairgrounds-design.home-page .hv-look p{font-size:24px;line-height:1.25;max-width:none;margin:0;color:#000!important}
+html body#fairgrounds-design.home-page .hv-look .cta{justify-content:flex-start;margin:0}
+/* Wide carousel, without outlines or coloured text boxes. */
+html body#fairgrounds-design.home-page main>.hv-carousel>.wrap{background:transparent;padding:18px 0 0!important}
+html body#fairgrounds-design.home-page .hv-h2{font-size:clamp(30px,4.2vw,60px);line-height:.98;max-width:none;color:#000}
+html body#fairgrounds-design.home-page .caro-head{gap:30px;margin-bottom:30px}
+html body#fairgrounds-design.home-page .caro-intro{font-size:22px;line-height:1.25;max-width:none}
+html body#fairgrounds-design.home-page .ccard{border:0!important;border-radius:12px;min-height:260px;flex:0 0 31%;background:#fff;padding:30px;gap:16px}
+html body#fairgrounds-design.home-page .ccard .clabel{padding:0;background:none;color:#000;font-size:18px;letter-spacing:0;text-transform:none}
+html body#fairgrounds-design.home-page .ccard .cnum{font-family:Inter,sans-serif!important;font-size:64px;color:var(--fg-teal)!important}
+html body#fairgrounds-design.home-page .ccard h3{font-size:30px;line-height:1.05;color:#000}
+html body#fairgrounds-design.home-page .ccard p{font-size:20px;line-height:1.2;color:#000}
+html body#fairgrounds-design.home-page .caro-nav,html body#fairgrounds-design.home-page .caro-nav:hover{border:0!important;border-radius:12px;background:#4f46e5!important;color:#fff!important}
+html body#fairgrounds-design.home-page .hv-offer{gap:30px}
+html body#fairgrounds-design.home-page .hv-offer .hv-panel{border:0!important;border-radius:12px;background:#f6f6f6!important;padding:30px!important;color:#000!important}
+html body#fairgrounds-design.home-page .hv-offer .hv-panel:nth-child(2){background:#4f46e5!important;color:#f591b8!important}
+html body#fairgrounds-design.home-page .hv-panel h2{font-size:clamp(36px,4vw,62px);line-height:1.02;margin:20px 0}
+html body#fairgrounds-design.home-page .hv-panel .pe{font-size:24px;color:inherit!important;letter-spacing:0}
+html body#fairgrounds-design.home-page .hv-offer .hv-panel .pbody{color:inherit!important;font-size:22px;line-height:1.25;max-width:none}
+html body#fairgrounds-design.home-page .hv-offer .plist{margin:24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+html body#fairgrounds-design.home-page .hv-offer .plist li{border:0!important;font-size:22px;padding:0}
+html body#fairgrounds-design.home-page .hv-offer .plist li span{font-size:18px;color:inherit!important}
+html body#fairgrounds-design.home-page .hv-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:30px}
+html body#fairgrounds-design.home-page .hv-faq .hv-head{text-align:left;margin:0}
+html body#fairgrounds-design.home-page .hv-faq .faq-list{max-width:none;width:100%}
+html body#fairgrounds-design.home-page .hv-faq .faq-q{font-size:24px;padding:20px 0;color:#000}
+html body#fairgrounds-design.home-page .hv-faq .faq-a p{font-size:20px;line-height:1.25;max-width:none}
+html body#fairgrounds-design.home-page .hv-faq .faq-item.open .faq-a{max-height:700px}
+html body#fairgrounds-design.home-page main>.oh-close>.wrap{background:#3b9c9e;color:#000;display:grid!important;grid-template-columns:1fr 1fr;gap:24px 30px!important;text-align:left}
+html body#fairgrounds-design.home-page .oh-close h2{font-size:clamp(42px,5vw,76px);line-height:.95;max-width:none;margin:0;grid-row:span 2}
+html body#fairgrounds-design.home-page .oh-close .note{font-size:24px;line-height:1.25;max-width:none;margin:0!important}
+html body#fairgrounds-design .oh-footer{background:#fff!important;color:#000!important;margin:30px;border-radius:12px;padding:48px 30px!important}
+html body#fairgrounds-design .oh-footer>.wrap{padding:0!important;max-width:none}
+html body#fairgrounds-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#000!important}
+html body#fairgrounds-design .oh-footer .acb-logo-mount{color:#4f46e5!important}
+html body#fairgrounds-design .oh-footer :is(.top,.bottom,.foot-lead,.oh-newsletter){border-color:#ddd!important}
+html body#fairgrounds-design .oh-footer :is(.col a,.news p){font-size:18px!important}
+html body#fairgrounds-design:not(.home-page) :is(.secpad,.oh-section){padding-top:48px!important;padding-bottom:48px!important}
+html body#fairgrounds-design .mobile-menu-toggle{color:#000!important;border-color:#000!important;z-index:65}
+@media(max-width:1060px){
+ html body#fairgrounds-design .oh-header .oh-head-right{display:none!important}
+ html body#fairgrounds-design .oh-header .mobile-menu-toggle{display:block!important}
+ html body#fairgrounds-design .oh-header.oh-menu-open .oh-head-right{display:flex!important;position:fixed!important;inset:0!important;min-height:100dvh!important;background:#fff!important;padding:110px 30px 30px!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;overflow:auto!important;z-index:61!important}
+ html body#fairgrounds-design .oh-header.oh-menu-open .oh-nav{display:flex!important;background:#fff!important;flex-direction:column!important;align-items:stretch!important}
+ html body#fairgrounds-design .oh-header.oh-menu-open .oh-sub{background:#fff!important}
+ html body#fairgrounds-design .oh-header.oh-menu-open .oh-sub a{color:#000!important}
+ html body#fairgrounds-design.home-page .hv-offer .plist{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:760px){
+ html body#fairgrounds-design .oh-header{top:16px!important;width:calc(100% - 32px)!important;margin:16px auto!important}
+ html body#fairgrounds-design .oh-header .inner{padding:10px 20px!important}
+ html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:30px 16px!important}
+ html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:24px 20px!important}
+ html body#fairgrounds-design.home-page main>.hv-say>.wrap{padding:32px 20px!important}
+ html body#fairgrounds-design.home-page .hv-say p{font-size:28px!important;line-height:1.15!important}
+ html body#fairgrounds-design.home-page .hv-say .cln{margin-top:28px!important}
+ html body#fairgrounds-design.home-page :is(.oh-proof-grid,.hv-look>.wrap,.hv-faq>.wrap,.oh-close>.wrap){grid-template-columns:1fr!important}
+ html body#fairgrounds-design.home-page .oh-proof-image{min-height:280px;height:320px}
+ html body#fairgrounds-design.home-page .hv-look h2,html body#fairgrounds-design.home-page .oh-close h2{grid-row:auto}
+ html body#fairgrounds-design.home-page .hv-offer{grid-template-columns:1fr}
+ html body#fairgrounds-design.home-page .ccard{flex-basis:82%}
+ html body#fairgrounds-design .oh-footer{margin:30px 16px;padding:32px 20px!important}
+}
+
+html body#fairgrounds-design .oh-header .inner{height:56px!important;min-height:56px!important}
+html body#fairgrounds-design .oh-nav{margin-left:auto!important;flex:0 1 auto!important}
+html body#fairgrounds-design .oh-header .navbutton{text-transform:none!important}
+
+html body#fairgrounds-design .oh-proof-grid{align-items:stretch}
+html body#fairgrounds-design .oh-proof-image{position:relative;min-height:440px;height:auto}
+html body#fairgrounds-design .oh-proof-image img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover}
+html body#fairgrounds-design .oh-header .navbutton{padding:0!important}
+html body#fairgrounds-design .oh-header .oh-social{display:none}
+@media(max-width:760px){html body#fairgrounds-design .oh-proof-image{height:320px;min-height:0}}
+html body#fairgrounds-design .hv-say .hl{background:none!important;padding:0!important}
+html body#fairgrounds-design main>section:not(.hv-hero) :is(.rv,.rvl){opacity:1!important;transform:none!important}
+html body#fairgrounds-design .oh-header .oh-utility-pill{font-family:Inter,sans-serif!important;font-size:16px!important;text-transform:none!important;letter-spacing:0!important}
+
+/* White-version spacing rhythm, with Inter body and navigation. */
+html body#fairgrounds-design{--section-space:clamp(72px,9vw,120px);--section-inset:clamp(24px,4vw,72px)}
+html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:var(--section-space) var(--section-inset)!important}
+html body#fairgrounds-design.home-page main>.hv-say>.wrap{padding:var(--section-space) var(--section-inset)!important}
+html body#fairgrounds-design.home-page main>.oh-proof>.wrap{padding:0!important}
+html body#fairgrounds-design.home-page .oh-proof-copy{padding:clamp(40px,5vw,76px) var(--section-inset)!important}
+html body#fairgrounds-design.home-page .hv-offer .hv-panel{padding:clamp(26px,3vw,44px)!important}
+html body#fairgrounds-design.home-page .hv-say p{letter-spacing:-.025em!important}
+html body#fairgrounds-design.home-page main>section:not(.hv-hero) :is(p,.caro-intro,.note,.faq-q,.plist li){letter-spacing:-.015em!important}
+html body#fairgrounds-design .oh-header :is(.navbutton,.oh-sub a,.oh-utility-pill){letter-spacing:-.015em!important}
+html body#fairgrounds-design .oh-footer :is(p,a,input,button){letter-spacing:-.015em!important}
+html body#fairgrounds-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.oh-sub a){font-family:Inter,sans-serif!important;letter-spacing:-.015em}
+html body#fairgrounds-design:not(.home-page) :is(.secpad,.oh-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
+@media(max-width:760px){
+ html body#fairgrounds-design{--section-space:clamp(48px,10vw,72px);--section-inset:24px}
+ html body#fairgrounds-design.home-page .oh-proof-copy{padding:48px 24px!important}
+}
+html body#fairgrounds-design.home-page main>.hv-say p.scrolltext{letter-spacing:-.025em!important}
+
+/* Inter body; existing display titles remain unchanged. */
+html body#fairgrounds-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.oh-sub a,.mono,.eyebrow,.hv-eyebrow,.pe,.clabel,.note){font-family:Inter,sans-serif!important}
+html body#fairgrounds-design .hv-hero :is(.sub,.pill){font-family:Inter,sans-serif!important}
+/* Restore the original white-version map palette, supplied by each card. */
+html body#fairgrounds-design.home-page .ccard .cnum{color:var(--c)!important}
+html body#fairgrounds-design.home-page .ccard .clabel{background:var(--c)!important;color:#071321!important;padding:5px 9px;font-size:14px;letter-spacing:.04em;line-height:1.2}
+/* White-version near-black footer with readable white type and mark. */
+html body#fairgrounds-design .oh-footer{background:#071321!important;color:#fff!important}
+html body#fairgrounds-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
+html body#fairgrounds-design .oh-footer .acb-logo-mount{color:#fff!important}
+html body#fairgrounds-design .oh-footer :is(.top,.bottom,.foot-lead,.oh-newsletter){border-color:rgba(255,255,255,.25)!important}
+html body#fairgrounds-design .oh-footer input::placeholder{color:rgba(255,255,255,.7)!important}
+/* Increase distance between panels while retaining their inner padding. */
+html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:50px!important;margin-bottom:50px!important}
+html body#fairgrounds-design .oh-footer{margin-top:50px!important}
+@media(max-width:760px){
+ html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:40px!important;margin-bottom:40px!important}
+ html body#fairgrounds-design .oh-footer{margin-top:40px!important}
+}
+
+/* Inter across all live typography; logo remains its original vector artwork. */
+html body#fairgrounds-design,html body#fairgrounds-design *{font-family:Inter,sans-serif!important}
+html body#fairgrounds-design{--site-gutter:clamp(20px,4vw,72px);--site-width:calc(min(100vw,1580px) - 2 * var(--site-gutter))}
+html body#fairgrounds-design main{width:var(--site-width)!important;max-width:none!important;margin-inline:auto!important}
+html body#fairgrounds-design .oh-header,html body#fairgrounds-design .oh-footer{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+html body#fairgrounds-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-left:0!important;margin-right:0!important}
+/* Full image with a white text panel overlaid on its left edge. */
+html body#fairgrounds-design.home-page .hv-hero{padding:0!important;background:transparent!important;width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important}
+html body#fairgrounds-design.home-page .hv-hero>.wrap{padding:0!important;max-width:none!important}
+html body#fairgrounds-design.home-page .hv-hero-grid{position:relative;display:grid;grid-template-columns:1fr!important;min-height:clamp(540px,70vh,740px);border-radius:0!important;overflow:hidden;padding:40px;align-items:end;isolation:isolate}
+html body#fairgrounds-design.home-page .hv-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
+html body#fairgrounds-design.home-page .hv-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
+html body#fairgrounds-design.home-page .hv-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:12px;width:min(560px,48%);padding:36px!important;margin:0}
+html body#fairgrounds-design.home-page .hv-hero h1{font-size:clamp(32px,3.3vw,48px);line-height:1.04;letter-spacing:-.03em;max-width:none;margin:0}
+html body#fairgrounds-design.home-page .hv-hero .sub{font-size:17px;line-height:1.45;max-width:none;margin-top:20px}
+html body#fairgrounds-design.home-page .hv-hero .sub br{display:none}
+html body#fairgrounds-design.home-page .hv-hero .hv-cta{gap:10px;margin-top:24px}
+html body#fairgrounds-design.home-page .hv-hero .pill{font-size:13px!important;padding:14px 18px!important;letter-spacing:-.015em!important}
+/* Two equal-width groups provide an exact, seamless half-track translation. */
+html body#fairgrounds-design.home-page .hv-marq{margin:0 0 0 calc(50% - 50vw)!important;padding:16px 0!important;width:100vw!important;max-width:100vw!important;overflow:hidden;background:#f2f1ed!important;border-top:1px solid #e4e3de!important;border-bottom:1px solid #e4e3de!important}
+html body#fairgrounds-design.home-page .hv-marq .track{display:flex;width:max-content;gap:0;white-space:nowrap;animation:acb-marquee 40s linear infinite;font-size:16px;line-height:1.4;will-change:transform}
+html body#fairgrounds-design.home-page .hv-marq .marq-group{display:flex;align-items:center;flex-shrink:0;gap:24px;padding:0 24px 0 0}
+html body#fairgrounds-design.home-page .hv-marq .track span{padding:0;flex-shrink:0}
+html body#fairgrounds-design.home-page .hv-marq .track em{font-style:normal;font-size:14px;flex-shrink:0}
+@keyframes acb-marquee{to{transform:translateX(-50%)}}
+html body#fairgrounds-design.home-page .hv-marq:hover .track{animation-play-state:paused}
+@media(max-width:1060px){
+ html body#fairgrounds-design.home-page .hv-hero-copy{width:min(520px,65%)}
+}
+@media(max-width:760px){
+ html body#fairgrounds-design.home-page .hv-hero-grid{min-height:680px;padding:16px;align-items:end}
+ html body#fairgrounds-design.home-page .hv-hero-copy{width:100%;padding:24px!important}
+ html body#fairgrounds-design.home-page .hv-hero h1{font-size:32px}
+ html body#fairgrounds-design.home-page .hv-hero-img img{object-position:60% center}
+ html body#fairgrounds-design.home-page .hv-marq .track{font-size:14px}
+ html body#fairgrounds-design.home-page .hv-marq .marq-group{gap:20px;padding-right:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ html body#fairgrounds-design.home-page .hv-marq{overflow-x:auto}
+ html body#fairgrounds-design.home-page .hv-marq .track{animation:none}
+ html body#fairgrounds-design.home-page .hv-marq .marq-group[aria-hidden]{display:none}
+}
+/* Compact copyright/legal row, matching the white version. */
+html body#fairgrounds-design .oh-footer .bottom,
+html body#fairgrounds-design .oh-footer .bottom a{
+  font-size:8.415px!important;
+  line-height:1.5;
+  letter-spacing:.09em!important;
+}
+
+/* All buttons: rounded like the section cards, and no all-caps. */
+html body#fairgrounds-design :is(.pill,.pill.big,.pill.alt,.pill.is-outline,.btn,.btn.big,.btn.dark,.btn-out,.oh-utility-pill,.refbar-btn){
+  border-radius:12px!important;
+  text-transform:none!important;
+}
+
+/* Home hero: header floats over it so the image touches the top/left/right edges. */
+html body#fairgrounds-design.home-page .oh-header{position:fixed!important;left:0;right:0;top:30px!important;margin:30px auto!important}
+
+/* Centre the nav in the header (desktop only); Book a call stays on the right. */
+@media(min-width:1061px){
+  html body#fairgrounds-design .oh-header .inner{position:relative!important}
+  html body#fairgrounds-design .oh-header .oh-nav{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;margin:0!important;flex:0 0 auto!important}
+}
+
+/* Taller hero with the text bubble centred (both axes). */
+html body#fairgrounds-design.home-page .hv-hero-grid{min-height:clamp(640px,88vh,920px)!important;align-items:center!important;justify-items:center!important;padding:40px calc((100vw - var(--site-width)) / 2)!important}
+html body#fairgrounds-design.home-page .hv-hero-copy{width:min(520px,92%)!important;text-align:center!important;margin:0!important;padding:24px!important}
+html body#fairgrounds-design.home-page .hv-hero h1{font-size:18px!important;line-height:1.45!important;letter-spacing:-.01em!important;font-weight:400!important}
+html body#fairgrounds-design.home-page .hv-hero .hv-cta{justify-content:center!important;margin-top:18px!important}
+
+/* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
+html body#fairgrounds-design .oh-footer{margin-bottom:0!important}
+html body#fairgrounds-design.home-page{min-height:100vh;display:flex;flex-direction:column}
+html body#fairgrounds-design.home-page>main{flex:1 0 auto}
+html body#fairgrounds-design:not(.home-page) .site{min-height:100vh;display:flex;flex-direction:column}
+html body#fairgrounds-design:not(.home-page) .site>main{flex:1 0 auto}
+
+/* Buttons on the yellow CTA bar + header hover use our button blue. */
+html body#fairgrounds-design .oh-close :is(.pill,.btn,.is-outline,.btn-out),
+html body#fairgrounds-design .oh-close-sub :is(.pill,.btn,.is-outline,.btn-out){background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
+html body#fairgrounds-design .oh-close :is(.pill,.btn,.is-outline,.btn-out):hover,
+html body#fairgrounds-design .oh-close-sub :is(.pill,.btn,.is-outline,.btn-out):hover,
+html body#fairgrounds-design .oh-header .oh-utility-pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
+
+/* ==========================================================================
+   SHARED SUBPAGE LAYER — align every internal page with the home language:
+   teal text eyebrows, Inter type, calmer heading sizes, 12px corners,
+   indigo buttons. Loaded last so it wins over white-pages.css.
+   ========================================================================== */
+/* Eyebrows/labels become plain teal text (not a blue chip). */
+html body#fairgrounds-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv-eyebrow,.k,.pe,.reslabel,.post-tag,.side-note,.lab){
+  background:none!important;color:var(--fg-teal)!important;width:auto!important;max-width:none!important;
+  padding:0!important;font-size:14px!important;font-weight:600!important;letter-spacing:.02em!important;
+  text-transform:none!important;margin:0 0 clamp(14px,1.6vw,20px)!important;
+}
+/* Inter everywhere; dark headings with fairgrounds tracking. */
+html body#fairgrounds-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:Inter,sans-serif!important}
+html body#fairgrounds-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:#000!important;font-weight:400!important}
+/* Calmer heading scale. */
+html body#fairgrounds-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1){font-size:clamp(34px,4.4vw,62px)!important;line-height:1.02!important}
+html body#fairgrounds-design.internal-page :is(.display,.section-head h2,.section h2,.big,.leave p){font-size:clamp(27px,3.5vw,48px)!important;line-height:1.04!important}
+html body#fairgrounds-design.internal-page :is(.card h3,h3){font-size:clamp(20px,1.9vw,28px)!important;line-height:1.06!important}
+/* 12px rounded surfaces to match the home. */
+html body#fairgrounds-design.internal-page :is(.card,.startcard,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card,.bmcard,.faq-item,.access-note,.outcome-list li,.tcol,.result-card){border-radius:12px!important}
+html body#fairgrounds-design.internal-page :is(img,figure,.fam-img,.bmcard-img,.split-img){border-radius:12px!important;overflow:hidden}
+html body#fairgrounds-design.internal-page :is(input,textarea,select){border-radius:12px!important}
+/* Buttons: our indigo, 12px, consistent hover — no yellow leak. */
+html body#fairgrounds-design.internal-page :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn){background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important;border-radius:12px!important}
+html body#fairgrounds-design.internal-page :is(.btn,.btn-out,.pill,.oh-utility-pill,.refbar-btn):hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
