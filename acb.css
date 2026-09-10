@@ -617,3 +617,10 @@ html body#acb-design .oh-header{margin-top:32px!important}
    padding (9.18px), so the button sits the same distance from the
    right edge as it does top/bottom — and the logo mirrors it on the left. */
 html body#acb-design .oh-header .inner{padding-left:9.18px!important;padding-right:9.18px!important}
+
+/* Find-your-block button: suppress the generic trailing arrow (it was
+   landing below the disclaimer line in the column layout) and put a
+   real arrow right after the title text instead. */
+html body#acb-design.home-page .hv-banner .pill::after{content:none!important}
+html body#acb-design.home-page .hv-banner .pill .banner-title::after{content:" ↗"!important}
+html body#acb-design.home-page .hv-banner .pill .banner-title{display:block}
