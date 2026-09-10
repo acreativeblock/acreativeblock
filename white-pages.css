@@ -1,6 +1,6 @@
 /* final-whiteversion — shared calm system for every internal page */
 :root{
-  --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#071321;--muted:#071321;
+  --white:#fff;--quiet:whitesmoke;--quiet-2:#e8e8e5;--copy:#000000;--muted:#000000;
   --brand:#4f46e5;--action:#E4E244;--b1:#F6D65D;--b2:#ef9f5e;--b3:#e35d54;--b4:#c9a0f0;
   --b5:#9a8ff2;--b6:#a9d5f5;--b7:#5f9dd6;--b8:#909090;
 }
@@ -124,9 +124,9 @@ html body:not(.home-page) :is(.oh-close-sub,main>section.close) h2{color:var(--c
 html body:not(.home-page) :is(.oh-close-sub,main>section.close) :is(.btn,.btn-out){background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
 html body:not(.home-page) :is(.oh-close-sub,main>section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
 
-body.organisations-page main>section.talks-section{background:#071321!important;color:#fff!important}
+body.organisations-page main>section.talks-section{background:#000000!important;color:#fff!important}
 body.organisations-page .talks-section .talks :is(h2,p){color:#fff!important}
-body.organisations-page .talks-section .aud-eyebrow{background:var(--action)!important;color:#071321!important}
+body.organisations-page .talks-section .aud-eyebrow{background:var(--action)!important;color:#000000!important}
 body.organisations-page #offers .big{letter-spacing:-.025em!important}
 body.individuals-page .access-note{background:#E4E244!important;background-color:#E4E244!important}
 
@@ -230,7 +230,7 @@ body.resources-page .personals-intro{background:#E4E244!important;padding:clamp(
 body.resources-page .personals-intro :is(h2,p){color:var(--copy)!important}
 
 /* Dark ending, exactly as the primary version. */
-body:not(.home-page) .oh-footer{background:#071321!important;color:#fff!important;border-top:0!important}
+body:not(.home-page) .oh-footer{background:#000000!important;color:#fff!important;border-top:0!important}
 body:not(.home-page) .oh-footer .acb-logo-mount{color:#fff!important}
 body:not(.home-page) .oh-footer .top,body:not(.home-page) .oh-footer .bottom{border-color:rgba(255,255,255,.25)!important}
 body:not(.home-page) .oh-footer :is(b,.col a,.news p,.bottom,.bottom a){color:#fff!important}
@@ -273,7 +273,7 @@ body.legal-page main>section{background:#fff!important;background-image:none!imp
 @keyframes menuCalmIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 
 body.questionnaire-page,body.questionnaire-page button,body.questionnaire-page input,body.questionnaire-page textarea,body.questionnaire-page select{font-family:'Manrope',sans-serif!important}
-body.questionnaire-page{--ink:#071321;--yellow:#F6D65D;background:var(--brand)!important;color:#fff!important;background-image:none!important}
+body.questionnaire-page{--ink:#000000;--yellow:#F6D65D;background:var(--brand)!important;color:#fff!important;background-image:none!important}
 body.questionnaire-page .quiz-logo{height:52px!important}
 body.questionnaire-page :is(h1,h2,h3,p,.qtext,.bar){color:#fff!important}
 body.questionnaire-page .top{background:var(--brand)!important;border-color:rgba(255,255,255,.4)!important}

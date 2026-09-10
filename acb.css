@@ -1,30 +1,29 @@
-@font-face{font-family:Inter;src:url('fonts/inter-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 /* Measured from the live A Creative Block homepage. */
-:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--brand:#000;--action:#000;--copy:#000;--muted:#000;--ink:#000;--ink-soft:#000;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:30px}
+:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--copy:#000;--muted:#000;--ink:#000;--ink-soft:#000;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:30px}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:#000;background-image:none!important}
 html body#acb-design .grain{display:none!important}
 html body#acb-design .oh-header{position:sticky!important;top:18px!important;width:calc(100% - 60px)!important;max-width:none!important;margin:18px auto!important;background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#acb-design .oh-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:10px 30px!important;gap:24px!important;min-height:56px}
 html body#acb-design .oh-header .oh-logo{background:#fff!important;padding:5px 13px!important;border-radius:12px!important;flex-shrink:0;color:#4f46e5!important}
 html body#acb-design .oh-header .oh-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
-html body#acb-design .oh-head-right{display:flex;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}
+@media(min-width:1061px){html body#acb-design .oh-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:32px!important}}
 html body#acb-design .oh-header .oh-nav{gap:32px;align-items:center}
-html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:Inter,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important}
+html body#acb-design .oh-header .navbutton,html body#acb-design .oh-header .oh-social a{color:#000!important;font-family:Manrope,sans-serif!important;font-weight:400!important;font-size:18px!important;letter-spacing:0!important}
 html body#acb-design .oh-header .navitem:hover .navbutton{color:#000!important}
 html body#acb-design .oh-header .oh-actions{display:flex;gap:24px;align-items:center;margin:0!important}
 html body#acb-design .oh-header .oh-sub{background:#fff!important;color:#000!important;border:0!important;border-radius:12px!important;box-shadow:0 2px 4px #a19ea81a}
-html body#acb-design .oh-header .oh-sub a{color:#000!important;font-family:Inter,sans-serif!important;font-size:18px!important}
+html body#acb-design .oh-header .oh-sub a{color:#000!important;font-family:Manrope,sans-serif!important;font-size:18px!important}
 html body#acb-design .oh-header .oh-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:10px 18px!important;border-radius:12px!important;white-space:nowrap}
 /* Original hero composition, image, copy and type. */
-html body#acb-design.home-page .hv-hero{--pad:clamp(20px,4vw,72px);--copy:#071321;--muted:#071321;--brand:#4f46e5;--action:#E4E244}
+html body#acb-design.home-page .hv-hero{--pad:clamp(20px,4vw,72px);--copy:#000000;--muted:#000000;--brand:#4f46e5;--action:#E4E244}
 html body#acb-design.home-page .hv-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
 html body#acb-design.home-page .hv-hero .pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
 /* A Creative Block uses 30px outer gutters, 12px corners and no panel outlines. */
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:30px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:30px!important;max-width:none!important;width:100%;border:0!important;border-radius:12px;background:#fff}
-html body#acb-design.home-page main>section:not(.hv-hero) *,html body#acb-design .oh-footer *{font-family:Inter,sans-serif!important;font-weight:400!important}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:Inter,sans-serif!important;letter-spacing:-.035em}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:12px!important;font-family:Inter,sans-serif!important;font-size:16px!important;letter-spacing:0;padding:16px 20px!important;line-height:1.4}
+html body#acb-design.home-page main>section:not(.hv-hero) *,html body#acb-design .oh-footer *{font-family:Manrope,sans-serif!important;font-weight:400!important}
+html body#acb-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:Manrope,sans-serif!important;letter-spacing:-.035em}
+html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:12px!important;font-family:Manrope,sans-serif!important;font-size:16px!important;letter-spacing:0;padding:16px 20px!important;line-height:1.4}
 html body#acb-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:14px!important;line-height:1.2!important;letter-spacing:.09em!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 20px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.hv-say>.wrap{padding:48px 30px!important;text-align:left;display:block}
@@ -63,7 +62,7 @@ html body#acb-design.home-page .caro-head{gap:30px;margin-bottom:30px}
 html body#acb-design.home-page .caro-intro{font-size:22px;line-height:1.25;max-width:none}
 html body#acb-design.home-page .ccard{border:0!important;border-radius:12px;min-height:260px;flex:0 0 31%;background:#fff;padding:30px;gap:16px}
 html body#acb-design.home-page .ccard .clabel{padding:0;background:none;color:#000;font-size:18px;letter-spacing:0;text-transform:none}
-html body#acb-design.home-page .ccard .cnum{font-family:Inter,sans-serif!important;font-size:64px;color:var(--acb-teal)!important}
+html body#acb-design.home-page .ccard .cnum{font-family:Manrope,sans-serif!important;font-size:64px;color:var(--acb-teal)!important}
 html body#acb-design.home-page .ccard h3{font-size:30px;line-height:1.05;color:#000}
 html body#acb-design.home-page .ccard p{font-size:20px;line-height:1.2;color:#000}
 html body#acb-design.home-page .caro-nav,html body#acb-design.home-page .caro-nav:hover{border:0!important;border-radius:12px;background:#4f46e5!important;color:#fff!important}
@@ -73,15 +72,16 @@ html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2){background:#4f46
 html body#acb-design.home-page .hv-panel h2{font-size:clamp(36px,4vw,62px);line-height:1.02;margin:20px 0}
 html body#acb-design.home-page .hv-panel .pe{font-size:24px;color:inherit!important;letter-spacing:0}
 html body#acb-design.home-page .hv-offer .hv-panel .pbody{color:inherit!important;font-size:22px;line-height:1.25;max-width:none}
-html body#acb-design.home-page .hv-offer .plist{margin:24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-html body#acb-design.home-page .hv-offer .plist li{border:0!important;font-size:22px;padding:0}
+html body#acb-design.home-page .hv-offer .plist{margin:24px 0;display:grid;gap:0}
+html body#acb-design.home-page .hv-offer .plist li{border:0!important;border-top:1px solid rgba(0,0,0,.14)!important;font-size:22px;padding:16px 0}
+html body#acb-design.home-page .hv-offer .plist li:last-child{border-bottom:1px solid rgba(0,0,0,.14)!important}
+html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2) .plist li{border-color:rgba(255,255,255,.28)!important}
 html body#acb-design.home-page .hv-offer .plist li span{font-size:18px;color:inherit!important}
 html body#acb-design.home-page .hv-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:30px}
 html body#acb-design.home-page .hv-faq .hv-head{text-align:left;margin:0}
 html body#acb-design.home-page .hv-faq .faq-list{max-width:none;width:100%}
 html body#acb-design.home-page .hv-faq .faq-q{font-size:24px;padding:20px 0;color:#000}
 html body#acb-design.home-page .hv-faq .faq-a p{font-size:20px;line-height:1.25;max-width:none}
-html body#acb-design.home-page .hv-faq .faq-item.open .faq-a{max-height:700px}
 html body#acb-design.home-page main>.oh-close>.wrap{background:#3b9c9e;color:#000;display:grid!important;grid-template-columns:1fr 1fr;gap:24px 30px!important;text-align:left}
 html body#acb-design.home-page .oh-close h2{font-size:clamp(42px,5vw,76px);line-height:.95;max-width:none;margin:0;grid-row:span 2}
 html body#acb-design.home-page .oh-close .note{font-size:24px;line-height:1.25;max-width:none;margin:0!important}
@@ -96,10 +96,92 @@ html body#acb-design .mobile-menu-toggle{color:#000!important;border-color:#000!
 @media(max-width:1060px){
  html body#acb-design .oh-header .oh-head-right{display:none!important}
  html body#acb-design .oh-header .mobile-menu-toggle{display:block!important}
- html body#acb-design .oh-header.oh-menu-open .oh-head-right{display:flex!important;position:fixed!important;inset:0!important;min-height:100dvh!important;background:#fff!important;padding:110px 30px 30px!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;overflow:auto!important;z-index:61!important}
- html body#acb-design .oh-header.oh-menu-open .oh-nav{display:flex!important;background:#fff!important;flex-direction:column!important;align-items:stretch!important}
- html body#acb-design .oh-header.oh-menu-open .oh-sub{background:#fff!important}
- html body#acb-design .oh-header.oh-menu-open .oh-sub a{color:#000!important}
+
+ /* Mobile menu, fully open: full-bleed brand panel, big stacked links. */
+ html body#acb-design .oh-header.oh-menu-open,
+ html body#acb-design .oh-header.mobile-open{background:#4f46e5!important}
+ html body#acb-design .oh-header.oh-menu-open .oh-head-right,
+ html body#acb-design .oh-header.mobile-open .oh-head-right{
+   display:flex!important;position:fixed!important;inset:0!important;min-height:100dvh!important;
+   background:#4f46e5!important;padding:96px 28px 0!important;margin:0!important;
+   flex-direction:column!important;align-items:stretch!important;justify-content:space-between!important;
+   overflow-y:auto!important;z-index:61!important;gap:0!important;
+   animation:acbMenuIn .38s cubic-bezier(.16,1,.3,1);
+ }
+ html body#acb-design .oh-header.oh-menu-open .oh-nav,
+ html body#acb-design .oh-header.mobile-open .oh-nav{display:flex!important;background:transparent!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;margin:0!important}
+ html body#acb-design .oh-header.oh-menu-open .navitem,
+ html body#acb-design .oh-header.mobile-open .navitem{border-bottom:1px solid rgba(255,255,255,.22)!important;padding:0!important}
+ html body#acb-design .oh-header.oh-menu-open .navitem:first-child,
+ html body#acb-design .oh-header.mobile-open .navitem:first-child{border-top:1px solid rgba(255,255,255,.22)!important}
+ html body#acb-design .oh-header.oh-menu-open .navitem>a.navbutton,
+ html body#acb-design .oh-header.oh-menu-open .navitem>button.navbutton,
+ html body#acb-design .oh-header.mobile-open .navitem>a.navbutton,
+ html body#acb-design .oh-header.mobile-open .navitem>button.navbutton{
+   display:flex!important;align-items:center!important;justify-content:space-between!important;
+   width:100%!important;padding:20px 0!important;margin:0!important;border:0!important;background:none!important;
+   font-family:Manrope,sans-serif!important;font-weight:600!important;
+   font-size:clamp(30px,8vw,46px)!important;letter-spacing:-.02em!important;line-height:1!important;
+   color:#fff!important;text-transform:none!important;text-align:left!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .navitem>button.navbutton::after,
+ html body#acb-design .oh-header.mobile-open .navitem>button.navbutton::after{
+   content:"";width:11px;height:11px;flex-shrink:0;margin-left:12px;
+   border-right:2px solid rgba(255,255,255,.75)!important;border-bottom:2px solid rgba(255,255,255,.75)!important;
+   transform:rotate(45deg);transition:transform .3s cubic-bezier(.16,1,.3,1);
+ }
+ html body#acb-design .oh-header.oh-menu-open .navitem.is-open>button.navbutton::after,
+ html body#acb-design .oh-header.mobile-open .navitem.submenu-open>button.navbutton::after{transform:rotate(-135deg)}
+ html body#acb-design .oh-header.oh-menu-open .oh-sub,
+ html body#acb-design .oh-header.mobile-open .oh-sub,
+ html body#acb-design .oh-header.mobile-open .submenu{
+   display:block!important;position:static!important;min-width:0!important;
+   background:transparent!important;border:0!important;box-shadow:none!important;opacity:1!important;visibility:visible!important;
+   transform:none!important;padding:0!important;margin:0!important;
+   max-height:0!important;overflow:hidden!important;
+   transition:max-height .4s cubic-bezier(.16,1,.3,1)!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .navitem.is-open .oh-sub,
+ html body#acb-design .oh-header.mobile-open .navitem.submenu-open .oh-sub,
+ html body#acb-design .oh-header.mobile-open .navitem.submenu-open .submenu{max-height:320px!important}
+ html body#acb-design .oh-header.oh-menu-open .oh-sub a,
+ html body#acb-design .oh-header.mobile-open .oh-sub a,
+ html body#acb-design .oh-header.mobile-open .submenu a{
+   display:block!important;padding:12px 0 12px 4px!important;border:0!important;
+   font-family:Manrope,sans-serif!important;font-size:19px!important;font-weight:500!important;
+   color:rgba(255,255,255,.82)!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .oh-actions,
+ html body#acb-design .oh-header.mobile-open .oh-actions{
+   position:sticky!important;bottom:0!important;left:-28px!important;width:calc(100% + 56px)!important;
+   margin:24px 0 0!important;padding:22px 28px calc(22px + env(safe-area-inset-bottom))!important;
+   background:#fff!important;border:0!important;border-radius:0!important;
+   display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .oh-social a,
+ html body#acb-design .oh-header.mobile-open .oh-social a{color:#000!important}
+ html body#acb-design .oh-header.oh-menu-open .oh-utility-pill,
+ html body#acb-design .oh-header.mobile-open .oh-utility-pill{background:#4f46e5!important;color:#fff!important}
+ @keyframes acbMenuIn{from{opacity:0}to{opacity:1}}
+
+ /* Close control: a real "×", not text, pinned top-right over the panel. */
+ html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle,
+ html body#acb-design .oh-header.mobile-open .mobile-menu-toggle{
+   position:fixed!important;top:28px!important;right:28px!important;z-index:65!important;
+   width:44px!important;height:44px!important;padding:0!important;border:0!important;
+   font-size:0!important;color:transparent!important;background:transparent!important;
+ }
+ html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::before,
+ html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::after,
+ html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::before,
+ html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::after{
+   content:"";position:absolute;top:50%;left:50%;width:26px;height:2px;background:#fff;
+ }
+ html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::before,
+ html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::before{transform:translate(-50%,-50%) rotate(45deg)}
+ html body#acb-design .oh-header.oh-menu-open .mobile-menu-toggle::after,
+ html body#acb-design .oh-header.mobile-open .mobile-menu-toggle::after{transform:translate(-50%,-50%) rotate(-45deg)}
+
  html body#acb-design.home-page .hv-offer .plist{grid-template-columns:1fr;gap:16px}
 }
 @media(max-width:760px){
@@ -130,9 +212,9 @@ html body#acb-design .oh-header .oh-social{display:none}
 @media(max-width:760px){html body#acb-design .oh-proof-image{height:320px;min-height:0}}
 html body#acb-design .hv-say .hl{background:none!important;padding:0!important}
 html body#acb-design main>section:not(.hv-hero) :is(.rv,.rvl){opacity:1!important;transform:none!important}
-html body#acb-design .oh-header .oh-utility-pill{font-family:Inter,sans-serif!important;font-size:16px!important;text-transform:none!important;letter-spacing:0!important}
+html body#acb-design .oh-header .oh-utility-pill{font-family:Manrope,sans-serif!important;font-size:16px!important;text-transform:none!important;letter-spacing:0!important}
 
-/* White-version spacing rhythm, with Inter body and navigation. */
+/* White-version spacing rhythm, with Manrope body and navigation. */
 html body#acb-design{--section-space:clamp(72px,9vw,120px);--section-inset:clamp(24px,4vw,72px)}
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:var(--section-space) var(--section-inset)!important}
 html body#acb-design.home-page main>.hv-say>.wrap{padding:var(--section-space) var(--section-inset)!important}
@@ -143,7 +225,7 @@ html body#acb-design.home-page .hv-say p{letter-spacing:-.025em!important}
 html body#acb-design.home-page main>section:not(.hv-hero) :is(p,.caro-intro,.note,.faq-q,.plist li){letter-spacing:-.015em!important}
 html body#acb-design .oh-header :is(.navbutton,.oh-sub a,.oh-utility-pill){letter-spacing:-.015em!important}
 html body#acb-design .oh-footer :is(p,a,input,button){letter-spacing:-.015em!important}
-html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.oh-sub a){font-family:Inter,sans-serif!important;letter-spacing:-.015em}
+html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.oh-sub a){font-family:Manrope,sans-serif!important;letter-spacing:-.015em}
 html body#acb-design:not(.home-page) :is(.secpad,.oh-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
 @media(max-width:760px){
  html body#acb-design{--section-space:clamp(48px,10vw,72px);--section-inset:24px}
@@ -151,14 +233,14 @@ html body#acb-design:not(.home-page) :is(.secpad,.oh-section){padding-top:var(--
 }
 html body#acb-design.home-page main>.hv-say p.scrolltext{letter-spacing:-.025em!important}
 
-/* Inter body; existing display titles remain unchanged. */
-html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.oh-sub a,.mono,.eyebrow,.hv-eyebrow,.pe,.clabel,.note){font-family:Inter,sans-serif!important}
-html body#acb-design .hv-hero :is(.sub,.pill){font-family:Inter,sans-serif!important}
+/* Manrope body; existing display titles remain unchanged. */
+html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.oh-sub a,.mono,.eyebrow,.hv-eyebrow,.pe,.clabel,.note){font-family:Manrope,sans-serif!important}
+html body#acb-design .hv-hero :is(.sub,.pill){font-family:Manrope,sans-serif!important}
 /* Restore the original white-version map palette, supplied by each card. */
 html body#acb-design.home-page .ccard .cnum{color:var(--c)!important}
-html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:#071321!important;padding:5px 9px;font-size:14px;letter-spacing:.04em;line-height:1.2}
+html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:#000000!important;padding:5px 9px;font-size:14px;letter-spacing:.04em;line-height:1.2}
 /* White-version near-black footer with readable white type and mark. */
-html body#acb-design .oh-footer{background:#071321!important;color:#fff!important}
+html body#acb-design .oh-footer{background:#000000!important;color:#fff!important}
 html body#acb-design .oh-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
 html body#acb-design .oh-footer .acb-logo-mount{color:#fff!important}
 html body#acb-design .oh-footer :is(.top,.bottom,.foot-lead,.oh-newsletter){border-color:rgba(255,255,255,.25)!important}
@@ -171,8 +253,8 @@ html body#acb-design .oh-footer{margin-top:50px!important}
  html body#acb-design .oh-footer{margin-top:40px!important}
 }
 
-/* Inter across all live typography; logo remains its original vector artwork. */
-html body#acb-design,html body#acb-design *{font-family:Inter,sans-serif!important}
+/* Manrope across all live typography; logo remains its original vector artwork. */
+html body#acb-design,html body#acb-design *{font-family:Manrope,sans-serif!important}
 html body#acb-design{--site-gutter:clamp(20px,4vw,72px);--site-width:calc(min(100vw,1580px) - 2 * var(--site-gutter))}
 html body#acb-design main{width:var(--site-width)!important;max-width:none!important;margin-inline:auto!important}
 html body#acb-design .oh-header,html body#acb-design .oh-footer{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
@@ -261,7 +343,7 @@ html body#acb-design .oh-header .oh-utility-pill:hover{background:#3f37c4!import
 
 /* ==========================================================================
    SHARED SUBPAGE LAYER — align every internal page with the home language:
-   teal text eyebrows, Inter type, calmer heading sizes, 12px corners,
+   teal text eyebrows, Manrope type, calmer heading sizes, 12px corners,
    indigo buttons. Loaded last so it wins over white-pages.css.
    ========================================================================== */
 /* Eyebrows/labels become plain teal text (not a blue chip). */
@@ -270,8 +352,8 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv
   padding:0!important;font-size:14px!important;font-weight:600!important;letter-spacing:.09em!important;
   text-transform:uppercase!important;margin:0 0 clamp(14px,1.6vw,20px)!important;
 }
-/* Inter everywhere; dark headings with acb tracking. */
-html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:Inter,sans-serif!important}
+/* Manrope everywhere; dark headings with acb tracking. */
+html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:Manrope,sans-serif!important}
 html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:#000!important;font-weight:400!important}
 /* Calmer heading scale. */
 html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1){font-size:clamp(34px,4.4vw,62px)!important;line-height:1.02!important}
@@ -287,16 +369,16 @@ html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.oh-utility-pill,.ref
 
 /* Hero sentence wraps only on phones. */
 @media(max-width:720px){html body#acb-design.home-page .hv-hero h1{white-space:normal!important}}
-/* "Find your block" banner: one big, bold full-width button — the CTA itself
-   carries the weight, with the supporting line sitting quietly above it. */
+/* "Find your block" banner: one big, bold, but compact full-width button —
+   wide and confident rather than tall, with a small disclaimer underneath. */
 html body#acb-design.home-page .hv-banner>.wrap{background:#E4E244!important}
-html body#acb-design.home-page .hv-banner .banner-in{display:flex;flex-direction:column;align-items:stretch;gap:18px}
-html body#acb-design.home-page .hv-banner p{font-family:Inter,sans-serif!important;font-size:16px!important;line-height:1.3;letter-spacing:-.015em!important;color:#071321!important;margin:0;max-width:none;text-align:center}
+html body#acb-design.home-page .hv-banner .banner-in{display:flex;flex-direction:column;align-items:center;gap:12px}
+html body#acb-design.home-page .hv-banner .banner-note{font-family:Manrope,sans-serif!important;font-size:13px!important;line-height:1.3;letter-spacing:-.005em!important;color:rgba(7,19,33,.65)!important;margin:0;max-width:none;text-align:center}
 html body#acb-design.home-page main section.hv-banner .banner-in .pill{
   flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;background:#4f46e5!important;color:#fff!important;border:0!important;
-  border-radius:16px!important;font-size:clamp(20px,2.8vw,30px)!important;font-weight:500!important;
-  letter-spacing:-.02em!important;padding:clamp(24px,4vw,40px) 32px!important;
+  border-radius:14px!important;font-size:clamp(20px,2.6vw,28px)!important;font-weight:500!important;
+  letter-spacing:-.02em!important;padding:18px 32px!important;
 }
 html body#acb-design.home-page main section.hv-banner .banner-in .pill:hover{background:#3f37c4!important}
 
@@ -317,6 +399,8 @@ html body#acb-design.home-page .hv-say p .hl{
 @media(prefers-reduced-motion:reduce){
   html body#acb-design.home-page .hv-say p .hl{background-size:100% 100%!important}
 }
+html body#acb-design.home-page .hv-say p .hl::selection,html body#acb-design.home-page .hv-say p .hl ::selection{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.home-page .hv-say p .hl::-moz-selection,html body#acb-design.home-page .hv-say p .hl ::-moz-selection{background:#4f46e5!important;color:#fff!important}
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 48px). */
 html body#acb-design .oh-logo .acb-logo-mount{height:42px!important}

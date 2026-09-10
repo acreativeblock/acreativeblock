@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
 @font-face{font-family:"ITC Garamond";src:url("fonts/itc-garamond-book-cond.woff2") format("woff2");font-display:swap}
 :root{
-  --ink:#071321;--coral:#FF7F50;--indigo:#4F46E5;--white:#FFFFFF;
+  --ink:#000000;--coral:#FF7F50;--indigo:#4F46E5;--white:#FFFFFF;
   --paper:#fffaf4;--line:rgba(30,30,30,.22);--soft:rgba(255,255,255,.72);
-  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --sans:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --serif:"ITC Garamond",Georgia,serif;--max:1086.3px;--pad:clamp(13.77px,2.295vw,36.72px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -95,9 +95,7 @@ a{color:inherit;text-decoration:none} button,input{font:inherit} img,svg{max-wid
   .footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.mega{grid-template-columns:1fr}
 }
 
-/* Beta Convent system — shared by every internal page */
-@font-face{font-family:'Founders Grotesk';src:url('https://abbotsfordconvent.com.au/app/themes/convent/dist/fonts/founders-grotesk-web-regular_2a71db01.woff2') format('woff2');font-weight:400;font-display:block}
-:root{--ink:#4F46E5;--coral:#FF7F50;--indigo:#4F46E5;--white:#F7F6F6;--paper:#F7F6F6;--line:#4F46E5;--soft:#F7F6F6;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+:root{--ink:#4F46E5;--coral:#FF7F50;--indigo:#4F46E5;--white:#F7F6F6;--paper:#F7F6F6;--line:#4F46E5;--soft:#F7F6F6;--sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 html,body{background:#F7F6F6;color:var(--ink)}
 body{font-weight:400;line-height:1.32}.display{line-height:1.02;letter-spacing:-.02em}.display em{color:var(--coral)}
 .utility{color:var(--ink);border-bottom:1px solid var(--ink)}
@@ -114,7 +112,7 @@ body{font-weight:400;line-height:1.32}.display{line-height:1.02;letter-spacing:-
 .access-note{border:1px solid var(--ink);border-radius:0;background:transparent}
 .method-strip{border:1px solid var(--ink);border-radius:0;background:#F7F6F6}.method-step{border-right:1px solid var(--ink)}.method-step b{color:var(--coral)}
 .offer-list{border-top:1px solid currentColor}.offer-row{border-bottom:1px solid currentColor}
-.footer{background:#071321;color:#F7F6F6}.newsletter input,.newsletter button{border-radius:0}.newsletter button{color:#071321}
+.footer{background:#000000;color:#F7F6F6}.newsletter input,.newsletter button{border-radius:0}.newsletter button{color:#000000}
 .grain{opacity:.22}
 
 /* Final shared proportions:the homepage is the system of record. */
@@ -137,7 +135,7 @@ h1,h2,h3,h4,.display{font-weight:400}strong,b{font-weight:500}.eyebrow{font-size
 body,button,input,.eyebrow,.btn,.text-link,.navbutton,.mainnav>a,.offer-toggle,.side-note,.faq-q,.newsletter button{font-weight:400}.price,strong,b{font-weight:500}.navbutton,.mainnav>a{font-size:clamp(10.71px,0.8568vw,15.147px)}
 
 /* The subpage header uses the homepage's exact structure and colours. */
-.site-header .inner{max-width:1425.6px;margin:0 auto;padding:20.196px var(--pad) 18.9338px;display:grid;grid-template-columns:29fr 71fr;gap:clamp(17.6715px,2.8441vw,50.49px);align-items:start}.site-header .logo{align-self:center}.site-header .acb-logo-mount{color:#4F46E5}.hdr-right{display:flex;flex-direction:column}.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10.098px,0.9427vw,18.9338px);padding-bottom:13.8848px;color:#4F46E5}.hdr-top .clock{font-size:9.4707px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}.hdr-top a{font-size:9.4707px;letter-spacing:.05em;text-transform:uppercase}.hdr-top .pill{background:#4F46E5;color:#fff;border-radius:999px;padding:6.3112px 13.8848px}.hdr-divider{border-top:1px solid #4F46E5}.hdr-main{display:flex;justify-content:space-between;align-items:center;gap:clamp(8.8357px,1.0098vw,20.196px);flex-wrap:wrap;padding-top:15.147px;color:#4F46E5}.hdr-main>a,.hdr-main .navbutton{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(10.71px,0.8568vw,15.147px);font-weight:400;line-height:1;letter-spacing:-.01em}.hdr-main .menu{position:relative;padding-bottom:9.18px;margin-bottom:-9.18px}.hdr-main .submenu{top:100%;left:-13.77px;width:297px;min-width:0;background:#fff;color:#4F46E5;border:1px solid #4F46E5;padding:10.71px 13.77px}.hdr-main .submenu a{padding:7.65px 0}.hdr-main .submenu strong{font-weight:400}.hdr-main .submenu small{display:block;font-size:9.18px;margin-top:2.295px;opacity:.72}
+.site-header .inner{max-width:1425.6px;margin:0 auto;padding:20.196px var(--pad) 18.9338px;display:grid;grid-template-columns:29fr 71fr;gap:clamp(17.6715px,2.8441vw,50.49px);align-items:start}.site-header .logo{align-self:center}.site-header .acb-logo-mount{color:#4F46E5}.hdr-right{display:flex;flex-direction:column}.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10.098px,0.9427vw,18.9338px);padding-bottom:13.8848px;color:#4F46E5}.hdr-top .clock{font-size:9.4707px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}.hdr-top a{font-size:9.4707px;letter-spacing:.05em;text-transform:uppercase}.hdr-top .pill{background:#4F46E5;color:#fff;border-radius:999px;padding:6.3112px 13.8848px}.hdr-divider{border-top:1px solid #4F46E5}.hdr-main{display:flex;justify-content:space-between;align-items:center;gap:clamp(8.8357px,1.0098vw,20.196px);flex-wrap:wrap;padding-top:15.147px;color:#4F46E5}.hdr-main>a,.hdr-main .navbutton{font-family:Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(10.71px,0.8568vw,15.147px);font-weight:400;line-height:1;letter-spacing:-.01em}.hdr-main .menu{position:relative;padding-bottom:9.18px;margin-bottom:-9.18px}.hdr-main .submenu{top:100%;left:-13.77px;width:297px;min-width:0;background:#fff;color:#4F46E5;border:1px solid #4F46E5;padding:10.71px 13.77px}.hdr-main .submenu a{padding:7.65px 0}.hdr-main .submenu strong{font-weight:400}.hdr-main .submenu small{display:block;font-size:9.18px;margin-top:2.295px;opacity:.72}
 @media(max-width:684px){.site-header .inner{display:block}.hdr-right{margin-top:15.3px}.hdr-top{justify-content:flex-start;flex-wrap:wrap}.hdr-top .clock{display:none}.hdr-main{justify-content:flex-start}.hdr-main .submenu{position:fixed;left:13.77px;right:13.77px;top:auto;width:auto}}
 
 /* Header palette is isolated from every page theme and legacy variable. */

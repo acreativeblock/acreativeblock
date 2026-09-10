@@ -1,5 +1,4 @@
-/* otherhalf.studio faithful homage for A Creative Block
-   Exact palette from live site. Fonts/logo/content = ACB (ITC Garamond serif + Inter). */
+/* Shared base styles: palette, header, footer for A Creative Block. */
 
 @font-face{
   font-family:'ITC Garamond';
@@ -13,16 +12,16 @@
   --blue:#006FDA;
   --yellow:#E4E244;
   --pink:#FFB8CB;
-  --ink:#071321;
-  --ink-soft:#071321;
+  --ink:#000000;
+  --ink-soft:#000000;
   --tint:#EAF1F8;
   /* legacy aliases kept so old references resolve to the canonical colours */
   --blue-deep:var(--blue);
   --navy:var(--ink);
   --line:rgba(43,43,43,.12);
   --line-on-blue:rgba(255,255,255,.28);
-  --serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
-  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --serif:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   --wrap:1680px;
   --pad:clamp(20px,4vw,72px);
   --cols:8;
@@ -30,8 +29,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 ::selection{background:var(--yellow);color:var(--ink)}
 ::-moz-selection{background:var(--yellow);color:var(--ink)}
-.oh-difference ::selection,.oh-close ::selection{background:var(--blue);color:#fff}
-.oh-difference ::-moz-selection,.oh-close ::-moz-selection{background:var(--blue);color:#fff}
+.oh-difference ::selection,.oh-close ::selection,.hv-banner ::selection{background:var(--blue);color:#fff}
+.oh-difference ::-moz-selection,.oh-close ::-moz-selection,.hv-banner ::-moz-selection{background:var(--blue);color:#fff}
 em,i,*{font-style:normal}
 .oh-footer .mark a{display:inline-block}
 html{-webkit-font-smoothing:antialiased}
@@ -372,7 +371,7 @@ img{max-width:100%;display:block}
 .oh-actions .oh-social{margin-right:2.7px}
 .oh-sub{top:calc(100% + 16.2px)}
 
-@media(max-width:1180px){
+@media(max-width:1060px){
   .oh-header .inner{display:flex}.oh-head-right{display:none}.mobile-menu-toggle{display:inline-block;margin-left:auto}.oh-logo .acb-logo-mount{height:46.8px}
   .oh-header.oh-menu-open .oh-head-right{position:fixed;inset:0;z-index:61;display:flex;flex-direction:column;align-items:stretch;padding:94.5px 21.6px 30.6px;background:var(--blue);overflow-y:auto}
   .oh-header.oh-menu-open .oh-nav{display:flex;width:100%;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0}
@@ -442,7 +441,7 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 .oh-marquee{min-height:var(--oh-marquee-h);box-sizing:border-box;margin:0;padding:clamp(9.945px,1.275vw,15.3px) 0;display:flex;align-items:center}
 .oh-marquee .track{font-size:18.36px;line-height:1}
 
-@media(max-width:1180px){
+@media(max-width:1060px){
   :root{--oh-head-h:78px;--oh-marquee-h:78px;--oh-next-peek:52px}
   .oh-header .inner{height:var(--oh-head-h);display:flex;padding-top:10.8px;padding-bottom:10.8px}
   .oh-head-right{display:none}.mobile-menu-toggle{display:inline-block;margin-left:auto}.oh-logo .acb-logo-mount{height:46.8px}

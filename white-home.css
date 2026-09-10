@@ -3,8 +3,8 @@
   --white:#fff;
   --quiet:whitesmoke;
   --quiet-2:#e8e8e5;
-  --copy:#071321;
-  --muted:#071321;
+  --copy:#000000;
+  --muted:#000000;
   --brand:#4f46e5;
   --action:#E4E244;
   --b1:#F6D65D;
@@ -125,7 +125,7 @@ html body.home-page .oh-close{background:#E4E244!important;background-color:#E4E
 .home-page .oh-close .pill:hover,.home-page .oh-close .is-outline:hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
 
 /* Dark footer, matching final-v3. */
-.home-page .oh-footer{background:#071321!important;color:#fff!important;border-top:0}
+.home-page .oh-footer{background:#000000!important;color:#fff!important;border-top:0}
 .home-page .oh-footer .acb-logo-mount{color:#fff!important}
 .home-page .oh-footer .top,.home-page .oh-footer .bottom{border-color:rgba(255,255,255,.25)!important}
 .home-page .oh-footer b,.home-page .oh-footer .col a,.home-page .oh-footer .news p,.home-page .oh-footer .bottom{color:#fff!important}
