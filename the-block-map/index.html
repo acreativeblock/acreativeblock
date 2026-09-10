@@ -40,7 +40,7 @@
 .bm-faq .eyebrow{color:var(--blue)}
 .bm-faq h2{font-family:var(--sans);font-weight:500;font-size:clamp(26px,3.6vw,50px);letter-spacing:-.03em;margin:6px 0 0;color:var(--ink)}
 </style>
-<link rel="stylesheet" href="../white-pages.css?v=7"><link rel="stylesheet" href="../acb.css?v=23"></head><body id="acb-design" class="internal-page blocks-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
+<link rel="stylesheet" href="../white-pages.css?v=7"><link rel="stylesheet" href="../acb.css?v=24"></head><body id="acb-design" class="internal-page blocks-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
 
 <section class="bm-hero"><div class="wrap">
   <span class="mono">Our blocks' map</span>
@@ -98,9 +98,9 @@
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(el&&!reduce){setInterval(function(){i=(i+1)%words.length;el.classList.add('out');setTimeout(function(){el.textContent=words[i][0];el.style.background=words[i][1];el.style.color=(words[i][1]==='#909090'||words[i][1]==='#5f9dd6')?'#fff':'#111';el.classList.remove('out');el.classList.add('pre');void el.offsetWidth;el.classList.remove('pre');},520);},2600);}
   var body=document.getElementById('blockPanelBody'),panel=document.getElementById('refpanel'),scrim=document.querySelector('.refscrim');
-  function openP(n){var src=document.getElementById('bd-'+n);if(!src||!body)return;body.innerHTML=src.innerHTML;panel.classList.add('open');panel.setAttribute('aria-hidden','false');if(scrim)scrim.classList.add('open');document.documentElement.style.overflow='hidden';}
+  function openP(n,c){var src=document.getElementById('bd-'+n);if(!src||!body)return;body.innerHTML=src.innerHTML;if(c)panel.style.setProperty('--pc',c);panel.classList.add('open');panel.setAttribute('aria-hidden','false');if(scrim)scrim.classList.add('open');document.documentElement.style.overflow='hidden';}
   function closeP(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true');if(scrim)scrim.classList.remove('open');document.documentElement.style.overflow='';}
-  document.querySelectorAll('.bmcard').forEach(function(c){c.addEventListener('click',function(){openP(c.getAttribute('data-block'));});});
+  document.querySelectorAll('.bmcard').forEach(function(c){c.addEventListener('click',function(){openP(c.getAttribute('data-block'),getComputedStyle(c).getPropertyValue('--c'));});});
   document.addEventListener('click',function(e){if(e.target.closest('.refpanel-close')||e.target.classList.contains('refscrim'))closeP();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
 })();

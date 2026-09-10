@@ -335,3 +335,24 @@ html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-pa
 html body#acb-design.internal-page :is(figure,.split-img,.fam-img) img{border-radius:12px!important;display:block;width:100%}
 /* Consistent block colour cards still read on the white field. */
 html body#acb-design.internal-page :is(.card,.tcard,.startcard,.trio>*){background:#fff!important;border:1px solid #ececec!important}
+
+/* ==========================================================================
+   BLOCK MAP — slide-in detail panel: wider (half the viewport, not capped
+   at 468px), rounded to match the card system, bigger/legible type, and
+   accented with the clicked block's own colour (--pc, set by the page's
+   inline script) instead of the flat legacy yellow.
+   ========================================================================== */
+html body#acb-design .refpanel{
+  --pc:#818cf8;
+  width:50%!important;min-width:420px!important;max-width:none!important;
+  border-radius:16px 0 0 16px!important;
+}
+@media(max-width:860px){html body#acb-design .refpanel{width:88%!important;min-width:0!important}}
+html body#acb-design .refpanel h3{font-size:clamp(24px,2.8vw,34px)!important;letter-spacing:-.02em!important}
+html body#acb-design .bd-sci{font-size:12px!important;letter-spacing:.1em!important}
+html body#acb-design .refpanel .bd-lead{font-size:17px!important;line-height:1.6!important}
+html body#acb-design .refpanel h4{color:var(--pc)!important;font-size:11px!important;letter-spacing:.1em!important}
+html body#acb-design .refpanel .bd-list li{font-size:15px!important;line-height:1.5!important}
+html body#acb-design .refpanel .bd-list li::before{color:var(--pc)!important}
+html body#acb-design .refpanel .bd-under{font-size:16px!important;line-height:1.6!important}
+html body#acb-design .refpanel-close:hover{color:var(--pc)!important}
