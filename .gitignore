@@ -6,3 +6,6 @@ desktop.ini
 *.log
 .vscode/
 .final_trash/
+
+# Parked dead code (kept locally as a safety net, not deployed)
+_archive/
