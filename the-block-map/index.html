@@ -18,17 +18,21 @@
 .bmap-head h2{font-family:var(--sans);font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:0;color:#fff}
 .bmgrid{max-width:1440px;margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.2vw,18px)}
 .bmcard{
-  --tc:#000;display:flex;flex-direction:column;background:var(--c);color:var(--tc);
+  display:flex;flex-direction:column;background:#fff;color:#000;
   border:0;border-radius:20px;text-align:left;cursor:pointer;font-family:var(--sans);
-  padding:clamp(24px,2.2vw,32px);min-height:270px;gap:14px;
+  padding:0;overflow:hidden;
   box-shadow:0 2px 4px rgba(0,0,0,.08);
   transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1);
 }
 .bmcard:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(0,0,0,.16)}
-.bmcard .lab{font-family:var(--sans);font-weight:700;font-size:clamp(14px,1.15vw,16px);letter-spacing:.04em;color:var(--tc);opacity:.62}
-.bmcard-title{font-family:var(--sans);font-weight:700;font-size:clamp(26px,2.6vw,36px);letter-spacing:-.02em;line-height:1.03;margin:0;color:var(--tc)}
-.bmcard-lead{font-size:clamp(15px,1.2vw,17px);line-height:1.42;margin:0;color:var(--tc);opacity:.82}
-.bmcard-arr{margin-top:auto;font-size:24px;color:var(--tc);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.bmcard-img{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--tint)}
+.bmcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.bmcard:hover .bmcard-img img{transform:scale(1.04)}
+.bmcard-body{display:flex;flex-direction:column;gap:8px;padding:clamp(18px,1.8vw,24px)}
+.bmcard .lab{font-family:var(--sans);font-weight:700;font-size:clamp(12px,1vw,13px);letter-spacing:.08em;text-transform:uppercase;color:var(--lc,var(--c))}
+.bmcard-title{font-family:var(--sans);font-weight:700;font-size:clamp(24px,2.3vw,32px);letter-spacing:-.02em;line-height:1.02;margin:0;color:#000}
+.bmcard-lead{font-size:clamp(14px,1.1vw,16px);line-height:1.4;margin:0;color:#4a4a4a}
+.bmcard-arr{margin-top:6px;font-size:22px;color:#000;transition:transform .25s cubic-bezier(.16,1,.3,1)}
 .bmcard:hover .bmcard-arr{transform:translateX(8px)}
 @media(max-width:1000px){.bmgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.bmgrid{grid-template-columns:1fr}}
@@ -43,7 +47,7 @@
 .bm-faq .eyebrow{color:var(--blue)}
 .bm-faq h2{font-family:var(--sans);font-weight:500;font-size:clamp(26px,3.6vw,50px);letter-spacing:-.03em;margin:6px 0 0;color:var(--ink)}
 </style>
-<link rel="stylesheet" href="../white-pages.css?v=8"><link rel="stylesheet" href="../acb.css?v=37"></head><body id="acb-design" class="internal-page blocks-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
+<link rel="stylesheet" href="../white-pages.css?v=8"><link rel="stylesheet" href="../acb.css?v=38"></head><body id="acb-design" class="internal-page blocks-page"><canvas class="grain" aria-hidden="true"></canvas><div class="site"><div data-site-header></div><main>
 
 <section class="bm-hero"><div class="wrap">
   <span class="mono">Our blocks' map</span>
@@ -54,14 +58,14 @@
 <section class="bmap">
   <div class="bmap-head"><span class="eyebrow2">The 7 + 1</span><h2>Our evidence-based blocks map</h2></div>
   <div class="bmgrid">
-    <button class="bmcard" data-block="1" style="--c:#F6D65D" type="button" aria-haspopup="dialog"><span class="lab">01 · Execution</span><span class="bmcard-title">Starting &amp; Doing</span><span class="bmcard-lead">Intention that won't become action.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="2" style="--c:#ef9f5e" type="button" aria-haspopup="dialog"><span class="lab">02 · Identity</span><span class="bmcard-title">Confidence &amp; Exposure</span><span class="bmcard-lead">When the work feels like a verdict.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="3" style="--c:#e35d54" type="button" aria-haspopup="dialog"><span class="lab">03 · Direction</span><span class="bmcard-title">Direction &amp; Meaning</span><span class="bmcard-lead">Too many paths, or none that pull.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="4" style="--c:#c9a0f0" type="button" aria-haspopup="dialog"><span class="lab">04 · Depletion</span><span class="bmcard-title">Energy &amp; Recovery</span><span class="bmcard-lead">The tank is empty.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="5" style="--c:#9a8ff2" type="button" aria-haspopup="dialog"><span class="lab">05 · Process</span><span class="bmcard-title">The Work Itself</span><span class="bmcard-lead">A real problem inside the work.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="6" style="--c:#a9d5f5" type="button" aria-haspopup="dialog"><span class="lab">06 · Systems</span><span class="bmcard-title">Structure &amp; Workflow</span><span class="bmcard-lead">The setup trips you up.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="7" style="--c:#5f9dd6" type="button" aria-haspopup="dialog"><span class="lab">07 · Context</span><span class="bmcard-title">Context &amp; Support</span><span class="bmcard-lead">The conditions work against it.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
-    <button class="bmcard" data-block="8" style="--c:#909090;--tc:#fff" type="button" aria-haspopup="dialog"><span class="lab">+1 · Trapdoor</span><span class="bmcard-title">A Skill Gap</span><span class="bmcard-lead">Not a block—learn it, or rule it out.</span><span class="bmcard-arr" aria-hidden="true">→</span></button>
+    <button class="bmcard" data-block="1" style="--c:#F6D65D;--lc:#8a7400" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/execution.webp" loading="lazy" decoding="async" alt="Starting &amp; Doing"></span><span class="bmcard-body"><span class="lab">01 · Execution</span><span class="bmcard-title">Starting &amp; Doing</span><span class="bmcard-lead">Intention that won't become action.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="2" style="--c:#ef9f5e;--lc:#8a5010" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/woman-pensive-original.webp" loading="lazy" decoding="async" alt="Confidence &amp; Exposure"></span><span class="bmcard-body"><span class="lab">02 · Identity</span><span class="bmcard-title">Confidence &amp; Exposure</span><span class="bmcard-lead">When the work feels like a verdict.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="3" style="--c:#e35d54;--lc:#8a2c26" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/man-portrait-original.webp" loading="lazy" decoding="async" alt="Direction &amp; Meaning"></span><span class="bmcard-body"><span class="lab">03 · Direction</span><span class="bmcard-title">Direction &amp; Meaning</span><span class="bmcard-lead">Too many paths, or none that pull.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="4" style="--c:#c9a0f0;--lc:#6c4a9e" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/woman-resting-original.webp" loading="lazy" decoding="async" alt="Energy &amp; Recovery"></span><span class="bmcard-body"><span class="lab">04 · Depletion</span><span class="bmcard-title">Energy &amp; Recovery</span><span class="bmcard-lead">The tank is empty.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="5" style="--c:#9a8ff2;--lc:#4c40a8" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/a4-1.webp" loading="lazy" decoding="async" alt="The Work Itself"></span><span class="bmcard-body"><span class="lab">05 · Process</span><span class="bmcard-title">The Work Itself</span><span class="bmcard-lead">A real problem inside the work.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="6" style="--c:#a9d5f5;--lc:#2c5c80" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/a4-2.webp" loading="lazy" decoding="async" alt="Structure &amp; Workflow"></span><span class="bmcard-body"><span class="lab">06 · Systems</span><span class="bmcard-title">Structure &amp; Workflow</span><span class="bmcard-lead">The setup trips you up.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="7" style="--c:#5f9dd6;--lc:#204a78" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/woman-outdoors-original.webp" loading="lazy" decoding="async" alt="Context &amp; Support"></span><span class="bmcard-body"><span class="lab">07 · Context</span><span class="bmcard-title">Context &amp; Support</span><span class="bmcard-lead">The conditions work against it.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
+    <button class="bmcard" data-block="8" style="--c:#909090;--lc:#555" type="button" aria-haspopup="dialog"><span class="bmcard-img"><img src="../images/man-in-pool-original.webp" loading="lazy" decoding="async" alt="A Skill Gap"></span><span class="bmcard-body"><span class="lab">+1 · Trapdoor</span><span class="bmcard-title">A Skill Gap</span><span class="bmcard-lead">Not a block—learn it, or rule it out.</span><span class="bmcard-arr" aria-hidden="true">→</span></span></button>
   </div>
   <div class="map-test-inline"><p><strong>Want a useful first hypothesis?</strong> The questionnaire can help you notice which patterns fit. It is a starting point—not a diagnosis or a definitive answer.</p><a class="btn" href="../find-your-block/">Find out your block</a></div>
 </section>

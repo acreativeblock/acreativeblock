@@ -501,13 +501,8 @@ html body#acb-design.method-page .craft-step p{font-size:14px;line-height:1.45;c
   html body#acb-design.method-page .craft-step::after{display:none!important}
 }
 
-/* Block map cards: full per-block color background (Fairgrounds-pricing-panel
-   vibe), overriding white-pages.css's flat white .bmcard which would
-   otherwise win via !important + extra specificity. */
-html body#acb-design.blocks-page .bmcard{
-  background:var(--c)!important;border:0!important;color:var(--tc,#000)!important;
-}
-html body#acb-design.blocks-page .bmcard .lab,
-html body#acb-design.blocks-page .bmcard-title,
-html body#acb-design.blocks-page .bmcard-lead,
-html body#acb-design.blocks-page .bmcard-arr{color:var(--tc,#000)!important}
+/* Block map cards: Fairgrounds-locations vibe — photo card, white body,
+   bold black title, color used only as a small hint (the label text).
+   Full saturated color is reserved for the detail panel on click. */
+html body#acb-design.blocks-page .bmcard{background:#fff!important;border:0!important}
+html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
