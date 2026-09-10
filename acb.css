@@ -517,3 +517,8 @@ html body#acb-design.method-page .craft-step p{font-size:14px;line-height:1.45;c
    Full saturated color is reserved for the detail panel on click. */
 html body#acb-design.blocks-page .bmcard{background:#fff!important;border:0!important}
 html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
+
+/* Experiment: Plus Jakarta Sans on the home page only. Inter and Manrope
+   are still loaded (index.html's font link) so all three can be swapped
+   in the inspector for a quick side-by-side comparison. */
+html body#acb-design.home-page,html body#acb-design.home-page *{font-family:"Plus Jakarta Sans",sans-serif!important}
