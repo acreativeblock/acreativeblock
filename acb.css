@@ -515,18 +515,17 @@ html body#acb-design:is(.factors-page,.method-page) .tcard-ic svg{width:20.2px;h
 /* Instagram handle strip between the FAQ and closing CTA — minimal, one line,
    the handle itself doing most of the talking. */
 html body#acb-design.home-page .hv-social>.wrap{
-  display:flex!important;align-items:center!important;justify-content:space-between!important;
-  flex-wrap:wrap;gap:18.36px;padding:23.87px 31.21px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  flex-wrap:wrap;gap:18.36px;padding:36.72px 31.21px!important;
+  background:#833ab4!important;
+  background:linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)!important;
 }
 html body#acb-design.home-page .social-handle{
-  font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600;font-size:clamp(20.2px,3vw,31.21px);
-  letter-spacing:-.02em;color:var(--ink)!important;
+  font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600;font-size:clamp(27.54px,4.2vw,44.06px);
+  letter-spacing:-.02em;color:#fff!important;
 }
-html body#acb-design.home-page .social-handle:hover{color:#4f46e5!important}
-html body#acb-design.home-page .pill.social-follow{
-  display:inline-flex!important;align-items:center;gap:7.34px;flex:0 0 auto;
-}
-html body#acb-design.home-page .pill.social-follow svg{width:14.69px;height:14.69px}
+html body#acb-design.home-page .social-handle:hover{color:#fff!important;opacity:.85}
+html body#acb-design.home-page .pill.social-follow{display:none!important}
 
 /* How we work — CRAFT method: five numbered steps in a row, connected by a
    thin line, each in the same rounded-card language as the rest of the site. */
@@ -635,7 +634,7 @@ html body#acb-design,html body#acb-design *{font-weight:500!important}
    to 30px at wider ones, matching the 30px target on a normal desktop
    viewport. */
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding-top:var(--sp-card)!important;padding-bottom:var(--sp-card)!important}
-html body#acb-design:not(.home-page) :is(.secpad,.acb-section,.section){padding-top:var(--sp-card)!important;padding-bottom:var(--sp-card)!important}
+html body#acb-design:not(.home-page) :is(.secpad,.acb-section,.section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding-top:var(--sp-card)!important;padding-bottom:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:var(--sp-card)!important;padding-bottom:var(--sp-card)!important}
 
 /* Header must never hide on scroll — same always-visible behavior on
