@@ -73,7 +73,7 @@ body:not(.home-page) :is(.hl,.ht,.hly,.rot){
 body:not(.home-page) .fam-h1{line-height:1.08!important}
 body:is(.individuals-page,.organisations-page) .fam-grid{grid-template-columns:minmax(0,1.25fr) minmax(293.76px,.75fr)!important}
 body:is(.individuals-page,.organisations-page) .fam-h1{max-width:none!important;font-size:clamp(27.54px,3.8vw,58.75px)!important;display:grid;gap:.2em}
-body:is(.individuals-page,.organisations-page) .fam-h1 .rotline{min-height:1.1em!important;margin:0!important;white-space:nowrap}
+body:is(.individuals-page,.organisations-page) .fam-h1 .rotline{min-height:2.3em!important;margin:0!important;white-space:normal}
 body:is(.individuals-page,.organisations-page) .fam-h1 .l1{display:block;white-space:nowrap}
 body:is(.individuals-page,.organisations-page) .audsay .big span{display:block}
 
@@ -284,7 +284,7 @@ body.questionnaire-page .btn{background:#fff!important;color:var(--brand)!import
 body.questionnaire-page .btn.alt{background:transparent!important;color:#fff!important;border-color:#fff!important}
 @media(max-width:760px){body:not(.home-page) .outcome-list{grid-template-columns:1fr}}
 @media(max-width:760px){body.blocks-page .map-test-bar .in,body.legal-page .legal-layout{grid-template-columns:1fr}body.legal-page .legal-nav{position:static}}
-@media(max-width:860px){body:is(.individuals-page,.organisations-page) .fam-grid{grid-template-columns:1fr!important}body:is(.individuals-page,.organisations-page) .fam-h1{font-size:clamp(19.28px,5.7vw,45.9px)!important}body:is(.individuals-page,.organisations-page) .fam-h1 .rotline,body:is(.individuals-page,.organisations-page) .fam-h1 .l1{white-space:nowrap}body.blocks-page :is(.map-test-inline,.evidence-band .in){grid-template-columns:1fr}}
+@media(max-width:860px){body:is(.individuals-page,.organisations-page) .fam-grid{grid-template-columns:1fr!important}body:is(.individuals-page,.organisations-page) .fam-h1{font-size:clamp(19.28px,5.7vw,45.9px)!important}body:is(.individuals-page,.organisations-page) .fam-h1 .rotline{white-space:normal}body:is(.individuals-page,.organisations-page) .fam-h1 .l1{white-space:nowrap}body.blocks-page :is(.map-test-inline,.evidence-band .in){grid-template-columns:1fr}}
 @media(max-width:700px){body:not(.home-page) .acb-footer .foot-lead{grid-template-columns:1fr}body:not(.home-page) .acb-footer .mark .acb-logo-mount{height:45.9px!important}}
 @media(prefers-reduced-motion:reduce){.white-reveal,.white-line-reveal>*{opacity:1!important;transform:none!important;transition:none!important}}
 
