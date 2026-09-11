@@ -22,8 +22,8 @@
   --fs-label:clamp(11px,1vw,12.85px);     --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(32px,5vw,70px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(25px,3.8vw,50px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
-  --fs-copy-lg:clamp(21px,2.4vw,29px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
-  --fs-body:clamp(14px,1.3vw,16.5px);     --ls-body:-.005em;   /* medium copy: standard paragraph */
+  --fs-copy-lg:clamp(24px,2.8vw,34px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
+  --fs-body:clamp(16px,1.5vw,19px);       --ls-body:-.005em;   /* medium copy: standard paragraph */
   --fs-small:clamp(11px,1vw,13px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(13.5px,1vw,14.69px);  --ls-button:0em;     /* buttons — same size everywhere */
 }
@@ -39,7 +39,7 @@ html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spaci
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
 html body#acb-design .grain{display:none!important}
 html body#acb-design .acb-header{position:sticky!important;top:22.03px!important;width:calc(100% - 55.08px)!important;max-width:none!important;margin:22.03px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:11.02px!important;box-shadow:0 1.84px 3.67px #a19ea81a;backdrop-filter:none!important;z-index:60}
-html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:9.18px 27.54px!important;gap:22.03px!important;min-height:51.41px}
+html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:9.18px!important;gap:22.03px!important;height:51.41px!important;min-height:51.41px!important}
 html body#acb-design .acb-header .acb-logo{background:#fff!important;padding:4.59px 11.93px!important;border-radius:11.02px!important;flex-shrink:0;color:#4f46e5!important}
 html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:38.56px!important}
 @media(min-width:1061px){html body#acb-design .acb-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:29.38px!important}}
@@ -49,7 +49,7 @@ html body#acb-design .acb-header .navitem:hover .navbutton,
 html body#acb-design .acb-header .navitem.is-active>.navbutton{color:#4f46e5!important;background:#eef2ff!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-social a:hover{color:#4f46e5!important}
 /* Footer links get the same hover pill as the header nav (adapted for the dark footer). */
-html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:inline-block;padding:2.76px 5.51px!important;margin:-2.76px -5.51px!important;border-radius:7.34px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:block;padding:2.76px 5.51px!important;margin:-2.76px -5.51px!important;border-radius:7.34px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-footer :is(.top,.foot-lead) a:hover{color:#a5b4fc!important;background:rgba(255,255,255,.1)!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-actions{display:flex;gap:22.03px;align-items:center;margin:0!important}
 html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:11.02px!important;box-shadow:0 1.84px 3.67px #a19ea81a}
@@ -99,7 +99,8 @@ html body#acb-design.home-page .acb-look .cta{justify-content:flex-start;margin:
 /* Wide carousel, without outlines or coloured text boxes. */
 html body#acb-design.home-page main>.acb-carousel>.wrap{background:#fff;padding:16.52px 0 0!important}
 html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
-html body#acb-design.home-page .caro-head{gap:27.54px;margin-bottom:27.54px}
+html body#acb-design.home-page .caro-head{gap:27.54px;margin-bottom:27.54px;padding:0 var(--sp-card)}
+html body#acb-design.home-page .caro-more{padding:0 var(--sp-card)}
 html body#acb-design.home-page .caro-intro{font-size:var(--fs-body);line-height:1.5;max-width:none}
 html body#acb-design.home-page .ccard{border:0!important;border-radius:11.02px;min-height:238.68px;flex:0 0 31%;background:#fff;padding:27.54px;gap:14.69px}
 html body#acb-design.home-page .ccard .clabel{padding:0;background:none;color:var(--ink);font-size:16.52px;letter-spacing:0;text-transform:none}
@@ -117,16 +118,17 @@ html body#acb-design.home-page .acb-offer .plist{margin:22.03px 0;display:grid;g
 html body#acb-design.home-page .acb-offer .plist li{border:0!important;border-top:0.92px solid rgba(0,0,0,.14)!important;font-size:var(--fs-body);padding:14.69px 0}
 html body#acb-design.home-page .acb-offer .plist li:last-child{border-bottom:0.92px solid rgba(0,0,0,.14)!important}
 html body#acb-design.home-page .acb-offer .acb-panel:nth-child(2) .plist li{border-color:rgba(255,255,255,.28)!important}
+html body#acb-design.home-page .acb-offer .acb-panel:nth-child(2) .pill{background:#f591b8!important;color:var(--ink)!important}
+html body#acb-design.home-page .acb-offer .acb-panel:nth-child(2) .pill:hover{background:#fff!important;color:var(--ink)!important}
 html body#acb-design.home-page .acb-offer .plist li span{font-size:var(--fs-small);color:inherit!important}
 html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:27.54px}
 html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
 html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%}
 html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:18.36px 0;color:var(--ink)}
 html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
-html body#acb-design.home-page main>.acb-close>.wrap{background:#3b9c9e;color:var(--ink);display:grid!important;grid-template-columns:1fr 1fr;gap:22.03px 27.54px!important;text-align:left}
-html body#acb-design.home-page .acb-close h2{font-size:var(--fs-h1);letter-spacing:var(--ls-h1);line-height:.95;max-width:none;margin:0;grid-row:span 2}
+html body#acb-design.home-page main>.acb-close>.wrap{background:#3b9c9e;color:var(--ink);display:grid!important;grid-template-columns:1fr auto;gap:22.03px 36.72px!important;align-items:center;text-align:left}
 html body#acb-design.home-page .acb-close .note{font-size:var(--fs-copy-lg);line-height:1.25;max-width:none;margin:0!important}
-html body#acb-design .acb-footer{background:#fff!important;color:var(--ink)!important;margin:27.54px;border-radius:11.02px;padding:44.06px 27.54px!important}
+html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(18px,1.8vw,22px)!important;padding:22.03px 33.05px!important}
 html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
 html body#acb-design .acb-footer .acb-logo-mount{color:#4f46e5!important}
@@ -244,13 +246,12 @@ html body#acb-design .mobile-menu-toggle{color:var(--ink)!important;border-color
  html body#acb-design.home-page .acb-say .cln{margin-top:25.7px!important}
  html body#acb-design.home-page :is(.acb-proof-grid,.acb-look>.wrap,.acb-faq>.wrap,.acb-close>.wrap){grid-template-columns:1fr!important}
  html body#acb-design.home-page .acb-proof-image{min-height:257.04px;height:293.76px}
- html body#acb-design.home-page .acb-look h2,html body#acb-design.home-page .acb-close h2{grid-row:auto}
+ html body#acb-design.home-page .acb-look h2{grid-row:auto}
  html body#acb-design.home-page .acb-offer{grid-template-columns:1fr}
  html body#acb-design.home-page .ccard{flex-basis:82%}
  html body#acb-design .acb-footer{margin:27.54px 14.69px;padding:29.38px 18.36px!important}
 }
 
-html body#acb-design .acb-header .inner{height:51.41px!important;min-height:51.41px!important}
 html body#acb-design .acb-nav{margin-left:auto!important;flex:0 1 auto!important}
 html body#acb-design .acb-header .navbutton{text-transform:none!important}
 
@@ -281,7 +282,6 @@ html body#acb-design .acb-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",s
 html body#acb-design.home-page .ccard .cnum{color:var(--c)!important}
 html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:var(--ink)!important;padding:4.59px 8.26px;font-size:var(--fs-label);letter-spacing:var(--ls-label);line-height:1.2;text-transform:uppercase!important;border-radius:6px;display:inline-block}
 /* White-version near-black footer with readable white type and mark. */
-html body#acb-design .acb-footer{background:#000000!important;color:#fff!important}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
 html body#acb-design .acb-footer .acb-logo-mount{color:#fff!important}
 html body#acb-design .acb-footer :is(.top,.bottom,.foot-lead,.acb-newsletter){border-color:rgba(255,255,255,.25)!important}
@@ -293,7 +293,6 @@ html body#acb-design .acb-footer input::placeholder{color:rgba(255,255,255,.7)!i
    pair does — so the footer side gets 0 and leans on the section's own
    margin-bottom to make the same 55.08px, instead of doubling it). */
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
-html body#acb-design .acb-footer{margin-top:0!important}
 @media(max-width:760px){
  html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
  html body#acb-design .acb-footer{margin-top:0!important}
@@ -311,7 +310,6 @@ html body#acb-design.home-page .acb-hero>.wrap{padding:0!important;max-width:non
 html body#acb-design.home-page .acb-hero-grid{position:relative;display:grid;grid-template-columns:1fr!important;min-height:clamp(495.72px,70vh,679.32px);border-radius:0!important;overflow:hidden;padding:36.72px;align-items:end;isolation:isolate}
 html body#acb-design.home-page .acb-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
 html body#acb-design.home-page .acb-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
-html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:11.02px;width:min(514.08px,48%);padding:33.05px!important;margin:0}
 html body#acb-design.home-page .acb-hero h1{font-size:16.52px;line-height:1.4;letter-spacing:0;max-width:none;margin:0}
 html body#acb-design.home-page .acb-hero .sub{font-size:var(--fs-body);line-height:1.45;max-width:none;margin-top:18.36px}
 html body#acb-design.home-page .acb-hero .sub br{display:none}
@@ -367,12 +365,12 @@ html body#acb-design.home-page .acb-header{position:fixed!important;left:0;right
 
 /* Taller hero with the text bubble centred (both axes). */
 html body#acb-design.home-page .acb-hero-grid{min-height:clamp(587.52px,88vh,844.56px)!important;align-items:center!important;justify-items:center!important;padding:36.72px calc((100vw - var(--site-width)) / 2)!important}
-html body#acb-design.home-page .acb-hero-copy{width:fit-content!important;max-width:min(94vw,826.2px)!important;text-align:center!important;margin:0!important;padding:22.03px 29.38px!important}
+html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:11.02px;width:fit-content!important;max-width:min(94vw,826.2px)!important;text-align:center!important;margin:0!important;padding:22.03px 29.38px!important}
 html body#acb-design.home-page .acb-hero h1{font-size:16.52px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important}
 html body#acb-design.home-page .acb-hero .acb-cta{justify-content:center!important;margin-top:16.52px!important}
 
 /* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
-html body#acb-design .acb-footer{margin-bottom:0!important}
+html body#acb-design .acb-footer{background:#000000!important;color:#fff!important;margin:0 27.54px!important;border-radius:11.02px;padding:44.06px 27.54px!important}
 html body#acb-design.home-page{min-height:100vh;display:flex;flex-direction:column}
 html body#acb-design.home-page>main{flex:1 0 auto}
 html body#acb-design:not(.home-page) .site{min-height:100vh;display:flex;flex-direction:column}
@@ -432,7 +430,6 @@ html body#acb-design.home-page main section.acb-banner .banner-in .pill{
   border-radius:20.2px!important;font-size:clamp(25.7px,4.6vw,51.41px)!important;font-weight:500!important;
   letter-spacing:-.045em!important;padding:clamp(23.87px,3.6vw,40.39px) 33.05px!important;
 }
-html body#acb-design.home-page main section.acb-banner .banner-in .pill:hover{background:#3f37c4!important}
 
 /* Our-approach: the .hl phrases get drawn over by a highlighter-pen sweep as they
    scroll into view (left-to-right, driven by --hlp from logo.js), instead
@@ -530,10 +527,16 @@ html body#acb-design.home-page .acb-social>.wrap{
   background:linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)!important;
 }
 html body#acb-design.home-page .social-handle{
+  position:relative;display:inline-block;
   font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600;font-size:clamp(27.54px,4.2vw,44.06px);
   letter-spacing:-.02em;color:#fff!important;
 }
-html body#acb-design.home-page .social-handle:hover{color:#fff!important;opacity:.85}
+html body#acb-design.home-page .social-handle::after{
+  content:"";position:absolute;left:0;bottom:.02em;width:100%;height:.045em;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .22s ease;
+}
+html body#acb-design.home-page .social-handle:hover{color:#fff!important}
+html body#acb-design.home-page .social-handle:hover::after{transform:scaleX(1)}
 html body#acb-design.home-page .pill.social-follow{display:none!important}
 
 /* How we work — CRAFT method: five numbered steps in a row, connected by a
@@ -659,14 +662,14 @@ html body#acb-design .acb-header{margin-top:32px!important}
 /* Header edge padding matches the "Book a call" button's own vertical
    padding (9.18px), so the button sits the same distance from the
    right edge as it does top/bottom — and the logo mirrors it on the left. */
-html body#acb-design .acb-header .inner{padding-left:9.18px!important;padding-right:9.18px!important}
 
 /* Find-your-block button: suppress the generic trailing arrow (it was
    landing below the disclaimer line in the column layout) and put a
    real arrow right after the title text instead. */
 html body#acb-design.home-page .acb-banner .pill::after{content:none!important}
-html body#acb-design.home-page .acb-banner .pill .banner-title::after{content:" ↗"!important}
+html body#acb-design.home-page .acb-banner .pill .banner-title::after{content:"↗"!important;display:inline-block;margin-left:.28em;transition:transform .22s ease}
 html body#acb-design.home-page .acb-banner .pill .banner-title{display:block}
+html body#acb-design.home-page .acb-banner .pill:hover .banner-title::after{transform:translate(.14em,-.14em)}
 
 /* for-individuals/for-organisations: match home's specific brand
    accents — teal eyebrows (not indigo), bigger bolder headlines. */
