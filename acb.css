@@ -462,22 +462,29 @@ html body#acb-design .acb-logo .acb-logo-mount{height:38.56px!important}
    white 11.02px rounded section cards. Heroes and the yellow CTA are excluded.
    Custom-layout pages keep their structure (they get typography/radius only).
    ========================================================================== */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page){background:#f6f6f6!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section{margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section:not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section){background:#f6f6f6!important;background-image:none!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.legal-section) > :is(.wrap,.in){
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page){background:#f6f6f6!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section{margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec){background:#f6f6f6!important;background-image:none!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec) > :is(.wrap,.in){
   background:#fff!important;border-radius:11.02px!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:none!important;
 }
 /* .talks-section keeps its own black card instead of the generic grey/white treatment. */
 html body#acb-design.organisations-page main>section.talks-section{background:#000!important}
 html body#acb-design.organisations-page main>section.talks-section>.in{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important}
 /* .acb-close-sub (the bottom CTA) is its own yellow card, like the home page's close section. */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>.acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:center}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>.acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:center}
 /* Legal pages (terms/privacy/cookies): the section itself is the white card — it has
    no .wrap/.in child, just the sidebar-nav + article layout, which keeps its own width. */
 html body#acb-design.legal-page main>section.legal-section{background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important}
 /* Section images sit flush and rounded like the home cards. */
 html body#acb-design.internal-page :is(figure,.split-img,.fam-img) img{border-radius:11.02px!important;display:block;width:100%}
+/* Colour-class sections keep their own colour — beats an old nth-of-type(2n)
+   zebra-stripe rule from before the unified card system existed. */
+html body#acb-design.internal-page main>section.tint{background:var(--tint)!important}
+html body#acb-design.internal-page main>section.yellow{background:var(--yellow)!important}
+html body#acb-design.internal-page main>section.pink{background:var(--pink)!important}
+html body#acb-design.internal-page main>section.blue{background:var(--blue)!important;color:#fff!important}
+html body#acb-design.internal-page main>section.ink{background:var(--ink)!important;color:#fff!important}
 /* Consistent block colour cards still read on the white field. */
 html body#acb-design.internal-page :is(.card,.tcard,.startcard,.trio>*){background:#fff!important;border:0.92px solid #ececec!important}
 
