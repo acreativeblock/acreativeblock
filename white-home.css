@@ -45,16 +45,16 @@ body.home-page{
 .home-page .acb-logo .acb-logo-mount{height:44.06px!important}
 
 /* Hero: almost entirely neutral, with blue reserved for action. */
-.home-page .hv-hero{background:var(--white)!important}
-.home-page .hv-hero-grid{min-height:clamp(459px,72vh,633.42px)}
-.home-page .hv-hero-copy{background:var(--white)}
-.home-page .hv-hero h1{color:var(--copy);max-width:15ch}
-.home-page .hv-hero .sub{color:var(--muted)}
-.home-page .hv-hero-img{margin:0;min-height:100%;background:var(--quiet)}
-.home-page .hv-hero>.wrap{max-width:none!important;padding-right:0!important}
-.home-page .hv-hero-img img{filter:none!important}
-.home-page .pill,.home-page .hv-hero .pill.alt,.home-page .hv-cta .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
-.home-page .pill:hover,.home-page .hv-hero .pill.alt:hover,.home-page .hv-cta .pill.alt:hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
+.home-page .acb-hero{background:var(--white)!important}
+.home-page .acb-hero-grid{min-height:clamp(459px,72vh,633.42px)}
+.home-page .acb-hero-copy{background:var(--white)}
+.home-page .acb-hero h1{color:var(--copy);max-width:15ch}
+.home-page .acb-hero .sub{color:var(--muted)}
+.home-page .acb-hero-img{margin:0;min-height:100%;background:var(--quiet)}
+.home-page .acb-hero>.wrap{max-width:none!important;padding-right:0!important}
+.home-page .acb-hero-img img{filter:none!important}
+.home-page .pill,.home-page .acb-hero .pill.alt,.home-page .acb-cta .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
+.home-page .pill:hover,.home-page .acb-hero .pill.alt:hover,.home-page .acb-cta .pill.alt:hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
 .home-page .pill:not(:empty)::after{content:" ↗";font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
 .home-page .pill:hover::after{transform:translate(1.84px,-1.84px)}
 
@@ -66,36 +66,36 @@ body.home-page{
 .home-page .acb-utility-pill:hover::after{transform:translate(1.84px,-1.84px)}
 
 /* Every phrase in the moving block symptom line inherits its block colour. */
-.home-page .hv-marq{background:var(--quiet)!important;color:var(--copy)!important;border-top:0.92px solid var(--quiet-2);border-bottom:0.92px solid var(--quiet-2);padding:clamp(12.85px,1.5vw,20.2px) 0}
-.home-page .hv-marq .track{font-size:clamp(13.77px,1.65vw,22.03px)}
-.home-page .hv-marq .track em{color:#b7b7b4}
-.home-page .hv-marq .track span:nth-of-type(8n+1){color:#a47a00}
-.home-page .hv-marq .track span:nth-of-type(8n+2){color:#bd6530}
-.home-page .hv-marq .track span:nth-of-type(8n+3){color:#b13e39}
-.home-page .hv-marq .track span:nth-of-type(8n+4){color:#8259ac}
-.home-page .hv-marq .track span:nth-of-type(8n+5){color:#6257c4}
-.home-page .hv-marq .track span:nth-of-type(8n+6){color:#347eac}
-.home-page .hv-marq .track span:nth-of-type(8n+7){color:#3674ae}
-.home-page .hv-marq .track span:nth-of-type(8n){color:#909090}
+.home-page .acb-marq{background:var(--quiet)!important;color:var(--copy)!important;border-top:0.92px solid var(--quiet-2);border-bottom:0.92px solid var(--quiet-2);padding:clamp(12.85px,1.5vw,20.2px) 0}
+.home-page .acb-marq .track{font-size:clamp(13.77px,1.65vw,22.03px)}
+.home-page .acb-marq .track em{color:#b7b7b4}
+.home-page .acb-marq .track span:nth-of-type(8n+1){color:#a47a00}
+.home-page .acb-marq .track span:nth-of-type(8n+2){color:#bd6530}
+.home-page .acb-marq .track span:nth-of-type(8n+3){color:#b13e39}
+.home-page .acb-marq .track span:nth-of-type(8n+4){color:#8259ac}
+.home-page .acb-marq .track span:nth-of-type(8n+5){color:#6257c4}
+.home-page .acb-marq .track span:nth-of-type(8n+6){color:#347eac}
+.home-page .acb-marq .track span:nth-of-type(8n+7){color:#3674ae}
+.home-page .acb-marq .track span:nth-of-type(8n){color:#909090}
 
 /* Editorial white/grey section rhythm. */
-.home-page .hv-say,.home-page .acb-proof,.home-page .hv-carousel,.home-page .hv-faq{background:var(--white)!important;background-image:none!important}
-.home-page .hv-say{border-bottom:0.92px solid var(--quiet-2)}
-.home-page .hv-say p{color:var(--copy)}
-.home-page .hv-say p{max-width:42ch!important;line-height:1.2!important}
-.home-page .hv-say .cln{display:inline!important;margin:0!important}
-.home-page .hv-say p .hl{color:var(--brand)}
-.home-page .hv-eyebrow,.home-page .mono,.home-page .eyebrow{
+.home-page .acb-say,.home-page .acb-proof,.home-page .acb-carousel,.home-page .acb-faq{background:var(--white)!important;background-image:none!important}
+.home-page .acb-say{border-bottom:0.92px solid var(--quiet-2)}
+.home-page .acb-say p{color:var(--copy)}
+.home-page .acb-say p{max-width:42ch!important;line-height:1.2!important}
+.home-page .acb-say .cln{display:inline!important;margin:0!important}
+.home-page .acb-say p .hl{color:var(--brand)}
+.home-page .acb-eyebrow,.home-page .mono,.home-page .eyebrow{
   display:inline-block;width:max-content;background:var(--brand);color:#fff!important;
   padding:6.43px 10.1px;margin:0 0 clamp(14.69px,2vw,22.03px);font-size:11.02px;font-weight:600;line-height:1;letter-spacing:.08em;
 }
 .home-page .acb-proof-copy{background:var(--quiet)!important;background-image:none!important}
 .home-page .acb-proof-image{background:var(--quiet);overflow:hidden}
 .home-page .acb-proof-image img{width:100%;height:100%;object-fit:cover;filter:none!important}
-.home-page .hv-look{background:var(--quiet)!important;background-image:none!important;color:var(--copy)!important;border-top:0.92px solid var(--quiet-2);border-bottom:0.92px solid var(--quiet-2)}
-.home-page .hv-look h2{color:var(--copy)!important}
-.home-page .hv-look p{color:var(--muted)!important}
-.home-page .hv-look .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
+.home-page .acb-look{background:var(--quiet)!important;background-image:none!important;color:var(--copy)!important;border-top:0.92px solid var(--quiet-2);border-bottom:0.92px solid var(--quiet-2)}
+.home-page .acb-look h2{color:var(--copy)!important}
+.home-page .acb-look p{color:var(--muted)!important}
+.home-page .acb-look .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 
 /* 7+1: colour belongs to the block, never to unrelated panels. */
 .home-page .caro-nav{background:var(--white);color:var(--copy);border:0.92px solid var(--quiet-2)}
@@ -104,20 +104,20 @@ body.home-page{
 .home-page .ccard .clabel{align-self:flex-start;padding:4.59px 8.26px;background:var(--c);color:#111;font-size:9.18px;font-weight:600;line-height:1;letter-spacing:.08em;text-transform:uppercase}
 
 /* Services: calm neutrals; brand blue only marks links and actions. */
-.home-page main>.hv:not(.hv-hero):has(.hv-offer){background:var(--quiet)!important;background-image:none!important}
-.home-page .hv-offer{gap:14.69px}
-.home-page .hv-offer .hv-panel{background:var(--white)!important;color:var(--copy)!important;border:0.92px solid var(--quiet-2);padding:clamp(23.87px,3vw,40.39px)}
-.home-page .hv-offer .hv-panel .pe{color:var(--brand)!important}
-.home-page .hv-offer .hv-panel .pbody{color:var(--muted)!important}
-.home-page .hv-offer .hv-panel .plist li{border-color:var(--quiet-2)!important}
-.home-page .hv-offer .hv-panel .plist li strong,.home-page .hv-offer .hv-panel .plist li span{display:block}
-.home-page .hv-offer .hv-panel .plist li span{margin-top:4.59px;color:var(--muted);font-size:.78em;line-height:1.35}
-.home-page .hv-offer .hv-panel .pill{background:var(--action)!important;color:var(--brand)!important}
+.home-page main>.acb:not(.acb-hero):has(.acb-offer){background:var(--quiet)!important;background-image:none!important}
+.home-page .acb-offer{gap:14.69px}
+.home-page .acb-offer .acb-panel{background:var(--white)!important;color:var(--copy)!important;border:0.92px solid var(--quiet-2);padding:clamp(23.87px,3vw,40.39px)}
+.home-page .acb-offer .acb-panel .pe{color:var(--brand)!important}
+.home-page .acb-offer .acb-panel .pbody{color:var(--muted)!important}
+.home-page .acb-offer .acb-panel .plist li{border-color:var(--quiet-2)!important}
+.home-page .acb-offer .acb-panel .plist li strong,.home-page .acb-offer .acb-panel .plist li span{display:block}
+.home-page .acb-offer .acb-panel .plist li span{margin-top:4.59px;color:var(--muted);font-size:.78em;line-height:1.35}
+.home-page .acb-offer .acb-panel .pill{background:var(--action)!important;color:var(--brand)!important}
 
 /* FAQ and closing. */
-.home-page .hv-faq{border-top:0.92px solid var(--quiet-2)}
-.home-page .hv-faq .faq-list,.home-page .hv-faq .faq-item{border-color:var(--quiet-2)}
-.home-page .hv-faq .faq-item .faq-q::after{color:var(--brand)}
+.home-page .acb-faq{border-top:0.92px solid var(--quiet-2)}
+.home-page .acb-faq .faq-list,.home-page .acb-faq .faq-item{border-color:var(--quiet-2)}
+.home-page .acb-faq .faq-item .faq-q::after{color:var(--brand)}
 html body.home-page .acb-close{background:#E4E244!important;background-color:#E4E244!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
 .home-page .acb-close>.wrap{gap:11.02px!important}
 .home-page .acb-close .note{margin:0 0 11.02px!important}
@@ -147,11 +147,11 @@ html body.home-page .acb-close{background:#E4E244!important;background-color:#E4
 .acb-footer .top.acb-footer-links{padding-top:clamp(27.54px,4vw,51.41px)!important}
 .acb-footer .bottom a{color:inherit}
 .home-page main>section,.home-page .acb-header,.home-page .acb-footer{background-image:none!important}
-.home-page .hv-hero-img,.home-page figure,.home-page img{background-image:none!important}
+.home-page .acb-hero-img,.home-page figure,.home-page img{background-image:none!important}
 @media(max-width:700px){.acb-footer .foot-lead{grid-template-columns:1fr}.acb-footer .mark .acb-logo-mount{height:45.9px!important}}
 
 @media(max-width:860px){
-  .home-page .hv-hero-img{margin:0;min-height:0}
+  .home-page .acb-hero-img{margin:0;min-height:0}
   .home-page .acb-header.acb-menu-open{background:var(--brand)!important;color:#fff!important}
   .home-page .acb-header.acb-menu-open .acb-head-right{
     position:fixed!important;inset:0!important;z-index:61!important;

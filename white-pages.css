@@ -23,7 +23,7 @@ body:not(.home-page) .mobile-menu-toggle{color:#fff!important;border-color:#fff!
 body:not(.home-page) .acb-nav .navbutton{display:flex!important;align-items:center!important;height:100%!important;margin:0!important;line-height:1!important}
 
 /* Labels: blue field, white type. */
-body:not(.home-page) :is(.mono,.eyebrow,.side-note,.aud-eyebrow,.eyebrow2,.hv-eyebrow,.k,.pe,.reslabel,.post-tag){
+body:not(.home-page) :is(.mono,.eyebrow,.side-note,.aud-eyebrow,.eyebrow2,.acb-eyebrow,.k,.pe,.reslabel,.post-tag){
   display:inline-block;width:max-content;max-width:100%;background:var(--brand)!important;color:#fff!important;
   padding:6.43px 10.1px!important;margin:0 0 clamp(14.69px,2vw,22.03px)!important;font-size:11.02px!important;font-weight:600!important;line-height:1!important;letter-spacing:.08em;
 }

@@ -83,7 +83,7 @@
   try{
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     if(!('IntersectionObserver' in window))return;
-    var sel='.section-head,.familiar .content,.trio>*,.price-card,.pack-card,.arc-card,.faq-item,.bmcard,.fxcard,.hv-panel,.hv-num,.acb-proof-grid>*,.access-note,.method-strip .method-step,.terrain-cols .tcol,.hv-tile,.hv-card';
+    var sel='.section-head,.familiar .content,.trio>*,.price-card,.pack-card,.arc-card,.faq-item,.bmcard,.fxcard,.acb-panel,.acb-num,.acb-proof-grid>*,.access-note,.method-strip .method-step,.terrain-cols .tcol,.acb-tile,.acb-card';
     var items=[].slice.call(document.querySelectorAll(sel));
     if(!items.length)return;
     items.forEach(function(el){el.classList.add('rvl');});
@@ -103,7 +103,7 @@
 (function(){
   try{
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var nodes=[].slice.call(document.querySelectorAll('.scrolltext,.audsay .body,.approach p,.hv-say p'));
+    var nodes=[].slice.call(document.querySelectorAll('.scrolltext,.audsay .body,.approach p,.acb-say p'));
     if(!nodes.length)return;
     function wrap(node){
       [].slice.call(node.childNodes).forEach(function(k){

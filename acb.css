@@ -1,5 +1,8 @@
 /* Measured from the live A Creative Block homepage. */
-:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--copy:#071321;--muted:#071321;--ink:#071321;--ink-soft:#071321;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:27.54px}
+:root{--acb-bg:#f6f6f6;--acb-teal:#3b9c9e;--acb-red:#873030;--acb-yellow:#E4E244;--acb-blue:#4f46e5;--acb-pink:#f591b8;--acb-orange:#f0794a;--copy:#071321;--muted:#071321;--ink:#071321;--ink-soft:#071321;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:27.54px;
+  /* Reserved — not used yet, kept here for future brand use (not the block palette). */
+  --acb-cream:#FFF9F1;--acb-teal-deep:#00484A;--acb-blue-bright:#0071E1;--acb-navy:#031422;--acb-lime:#F6FF76;--acb-pink-light:#FFB4CA;
+}
 
 /* ==========================================================================
    DESIGN TOKENS — single source of truth for spacing and type. Change a
@@ -16,23 +19,23 @@
      letter-spacing — same tightness, only the size differs. Body copy is
      close to normal tracking; only titles get pulled in. */
   --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
-  --fs-label:clamp(11px,1vw,12.85px);     --ls-label:.09em;    /* eyebrows / small caps labels */
+  --fs-label:clamp(11px,1vw,12.85px);     --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(32px,5vw,70px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(25px,3.8vw,50px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
-  --fs-copy-lg:clamp(18px,1.8vw,22px);    --ls-copy-lg:-.01em; /* big copy: pull-quote, lead paragraph */
+  --fs-copy-lg:clamp(21px,2.4vw,29px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
   --fs-body:clamp(14px,1.3vw,16.5px);     --ls-body:-.005em;   /* medium copy: standard paragraph */
   --fs-small:clamp(11px,1vw,13px);        --ls-small:0em;      /* small copy: fine print, list detail */
-  --fs-button:clamp(11.5px,1vw,12.85px);  --ls-button:-.01em;  /* buttons */
+  --fs-button:clamp(13.5px,1vw,14.69px);  --ls-button:0em;     /* buttons — same size everywhere */
 }
 /* Same tiers as classes, for markup that wants the whole bundle in one go
    (font-size + letter-spacing + a sensible line-height/weight default). */
 html body#acb-design .t-label{font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;line-height:1.2!important;text-transform:uppercase;font-weight:600}
-html body#acb-design .t-h1{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:1.05!important;font-weight:700}
-html body#acb-design .t-h2{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;line-height:1.1!important;font-weight:700}
+html body#acb-design .t-h1{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:1.05!important;font-weight:500}
+html body#acb-design .t-h2{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;line-height:1.1!important;font-weight:500}
 html body#acb-design .t-copy-lg{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.2!important;font-weight:500}
 html body#acb-design .t-body{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:1.55!important;font-weight:500}
 html body#acb-design .t-small{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:1.5!important;font-weight:500}
-html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:1.4!important;font-weight:600}
+html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:1.4!important;font-weight:500}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
 html body#acb-design .grain{display:none!important}
 html body#acb-design .acb-header{position:sticky!important;top:22.03px!important;width:calc(100% - 55.08px)!important;max-width:none!important;margin:22.03px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:11.02px!important;box-shadow:0 1.84px 3.67px #a19ea81a;backdrop-filter:none!important;z-index:60}
@@ -45,38 +48,40 @@ html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .ac
 html body#acb-design .acb-header .navitem:hover .navbutton,
 html body#acb-design .acb-header .navitem.is-active>.navbutton{color:#4f46e5!important;background:#eef2ff!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-social a:hover{color:#4f46e5!important}
+/* Footer links get the same hover pill as the header nav (adapted for the dark footer). */
+html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:inline-block;padding:2.76px 5.51px!important;margin:-2.76px -5.51px!important;border-radius:7.34px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .acb-footer :is(.top,.foot-lead) a:hover{color:#a5b4fc!important;background:rgba(255,255,255,.1)!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-actions{display:flex;gap:22.03px;align-items:center;margin:0!important}
 html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:11.02px!important;box-shadow:0 1.84px 3.67px #a19ea81a}
 html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:16.52px!important;border-radius:7.34px!important;padding:7.34px 9.18px!important;margin:0 -9.18px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .acb-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
 html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:9.18px 16.52px!important;border-radius:11.02px!important;white-space:nowrap}
 /* Original hero composition, image, copy and type. */
-html body#acb-design.home-page .hv-hero{--pad:clamp(18.36px,4vw,66.1px);--copy:var(--ink);--muted:var(--ink);--brand:#4f46e5;--action:#E4E244}
-html body#acb-design.home-page .hv-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
-html body#acb-design.home-page .hv-hero .pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
+html body#acb-design.home-page .acb-hero{--pad:clamp(18.36px,4vw,66.1px);--copy:var(--ink);--muted:var(--ink);--brand:#4f46e5;--action:#E4E244}
+html body#acb-design.home-page .acb-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}
+html body#acb-design.home-page .acb-hero .pill:hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
 /* A Creative Block uses 27.54px outer gutters, 11.02px corners and no panel outlines. */
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:27.54px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:27.54px!important;max-width:none!important;width:100%;border:0!important;border-radius:11.02px;background:#fff}
-html body#acb-design.home-page main>section:not(.hv-hero) *,html body#acb-design .acb-footer *{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:var(--ls-title)}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:11.02px!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:14.69px!important;letter-spacing:0;padding:14.69px 18.36px!important;line-height:1.4}
-html body#acb-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:var(--fs-label)!important;line-height:1.2!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 18.36px!important}
+html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin:27.54px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
+html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:27.54px!important;max-width:none!important;width:100%;border:0!important;border-radius:11.02px;background:#fff}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(h2,h3){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:var(--ls-title)}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:11.02px!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:var(--fs-button)!important;letter-spacing:var(--ls-button);padding:14.69px 18.36px!important;line-height:1.4}
+html body#acb-design.home-page :is(.acb-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:var(--fs-label)!important;line-height:1.2!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 18.36px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
-html body#acb-design.home-page main>.hv-say>.wrap{padding:44.06px 27.54px!important;text-align:left;display:block}
-html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:1.3!important;letter-spacing:var(--ls-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important}
-html body#acb-design.home-page .hv-say p .hl{color:var(--ink)!important}
-html body#acb-design.home-page .hv-say .cln{display:block!important;margin-top:36.72px!important}
-html body#acb-design.home-page .hv-marq{background:#fff!important;border:0!important;padding:14.69px 0!important}
-html body#acb-design.home-page .hv-marq .track{font-size:16.52px}
-html body#acb-design.home-page .hv-marq .track em{color:#b7b7b4!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+1){color:#a47a00!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+2){color:#bd6530!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+3){color:#b13e39!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+4){color:#8259ac!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+5){color:#6257c4!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+6){color:#347eac!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n+7){color:#3674ae!important}
-html body#acb-design.home-page .hv-marq .track span:nth-of-type(8n){color:#909090!important}
+html body#acb-design.home-page main>.acb-say>.wrap{padding:44.06px 27.54px!important;text-align:left;display:block}
+html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:1.3!important;letter-spacing:var(--ls-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important}
+html body#acb-design.home-page .acb-say p .hl{color:var(--ink)!important}
+html body#acb-design.home-page .acb-say .cln{display:block!important;margin-top:36.72px!important}
+html body#acb-design.home-page .acb-marq{background:#fff!important;border:0!important;padding:14.69px 0!important}
+html body#acb-design.home-page .acb-marq .track{font-size:16.52px}
+html body#acb-design.home-page .acb-marq .track em{color:#b7b7b4!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+1){color:#a47a00!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+2){color:#bd6530!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+3){color:#b13e39!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+4){color:#8259ac!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+5){color:#6257c4!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+6){color:#347eac!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n+7){color:#3674ae!important}
+html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n){color:#909090!important}
 /* The reference's yellow/red split feature panel. */
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important;overflow:hidden;background:var(--acb-yellow)}
 html body#acb-design.home-page .acb-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0!important}
@@ -86,14 +91,14 @@ html body#acb-design.home-page .acb-proof-copy .mono{color:var(--acb-red)!import
 html body#acb-design.home-page .acb-proof-copy p{font-size:var(--fs-body)!important;line-height:1.4;max-width:none;margin:0;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-image{margin:0;height:100%;min-height:385.56px;overflow:hidden}
 html body#acb-design.home-page .acb-proof-image img{width:100%;height:100%;object-fit:cover}
-html body#acb-design.home-page .hv-look{text-align:left}
-html body#acb-design.home-page .hv-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:22.03px 27.54px}
-html body#acb-design.home-page .hv-look h2{grid-row:span 2;font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;max-width:none;margin:0;color:var(--ink)!important}
-html body#acb-design.home-page .hv-look p{font-size:var(--fs-body);line-height:1.5;max-width:none;margin:0;color:var(--ink)!important}
-html body#acb-design.home-page .hv-look .cta{justify-content:flex-start;margin:0}
+html body#acb-design.home-page .acb-look{text-align:left}
+html body#acb-design.home-page .acb-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:22.03px 27.54px}
+html body#acb-design.home-page .acb-look h2{grid-row:span 2;font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .acb-look p{font-size:var(--fs-body);line-height:1.5;max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .acb-look .cta{justify-content:flex-start;margin:0}
 /* Wide carousel, without outlines or coloured text boxes. */
-html body#acb-design.home-page main>.hv-carousel>.wrap{background:transparent;padding:16.52px 0 0!important}
-html body#acb-design.home-page .hv-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
+html body#acb-design.home-page main>.acb-carousel>.wrap{background:#fff;padding:16.52px 0 0!important}
+html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
 html body#acb-design.home-page .caro-head{gap:27.54px;margin-bottom:27.54px}
 html body#acb-design.home-page .caro-intro{font-size:var(--fs-body);line-height:1.5;max-width:none}
 html body#acb-design.home-page .ccard{border:0!important;border-radius:11.02px;min-height:238.68px;flex:0 0 31%;background:#fff;padding:27.54px;gap:14.69px}
@@ -102,22 +107,22 @@ html body#acb-design.home-page .ccard .cnum{font-family:"Plus Jakarta Sans",sans
 html body#acb-design.home-page .ccard h3{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.05;color:var(--ink)}
 html body#acb-design.home-page .ccard p{font-size:var(--fs-body);line-height:1.2;color:var(--ink)}
 html body#acb-design.home-page .caro-nav,html body#acb-design.home-page .caro-nav:hover{border:0!important;border-radius:11.02px;background:#4f46e5!important;color:#fff!important}
-html body#acb-design.home-page .hv-offer{gap:27.54px}
-html body#acb-design.home-page .hv-offer .hv-panel{border:0!important;border-radius:11.02px;background:#f6f6f6!important;padding:27.54px!important;color:var(--ink)!important}
-html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2){background:#4f46e5!important;color:#f591b8!important}
-html body#acb-design.home-page .hv-panel h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;margin:18.36px 0}
-html body#acb-design.home-page .hv-panel .pe{font-size:var(--fs-label);color:inherit!important;letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600}
-html body#acb-design.home-page .hv-offer .hv-panel .pbody{color:inherit!important;font-size:var(--fs-copy-lg);line-height:1.25;max-width:none}
-html body#acb-design.home-page .hv-offer .plist{margin:22.03px 0;display:grid;gap:0}
-html body#acb-design.home-page .hv-offer .plist li{border:0!important;border-top:0.92px solid rgba(0,0,0,.14)!important;font-size:var(--fs-body);padding:14.69px 0}
-html body#acb-design.home-page .hv-offer .plist li:last-child{border-bottom:0.92px solid rgba(0,0,0,.14)!important}
-html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2) .plist li{border-color:rgba(255,255,255,.28)!important}
-html body#acb-design.home-page .hv-offer .plist li span{font-size:var(--fs-small);color:inherit!important}
-html body#acb-design.home-page .hv-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:27.54px}
-html body#acb-design.home-page .hv-faq .hv-head{text-align:left;margin:0}
-html body#acb-design.home-page .hv-faq .faq-list{max-width:none;width:100%}
-html body#acb-design.home-page .hv-faq .faq-q{font-size:var(--fs-body);padding:18.36px 0;color:var(--ink)}
-html body#acb-design.home-page .hv-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
+html body#acb-design.home-page .acb-offer{gap:27.54px}
+html body#acb-design.home-page .acb-offer .acb-panel{border:0!important;border-radius:11.02px;background:#f6f6f6!important;padding:27.54px!important;color:var(--ink)!important}
+html body#acb-design.home-page .acb-offer .acb-panel:nth-child(2){background:#4f46e5!important;color:#f591b8!important}
+html body#acb-design.home-page .acb-panel h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;margin:18.36px 0}
+html body#acb-design.home-page .acb-panel .pe{font-size:var(--fs-label);color:inherit!important;letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600}
+html body#acb-design.home-page .acb-offer .acb-panel .pbody{color:inherit!important;font-size:var(--fs-copy-lg);line-height:1.25;max-width:none}
+html body#acb-design.home-page .acb-offer .plist{margin:22.03px 0;display:grid;gap:0}
+html body#acb-design.home-page .acb-offer .plist li{border:0!important;border-top:0.92px solid rgba(0,0,0,.14)!important;font-size:var(--fs-body);padding:14.69px 0}
+html body#acb-design.home-page .acb-offer .plist li:last-child{border-bottom:0.92px solid rgba(0,0,0,.14)!important}
+html body#acb-design.home-page .acb-offer .acb-panel:nth-child(2) .plist li{border-color:rgba(255,255,255,.28)!important}
+html body#acb-design.home-page .acb-offer .plist li span{font-size:var(--fs-small);color:inherit!important}
+html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:27.54px}
+html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
+html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%}
+html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:18.36px 0;color:var(--ink)}
+html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
 html body#acb-design.home-page main>.acb-close>.wrap{background:#3b9c9e;color:var(--ink);display:grid!important;grid-template-columns:1fr 1fr;gap:22.03px 27.54px!important;text-align:left}
 html body#acb-design.home-page .acb-close h2{font-size:var(--fs-h1);letter-spacing:var(--ls-h1);line-height:.95;max-width:none;margin:0;grid-row:span 2}
 html body#acb-design.home-page .acb-close .note{font-size:var(--fs-copy-lg);line-height:1.25;max-width:none;margin:0!important}
@@ -156,7 +161,7 @@ html body#acb-design .mobile-menu-toggle{color:var(--ink)!important;border-color
    display:flex!important;align-items:center!important;justify-content:space-between!important;
    width:100%!important;padding:14.69px!important;margin:0!important;border:0!important;background:none!important;
    border-radius:12.85px!important;
-   font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600!important;
+   font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;
    font-size:clamp(23.87px,7.5vw,36.72px)!important;letter-spacing:-.02em!important;line-height:1!important;
    color:var(--ink)!important;text-transform:none!important;text-align:left!important;
    transition:background-color .2s ease,color .2s ease!important;
@@ -228,19 +233,19 @@ html body#acb-design .mobile-menu-toggle{color:var(--ink)!important;border-color
  html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle::after,
  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::after{transform:translate(-50%,-50%) rotate(-45deg)}
 
- html body#acb-design.home-page .hv-offer .plist{grid-template-columns:1fr;gap:14.69px}
+ html body#acb-design.home-page .acb-offer .plist{grid-template-columns:1fr;gap:14.69px}
 }
 @media(max-width:760px){
  html body#acb-design .acb-header{top:11.93px!important;width:calc(100% - 29.38px)!important;margin:11.93px auto!important}
  html body#acb-design .acb-header .inner{padding:9.18px 18.36px!important}
- html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:27.54px 14.69px!important}
- html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:22.03px 18.36px!important}
- html body#acb-design.home-page main>.hv-say>.wrap{padding:29.38px 18.36px!important}
- html body#acb-design.home-page .hv-say .cln{margin-top:25.7px!important}
- html body#acb-design.home-page :is(.acb-proof-grid,.hv-look>.wrap,.hv-faq>.wrap,.acb-close>.wrap){grid-template-columns:1fr!important}
+ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin:27.54px 14.69px!important}
+ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:22.03px 18.36px!important}
+ html body#acb-design.home-page main>.acb-say>.wrap{padding:29.38px 18.36px!important}
+ html body#acb-design.home-page .acb-say .cln{margin-top:25.7px!important}
+ html body#acb-design.home-page :is(.acb-proof-grid,.acb-look>.wrap,.acb-faq>.wrap,.acb-close>.wrap){grid-template-columns:1fr!important}
  html body#acb-design.home-page .acb-proof-image{min-height:257.04px;height:293.76px}
- html body#acb-design.home-page .hv-look h2,html body#acb-design.home-page .acb-close h2{grid-row:auto}
- html body#acb-design.home-page .hv-offer{grid-template-columns:1fr}
+ html body#acb-design.home-page .acb-look h2,html body#acb-design.home-page .acb-close h2{grid-row:auto}
+ html body#acb-design.home-page .acb-offer{grid-template-columns:1fr}
  html body#acb-design.home-page .ccard{flex-basis:82%}
  html body#acb-design .acb-footer{margin:27.54px 14.69px;padding:29.38px 18.36px!important}
 }
@@ -255,23 +260,23 @@ html body#acb-design .acb-proof-image img{position:absolute;inset:0;height:100%;
 html body#acb-design .acb-header .navbutton{padding:5.51px 9.18px!important;margin:-5.51px -9.18px!important}
 html body#acb-design .acb-header .acb-social{display:none}
 @media(max-width:760px){html body#acb-design .acb-proof-image{height:293.76px;min-height:0}}
-html body#acb-design .hv-say .hl{background:none!important;padding:0!important}
-html body#acb-design main>section:not(.hv-hero) :is(.rv,.rvl){opacity:1!important;transform:none!important}
+html body#acb-design .acb-say .hl{background:none!important;padding:0!important}
+html body#acb-design main>section:not(.acb-hero) :is(.rv,.rvl){opacity:1!important;transform:none!important}
 html body#acb-design .acb-header .acb-utility-pill{font-family:"Plus Jakarta Sans",sans-serif!important;font-size:14.69px!important;text-transform:none!important;letter-spacing:0!important}
 
 /* White-version spacing rhythm, with "Plus Jakarta Sans" body and navigation. */
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important}
-html body#acb-design.home-page .hv-offer .hv-panel{padding:clamp(23.87px,3vw,40.39px)!important}
-html body#acb-design.home-page .hv-say p{letter-spacing:-.025em!important}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(p,.caro-intro,.note,.faq-q,.plist li){letter-spacing:-.015em!important}
+html body#acb-design.home-page .acb-offer .acb-panel{padding:clamp(23.87px,3vw,40.39px)!important}
+html body#acb-design.home-page .acb-say p{letter-spacing:-.025em!important}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(p,.caro-intro,.note,.faq-q,.plist li){letter-spacing:-.015em!important}
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:-.015em!important}
 html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:-.015em!important}
 html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:-.015em}
-html body#acb-design.home-page main>.hv-say p.scrolltext{letter-spacing:-.025em!important}
+html body#acb-design.home-page main>.acb-say p.scrolltext{letter-spacing:-.025em!important}
 
 /* "Plus Jakarta Sans" body; existing display titles remain unchanged. */
-html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.acb-sub a,.mono,.eyebrow,.hv-eyebrow,.pe,.clabel,.note){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design .hv-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",sans-serif!important}
+html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.acb-sub a,.mono,.eyebrow,.acb-eyebrow,.pe,.clabel,.note){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
+html body#acb-design .acb-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",sans-serif!important}
 /* Restore the original white-version map palette, supplied by each card. */
 html body#acb-design.home-page .ccard .cnum{color:var(--c)!important}
 html body#acb-design.home-page .ccard .clabel{background:var(--c)!important;color:var(--ink)!important;padding:4.59px 8.26px;font-size:var(--fs-label);letter-spacing:var(--ls-label);line-height:1.2;text-transform:uppercase!important;border-radius:6px;display:inline-block}
@@ -287,10 +292,10 @@ html body#acb-design .acb-footer input::placeholder{color:rgba(255,255,255,.7)!i
    collapse with the previous section's margin-bottom like every other
    pair does — so the footer side gets 0 and leans on the section's own
    margin-bottom to make the same 55.08px, instead of doubling it). */
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
+html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
 html body#acb-design .acb-footer{margin-top:0!important}
 @media(max-width:760px){
- html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
+ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
  html body#acb-design .acb-footer{margin-top:0!important}
 }
 
@@ -299,40 +304,40 @@ html body#acb-design,html body#acb-design *{font-family:"Plus Jakarta Sans",sans
 html body#acb-design{--site-gutter:clamp(18.36px,4vw,66.1px);--site-width:calc(min(100vw,1450.44px) - 2 * var(--site-gutter))}
 html body#acb-design main{width:var(--site-width)!important;max-width:none!important;margin-inline:auto!important}
 html body#acb-design .acb-header,html body#acb-design .acb-footer{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin-left:0!important;margin-right:0!important}
+html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-left:0!important;margin-right:0!important}
 /* Full image with a white text panel overlaid on its left edge. */
-html body#acb-design.home-page .hv-hero{padding:0!important;background:transparent!important;width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important}
-html body#acb-design.home-page .hv-hero>.wrap{padding:0!important;max-width:none!important}
-html body#acb-design.home-page .hv-hero-grid{position:relative;display:grid;grid-template-columns:1fr!important;min-height:clamp(495.72px,70vh,679.32px);border-radius:0!important;overflow:hidden;padding:36.72px;align-items:end;isolation:isolate}
-html body#acb-design.home-page .hv-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
-html body#acb-design.home-page .hv-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
-html body#acb-design.home-page .hv-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:11.02px;width:min(514.08px,48%);padding:33.05px!important;margin:0}
-html body#acb-design.home-page .hv-hero h1{font-size:16.52px;line-height:1.4;letter-spacing:0;max-width:none;margin:0}
-html body#acb-design.home-page .hv-hero .sub{font-size:var(--fs-body);line-height:1.45;max-width:none;margin-top:18.36px}
-html body#acb-design.home-page .hv-hero .sub br{display:none}
-html body#acb-design.home-page .hv-hero .hv-cta{gap:9.18px;margin-top:22.03px}
-html body#acb-design.home-page .hv-hero .pill{font-size:var(--fs-button)!important;padding:12.85px 16.52px!important;letter-spacing:var(--ls-button)!important}
+html body#acb-design.home-page .acb-hero{padding:0!important;background:transparent!important;width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important}
+html body#acb-design.home-page .acb-hero>.wrap{padding:0!important;max-width:none!important}
+html body#acb-design.home-page .acb-hero-grid{position:relative;display:grid;grid-template-columns:1fr!important;min-height:clamp(495.72px,70vh,679.32px);border-radius:0!important;overflow:hidden;padding:36.72px;align-items:end;isolation:isolate}
+html body#acb-design.home-page .acb-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
+html body#acb-design.home-page .acb-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
+html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:11.02px;width:min(514.08px,48%);padding:33.05px!important;margin:0}
+html body#acb-design.home-page .acb-hero h1{font-size:16.52px;line-height:1.4;letter-spacing:0;max-width:none;margin:0}
+html body#acb-design.home-page .acb-hero .sub{font-size:var(--fs-body);line-height:1.45;max-width:none;margin-top:18.36px}
+html body#acb-design.home-page .acb-hero .sub br{display:none}
+html body#acb-design.home-page .acb-hero .acb-cta{gap:9.18px;margin-top:22.03px}
+html body#acb-design.home-page .acb-hero .pill{padding:12.85px 16.52px!important}
 /* Two equal-width groups provide an exact, seamless half-track translation. */
-html body#acb-design.home-page .hv-marq{margin:0 0 0 calc(50% - 50vw)!important;padding:14.69px 0!important;width:100vw!important;max-width:100vw!important;overflow:hidden;background:#fff!important;border:0!important}
-html body#acb-design.home-page .hv-marq .track{display:flex;width:max-content;gap:0;white-space:nowrap;animation:acb-marquee 40s linear infinite;font-size:var(--fs-small);line-height:1.4;will-change:transform}
-html body#acb-design.home-page .hv-marq .marq-group{display:flex;align-items:center;flex-shrink:0;gap:22.03px;padding:0 22.03px 0 0}
-html body#acb-design.home-page .hv-marq .track span{padding:0;flex-shrink:0}
-html body#acb-design.home-page .hv-marq .track em{font-style:normal;font-size:var(--fs-small);flex-shrink:0}
+html body#acb-design.home-page .acb-marq{margin:0 0 0 calc(50% - 50vw)!important;padding:14.69px 0!important;width:100vw!important;max-width:100vw!important;overflow:hidden;background:#fff!important;border:0!important}
+html body#acb-design.home-page .acb-marq .track{display:flex;width:max-content;gap:0;white-space:nowrap;animation:acb-marquee 40s linear infinite;font-size:16.52px;line-height:1.4;will-change:transform}
+html body#acb-design.home-page .acb-marq .marq-group{display:flex;align-items:center;flex-shrink:0;gap:22.03px;padding:0 22.03px 0 0}
+html body#acb-design.home-page .acb-marq .track span{padding:0;flex-shrink:0}
+html body#acb-design.home-page .acb-marq .track em{font-style:normal;font-size:16.52px;flex-shrink:0}
 @keyframes acb-marquee{to{transform:translateX(-50%)}}
-html body#acb-design.home-page .hv-marq:hover .track{animation-play-state:paused}
+html body#acb-design.home-page .acb-marq:hover .track{animation-play-state:paused}
 @media(max-width:1060px){
- html body#acb-design.home-page .hv-hero-copy{width:min(477.36px,65%)}
+ html body#acb-design.home-page .acb-hero-copy{width:min(477.36px,65%)}
 }
 @media(max-width:760px){
- html body#acb-design.home-page .hv-hero-grid{min-height:624.24px;padding:14.69px;align-items:end}
- html body#acb-design.home-page .hv-hero-copy{width:100%;padding:22.03px!important}
- html body#acb-design.home-page .hv-hero-img img{object-position:60% center}
- html body#acb-design.home-page .hv-marq .marq-group{gap:18.36px;padding-right:18.36px}
+ html body#acb-design.home-page .acb-hero-grid{min-height:624.24px;padding:14.69px;align-items:end}
+ html body#acb-design.home-page .acb-hero-copy{width:100%;padding:22.03px!important}
+ html body#acb-design.home-page .acb-hero-img img{object-position:60% center}
+ html body#acb-design.home-page .acb-marq .marq-group{gap:18.36px;padding-right:18.36px}
 }
 @media(prefers-reduced-motion:reduce){
- html body#acb-design.home-page .hv-marq{overflow-x:auto}
- html body#acb-design.home-page .hv-marq .track{animation:none}
- html body#acb-design.home-page .hv-marq .marq-group[aria-hidden]{display:none}
+ html body#acb-design.home-page .acb-marq{overflow-x:auto}
+ html body#acb-design.home-page .acb-marq .track{animation:none}
+ html body#acb-design.home-page .acb-marq .marq-group[aria-hidden]{display:none}
 }
 /* Compact copyright/legal row, matching the white version. */
 html body#acb-design .acb-footer .bottom,
@@ -361,10 +366,10 @@ html body#acb-design.home-page .acb-header{position:fixed!important;left:0;right
 }
 
 /* Taller hero with the text bubble centred (both axes). */
-html body#acb-design.home-page .hv-hero-grid{min-height:clamp(587.52px,88vh,844.56px)!important;align-items:center!important;justify-items:center!important;padding:36.72px calc((100vw - var(--site-width)) / 2)!important}
-html body#acb-design.home-page .hv-hero-copy{width:fit-content!important;max-width:min(94vw,826.2px)!important;text-align:center!important;margin:0!important;padding:22.03px 29.38px!important}
-html body#acb-design.home-page .hv-hero h1{font-size:16.52px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important}
-html body#acb-design.home-page .hv-hero .hv-cta{justify-content:center!important;margin-top:16.52px!important}
+html body#acb-design.home-page .acb-hero-grid{min-height:clamp(587.52px,88vh,844.56px)!important;align-items:center!important;justify-items:center!important;padding:36.72px calc((100vw - var(--site-width)) / 2)!important}
+html body#acb-design.home-page .acb-hero-copy{width:fit-content!important;max-width:min(94vw,826.2px)!important;text-align:center!important;margin:0!important;padding:22.03px 29.38px!important}
+html body#acb-design.home-page .acb-hero h1{font-size:16.52px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important}
+html body#acb-design.home-page .acb-hero .acb-cta{justify-content:center!important;margin-top:16.52px!important}
 
 /* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
 html body#acb-design .acb-footer{margin-bottom:0!important}
@@ -386,18 +391,22 @@ html body#acb-design .acb-header .acb-utility-pill:hover{background:#3f37c4!impo
    indigo buttons. Loaded last so it wins over white-pages.css.
    ========================================================================== */
 /* Eyebrows/labels become plain teal text (not a blue chip). */
-html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv-eyebrow,.k,.pe,.reslabel,.post-tag,.side-note,.lab){
+html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.acb-eyebrow,.k,.pe,.reslabel,.post-tag,.side-note,.lab,.faqx-nav .lbl,.faqx-cat-head .n){
   background:none!important;color:var(--acb-teal)!important;width:auto!important;max-width:none!important;
-  padding:0!important;font-size:12.85px!important;font-weight:600!important;letter-spacing:.09em!important;
+  padding:0!important;font-size:var(--fs-label)!important;font-weight:600!important;letter-spacing:var(--ls-label)!important;
   text-transform:uppercase!important;margin:0 0 clamp(12.85px,1.6vw,18.36px)!important;
 }
 /* "Plus Jakarta Sans" everywhere; dark headings with acb tracking. */
 html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
-/* Calmer heading scale. */
-html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1){font-size:clamp(31.21px,4.4vw,56.92px)!important;line-height:1.02!important}
-html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,.leave p){font-size:clamp(24.79px,3.5vw,44.06px)!important;line-height:1.04!important}
-html body#acb-design.internal-page :is(.card h3,h3){font-size:clamp(18.36px,1.9vw,25.7px)!important;line-height:1.06!important}
+html body#acb-design.internal-page :is(h1,h2,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
+/* Same 2-title / 3-copy / 1-label scale as the home page, on every subpage. */
+html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,h2){font-size:var(--fs-h2)!important;line-height:1.04!important}
+html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:1.02!important}
+html body#acb-design.internal-page :is(.card h3,h3){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.15!important}
+/* Body copy: big (lead paragraphs) / medium (standard) / small (fine detail). */
+html body#acb-design.internal-page :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.3!important}
+html body#acb-design.internal-page :is(p,.prose p,.card p,.outcome-list li,.faq-q,.faq-a p,.faqx .offer-toggle,.faqx .offer-body p,.audsay .body,.aud-eyebrow+p){font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:1.5!important}
+html body#acb-design.internal-page :is(.startcard p,.startcard .fmt,.access-note,.note,small,.resitem span,.fxcard p){font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:1.5!important}
 /* 11.02px rounded surfaces to match the home. */
 html body#acb-design.internal-page :is(.card,.startcard,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card,.bmcard,.faq-item,.access-note,.outcome-list li,.tcol,.result-card){border-radius:11.02px!important}
 html body#acb-design.internal-page :is(img,figure,.fam-img,.bmcard-img,.split-img){border-radius:11.02px!important;overflow:hidden}
@@ -407,29 +416,29 @@ html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.acb-utility-pill,.re
 html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.acb-utility-pill,.refbar-btn):hover{background:#3f37c4!important;color:#fff!important;border-color:#3f37c4!important}
 
 /* Hero sentence wraps only on phones. */
-@media(max-width:720px){html body#acb-design.home-page .hv-hero h1{white-space:normal!important}}
+@media(max-width:720px){html body#acb-design.home-page .acb-hero h1{white-space:normal!important}}
 /* "Find your block" banner: one big, bold, but compact full-width button —
    wide and confident rather than tall, with a small disclaimer underneath. */
-html body#acb-design.home-page .hv-banner>.wrap{background:transparent!important;padding:0!important}
-html body#acb-design.home-page .hv-banner .banner-in{display:flex;flex-direction:column;align-items:center;gap:11.02px}
-html body#acb-design.home-page .hv-banner .banner-note{
+html body#acb-design.home-page .acb-banner>.wrap{background:transparent!important;padding:0!important}
+html body#acb-design.home-page .acb-banner .banner-in{display:flex;flex-direction:column;align-items:center;gap:11.02px}
+html body#acb-design.home-page .acb-banner .banner-note{
   display:block!important;font-family:"Plus Jakarta Sans",sans-serif!important;
   font-size:15px!important;font-weight:500!important;line-height:1.3;letter-spacing:-.005em!important;
   color:#fff!important;opacity:.85;margin-top:8px;max-width:none;text-align:left;
 }
-html body#acb-design.home-page main section.hv-banner .banner-in .pill{
+html body#acb-design.home-page main section.acb-banner .banner-in .pill{
   flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;
   width:100%;background:#4f46e5!important;color:#fff!important;border:0!important;
-  border-radius:20.2px!important;font-size:clamp(25.7px,4.6vw,51.41px)!important;font-weight:700!important;
+  border-radius:20.2px!important;font-size:clamp(25.7px,4.6vw,51.41px)!important;font-weight:500!important;
   letter-spacing:-.045em!important;padding:clamp(23.87px,3.6vw,40.39px) 33.05px!important;
 }
-html body#acb-design.home-page main section.hv-banner .banner-in .pill:hover{background:#3f37c4!important}
+html body#acb-design.home-page main section.acb-banner .banner-in .pill:hover{background:#3f37c4!important}
 
 /* Our-approach: the .hl phrases get drawn over by a highlighter-pen sweep as they
    scroll into view (left-to-right, driven by --hlp from logo.js), instead
    of the band just sitting there at full opacity. Words inside still fade in as
    part of the normal word reveal. */
-html body#acb-design.home-page .hv-say p .hl{
+html body#acb-design.home-page .acb-say p .hl{
   --hlp:0;
   background-image:linear-gradient(to bottom,transparent 8%,#E4E244 8%,#E4E244 92%,transparent 92%)!important;
   background-repeat:no-repeat!important;
@@ -440,10 +449,10 @@ html body#acb-design.home-page .hv-say p .hl{
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
 @media(prefers-reduced-motion:reduce){
-  html body#acb-design.home-page .hv-say p .hl{background-size:100% 100%!important}
+  html body#acb-design.home-page .acb-say p .hl{background-size:100% 100%!important}
 }
-html body#acb-design.home-page .hv-say p .hl::selection,html body#acb-design.home-page .hv-say p .hl ::selection{background:#4f46e5!important;color:#fff!important}
-html body#acb-design.home-page .hv-say p .hl::-moz-selection,html body#acb-design.home-page .hv-say p .hl ::-moz-selection{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.home-page .acb-say p .hl::selection,html body#acb-design.home-page .acb-say p .hl ::selection{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.home-page .acb-say p .hl::-moz-selection,html body#acb-design.home-page .acb-say p .hl ::-moz-selection{background:#4f46e5!important;color:#fff!important}
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 44.06px). */
 html body#acb-design .acb-logo .acb-logo-mount{height:38.56px!important}
@@ -453,17 +462,20 @@ html body#acb-design .acb-logo .acb-logo-mount{height:38.56px!important}
    white 11.02px rounded section cards. Heroes and the yellow CTA are excluded.
    Custom-layout pages keep their structure (they get typography/radius only).
    ========================================================================== */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page){background:#f6f6f6!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section{margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section:not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section){background:#f6f6f6!important;background-image:none!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink) > :is(.wrap,.in){
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page){background:#f6f6f6!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section{margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section:not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section){background:#f6f6f6!important;background-image:none!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>section:not(.fam-hero):not(.page-hero):not(.center-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.legal-section) > :is(.wrap,.in){
   background:#fff!important;border-radius:11.02px!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:none!important;
 }
 /* .talks-section keeps its own black card instead of the generic grey/white treatment. */
 html body#acb-design.organisations-page main>section.talks-section{background:#000!important}
 html body#acb-design.organisations-page main>section.talks-section>.in{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important}
 /* .acb-close-sub (the bottom CTA) is its own yellow card, like the home page's close section. */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page) main>.acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:center}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page) main>.acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:center}
+/* Legal pages (terms/privacy/cookies): the section itself is the white card — it has
+   no .wrap/.in child, just the sidebar-nav + article layout, which keeps its own width. */
+html body#acb-design.legal-page main>section.legal-section{background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important}
 /* Section images sit flush and rounded like the home cards. */
 html body#acb-design.internal-page :is(figure,.split-img,.fam-img) img{border-radius:11.02px!important;display:block;width:100%}
 /* Consistent block colour cards still read on the white field. */
@@ -482,11 +494,11 @@ html body#acb-design .refpanel{
   background:var(--pc)!important;color:var(--ink)!important;
 }
 @media(max-width:860px){html body#acb-design .refpanel{width:88%!important;min-width:0!important}}
-html body#acb-design .refpanel.refpanel h3{font-size:clamp(34.56px,4.2vw,56.16px)!important;font-weight:700!important;letter-spacing:-.025em!important;color:var(--ink)!important}
-html body#acb-design .bd-sci{font-size:14.04px!important;font-weight:700!important;letter-spacing:.08em!important;color:var(--ink)!important;opacity:.65}
+html body#acb-design .refpanel.refpanel h3{font-size:clamp(34.56px,4.2vw,56.16px)!important;font-weight:500!important;letter-spacing:-.025em!important;color:var(--ink)!important}
+html body#acb-design .bd-sci{font-size:14.04px!important;font-weight:500!important;letter-spacing:.08em!important;color:var(--ink)!important;opacity:.65}
 html body#acb-design .refpanel .bd-lead{font-size:20.52px!important;line-height:1.5!important;color:var(--ink)!important}
-html body#acb-design .refpanel h4{color:var(--ink)!important;opacity:.65;font-size:12.96px!important;font-weight:700!important;letter-spacing:.08em!important}
-html body#acb-design .refpanel .bd-list li{font-size:17.28px!important;font-weight:600!important;line-height:1.5!important;color:var(--ink)!important}
+html body#acb-design .refpanel h4{color:var(--ink)!important;opacity:.65;font-size:12.96px!important;font-weight:500!important;letter-spacing:.08em!important}
+html body#acb-design .refpanel .bd-list li{font-size:17.28px!important;font-weight:500!important;line-height:1.5!important;color:var(--ink)!important}
 html body#acb-design .refpanel .bd-list li::before{color:var(--ink)!important}
 html body#acb-design .refpanel .bd-under{font-size:18.36px!important;line-height:1.55!important;color:var(--ink)!important}
 html body#acb-design .refpanel-close{color:var(--ink)!important;opacity:.7}
@@ -504,7 +516,7 @@ html body#acb-design:is(.factors-page,.method-page) .tcard-ic svg{width:20.2px;h
 
 /* Instagram handle strip between the FAQ and closing CTA — minimal, one line,
    the handle itself doing most of the talking. */
-html body#acb-design.home-page .hv-social>.wrap{
+html body#acb-design.home-page .acb-social>.wrap{
   display:flex!important;align-items:center!important;justify-content:center!important;
   flex-wrap:wrap;gap:18.36px;padding:36.72px 31.21px!important;
   background:#833ab4!important;
@@ -534,8 +546,8 @@ html body#acb-design.method-page .craft-num{
   display:flex;align-items:center;justify-content:center;width:36.72px;height:36.72px;
   border-radius:11.02px;background:#4f46e5;color:#fff;font-weight:600;font-size:15.61px;
 }
-html body#acb-design.method-page .craft-step h3{font-size:17.44px;font-weight:600;letter-spacing:-.015em;margin:0;color:var(--ink)}
-html body#acb-design.method-page .craft-step p{font-size:12.85px;line-height:1.45;color:var(--ink-soft);margin:0}
+html body#acb-design.method-page .craft-step h3{font-size:var(--fs-copy-lg);font-weight:500;letter-spacing:var(--ls-copy-lg);margin:0;color:var(--ink)}
+html body#acb-design.method-page .craft-step p{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:1.45;color:var(--ink-soft);margin:0}
 @media(max-width:1000px){
   html body#acb-design.method-page .craft-steps{grid-template-columns:1fr 1fr}
   html body#acb-design.method-page .craft-step:nth-child(2)::after,html body#acb-design.method-page .craft-step:nth-child(4)::after{display:none}
@@ -555,7 +567,6 @@ html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
 /* Experiment: "Plus Jakarta Sans" on the home page only. Inter and "Plus Jakarta Sans"
    are still loaded (index.html's font link) so all three can be swapped
    in the inspector for a quick side-by-side comparison. */
-html body#acb-design.home-page,html body#acb-design.home-page *{font-family:"Plus Jakarta Sans",sans-serif!important}
 
 /* ==========================================================================
    FOR-INDIVIDUALS / FOR-ORGANISATIONS: "choose a starting point" package
@@ -567,10 +578,10 @@ html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark{back
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{background:#4f46e5!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .aud-eyebrow{color:#E4E244!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .body{color:rgba(255,255,255,.85)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .aud-eyebrow{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .aud-eyebrow{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big,
 html body#acb-design:is(.individuals-page,.organisations-page) .leave p,
-html body#acb-design:is(.individuals-page,.organisations-page) .approach p{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important;letter-spacing:-.03em!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .approach p{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;letter-spacing:-.03em!important}
 
 html body#acb-design:is(.individuals-page,.organisations-page) .startgrid{gap:clamp(14.69px,1.8vw,20.2px)!important}
 html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .startcard{
@@ -580,13 +591,13 @@ html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .st
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .startcard:hover{transform:translateY(-5.51px);box-shadow:0 16.52px 33.05px rgba(0,0,0,.14)}
 html body#acb-design:is(.individuals-page,.organisations-page) .startcard .k{
-  display:inline-block;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important;
+  display:inline-block;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;
   font-size:11.02px!important;letter-spacing:.08em!important;padding:4.59px 11.02px;border-radius:917.08px;
   background:#eef2ff;color:#4f46e5!important;
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important;font-size:clamp(23.87px,2.4vw,29.38px)!important;letter-spacing:-.02em!important;margin-top:5.51px}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:clamp(23.87px,2.4vw,29.38px)!important;letter-spacing:-.02em!important;margin-top:5.51px}
 html body#acb-design:is(.individuals-page,.organisations-page) .startcard p{font-size:14.22px!important;line-height:1.55!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .startcard .fmt{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard .fmt{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
 /* Middle card: the recommended tier — indigo, slightly larger presence. */
 html body#acb-design:is(.individuals-page,.organisations-page) .startgrid .startcard:nth-child(2){
   background:#4f46e5!important;color:#fff!important;transform:scale(1.03);
@@ -616,14 +627,11 @@ html body#acb-design:not(.home-page) :is(.secpad,.acb-section){padding-top:55.08
 html body#acb-design:not(.home-page) .section{padding-top:55.08px!important;padding-bottom:55.08px!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding-top:55.08px!important;padding-bottom:55.08px!important}
 
-/* Font weight is always 500 — never lighter, never bolder, no exceptions. */
-html body#acb-design,html body#acb-design *{font-weight:500!important}
-
 /* Less breathing room inside each section, top/bottom especially —
    horizontal padding untouched. Responsive: 20px on small screens up
    to 30px at wider ones, matching the 30px target on a normal desktop
    viewport. */
-html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:var(--sp-card)!important}
+html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:var(--sp-card)!important}
 html body#acb-design:not(.home-page) :is(.secpad,.acb-section,.section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
 
@@ -649,21 +657,21 @@ html body#acb-design .acb-header .inner{padding-left:9.18px!important;padding-ri
 /* Find-your-block button: suppress the generic trailing arrow (it was
    landing below the disclaimer line in the column layout) and put a
    real arrow right after the title text instead. */
-html body#acb-design.home-page .hv-banner .pill::after{content:none!important}
-html body#acb-design.home-page .hv-banner .pill .banner-title::after{content:" ↗"!important}
-html body#acb-design.home-page .hv-banner .pill .banner-title{display:block}
+html body#acb-design.home-page .acb-banner .pill::after{content:none!important}
+html body#acb-design.home-page .acb-banner .pill .banner-title::after{content:" ↗"!important}
+html body#acb-design.home-page .acb-banner .pill .banner-title{display:block}
 
 /* for-individuals/for-organisations: match home's specific brand
    accents — teal eyebrows (not indigo), bigger bolder headlines. */
 html body#acb-design:is(.individuals-page,.organisations-page) .aud-eyebrow{color:var(--acb-teal)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .aud-eyebrow{color:#E4E244!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-copy .mono{color:var(--acb-teal)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big{font-size:clamp(24px,3.8vw,50px)!important;font-weight:700!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .leave p{font-size:clamp(24px,3.6vw,48px)!important;font-weight:700!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{font-weight:700!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-weight:700!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audsay .big{font-size:clamp(24px,3.8vw,50px)!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .leave p{font-size:clamp(24px,3.6vw,48px)!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard h3{font-weight:500!important}
 html body#acb-design.home-page .acb-proof-copy{padding:var(--sp-card)!important}
-html body#acb-design.home-page main>.hv-say>.wrap{padding:var(--sp-card)!important}
+html body#acb-design.home-page main>.acb-say>.wrap{padding:var(--sp-card)!important}
 html body#acb-design :is(.center-hero,.acb-close-sub){padding:var(--sp-card)!important}
 html body#acb-design.home-page .acb-proof-copy ::selection{background:#4f46e5!important;color:#fff!important}
 
