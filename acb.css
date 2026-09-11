@@ -12,15 +12,16 @@
   --sp-gap:clamp(32px,7vw,55.08px);             /* vertical gap between stacked sections */
   --radius-card:11.02px;                        /* card corner radius */
 
-  /* type scale — 2 titles, 3 body sizes, 1 label. Each tier pairs a
-     font-size with the letter-spacing that tier always carries — the
-     bigger the tier, the tighter the tracking. */
+  /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
+     letter-spacing — same tightness, only the size differs. Body copy is
+     close to normal tracking; only titles get pulled in. */
+  --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
   --fs-label:clamp(11px,1vw,12.85px);     --ls-label:.09em;    /* eyebrows / small caps labels */
-  --fs-h1:clamp(32px,5vw,70px);           --ls-h1:-.045em;     /* hero headline, closing statement */
-  --fs-h2:clamp(25px,3.8vw,50px);         --ls-h2:-.03em;      /* section titles, pull-quote, card/panel headings */
-  --fs-copy-lg:clamp(18px,1.8vw,22px);    --ls-copy-lg:-.015em;/* supporting large copy: panel body, faq question */
-  --fs-body:clamp(14px,1.3vw,16.5px);     --ls-body:-.01em;    /* regular body copy */
-  --fs-small:clamp(11px,1vw,13px);        --ls-small:0em;      /* fine print, marquee */
+  --fs-h1:clamp(32px,5vw,70px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
+  --fs-h2:clamp(25px,3.8vw,50px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
+  --fs-copy-lg:clamp(18px,1.8vw,22px);    --ls-copy-lg:-.01em; /* big copy: pull-quote, lead paragraph */
+  --fs-body:clamp(14px,1.3vw,16.5px);     --ls-body:-.005em;   /* medium copy: standard paragraph */
+  --fs-small:clamp(11px,1vw,13px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(11.5px,1vw,12.85px);  --ls-button:-.01em;  /* buttons */
 }
 /* Same tiers as classes, for markup that wants the whole bundle in one go
@@ -57,12 +58,12 @@ html body#acb-design.home-page .hv-hero .pill:hover{background:#3f37c4!important
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq)){margin:27.54px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
 html body#acb-design.home-page main>section:where(:not(.hv-hero):not(.hv-marq))>.wrap{padding:27.54px!important;max-width:none!important;width:100%;border:0!important;border-radius:11.02px;background:#fff}
 html body#acb-design.home-page main>section:not(.hv-hero) *,html body#acb-design .acb-footer *{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:-.035em}
+html body#acb-design.home-page main>section:not(.hv-hero) :is(h2,h3){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:var(--ls-title)}
 html body#acb-design.home-page main>section:not(.hv-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:11.02px!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:14.69px!important;letter-spacing:0;padding:14.69px 18.36px!important;line-height:1.4}
 html body#acb-design.home-page :is(.hv-eyebrow,.mono,.eyebrow){background:none!important;color:var(--acb-teal)!important;padding:0!important;font-size:var(--fs-label)!important;line-height:1.2!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 18.36px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.hv-say>.wrap{padding:44.06px 27.54px!important;text-align:left;display:block}
-html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-h2)!important;line-height:1.15!important;letter-spacing:var(--ls-h2)!important;text-wrap:wrap!important;color:var(--ink)!important}
+html body#acb-design.home-page .hv-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:1.3!important;letter-spacing:var(--ls-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important}
 html body#acb-design.home-page .hv-say p .hl{color:var(--ink)!important}
 html body#acb-design.home-page .hv-say .cln{display:block!important;margin-top:36.72px!important}
 html body#acb-design.home-page .hv-marq{background:#fff!important;border:0!important;padding:14.69px 0!important}
@@ -82,19 +83,19 @@ html body#acb-design.home-page .acb-proof-grid{display:grid;grid-template-column
 html body#acb-design.home-page .acb-proof-copy{background:var(--acb-yellow)!important;min-height:0;padding:var(--sp-card)!important;justify-content:flex-start;gap:18.36px;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-copy h2{font-size:var(--fs-h2)!important;line-height:.98;white-space:normal;letter-spacing:var(--ls-h2);margin:0!important;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-copy .mono{color:var(--acb-red)!important;margin:0!important}
-html body#acb-design.home-page .acb-proof-copy p{font-size:var(--fs-copy-lg)!important;line-height:1.2;max-width:none;margin:0;color:var(--acb-red)}
+html body#acb-design.home-page .acb-proof-copy p{font-size:var(--fs-body)!important;line-height:1.4;max-width:none;margin:0;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-image{margin:0;height:100%;min-height:385.56px;overflow:hidden}
 html body#acb-design.home-page .acb-proof-image img{width:100%;height:100%;object-fit:cover}
 html body#acb-design.home-page .hv-look{text-align:left}
 html body#acb-design.home-page .hv-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:22.03px 27.54px}
 html body#acb-design.home-page .hv-look h2{grid-row:span 2;font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;max-width:none;margin:0;color:var(--ink)!important}
-html body#acb-design.home-page .hv-look p{font-size:var(--fs-copy-lg);line-height:1.25;max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .hv-look p{font-size:var(--fs-body);line-height:1.5;max-width:none;margin:0;color:var(--ink)!important}
 html body#acb-design.home-page .hv-look .cta{justify-content:flex-start;margin:0}
 /* Wide carousel, without outlines or coloured text boxes. */
 html body#acb-design.home-page main>.hv-carousel>.wrap{background:transparent;padding:16.52px 0 0!important}
 html body#acb-design.home-page .hv-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
 html body#acb-design.home-page .caro-head{gap:27.54px;margin-bottom:27.54px}
-html body#acb-design.home-page .caro-intro{font-size:var(--fs-copy-lg);line-height:1.25;max-width:none}
+html body#acb-design.home-page .caro-intro{font-size:var(--fs-body);line-height:1.5;max-width:none}
 html body#acb-design.home-page .ccard{border:0!important;border-radius:11.02px;min-height:238.68px;flex:0 0 31%;background:#fff;padding:27.54px;gap:14.69px}
 html body#acb-design.home-page .ccard .clabel{padding:0;background:none;color:var(--ink);font-size:16.52px;letter-spacing:0;text-transform:none}
 html body#acb-design.home-page .ccard .cnum{font-family:"Plus Jakarta Sans",sans-serif!important;font-size:58.75px;color:var(--acb-teal)!important}
@@ -105,17 +106,17 @@ html body#acb-design.home-page .hv-offer{gap:27.54px}
 html body#acb-design.home-page .hv-offer .hv-panel{border:0!important;border-radius:11.02px;background:#f6f6f6!important;padding:27.54px!important;color:var(--ink)!important}
 html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2){background:#4f46e5!important;color:#f591b8!important}
 html body#acb-design.home-page .hv-panel h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;margin:18.36px 0}
-html body#acb-design.home-page .hv-panel .pe{font-size:var(--fs-copy-lg);color:inherit!important;letter-spacing:0}
+html body#acb-design.home-page .hv-panel .pe{font-size:var(--fs-label);color:inherit!important;letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:600}
 html body#acb-design.home-page .hv-offer .hv-panel .pbody{color:inherit!important;font-size:var(--fs-copy-lg);line-height:1.25;max-width:none}
 html body#acb-design.home-page .hv-offer .plist{margin:22.03px 0;display:grid;gap:0}
-html body#acb-design.home-page .hv-offer .plist li{border:0!important;border-top:0.92px solid rgba(0,0,0,.14)!important;font-size:var(--fs-copy-lg);padding:14.69px 0}
+html body#acb-design.home-page .hv-offer .plist li{border:0!important;border-top:0.92px solid rgba(0,0,0,.14)!important;font-size:var(--fs-body);padding:14.69px 0}
 html body#acb-design.home-page .hv-offer .plist li:last-child{border-bottom:0.92px solid rgba(0,0,0,.14)!important}
 html body#acb-design.home-page .hv-offer .hv-panel:nth-child(2) .plist li{border-color:rgba(255,255,255,.28)!important}
-html body#acb-design.home-page .hv-offer .plist li span{font-size:var(--fs-body);color:inherit!important}
+html body#acb-design.home-page .hv-offer .plist li span{font-size:var(--fs-small);color:inherit!important}
 html body#acb-design.home-page .hv-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:27.54px}
 html body#acb-design.home-page .hv-faq .hv-head{text-align:left;margin:0}
 html body#acb-design.home-page .hv-faq .faq-list{max-width:none;width:100%}
-html body#acb-design.home-page .hv-faq .faq-q{font-size:var(--fs-copy-lg);padding:18.36px 0;color:var(--ink)}
+html body#acb-design.home-page .hv-faq .faq-q{font-size:var(--fs-body);padding:18.36px 0;color:var(--ink)}
 html body#acb-design.home-page .hv-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
 html body#acb-design.home-page main>.acb-close>.wrap{background:#3b9c9e;color:var(--ink);display:grid!important;grid-template-columns:1fr 1fr;gap:22.03px 27.54px!important;text-align:left}
 html body#acb-design.home-page .acb-close h2{font-size:var(--fs-h1);letter-spacing:var(--ls-h1);line-height:.95;max-width:none;margin:0;grid-row:span 2}
@@ -306,7 +307,7 @@ html body#acb-design.home-page .hv-hero-grid{position:relative;display:grid;grid
 html body#acb-design.home-page .hv-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
 html body#acb-design.home-page .hv-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
 html body#acb-design.home-page .hv-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:11.02px;width:min(514.08px,48%);padding:33.05px!important;margin:0}
-html body#acb-design.home-page .hv-hero h1{font-size:var(--fs-h1);line-height:1.04;letter-spacing:var(--ls-h1);max-width:none;margin:0}
+html body#acb-design.home-page .hv-hero h1{font-size:16.52px;line-height:1.4;letter-spacing:0;max-width:none;margin:0}
 html body#acb-design.home-page .hv-hero .sub{font-size:var(--fs-body);line-height:1.45;max-width:none;margin-top:18.36px}
 html body#acb-design.home-page .hv-hero .sub br{display:none}
 html body#acb-design.home-page .hv-hero .hv-cta{gap:9.18px;margin-top:22.03px}
@@ -362,7 +363,7 @@ html body#acb-design.home-page .acb-header{position:fixed!important;left:0;right
 /* Taller hero with the text bubble centred (both axes). */
 html body#acb-design.home-page .hv-hero-grid{min-height:clamp(587.52px,88vh,844.56px)!important;align-items:center!important;justify-items:center!important;padding:36.72px calc((100vw - var(--site-width)) / 2)!important}
 html body#acb-design.home-page .hv-hero-copy{width:fit-content!important;max-width:min(94vw,826.2px)!important;text-align:center!important;margin:0!important;padding:22.03px 29.38px!important}
-html body#acb-design.home-page .hv-hero h1{font-size:var(--fs-h1)!important;line-height:1.05!important;letter-spacing:var(--ls-h1)!important;font-weight:500!important}
+html body#acb-design.home-page .hv-hero h1{font-size:16.52px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important}
 html body#acb-design.home-page .hv-hero .hv-cta{justify-content:center!important;margin-top:16.52px!important}
 
 /* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
@@ -392,7 +393,7 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.aud-eyebrow,.eyebrow2,.hv
 }
 /* "Plus Jakarta Sans" everywhere; dark headings with acb tracking. */
 html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:-.035em!important;color:var(--ink)!important;font-weight:500!important}
+html body#acb-design.internal-page :is(h1,h2,h3,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
 /* Calmer heading scale. */
 html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.fam-h1,.center-hero h1){font-size:clamp(31.21px,4.4vw,56.92px)!important;line-height:1.02!important}
 html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,.leave p){font-size:clamp(24.79px,3.5vw,44.06px)!important;line-height:1.04!important}
