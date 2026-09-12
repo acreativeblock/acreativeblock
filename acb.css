@@ -644,6 +644,7 @@ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)
 html body#acb-design:not(.home-page) :is(.section,.acb-section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
 html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0!important}
+html body#acb-design.home-page main>.acb-work>.wrap{padding:0!important}
 
 /* Header must never hide on scroll — same always-visible behavior on
    every page as the home page already has. */
