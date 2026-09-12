@@ -371,13 +371,15 @@ html body#acb-design.home-page .acb-hero .acb-cta{gap:9.18px;justify-content:cen
    The footer itself bleeds edge to edge; each of its 3 rows (.wrap = logo/newsletter,
    .top.acb-footer-links = link columns, .bottom = copyright) stays centered at the
    site's normal reading width, same as the header and main content. */
-html body#acb-design .acb-footer{width:100%!important;max-width:none!important;margin:0!important;background:var(--ink)!important;color:#fff!important;border-radius:0!important;padding:clamp(56px,7vw,96px) 0 clamp(28px,4vw,44px)!important}
+html body#acb-design .acb-footer{width:100%!important;max-width:none!important;margin:0!important;background:var(--ink)!important;color:#fff!important;border-radius:0!important;padding:clamp(56px,7vw,96px) 0 0!important}
 html body#acb-design .acb-footer>.wrap,
 html body#acb-design .acb-footer>.top.acb-footer-links,
 html body#acb-design .acb-footer>.bottom{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
 html body#acb-design .acb-footer>.wrap{padding-bottom:clamp(32px,5vw,56px)!important}
 html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(32px,5vw,56px) 0!important;gap:clamp(24px,3vw,40px)!important}
-html body#acb-design .acb-footer .bottom{margin-top:clamp(24px,3vw,40px)!important;padding-top:clamp(20px,2.5vw,32px)!important}
+/* Copyright row: hugs the very bottom of the page, sized to its own text
+   plus menu-style padding (14.69px) rather than the taller row spacing above. */
+html body#acb-design .acb-footer .bottom{margin-top:0!important;padding:14.69px 0!important}
 html body#acb-design.home-page{min-height:100vh;display:flex;flex-direction:column}
 html body#acb-design.home-page>main{flex:1 0 auto}
 html body#acb-design:not(.home-page) .site{min-height:100vh;display:flex;flex-direction:column}
@@ -841,7 +843,11 @@ html body#acb-design.faq-page .faqx .offer-row.open .offer-toggle .pm{transform:
 
 /* Audience heroes use the homepage's full-bleed image + compact white overlay. */
 html body#acb-design:is(.individuals-page,.organisations-page) [data-site-header]{position:absolute!important;inset:0 0 auto!important;height:0!important;width:100%!important;z-index:70}
-html body#acb-design:is(.individuals-page,.organisations-page) main>section.audience-hero{width:auto!important;max-width:none!important;margin:0 calc(var(--site-gutter) * -1) var(--sp-gap) calc(var(--site-gutter) * -1)!important;background:transparent!important}
+/* Cancel out <main>'s own centering (width:var(--site-width);margin-inline:auto)
+   so the hero reaches the true viewport edge. --site-width is capped at
+   1450.44px past that point var(--site-gutter) alone under-cancels it, so this
+   mirrors main's real margin formula: (site-width - 100vw)/2, not just -site-gutter. */
+html body#acb-design:is(.individuals-page,.organisations-page) main>section.audience-hero{width:auto!important;max-width:none!important;margin:0 calc((var(--site-width) - 100vw)/2) var(--sp-gap) calc((var(--site-width) - 100vw)/2)!important;background:transparent!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important;border-radius:0!important;background:transparent!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-grid{position:relative!important;display:grid!important;grid-template-columns:1fr!important;min-height:clamp(587.52px,88vh,844.56px)!important;padding:36.72px calc((100% - var(--site-width))/2)!important;align-items:center!important;justify-items:center!important;overflow:hidden!important;isolation:isolate}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-media{position:absolute!important;inset:0!important;z-index:-1!important;order:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;border-radius:0!important}
