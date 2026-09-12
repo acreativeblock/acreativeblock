@@ -450,7 +450,7 @@ body{font-size:14.69px}
 .prose p,.acb-lead,.acb-two-col p,.section-head p,.offer-body p,.faq-a p{font-size:14.69px}
 
 /* ===== no widow words: balance headings, prevent orphan last-line words ===== */
-h1,h2,h3,.display,.acb-h2,.acb-say p,.acb-panel h2,.acb-card h3{text-wrap:balance}
+h1,h2,h3,.display,.acb-h2,.acb-say p,.acb-card h3{text-wrap:balance}
 p,.pbody,.sub,.acb-lead,.faq-a p{text-wrap:pretty}
 
 /* ================= global refinements (v42) ================= */
@@ -485,10 +485,6 @@ html,body{background-image:none!important}
 /* home: the approach statement — coaching sentence on its own line */
 .home-page .acb-say p{max-width:38ch!important}
 .home-page .acb-say .cln{display:block;margin-top:.35em}
-/* home: offers — clearer labels + aligned lists */
-.home-page .acb-offer .acb-panel .pe{font-size:11.93px!important;font-weight:600;letter-spacing:.08em;opacity:1}
-.home-page .acb-offer .acb-panel .pbody{min-height:clamp(88.13px,8.5vw,126.68px)}
-.home-page .acb-offer .acb-panel .plist{margin-top:0}
 
 /* ================= buttons: bigger, clearer (v44) ================= */
 .btn,.btn-out,.pill,.acb-utility-pill{font-size:12.39px!important;letter-spacing:.05em;padding:13.77px 25.7px!important;line-height:1}
