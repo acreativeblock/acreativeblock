@@ -245,7 +245,7 @@ html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;
 /* White-version spacing rhythm, with "Inter" body and navigation. */
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important}
 html body#acb-design.home-page .work-card{box-shadow:var(--shadow-card)}
-html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
+html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-title)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
 html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext):not(.note),.faq-q,.plist li){letter-spacing:var(--ls-copy-lg)!important}
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:var(--ls-copy-lg)!important}
 html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:var(--ls-copy-lg)!important}
@@ -675,7 +675,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .au
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .mono{color:var(--blue)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;font-weight:500!important;line-height:var(--lh-title)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.audience-intro{text-align:left!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important;font-weight:500!important;max-width:none!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-title)!important;font-weight:500!important;max-width:none!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
 html body#acb-design.home-page main>.acb-say>.wrap{padding:var(--sp-card)!important}
@@ -704,6 +704,12 @@ html body#acb-design.internal-page main>section:first-child{margin-top:var(--pag
 html body#acb-design.internal-page main>section:last-child{margin-bottom:var(--page-gutter)!important}
 html body#acb-design.internal-page main>section>.wrap,
 html body#acb-design.internal-page .method-journey .journey-step>.wrap{box-sizing:border-box;max-width:none!important;width:100%!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
+
+/* References bar: same card language as every other block on the page
+   (margin, rounded corners, elevation) instead of the old flat,
+   edge-to-edge bar. */
+html body#acb-design.internal-page .refbar-wrap{width:auto!important;max-width:none!important;margin:0 var(--page-gutter) var(--page-gutter) var(--page-gutter)!important;border-radius:var(--radius-card)!important;overflow:hidden;box-shadow:var(--shadow-card)!important}
+html body#acb-design.internal-page .refbar{padding:var(--sp-card)!important;font-size:var(--fs-small)!important}
 html body#acb-design.internal-page :is(.section-head,.contact-intro,.audience-hero-panel,.speaking-grid)>*{min-width:0}
 html body#acb-design.internal-page :is(h1,h2,h3,p,.audience-hero-heading,.display,.big){overflow-wrap:anywhere;text-wrap:pretty}
 html body#acb-design.internal-page :is(.section-head p,.audience-intro .body,.contact-intro p){max-width:62ch}
