@@ -252,7 +252,6 @@ html body#acb-design .mobile-menu-toggle::before{
  html body#acb-design.home-page .acb-look h2{grid-row:auto}
  html body#acb-design.home-page .acb-offer{grid-template-columns:1fr}
  html body#acb-design.home-page .ccard{flex-basis:82%}
- html body#acb-design .acb-footer{margin:27.54px 14.69px;padding:29.38px 18.36px!important}
 }
 
 html body#acb-design .acb-nav{margin-left:auto!important;flex:0 1 auto!important}
@@ -303,7 +302,7 @@ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)
 html body#acb-design,html body#acb-design *{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
 html body#acb-design{--site-gutter:clamp(18.36px,4vw,66.1px);--site-width:calc(min(100vw,1450.44px) - 2 * var(--site-gutter))}
 html body#acb-design main{width:var(--site-width)!important;max-width:none!important;margin-inline:auto!important}
-html body#acb-design .acb-header,html body#acb-design .acb-footer{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+html body#acb-design .acb-header{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-left:0!important;margin-right:0!important}
 /* Full image with a white text panel overlaid on its left edge. */
 html body#acb-design.home-page .acb-hero{padding:0!important;background:transparent!important;width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important}
@@ -368,8 +367,17 @@ html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;displa
 html body#acb-design.home-page .acb-hero h1{font-size:16.52px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important;max-width:none;margin:0}
 html body#acb-design.home-page .acb-hero .acb-cta{gap:9.18px;justify-content:center!important;margin-top:16.52px!important}
 
-/* Footer sits at the very bottom: no gap below it, and pinned down on short pages. */
-html body#acb-design .acb-footer{background:#000000!important;color:#fff!important;margin-top:0!important;margin-bottom:0!important;border-radius:var(--radius-card);padding:44.06px 27.54px!important}
+/* Footer sits at the very bottom: no gap below it, and pinned down on short pages.
+   The footer itself bleeds edge to edge; each of its 3 rows (.wrap = logo/newsletter,
+   .top.acb-footer-links = link columns, .bottom = copyright) stays centered at the
+   site's normal reading width, same as the header and main content. */
+html body#acb-design .acb-footer{width:100%!important;max-width:none!important;margin:0!important;background:var(--ink)!important;color:#fff!important;border-radius:0!important;padding:clamp(56px,7vw,96px) 0 clamp(28px,4vw,44px)!important}
+html body#acb-design .acb-footer>.wrap,
+html body#acb-design .acb-footer>.top.acb-footer-links,
+html body#acb-design .acb-footer>.bottom{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+html body#acb-design .acb-footer>.wrap{padding-bottom:clamp(32px,5vw,56px)!important}
+html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(32px,5vw,56px) 0!important;gap:clamp(24px,3vw,40px)!important}
+html body#acb-design .acb-footer .bottom{margin-top:clamp(24px,3vw,40px)!important;padding-top:clamp(20px,2.5vw,32px)!important}
 html body#acb-design.home-page{min-height:100vh;display:flex;flex-direction:column}
 html body#acb-design.home-page>main{flex:1 0 auto}
 html body#acb-design:not(.home-page) .site{min-height:100vh;display:flex;flex-direction:column}
@@ -834,9 +842,9 @@ html body#acb-design.faq-page .faqx .offer-row.open .offer-toggle .pm{transform:
 
 /* Audience heroes use the homepage's full-bleed image + compact white overlay. */
 html body#acb-design:is(.individuals-page,.organisations-page) [data-site-header]{position:absolute!important;inset:0 0 auto!important;height:0!important;width:100%!important;z-index:70}
-html body#acb-design:is(.individuals-page,.organisations-page) main>section.fam-hero{width:100vw!important;max-width:100vw!important;margin:0 0 var(--sp-gap) calc(50% - 50vw)!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page) main>section.fam-hero{width:auto!important;max-width:none!important;margin:0 calc(var(--site-gutter) * -1) var(--sp-gap) calc(var(--site-gutter) * -1)!important;background:transparent!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important;border-radius:0!important;background:transparent!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .fam-grid{position:relative!important;display:grid!important;grid-template-columns:1fr!important;min-height:clamp(587.52px,88vh,844.56px)!important;padding:36.72px calc((100vw - var(--site-width))/2)!important;align-items:center!important;justify-items:center!important;overflow:hidden!important;isolation:isolate}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-grid{position:relative!important;display:grid!important;grid-template-columns:1fr!important;min-height:clamp(587.52px,88vh,844.56px)!important;padding:36.72px calc((100% - var(--site-width))/2)!important;align-items:center!important;justify-items:center!important;overflow:hidden!important;isolation:isolate}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-img{position:absolute!important;inset:0!important;z-index:-1!important;order:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;border-radius:0!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-img img{width:100%!important;height:100%!important;min-height:0!important;border-radius:0!important;object-fit:cover!important;object-position:center 48%!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .fam-copy{position:relative!important;z-index:1!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;width:min(680px,94vw)!important;max-width:min(680px,94vw)!important;margin:0!important;padding:22.03px 29.38px!important;text-align:left!important;background:#fff!important;border-radius:var(--radius-card)!important}
