@@ -41,7 +41,7 @@
 
 /* page FAQ */
 .bm-faq{padding:clamp(73.44px,11vh,128.52px) var(--pad)}
-.bm-faq .in{max-width:var(--wrap);margin:0 auto}
+.bm-faq .wrap{max-width:var(--wrap);margin:0 auto}
 .bm-faq .head{text-align:center;margin-bottom:clamp(25.7px,4vh,45.9px)}
 .bm-faq .eyebrow{color:var(--blue)}
 .bm-faq h2{font-family:var(--sans);font-weight:500;font-size:clamp(23.87px,3.6vw,45.9px);letter-spacing:-.03em;margin:5.51px 0 0;color:var(--ink)}

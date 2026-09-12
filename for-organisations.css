@@ -13,15 +13,15 @@
 .audience-hero-panel .cta{display:flex;gap:12.85px;margin-top:clamp(23.87px,3vw,36.72px);flex-wrap:wrap}
 @media(max-width:860px){.acb-hero-grid{grid-template-columns:1fr;min-height:0}.acb-hero-img{order:2;min-height:44vh}.audience-hero-panel{padding:clamp(42.23px,11vw,73.44px) var(--pad)}}
 
-.secpad{padding:clamp(66.1px,10vh,119.34px) var(--pad)}
-.secpad>.in{max-width:var(--wrap);margin:0 auto}
-.secpad.dark{background:#034748;color:#fff}
-.secpad.dark .big{color:#fff}
-.secpad.dark .body{color:rgba(255,255,255,.82)}
-.secpad.dark .audience-eyebrow{color:var(--yellow)}
-.secpad.centered{text-align:center}
-.secpad.centered .big{margin-left:auto;margin-right:auto}
-.secpad.centered .body{margin-left:auto;margin-right:auto}
+.section{padding:clamp(66.1px,10vh,119.34px) var(--pad)}
+.section>.wrap{max-width:var(--wrap);margin:0 auto}
+.section.dark{background:#034748;color:#fff}
+.section.dark .big{color:#fff}
+.section.dark .body{color:rgba(255,255,255,.82)}
+.section.dark .audience-eyebrow{color:var(--yellow)}
+.section.centered{text-align:center}
+.section.centered .big{margin-left:auto;margin-right:auto}
+.section.centered .body{margin-left:auto;margin-right:auto}
 .audience-eyebrow{display:block;font-size:11.02px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:clamp(14.69px,2vw,22.03px)}
 
 .audience-intro .big{font-family:var(--sans);font-weight:500;font-size:clamp(22.03px,3.4vw,44.06px);line-height:1.12;letter-spacing:-.025em;color:var(--ink);margin:0;max-width:24ch}
@@ -40,7 +40,7 @@
 .takeaways p{font-family:var(--sans);font-weight:500;font-size:clamp(20.2px,3.1vw,40.39px);line-height:1.18;letter-spacing:-.025em;color:var(--ink);margin:0;max-width:26ch}
 .takeaways .audience-eyebrow{margin-bottom:clamp(20.2px,2.6vw,31.21px)}
 
-.secpad.tint{background:var(--tint)}
+.section.tint{background:var(--tint)}
 .takeaways.dark p{color:#fff}
 .speaking-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22.03px,4vw,58.75px);align-items:center}
 .speaking-grid h2{font-family:var(--sans);font-weight:500;font-size:clamp(22.03px,3vw,38.56px);line-height:1.06;letter-spacing:-.025em;margin:7.34px 0 0;color:var(--ink);max-width:18ch}

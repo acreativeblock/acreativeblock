@@ -125,7 +125,7 @@ html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(1
 html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
 html body#acb-design .acb-footer :is(.col a,.news p){font-size:16.52px!important}
-html body#acb-design:not(.home-page) :is(.secpad,.acb-section){padding-top:44.06px!important;padding-bottom:44.06px!important}
+html body#acb-design:not(.home-page) :is(.section,.acb-section){padding-top:44.06px!important;padding-bottom:44.06px!important}
 /* Closed state: same rounded-square icon-button language as the open/close
    control below (light-indigo tile, hamburger drawn with box-shadow lines). */
 html body#acb-design .mobile-menu-toggle{
@@ -499,12 +499,12 @@ html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-pa
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.acb-hero):not(.page-hero){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>:is(.acb-hero,.page-hero){margin:0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band){background:#f6f6f6!important;background-image:none!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band) > :is(.wrap,.in){
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band) > .wrap{
   background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important;
 }
 /* .talks-section keeps its own black card instead of the generic grey/white treatment. */
 html body#acb-design.organisations-page main>section.talks-section{background:#000!important}
-html body#acb-design.organisations-page main>section.talks-section>.in{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
+html body#acb-design.organisations-page main>section.talks-section>.wrap{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
 /* .acb-close-sub (the bottom CTA) is its own yellow card, like the home page's close section. */
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>.acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:left!important;display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:22px 36px!important;box-shadow:var(--shadow-card)!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>.acb-close-sub h2{margin:0!important}
@@ -513,7 +513,7 @@ html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-pa
   html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main>.acb-close-sub>.wrap{grid-template-columns:1fr!important;text-align:center!important}
 }
 /* Legal pages (terms/privacy/cookies): the section itself is the white card — it has
-   no .wrap/.in child, just the sidebar-nav + article layout, which keeps its own width. */
+   no .wrap child, just the sidebar-nav + article layout, which keeps its own width. */
 html body#acb-design.legal-page main>section.legal-section{background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important}
 /* Section images sit flush and rounded like the home cards. */
 html body#acb-design.internal-page :is(figure,.split-img,.acb-hero-img) img{border-radius:var(--radius-card)!important;display:block;width:100%}
@@ -629,9 +629,9 @@ html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
    big bold type), and the dark intro band moved from off-brand teal to
    indigo so it reads as part of the same site.
    ========================================================================== */
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark{background:transparent!important;color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{background:#4f46e5!important;color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .body{color:rgba(255,255,255,.85)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark{background:transparent!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wrap{background:#4f46e5!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .body{color:rgba(255,255,255,.85)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big,
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;letter-spacing:-.03em!important}
@@ -674,7 +674,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-
    rhythm (was riding the shared --section-space var at 72-110.16px, which
    is also used for the home cards' own internal padding — decoupled
    here so that value stays untouched). */
-html body#acb-design:not(.home-page) :is(.secpad,.acb-section){padding-top:55.08px!important;padding-bottom:55.08px!important}
+html body#acb-design:not(.home-page) :is(.section,.acb-section){padding-top:55.08px!important;padding-bottom:55.08px!important}
 html body#acb-design:not(.home-page) .section{padding-top:55.08px!important;padding-bottom:55.08px!important}
 
 /* Less breathing room inside each section, top/bottom especially —
@@ -682,7 +682,7 @@ html body#acb-design:not(.home-page) .section{padding-top:55.08px!important;padd
    to 30px at wider ones, matching the 30px target on a normal desktop
    viewport. */
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:var(--sp-card)!important}
-html body#acb-design:not(.home-page) :is(.secpad,.acb-section,.section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
+html body#acb-design:not(.home-page) :is(.section,.acb-section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
 
 /* Header must never hide on scroll — same always-visible behavior on
@@ -715,10 +715,10 @@ html body#acb-design.home-page .acb-banner .pill:hover .banner-title::after{tran
 /* for-individuals/for-organisations: match home's specific brand
    accents — teal eyebrows (not indigo), bigger bolder headlines. */
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{color:var(--acb-teal)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark .audience-eyebrow{color:#E4E244!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .audience-eyebrow{color:#E4E244!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .mono{color:var(--acb-teal)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;font-weight:500!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.audience-intro{text-align:left!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.audience-intro{text-align:left!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:-.025em!important;line-height:1.3!important;font-weight:500!important;max-width:none!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
@@ -732,7 +732,7 @@ html body#acb-design :is(.access-note,.map-test-inline,.contact-intro,.audience-
 
 /* Individuals/Organisations: the .dark intro section keeps its own indigo card
    instead of the generic white-card treatment above (line 437). */
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wrap{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
 
 /* ==========================================================================
    INTERNAL PAGE COHERENCE — the homepage is the reference for gutters,
@@ -746,33 +746,33 @@ html body#acb-design.internal-page .method-journey{width:auto!important;max-widt
 html body#acb-design.internal-page main>section{margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
 html body#acb-design.internal-page main>section:first-child{margin-top:var(--page-gutter)!important}
 html body#acb-design.internal-page main>section:last-child{margin-bottom:var(--page-gutter)!important}
-html body#acb-design.internal-page main>section>:is(.wrap,.in),
+html body#acb-design.internal-page main>section>.wrap,
 html body#acb-design.internal-page .method-journey .journey-step>.wrap{box-sizing:border-box;max-width:none!important;width:100%!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
 html body#acb-design.internal-page :is(.section-head,.contact-intro,.audience-hero-panel,.speaking-grid)>*{min-width:0}
 html body#acb-design.internal-page :is(h1,h2,h3,p,.audience-hero-heading,.display,.big){overflow-wrap:anywhere;text-wrap:pretty}
 html body#acb-design.internal-page :is(.section-head p,.audience-intro .body,.contact-intro p){max-width:62ch}
 
 /* Audience pages */
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad{padding:0!important;background:transparent!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad>.in{background:#fff!important;color:var(--ink)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{background:#4f46e5!important;color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark :is(h2,h3,p,li,.big,.body){color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark :is(.audience-eyebrow,.eyebrow){color:var(--acb-yellow)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section{padding:0!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section>.wrap{background:#fff!important;color:var(--ink)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wrap{background:#4f46e5!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark :is(h2,h3,p,li,.big,.body){color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark :is(.audience-eyebrow,.eyebrow){color:var(--acb-yellow)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{margin-top:var(--sp-card)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card{padding:var(--sp-card)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:var(--fs-body)!important;line-height:1.5!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list{max-width:920px;margin:var(--sp-card) auto 0;display:grid;gap:11px}
 /* FAQ section: same left-label/right-list layout as home's .acb-faq. */
-html body#acb-design.internal-page :is(.secpad>.in,.section>.wrap,.bm-faq>.in):has(>.faq-list){display:grid!important;grid-template-columns:1fr 1.1fr!important;gap:27.54px!important;align-items:start!important}
-html body#acb-design.internal-page :is(.secpad>.in,.section>.wrap,.bm-faq>.in):has(>.faq-list) :is(.section-head.center,.head){display:block!important;text-align:left!important;margin:0!important}
-html body#acb-design.internal-page :is(.secpad>.in,.section>.wrap,.bm-faq>.in):has(>.faq-list) .section-head.center>div{max-width:none!important}
-html body#acb-design.internal-page :is(.secpad>.in,.section>.wrap,.bm-faq>.in):has(>.faq-list) .section-head.center p{margin-left:0!important;margin-right:0!important}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list){display:grid!important;grid-template-columns:1fr 1.1fr!important;gap:27.54px!important;align-items:start!important}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) :is(.section-head.center,.head){display:block!important;text-align:left!important;margin:0!important}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) .section-head.center>div{max-width:none!important}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) .section-head.center p{margin-left:0!important;margin-right:0!important}
 @media(max-width:760px){
-  html body#acb-design.internal-page :is(.secpad>.in,.section>.wrap,.bm-faq>.in):has(>.faq-list){grid-template-columns:1fr!important}
+  html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list){grid-template-columns:1fr!important}
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li{padding:18px 20px!important;padding-top:64px!important;background:rgba(255,255,255,.12)!important;color:inherit!important;border:0!important}
 html body#acb-design.organisations-page main>section.talks-section{background:transparent!important}
-html body#acb-design.organisations-page main>section.talks-section>.in{background:#000!important}
+html body#acb-design.organisations-page main>section.talks-section>.wrap{background:#000!important}
 html body#acb-design.organisations-page .talks-section :is(h2,p,.note){color:#fff!important}
 
 /* How we work: a sticky left nav that tracks scroll progress through the steps. */
@@ -804,14 +804,14 @@ html body#acb-design.method-page .craft-step::after{display:none!important}
 /* Block map */
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq,.evidence-band){padding:0!important;background:transparent!important}
 html body#acb-design.blocks-page .bm-hero>.wrap,
-html body#acb-design.blocks-page :is(.bm-faq,.evidence-band)>.in{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;max-width:none!important}
+html body#acb-design.blocks-page :is(.bm-faq,.evidence-band)>.wrap{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;max-width:none!important}
 html body#acb-design.blocks-page .bmap{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#034748!important;color:#fff!important;box-shadow:var(--shadow-card)!important}
 html body#acb-design.blocks-page .bmap-head{padding:0!important}
 html body#acb-design.blocks-page .bmap-head h2{color:#fff!important}
 html body#acb-design.blocks-page .bmap-head .eyebrow2{color:var(--acb-yellow)!important}
 html body#acb-design.blocks-page .bmgrid{padding:0!important;max-width:none!important;gap:clamp(12px,1.4vw,20px)!important}
 html body#acb-design.blocks-page .bmcard-body{padding:var(--sp-card)!important}
-html body#acb-design.blocks-page .evidence-band>.in{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.blocks-page .evidence-band>.wrap{background:#4f46e5!important;color:#fff!important}
 html body#acb-design.blocks-page .evidence-band :is(h2,p,.mono){color:#fff!important}
 html body#acb-design.blocks-page .map-test-inline{margin:var(--sp-card) 0 0!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:var(--acb-yellow)!important;color:var(--ink)!important}
 
