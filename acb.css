@@ -738,7 +738,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{
    surfaces, radius, spacing and typography.
    ========================================================================== */
 :root{--page-gutter:clamp(18px,2vw,27.54px)}
-html body#acb-design.internal-page main{overflow:clip}
+html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main{overflow:clip}
 html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main{padding-top:110px}
 html body#acb-design.internal-page main>section,
 html body#acb-design.internal-page .method-journey{width:auto!important;max-width:none!important;margin-left:var(--page-gutter)!important;margin-right:var(--page-gutter)!important}
