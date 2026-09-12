@@ -426,22 +426,6 @@ html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.acb-utility-pill,.re
 
 /* Hero sentence wraps only on phones. */
 @media(max-width:648px){html body#acb-design.home-page .acb-hero h1{white-space:normal!important}}
-/* "Find your block" banner: one big, bold, but compact full-width button —
-   wide and confident rather than tall, with a small disclaimer underneath. */
-html body#acb-design.home-page .acb-banner>.wrap{background:transparent!important;padding:0!important}
-html body#acb-design.home-page .acb-banner .banner-in{display:flex;flex-direction:column;align-items:center;gap:9.92px}
-html body#acb-design.home-page .acb-banner .banner-note{
-  display:block!important;font-family:"Plus Jakarta Sans",sans-serif!important;
-  font-size:13.5px!important;font-weight:500!important;line-height:1.3;letter-spacing:-.005em!important;
-  color:#fff!important;opacity:.85;margin-top:7.2px;max-width:none;text-align:left;
-}
-html body#acb-design.home-page main section.acb-banner .banner-in .pill{
-  flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;
-  width:100%;background:#4f46e5!important;color:#fff!important;border:0!important;
-  border-radius:18.18px!important;font-size:clamp(23.13px,4.6vw,46.27px)!important;font-weight:500!important;
-  letter-spacing:-.045em!important;padding:clamp(21.48px,3.6vw,36.35px) 29.74px!important;
-}
-
 /* Our-approach: the .hl phrases get drawn over by a highlighter-pen sweep as they
    scroll into view (left-to-right, driven by --hlp from logo.js), instead
    of the band just sitting there at full opacity. Words inside still fade in as
@@ -659,7 +643,7 @@ html body#acb-design:not(.home-page) .section{padding-top:49.57px!important;padd
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:var(--sp-card)!important}
 html body#acb-design:not(.home-page) :is(.section,.acb-section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
-html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0 var(--pad)!important}
+html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0!important}
 
 /* Header must never hide on scroll — same always-visible behavior on
    every page as the home page already has. */
@@ -679,14 +663,6 @@ html body#acb-design.home-page .acb-header{top:28.8px!important}
 /* Header edge padding matches the "Book a call" button's own vertical
    padding (8.26px), so the button sits the same distance from the
    right edge as it does top/bottom — and the logo mirrors it on the left. */
-
-/* Find-your-block button: suppress the generic trailing arrow (it was
-   landing below the disclaimer line in the column layout) and put a
-   real arrow right after the title text instead. */
-html body#acb-design.home-page .acb-banner .pill::after{content:none!important}
-html body#acb-design.home-page .acb-banner .pill .banner-title::after{content:"↗"!important;display:inline-block;margin-left:.28em;transition:transform .22s ease}
-html body#acb-design.home-page .acb-banner .pill .banner-title{display:block}
-html body#acb-design.home-page .acb-banner .pill:hover .banner-title::after{transform:translate(.14em,-.14em)}
 
 /* for-individuals/for-organisations: match the rest of the internal
    pages — blue eyebrows, bigger bolder headlines. */
