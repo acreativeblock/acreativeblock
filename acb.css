@@ -301,6 +301,11 @@ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)
 /* "Plus Jakarta Sans" across all live typography; logo remains its original vector artwork. */
 html body#acb-design,html body#acb-design *{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
 html body#acb-design{--site-gutter:clamp(18.36px,4vw,66.1px);--site-width:calc(min(100vw,1450.44px) - 2 * var(--site-gutter))}
+/* Desktop only (mobile/tablet keep the clamp above untouched): the gutter
+   stops scaling up with viewport width past this point, so --site-width
+   uses noticeably more of the screen instead of growing its side margins
+   right along with it. */
+@media(min-width:1061px){html body#acb-design{--site-gutter:clamp(20px,1vw,32px)}}
 html body#acb-design main{width:var(--site-width)!important;max-width:none!important;margin-inline:auto!important}
 html body#acb-design .acb-header{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin-left:0!important;margin-right:0!important}

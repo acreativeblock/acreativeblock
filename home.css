@@ -194,6 +194,34 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .caro-more{margin-top:clamp(20.2px,2.6vw,29.38px)}
 @media(max-width:700px){.acb-carousel .caro-head{grid-template-columns:1fr}}
 
+/* Working-map masonry: same 7+1 content as the carousel above, shown instead
+   as two columns of four full-colour cards (each block appears exactly once)
+   that glide down, bounce gently, then glide back up — each column at its
+   own speed so the two never move in sync. */
+.blocks-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28.09px,4.5vw,66.1px);align-items:center}
+.blocks-head .acb-lead{margin-top:clamp(11.57px,1.6vw,18.18px)}
+.blocks-head .cta{margin-top:clamp(18.18px,2.6vw,28.09px)}
+.blocks-masonry{position:relative;height:clamp(330.6px,42vw,477.36px);overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:11.02px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.bgm-col{display:flex;flex-direction:column;gap:11.02px;will-change:transform;animation:bgmBounce ease-in-out infinite}
+.bgm-col-a{--scroll-depth:-150px;animation-duration:9s}
+.bgm-col-b{--scroll-depth:-172px;animation-duration:10.5s;animation-delay:-3s}
+.bgm-card{height:140px;box-sizing:border-box;background:var(--c);color:var(--tc,#111);border-radius:11.02px;padding:clamp(14.69px,1.6vw,20.2px);display:flex;flex-direction:column;gap:5.51px}
+.bgm-card .bgm-num{font-family:var(--sans);font-weight:500;font-size:clamp(14.69px,1.4vw,18.36px);letter-spacing:-.02em;opacity:.6}
+.bgm-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(15.61px,1.5vw,19.28px);letter-spacing:-.02em;line-height:1.1;margin:2.76px 0 0}
+.bgm-card p{font-size:clamp(11.93px,1.05vw,13.77px);line-height:1.4;margin:0;opacity:.85}
+.bgm-card .bgm-lab{margin-top:auto;padding-top:7.34px;font-size:9.91px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.65}
+@keyframes bgmBounce{
+  0%,8%{transform:translateY(0)}
+  45%{transform:translateY(var(--scroll-depth))}
+  49%{transform:translateY(calc(var(--scroll-depth) - 10px))}
+  53%{transform:translateY(var(--scroll-depth))}
+  90%{transform:translateY(0)}
+  96%{transform:translateY(8px)}
+  100%{transform:translateY(0)}
+}
+@media(max-width:900px){.blocks-layout{grid-template-columns:1fr}.blocks-masonry{height:clamp(330.6px,60vw,400px)}.bgm-col-a{--scroll-depth:-260px}.bgm-col-b{--scroll-depth:-282px}}
+@media(prefers-reduced-motion:reduce){.bgm-col{animation:none}}
+
 /* ===== from white-home.css ===== */
 /* final-whiteversion: calm white/grey homepage with block-specific colour coding */
 :root{
