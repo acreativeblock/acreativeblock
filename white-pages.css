@@ -7,7 +7,6 @@
 html{background:#fff}
 body:not(.home-page){background:#fff!important;background-image:none!important;color:var(--copy)}
 /* v48 animated canvas grain: texture only, never a grey background layer. */
-body:not(.home-page) .grain{display:block!important;position:fixed!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none!important;z-index:20!important;opacity:.15!important;mix-blend-mode:multiply!important;image-rendering:pixelated!important}
 body:not(.home-page) img,body:not(.home-page) picture,body:not(.home-page) video,.evidence-page .ev-card{position:relative;z-index:21}
 
 /* One calm header on every page. */

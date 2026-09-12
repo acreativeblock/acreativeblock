@@ -3,7 +3,6 @@
    .wrap, .pill, .mono-link, ::selection, etc. This file only styles page-body content. */
 
 /* kill the old grain/dark theme so pages sit on paper like the home */
-.grain{display:none!important}
 body.internal-page,body.blog-index,body.resources-page{background-color:#FFFAF2;color:var(--ink);font-family:var(--sans)}
 main{display:block}
 *{font-style:normal!important}
