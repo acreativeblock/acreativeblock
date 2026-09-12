@@ -188,7 +188,8 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .blocks-head{padding:clamp(46.27px,7.4vw,92.53px) var(--pad)}
 .blocks-head .acb-lead{margin-top:clamp(11.57px,1.6vw,18.18px)}
 .blocks-head .cta{margin-top:clamp(18.18px,2.6vw,28.09px)}
-.blocks-masonry{position:relative;height:clamp(330.6px,42vw,477.36px);overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:11.02px}
+.blocks-masonry{position:relative;align-self:stretch}
+.blocks-masonry-inner{position:absolute;inset:0;overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:11.02px}
 .bgm-col{display:flex;flex-direction:column;gap:11.02px;will-change:transform;animation:bgmScroll linear infinite}
 .bgm-col-a{animation-duration:24s}
 .bgm-col-b{animation-duration:29s;animation-direction:reverse}

@@ -556,7 +556,7 @@ html body#acb-design:is(.factors-page,.method-page) .tcard-ic svg{width:20.2px;h
 
 /* Instagram handle strip between the FAQ and closing CTA — minimal, one line,
    the handle itself doing most of the talking. */
-html body#acb-design.home-page .acb-social>.wrap{
+html body#acb-design.home-page .acb-follow>.wrap{
   display:flex!important;align-items:center!important;justify-content:center!important;
   flex-wrap:wrap;gap:18.36px;padding:36.72px 31.21px!important;
   background:#833ab4!important;
