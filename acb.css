@@ -371,11 +371,11 @@ html body#acb-design.home-page .acb-hero .acb-cta{gap:9.18px;justify-content:cen
    The footer itself bleeds edge to edge; each of its 3 rows (.wrap = logo/newsletter,
    .top.acb-footer-links = link columns, .bottom = copyright) stays centered at the
    site's normal reading width, same as the header and main content. */
-html body#acb-design .acb-footer{width:100%!important;max-width:none!important;margin:0!important;background:var(--ink)!important;color:#fff!important;border-radius:0!important;padding:clamp(56px,7vw,96px) 0 0!important}
+html body#acb-design .acb-footer{width:100%!important;max-width:none!important;margin:0!important;background:var(--ink)!important;color:#fff!important;border-radius:0!important;padding:clamp(40px,5vw,64px) 0 0!important}
 html body#acb-design .acb-footer>.wrap,
 html body#acb-design .acb-footer>.top.acb-footer-links,
 html body#acb-design .acb-footer>.bottom{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
-html body#acb-design .acb-footer>.wrap{padding-bottom:clamp(32px,5vw,56px)!important}
+html body#acb-design .acb-footer>.wrap{padding-bottom:clamp(20px,3vw,32px)!important}
 html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(32px,5vw,56px) 0!important;gap:clamp(24px,3vw,40px)!important}
 /* Copyright row: hugs the very bottom of the page, sized to its own text
    plus menu-style padding (14.69px) rather than the taller row spacing above. */
