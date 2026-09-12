@@ -102,7 +102,7 @@ html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-h
 html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--acb-red)!important;display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
 html body#acb-design.home-page .acb-close .note{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:var(--lh-title);max-width:none;margin:0!important;color:var(--acb-red)!important}
 html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(16.2px,1.8vw,19.8px)!important;padding:19.83px 29.74px!important}
-html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
+html body#acb-design .acb-footer>.wrap{padding:20px 20px 0px 20px!important;max-width:none}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
 html body#acb-design .acb-footer :is(.col a,.news p){font-size:14.87px!important}
 html body#acb-design:not(.home-page) :is(.section,.acb-section){padding-top:39.65px!important;padding-bottom:39.65px!important}
@@ -354,7 +354,6 @@ html body#acb-design .acb-footer{width:100%!important;max-width:none!important;m
 html body#acb-design .acb-footer>.wrap,
 html body#acb-design .acb-footer>.top.acb-footer-links,
 html body#acb-design .acb-footer>.bottom{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
-html body#acb-design .acb-footer>.wrap{padding-bottom:0!important}
 html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(28.8px,5vw,50.4px) 0!important;gap:clamp(21.6px,3vw,36px)!important}
 /* Copyright row: hugs the very bottom of the page, sized to its own text
    plus menu-style padding (13.22px) rather than the taller row spacing above. */
