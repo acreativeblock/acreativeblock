@@ -179,34 +179,20 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .acb-look .pill.alt{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
 .acb-look .pill.alt:hover{background:#fff;color:var(--ink);border-color:#fff}
 
-/* 7+1 carousel (numbers, no images) */
-.acb-carousel .caro-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18.36px,4vw,55.08px);align-items:end;margin-bottom:clamp(23.87px,3vw,40.39px)}
-.caro-intro{font-size:14.69px;line-height:1.6;color:var(--ink-soft);max-width:52ch;margin:0}
-.caro-navs{display:flex;gap:8.26px;margin-bottom:clamp(14.69px,1.8vw,20.2px)}
-.caro-nav{width:42.23px;height:42.23px;border:0;background:var(--blue);color:#fff;cursor:pointer;font-size:17.44px;display:grid;place-items:center;transition:background .2s}
-.caro-nav:hover{background:var(--ink)}
-.caro-track{display:flex;gap:clamp(11.02px,1.4vw,16.52px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:3.67px;scroll-behavior:smooth}
-.caro-track::-webkit-scrollbar{display:none}
-.ccard{flex:0 0 clamp(218.48px,26vw,293.76px);scroll-snap-align:start;background:#fff;border:0.92px solid var(--line);padding:clamp(20.2px,2vw,29.38px);min-height:clamp(183.6px,20vw,238.68px);display:flex;flex-direction:column;gap:11.02px}
-.ccard .cnum{font-family:var(--sans);font-weight:500;font-size:clamp(29.38px,3vw,47.74px);line-height:1;letter-spacing:-.03em}
-.ccard h3{font-family:var(--sans);font-weight:500;font-size:clamp(16.52px,1.6vw,22.03px);letter-spacing:-.015em;margin:0;color:var(--ink);line-height:1.05}
-.ccard p{font-size:12.39px;line-height:1.45;color:var(--ink-soft);margin:auto 0 0}
-.caro-more{margin-top:clamp(20.2px,2.6vw,29.38px)}
-@media(max-width:700px){.acb-carousel .caro-head{grid-template-columns:1fr}}
-
-/* Working-map masonry: same 7+1 content as the carousel above, shown instead
-   as two columns of full-colour cards (each block appears twice per column,
-   back-to-back, so the loop is seamless) scrolling continuously — each
-   column at its own speed/direction so the two never move in sync. Cards
-   just disappear at the section's edge; no fade. */
-.blocks-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28.09px,4.5vw,66.1px);align-items:center}
+/* Working-map masonry: two columns of full-colour cards (each block appears
+   twice per column, back-to-back, so the loop is seamless) scrolling
+   continuously — each column at its own speed/direction so the two never
+   move in sync. Cards just disappear at the section's edge; no fade. */
+.acb-blocks,.acb-blocks>.wrap{padding:0}
+.blocks-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28.09px,4.5vw,66.1px)}
+.blocks-head{padding:clamp(46.27px,7.4vw,92.53px) var(--pad)}
 .blocks-head .acb-lead{margin-top:clamp(11.57px,1.6vw,18.18px)}
 .blocks-head .cta{margin-top:clamp(18.18px,2.6vw,28.09px)}
 .blocks-masonry{position:relative;height:clamp(330.6px,42vw,477.36px);overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:11.02px}
 .bgm-col{display:flex;flex-direction:column;gap:11.02px;will-change:transform;animation:bgmScroll linear infinite}
 .bgm-col-a{animation-duration:24s}
 .bgm-col-b{animation-duration:29s;animation-direction:reverse}
-.bgm-card{height:140px;box-sizing:border-box;background:var(--c);color:var(--tc,#111);border-radius:11.02px;padding:clamp(14.69px,1.6vw,20.2px);display:flex;flex-direction:column;gap:5.51px}
+.bgm-card{min-height:140px;box-sizing:border-box;background:var(--c);color:var(--tc,#111);border-radius:11.02px;padding:clamp(14.69px,1.6vw,20.2px);display:flex;flex-direction:column;gap:5.51px}
 .bgm-card .bgm-num{font-family:var(--sans);font-weight:500;font-size:clamp(14.69px,1.4vw,18.36px);letter-spacing:-.02em;opacity:.6}
 .bgm-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(15.61px,1.5vw,19.28px);letter-spacing:-.02em;line-height:1.1;margin:2.76px 0 0}
 .bgm-card p{font-size:clamp(11.93px,1.05vw,13.77px);line-height:1.4;margin:0;opacity:.85}
@@ -277,7 +263,7 @@ body.home-page{
 .home-page .pill:hover::after{transform:translate(1.84px,-1.84px)}
 
 /* Buttons keep their colour; hover motion belongs to the arrow only. */
-.home-page :is(.pill,.acb-utility-pill,.caro-nav):hover{
+.home-page :is(.pill,.acb-utility-pill):hover{
   background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;
 }
 .home-page .acb-utility-pill::after{content:" ↗";display:inline-block;margin-left:6.43px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
@@ -297,7 +283,7 @@ body.home-page{
 .home-page .acb-marq .track span:nth-of-type(8n){color:#909090}
 
 /* Editorial white/grey section rhythm. */
-.home-page .acb-say,.home-page .acb-proof,.home-page .acb-carousel,.home-page .acb-faq{background:var(--white)!important;background-image:none!important}
+.home-page .acb-say,.home-page .acb-proof,.home-page .acb-faq{background:var(--white)!important;background-image:none!important}
 .home-page .acb-say{border-bottom:0.92px solid var(--quiet-2)}
 .home-page .acb-say p{color:var(--copy)}
 .home-page .acb-say p{max-width:42ch!important;line-height:1.2!important}
@@ -314,12 +300,6 @@ body.home-page{
 .home-page .acb-look h2{color:var(--copy)!important}
 .home-page .acb-look p{color:var(--muted)!important}
 .home-page .acb-look .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
-
-/* 7+1: colour belongs to the block, never to unrelated panels. */
-.home-page .caro-nav{background:var(--white);color:var(--copy);border:0.92px solid var(--quiet-2)}
-.home-page .caro-nav:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
-.home-page .ccard{background:var(--white);border:0.92px solid var(--quiet-2);transition:none}
-.home-page .ccard .clabel{align-self:flex-start;padding:4.59px 8.26px;background:var(--c);color:#111;font-size:9.18px;font-weight:600;line-height:1;letter-spacing:.08em;text-transform:uppercase}
 
 /* Services: calm neutrals; brand blue only marks links and actions. */
 .home-page main>.acb:not(.acb-hero):has(.acb-offer){background:var(--quiet)!important;background-image:none!important}
@@ -392,4 +372,3 @@ html body.home-page .acb-close{background:#E4E244!important;background-color:#E4
 /* Final hover invariant: actions retain their resting colours. */
 html body.home-page :is(.pill,.acb-utility-pill):hover{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 html body.home-page .acb-close :is(.pill,.is-outline):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
-html body.home-page .caro-nav:hover{background:var(--white)!important;color:var(--copy)!important;border-color:var(--quiet-2)!important}
