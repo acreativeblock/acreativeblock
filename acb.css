@@ -16,12 +16,16 @@
 
   /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
      letter-spacing — same tightness, only the size differs. Body copy is
-     close to normal tracking; only titles get pulled in. */
+     close to normal tracking; only titles get pulled in. Line-height is the
+     same two-value rule everywhere: big/title-sized text always sits at
+     --lh-title, every smaller (copy) size always sits at --lh-copy. */
   --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
+  --lh-title:1.1;                         /* the one line-height for every title-sized text */
+  --lh-copy:1.3;                          /* the one line-height for every copy size (copy-lg/body/small/button) */
   --fs-label:clamp(9.9px,1vw,11.56px);     --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
-  --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;--lh-copy-lg:1.2;/* big copy: pull-quote, lead paragraph */
+  --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
   --fs-body:clamp(14.4px,1.5vw,17.1px);       --ls-body:-.005em;   /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
@@ -29,12 +33,12 @@
 /* Same tiers as classes, for markup that wants the whole bundle in one go
    (font-size + letter-spacing + a sensible line-height/weight default). */
 html body#acb-design .t-label{font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;line-height:1.2!important;text-transform:uppercase;font-weight:600}
-html body#acb-design .t-h1{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:1.05!important;font-weight:500}
-html body#acb-design .t-h2{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;line-height:1.1!important;font-weight:500}
-html body#acb-design .t-copy-lg{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.2!important;font-weight:500}
-html body#acb-design .t-body{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:1.55!important;font-weight:500}
-html body#acb-design .t-small{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:1.5!important;font-weight:500}
-html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:1.4!important;font-weight:500}
+html body#acb-design .t-h1{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:var(--lh-title)!important;font-weight:500}
+html body#acb-design .t-h2{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;line-height:var(--lh-title)!important;font-weight:500}
+html body#acb-design .t-copy-lg{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important;font-weight:500}
+html body#acb-design .t-body{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;font-weight:500}
+html body#acb-design .t-small{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;font-weight:500}
+html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:var(--lh-copy)!important;font-weight:500}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
 html body#acb-design .acb-header{position:sticky!important;width:calc(100% - 49.57px)!important;max-width:none!important;margin:19.83px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:8.26px!important;gap:19.83px!important;height:46.27px!important;min-height:46.27px!important}
@@ -60,7 +64,7 @@ html body#acb-design.home-page .acb-hero .pill:hover{background:#3f37c4!importan
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin:24.79px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:24.79px!important;max-width:none!important;width:100%;border:0!important;border-radius:var(--radius-card);background:#fff;box-shadow:var(--shadow-card)}
 html body#acb-design.home-page main>section:not(.acb-hero) :is(h2,h3){font-family:"Inter",sans-serif!important;letter-spacing:var(--ls-title)}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:var(--radius-card)!important;font-family:"Inter",sans-serif!important;font-size:var(--fs-button)!important;letter-spacing:var(--ls-button);padding:13.22px 16.52px!important;line-height:1.4}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:var(--radius-card)!important;font-family:"Inter",sans-serif!important;font-size:var(--fs-button)!important;letter-spacing:var(--ls-button);padding:13.22px 16.52px!important;line-height:var(--lh-copy)}
 html body#acb-design.home-page :is(.acb-eyebrow,.mono,.eyebrow){background:none!important;color:var(--brand)!important;padding:0!important;font-size:var(--fs-label)!important;line-height:1.2!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 16.52px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.acb-say>.wrap{padding:39.65px 24.79px!important;text-align:left;display:block}
@@ -79,24 +83,24 @@ html body#acb-design.home-page .acb-marq .track span:nth-of-type(8n){color:#9090
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important;overflow:hidden;background:var(--acb-yellow)}
 html body#acb-design.home-page .acb-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0!important}
 html body#acb-design.home-page .acb-proof-copy{background:var(--acb-yellow)!important;min-height:0;padding:var(--sp-card)!important;justify-content:flex-start;gap:16.52px;color:var(--acb-red)}
-html body#acb-design.home-page .acb-proof-copy h2{font-size:var(--fs-h2)!important;line-height:.98;white-space:normal;letter-spacing:var(--ls-h2);margin:0!important;color:var(--acb-red)}
+html body#acb-design.home-page .acb-proof-copy h2{font-size:var(--fs-h2)!important;line-height:var(--lh-title);white-space:normal;letter-spacing:var(--ls-h2);margin:0!important;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-copy .mono{color:var(--acb-red)!important;margin:0!important}
-html body#acb-design.home-page .acb-proof-copy p{font-size:var(--fs-body)!important;line-height:1.4;max-width:none;margin:0;color:var(--acb-red)}
+html body#acb-design.home-page .acb-proof-copy p{font-size:var(--fs-body)!important;line-height:var(--lh-copy);max-width:none;margin:0;color:var(--acb-red)}
 html body#acb-design.home-page .acb-proof-image{margin:0;height:100%;min-height:347px;overflow:hidden}
 html body#acb-design.home-page .acb-proof-image img{width:100%;height:100%;object-fit:cover}
 html body#acb-design.home-page .acb-look{text-align:left}
 html body#acb-design.home-page .acb-look>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:19.83px 24.79px}
-html body#acb-design.home-page .acb-look h2{grid-row:span 2;font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:1.02;max-width:none;margin:0;color:var(--ink)!important}
-html body#acb-design.home-page .acb-look p{font-size:var(--fs-body);line-height:1.5;max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .acb-look h2{grid-row:span 2;font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:var(--lh-title);max-width:none;margin:0;color:var(--ink)!important}
+html body#acb-design.home-page .acb-look p{font-size:var(--fs-body);line-height:var(--lh-copy);max-width:none;margin:0;color:var(--ink)!important}
 html body#acb-design.home-page .acb-look .cta{justify-content:flex-start;margin:0}
-html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
+html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:var(--lh-title);max-width:none;color:var(--ink)}
 html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24.79px}
 html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
 html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%;padding:0 var(--sp-card)}
-html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:16.52px 0;color:var(--ink)}
-html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
+html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:16.52px 0;color:var(--ink);line-height:var(--lh-copy)!important}
+html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:var(--lh-copy);max-width:none}
 html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--acb-red)!important;display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
-html body#acb-design.home-page .acb-close .note{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:1.15;max-width:none;margin:0!important;color:var(--acb-red)!important}
+html body#acb-design.home-page .acb-close .note{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:var(--lh-title);max-width:none;margin:0!important;color:var(--acb-red)!important}
 html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(16.2px,1.8vw,19.8px)!important;padding:19.83px 29.74px!important}
 html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
@@ -241,11 +245,11 @@ html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;
 /* White-version spacing rhythm, with "Inter" body and navigation. */
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important}
 html body#acb-design.home-page .work-card{box-shadow:var(--shadow-card)}
-html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext):not(.note),.faq-q,.plist li){letter-spacing:-.015em!important}
-html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:-.015em!important}
-html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:-.015em!important}
-html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Inter",sans-serif!important;letter-spacing:-.015em}
+html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext):not(.note),.faq-q,.plist li){letter-spacing:var(--ls-copy-lg)!important}
+html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:var(--ls-copy-lg)!important}
+html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:var(--ls-copy-lg)!important}
+html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Inter",sans-serif!important;letter-spacing:var(--ls-copy-lg)}
 html body#acb-design.home-page main>.acb-say p.scrolltext{letter-spacing:var(--ls-title)!important}
 
 /* "Inter" body; existing display titles remain unchanged. */
@@ -285,7 +289,7 @@ html body#acb-design.home-page .acb-hero>.wrap{padding:0!important;max-width:non
 html body#acb-design.home-page .acb-hero-grid{position:relative;display:grid;grid-template-columns:1fr!important;min-height:clamp(446.15px,70vh,611.39px);border-radius:0!important;overflow:hidden;padding:33.05px;align-items:end;isolation:isolate}
 html body#acb-design.home-page .acb-hero-img{position:absolute;inset:0;z-index:-1;margin:0!important;width:100%;height:100%;min-height:0!important}
 html body#acb-design.home-page .acb-hero-img img{width:100%;height:100%;min-height:0!important;object-fit:cover;object-position:center 45%;display:block}
-html body#acb-design.home-page .acb-hero .sub{font-size:var(--fs-body);line-height:1.45;max-width:none;margin-top:16.52px}
+html body#acb-design.home-page .acb-hero .sub{font-size:var(--fs-body);line-height:var(--lh-copy);max-width:none;margin-top:16.52px}
 html body#acb-design.home-page .acb-hero .sub br{display:none}
 html body#acb-design.home-page .acb-hero .pill{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important;padding:11.56px 14.87px!important}
 /* Two equal-width groups provide an exact, seamless half-track translation. */
@@ -368,11 +372,11 @@ html body#acb-design .cookie-banner{
   padding:18px clamp(16.2px,4vw,36px)!important;background:var(--ink)!important;color:#fff!important;
 }
 html body#acb-design .cookie-banner[hidden]{display:none!important}
-html body#acb-design .cookie-banner strong{display:block!important;font-size:var(--fs-body)!important;font-weight:500!important;margin:0 0 3.6px!important;color:#fff!important}
-html body#acb-design .cookie-banner p{font-size:var(--fs-small)!important;line-height:1.5!important;color:rgba(255,255,255,.75)!important;margin:0!important;max-width:65ch!important}
+html body#acb-design .cookie-banner strong{display:block!important;font-size:var(--fs-body)!important;font-weight:500!important;margin:0 0 3.6px!important;color:#fff!important;line-height:var(--lh-copy)!important}
+html body#acb-design .cookie-banner p{font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important;color:rgba(255,255,255,.75)!important;margin:0!important;max-width:65ch!important}
 html body#acb-design .cookie-banner a{color:#fff!important;text-decoration:underline!important;text-underline-offset:1.8px!important}
 html body#acb-design .cookie-banner .cookie-actions{display:flex!important;gap:10.8px!important;flex-wrap:wrap!important}
-html body#acb-design .cookie-banner button{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-button)!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;border:0!important;cursor:pointer!important;white-space:nowrap!important}
+html body#acb-design .cookie-banner button{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-button)!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;border:0!important;cursor:pointer!important;white-space:nowrap!important;line-height:var(--lh-copy)!important}
 html body#acb-design .cookie-banner [data-cookie-reject]{background:rgba(255,255,255,.12)!important;color:#fff!important}
 html body#acb-design .cookie-banner [data-cookie-accept]{background:#4f46e5!important;color:#fff!important}
 html body#acb-design .cookie-banner [data-cookie-accept]:hover{background:#3f37c4!important}
@@ -403,19 +407,19 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.audience-eyebrow,.eyebrow
   padding:0!important;font-size:var(--fs-label)!important;font-weight:600!important;letter-spacing:var(--ls-label)!important;
   text-transform:uppercase!important;margin:0 0 clamp(11.56px,1.6vw,16.52px)!important;
 }
-html body#acb-design.faq-page .faqx-cat-head .n{color:var(--blue)!important;font-size:var(--fs-h2)!important;font-weight:500!important;letter-spacing:var(--ls-h2)!important;text-transform:none!important;margin:0!important}
+html body#acb-design.faq-page .faqx-cat-head .n{color:var(--blue)!important;font-size:var(--fs-h2)!important;font-weight:500!important;letter-spacing:var(--ls-h2)!important;text-transform:none!important;margin:0!important;line-height:var(--lh-title)!important}
 /* "Inter" everywhere; dark headings with acb tracking. */
 html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Inter",sans-serif!important;font-weight:500!important}
 html body#acb-design.internal-page :is(h1,h2,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
 /* Same 2-title / 3-copy / 1-label scale as the home page, on every subpage. */
-html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,h2){font-size:var(--fs-h2)!important;line-height:1.04!important}
-html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.audience-hero-heading,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:1.02!important}
-html body#acb-design.internal-page :is(.card h3,h3){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.15!important}
+html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,h2){font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important}
+html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.audience-hero-heading,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:var(--lh-title)!important}
+html body#acb-design.internal-page :is(.card h3,h3){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
 /* Body copy: big (lead paragraphs) / medium (standard) / small (fine detail). */
-html body#acb-design.internal-page :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.3!important}
-html body#acb-design.internal-page :is(p,.prose p,.card p,.outcome-list li,.faq-q,.faq-a p,.faqx .offer-toggle,.faqx .offer-body p,.audience-intro .body,.audience-eyebrow+p){font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:1.5!important}
-html body#acb-design.internal-page :is(.plan-card p,.plan-card .plan-format,.note,small,.resitem span,.fxcard p){font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:1.5!important}
-html body#acb-design.internal-page .access-note{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:1.3!important}
+html body#acb-design.internal-page :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
+html body#acb-design.internal-page :is(p,.prose p,.card p,.outcome-list li,.faq-q,.faq-a p,.faqx .offer-toggle,.faqx .offer-body p,.audience-intro .body,.audience-eyebrow+p){font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important}
+html body#acb-design.internal-page :is(.plan-card p,.plan-card .plan-format,.note,small,.resitem span,.fxcard p){font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important}
+html body#acb-design.internal-page .access-note{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
 /* 9.92px rounded surfaces to match the home. */
 html body#acb-design.internal-page :is(.card,.plan-card,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card,.bmcard,.faq-item,.access-note,.outcome-list li,.tcol,.result-card){border-radius:var(--radius-card)!important}
 html body#acb-design.internal-page :is(img,figure,.acb-hero-img,.bmcard-img,.split-img){border-radius:var(--radius-card)!important;overflow:hidden}
@@ -560,8 +564,8 @@ html body#acb-design.method-page .craft-num{
   display:flex;align-items:center;justify-content:center;width:33.05px;height:33.05px;
   border-radius:var(--radius-card);background:#4f46e5;color:#fff;font-weight:600;font-size:14.05px;
 }
-html body#acb-design.method-page .craft-step h3{font-size:var(--fs-copy-lg);font-weight:500;letter-spacing:var(--ls-copy-lg);margin:0;color:var(--ink)}
-html body#acb-design.method-page .craft-step p{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:1.45;color:var(--ink-soft);margin:0}
+html body#acb-design.method-page .craft-step h3{font-size:var(--fs-copy-lg);font-weight:500;letter-spacing:var(--ls-copy-lg);margin:0;color:var(--ink);line-height:var(--lh-copy)!important}
+html body#acb-design.method-page .craft-step p{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:var(--lh-copy);color:var(--ink-soft);margin:0}
 @media(max-width:900px){
   html body#acb-design.method-page .craft-steps{grid-template-columns:1fr 1fr}
   html body#acb-design.method-page .craft-step:nth-child(2)::after,html body#acb-design.method-page .craft-step:nth-child(4)::after{display:none}
@@ -593,7 +597,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wr
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .body{color:rgba(255,255,255,.85)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{font-family:"Inter",sans-serif!important;font-weight:500!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big,
-html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-family:"Inter",sans-serif!important;font-weight:500!important;letter-spacing:-.03em!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-family:"Inter",sans-serif!important;font-weight:500!important}
 
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{gap:clamp(13.22px,1.8vw,18.18px)!important}
 html body#acb-design.internal-page .access-note{max-width:none!important;width:100%!important;margin:clamp(17.7px,2.89vw,29.07px) 0 0!important;text-align:left!important;background:var(--acb-yellow)!important;color:var(--ink)!important;border:0!important}
@@ -606,7 +610,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-
   font-size:9.92px!important;letter-spacing:.08em!important;padding:4.13px 9.92px!important;border-radius:var(--radius-card)!important;
   background:#eef2ff!important;color:#4f46e5!important;
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:4.96px}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:4.96px;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:12.8px!important;line-height:1.55!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Inter",sans-serif!important;font-weight:500!important}
 /* Middle card: the recommended tier — indigo, slightly larger presence. */
@@ -654,8 +658,8 @@ html body#acb-design .acb-header.header-hidden{transform:none!important}
 /* Block map card label: a small colored pill badge (matching the home
    carousel's .clabel), not the generic teal eyebrow style. */
 html body#acb-design.blocks-page .bmcard .card-tag{background:var(--c)!important;color:var(--ink)!important;width:auto!important;max-width:none!important;padding:4.13px 7.43px!important;border-radius:5.4px!important}
-html body#acb-design.blocks-page .bmcard-title{font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important}
-html body#acb-design.blocks-page .bmcard-lead{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important}
+html body#acb-design.blocks-page .bmcard-title{font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
+html body#acb-design.blocks-page .bmcard-lead{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important}
 
 /* More breathing room between the header and the top edge of the page. */
 html body#acb-design .acb-header{top:28.8px!important;margin-top:0!important}
@@ -670,10 +674,10 @@ html body#acb-design.home-page .acb-header{top:28.8px!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{color:var(--blue)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .audience-eyebrow{color:#E4E244!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .mono{color:var(--blue)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;font-weight:500!important;line-height:var(--lh-title)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.audience-intro{text-align:left!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:-.025em!important;line-height:1.3!important;font-weight:500!important;max-width:none!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important;font-weight:500!important;max-width:none!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
 html body#acb-design.home-page main>.acb-say>.wrap{padding:var(--sp-card)!important}
 html body#acb-design :is(.center-hero,.acb-close-sub){padding:var(--sp-card)!important}
@@ -713,7 +717,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark :is
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark :is(.audience-eyebrow,.eyebrow){color:var(--acb-yellow)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{margin-top:var(--sp-card)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card{padding:var(--sp-card)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:var(--fs-body)!important;line-height:1.5!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list{max-width:828px;margin:var(--sp-card) auto 0;display:grid;gap:9.9px}
 /* FAQ section: same left-label/right-list layout as home's .acb-faq. */
 html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list){display:grid!important;grid-template-columns:1fr 1.1fr!important;gap:24.79px!important;align-items:start!important}
@@ -735,7 +739,7 @@ html body#acb-design.method-page .method-journey{display:grid;grid-template-colu
 html body#acb-design.method-page .journey-nav{grid-column:1;grid-row:1/-1;position:sticky;top:108px;align-self:start;display:flex;flex-direction:column;gap:25.2px;padding:3.6px 0}
 html body#acb-design.method-page .journey-nav-item{display:flex;align-items:stretch;gap:12.6px;background:none;border:0;padding:0;margin:0;text-align:left;cursor:pointer;font-family:inherit}
 html body#acb-design.method-page .journey-nav-item .jn-line{width:1.8px;flex:0 0 1.8px;border-radius:1.8px;background:#e2e2e2;transition:background 1.1s cubic-bezier(.22,.61,.36,1)}
-html body#acb-design.method-page .journey-nav-item .jn-label{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:1.35;color:#9a9a9a;padding:0.9px 0;transition:color .9s ease,font-weight .9s ease}
+html body#acb-design.method-page .journey-nav-item .jn-label{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:var(--lh-copy);color:#9a9a9a;padding:0.9px 0;transition:color .9s ease,font-weight .9s ease}
 html body#acb-design.method-page .journey-nav-item.active .jn-line{background:var(--ink)}
 html body#acb-design.method-page .journey-nav-item.active .jn-label{color:var(--ink);font-weight:600}
 html body#acb-design.method-page .journey-step{grid-column:2;margin:0!important;padding:39.6px 0!important;border-top:0.9px solid #ececec}
@@ -770,7 +774,7 @@ html body#acb-design.blocks-page .map-test-inline{margin:var(--sp-card) 0 0!impo
 
 /* FAQ */
 html body#acb-design.faq-page .faq-hero>.wrap{background:#fff!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
-html body#acb-design.faq-page .faq-hero p{font-size:var(--fs-copy-lg)!important;line-height:1.3!important;max-width:58ch}
+html body#acb-design.faq-page .faq-hero p{font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;max-width:58ch}
 html body#acb-design.faq-page .section{padding:0!important}
 html body#acb-design.faq-page .section>.wrap{background:#fff!important}
 html body#acb-design .offer-body,html body#acb-design .faq-a{display:grid!important;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1),opacity .3s ease!important}
@@ -791,7 +795,7 @@ html body#acb-design.contact-page .contact-form-wrap{grid-row:2/span 2;grid-colu
 html body#acb-design.contact-page .contact-side{grid-column:1;background:#4f46e5;color:#fff}
 html body#acb-design.contact-page .contact-side :is(h2,p,a,.side-note){color:#fff!important}
 html body#acb-design.contact-page .cform{gap:16.2px!important}
-html body#acb-design.contact-page :is(input,textarea,select){box-sizing:border-box;width:100%;font-size:var(--fs-body)!important;color:var(--ink)!important;background:#f6f6f6!important;border:0.9px solid #dedede!important;padding:12.6px 14.4px!important}
+html body#acb-design.contact-page :is(input,textarea,select){box-sizing:border-box;width:100%;font-size:var(--fs-body)!important;color:var(--ink)!important;background:#f6f6f6!important;border:0.9px solid #dedede!important;padding:12.6px 14.4px!important;line-height:var(--lh-copy)!important}
 html body#acb-design.contact-page textarea{min-height:162px}
 html body#acb-design.contact-page .cform-consent input{width:18px!important;flex:0 0 18px}
 
@@ -812,8 +816,8 @@ html body#acb-design.internal-page .method-journey{width:100%!important;margin-l
 html body#acb-design.blocks-page main>section.bmap{background:#034748!important;color:#fff!important}
 html body#acb-design.contact-page main>section.contact-unified{background:transparent!important}
 @media(max-width:504px){html body#acb-design.internal-page main>section,html body#acb-design.internal-page .method-journey{width:100%!important;margin-left:0!important;margin-right:0!important}}
-html body#acb-design.method-page .journey-step:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:1.2!important;font-weight:600!important}
-html body#acb-design.method-page .journey-step:first-child .tcard p{font-size:var(--fs-small)!important;line-height:1.45!important}
+html body#acb-design.method-page .journey-step:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;font-weight:600!important}
+html body#acb-design.method-page .journey-step:first-child .tcard p{font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important}
 html body#acb-design.method-page .journey-step:first-child .tcard-ic{margin-bottom:5.4px!important}
 html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .35s cubic-bezier(.22,1,.36,1)}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16.2px!important}
