@@ -78,7 +78,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .work-card{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(24.79px,4vw,49.57px);min-height:clamp(148.72px,18vw,198.29px);border-radius:9.92px;padding:var(--sp-card);text-decoration:none;transition:transform .2s ease}
 .work-card:hover{transform:translateY(-1.66px)}
 .work-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14.87px}
-.work-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(23.13px,3.2vw,39.65px);letter-spacing:-.02em;line-height:1.02;margin:0}
+.work-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.02;margin:0}
 .work-card .work-arrow{flex:0 0 auto;font-size:clamp(18.18px,2.2vw,26.44px);line-height:1}
 .work-card p{margin:0;font-size:clamp(12.39px,1.1vw,14.05px);line-height:1.4;max-width:34ch}
 @media(max-width:810px){.work-layout{grid-template-columns:1fr}.work-portrait{min-height:0;height:238px}}
@@ -160,12 +160,12 @@ body.home-page{background:var(--cream)!important;background-image:none!important
    continuously — each column at its own speed/direction so the two never
    move in sync. Cards just disappear at the section's edge; no fade. */
 .acb-blocks,.acb-blocks>.wrap{padding:0}
-.blocks-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(25.28px,4.5vw,59.49px)}
+.blocks-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(25.28px,4.5vw,59.49px)}
 .blocks-head{padding:var(--sp-card)!important}
 .blocks-head .acb-lead{margin-top:clamp(10.41px,1.6vw,16.36px)}
 .blocks-head .cta{margin-top:clamp(16.36px,2.6vw,25.28px)}
 .blocks-masonry{position:relative;align-self:stretch}
-.blocks-masonry-inner{position:absolute;inset:0;overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:9.92px}
+.blocks-masonry-inner{position:absolute;inset:0;padding:0 var(--sp-card);box-sizing:border-box;overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);gap:9.92px}
 .bgm-col{display:flex;flex-direction:column;gap:9.92px;will-change:transform;animation:bgmScroll linear infinite}
 .bgm-col-a{animation-duration:24s}
 .bgm-col-b{animation-duration:29s;animation-direction:reverse}

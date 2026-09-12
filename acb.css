@@ -90,13 +90,13 @@ html body#acb-design.home-page .acb-look h2{grid-row:span 2;font-size:var(--fs-h
 html body#acb-design.home-page .acb-look p{font-size:var(--fs-body);line-height:1.5;max-width:none;margin:0;color:var(--ink)!important}
 html body#acb-design.home-page .acb-look .cta{justify-content:flex-start;margin:0}
 html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:.98;max-width:none;color:var(--ink)}
-html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:24.79px}
+html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24.79px}
 html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
-html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%}
+html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%;padding:0 var(--sp-card)}
 html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:16.52px 0;color:var(--ink)}
 html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
-html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--ink);display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
-html body#acb-design.home-page .acb-close .note{font-size:clamp(25.2px,4.4vw,54px);letter-spacing:-.02em;line-height:1.15;max-width:none;margin:0!important}
+html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--acb-red)!important;display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
+html body#acb-design.home-page .acb-close .note{font-size:var(--fs-h1)!important;letter-spacing:var(--ls-h1)!important;line-height:1.15;max-width:none;margin:0!important;color:var(--acb-red)!important}
 html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(16.2px,1.8vw,19.8px)!important;padding:19.83px 29.74px!important}
 html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
@@ -242,7 +242,7 @@ html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important}
 html body#acb-design.home-page .work-card{box-shadow:var(--shadow-card)}
 html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext),.note,.faq-q,.plist li){letter-spacing:-.015em!important}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext):not(.note),.faq-q,.plist li){letter-spacing:-.015em!important}
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:-.015em!important}
 html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:-.015em!important}
 html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Inter",sans-serif!important;letter-spacing:-.015em}
@@ -643,7 +643,7 @@ html body#acb-design:not(.home-page) .section{padding-top:49.57px!important;padd
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:var(--sp-card)!important}
 html body#acb-design:not(.home-page) :is(.section,.acb-section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
-html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0 var(--sp-card) 0 0!important}
+html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0!important}
 html body#acb-design.home-page main>.acb-work>.wrap{padding:0!important;overflow:hidden}
 
 /* Header must never hide on scroll — same always-visible behavior on
