@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-@font-face{font-family:"ITC Garamond";src:url("fonts/itc-garamond-book-cond.woff2") format("woff2");font-display:swap}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap');
 :root{
   --ink:#000000;--coral:#FF7F50;--indigo:#4F46E5;--white:#FFFFFF;
   --paper:#fffaf4;--line:rgba(30,30,30,.22);--soft:rgba(255,255,255,.72);
-  --sans:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  --serif:"ITC Garamond",Georgia,serif;--max:897.5px;--pad:clamp(11.38px,2.295vw,30.34px);
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--max:897.5px;--pad:clamp(11.38px,2.295vw,30.34px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--coral);color:var(--ink);scroll-behavior:smooth}
@@ -95,7 +94,7 @@ a{color:inherit;text-decoration:none} button,input{font:inherit} img,svg{max-wid
   .footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.mega{grid-template-columns:1fr}
 }
 
-:root{--ink:#4F46E5;--coral:#FF7F50;--indigo:#4F46E5;--white:#F7F6F6;--paper:#F7F6F6;--line:#4F46E5;--soft:#F7F6F6;--sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+:root{--ink:#4F46E5;--coral:#FF7F50;--indigo:#4F46E5;--white:#F7F6F6;--paper:#F7F6F6;--line:#4F46E5;--soft:#F7F6F6;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 html,body{background:#F7F6F6;color:var(--ink)}
 body{font-weight:400;line-height:1.32}.display{line-height:1.02;letter-spacing:-.02em}.display em{color:var(--coral)}
 .utility{color:var(--ink);border-bottom:0.83px solid var(--ink)}
@@ -135,7 +134,7 @@ h1,h2,h3,h4,.display{font-weight:400}strong,b{font-weight:500}.eyebrow{font-size
 body,button,input,.eyebrow,.btn,.text-link,.navbutton,.mainnav>a,.offer-toggle,.side-note,.faq-q,.newsletter button{font-weight:400}.price,strong,b{font-weight:500}.navbutton,.mainnav>a{font-size:clamp(8.85px,0.8568vw,12.51px)}
 
 /* The subpage header uses the homepage's exact structure and colours. */
-.site-header .inner{max-width:1177.83px;margin:0 auto;padding:16.69px var(--pad) 15.64px;display:grid;grid-template-columns:29fr 71fr;gap:clamp(14.6px,2.8441vw,41.72px);align-items:start}.site-header .logo{align-self:center}.site-header .acb-logo-mount{color:#4F46E5}.hdr-right{display:flex;flex-direction:column}.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(8.34px,0.9427vw,15.64px);padding-bottom:11.47px;color:#4F46E5}.hdr-top .clock{font-size:7.82px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}.hdr-top a{font-size:7.82px;letter-spacing:.05em;text-transform:uppercase}.hdr-top .pill{background:#4F46E5;color:#fff;border-radius:825.37px;padding:5.21px 11.47px}.hdr-divider{border-top:0.83px solid #4F46E5}.hdr-main{display:flex;justify-content:space-between;align-items:center;gap:clamp(7.3px,1.0098vw,16.69px);flex-wrap:wrap;padding-top:12.51px;color:#4F46E5}.hdr-main>a,.hdr-main .navbutton{font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(8.85px,0.8568vw,12.51px);font-weight:400;line-height:1;letter-spacing:-.01em}.hdr-main .menu{position:relative;padding-bottom:7.58px;margin-bottom:-7.58px}.hdr-main .submenu{top:100%;left:-11.38px;width:245.38px;min-width:0;background:#fff;color:#4F46E5;border:0.83px solid #4F46E5;padding:8.85px 11.38px}.hdr-main .submenu a{padding:6.32px 0}.hdr-main .submenu strong{font-weight:400}.hdr-main .submenu small{display:block;font-size:7.58px;margin-top:1.9px;opacity:.72}
+.site-header .inner{max-width:1177.83px;margin:0 auto;padding:16.69px var(--pad) 15.64px;display:grid;grid-template-columns:29fr 71fr;gap:clamp(14.6px,2.8441vw,41.72px);align-items:start}.site-header .logo{align-self:center}.site-header .acb-logo-mount{color:#4F46E5}.hdr-right{display:flex;flex-direction:column}.hdr-top{display:flex;align-items:center;justify-content:flex-end;gap:clamp(8.34px,0.9427vw,15.64px);padding-bottom:11.47px;color:#4F46E5}.hdr-top .clock{font-size:7.82px;letter-spacing:.04em;text-transform:uppercase;opacity:.75;white-space:nowrap;margin-right:auto}.hdr-top a{font-size:7.82px;letter-spacing:.05em;text-transform:uppercase}.hdr-top .pill{background:#4F46E5;color:#fff;border-radius:825.37px;padding:5.21px 11.47px}.hdr-divider{border-top:0.83px solid #4F46E5}.hdr-main{display:flex;justify-content:space-between;align-items:center;gap:clamp(7.3px,1.0098vw,16.69px);flex-wrap:wrap;padding-top:12.51px;color:#4F46E5}.hdr-main>a,.hdr-main .navbutton{font-family:"Inter",-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(8.85px,0.8568vw,12.51px);font-weight:400;line-height:1;letter-spacing:-.01em}.hdr-main .menu{position:relative;padding-bottom:7.58px;margin-bottom:-7.58px}.hdr-main .submenu{top:100%;left:-11.38px;width:245.38px;min-width:0;background:#fff;color:#4F46E5;border:0.83px solid #4F46E5;padding:8.85px 11.38px}.hdr-main .submenu a{padding:6.32px 0}.hdr-main .submenu strong{font-weight:400}.hdr-main .submenu small{display:block;font-size:7.58px;margin-top:1.9px;opacity:.72}
 @media(max-width:615.6px){.site-header .inner{display:block}.hdr-right{margin-top:12.65px}.hdr-top{justify-content:flex-start;flex-wrap:wrap}.hdr-top .clock{display:none}.hdr-main{justify-content:flex-start}.hdr-main .submenu{position:fixed;left:11.38px;right:11.38px;top:auto;width:auto}}
 
 /* Header palette is isolated from every page theme and legacy variable. */

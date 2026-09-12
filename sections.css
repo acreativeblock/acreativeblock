@@ -619,6 +619,6 @@ sup.cite{font-size:0.558em;font-weight:600;color:var(--blue);vertical-align:supe
 .brow2-tags li{font-size:clamp(7.8px,0.8vw,8.92px)}
 .blocks-page .center-hero{padding-bottom:clamp(22.31px,4vw,44.61px)}
 
-/* final-v3: "Plus Jakarta Sans" + squared corners across all subpages */
-:root{--sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+/* final-v3: "Inter" + squared corners across all subpages */
+:root{--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .card,.price-card,.tcard,.split-img,.flush-img,.content-photo,.blog-card,.blog-art,.refpanel,.brow2-img,.brow2,.door,.arc-card,.callout,.faq-item,.statnum,.terrain-cols .tcol,.method-strip .method-step,.cform input,.cform textarea,.cform select,.blocks-rows,.acb-close-sub{border-radius:0!important}

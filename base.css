@@ -1,11 +1,5 @@
 /* Shared base styles: palette, header, footer for A Creative Block. */
 
-@font-face{
-  font-family:'ITC Garamond';
-  src:url('fonts/itc-garamond-book-cond.woff2') format('woff2');
-  font-weight:400;font-style:normal;font-display:swap;
-}
-
 :root{
   /* Simplified palette — one blue, one black, one yellow, one paper */
   --paper:#FEFDF9;
@@ -20,8 +14,8 @@
   --navy:var(--ink);
   --line:rgba(43,43,43,.12);
   --line-on-blue:rgba(255,255,255,.28);
-  --serif:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
-  --sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   --wrap:1388.02px;
   --pad:clamp(16.52px,4vw,59.49px);
   --cols:8;

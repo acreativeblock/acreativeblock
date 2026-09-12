@@ -21,7 +21,7 @@
   --fs-label:clamp(9.9px,1vw,11.56px);     --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
-  --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
+  --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;--lh-copy-lg:1.2;/* big copy: pull-quote, lead paragraph */
   --fs-body:clamp(14.4px,1.5vw,17.1px);       --ls-body:-.005em;   /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
@@ -42,7 +42,7 @@ html body#acb-design .acb-header .acb-logo{background:#fff!important;padding:4.1
 html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:34.7px!important}
 @media(min-width:954.9px){html body#acb-design .acb-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:26.44px!important}}
 html body#acb-design .acb-header .acb-nav{gap:26.44px;align-items:center}
-html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .acb-social a{color:var(--ink)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:14.87px!important;letter-spacing:0!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .acb-social a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:14.87px!important;letter-spacing:0!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .navitem:hover .navbutton,
 html body#acb-design .acb-header .navitem.is-active>.navbutton{color:#4f46e5!important;background:#eef2ff!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-social a:hover{color:#4f46e5!important}
@@ -51,7 +51,7 @@ html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:block;padding:2.
 html body#acb-design .acb-footer :is(.top,.foot-lead) a:hover{color:#a5b4fc!important;background:rgba(255,255,255,.1)!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-actions{display:flex;gap:19.83px;align-items:center;margin:0!important}
 html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a}
-html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:14.87px!important;border-radius:6.61px!important;padding:6.61px 8.26px!important;margin:0 -8.26px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-size:14.87px!important;border-radius:6.61px!important;padding:6.61px 8.26px!important;margin:0 -8.26px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .acb-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
 /* Original hero composition, image, copy and type. */
 html body#acb-design.home-page .acb-hero{--pad:clamp(16.52px,4vw,59.49px);--copy:var(--ink);--muted:var(--ink);--brand:#4f46e5;--action:#E4E244}
@@ -59,8 +59,8 @@ html body#acb-design.home-page .acb-hero .pill:hover{background:#3f37c4!importan
 /* A Creative Block uses 24.79px outer gutters, 9.92px corners and no panel outlines. */
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin:24.79px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important}
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:24.79px!important;max-width:none!important;width:100%;border:0!important;border-radius:var(--radius-card);background:#fff;box-shadow:var(--shadow-card)}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(h2,h3){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:var(--ls-title)}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:var(--radius-card)!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:var(--fs-button)!important;letter-spacing:var(--ls-button);padding:13.22px 16.52px!important;line-height:1.4}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(h2,h3){font-family:"Inter",sans-serif!important;letter-spacing:var(--ls-title)}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(.pill,.pill:hover),html body#acb-design:not(.home-page) :is(.btn,.btn-out,.pill,.refbar-btn,.btn:hover,.pill:hover){background:#4f46e5!important;color:#fff!important;border:0!important;border-radius:var(--radius-card)!important;font-family:"Inter",sans-serif!important;font-size:var(--fs-button)!important;letter-spacing:var(--ls-button);padding:13.22px 16.52px!important;line-height:1.4}
 html body#acb-design.home-page :is(.acb-eyebrow,.mono,.eyebrow){background:none!important;color:var(--brand)!important;padding:0!important;font-size:var(--fs-label)!important;line-height:1.2!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:600!important;margin:0 0 16.52px!important}
 /* Restore the original long statement, edge-to-edge like About Us. */
 html body#acb-design.home-page main>.acb-say>.wrap{padding:39.65px 24.79px!important;text-align:left;display:block}
@@ -95,7 +95,7 @@ html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
 html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%}
 html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:16.52px 0;color:var(--ink)}
 html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:1.25;max-width:none}
-html body#acb-design.home-page main>.acb-close>.wrap{color:var(--ink);display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
+html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--ink);display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
 html body#acb-design.home-page .acb-close .note{font-size:clamp(25.2px,4.4vw,54px);letter-spacing:-.02em;line-height:1.15;max-width:none;margin:0!important}
 html body#acb-design.home-page main>.acb-close>.wrap .pill.big{font-size:clamp(16.2px,1.8vw,19.8px)!important;padding:19.83px 29.74px!important}
 html body#acb-design .acb-footer>.wrap{padding:0!important;max-width:none}
@@ -142,7 +142,7 @@ html body#acb-design .mobile-menu-toggle::before{
    display:flex!important;align-items:center!important;justify-content:space-between!important;
    width:100%!important;padding:13.22px!important;margin:0!important;border:0!important;background:none!important;
    border-radius:11.56px!important;
-   font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;
+   font-family:"Inter",sans-serif!important;font-weight:500!important;
    font-size:clamp(21.48px,7.5vw,33.05px)!important;letter-spacing:-.02em!important;line-height:1!important;
    color:var(--ink)!important;text-transform:none!important;text-align:left!important;
    transition:background-color .2s ease,color .2s ease!important;
@@ -177,7 +177,7 @@ html body#acb-design .mobile-menu-toggle::before{
  html body#acb-design .acb-header.mobile-open .acb-sub a,
  html body#acb-design .acb-header.mobile-open .submenu a{
    display:block!important;padding:9.09px 13.22px!important;border:0!important;border-radius:8.26px!important;
-   font-family:"Plus Jakarta Sans",sans-serif!important;font-size:14.87px!important;font-weight:500!important;
+   font-family:"Inter",sans-serif!important;font-size:14.87px!important;font-weight:500!important;
    color:rgba(0,0,0,.62)!important;transition:background-color .2s ease,color .2s ease!important;
  }
  html body#acb-design .acb-header.acb-menu-open .acb-sub a:hover,
@@ -236,21 +236,21 @@ html body#acb-design .acb-header .acb-social{display:none}
 @media(max-width:684px){html body#acb-design .acb-proof-image{height:264.38px;min-height:0}}
 html body#acb-design .acb-say .hl{background:none!important;padding:0!important}
 html body#acb-design main>section:not(.acb-hero) :is(.rv,.rvl){opacity:1!important;transform:none!important}
-html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;white-space:nowrap;font-family:"Plus Jakarta Sans",sans-serif!important;font-size:13.22px!important;text-transform:none!important;letter-spacing:0!important}
+html body#acb-design .acb-header .acb-utility-pill{background:#4f46e5!important;color:#fff!important;border:0!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;white-space:nowrap;font-family:"Inter",sans-serif!important;font-size:13.22px!important;text-transform:none!important;letter-spacing:0!important}
 
-/* White-version spacing rhythm, with "Plus Jakarta Sans" body and navigation. */
+/* White-version spacing rhythm, with "Inter" body and navigation. */
 html body#acb-design.home-page main>.acb-proof>.wrap{padding:0!important}
 html body#acb-design.home-page .work-card{box-shadow:var(--shadow-card)}
-html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:1.3!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:-.025em!important}
-html body#acb-design.home-page main>section:not(.acb-hero) :is(p,.note,.faq-q,.plist li){letter-spacing:-.015em!important}
+html body#acb-design.home-page .acb-say p{max-width:none!important;width:100%;margin:0!important;text-align:left;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy-lg)!important;text-wrap:wrap!important;color:var(--ink)!important;letter-spacing:var(--ls-title)!important}
+html body#acb-design.home-page main>section:not(.acb-hero) :is(p:not(.scrolltext),.note,.faq-q,.plist li){letter-spacing:-.015em!important}
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill){letter-spacing:-.015em!important}
 html body#acb-design .acb-footer :is(p,a,input,button){letter-spacing:-.015em!important}
-html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Plus Jakarta Sans",sans-serif!important;letter-spacing:-.015em}
-html body#acb-design.home-page main>.acb-say p.scrolltext{letter-spacing:-.025em!important}
+html body#acb-design:not(.home-page) :is(p,li,input,textarea,select,button,.btn,.pill,.navbutton,.acb-sub a){font-family:"Inter",sans-serif!important;letter-spacing:-.015em}
+html body#acb-design.home-page main>.acb-say p.scrolltext{letter-spacing:var(--ls-title)!important}
 
-/* "Plus Jakarta Sans" body; existing display titles remain unchanged. */
-html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.acb-sub a,.mono,.eyebrow,.acb-eyebrow,.pe,.clabel,.note){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
-html body#acb-design .acb-hero :is(.sub,.pill){font-family:"Plus Jakarta Sans",sans-serif!important}
+/* "Inter" body; existing display titles remain unchanged. */
+html body#acb-design :is(p,li,input,textarea,select,button,.pill,.btn,.btn-out,.navbutton,.acb-sub a,.mono,.eyebrow,.acb-eyebrow,.pe,.clabel,.note){font-family:"Inter",sans-serif!important;font-weight:500!important}
+html body#acb-design .acb-hero :is(.sub,.pill){font-family:"Inter",sans-serif!important}
 /* White-version near-black footer with readable white type and mark. */
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
 html body#acb-design .acb-footer .acb-logo-mount{color:#fff!important}
@@ -268,8 +268,8 @@ html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)
  html body#acb-design .acb-footer{margin-top:0!important}
 }
 
-/* "Plus Jakarta Sans" across all live typography; logo remains its original vector artwork. */
-html body#acb-design,html body#acb-design *{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
+/* "Inter" across all live typography; logo remains its original vector artwork. */
+html body#acb-design,html body#acb-design *{font-family:"Inter",sans-serif!important;font-weight:500!important}
 html body#acb-design{--site-gutter:clamp(16.52px,4vw,59.49px);--site-width:calc(min(100vw,1305.4px) - 2 * var(--site-gutter))}
 /* Desktop only (mobile/tablet keep the clamp above untouched): the gutter
    stops scaling up with viewport width past this point, so --site-width
@@ -372,7 +372,7 @@ html body#acb-design .cookie-banner strong{display:block!important;font-size:var
 html body#acb-design .cookie-banner p{font-size:var(--fs-small)!important;line-height:1.5!important;color:rgba(255,255,255,.75)!important;margin:0!important;max-width:65ch!important}
 html body#acb-design .cookie-banner a{color:#fff!important;text-decoration:underline!important;text-underline-offset:1.8px!important}
 html body#acb-design .cookie-banner .cookie-actions{display:flex!important;gap:10.8px!important;flex-wrap:wrap!important}
-html body#acb-design .cookie-banner button{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:var(--fs-button)!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;border:0!important;cursor:pointer!important;white-space:nowrap!important}
+html body#acb-design .cookie-banner button{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-button)!important;padding:8.26px 14.87px!important;border-radius:var(--radius-card)!important;border:0!important;cursor:pointer!important;white-space:nowrap!important}
 html body#acb-design .cookie-banner [data-cookie-reject]{background:rgba(255,255,255,.12)!important;color:#fff!important}
 html body#acb-design .cookie-banner [data-cookie-accept]{background:#4f46e5!important;color:#fff!important}
 html body#acb-design .cookie-banner [data-cookie-accept]:hover{background:#3f37c4!important}
@@ -394,7 +394,7 @@ html body#acb-design .acb-header .acb-utility-pill:hover{background:#3f37c4!impo
 
 /* ==========================================================================
    SHARED SUBPAGE LAYER — align every internal page with the home language:
-   blue text eyebrows, "Plus Jakarta Sans" type, calmer heading sizes, 9.92px corners,
+   blue text eyebrows, "Inter" type, calmer heading sizes, 9.92px corners,
    indigo buttons. Loaded last so it wins over white-pages.css.
    ========================================================================== */
 /* Eyebrows/labels become plain blue text (not a filled chip). */
@@ -404,8 +404,8 @@ html body#acb-design.internal-page :is(.mono,.eyebrow,.audience-eyebrow,.eyebrow
   text-transform:uppercase!important;margin:0 0 clamp(11.56px,1.6vw,16.52px)!important;
 }
 html body#acb-design.faq-page .faqx-cat-head .n{color:var(--blue)!important;font-size:var(--fs-h2)!important;font-weight:500!important;letter-spacing:var(--ls-h2)!important;text-transform:none!important;margin:0!important}
-/* "Plus Jakarta Sans" everywhere; dark headings with acb tracking. */
-html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
+/* "Inter" everywhere; dark headings with acb tracking. */
+html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,input,textarea,select,.display,.big){font-family:"Inter",sans-serif!important;font-weight:500!important}
 html body#acb-design.internal-page :is(h1,h2,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
 /* Same 2-title / 3-copy / 1-label scale as the home page, on every subpage. */
 html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,h2){font-size:var(--fs-h2)!important;line-height:1.04!important}
@@ -532,7 +532,7 @@ html body#acb-design.home-page .acb-follow>.wrap{
 }
 html body#acb-design.home-page .social-handle{
   position:relative;display:inline-block;
-  font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:600;font-size:clamp(24.79px,4.2vw,39.65px);
+  font-family:"Inter",sans-serif!important;font-weight:600;font-size:clamp(24.79px,4.2vw,39.65px);
   letter-spacing:-.02em;color:#fff!important;
 }
 html body#acb-design.home-page .social-handle::after{
@@ -578,7 +578,7 @@ html body#acb-design.blocks-page .bmcard{background:#fff!important;border:0!impo
 html body#acb-design.blocks-page .bmcard-img,
 html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
 
-/* Experiment: "Plus Jakarta Sans" on the home page only. Inter and "Plus Jakarta Sans"
+/* Experiment: "Inter" on the home page only. Inter and "Inter"
    are still loaded (index.html's font link) so all three can be swapped
    in the inspector for a quick side-by-side comparison. */
 
@@ -591,9 +591,9 @@ html body#acb-design.blocks-page .bmcard-img img{border-radius:0!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark{background:transparent!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wrap{background:#4f46e5!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .body{color:rgba(255,255,255,.85)!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-eyebrow{font-family:"Inter",sans-serif!important;font-weight:500!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big,
-html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;letter-spacing:-.03em!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-family:"Inter",sans-serif!important;font-weight:500!important;letter-spacing:-.03em!important}
 
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{gap:clamp(13.22px,1.8vw,18.18px)!important}
 html body#acb-design.internal-page .access-note{max-width:none!important;width:100%!important;margin:clamp(17.7px,2.89vw,29.07px) 0 0!important;text-align:left!important;background:var(--acb-yellow)!important;color:var(--ink)!important;border:0!important}
@@ -602,13 +602,13 @@ html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .pl
   padding:clamp(23.13px,2.6vw,31.39px)!important;box-shadow:0 1.66px 3.3px rgba(0,0,0,.08);
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-tier{
-  display:inline-block!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;
+  display:inline-block!important;font-family:"Inter",sans-serif!important;font-weight:500!important;
   font-size:9.92px!important;letter-spacing:.08em!important;padding:4.13px 9.92px!important;border-radius:var(--radius-card)!important;
   background:#eef2ff!important;color:#4f46e5!important;
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:4.96px}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:4.96px}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:12.8px!important;line-height:1.55!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:500!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Inter",sans-serif!important;font-weight:500!important}
 /* Middle card: the recommended tier — indigo, slightly larger presence. */
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2){
   background:#4f46e5!important;color:#fff!important;transform:scale(1.03);
@@ -643,8 +643,8 @@ html body#acb-design:not(.home-page) .section{padding-top:49.57px!important;padd
 html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:var(--sp-card)!important}
 html body#acb-design:not(.home-page) :is(.section,.acb-section,.legal-section,.contact-unified,.personals-intro,.evidence-band,.blog-list){padding:var(--sp-card)!important}
 html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq){padding:var(--sp-card)!important}
-html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0!important}
-html body#acb-design.home-page main>.acb-work>.wrap{padding:0!important}
+html body#acb-design.home-page main>.acb-blocks>.wrap{padding:0 var(--sp-card) 0 0!important}
+html body#acb-design.home-page main>.acb-work>.wrap{padding:0!important;overflow:hidden}
 
 /* Header must never hide on scroll — same always-visible behavior on
    every page as the home page already has. */
