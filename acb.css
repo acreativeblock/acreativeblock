@@ -677,3 +677,140 @@ html body#acb-design.home-page .acb-proof-copy ::selection{background:#4f46e5!im
 /* Individuals/Organisations: the .dark intro section keeps its own indigo card
    instead of the generic white-card treatment above (line 437). */
 html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;max-width:none!important;width:100%!important}
+
+/* ==========================================================================
+   INTERNAL PAGE COHERENCE — the homepage is the reference for gutters,
+   surfaces, radius, spacing and typography.
+   ========================================================================== */
+:root{--page-gutter:clamp(18px,2vw,27.54px)}
+html body#acb-design.internal-page main{overflow:clip}
+html body#acb-design.internal-page main>section,
+html body#acb-design.internal-page .method-journey{width:auto!important;max-width:none!important;margin-left:var(--page-gutter)!important;margin-right:var(--page-gutter)!important}
+html body#acb-design.internal-page main>section{margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
+html body#acb-design.internal-page main>section:first-child{margin-top:var(--page-gutter)!important}
+html body#acb-design.internal-page main>section:last-child{margin-bottom:var(--page-gutter)!important}
+html body#acb-design.internal-page main>section>:is(.wrap,.in),
+html body#acb-design.internal-page .method-journey .journey-step>.wrap{box-sizing:border-box;max-width:none!important;width:100%!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
+html body#acb-design.internal-page :is(.section-head,.contact-intro,.fam-copy,.talks)>*{min-width:0}
+html body#acb-design.internal-page :is(h1,h2,h3,p,.fam-h1,.display,.big){overflow-wrap:anywhere;text-wrap:pretty}
+html body#acb-design.internal-page :is(.section-head p,.audsay .body,.contact-intro p){max-width:62ch}
+
+/* Audience pages */
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-hero{padding:0!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-hero>.wrap{padding:0!important;overflow:hidden;background:#fff;border-radius:var(--radius-card)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-grid{min-height:clamp(420px,66vh,680px);grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-copy{min-width:0;padding:clamp(28px,5vw,72px)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{max-width:100%!important;font-size:clamp(32px,4.35vw,66px)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1 .rotline{display:block;min-height:2.15em!important;margin-top:0!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1 .rot{display:inline;padding:.03em .12em!important;line-height:1.12!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-img{border-radius:0!important;min-width:0}
+html body#acb-design:is(.individuals-page,.organisations-page) .fam-img img{height:100%;border-radius:0!important;object-fit:cover}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad{padding:0!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad>.in{background:#fff!important;color:var(--ink)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark>.in{background:#4f46e5!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark :is(h2,h3,p,li,.big,.body){color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .secpad.dark :is(.aud-eyebrow,.eyebrow){color:var(--acb-yellow)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startgrid{margin-top:var(--sp-card)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard{padding:var(--sp-card)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .startcard p{font-size:var(--fs-body)!important;line-height:1.5!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list{max-width:920px;margin:var(--sp-card) auto 0;display:grid;gap:11px}
+html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li{padding:18px 20px!important;background:rgba(255,255,255,.12)!important;color:inherit!important;border:0!important}
+html body#acb-design.organisations-page main>section.talks-section{background:transparent!important}
+html body#acb-design.organisations-page main>section.talks-section>.in{background:#000!important}
+html body#acb-design.organisations-page .talks-section :is(h2,p,.note){color:#fff!important}
+
+/* How we work: a compact alternating journey with a line drawn on scroll. */
+html body#acb-design.method-page .center-hero>.wrap,
+html body#acb-design.method-page main>section:not(.acb-close-sub)>.wrap{background:#fff!important}
+html body#acb-design.method-page .method-journey{--journey-progress:0;position:relative;padding:1px 0}
+html body#acb-design.method-page .method-journey::before,
+html body#acb-design.method-page .method-journey::after{content:"";position:absolute;left:50%;top:0;width:4px;height:100%;border-radius:4px;transform:translateX(-50%)}
+html body#acb-design.method-page .method-journey::before{background:#dedede}
+html body#acb-design.method-page .method-journey::after{background:#4f46e5;transform:translateX(-50%) scaleY(var(--journey-progress));transform-origin:top}
+html body#acb-design.method-page .journey-step{position:relative;width:calc(50% - 34px)!important;margin:var(--sp-gap) 0!important;padding:0!important;background:transparent!important;z-index:1}
+html body#acb-design.method-page .journey-step:nth-child(even){margin-left:auto!important}
+html body#acb-design.method-page .journey-step>.wrap{background:#fff!important;box-shadow:0 2px 8px rgba(7,19,33,.06)}
+html body#acb-design.method-page .journey-step:nth-child(1)>.wrap{background:var(--acb-yellow)!important}
+html body#acb-design.method-page .journey-step:nth-child(3)>.wrap{background:#eef2ff!important}
+html body#acb-design.method-page .journey-step::before{content:"";position:absolute;top:40px;width:18px;height:18px;border:4px solid #f6f6f6;border-radius:50%;background:#4f46e5}
+html body#acb-design.method-page .journey-step:nth-child(odd)::before{right:-43px}
+html body#acb-design.method-page .journey-step:nth-child(even)::before{left:-43px}
+html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr 1fr!important;gap:14px!important}
+html body#acb-design.method-page .tcard{padding:18px!important}
+html body#acb-design.method-page .craft-steps{grid-template-columns:1fr!important;gap:10px!important}
+html body#acb-design.method-page .craft-step{display:grid!important;grid-template-columns:auto 1fr;align-items:center;padding:16px!important}
+html body#acb-design.method-page .craft-step p{grid-column:2}
+html body#acb-design.method-page .craft-step::after{display:none!important}
+
+/* Block map */
+html body#acb-design.blocks-page :is(.bm-hero,.bmap,.bm-faq,.evidence-band){padding:0!important;background:transparent!important}
+html body#acb-design.blocks-page .bm-hero>.wrap,
+html body#acb-design.blocks-page :is(.bm-faq,.evidence-band)>.in{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;max-width:none!important}
+html body#acb-design.blocks-page .bmap{padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#034748!important;color:#fff!important}
+html body#acb-design.blocks-page .bmap-head{padding:0!important}
+html body#acb-design.blocks-page .bmap-head h2{color:#fff!important}
+html body#acb-design.blocks-page .bmap-head .eyebrow2{color:var(--acb-yellow)!important}
+html body#acb-design.blocks-page .bmgrid{padding:0!important;max-width:none!important;gap:clamp(12px,1.4vw,20px)!important}
+html body#acb-design.blocks-page .bmcard-body{padding:var(--sp-card)!important}
+html body#acb-design.blocks-page .evidence-band>.in{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.blocks-page .evidence-band :is(h2,p,.mono){color:#fff!important}
+html body#acb-design.blocks-page .map-test-inline{margin:var(--sp-card) 0 0!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:var(--acb-yellow)!important;color:var(--ink)!important}
+
+/* FAQ */
+html body#acb-design.faq-page .faq-hero>.wrap{background:#fff!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
+html body#acb-design.faq-page .faq-hero p{font-size:var(--fs-copy-lg)!important;line-height:1.3!important;max-width:58ch}
+html body#acb-design.faq-page .section{padding:0!important}
+html body#acb-design.faq-page .section>.wrap{background:#fff!important}
+html body#acb-design .offer-body,html body#acb-design .faq-a{display:grid!important;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1),opacity .3s ease!important}
+html body#acb-design :is(.offer-row,.faq-item).open :is(.offer-body,.faq-a){grid-template-rows:1fr;opacity:1}
+html body#acb-design :is(.offer-body,.faq-a)>*{overflow:hidden}
+html body#acb-design .offer-toggle .pm{display:grid!important;place-items:center;width:32px;height:32px;flex:0 0 32px}
+html body#acb-design .offer-toggle .pm svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+html body#acb-design .offer-row.open .pm svg{transform:rotate(180deg)}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+html body#acb-design .faqx-cat{scroll-margin-top:120px}
+
+/* Contact */
+html body#acb-design.contact-page .contact-unified{padding:0!important}
+html body#acb-design.contact-page .contact-unified>.wrap{display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:var(--sp-card)!important;background:transparent!important;padding:0!important}
+html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff;color:var(--ink)}
+html body#acb-design.contact-page .contact-intro{grid-column:1/-1;background:var(--acb-yellow)}
+html body#acb-design.contact-page .contact-form-wrap{grid-row:2/span 2;grid-column:2}
+html body#acb-design.contact-page .contact-side{grid-column:1;background:#4f46e5;color:#fff}
+html body#acb-design.contact-page .contact-side :is(h2,p,a,.side-note){color:#fff!important}
+html body#acb-design.contact-page .cform{gap:18px!important}
+html body#acb-design.contact-page :is(input,textarea,select){box-sizing:border-box;width:100%;font-size:var(--fs-body)!important;color:var(--ink)!important;background:#f6f6f6!important;border:1px solid #dedede!important;padding:14px 16px!important}
+html body#acb-design.contact-page textarea{min-height:180px}
+html body#acb-design.contact-page .cform-consent input{width:20px!important;flex:0 0 20px}
+
+@media(max-width:860px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .fam-grid{grid-template-columns:1fr;min-height:0}
+  html body#acb-design:is(.individuals-page,.organisations-page) .fam-img{min-height:42vh;order:2}
+  html body#acb-design.method-page .method-journey{padding-left:30px}
+  html body#acb-design.method-page .method-journey::before,html body#acb-design.method-page .method-journey::after{left:8px}
+  html body#acb-design.method-page .journey-step{width:100%!important;margin-left:0!important}
+  html body#acb-design.method-page .journey-step::before,html body#acb-design.method-page .journey-step:nth-child(odd)::before,html body#acb-design.method-page .journey-step:nth-child(even)::before{left:-31px;right:auto}
+  html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr!important}
+  html body#acb-design.contact-page .contact-unified>.wrap{grid-template-columns:1fr!important}
+  html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){grid-column:1!important;grid-row:auto!important}
+}
+@media(max-width:560px){
+  html body#acb-design.internal-page main>section,html body#acb-design.internal-page .method-journey{margin-left:14px!important;margin-right:14px!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .fam-copy{padding:var(--sp-card)!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .fam-h1{font-size:clamp(30px,10vw,48px)!important}
+  html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}html body#acb-design .offer-body,html body#acb-design .faq-a{transition:none!important}}
+
+/* Main already owns the homepage width; internal sections fill it exactly. */
+html body#acb-design.internal-page main>section,
+html body#acb-design.internal-page .method-journey{width:100%!important;margin-left:0!important;margin-right:0!important}
+html body#acb-design.blocks-page main>section.bmap{background:#034748!important;color:#fff!important}
+html body#acb-design.contact-page main>section.contact-unified{background:transparent!important}
+@media(max-width:560px){html body#acb-design.internal-page main>section,html body#acb-design.internal-page .method-journey{width:100%!important;margin-left:0!important;margin-right:0!important}}
+html body#acb-design.method-page .journey-step:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:1.2!important;font-weight:600!important}
+html body#acb-design.method-page .journey-step:first-child .tcard p{font-size:var(--fs-small)!important;line-height:1.45!important}
+html body#acb-design.method-page .journey-step:first-child .tcard-ic{margin-bottom:6px!important}
+html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .35s cubic-bezier(.22,1,.36,1)}
+html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:18px!important}
+html body#acb-design.faq-page .faqx .offer-row.open .offer-toggle .pm{transform:none!important;background:transparent!important;color:var(--ink)!important;border-color:currentColor!important}
