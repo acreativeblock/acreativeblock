@@ -176,6 +176,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .bgm-card .bgm-lab{margin-top:auto;padding-top:6.61px;font-size:8.92px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.65}
 @keyframes bgmScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
 @media(max-width:810px){.blocks-layout{grid-template-columns:1fr}.blocks-masonry{height:clamp(297.54px,60vw,360px)}}
+@media(min-width:811px){.blocks-masonry-inner{padding-left:0px!important}}
 @media(prefers-reduced-motion:reduce){.bgm-col{animation:none}}
 
 /* ===== from white-home.css ===== */
