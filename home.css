@@ -283,7 +283,7 @@ body.home-page{
 /* Services: calm neutrals; brand blue only marks links and actions. */
 html body#acb-design.home-page main>.acb-work>.wrap{background:var(--focus)!important;background-image:none!important}
 html body#acb-design.home-page .work-head .acb-eyebrow{color:var(--ink)!important}
-html body#acb-design.home-page .work-head .acb-h2{font-size:var(--fs-h1)!important;color:var(--action)!important}
+html body#acb-design.home-page .work-head .acb-h2{font-size:clamp(32px,6.5vw,80px)!important;color:var(--action)!important}
 .work-card.blue,.work-card.pink{background:#fff;color:var(--ink)}
 
 /* FAQ and closing. */

@@ -20,7 +20,7 @@
      same two-value rule everywhere: big/title-sized text always sits at
      --lh-title, every smaller (copy) size always sits at --lh-copy. */
   --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
-  --lh-title:1.1;                         /* the one line-height for every title-sized text */
+  --lh-title:1;                           /* the one line-height for every title-sized text */
   --lh-copy:1.3;                          /* the one line-height for every copy size (copy-lg/body/small/button) */
   --fs-label:clamp(9.9px,1vw,11.56px);     --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
