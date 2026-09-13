@@ -712,6 +712,19 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro .big{font-size:var(--fs-h2)!important;letter-spacing:var(--ls-h2)!important;font-weight:500!important;line-height:var(--lh-title)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .section.audience-intro{text-align:left!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-intro p.lead{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-title)!important;font-weight:500!important;max-width:none!important}
+/* "How it feels": a short relatable signs list under the lead line. */
+html body#acb-design:is(.individuals-page,.organisations-page) .signs-list{list-style:none;margin:clamp(19.83px,3vw,29.74px) 0 0!important;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:9.92px 26.44px;max-width:56ch}
+html body#acb-design:is(.individuals-page,.organisations-page) .signs-list li{position:relative;padding-left:19.83px;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)}
+html body#acb-design:is(.individuals-page,.organisations-page) .signs-list li::before{content:"—";position:absolute;left:0;color:#4f46e5}
+@media(max-width:600px){html body#acb-design:is(.individuals-page,.organisations-page) .signs-list{grid-template-columns:1fr}}
+/* "How we support you": the arrive/work-through/leave steps, restyled
+   for the dark indigo band instead of the light tint/yellow/blue trio. */
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps{margin-top:clamp(26.44px,3.4vw,39.65px)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps li{background:rgba(255,255,255,.12)!important;color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps li span{color:#E4E244!important;opacity:1!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps li b{color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps li p{color:rgba(255,255,255,.75)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .acb-loop-steps li:not(:last-child)::after{color:rgba(255,255,255,.5)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
 html body#acb-design:is(.home-page,.blocks-page) main>.acb-say>.wrap{padding:var(--sp-card)!important}
