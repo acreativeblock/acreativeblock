@@ -922,3 +922,37 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
  html body#acb-design.individuals-page .acb-hero-img img{object-position:54% center!important}
  html body#acb-design.organisations-page .acb-hero-img img{object-position:center!important}
 }
+
+/* ==========================================================================
+   EXPERIMENTAL — colour-wash page background, home + for-individuals only.
+   The page itself carries the gradient; a single white "main panel" holds
+   everything except the hero (and, on home, the marquee), so the gradient
+   still shows around/behind the hero. The footer sits outside main as
+   always, with its own opaque background, so it naturally covers the
+   gradient rather than showing it through.
+   ========================================================================== */
+html body#acb-design:is(.home-page,.individuals-page){
+  background-color:#faf7f2!important;
+  background-image:
+    radial-gradient(circle farthest-corner at top left, rgba(225,243,97,1) 0%, rgba(225,243,97,0) 50%),
+    radial-gradient(circle farthest-side at top right, rgba(181,176,177,1) 0%, rgba(181,176,177,0) 10%),
+    radial-gradient(circle farthest-corner at bottom right, rgba(204,104,119,1) 0%, rgba(204,104,119,0) 33%),
+    radial-gradient(circle farthest-corner at top right, rgba(155,221,240,1) 0%, rgba(155,221,240,0) 50%),
+    radial-gradient(ellipse at bottom center, rgba(254,43,0,1) 0%, rgba(254,43,0,0) 80%)!important;
+  background-attachment:fixed!important;
+  background-repeat:no-repeat!important;
+}
+html body#acb-design:is(.home-page,.individuals-page) .acb-main-panel{
+  /* main itself is pinned to var(--site-width) (same as the header), so a
+     plain max-width here only ever shrinks to fit it — break out with an
+     explicit wider width plus matching negative side margins instead. */
+  --panel-boost:clamp(0px,6vw,80px);
+  width:calc(var(--site-width) + var(--panel-boost));
+  margin:0 calc(var(--panel-boost) / -2);
+  background:#fff;
+  border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);
+  padding:var(--sp-card);
+  box-sizing:border-box;
+}
+html body#acb-design.individuals-page .acb-main-panel{margin-top:var(--sp-gap)}
