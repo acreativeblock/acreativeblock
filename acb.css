@@ -43,8 +43,9 @@ html,html body#acb-design.home-page,html body#acb-design:not(.home-page){backgro
 html body#acb-design .acb-header{position:sticky!important;width:calc(100% - 49.57px)!important;max-width:none!important;margin:19.83px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a;backdrop-filter:none!important;z-index:60}
 html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:0!important;gap:19.83px!important;height:46.27px!important;min-height:46.27px!important}
 html body#acb-design .acb-logo{margin-left:16.52px!important}
+html body#acb-design .acb-header .mobile-menu-toggle{margin-right:16.52px!important}
 html body#acb-design .acb-header .acb-logo{background:#fff!important;padding:4.13px 10.74px!important;border-radius:var(--radius-card)!important;flex-shrink:0;color:#4f46e5!important}
-html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
+html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:38px!important}
 @media(min-width:954.9px){html body#acb-design .acb-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:26.44px!important}}
 html body#acb-design .acb-header .acb-nav{gap:26.44px;align-items:center}
 html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .acb-social a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:14.87px!important;letter-spacing:0!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
@@ -54,7 +55,7 @@ html body#acb-design .acb-header .acb-social a:hover{color:#4f46e5!important}
 /* Footer links get the same hover pill as the header nav (adapted for the dark footer). */
 html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:block;padding:2.48px 4.96px!important;margin:-2.48px -4.96px!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-footer :is(.top,.foot-lead) a:hover{color:#a5b4fc!important;background:rgba(255,255,255,.1)!important;text-decoration:none!important}
-html body#acb-design .acb-header .acb-actions{display:flex;gap:19.83px;align-items:center;margin:0!important}
+html body#acb-design .acb-header .acb-actions{display:flex;gap:19.83px;align-items:center;margin:0 16.52px 0 0!important}
 html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a}
 html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-size:14.87px!important;border-radius:6.61px!important;padding:6.61px 8.26px!important;margin:0 -8.26px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .acb-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
@@ -451,7 +452,7 @@ html body#acb-design.home-page .acb-say p .hl::selection,html body#acb-design.ho
 html body#acb-design.home-page .acb-say p .hl::-moz-selection,html body#acb-design.home-page .acb-say p .hl ::-moz-selection{background:#4f46e5!important;color:#fff!important}
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 39.65px). */
-html body#acb-design .acb-logo .acb-logo-mount{height:42px!important}
+html body#acb-design .acb-logo .acb-logo-mount{height:38px!important}
 
 /* ==========================================================================
    SUBPAGE SECTION FRAMING — content pages match the home: grey field with
