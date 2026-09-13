@@ -785,7 +785,7 @@ html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-l
    under) the header with no breathing room. Lock it lower so there's a
    visible gap once it's pinned; the hero card above it keeps scrolling
    away normally (it was never sticky). */
-html body#acb-design.faq-page .faqx-nav{top:94px!important}
+html body#acb-design.faq-page .faqx-nav{top:125px!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li{padding:var(--sp-card)!important;padding-top:clamp(74px,9vw,98px)!important;background:rgba(255,255,255,.12)!important;color:inherit!important;border:0!important;font-size:clamp(16.2px,1.8vw,19.8px)!important;line-height:1.4!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li::before{top:var(--sp-card)!important;left:var(--sp-card)!important;font-size:clamp(40px,6vw,64px)!important}
 html body#acb-design.organisations-page main>section.talks-section{background:transparent!important}
