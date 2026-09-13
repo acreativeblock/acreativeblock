@@ -29,7 +29,6 @@
 
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(9.92px,1.4vw,14.87px);margin-top:clamp(23.13px,3.4vw,36.35px)}
 .plan-card{background:#fff;border:0.83px solid var(--line);padding:clamp(19.83px,2.4vw,29.74px);display:flex;flex-direction:column;gap:9.92px}
-.plan-card .plan-tier{font-size:9.92px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .plan-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(17.35px,2vw,23.13px);letter-spacing:-.02em;margin:0;color:var(--ink)}
 .plan-card p{font-size:12.39px;line-height:1.55;color:var(--ink-soft);margin:0}
 .plan-card .plan-format{margin-top:auto;font-size:9.92px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);opacity:.8;padding-top:6.61px}

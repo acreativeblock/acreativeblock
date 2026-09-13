@@ -103,7 +103,8 @@ html body#acb-design.home-page .acb-look .cta{justify-content:flex-start;margin:
 html body#acb-design.home-page .acb-h2{font-size:var(--fs-h2);letter-spacing:var(--ls-h2);line-height:var(--lh-title);max-width:none;color:var(--ink)}
 html body#acb-design.home-page .acb-faq>.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24.79px}
 html body#acb-design.home-page .acb-faq .acb-head{text-align:left;margin:0}
-html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%;padding:0 var(--sp-card)}
+html body#acb-design.home-page .acb-faq .faq-list{max-width:none;width:100%;padding:0 var(--sp-card);border-top:0!important}
+html body#acb-design.home-page .acb-faq .faq-item:first-child{border-top:0.75px solid var(--line)}
 html body#acb-design.home-page .acb-faq .faq-q{font-size:var(--fs-body);padding:16.52px 0;color:var(--ink);line-height:var(--lh-copy)!important}
 html body#acb-design.home-page .acb-faq .faq-a p{font-size:var(--fs-body);line-height:var(--lh-copy);max-width:none}
 html body#acb-design.home-page main>.acb-close>.wrap{background:var(--acb-yellow)!important;color:var(--acb-red)!important;display:grid!important;grid-template-columns:1fr auto;gap:19.83px 33.05px!important;align-items:center;text-align:left}
@@ -376,6 +377,23 @@ html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(28.8px,5vw,
    plus menu-style padding (13.22px) rather than the taller row spacing above. */
 html body#acb-design .acb-footer .bottom{margin-top:0!important;padding:13.22px 0!important}
 
+/* Foot-lead (logo/tagline + newsletter signup) row: same layout on every
+   page as on home — a 2-column grid, not base.css's plainer stacked/grid
+   layout that internal pages were falling back to. */
+html body#acb-design .acb-footer .foot-lead{display:grid!important;grid-template-columns:1fr 1fr!important;gap:clamp(28.09px,5vw,64.44px)!important;padding-bottom:clamp(31.39px,5vw,56.18px)!important;border-bottom:0.83px solid rgba(255,255,255,.25)!important}
+html body#acb-design .acb-footer .mark{display:block!important;padding:0!important}
+html body#acb-design .acb-footer .mark .acb-logo-mount{height:47.92px!important}
+html body#acb-design .acb-footer .ack{max-width:29ch!important;margin:19.83px 0 0!important;font-size:clamp(14.87px,1.55vw,20.66px)!important;line-height:1.18!important;color:#fff!important}
+html body#acb-design .acb-footer .acb-footer-news{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:space-between!important;height:100%!important;padding:0!important;border:0!important;grid-column:auto!important}
+html body#acb-design .acb-footer .acb-footer-news h3{font-family:"Inter",sans-serif!important;font-size:clamp(18.18px,2vw,24.79px)!important;font-weight:400!important;white-space:normal!important;margin:0!important}
+html body#acb-design .acb-footer .acb-footer-news p{font-size:clamp(11.56px,1vw,14.05px)!important;max-width:44ch!important;margin:9.92px 0 14.87px!important;line-height:1.4!important;align-self:flex-start!important}
+html body#acb-design .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:none!important;width:100%!important;grid-column:auto!important}
+html body#acb-design .acb-footer .bottom a{color:inherit!important}
+@media(max-width:630px){
+  html body#acb-design .acb-footer .foot-lead{grid-template-columns:1fr!important}
+  html body#acb-design .acb-footer .mark .acb-logo-mount{height:41.31px!important}
+}
+
 /* Cookie banner: site.js injects this <aside> on every page, but its only
    styling used to live in v2.css, which just a handful of article pages
    load — everywhere else it rendered unstyled and in normal document flow
@@ -503,6 +521,13 @@ html body#acb-design.internal-page main>section.yellow{background:var(--yellow)!
 html body#acb-design.internal-page main>section.pink{background:var(--pink)!important}
 html body#acb-design.internal-page main>section.blue{background:var(--brand,#4f46e5)!important;color:#fff!important}
 html body#acb-design.internal-page main>section.ink{background:var(--ink)!important;color:#fff!important}
+/* Evidence page: the yellow/blue bands were full-bleed squares while the
+   rest of the site (including this page's own closing card) uses rounded
+   cards — move the colour from the section onto an inset, rounded card. */
+html body#acb-design.evidence-page main>section.yellow{background:transparent!important}
+html body#acb-design.evidence-page main>section.yellow>.wrap{background:var(--yellow)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important}
+html body#acb-design.evidence-page main>section.blue.flush-sec{background:transparent!important;padding:0!important}
+html body#acb-design.evidence-page main>section.blue.flush-sec .flush{background:var(--brand,#4f46e5)!important;border-radius:var(--radius-card)!important;overflow:hidden!important}
 /* Same fix for the nth-of-type(2n+1) (odd) variant of the same zebra-stripe rule. */
 html body#acb-design.blocks-page main>section.evidence-band{background:var(--brand,#4f46e5)!important;color:#fff!important}
 html body#acb-design.blocks-page main>section.bmap{background:var(--quiet,#f6f6f6)!important}
@@ -621,33 +646,27 @@ html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .pl
   border:0!important;border-radius:var(--radius-card)!important;background:#fff!important;
   padding:clamp(23.13px,2.6vw,31.39px)!important;box-shadow:0 1.66px 3.3px rgba(0,0,0,.08);
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-tier{
-  display:inline-block!important;font-family:"Inter",sans-serif!important;font-weight:500!important;
-  font-size:9.92px!important;letter-spacing:.08em!important;padding:4.13px 9.92px!important;border-radius:var(--radius-card)!important;
-  background:#eef2ff!important;color:#4f46e5!important;
-}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:4.96px;line-height:var(--lh-copy)!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:0!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:12.8px!important;line-height:1.55!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Inter",sans-serif!important;font-weight:500!important}
+/* All three cards are the same size — equal-height grid row, no scale
+   transform on the middle one (that was throwing its top/bottom edges
+   out of line with its siblings). */
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{align-items:stretch!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-card{height:100%!important}
 /* Middle card: the recommended tier — indigo, slightly larger presence. */
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2){
-  background:#4f46e5!important;color:#fff!important;transform:scale(1.03);
+  background:#4f46e5!important;color:#fff!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) h3,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) p,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) .plan-format{color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) .plan-tier{background:#fff!important;color:#4f46e5!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) .btn{background:#fff!important;color:#4f46e5!important;border-color:#fff!important}
 /* Third card: the deepest tier — dark, yellow accent. */
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3){background:#111!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3) h3,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3) p,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3) .plan-format{color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3) .plan-tier{background:#E4E244!important;color:var(--ink)!important}
-@media(max-width:738px){
-  html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2){transform:none}
-  html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2):hover{transform:translateY(-4.96px)}
-}
 
 /* Tighten the internal-page section gap to match the home page's 49.57px
    rhythm (was riding the shared --section-space var at 72-99.14px, which
@@ -749,7 +768,13 @@ html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-l
 @media(max-width:684px){
   html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list){grid-template-columns:1fr!important}
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li{padding:16.2px 18px!important;padding-top:57.6px!important;background:rgba(255,255,255,.12)!important;color:inherit!important;border:0!important}
+/* FAQ page's "Jump to" nav: was sticking flush under (even slightly
+   under) the header with no breathing room. Lock it lower so there's a
+   visible gap once it's pinned; the hero card above it keeps scrolling
+   away normally (it was never sticky). */
+html body#acb-design.faq-page .faqx-nav{top:94px!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li{padding:var(--sp-card)!important;padding-top:clamp(74px,9vw,98px)!important;background:rgba(255,255,255,.12)!important;color:inherit!important;border:0!important;font-size:clamp(16.2px,1.8vw,19.8px)!important;line-height:1.4!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .outcome-list li::before{top:var(--sp-card)!important;left:var(--sp-card)!important;font-size:clamp(40px,6vw,64px)!important}
 html body#acb-design.organisations-page main>section.talks-section{background:transparent!important}
 html body#acb-design.organisations-page main>section.talks-section>.wrap{background:#000!important}
 html body#acb-design.organisations-page .talks-section :is(h2,p,.note){color:#fff!important}
@@ -811,11 +836,12 @@ html body#acb-design .faqx-cat{scroll-margin-top:108px}
 /* Contact */
 html body#acb-design.contact-page .contact-unified{padding:0!important}
 html body#acb-design.contact-page .contact-unified>.wrap{display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:var(--sp-card)!important;background:transparent!important;padding:0!important}
-html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff;color:var(--ink)}
-html body#acb-design.contact-page .contact-intro{grid-column:1/-1;background:var(--acb-yellow)}
+html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;box-shadow:var(--shadow-card)!important}
+html body#acb-design.contact-page .contact-intro{grid-column:1/-1}
 html body#acb-design.contact-page .contact-form-wrap{grid-row:2/span 2;grid-column:2}
-html body#acb-design.contact-page .contact-side{grid-column:1;background:#4f46e5;color:#fff}
-html body#acb-design.contact-page .contact-side :is(h2,p,a,.side-note){color:#fff!important}
+html body#acb-design.contact-page .contact-side{grid-column:1}
+html body#acb-design.contact-page .contact-side :is(h2,p,a,.side-note){color:var(--ink)!important}
+html body#acb-design.contact-page .contact-side .side-note{color:#4f46e5!important}
 html body#acb-design.contact-page .cform{gap:16.2px!important}
 html body#acb-design.contact-page :is(input,textarea,select){box-sizing:border-box;width:100%;font-size:var(--fs-body)!important;color:var(--ink)!important;background:#f6f6f6!important;border:0.9px solid #dedede!important;padding:12.6px 14.4px!important;line-height:var(--lh-copy)!important}
 html body#acb-design.contact-page textarea{min-height:162px}

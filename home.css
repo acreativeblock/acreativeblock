@@ -140,8 +140,8 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .acb-faq .faq-list{max-width:654.35px;margin:0 auto;border-top:0.75px solid var(--line)}
 .acb-faq .faq-item{border-bottom:0.75px solid var(--line)}
 .acb-faq .faq-item .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:13.9px 0;font-family:var(--sans);font-weight:500;font-size:clamp(10.74px,1.36vw,13.9px);color:var(--ink);display:flex;justify-content:space-between;gap:12.65px;align-items:center}
-.acb-faq .faq-item .faq-q::after{content:"+";font-size:15.17px;color:var(--blue);line-height:1}
-.acb-faq .faq-item.open .faq-q::after{content:"–"}
+.acb-faq .faq-item .faq-q::after{content:"+";display:inline-block;font-size:15.17px;color:var(--blue);line-height:1;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.acb-faq .faq-item.open .faq-q::after{transform:rotate(135deg)}
 .acb-faq .faq-item .faq-q:hover{color:var(--blue)}
 .acb-faq .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .acb-faq .faq-item.open .faq-a{max-height:202.26px}
