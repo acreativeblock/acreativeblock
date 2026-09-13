@@ -280,10 +280,11 @@ body.home-page{
 .home-page .acb-look p{color:var(--muted)!important}
 .home-page .acb-look .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 
-/* Services: calm neutrals; brand blue only marks links and actions. */
-html body#acb-design.home-page main .acb-work>.wrap{background:var(--focus)!important;background-image:none!important}
-html body#acb-design.home-page .work-head .acb-eyebrow{color:var(--ink)!important}
-html body#acb-design.home-page .work-head .acb-h2{font-size:clamp(32px,6.5vw,80px)!important;line-height:0.85!important;color:var(--action)!important}
+/* Services: solid brand blue, white text. */
+html body#acb-design.home-page main .acb-work>.wrap{background:#4f46e5!important;background-image:none!important}
+html body#acb-design.home-page .work-head .acb-eyebrow{color:#fff!important}
+html body#acb-design.home-page .work-head .acb-h2{font-size:clamp(32px,6.5vw,80px)!important;line-height:0.85!important;color:#fff!important}
+html body#acb-design.home-page .work-copy p{color:#fff!important}
 .work-card.blue,.work-card.pink{background:#fff;color:var(--ink)}
 
 /* FAQ and closing. */
