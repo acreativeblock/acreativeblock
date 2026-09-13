@@ -1,5 +1,10 @@
 /* Measured from the live A Creative Block homepage. */
 :root{--acb-red:#873030;--acb-yellow:#E4E244;--copy:#071321;--muted:#071321;--ink:#071321;--ink-soft:#071321;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:24.79px;
+  /* base.css's --blue (#006FDA) is a leftover web-blue, not our brand
+     indigo — redefine it here so every existing var(--blue) reference
+     site-wide (buttons, labels, hover states) renders as our actual
+     brand colour instead. */
+  --blue:#4f46e5;
 }
 
 /* ==========================================================================
@@ -447,7 +452,7 @@ html body#acb-design.internal-page :is(h1,h2,h3,h4,p,li,a,span,strong,button,inp
 html body#acb-design.internal-page :is(h1,h2,.display,.big){letter-spacing:var(--ls-title)!important;color:var(--ink)!important;font-weight:500!important}
 /* Same 2-title / 3-copy / 1-label scale as the home page, on every subpage. */
 html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.big,h2){font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important}
-html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.contact-intro h1,.audience-hero-heading,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:var(--lh-title)!important}
+html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.audience-hero-heading,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:var(--lh-title)!important}
 html body#acb-design.internal-page :is(.card h3,h3){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
 /* Body copy: big (lead paragraphs) / medium (standard) / small (fine detail). */
 html body#acb-design.internal-page :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
@@ -732,8 +737,8 @@ html body#acb-design :is(.center-hero,.acb-close-sub){padding:var(--sp-card)!imp
 html body#acb-design.home-page .acb-proof-copy ::selection{background:#4f46e5!important;color:#fff!important}
 /* Every yellow-background surface site-wide gets blue selection instead of
    the default yellow (which is invisible against a yellow background). */
-html body#acb-design :is(.access-note,.map-test-inline,.contact-intro,.audience-hero-heading .cycling-word)::selection,
-html body#acb-design :is(.access-note,.map-test-inline,.contact-intro,.audience-hero-heading .cycling-word) ::selection{background:#4f46e5!important;color:#fff!important}
+html body#acb-design :is(.access-note,.map-test-inline,.audience-hero-heading .cycling-word)::selection,
+html body#acb-design :is(.access-note,.map-test-inline,.audience-hero-heading .cycling-word) ::selection{background:#4f46e5!important;color:#fff!important}
 
 /* Individuals/Organisations: the .dark intro section keeps its own indigo card
    instead of the generic white-card treatment above (line 437). */
@@ -759,9 +764,9 @@ html body#acb-design.internal-page .method-journey .journey-step>.wrap{box-sizin
    edge-to-edge bar. */
 html body#acb-design.internal-page .refbar-wrap{width:auto!important;max-width:none!important;margin:0 var(--page-gutter) var(--page-gutter) var(--page-gutter)!important;border-radius:var(--radius-card)!important;overflow:hidden;box-shadow:var(--shadow-card)!important}
 html body#acb-design.internal-page .refbar{padding:var(--sp-card)!important;font-size:var(--fs-small)!important}
-html body#acb-design.internal-page :is(.section-head,.contact-intro,.audience-hero-panel,.speaking-grid)>*{min-width:0}
+html body#acb-design.internal-page :is(.section-head,.audience-hero-panel,.speaking-grid)>*{min-width:0}
 html body#acb-design.internal-page :is(h1,h2,h3,p,.audience-hero-heading,.display,.big){overflow-wrap:anywhere;text-wrap:pretty}
-html body#acb-design.internal-page :is(.section-head p,.audience-intro .body,.contact-intro p){max-width:62ch}
+html body#acb-design.internal-page :is(.section-head p,.audience-intro .body){max-width:62ch}
 
 /* Audience pages */
 html body#acb-design:is(.individuals-page,.organisations-page) .section{padding:0!important;background:transparent!important}
@@ -851,13 +856,13 @@ html body#acb-design .offer-row.open .pm svg{transform:rotate(180deg)}
 html{scroll-behavior:smooth;scroll-padding-top:108px}
 html body#acb-design .faqx-cat{scroll-margin-top:108px}
 
-/* Contact */
+/* Contact: full-width hero (.center-hero, shared with evidence/faq/legal),
+   then a standard-gap section holding two equal-height columns. */
 html body#acb-design.contact-page .contact-unified{padding:0!important}
-html body#acb-design.contact-page .contact-unified>.wrap{display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:var(--sp-card)!important;background:transparent!important;padding:0!important}
-html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;box-shadow:var(--shadow-card)!important}
-html body#acb-design.contact-page .contact-intro{grid-column:1/-1}
-html body#acb-design.contact-page .contact-form-wrap{grid-row:2/span 2;grid-column:2}
-html body#acb-design.contact-page .contact-side{grid-column:1}
+html body#acb-design.contact-page .contact-unified>.wrap{display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:stretch!important;gap:var(--sp-card)!important;background:transparent!important;padding:0!important}
+html body#acb-design.contact-page :is(.contact-form-wrap,.contact-side){padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;box-shadow:var(--shadow-card)!important;height:100%!important}
+html body#acb-design.contact-page .contact-form-wrap{grid-column:2;grid-row:1}
+html body#acb-design.contact-page .contact-side{grid-column:1;grid-row:1;margin-top:0!important;display:flex!important;flex-direction:column!important}
 html body#acb-design.contact-page .contact-side :is(h2,p,a,.side-note){color:var(--ink)!important}
 html body#acb-design.contact-page .contact-side .side-note{color:#4f46e5!important}
 html body#acb-design.contact-page .cform{gap:16.2px!important}
@@ -868,7 +873,7 @@ html body#acb-design.contact-page .cform-consent input{width:18px!important;flex
 @media(max-width:774px){
   html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr!important}
   html body#acb-design.contact-page .contact-unified>.wrap{grid-template-columns:1fr!important}
-  html body#acb-design.contact-page :is(.contact-intro,.contact-form-wrap,.contact-side){grid-column:1!important;grid-row:auto!important}
+  html body#acb-design.contact-page :is(.contact-form-wrap,.contact-side){grid-column:1!important;grid-row:auto!important;height:auto!important}
 }
 @media(max-width:504px){
   html body#acb-design.internal-page main>section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
