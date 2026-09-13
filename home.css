@@ -169,7 +169,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .bgm-col{display:flex;flex-direction:column;gap:9.92px;will-change:transform;animation:bgmScroll linear infinite}
 .bgm-col-a{animation-duration:24s}
 .bgm-col-b{animation-duration:29s;animation-direction:reverse}
-.bgm-card{min-height:126px;box-sizing:border-box;background:#fafafa;color:var(--ink);border-radius:9.92px;padding:clamp(13.22px,1.6vw,18.18px);display:flex;flex-direction:column;gap:4.96px}
+.bgm-card{min-height:126px;box-sizing:border-box;background:#fafafa;color:var(--ink);border-radius:9.92px;padding:clamp(13.22px,1.6vw,18.18px);display:flex;flex-direction:column;gap:4.96px;box-shadow:var(--shadow-card)}
 .bgm-card .bgm-num{font-family:var(--sans);font-weight:500;font-size:clamp(13.22px,1.4vw,16.52px);letter-spacing:-.02em;opacity:.6}
 .bgm-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(14.05px,1.5vw,17.35px);letter-spacing:-.02em;line-height:1.1;margin:2.48px 0 0}
 .bgm-card p{font-size:clamp(10.74px,1.05vw,12.39px);line-height:1.4;margin:0;opacity:.7}
@@ -314,7 +314,7 @@ html body.home-page .acb-close{background:#E4E244!important;background-color:#E4
 .acb-footer .ack{max-width:29ch;margin:19.83px 0 0;font-size:clamp(14.87px,1.55vw,20.66px);line-height:1.18;color:#fff}
 .acb-footer .acb-footer-news{display:flex!important;flex-direction:column;align-items:flex-start;justify-content:space-between;height:100%;padding:0!important;border:0!important}
 .acb-footer .acb-footer-news h3{font-family:var(--sans)!important;font-size:clamp(18.18px,2vw,24.79px)!important;font-weight:400;white-space:normal!important}
-.acb-footer .acb-footer-news p{font-size:clamp(11.56px,1vw,14.05px)!important;max-width:44ch!important;margin:9.92px 0 14.87px!important;line-height:1.4!important}
+.acb-footer .acb-footer-news p{font-size:clamp(11.56px,1vw,14.05px)!important;max-width:44ch!important;margin:9.92px 0 14.87px!important;line-height:1.4!important;align-self:flex-start!important}
 .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:none;width:100%}
 .acb-footer .top.acb-footer-links{padding-top:clamp(24.79px,4vw,46.27px)!important}
 .acb-footer .bottom a{color:inherit}
