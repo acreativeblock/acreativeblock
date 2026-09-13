@@ -281,7 +281,7 @@ body.home-page{
 .home-page .acb-look .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 
 /* Services: calm neutrals; brand blue only marks links and actions. */
-html body#acb-design.home-page main>.acb-work>.wrap{background:var(--focus)!important;background-image:none!important}
+html body#acb-design.home-page main .acb-work>.wrap{background:var(--focus)!important;background-image:none!important}
 html body#acb-design.home-page .work-head .acb-eyebrow{color:var(--ink)!important}
 html body#acb-design.home-page .work-head .acb-h2{font-size:clamp(32px,6.5vw,80px)!important;line-height:0.85!important;color:var(--action)!important}
 .work-card.blue,.work-card.pink{background:#fff;color:var(--ink)}
@@ -318,7 +318,7 @@ html body.home-page .acb-close{background:#E4E244!important;background-color:#E4
 .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:none;width:100%}
 .acb-footer .top.acb-footer-links{padding-top:clamp(24.79px,4vw,46.27px)!important}
 .acb-footer .bottom a{color:inherit}
-.home-page main>section,.home-page .acb-header,.home-page .acb-footer{background-image:none!important}
+.home-page main section,.home-page .acb-header,.home-page .acb-footer{background-image:none!important}
 .home-page .acb-hero-img,.home-page figure,.home-page img{background-image:none!important}
 @media(max-width:630px){.acb-footer .foot-lead{grid-template-columns:1fr}.acb-footer .mark .acb-logo-mount{height:41.31px!important}}
 

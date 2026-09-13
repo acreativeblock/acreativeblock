@@ -46,8 +46,8 @@ html body:not(.home-page) :is(a.btn,a.btn-out,a.pill,a.acb-utility-pill,button.b
 }
 
 /* White and pale-grey editorial rhythm; block colours remain attached to blocks. */
-body:not(.home-page) main>section:nth-of-type(odd){background-color:#fff!important;background-image:none!important}
-body:not(.home-page) main>section:nth-of-type(even){background-color:var(--quiet)!important;background-image:none!important}
+body:not(.home-page) main section:nth-of-type(odd){background-color:#fff!important;background-image:none!important}
+body:not(.home-page) main section:nth-of-type(even){background-color:var(--quiet)!important;background-image:none!important}
 body:not(.home-page) :is(.dark,.blue,.yellow,.tint,.coral,.mint){color:var(--copy)!important}
 body:not(.home-page) :is(.dark,.blue,.yellow,.tint,.coral,.mint) :is(h1,h2,h3,h4,p,li){color:inherit!important}
 body:not(.home-page) :is(.card,.startcard,.price-card,.pack-card,.arc-card,.fxcard,.tcard,.resitem,.blog-card){background:#fff!important;border-color:var(--quiet-2)!important;color:var(--copy)!important;box-shadow:none!important}
@@ -116,14 +116,14 @@ body.contact-page .mail-big{font-size:clamp(15.7px,2.15vw,26.44px)!important}
 body.contact-page .cform{max-width:none}
 
 /* Every internal closing CTA uses the same pale field as the homepage ending. */
-html body:not(.home-page) :is(.acb-close-sub,main>section.close){background:#E4E244!important;background-color:#E4E244!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close)>.wrap{gap:9.92px!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close) .note{margin:0 0 9.92px!important;color:var(--copy)!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close) h2{color:var(--copy)!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close) :is(.btn,.btn-out){background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close){background:#E4E244!important;background-color:#E4E244!important;background-image:none!important;border-top:0!important;color:var(--copy)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close)>.wrap{gap:9.92px!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close) .note{margin:0 0 9.92px!important;color:var(--copy)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close) h2{color:var(--copy)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close) :is(.btn,.btn-out){background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
 
-body.organisations-page main>section.talks-section{background:#000000!important;color:#fff!important}
+body.organisations-page main section.talks-section{background:#000000!important;color:#fff!important}
 body.organisations-page .talks-section .talks :is(h2,p){color:#fff!important}
 body.organisations-page .talks-section .aud-eyebrow{background:var(--action)!important;color:#000000!important}
 body.organisations-page #offers .big{letter-spacing:-.025em!important}
@@ -158,13 +158,13 @@ body.blocks-page .evidence-band p{max-width:62ch;margin:0;font-size:13.22px;line
 
 /* Evidence: coherent type, readable colour and larger numerical hierarchy. */
 body.evidence-page main :is(h1,h2,h3,p){color:var(--copy)!important}
-body.evidence-page main>section:nth-of-type(1){background:#fff!important}
-body.evidence-page main>section:nth-of-type(2){background:whitesmoke!important}
-body.evidence-page main>section:nth-of-type(3){background:var(--brand)!important}
-body.evidence-page main>section:nth-of-type(4){background:#fff!important}
-body.evidence-page main>section:nth-of-type(5){background:whitesmoke!important}
-body.evidence-page main>section:nth-of-type(6){background:#fff!important}
-body.evidence-page main>section:nth-of-type(2) .card{background:#fff!important;background-image:none!important}
+body.evidence-page main section:nth-of-type(1){background:#fff!important}
+body.evidence-page main section:nth-of-type(2){background:whitesmoke!important}
+body.evidence-page main section:nth-of-type(3){background:var(--brand)!important}
+body.evidence-page main section:nth-of-type(4){background:#fff!important}
+body.evidence-page main section:nth-of-type(5){background:whitesmoke!important}
+body.evidence-page main section:nth-of-type(6){background:#fff!important}
+body.evidence-page main section:nth-of-type(2) .card{background:#fff!important;background-image:none!important}
 body.evidence-page .section.blue{background:var(--brand)!important}
 body.evidence-page .section.blue :is(h2,h3,p,.side-note){color:#fff!important}
 body.evidence-page .section.blue .side-note{background:var(--action)!important;color:var(--copy)!important}
@@ -187,7 +187,7 @@ body.legal-page .legal-copy{font-size:14.05px;line-height:1.65;color:var(--copy)
 body.legal-page .legal-copy>p{margin:0 0 1.25em}
 body.legal-page .legal-copy h2{margin:2.2em 0 .55em;font-size:clamp(22.31px,3vw,33.05px);line-height:1;letter-spacing:-.035em;color:var(--copy)!important}
 body.legal-page :is(.legal-placeholder,.legal-note){margin:23.13px 0;padding:18.18px;background:whitesmoke;border-left:3.3px solid var(--brand);font-size:12.39px;line-height:1.5}
-body.legal-page main>section{background:#fff!important;background-image:none!important}
+body.legal-page main section{background:#fff!important;background-image:none!important}
 body.legal-page main section.reveal{opacity:1!important;transform:none!important;transition:none!important}
 body.legal-page{background:#fff!important}
 body.legal-page .legal-hero{padding:clamp(39.65px,6vw,62.79px) var(--pad)!important;text-align:left!important}
@@ -196,7 +196,7 @@ body.legal-page .legal-hero h1{font-size:clamp(28.09px,4vw,46.27px)!important;ma
 body.legal-page .legal-section{padding-top:clamp(28.09px,5vw,54.53px)!important}
 body :is(.legal-nav,.faqx-nav) a.is-current{color:var(--brand)!important;font-weight:600!important}
 
-body.faq-page,body.faq-page main>section,body.faq-page .faqx-cat{background:#fff!important;background-image:none!important}
+body.faq-page,body.faq-page main section,body.faq-page .faqx-cat{background:#fff!important;background-image:none!important}
 
 /* Blog index: editorial type and cards that size to their own content. */
 body.blog-index .blog-grid{align-items:start!important;grid-auto-flow:row dense}
@@ -224,7 +224,7 @@ body.questionnaire-page .state{background:var(--action)!important;color:var(--br
 body.questionnaire-page .state :is(strong,p){color:var(--brand)!important}
 body.questionnaire-page :is(.btn,.btn.alt){background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 
-body.resources-page main,body.resources-page main>section{background-color:whitesmoke!important}
+body.resources-page main,body.resources-page main section{background-color:whitesmoke!important}
 body.resources-page .personals-intro{background:#E4E244!important;padding:clamp(28.09px,4vw,46.27px) 0!important}
 body.resources-page .personals-intro :is(h2,p){color:var(--copy)!important}
 
@@ -247,9 +247,9 @@ body:not(.home-page) .acb-footer .acb-footer-news h3{font-family:var(--sans)!imp
 body:not(.home-page) .acb-footer .acb-footer-news p{font-size:clamp(11.56px,1vw,14.05px)!important;max-width:44ch!important;margin:9.92px 0 14.87px!important;line-height:1.4!important}
 body:not(.home-page) .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:429.62px}
 body:not(.home-page) .acb-footer .top.acb-footer-links{padding-top:clamp(24.79px,4vw,46.27px)!important}
-body:not(.home-page) main>section,.acb-header,.acb-footer{background-image:none!important}
+body:not(.home-page) main section,.acb-header,.acb-footer{background-image:none!important}
 body:not(.home-page) figure,body:not(.home-page) img{background-image:none!important}
-body.legal-page main>section{background:#fff!important;background-image:none!important}
+body.legal-page main section{background:#fff!important;background-image:none!important}
 
 /* Gentle Arcturis-inspired entrance: no jump, just layered opacity and a tiny scale. */
 .white-reveal{opacity:0;transform:translateY(11.56px) scale(.994);transition:opacity .78s ease,transform .9s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
@@ -289,7 +289,7 @@ body.questionnaire-page .btn.alt{background:transparent!important;color:#fff!imp
 
 /* Final component invariants — intentionally last in the cascade. */
 html body:not(.home-page) :is(a.btn,a.btn-out,a.pill,a.acb-utility-pill,button.btn,button.btn-out,button.pill):hover{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
-html body:not(.home-page) :is(.acb-close-sub,main>section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+html body:not(.home-page) :is(.acb-close-sub,main section.close) :is(.btn,.btn-out):hover{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
 body.questionnaire-page{background:whitesmoke!important;color:var(--copy)!important;min-height:100vh}
 body.questionnaire-page .top{height:79.32px!important;padding:16.52px var(--pad)!important;background:var(--brand)!important;border:0!important;color:#fff!important}
 body.questionnaire-page .stage{min-height:calc(100vh - 79.32px)!important;padding:clamp(31.39px,6vw,66.1px) var(--pad)!important;align-items:start!important}
