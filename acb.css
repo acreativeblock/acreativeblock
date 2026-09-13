@@ -113,34 +113,37 @@ html body#acb-design .acb-footer>.wrap{padding:20px 20px 0px 20px!important;max-
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:var(--ink)!important}
 html body#acb-design .acb-footer :is(.col a,.news p){font-size:14.87px!important}
 html body#acb-design:not(.home-page) :is(.section,.acb-section){padding-top:39.65px!important;padding-bottom:39.65px!important}
-/* Closed state: same rounded-square icon-button language as the open/close
-   control below (light-indigo tile, hamburger drawn with box-shadow lines). */
+/* Closed state: solid brand-blue rounded-square icon-button, white
+   hamburger lines drawn with box-shadow. Stays in normal flex flow
+   (not fixed) so the open "×" below — the same element — never jumps. */
 html body#acb-design .mobile-menu-toggle{
   width:36.35px!important;height:36.35px!important;padding:0!important;border:0!important;
-  border-radius:var(--radius-card)!important;background:#eef2ff!important;
+  border-radius:var(--radius-card)!important;background:#4f46e5!important;
   font-size:0!important;color:transparent!important;position:relative!important;z-index:65;
+  transition:background-color .2s ease;
 }
 html body#acb-design .mobile-menu-toggle::before{
   content:"";position:absolute;top:50%;left:50%;width:16.52px;height:1.66px;
-  background:#4f46e5;border-radius:1.66px;
-  box-shadow:0 -5.51px 0 #4f46e5,0 5.51px 0 #4f46e5;
+  background:#fff;border-radius:1.66px;
+  box-shadow:0 -4.96px 0 #fff,0 4.96px 0 #fff;
   transform:translate(-50%,-50%);
 }
 @media(max-width:954px){
  html body#acb-design .acb-header .acb-head-right{display:none!important}
  html body#acb-design .acb-header .mobile-menu-toggle{display:block!important}
+ html body#acb-design .acb-logo{margin-left:8.26px!important}
 
- /* Mobile menu, fully open: white panel, big stacked indigo links —
-    same visual language as the desktop nav-hover pill. */
+ /* Mobile menu, fully open: solid brand-blue panel that slides in
+    from the right, big stacked white links. */
  html body#acb-design .acb-header.acb-menu-open,
- html body#acb-design .acb-header.mobile-open{background:#fff!important}
+ html body#acb-design .acb-header.mobile-open{background:#4f46e5!important}
  html body#acb-design .acb-header.acb-menu-open .acb-head-right,
  html body#acb-design .acb-header.mobile-open .acb-head-right{
    display:flex!important;position:fixed!important;inset:0!important;min-height:100dvh!important;
-   background:#fff!important;padding:79.32px 16.52px 0!important;margin:0!important;
+   background:#4f46e5!important;padding:79.32px 19.83px 0!important;margin:0!important;
    flex-direction:column!important;align-items:stretch!important;justify-content:space-between!important;
    overflow-y:auto!important;z-index:61!important;gap:0!important;
-   animation:acbMenuIn .38s cubic-bezier(.16,1,.3,1);
+   animation:acbMenuIn .4s cubic-bezier(.16,1,.3,1);
  }
  html body#acb-design .acb-header.acb-menu-open .acb-nav,
  html body#acb-design .acb-header.mobile-open .acb-nav{display:flex!important;background:transparent!important;flex-direction:column!important;align-items:stretch!important;gap:1.66px!important;margin:0!important}
@@ -151,23 +154,23 @@ html body#acb-design .mobile-menu-toggle::before{
  html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{
    display:flex!important;align-items:center!important;justify-content:space-between!important;
-   width:100%!important;padding:13.22px!important;margin:0!important;border:0!important;background:none!important;
+   width:100%!important;padding:14.87px!important;margin:0!important;border:0!important;background:none!important;
    border-radius:11.56px!important;
    font-family:"Inter",sans-serif!important;font-weight:500!important;
-   font-size:clamp(21.48px,7.5vw,33.05px)!important;letter-spacing:-.02em!important;line-height:1!important;
-   color:var(--ink)!important;text-transform:none!important;text-align:left!important;
+   font-size:clamp(24.79px,8vw,36.35px)!important;letter-spacing:-.02em!important;line-height:1!important;
+   color:#fff!important;text-transform:none!important;text-align:left!important;
    transition:background-color .2s ease,color .2s ease!important;
  }
  html body#acb-design .acb-header.acb-menu-open .navitem.is-active>a.navbutton,
  html body#acb-design .acb-header.acb-menu-open .navitem.is-active>button.navbutton,
  html body#acb-design .acb-header.mobile-open .navitem.is-active>a.navbutton,
  html body#acb-design .acb-header.mobile-open .navitem.is-active>button.navbutton{
-   background:#eef2ff!important;color:#4f46e5!important;
+   background:#fff!important;color:#4f46e5!important;
  }
  html body#acb-design .acb-header.acb-menu-open .navitem>button.navbutton::after,
  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton::after{
-   content:"";width:9.09px;height:9.09px;flex-shrink:0;margin-left:9.92px;
-   border-right:1.66px solid currentColor!important;border-bottom:1.66px solid currentColor!important;opacity:.6;
+   content:"";width:9.92px;height:9.92px;flex-shrink:0;margin-left:9.92px;
+   border-right:1.85px solid currentColor!important;border-bottom:1.85px solid currentColor!important;opacity:.7;
    transform:rotate(45deg);transition:transform .3s cubic-bezier(.16,1,.3,1);
  }
  html body#acb-design .acb-header.acb-menu-open .navitem.is-open>button.navbutton::after,
@@ -183,47 +186,49 @@ html body#acb-design .mobile-menu-toggle::before{
  }
  html body#acb-design .acb-header.acb-menu-open .navitem.is-open .acb-sub,
  html body#acb-design .acb-header.mobile-open .navitem.submenu-open .acb-sub,
- html body#acb-design .acb-header.mobile-open .navitem.submenu-open .submenu{max-height:264.38px!important}
+ html body#acb-design .acb-header.mobile-open .navitem.submenu-open .submenu{max-height:330.48px!important}
  html body#acb-design .acb-header.acb-menu-open .acb-sub a,
  html body#acb-design .acb-header.mobile-open .acb-sub a,
  html body#acb-design .acb-header.mobile-open .submenu a{
-   display:block!important;padding:9.09px 13.22px!important;border:0!important;border-radius:8.26px!important;
-   font-family:"Inter",sans-serif!important;font-size:14.87px!important;font-weight:500!important;
-   color:rgba(0,0,0,.62)!important;transition:background-color .2s ease,color .2s ease!important;
+   display:block!important;padding:11.02px 14.87px!important;margin:0!important;border:0!important;border-radius:8.26px!important;
+   font-family:"Inter",sans-serif!important;font-size:18.18px!important;font-weight:500!important;
+   color:rgba(255,255,255,.72)!important;transition:background-color .2s ease,color .2s ease!important;
  }
  html body#acb-design .acb-header.acb-menu-open .acb-sub a:hover,
- html body#acb-design .acb-header.mobile-open .acb-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
+ html body#acb-design .acb-header.mobile-open .acb-sub a:hover{background:rgba(255,255,255,.14)!important;color:#fff!important}
  html body#acb-design .acb-header.acb-menu-open .acb-actions,
  html body#acb-design .acb-header.mobile-open .acb-actions{
-   position:sticky!important;bottom:0!important;left:-16.52px!important;width:calc(100% + 33.05px)!important;
-   margin:19.83px 0 0!important;padding:18.18px 16.52px calc(18.18px + env(safe-area-inset-bottom))!important;
-   background:#4f46e5!important;border:0!important;border-radius:0!important;
-   display:flex!important;align-items:center!important;justify-content:space-between!important;gap:13.22px!important;
+   position:sticky!important;bottom:0!important;left:-19.83px!important;width:calc(100% + 39.65px)!important;
+   margin:19.83px 0 0!important;padding:19.83px 19.83px calc(19.83px + env(safe-area-inset-bottom))!important;
+   background:rgba(255,255,255,.08)!important;border:0!important;border-top:0.92px solid rgba(255,255,255,.22)!important;border-radius:0!important;
+   display:flex!important;align-items:center!important;justify-content:center!important;gap:13.22px!important;
  }
- html body#acb-design .acb-header.acb-menu-open .acb-social a,
- html body#acb-design .acb-header.mobile-open .acb-social a{color:#fff!important}
+ html body#acb-design .acb-header.acb-menu-open .acb-social,
+ html body#acb-design .acb-header.mobile-open .acb-social{display:none!important}
  html body#acb-design .acb-header.acb-menu-open .acb-utility-pill,
- html body#acb-design .acb-header.mobile-open .acb-utility-pill{background:#fff!important;color:#4f46e5!important}
- @keyframes acbMenuIn{from{opacity:0}to{opacity:1}}
+ html body#acb-design .acb-header.mobile-open .acb-utility-pill{
+   background:#fff!important;color:#4f46e5!important;width:100%!important;justify-content:center!important;
+   padding:14.87px!important;font-size:16.52px!important;border-radius:11.56px!important;
+ }
+ @keyframes acbMenuIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 
- /* Close control: a real "×", indigo on the now-white panel, pinned top-right. */
+ /* Close control: the same element, same spot as the closed hamburger
+    (no position override here, so it can't jump) — just white lines
+    rotated into an "×" on the now-blue panel. */
  html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle,
  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
-   position:fixed!important;top:19.83px!important;right:19.83px!important;z-index:65!important;
-   width:36.35px!important;height:36.35px!important;padding:0!important;border:0!important;
-   border-radius:var(--radius-card)!important;background:#eef2ff!important;
-   font-size:0!important;color:transparent!important;
+   background:rgba(255,255,255,.16)!important;
  }
  html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle::before,
+ html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::before{
+   content:"";position:absolute;top:50%;left:50%;width:18.18px;height:2.06px;background:#fff;border-radius:1.66px;
+   box-shadow:none!important;transform:translate(-50%,-50%) rotate(45deg);
+ }
  html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle::after,
- html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::before,
  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::after{
-   content:"";position:absolute;top:50%;left:50%;width:18.18px;height:2.06px;background:#4f46e5;border-radius:1.66px;box-shadow:none;
+   content:"";position:absolute;top:50%;left:50%;width:18.18px;height:2.06px;background:#fff;border-radius:1.66px;
+   transform:translate(-50%,-50%) rotate(-45deg);
  }
- html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle::before,
- html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::before{transform:translate(-50%,-50%) rotate(45deg)}
- html body#acb-design .acb-header.acb-menu-open .mobile-menu-toggle::after,
- html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::after{transform:translate(-50%,-50%) rotate(-45deg)}
 
 }
 @media(max-width:684px){
