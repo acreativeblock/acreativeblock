@@ -41,9 +41,10 @@ html body#acb-design .t-small{font-size:var(--fs-small)!important;letter-spacing
 html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:var(--lh-copy)!important;font-weight:500}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
 html body#acb-design .acb-header{position:sticky!important;width:calc(100% - 49.57px)!important;max-width:none!important;margin:19.83px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a;backdrop-filter:none!important;z-index:60}
-html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:8.26px!important;gap:19.83px!important;height:46.27px!important;min-height:46.27px!important}
+html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:0!important;gap:19.83px!important;height:46.27px!important;min-height:46.27px!important}
+html body#acb-design .acb-logo{margin-left:16.52px!important}
 html body#acb-design .acb-header .acb-logo{background:#fff!important;padding:4.13px 10.74px!important;border-radius:var(--radius-card)!important;flex-shrink:0;color:#4f46e5!important}
-html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:34.7px!important}
+html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:42px!important}
 @media(min-width:954.9px){html body#acb-design .acb-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:26.44px!important}}
 html body#acb-design .acb-header .acb-nav{gap:26.44px;align-items:center}
 html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .acb-social a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:14.87px!important;letter-spacing:0!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
@@ -221,7 +222,7 @@ html body#acb-design .mobile-menu-toggle::before{
 }
 @media(max-width:684px){
  html body#acb-design .acb-header{top:10.74px!important;width:calc(100% - 26.44px)!important;margin:10.74px auto!important}
- html body#acb-design .acb-header .inner{padding:8.26px 16.52px!important}
+ html body#acb-design .acb-header .inner{padding:0!important}
  html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq)){margin:24.79px 13.22px!important}
  html body#acb-design.home-page main>section:where(:not(.acb-hero):not(.acb-marq))>.wrap{padding:19.83px 16.52px!important}
  html body#acb-design.home-page main>.acb-say>.wrap{padding:26.44px 16.52px!important}
@@ -450,7 +451,7 @@ html body#acb-design.home-page .acb-say p .hl::selection,html body#acb-design.ho
 html body#acb-design.home-page .acb-say p .hl::-moz-selection,html body#acb-design.home-page .acb-say p .hl ::-moz-selection{background:#4f46e5!important;color:#fff!important}
 
 /* Uniform header across all pages: same logo size everywhere (subpages were 39.65px). */
-html body#acb-design .acb-logo .acb-logo-mount{height:34.7px!important}
+html body#acb-design .acb-logo .acb-logo-mount{height:42px!important}
 
 /* ==========================================================================
    SUBPAGE SECTION FRAMING — content pages match the home: grey field with
