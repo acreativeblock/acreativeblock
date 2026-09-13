@@ -47,6 +47,11 @@ html body#acb-design .acb-header .mobile-menu-toggle{margin-right:16.52px!import
 html body#acb-design .acb-header .acb-logo{background:#fff!important;padding:4.13px 10.74px!important;border-radius:var(--radius-card)!important;flex-shrink:0;color:#4f46e5!important}
 html body#acb-design .acb-header .acb-logo .acb-logo-mount{color:#4f46e5!important;height:38px!important}
 @media(min-width:954.9px){html body#acb-design .acb-head-right{display:flex!important;flex:1;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;gap:26.44px!important}}
+@media(min-width:954.9px){
+  html body#acb-design .acb-logo{margin-left:5px!important}
+  html body#acb-design .acb-header .acb-logo{background:none!important;padding:3px!important;border-radius:0!important}
+  html body#acb-design .acb-header .acb-actions{padding:10px!important}
+}
 html body#acb-design .acb-header .acb-nav{gap:26.44px;align-items:center}
 html body#acb-design .acb-header .navbutton,html body#acb-design .acb-header .acb-social a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-weight:500!important;font-size:14.87px!important;letter-spacing:0!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .navitem:hover .navbutton,
