@@ -110,7 +110,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .acb-card h3{font-family:var(--sans);font-size:clamp(15.7px,1.8vw,21.48px);letter-spacing:-.015em;margin:0;color:inherit}
 .acb-card ul{list-style:none;margin:auto 0 0;padding:0;display:grid;gap:5.79px}
 .acb-card li{font-size:11.15px;line-height:1.35;color:var(--ink-soft)}
-.acb-card li::before{content:"→ ";color:var(--blue)}
+.acb-card li::before{content:"→︎ ";color:var(--blue)}
 .acb-card.trap{background:var(--teal);color:var(--cream);border-color:var(--teal)}
 .acb-card.trap .sci{color:var(--yellow)}
 .acb-card.trap li{color:rgba(255,255,255,.82)}
@@ -238,14 +238,14 @@ body.home-page{
 .home-page .acb-hero-img img{filter:none!important}
 .home-page .pill,.home-page .acb-hero .pill.alt,.home-page .acb-cta .pill.alt{background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important}
 .home-page .pill:hover,.home-page .acb-hero .pill.alt:hover,.home-page .acb-cta .pill.alt:hover{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important}
-.home-page .pill:not(:empty)::after{content:" ↗";font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.home-page .pill:not(:empty)::after{content:" ↗︎";font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
 .home-page .pill:hover::after{transform:translate(1.66px,-1.66px)}
 
 /* Buttons keep their colour; hover motion belongs to the arrow only. */
 .home-page :is(.pill,.acb-utility-pill):hover{
   background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;
 }
-.home-page .acb-utility-pill::after{content:" ↗";display:inline-block;margin-left:5.79px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.home-page .acb-utility-pill::after{content:" ↗︎";display:inline-block;margin-left:5.79px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
 .home-page .acb-utility-pill:hover::after{transform:translate(1.66px,-1.66px)}
 
 /* Every phrase in the moving block symptom line inherits its block colour. */

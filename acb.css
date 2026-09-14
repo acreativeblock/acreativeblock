@@ -759,7 +759,6 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wr
    surfaces, radius, spacing and typography.
    ========================================================================== */
 :root{--page-gutter:clamp(16.2px,2vw,24.79px)}
-html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main{overflow:clip}
 html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main{padding-top:99px}
 html body#acb-design.internal-page main section,
 html body#acb-design.internal-page .method-journey{width:auto!important;max-width:none!important;margin-left:var(--page-gutter)!important;margin-right:var(--page-gutter)!important}
@@ -993,3 +992,65 @@ html body#acb-design main :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-h
    further up) re-declares this same margin at higher specificity than
    the generic rule above — match it exactly so this one wins instead. */
 html body#acb-design:is(.individuals-page,.organisations-page) main section.acb-hero{margin-bottom:0!important}
+
+/* ==========================================================================
+   FINAL FRAME NORMALISATION — one visible card edge across the site.
+   The homepage cards are the reference: colour, radius and shadow live on
+   the inner surface, while the outer section only controls rhythm.
+   ========================================================================== */
+html body#acb-design.home-page .acb-offer .acb-panel .pbody{
+  font-size:var(--fs-body)!important;
+  letter-spacing:var(--ls-body)!important;
+  line-height:var(--lh-copy)!important;
+}
+
+/* Heroes outside .acb-main-panel line up with the panel's card surfaces.
+   The panel is wider than main but its padding brings its children back in;
+   this uses that exact resulting width at every breakpoint. */
+html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main>
+  :is(.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero){
+  width:calc(100% + var(--panel-boost) - (2 * var(--sp-card)))!important;
+  margin-left:calc((var(--panel-boost) - (2 * var(--sp-card))) / -2)!important;
+  margin-right:calc((var(--panel-boost) - (2 * var(--sp-card))) / -2)!important;
+  padding:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+}
+html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main>
+  :is(.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero)>.wrap{
+  width:100%!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  padding:var(--sp-card)!important;
+  background:#fff!important;
+  border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+
+/* Put every section colour on the same rounded element that visibly forms
+   the card. This fixes square colour blocks with a rounded transparent child. */
+html body#acb-design.internal-page .acb-main-panel>
+  :is(.section.ink,.section.blue,.section.yellow,.section.pink,.section.tint){
+  background:transparent!important;
+  border-radius:0!important;
+}
+html body#acb-design.internal-page .acb-main-panel>.section.ink>.wrap{background:var(--ink)!important;color:#fff!important}
+html body#acb-design.internal-page .acb-main-panel>.section.blue>.wrap{background:var(--brand,#4f46e5)!important;color:#fff!important}
+html body#acb-design.internal-page .acb-main-panel>.section.yellow>.wrap{background:var(--yellow)!important}
+html body#acb-design.internal-page .acb-main-panel>.section.pink>.wrap{background:var(--pink)!important}
+html body#acb-design.internal-page .acb-main-panel>.section.tint>.wrap{background:var(--tint)!important}
+html body#acb-design.internal-page .acb-main-panel>
+  :is(.section.ink,.section.blue,.section.yellow,.section.pink,.section.tint)>.wrap{
+  border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+
+/* Keep the section's own heading copy readable after the colour moves to
+   the inner card. Nested white cards retain their normal dark text. */
+html body#acb-design.internal-page .section.blue :is(.section-head,.craft-close) :is(h2,p),
+html body#acb-design.internal-page .section.blue>.flush .copy :is(h2,p,strong){color:#fff!important}
+html body#acb-design.internal-page .section.blue :is(.section-head,.craft-close) :is(.eyebrow,.side-note),
+html body#acb-design.internal-page .section.blue>.flush .copy :is(.eyebrow,.side-note){color:#fff!important}
+html body#acb-design.internal-page .section.blue :is(.section-head,.craft-close,.copy) :is(.btn,.btn-out){background:#fff!important;color:var(--brand,#4f46e5)!important;border-color:#fff!important}
+html body#acb-design.internal-page .section.ink>.wrap :is(blockquote,h2,p){color:#fff!important}
+html body#acb-design.internal-page .section.ink>.wrap :is(cite,.eyebrow,.side-note){color:var(--acb-yellow)!important}

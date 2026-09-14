@@ -116,7 +116,7 @@ img{max-width:100%;display:block}
 .acb-row .name h3{font-family:var(--serif);font-size:clamp(20.22px,3.74vw,42.98px);line-height:.96}
 .acb-row ul.tags{list-style:none;display:flex;flex-direction:column;gap:4.42px}
 .acb-row ul.tags li{position:relative;padding-left:11.38px;font-family:var(--sans);font-size:8.22px;line-height:1.35;color:var(--ink-soft)}
-.acb-row ul.tags li::before{content:"→";position:absolute;left:0;opacity:.6}
+.acb-row ul.tags li::before{content:"→︎";position:absolute;left:0;opacity:.6}
 .acb-row .go{justify-self:end}
 .acb-row:hover h3{color:var(--blue)}
 .acb-row:hover .name .sci,.acb-row:hover ul.tags li{color:var(--ink)}
@@ -488,7 +488,7 @@ html,body{background-image:none!important}
 .hl,.ht,.hly{box-shadow:0 0 0 .4.13px transparent}
 
 /* CTA: arrow inside buttons + supporting line */
-.acb-close .btn::after,.acb-close-sub .btn::after,.acb-close .pill::after,.acb-close-sub .btn-out::after,.acb-close .btn-out::after{content:"→";font-size:1.05em;margin-left:2.48px}
+.acb-close .btn::after,.acb-close-sub .btn::after,.acb-close .pill::after,.acb-close-sub .btn-out::after,.acb-close .btn-out::after{content:"→︎";font-size:1.05em;margin-left:2.48px}
 .acb-close .note,.acb-close-sub .note{font-size:clamp(12.39px,1.2vw,14.05px);line-height:1.55;color:var(--ink);max-width:48ch;margin:0}
 
 /* ================= refinements (v45) ================= */

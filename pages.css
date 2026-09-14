@@ -555,7 +555,7 @@ sup.cite{font-size:0.558em;font-weight:600;color:var(--blue);vertical-align:supe
 .section-head{margin-bottom:clamp(25.28px,4.4vw,49.08px)}
 .page-hero,.blog-hero{padding:clamp(55.03px,10vw,111.54px) 0 clamp(22.31px,4vw,41.64px)}
 
-/* references bar → blue on all pages */
+/* references bar →︎ blue on all pages */
 .refbar-wrap{background:var(--blue);border-top:0}
 .refbar{color:#fff}
 .refbar:hover{color:var(--yellow)}
@@ -594,7 +594,7 @@ sup.cite{font-size:0.558em;font-weight:600;color:var(--blue);vertical-align:supe
 .brow2-name h3{font-family:var(--serif);font-weight:500;font-size:clamp(19.33px,3.4vw,38.66px);line-height:1;letter-spacing:-.02em;color:var(--ink);margin:0}
 .brow2-tags{list-style:none;margin:0;padding:0;display:grid;gap:5.2px;min-width:clamp(141.28px,16vw,178.46px)}
 .brow2-tags li{font-family:var(--sans);font-size:8.18px;font-weight:500;letter-spacing:0.045em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brow2-tags li::before{content:"→ ";color:var(--blue)}
+.brow2-tags li::before{content:"→︎ ";color:var(--blue)}
 .brow2-arr{font-size:clamp(14.87px,2vw,22.31px);color:var(--ink);flex:none;transition:transform .2s}
 .brow2:hover .brow2-arr{transform:translateX(3.72px)}
 .brow2.trap{background:var(--ink)}
@@ -611,7 +611,7 @@ sup.cite{font-size:0.558em;font-weight:600;color:var(--blue);vertical-align:supe
 .refpanel h4{font-family:var(--sans);font-size:7.8px;font-weight:600;letter-spacing:0.108em;text-transform:uppercase;color:var(--yellow);margin:17.85px 0 8.18px}
 .refpanel .bd-list{list-style:none;margin:0;padding:0;display:grid;gap:6.69px}
 .refpanel .bd-list li{font-size:10.41px;color:rgba(255,255,255,.82);padding-left:14.87px;position:relative;line-height:1.4}
-.refpanel .bd-list li::before{content:"→";position:absolute;left:0;color:var(--yellow)}
+.refpanel .bd-list li::before{content:"→︎";position:absolute;left:0;color:var(--yellow)}
 .refpanel .bd-under{font-size:10.78px;line-height:1.6;color:rgba(255,255,255,.82);margin:0}
 .refpanel .bd-under b{color:#fff;font-weight:600}
 .bd-src{display:none}
@@ -666,7 +666,7 @@ body:not(.home-page) :is(.btn,.btn-out,.pill,.acb-utility-pill,.refbar-btn):hove
   background:var(--action)!important;color:var(--brand)!important;border-color:var(--action)!important;transform:none!important;
 }
 body:not(.home-page) :is(.btn,.btn-out,.pill,.acb-utility-pill,.refbar-btn):not(:empty)::after{
-  content:" ↗";display:inline-block;margin-left:5.79px;font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1);
+  content:" ↗︎";display:inline-block;margin-left:5.79px;font-size:1em;transition:transform .28s cubic-bezier(.2,.8,.2,1);
 }
 body:not(.home-page) :is(.btn,.btn-out,.pill,.acb-utility-pill,.refbar-btn):hover::after{transform:translate(1.66px,-1.66px)}
 
