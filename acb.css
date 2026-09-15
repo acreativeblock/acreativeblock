@@ -1193,3 +1193,75 @@ html body#acb-design.contact-page .contact-hero-kicker{width:fit-content;padding
   html body#acb-design.internal-page.contact-page:not(.individuals-page):not(.organisations-page) main>.contact-visual-hero>.wrap{padding:clamp(112px,24vh,170px) 18px 18px!important}
   html body#acb-design.contact-page .contact-visual-hero h1{font-size:clamp(28px,9vw,38px)!important;padding:18px!important}
 }
+
+/* Keep audience-hero copy clear of faces and anchor it to the left edge. */
+html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+  align-items:end!important;
+  justify-items:start!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+  width:min(520px,46vw)!important;
+  max-width:min(520px,46vw)!important;
+}
+
+/* Block-map controls: tighter type, compact rectangular arrows, two columns on phones. */
+html body#acb-design.blocks-page .bmcard-title{
+  font-size:clamp(20px,2.1vw,27px)!important;
+  line-height:.95!important;
+}
+html body#acb-design.blocks-page .bmcard-arr{
+  right:14.4px!important;
+  bottom:14.4px!important;
+  width:42px!important;
+  height:20px!important;
+  border-radius:var(--radius-card)!important;
+  font-size:15px!important;
+}
+html body#acb-design.blocks-page .bm-hypo>.wrap::after{
+  width:48px!important;
+  height:24px!important;
+  border-radius:var(--radius-card)!important;
+  font-size:18px!important;
+}
+
+@media(max-width:684px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+    align-items:end!important;
+    justify-items:start!important;
+    padding:13.22px!important;
+  }
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+    width:min(300px,calc(100% - 26.44px))!important;
+    max-width:min(300px,calc(100% - 26.44px))!important;
+    text-align:left!important;
+  }
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .cta{
+    justify-content:flex-start!important;
+  }
+  html body#acb-design.individuals-page .audience-hero-panel{
+    width:min(250px,calc(100% - 26.44px))!important;
+    max-width:min(250px,calc(100% - 26.44px))!important;
+  }
+}
+
+@media(max-width:504px){
+  html body#acb-design.blocks-page .bmgrid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  html body#acb-design.blocks-page .bmcard-body{
+    min-height:132px!important;
+    padding:10px 34px 36px 10px!important;
+    gap:5px!important;
+  }
+  html body#acb-design.blocks-page .bmcard-title{font-size:16px!important}
+  html body#acb-design.blocks-page .bmcard-lead{font-size:11.5px!important;line-height:1.2!important}
+  html body#acb-design.blocks-page .card-tag{font-size:9px!important}
+  html body#acb-design.blocks-page .bmcard-arr{
+    right:10px!important;
+    bottom:10px!important;
+    width:36px!important;
+    height:20px!important;
+    font-size:14px!important;
+  }
+}
