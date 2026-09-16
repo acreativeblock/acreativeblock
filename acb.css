@@ -2271,3 +2271,53 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
     padding:12px 14px!important;
   }
 }
+
+/* Mobile menu submenu state fix: closed submenus must not reserve space. */
+@media(max-width:900px){
+  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.acb-sub{
+    display:none!important;
+    height:0!important;
+    max-height:0!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+    display:grid!important;
+    height:auto!important;
+    max-height:48vh!important;
+    min-height:0!important;
+    overflow:visible!important;
+    padding:0 0 14px 0!important;
+    margin:0!important;
+    border:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton::after{
+    content:""!important;
+    width:.46em!important;
+    height:.46em!important;
+    border-right:4px solid currentColor!important;
+    border-bottom:4px solid currentColor!important;
+    transform:rotate(45deg)!important;
+    transition:transform .22s ease!important;
+    flex:0 0 auto!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>button.navbutton::after{
+    transform:rotate(225deg)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{
+    width:100%!important;
+    box-sizing:border-box!important;
+  }
+}
