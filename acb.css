@@ -1997,3 +1997,43 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
 
 /* Audience hero keeps a single compact CTA under the copy bubble. */
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .btn-out{display:none!important}
+
+/* Audience hero top bubble: Home hero text size, automatic content width. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  align-items:flex-start!important;
+  width:auto!important;
+  max-width:min(94vw,720px)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble{
+  width:max-content!important;
+  min-width:0!important;
+  max-width:calc(100vw - 39.66px)!important;
+  font-size:14.87px!important;
+  line-height:1.4!important;
+  letter-spacing:0!important;
+  font-weight:500!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-line,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-word,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .hero-static-in-rot{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  white-space:nowrap!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+  width:max-content!important;
+  min-width:0!important;
+  max-width:calc(100vw - 39.66px)!important;
+}
+@media(max-width:774px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-line,
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-word,
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .hero-static-in-rot{
+    white-space:normal!important;
+  }
+}
