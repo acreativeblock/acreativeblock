@@ -2249,3 +2249,25 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
     margin-bottom:clamp(18px,6vw,42px)!important;
   }
 }
+
+/* Mobile hero text padding + light-blue header pills. */
+@media(max-width:900px){
+  html body#acb-design .mobile-menu-toggle,
+  html body#acb-design .mobile-header-cta{
+    background:var(--sky,#dbeafe)!important;
+    color:#4f46e5!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle,
+  html body#acb-design .acb-header.mobile-open .mobile-header-cta{
+    background:var(--sky,#dbeafe)!important;
+    color:#4f46e5!important;
+  }
+}
+@media(max-width:774px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble{
+    padding:12px 14px!important;
+  }
+  html body#acb-design.home-page .acb-hero-copy{
+    padding:12px 14px!important;
+  }
+}
