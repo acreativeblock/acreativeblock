@@ -1636,6 +1636,81 @@ html body#acb-design.method-page .journey-step :is(.tcard,.card,.craft-step){
   }
 }
 
+/* Match the desktop floating header card at every responsive size. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open){
+    position:fixed!important;
+    top:20px!important;
+    left:20px!important;
+    right:20px!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:6px 10px!important;
+    background:#fff!important;
+    border:0!important;
+    border-radius:var(--radius-card,5px)!important;
+    box-shadow:0 0 55px rgba(0,0,0,.15)!important;
+  }
+  html body#acb-design .acb-header:not(.mobile-open)>.inner{
+    min-height:42px!important;
+    height:42px!important;
+  }
+}
+
+/* Tablet navigation opens as a contained panel from the right. */
+@media(min-width:901px) and (max-width:1180px){
+  html body#acb-design .acb-header.mobile-open{
+    background:transparent!important;
+    overflow:visible!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-head-right{
+    left:auto!important;
+    right:0!important;
+    width:40vw!important;
+    min-width:360px!important;
+    max-width:480px!important;
+    padding:76px 24px 0!important;
+    box-shadow:-14px 0 36px rgba(7,19,33,.18)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-footer{
+    width:calc(100% + 48px)!important;
+    margin-left:-24px!important;
+  }
+}
+
+/* Desktop nav uses the same compact, unbordered menu treatment. */
+@media(min-width:1181px){
+  html body#acb-design .acb-header .inner{
+    height:54px!important;
+    min-height:54px!important;
+    padding:0 14px!important;
+    gap:14px!important;
+  }
+  html body#acb-design .acb-header .acb-logo{margin:0!important;padding:0!important}
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:34px!important}
+  html body#acb-design .acb-header .acb-nav{display:flex!important;gap:3px!important}
+  html body#acb-design .acb-header .navbutton{
+    margin:0!important;
+    padding:8px 10px!important;
+    border:0!important;
+    border-radius:var(--radius-card,5px)!important;
+    background:transparent!important;
+    color:var(--ink)!important;
+    font-size:13.22px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    letter-spacing:-.015em!important;
+    text-transform:none!important;
+  }
+  html body#acb-design .acb-header .navitem:hover>.navbutton,
+  html body#acb-design .acb-header .navitem.is-active>.navbutton{
+    background:#dbeafe!important;
+    color:#4f46e5!important;
+  }
+}
+
 
 /* ===================== HERO WIDTH + CTA CONSOLIDATION PASS ===================== */
 /* 4i/4o hero: stretch both white text bubbles to the full content column. */
@@ -2731,28 +2806,25 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
     padding:16px 0!important;
     border-bottom:1px solid rgba(255,255,255,.2)!important;
   }
-  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.submenu,
-  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.acb-sub{
-    display:none!important;
-    height:0!important;
-    min-height:0!important;
-    max-height:0!important;
-    margin:0!important;
-    padding:0!important;
-    overflow:hidden!important;
-  }
-  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
-  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+  html body#acb-design .acb-header.mobile-open .navitem>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem>.acb-sub{
     display:flex!important;
     flex:0 0 auto!important;
     flex-direction:column!important;
-    height:auto!important;
     min-height:0!important;
-    max-height:none!important;
     gap:8px!important;
     margin:0!important;
+    padding:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    opacity:0!important;
+    transition:max-height .35s cubic-bezier(.16,1,.3,1),opacity .25s ease,padding .35s cubic-bezier(.16,1,.3,1)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+    max-height:600px!important;
     padding:10px 0 16px!important;
-    overflow:visible!important;
+    opacity:1!important;
   }
   html body#acb-design .acb-header.mobile-open .mobile-menu-footer{
     flex:0 0 auto!important;
@@ -2766,14 +2838,18 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
 @media(max-width:1180px){
   html body#acb-design .acb-header:not(.mobile-open){
     position:fixed!important;
-    inset:0 0 auto 0!important;
-    width:100%!important;
+    inset:10px 13px auto 13px!important;
+    top:10px!important;
+    left:13px!important;
+    right:13px!important;
+    width:auto!important;
     max-width:none!important;
     min-height:0!important;
     margin:0!important;
-    padding:10px 14px!important;
-    border-radius:0!important;
+    padding:6px 10px!important;
+    border-radius:var(--radius-card,5px)!important;
     background:#fff!important;
+    box-shadow:0 0 34px rgba(7,19,33,.16)!important;
     overflow:visible!important;
     box-sizing:border-box!important;
   }
@@ -2794,15 +2870,15 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
   html body#acb-design .mobile-header-cta,
   html body#acb-design .mobile-menu-toggle{
     display:inline-flex!important;
-    height:40px!important;
-    min-height:40px!important;
+    height:auto!important;
+    min-height:0!important;
     margin:0!important;
-    padding:0 14px!important;
+    padding:8.26px 14.87px!important;
     align-items:center!important;
     justify-content:center!important;
     border-radius:var(--radius-card,5px)!important;
     font-family:"Inter",sans-serif!important;
-    font-size:14px!important;
+    font-size:13.22px!important;
     font-weight:500!important;
     line-height:1!important;
     letter-spacing:var(--ls-button,0)!important;
@@ -2854,7 +2930,9 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
   html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
     position:relative!important;
     z-index:63!important;
-    width:40px!important;
+    width:32px!important;
+    height:32px!important;
+    min-height:0!important;
     padding:0!important;
     background:var(--acb-yellow,#e4e244)!important;
     color:transparent!important;
