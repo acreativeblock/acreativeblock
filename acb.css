@@ -1836,3 +1836,33 @@ html body#acb-design.home-page main .acb-close>.wrap a.pill.big{
   font-size:13.22px!important;
   line-height:1!important;
 }
+
+/* Audience hero bubbles: content-width, not full-column width. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  align-items:flex-start!important;
+  justify-items:start!important;
+  width:auto!important;
+  max-width:min(612px,94vw)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+  inline-size:auto!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:min(612px,94vw)!important;
+  align-self:flex-start!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+  flex-direction:column!important;
+  align-items:flex-start!important;
+}
+@media(max-width:774px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack,
+  html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble,
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+    width:auto!important;
+    max-width:calc(100vw - 39.66px)!important;
+  }
+}
