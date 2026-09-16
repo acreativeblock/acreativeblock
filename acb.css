@@ -2341,3 +2341,10 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
     border-radius:var(--radius-card,5px)!important;
   }
 }
+
+/* Mobile header uses equal edge padding based on the menu button side spacing. */
+@media(max-width:900px){
+  html body#acb-design .acb-header{
+    padding:var(--space-sm)!important;
+  }
+}
