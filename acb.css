@@ -1937,3 +1937,40 @@ html body#acb-design main .bm-hypo button:hover{
   background:#3f37c4!important;
   color:#fff!important;
 }
+
+/* 4i/4o hero rotator: Home hero text size and stable sentence width. */
+html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble{
+  font-size:14.87px!important;
+  line-height:1.4!important;
+  letter-spacing:0!important;
+  font-weight:500!important;
+  max-width:calc(100vw - 39.66px)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-line,
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-word{
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+}
+html body#acb-design.individuals-page .audience-hero-rotbubble .cycling-line{
+  display:block!important;
+  width:38ch!important;
+  max-width:calc(100vw - 92.54px)!important;
+}
+html body#acb-design.organisations-page .audience-hero-rotbubble .cycling-line{
+  display:block!important;
+  width:42ch!important;
+  max-width:calc(100vw - 92.54px)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-word{
+  display:inline!important;
+  white-space:normal!important;
+}
+@media(max-width:774px){
+  html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble{
+    font-size:clamp(9.5px,3.3vw,14.4px)!important;
+    line-height:1!important;
+  }
+}
