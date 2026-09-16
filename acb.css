@@ -560,7 +560,7 @@ html body#acb-design.internal-page :is(.card,.tcard,.plan-card,.trio>*){backgrou
 html body#acb-design .refpanel{
   --pc:#818cf8;
   width:50%!important;min-width:347px!important;max-width:none!important;
-  border-radius:13.22px 0 0 13.22px!important;
+  border-radius:var(--radius-card,5px) 0 0 var(--radius-card,5px)!important;
   background:var(--pc)!important;color:var(--ink)!important;
 }
 @media(max-width:774px){html body#acb-design .refpanel{width:88%!important;min-width:0!important}}
@@ -2953,15 +2953,31 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
   }
 }
 
-/* Tablet: the open menu is a side panel capped at half the screen, not a
-   full-bleed takeover — the block above applies to phones and tablets
-   alike, so this narrows it back down for the tablet band specifically. */
+/* Tablet: the open menu is a side panel capped at half the screen, with
+   the rest of the page dimmed behind it (same idea as the block-map's
+   .refpanel/.refscrim) — not a full-bleed blue takeover. The block above
+   applies to phones and tablets alike, so this narrows it back down for
+   the tablet band specifically. */
 @media(min-width:901px) and (max-width:1180px){
+  html body#acb-design .acb-header.mobile-open{
+    background:rgba(7,19,33,.5)!important;
+  }
   html body#acb-design .acb-header.mobile-open .acb-head-right{
     left:auto!important;
     right:0!important;
     width:50%!important;
     max-width:480px!important;
-    box-shadow:-14px 0 36px rgba(7,19,33,.18)!important;
+    padding:76px 28px 24px!important;
+    background:var(--acb-blue,#4f46e5)!important;
+    border-radius:var(--radius-card,5px) 0 0 var(--radius-card,5px)!important;
+    box-shadow:-19.83px 0 44.61px rgba(0,0,0,.3)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{
+    padding:16px 4px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+    padding:10px 4px 16px!important;
   }
 }
