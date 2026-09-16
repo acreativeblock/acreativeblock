@@ -2952,3 +2952,16 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
     box-sizing:border-box!important;
   }
 }
+
+/* Tablet: the open menu is a side panel capped at half the screen, not a
+   full-bleed takeover — the block above applies to phones and tablets
+   alike, so this narrows it back down for the tablet band specifically. */
+@media(min-width:901px) and (max-width:1180px){
+  html body#acb-design .acb-header.mobile-open .acb-head-right{
+    left:auto!important;
+    right:0!important;
+    width:50%!important;
+    max-width:480px!important;
+    box-shadow:-14px 0 36px rgba(7,19,33,.18)!important;
+  }
+}
