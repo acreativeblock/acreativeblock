@@ -478,17 +478,14 @@ html body#acb-design.internal-page :is(.btn,.btn-out,.pill,.acb-utility-pill,.re
 
 /* Hero sentence wraps only on phones. */
 @media(max-width:648px){html body#acb-design.home-page .acb-hero h1{white-space:normal!important}}
-/* Our-approach: the .hl phrases get drawn over by a highlighter-pen sweep as they
-   scroll into view (left-to-right, driven by --hlp from logo.js), instead
-   of the band just sitting there at full opacity. Words inside still fade in as
-   part of the normal word reveal. */
+/* Keep highlighted phrases fully visible without scroll-driven reveals. */
 html body#acb-design:is(.home-page,.blocks-page) .acb-say p .hl{
-  --hlp:0;
+  --hlp:1;
   background-image:linear-gradient(to bottom,transparent 8%,#E4E244 8%,#E4E244 92%,transparent 92%)!important;
   background-repeat:no-repeat!important;
   background-size:calc(var(--hlp) * 100%) 100%!important;
   background-position:left center!important;
-  transition:background-size .12s linear;
+  transition:none;
   color:var(--ink)!important;padding:0 .05em!important;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
@@ -1243,6 +1240,31 @@ html body#acb-design.blocks-page .bm-hypo>.wrap::after{
   html body#acb-design.individuals-page .audience-hero-panel{
     width:min(250px,calc(100% - 26.44px))!important;
     max-width:min(250px,calc(100% - 26.44px))!important;
+  }
+}
+
+/* Content renders immediately while the motion system is being redesigned. */
+html body#acb-design :is(.rv,.rvl,.white-reveal,.reveal),
+html body#acb-design .white-line-reveal>*,
+html body#acb-design.blocks-page .bmap.reveal .bmcard{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+  transition-delay:0s!important;
+  will-change:auto!important;
+}
+html body#acb-design.acb-fade{opacity:1!important;animation:none!important}
+
+/* Image heroes reduced to 80% of their previous height. */
+html body#acb-design.home-page .acb-hero-grid,
+html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+  min-height:clamp(423px,73.6vh,778px)!important;
+}
+
+@media(max-width:684px){
+  html body#acb-design.home-page .acb-hero-grid,
+  html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+    min-height:449.5px!important;
   }
 }
 
