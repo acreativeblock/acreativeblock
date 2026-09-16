@@ -2541,6 +2541,64 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
   }
 }
 
+/* Keep mobile submenu groups in a compact document flow.  The menu footer
+   can still sit at the bottom, but navigation rows must never distribute
+   themselves through the available viewport height. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header.mobile-open .acb-nav{
+    display:flex!important;
+    flex:0 0 auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    align-content:flex-start!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem{
+    display:block!important;
+    flex:0 0 auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{
+    min-height:0!important;
+    padding:16px 0!important;
+    border-bottom:1px solid rgba(255,255,255,.2)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem:not(.submenu-open)>.acb-sub{
+    display:none!important;
+    height:0!important;
+    min-height:0!important;
+    max-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    gap:8px!important;
+    margin:0!important;
+    padding:10px 0 16px!important;
+    overflow:visible!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-footer{
+    flex:0 0 auto!important;
+    margin-top:auto!important;
+  }
+}
+
 /* Mobile/tablet header: one full-width bar in its resting state and one
    full-screen state while the menu is open.  These rules deliberately use
    the actual mobile CTA class so the two controls cannot drift apart. */
