@@ -2321,3 +2321,23 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
     box-sizing:border-box!important;
   }
 }
+
+/* Mobile header final polish: Get in touch keeps the light CTA treatment; close button follows card radius. */
+@media(max-width:900px){
+  html body#acb-design .acb-mobile-cta,
+  html body#acb-design .acb-header .acb-mobile-cta{
+    background:var(--acb-sky)!important;
+    color:var(--acb-blue)!important;
+    border-color:var(--acb-blue)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-mobile-cta,
+  html body#acb-design .acb-header.mobile-open .acb-mobile-cta:visited{
+    background:var(--acb-sky)!important;
+    color:var(--acb-blue)!important;
+    border-color:var(--acb-blue)!important;
+  }
+  html body#acb-design .mobile-menu-toggle[aria-expanded="true"],
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
+    border-radius:var(--radius-card,5px)!important;
+  }
+}
