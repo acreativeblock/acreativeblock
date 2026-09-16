@@ -2540,3 +2540,118 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
     padding:0!important;
   }
 }
+
+/* Mobile/tablet header: one full-width bar in its resting state and one
+   full-screen state while the menu is open.  These rules deliberately use
+   the actual mobile CTA class so the two controls cannot drift apart. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open){
+    position:fixed!important;
+    inset:0 0 auto 0!important;
+    width:100%!important;
+    max-width:none!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:10px 14px!important;
+    border-radius:0!important;
+    background:#fff!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+  }
+  html body#acb-design .acb-header:not(.mobile-open)>.inner{
+    width:100%!important;
+    min-height:40px!important;
+    height:40px!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:8px!important;
+    box-sizing:border-box!important;
+  }
+  html body#acb-design .acb-header:not(.mobile-open) .acb-head-right{
+    display:none!important;
+  }
+  html body#acb-design .mobile-header-cta,
+  html body#acb-design .mobile-menu-toggle{
+    display:inline-flex!important;
+    height:40px!important;
+    min-height:40px!important;
+    margin:0!important;
+    padding:0 14px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    border-radius:var(--radius-card,5px)!important;
+    font-family:"Inter",sans-serif!important;
+    font-size:14px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    letter-spacing:var(--ls-button,0)!important;
+    white-space:nowrap!important;
+    box-sizing:border-box!important;
+  }
+  html body#acb-design .mobile-header-cta{
+    margin-left:auto!important;
+    background:var(--acb-sky,#dbeafe)!important;
+    color:var(--acb-blue,#4f46e5)!important;
+    border:1px solid var(--acb-blue,#4f46e5)!important;
+  }
+  html body#acb-design .mobile-menu-toggle{
+    background:var(--acb-blue,#4f46e5)!important;
+    color:#fff!important;
+    border:1px solid var(--acb-blue,#4f46e5)!important;
+  }
+  html body#acb-design .acb-header.mobile-open{
+    position:fixed!important;
+    inset:0!important;
+    width:100%!important;
+    max-width:none!important;
+    height:100dvh!important;
+    min-height:100dvh!important;
+    margin:0!important;
+    padding:10px 14px!important;
+    border-radius:0!important;
+    background:var(--acb-blue,#4f46e5)!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+  }
+  html body#acb-design .acb-header.mobile-open>.inner{
+    position:relative!important;
+    z-index:62!important;
+    width:100%!important;
+    min-height:40px!important;
+    height:40px!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:8px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-header-cta{
+    margin-left:auto!important;
+    background:var(--acb-sky,#dbeafe)!important;
+    color:var(--acb-blue,#4f46e5)!important;
+    border:1px solid var(--acb-blue,#4f46e5)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
+    position:relative!important;
+    z-index:63!important;
+    width:40px!important;
+    padding:0!important;
+    background:var(--acb-yellow,#e4e244)!important;
+    color:transparent!important;
+    border:0!important;
+    border-radius:var(--radius-card,5px)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::after{
+    color:var(--ink,#071321)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-head-right{
+    display:flex!important;
+    position:fixed!important;
+    inset:0!important;
+    z-index:61!important;
+    min-height:100dvh!important;
+    padding:72px 14px 0!important;
+    box-sizing:border-box!important;
+  }
+}
