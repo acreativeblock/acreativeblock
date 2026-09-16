@@ -3107,6 +3107,10 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
 html body#acb-design.home-page .acb-work .work-image{
   position:relative!important;
 }
+html body#acb-design.home-page .acb-work .work-image picture{
+  display:block!important;position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+}
 html body#acb-design.home-page .acb-work .work-image img{
   position:absolute!important;inset:0!important;
   width:100%!important;height:100%!important;
