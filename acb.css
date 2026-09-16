@@ -2233,3 +2233,7 @@ html body#acb-design.method-page .journey-step .section-head p{grid-column:2!imp
   html body#acb-design.method-page .journey-step-number{grid-row:auto!important;margin:0 0 10px!important}
   html body#acb-design.method-page .journey-step .section-head p{grid-column:auto!important}
 }
+
+
+/* Audience hero: text-only layout, no lower CTA container. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{display:none!important}
