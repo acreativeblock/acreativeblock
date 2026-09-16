@@ -1,6 +1,6 @@
 (function(){
   if(!document.querySelector('link[href*="base.css"]')){var baseLink=document.createElement('link');baseLink.rel='stylesheet';baseLink.href='../base.css?v=45';document.head.appendChild(baseLink)}
-  if(!document.querySelector('link[href*="sections.css"]')){var sectionsLink=document.createElement('link');sectionsLink.rel='stylesheet';sectionsLink.href='../sections.css?v=45';document.head.appendChild(sectionsLink)}
+  if(!document.querySelector('link[href*="sections.css"]')){var sectionsLink=document.createElement('link');sectionsLink.rel='stylesheet';sectionsLink.href='../sections.css?v=46';document.head.appendChild(sectionsLink)}
   var headerHost=document.querySelector('[data-site-header]'),footerHost=document.querySelector('[data-site-footer]');
   var siteJsTag=document.currentScript,atRoot=siteJsTag&&siteJsTag.getAttribute('src').indexOf('../')!==0;
   var instagram='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.7" r="1.1"/></svg>',linkedin='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.6" cy="8" r="1.2"/><path d="M6.5 10.5v7M10.5 10.5v7M10.5 13.6c.8-2.3 5.1-2.5 5.1 1v2.9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
