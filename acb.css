@@ -2541,6 +2541,114 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
   }
 }
 
+/* Final mobile header shape: a nearly full-width floating bar that is flush
+   with the top edge.  Header controls stay border-free and use opposite
+   brand colours. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open){
+    top:0!important;
+    left:10px!important;
+    right:10px!important;
+    width:auto!important;
+    padding:6px 10px!important;
+    border-radius:0 0 var(--radius-card,5px) var(--radius-card,5px)!important;
+    box-shadow:0 7px 20px rgba(7,19,33,.14)!important;
+  }
+  html body#acb-design .acb-header:not(.mobile-open)>.inner{
+    min-height:42px!important;
+    height:42px!important;
+  }
+  html body#acb-design .acb-header .acb-logo{
+    margin:0!important;
+    padding:0!important;
+  }
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{
+    height:42px!important;
+  }
+  html body#acb-design .mobile-header-cta,
+  html body#acb-design .mobile-menu-toggle{
+    height:40px!important;
+    min-height:40px!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  html body#acb-design .mobile-header-cta,
+  html body#acb-design .acb-header.mobile-open .mobile-header-cta{
+    background:var(--acb-blue,#4f46e5)!important;
+    color:#fff!important;
+    border:0!important;
+  }
+  html body#acb-design .mobile-menu-toggle{
+    background:var(--acb-sky,#dbeafe)!important;
+    color:var(--acb-blue,#4f46e5)!important;
+    border:0!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
+    background:var(--acb-yellow,#e4e244)!important;
+    border:0!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-head-right{
+    padding-top:66px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{
+    height:64px!important;
+    min-height:64px!important;
+    padding:0!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.submenu,
+  html body#acb-design .acb-header.mobile-open .navitem.submenu-open>.acb-sub{
+    gap:0!important;
+    padding:0 0 10px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .submenu a,
+  html body#acb-design .acb-header.mobile-open .acb-sub a{
+    display:flex!important;
+    align-items:center!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 0 0 16px!important;
+  }
+}
+
+/* Last-loaded CTA source of truth for every page, including direct content
+   links that are not wrapped in a .cta element. */
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button){
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  min-width:0!important;
+  height:29.74px!important;
+  min-height:29.74px!important;
+  max-height:29.74px!important;
+  margin:0!important;
+  padding:0 14.87px!important;
+  border:0!important;
+  border-radius:var(--radius-card,5px)!important;
+  background:#4f46e5!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:13.22px!important;
+  font-weight:500!important;
+  line-height:1!important;
+  letter-spacing:-.015em!important;
+  text-transform:none!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button)::after{
+  content:""!important;
+  display:none!important;
+}
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button):hover{
+  background:#3f37c4!important;
+  color:#fff!important;
+}
+
 /* Keep mobile submenu groups in a compact document flow.  The menu footer
    can still sit at the bottom, but navigation rows must never distribute
    themselves through the available viewport height. */
