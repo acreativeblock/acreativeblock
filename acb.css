@@ -2649,6 +2649,45 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
   color:#fff!important;
 }
 
+/* Restore the original detached mobile/tablet header card. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open){
+    top:10px!important;
+    left:13px!important;
+    right:13px!important;
+    width:auto!important;
+    margin:0!important;
+    padding:6px 10px!important;
+    border:0!important;
+    border-radius:var(--radius-card,5px)!important;
+    box-shadow:0 0 34px rgba(7,19,33,.16)!important;
+  }
+  html body#acb-design .acb-header .acb-logo,
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{
+    margin:0!important;
+    padding:0!important;
+    height:34px!important;
+  }
+  html body#acb-design .mobile-header-cta,
+  html body#acb-design .mobile-menu-toggle,
+  html body#acb-design .acb-header.mobile-open .mobile-header-cta,
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
+    border:none!important;
+    outline:none!important;
+    box-shadow:none!important;
+  }
+}
+
+/* The desktop card may grow beyond the content frame, never beyond the
+   viewport.  This keeps it centred and uncut at smaller desktop widths. */
+@media(min-width:1181px){
+  html body#acb-design .acb-header{
+    width:min(calc(var(--site-width) + var(--panel-boost) + 48px),calc(100vw - 26px))!important;
+    max-width:calc(100vw - 26px)!important;
+    box-sizing:border-box!important;
+  }
+}
+
 /* Keep mobile submenu groups in a compact document flow.  The menu footer
    can still sit at the bottom, but navigation rows must never distribute
    themselves through the available viewport height. */
