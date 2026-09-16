@@ -3095,3 +3095,26 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
     box-shadow:none!important;border:0!important;
   }
 }
+
+/* Home "Work with us": the photo must never drive the row/section height —
+   only the copy + two cards do. A portrait photo at width:100%;height:100%
+   with no other height on its ancestors falls back to its own intrinsic
+   aspect ratio when the grid computes row track sizes, which was inflating
+   the whole row far past what the copy needed. Taking the img out of flow
+   (position:absolute) stops it contributing any intrinsic size to that
+   calculation, so the row is sized by the copy alone and the image just
+   fills whatever results, cropped from the bottom (object-position:top). */
+html body#acb-design.home-page .acb-work .work-image{
+  position:relative!important;
+}
+html body#acb-design.home-page .acb-work .work-image img{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:top!important;
+}
+
+/* Home "The symptom and the cause": same idea — crop from the bottom only,
+   never the top. */
+html body#acb-design.home-page .acb-proof .acb-proof-image img{
+  object-position:top!important;
+}
