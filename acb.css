@@ -2981,3 +2981,117 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
     padding:10px 4px 16px!important;
   }
 }
+
+/* ============================================================
+   Mobile + tablet header, consolidated pass:
+   - the toggle keeps one fixed 40x40 footprint at every state, so
+     the icon never jumps when it swaps from hamburger to a close X
+   - "Get in touch" stops using a leftover absolute-center rule that
+     was only meant for the small closed pill — once the header goes
+     full-screen open that rule put the button in the middle of the
+     screen instead of next to the toggle
+   - the logo stays white on the open panel at every width this menu
+     can open at (it was only doing that below 954px)
+   - one border per row instead of two (row wrapper + link inside it
+     were both drawing a bottom border)
+   - no hover/tap background flash on touch
+   ============================================================ */
+@media(max-width:1180px){
+  html body#acb-design .mobile-menu-toggle{
+    position:relative!important;
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    width:40px!important;height:40px!important;min-height:0!important;
+    margin:0!important;padding:0!important;flex-shrink:0!important;
+    border:0!important;border-radius:var(--radius-card,5px)!important;
+    background:var(--acb-sky,#dbeafe)!important;
+    font-size:0!important;line-height:1!important;color:transparent!important;
+  }
+  html body#acb-design .mobile-menu-toggle::before,
+  html body#acb-design .mobile-menu-toggle::after{
+    content:""!important;position:absolute!important;left:50%!important;top:50%!important;
+    width:16px!important;height:2px!important;border-radius:2px!important;
+    background:var(--acb-blue,#4f46e5)!important;
+    transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s ease!important;
+  }
+  html body#acb-design .mobile-menu-toggle::before{transform:translate(-50%,-50%) translateY(-4px)!important}
+  html body#acb-design .mobile-menu-toggle::after{transform:translate(-50%,-50%) translateY(4px)!important}
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle{
+    background:var(--acb-yellow,#e4e244)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::before{
+    transform:translate(-50%,-50%) rotate(45deg)!important;background:var(--ink,#071321)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-toggle::after{
+    transform:translate(-50%,-50%) rotate(-45deg)!important;background:var(--ink,#071321)!important;
+  }
+
+  html body#acb-design .mobile-header-cta{
+    position:static!important;inset:auto!important;transform:none!important;
+    margin:0!important;margin-left:auto!important;flex-shrink:0!important;
+  }
+
+  html body#acb-design .acb-header.mobile-open .acb-logo,
+  html body#acb-design .acb-header.mobile-open .acb-logo .acb-logo-mount{
+    color:#fff!important;
+  }
+
+  html body#acb-design .acb-header.mobile-open .navitem{
+    border-bottom:0!important;
+  }
+
+  html body#acb-design .acb-header.mobile-open .navbutton,
+  html body#acb-design .acb-header.mobile-open .acb-sub a,
+  html body#acb-design .acb-header.mobile-open .submenu a{
+    -webkit-tap-highlight-color:transparent!important;
+  }
+  html body#acb-design .acb-header.mobile-open .navbutton:hover,
+  html body#acb-design .acb-header.mobile-open .navbutton:active,
+  html body#acb-design .acb-header.mobile-open .navbutton:focus,
+  html body#acb-design .acb-header.mobile-open .acb-sub a:hover,
+  html body#acb-design .acb-header.mobile-open .submenu a:hover{
+    background:transparent!important;
+  }
+}
+
+/* Tablet open panel: its own footer (social links + Get in touch)
+   instead of the phone's full-bleed yellow strip, which looked
+   disconnected from the panel. The header-bar CTA hides while open
+   since the panel now carries its own, so there's never a "Get in
+   touch" pill sitting half on / half off the panel edge. */
+@media(min-width:901px) and (max-width:1180px){
+  html body#acb-design .acb-header.mobile-open .mobile-header-cta{
+    display:none!important;
+  }
+  html body#acb-design .acb-header.mobile-open .mobile-menu-footer{
+    display:none!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-actions{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:16px!important;
+    margin:auto -28px -24px!important;
+    padding:20px 28px calc(20px + env(safe-area-inset-bottom))!important;
+    border-top:1px solid rgba(255,255,255,.18)!important;
+    background:rgba(0,0,0,.1)!important;
+    border-radius:0 0 0 var(--radius-card,5px)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-social{
+    display:flex!important;gap:14px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-social a{
+    color:rgba(255,255,255,.75)!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-social a svg{
+    width:19px!important;height:19px!important;
+  }
+  html body#acb-design .acb-header.mobile-open .acb-utility-pill{
+    background:#fff!important;color:var(--acb-blue,#4f46e5)!important;
+    padding:10px 18px!important;border-radius:var(--radius-card,5px)!important;
+    font-size:13px!important;font-weight:600!important;letter-spacing:0!important;
+    white-space:nowrap!important;text-transform:none!important;
+    box-shadow:none!important;border:0!important;
+  }
+}
