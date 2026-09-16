@@ -1974,3 +1974,26 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-ro
     line-height:1!important;
   }
 }
+
+
+/* Put Sound familiar inside the rotating hero bubble on 4i/4o. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .hero-static-in-rot{
+  display:block!important;
+  margin-top:2px!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  font-weight:500!important;
+  color:var(--ink)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{
+  width:auto!important;
+  min-width:0!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .cta{
+  margin:0!important;
+}
+
+/* Audience hero keeps a single compact CTA under the copy bubble. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .btn-out{display:none!important}
