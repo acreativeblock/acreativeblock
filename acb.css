@@ -1622,6 +1622,20 @@ html body#acb-design.method-page .journey-step :is(.tcard,.card,.craft-step){
   }
 }
 
+/* Header controls — final responsive source of truth. */
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open) .mobile-header-cta{
+    background:#4f46e5!important;
+    color:#fff!important;
+    border:none!important;
+  }
+  html body#acb-design .acb-header:not(.mobile-open) .mobile-menu-toggle{
+    background:#dbeafe!important;
+    color:#4f46e5!important;
+    border:none!important;
+  }
+}
+
 
 /* ===================== HERO WIDTH + CTA CONSOLIDATION PASS ===================== */
 /* 4i/4o hero: stretch both white text bubbles to the full content column. */
