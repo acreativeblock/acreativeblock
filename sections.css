@@ -775,3 +775,42 @@ html body#acb-design.home-page main .acb-close>.wrap a.pill.big{
   font-size:13.22px!important;
   line-height:1!important;
 }
+
+/* One CTA component everywhere.  This is the compact treatment used on the
+   individuals page: fixed 30px rhythm, 5px corners, Inter and a solid blue
+   action colour.  Labels and destinations remain page-specific. */
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button){
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  min-width:0!important;
+  height:29.74px!important;
+  min-height:29.74px!important;
+  max-height:29.74px!important;
+  margin:0!important;
+  padding:0 14.87px!important;
+  border:0!important;
+  border-radius:var(--radius-card,5px)!important;
+  background:#4f46e5!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:13.22px!important;
+  font-weight:500!important;
+  line-height:1!important;
+  letter-spacing:-.015em!important;
+  text-transform:none!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button)::after{
+  content:""!important;
+  display:none!important;
+}
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button):hover{
+  background:#3f37c4!important;
+  color:#fff!important;
+}
