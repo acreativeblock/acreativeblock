@@ -1866,3 +1866,74 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
     max-width:calc(100vw - 39.66px)!important;
   }
 }
+
+/* Restore Home Our approach to the wide card measure while keeping sane wrapping. */
+html body#acb-design.home-page .acb-say p.scrolltext{
+  width:100%!important;
+  max-width:none!important;
+  padding-right:0!important;
+  text-wrap:pretty!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+@supports(text-wrap:balance){
+  html body#acb-design.home-page .acb-say p.scrolltext{text-wrap:pretty!important}
+}
+
+/* CTA final lock: match the 4i hero button across page CTAs. */
+html body#acb-design main .cta a.btn,
+html body#acb-design main .cta a.btn-out,
+html body#acb-design main .cta a.pill,
+html body#acb-design main .cta a.pill.big,
+html body#acb-design main .cta a.pill.alt,
+html body#acb-design main .plan-card a.btn,
+html body#acb-design main .speaking-grid a.btn,
+html body#acb-design main a.refbar-btn,
+html body#acb-design main button.map-test-inline,
+html body#acb-design main .bm-hypo button{
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  min-width:0!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:8.26px 14.87px!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#4f46e5!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:13.22px!important;
+  line-height:1!important;
+  font-weight:500!important;
+  letter-spacing:-.015em!important;
+  text-transform:none!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+html body#acb-design main .cta a.btn::after,
+html body#acb-design main .cta a.btn-out::after,
+html body#acb-design main .cta a.pill::after,
+html body#acb-design main .plan-card a.btn::after,
+html body#acb-design main .speaking-grid a.btn::after,
+html body#acb-design main a.refbar-btn::after{
+  content:""!important;
+  display:none!important;
+}
+html body#acb-design main .cta a.btn:hover,
+html body#acb-design main .cta a.btn-out:hover,
+html body#acb-design main .cta a.pill:hover,
+html body#acb-design main .plan-card a.btn:hover,
+html body#acb-design main .speaking-grid a.btn:hover,
+html body#acb-design main a.refbar-btn:hover,
+html body#acb-design main button.map-test-inline:hover,
+html body#acb-design main .bm-hypo button:hover{
+  background:#3f37c4!important;
+  color:#fff!important;
+}
