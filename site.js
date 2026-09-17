@@ -1,3 +1,5 @@
+/* GTM backup loader (GTM-NXN6JJ2H) — fires only if the inline <head> snippet is missing (e.g. a page was regenerated). Idempotent: never double-loads. KEEP THIS. */
+(function(){var i='GTM-NXN6JJ2H';try{if(window.google_tag_manager&&window.google_tag_manager[i])return;if(document.querySelector('script[src*="googletagmanager.com/gtm.js?id='+i+'"]'))return;window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);}catch(e){}})();
 (function(){
   if(!document.querySelector('link[href*="base.css"]')){var baseLink=document.createElement('link');baseLink.rel='stylesheet';baseLink.href='../base.css?v=45';document.head.appendChild(baseLink)}
   if(!document.querySelector('link[href*="sections.css"]')){var sectionsLink=document.createElement('link');sectionsLink.rel='stylesheet';sectionsLink.href='../sections.css?v=54';document.head.appendChild(sectionsLink)}
