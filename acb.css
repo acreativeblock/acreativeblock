@@ -450,7 +450,7 @@ html body#acb-design .acb-header .acb-utility-pill:hover{background:#3f37c4!impo
    indigo buttons. Loaded last so it wins over white-pages.css.
    ========================================================================== */
 /* Eyebrows/labels become plain blue text (not a filled chip). */
-html body#acb-design.internal-page :is(.mono,.eyebrow,.audience-eyebrow,.eyebrow2,.acb-eyebrow,.pe,.reslabel,.post-tag,.side-note,.card-tag,.faqx-nav .lbl){
+html body#acb-design.internal-page :is(.mono,.eyebrow,.audience-eyebrow,.eyebrow2,.acb-eyebrow,.pe,.reslabel,.post-tag,.side-note,.card-tag,.faqx-nav .lbl,.article-kicker){
   background:none!important;color:var(--blue)!important;width:auto!important;max-width:none!important;
   padding:0!important;font-size:var(--fs-label)!important;font-weight:600!important;letter-spacing:var(--ls-label)!important;
   text-transform:uppercase!important;margin:0 0 clamp(11.56px,1.6vw,16.52px)!important;
@@ -503,22 +503,22 @@ html body#acb-design .acb-logo .acb-logo-mount{height:38px!important}
    white 9.92px rounded section cards. Heroes and the yellow CTA are excluded.
    Custom-layout pages keep their structure (they get typography/radius only).
    ========================================================================== */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page){background:#f6f6f6!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.bmap):not(.bm-hero):not(.bm-faq):not(.evidence-band):not(.arc-sec){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main :is(.acb-hero,.page-hero){margin:0!important;padding:0!important;border:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main section:not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band){background:transparent!important;background-image:none!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.bm-hypo) > .wrap{
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page){background:#f6f6f6!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.bmap):not(.bm-hero):not(.bm-faq):not(.evidence-band):not(.arc-sec):not(.legal-section){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main :is(.acb-hero,.page-hero){margin:0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band){background:transparent!important;background-image:none!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.bm-hypo) > .wrap{
   background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important;
 }
 /* .talks-section keeps its own black card instead of the generic grey/white treatment. */
 html body#acb-design.organisations-page main section.talks-section{background:#000!important}
 html body#acb-design.organisations-page main section.talks-section>.wrap{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
 /* .acb-close-sub (the bottom CTA) is its own yellow card, like the home page's close section. */
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main .acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:left!important;display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:19.8px 32.4px!important;box-shadow:var(--shadow-card)!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main .acb-close-sub h2{margin:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main .acb-close-sub .cta{margin:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main .acb-close-sub>.wrap{background:var(--acb-yellow)!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;text-align:left!important;display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:19.8px 32.4px!important;box-shadow:var(--shadow-card)!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main .acb-close-sub h2{margin:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main .acb-close-sub .cta{margin:0!important}
 @media(max-width:558px){
-  html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page) main .acb-close-sub>.wrap{grid-template-columns:1fr!important;text-align:center!important}
+  html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main .acb-close-sub>.wrap{grid-template-columns:1fr!important;text-align:center!important}
 }
 /* Legal pages (terms/privacy/cookies): the section itself is the white card — it has
    no .wrap child, just the sidebar-nav + article layout, which keeps its own width. */
@@ -3128,12 +3128,6 @@ html body#acb-design.home-page .acb-proof .acb-proof-image img{
   object-position:top!important;
 }
 
-/* Legal pages: give the nav + copy some breathing room above them instead
-   of starting flush with the card's top edge. */
-html body#acb-design.legal-page .legal-layout{
-  padding-top:clamp(28px,4vw,56px)!important;
-}
-
 /* Blog index: the card grid was inset from both sides on top of its own
    wrap padding — .blog-list (the section) was adding var(--sp-card) of its
    own left/right padding even though the grid already zeroes its own, so
@@ -3142,4 +3136,41 @@ html body#acb-design.legal-page .legal-layout{
 html body#acb-design.blog-index .blog-list{
   padding-left:0!important;
   padding-right:0!important;
+}
+
+/* Legal pages: restyle the two callout boxes ("before launch" reminder,
+   "working draft" disclaimer) to match the site's one established callout
+   language — a solid, rounded, borderless colour block (.access-note) —
+   instead of the pale box + accent-coloured left border that isn't used
+   anywhere else on the site. */
+html body#acb-design.legal-page :is(.legal-placeholder,.legal-note){
+  background:var(--acb-yellow,#E4E244)!important;
+  color:var(--ink)!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  padding:16px 18px!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+  margin:1.7em 0!important;
+}
+
+/* Blog index cards: no lift/shadow/border-colour hover — the site doesn't
+   use that pattern anywhere else. Selector matches pages.css's chain
+   exactly (same specificity) so this later rule wins the tie. */
+html body#acb-design.internal-page.blog-index .blog-card:hover{
+  transform:none!important;
+  box-shadow:none!important;
+  border-color:var(--line)!important;
+}
+
+/* Blog index cards: real typographic hierarchy. pages.css's ".blog-card p"
+   reset was also catching .blog-meta — it's a <p> too — and, because it
+   has one more element in the selector chain (html body … p) than a bare
+   ".blog-meta" override, it out-specifies a same-class-count fix; adding
+   the "p" type here matches its weight so the meta keeps its own margin
+   instead of sitting flush against the heading with no separation. */
+html body#acb-design.internal-page.blog-index .blog-card p.blog-meta{
+  margin:0 0 12px!important;
+  padding:0 0 10px!important;
+  border-bottom:1px solid var(--line)!important;
 }

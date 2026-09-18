@@ -1,47 +1,48 @@
 /* ============================================================
-   ARTICLE PAGES — built to match the rest of the site:
-   gradient page background, a white rounded content card with the
-   site's shadow, indigo uppercase eyebrow, Inter 500 ink headings.
-   Loaded last to beat white-pages.css striping + acb.css h2 sizing.
+   ARTICLE PAGES — hook into the exact same shared mechanisms every
+   other internal page uses, instead of a separate one-off recipe:
+   .article-head carries .page-hero, so it gets the same white
+   hero-card treatment (width, radius, shadow, padding) as every
+   other page's title card for free. .article-body's .wrap child
+   (.article-layout) gets the same generic white section-card
+   treatment (background/radius/padding/shadow) that every other
+   page's content sections use. This file only adds the handful of
+   things that are genuinely specific to an article: the kicker,
+   dek, meta, callout and pull-quote, all built from the site's
+   existing design tokens — no new one-off sizes or colours.
    ============================================================ */
 
-/* keep the site gradient; remove the grey section striping */
-html body#acb-design.article-page main section{background-color:transparent!important;background-image:none!important}
-html body#acb-design.article-page .acb-main-panel{background:transparent!important}
+/* Kicker reuses the site's one eyebrow recipe (see acb.css's shared
+   .eyebrow/.acb-eyebrow/etc rule — .article-kicker is included there).
+   h1 already gets --fs-h1 from the shared internal-page h1 rule; just
+   cap its measure so a long title doesn't stretch edge to edge. */
+html body#acb-design.article-page .article-head h1{max-width:22ch!important}
+html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:14px 0 0!important;max-width:56ch!important}
+html body#acb-design.article-page .article-meta{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--muted)!important;opacity:.7!important;margin:16px 0 0!important}
 
-/* ---- Hero: white rounded card on the gradient, same surface language as
-   the content card below it (and every other page's hero card) ---- */
-html body#acb-design.article-page .article-head{background:transparent!important;color:var(--ink)!important;padding:clamp(28px,4vw,52px) 0 0!important;margin:0!important}
-html body#acb-design.article-page .article-head .wrap{display:block!important;grid-template-columns:none!important;max-width:840px!important;margin:0 auto!important;padding:clamp(28px,4vw,56px) clamp(22px,4vw,60px)!important;gap:0!important;background:#fff!important;border:1px solid var(--line)!important;border-radius:14px!important;box-shadow:0 1.66px 3.3px rgba(161,158,168,.12)!important}
-html body#acb-design.article-page .article-kicker{font-family:inherit!important;font-size:11.5px!important;text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:600!important;color:var(--brand)!important;opacity:1!important;margin:0 0 12px!important}
-html body#acb-design.article-page .article-head h1{font-family:inherit!important;font-weight:500!important;font-size:clamp(29px,4.2vw,48px)!important;line-height:1.05!important;letter-spacing:-.03em!important;color:var(--ink)!important;margin:0!important;max-width:20ch!important}
-html body#acb-design.article-page .article-dek{font-family:inherit!important;font-size:clamp(15px,1.5vw,19px)!important;line-height:1.5!important;color:var(--ink-soft,#3a4453)!important;opacity:1!important;margin:14px 0 0!important;max-width:56ch!important}
-html body#acb-design.article-page .article-meta{font-family:inherit!important;font-size:12px!important;letter-spacing:.02em!important;color:var(--muted,#6b7280)!important;opacity:1!important;margin:16px 0 0!important}
+/* Body card (.article-layout) is already a full-width white card via the
+   shared mechanism; keep the actual reading column at a comfortable
+   measure, centred inside it. */
+html body#acb-design.article-page .article-layout{display:block!important;grid-template-columns:none!important}
+html body#acb-design.article-page .article-col{max-width:700px!important;margin:0 auto!important}
 
-/* ---- Body: white rounded content card (same surface as site sections) ---- */
-html body#acb-design.article-page .article-body{padding:0 0 clamp(48px,7vw,92px)!important}
-html body#acb-design.article-page .article-body .article-layout{display:block!important;grid-template-columns:none!important;max-width:840px!important;margin:0 auto!important;background:#fff!important;border:1px solid var(--line)!important;border-radius:14px!important;box-shadow:0 1.66px 3.3px rgba(161,158,168,.12)!important;padding:clamp(28px,4vw,56px) clamp(22px,4vw,60px)!important}
-
-/* intro "useful question" → soft brand callout */
-html body#acb-design.article-page .article-aside{position:static!important;top:auto!important;float:none!important;width:auto!important;align-self:auto!important;border:0!important;border-left:3px solid var(--brand)!important;border-radius:10px!important;background:rgba(79,70,229,.06)!important;margin:0 0 clamp(22px,3vw,34px)!important;padding:15px 18px!important;font-family:inherit!important;font-size:14.5px!important;line-height:1.55!important;color:var(--ink,#1c2431)!important;font-style:normal!important}
+/* "Useful question" callout: the site's one callout language — solid
+   colour, rounded, no border (matches .access-note / .legal-placeholder). */
+html body#acb-design.article-page .article-aside{position:static!important;top:auto!important;float:none!important;width:auto!important;align-self:auto!important;border:0!important;border-radius:var(--radius-card)!important;background:var(--acb-yellow)!important;color:var(--ink)!important;margin:0 0 clamp(22px,3vw,34px)!important;padding:16px 18px!important;font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;font-style:normal!important}
 
 html body#acb-design.article-page .article-copy{max-width:100%!important;margin:0!important}
-html body#acb-design.article-page .article-copy p,
-html body#acb-design.article-page .article-copy li{font-family:inherit!important;font-size:16.5px!important;line-height:1.72!important;color:var(--copy,#2a3340)!important}
-html body#acb-design.article-page .article-copy>p:first-of-type{font-size:18.5px!important;line-height:1.6!important;color:var(--ink,#141a24)!important}
 html body#acb-design.article-page .article-copy p+p{margin-top:1.05em!important}
+html body#acb-design.article-page .article-copy>p:first-of-type{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
 html body#acb-design.article-page .article-copy ul,
 html body#acb-design.article-page .article-copy ol{margin:1em 0!important;padding-left:1.2em!important}
+html body#acb-design.article-page .article-copy h2{margin:1.3em 0 .5em!important}
 
-/* section headings — Inter 500 ink, matching site headings; beats acb --fs-h2 */
-html body#acb-design.article-page .article-body .article-copy h2{font-family:inherit!important;font-weight:500!important;font-size:clamp(21px,2.3vw,27px)!important;line-height:1.15!important;letter-spacing:-.03em!important;color:var(--ink)!important;margin:1.5em 0 .4em!important}
+/* Pull-quote: bold and larger, no border-accented box. */
+html body#acb-design.article-page .article-copy blockquote{font-weight:600!important;font-style:normal!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important;margin:1.25em 0!important;padding:0!important;border:0!important}
 
-/* pull-quote — Inter, indigo rule (no serif) */
-html body#acb-design.article-page .article-copy blockquote{font-family:inherit!important;font-weight:500!important;font-style:normal!important;font-size:clamp(18px,2vw,23px)!important;line-height:1.3!important;letter-spacing:-.02em!important;color:var(--ink)!important;margin:1.25em 0!important;padding:.1em 0 .1em 20px!important;border:0!important;border-left:3px solid var(--brand)!important}
+/* Research note: same solid-yellow callout language as the aside. */
+html body#acb-design.article-page .article-copy .article-note{background:var(--acb-yellow)!important;border:0!important;border-radius:var(--radius-card)!important;padding:15px 18px!important;font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important;margin:1.7em 0!important}
 
-/* research note — brand yellow callout */
-html body#acb-design.article-page .article-copy .article-note{background:rgba(228,226,68,.16)!important;border:1px solid rgba(0,0,0,.06)!important;border-left:4px solid var(--yellow)!important;border-radius:10px!important;padding:15px 18px!important;font-family:inherit!important;font-size:14px!important;line-height:1.6!important;color:#33333a!important;margin:1.7em 0!important}
-
-/* back link */
+/* Back link */
 html body#acb-design.article-page .article-back{margin-top:clamp(34px,4.5vw,52px)!important;padding-top:22px!important;border-top:1px solid var(--line)!important}
-html body#acb-design.article-page .article-back a{font-family:inherit!important;color:var(--brand)!important;font-weight:500!important;font-size:14.5px!important}
+html body#acb-design.article-page .article-back a{color:var(--blue)!important;font-weight:600!important;font-size:var(--fs-small)!important}
