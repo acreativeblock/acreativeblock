@@ -811,12 +811,19 @@ body.legal-page .legal-hero h1{font-size:clamp(34.7px,5.4vw,62.79px)!important;l
 body.legal-page .legal-hero p{max-width:62ch;font-size:clamp(14.87px,1.5vw,19px)!important;line-height:1.4!important}
 body.legal-page .legal-section{background:#fff!important;padding:clamp(44.61px,7vw,82.62px) var(--pad)!important}
 body.legal-page .legal-layout{max-width:974.92px;margin:auto;display:grid;grid-template-columns:198.29px minmax(0,627.91px);gap:clamp(34.7px,7vw,82.62px);align-items:start}
-body.legal-page .legal-nav{position:sticky;top:90.88px;display:flex;flex-direction:column;border-top:0.83px solid var(--quiet-2)}
-body.legal-page .legal-nav a{padding:9.92px 0;border-bottom:0.83px solid var(--quiet-2);font-size:10.74px;color:var(--muted)}
-body.legal-page .legal-copy{font-size:14.05px;line-height:1.65;color:var(--copy)}
-body.legal-page .legal-copy>p{margin:0 0 1.25em}
-body.legal-page .legal-copy h2{margin:2.2em 0 .55em;font-size:clamp(22.31px,3vw,33.05px);line-height:1;letter-spacing:-.035em;color:var(--copy)!important}
-body.legal-page :is(.legal-placeholder,.legal-note){margin:23.13px 0;padding:18.18px;background:whitesmoke;border-left:3.3px solid var(--brand);font-size:12.39px;line-height:1.5}
+body.legal-page .legal-nav{position:sticky;top:96px;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+body.legal-page .legal-nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:-.01em;color:var(--muted);transition:color .15s ease,padding-left .15s ease}
+body.legal-page .legal-nav a:hover{color:var(--brand);padding-left:5px}
+body.legal-page .legal-copy{font-size:15.5px;line-height:1.72;color:var(--copy)}
+body.legal-page .legal-copy>p{margin:0 0 1.15em}
+body.legal-page .legal-copy>p:first-child{font-size:13px;color:var(--muted);padding-bottom:1.15em;border-bottom:1px solid var(--line);margin-bottom:1.7em}
+body.legal-page .legal-copy h2{margin:1.9em 0 .5em;font-size:clamp(20px,2.5vw,28px);line-height:1.05;letter-spacing:-.03em;color:var(--copy)!important;scroll-margin-top:104px}
+body.legal-page .legal-copy h3{margin:1.5em 0 .35em;font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--copy)}
+body.legal-page .legal-copy ul{margin:0 0 1.15em;padding-left:1.15em}
+body.legal-page .legal-copy li{margin:0 0 .42em}
+body.legal-page .legal-copy a{color:var(--brand);text-underline-offset:2px}
+body.legal-page :is(.legal-placeholder,.legal-note){margin:1.7em 0;padding:16px 18px;background:#f5f5fb;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;font-size:13px;line-height:1.55;color:var(--copy)}
+body.legal-page .legal-note{background:#fffdf0;border-left-color:var(--yellow)}
 body.legal-page main>section{background:#fff!important;background-image:none!important}
 body.legal-page main section.reveal{opacity:1!important;transform:none!important;transition:none!important}
 body.legal-page{background:#fff!important}
@@ -828,14 +835,20 @@ body :is(.legal-nav,.faqx-nav) a.is-current{color:var(--brand)!important;font-we
 
 body.faq-page,body.faq-page main>section,body.faq-page .faqx-cat{background:#fff!important;background-image:none!important}
 
-/* Blog index: editorial type and cards that size to their own content. */
-body.blog-index .blog-grid{align-items:start!important;grid-auto-flow:row dense}
-body.blog-index .blog-card{align-self:start!important;height:auto!important}
-body.blog-index .blog-card .blog-art{aspect-ratio:4/3!important;font-size:clamp(14.87px,2vw,24.79px)!important;padding:clamp(14.87px,2vw,23.13px)!important}
-body.blog-index .blog-card.featured .blog-art{aspect-ratio:16/9!important}
-body.blog-index .blog-card h2{font-size:clamp(18.18px,2vw,26.44px)!important;line-height:1.08!important}
-body.blog-index .blog-card p{font-size:clamp(10.74px,1vw,13.22px)!important;line-height:1.5!important}
-body.blog-index .blog-meta{font-size:9.09px!important}
+/* Blog index: editorial cards, uniform height, gap-free 3x3 grid. */
+body.blog-index .blog-grid{grid-template-columns:repeat(3,1fr)!important;gap:clamp(14px,1.6vw,22px)!important;align-items:stretch!important;grid-auto-flow:row!important}
+body.blog-index .blog-card{align-self:stretch!important;height:100%!important;display:flex!important;flex-direction:column!important;border:1px solid var(--line)!important;overflow:hidden!important;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
+body.blog-index .blog-card:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px rgba(17,17,17,.10)!important;border-color:var(--blue)!important}
+body.blog-index .blog-card .blog-art{aspect-ratio:4/3!important;font-size:clamp(15px,1.7vw,21px)!important;font-weight:600!important;padding:clamp(15px,1.7vw,22px)!important;line-height:1.05!important}
+body.blog-index .blog-card.featured .blog-art{aspect-ratio:5/2!important;font-size:clamp(20px,2.4vw,32px)!important;background:var(--ink)!important;color:#fff!important}
+body.blog-index .blog-card .blog-art{background:var(--blue)!important;color:#fff!important}
+body.blog-index .blog-card:nth-of-type(3n) .blog-art{background:var(--yellow)!important;color:var(--ink)!important}
+body.blog-index .blog-card:nth-of-type(3n+1):not(.featured) .blog-art{background:var(--pink,#FFB8CB)!important;color:var(--ink)!important}
+body.blog-index .blog-copy{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:clamp(16px,1.7vw,23px)!important}
+body.blog-index .blog-card h2{font-size:clamp(17px,1.6vw,22px)!important;line-height:1.14!important;letter-spacing:-.02em!important;margin:0 0 10px!important;font-weight:600!important}
+body.blog-index .blog-card.featured h2{font-size:clamp(20px,2.1vw,28px)!important}
+body.blog-index .blog-card p{font-size:clamp(13px,1vw,14.5px)!important;line-height:1.5!important;margin:0!important}
+body.blog-index .blog-meta{font-size:11px!important;letter-spacing:.08em!important;margin:0 0 9px!important}
 
 /* Find Your Block: a complete, readable blue-and-white application surface. */
 body.questionnaire-page{background:whitesmoke!important;color:var(--copy)!important;min-height:100vh}
