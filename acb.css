@@ -3127,3 +3127,19 @@ html body#acb-design.home-page .acb-work .work-image img{
 html body#acb-design.home-page .acb-proof .acb-proof-image img{
   object-position:top!important;
 }
+
+/* Legal pages: give the nav + copy some breathing room above them instead
+   of starting flush with the card's top edge. */
+html body#acb-design.legal-page .legal-layout{
+  padding-top:clamp(28px,4vw,56px)!important;
+}
+
+/* Blog index: the card grid was inset from both sides on top of its own
+   wrap padding — .blog-list (the section) was adding var(--sp-card) of its
+   own left/right padding even though the grid already zeroes its own, so
+   the cards sat narrower than the hero above them. Only keep the vertical
+   rhythm, drop the lateral padding so the grid matches the hero's width. */
+html body#acb-design.blog-index .blog-list{
+  padding-left:0!important;
+  padding-right:0!important;
+}
