@@ -887,6 +887,13 @@ html body#acb-design.contact-page .cform{gap:16.2px!important}
 html body#acb-design.contact-page .cform :is(input,textarea,select){box-sizing:border-box;width:100%;font-size:var(--fs-body)!important;color:var(--ink)!important;background:#f6f6f6!important;border:0.9px solid #dedede!important;padding:12.6px 14.4px!important;line-height:var(--lh-copy)!important}
 html body#acb-design.contact-page .cform textarea{min-height:162px}
 html body#acb-design.contact-page .cform-consent input{width:18px!important;flex:0 0 18px}
+/* ".cform label{display:grid}" also matches .cform-consent (it's a <label>
+   too) and, because it's a class+element selector, edges out
+   ".cform-consent{display:flex}" on specificity despite coming first —
+   so the checkbox stacked above its text instead of sitting beside it. */
+html body#acb-design.contact-page .cform-consent{display:flex!important;align-items:flex-start!important;gap:10px!important}
+html body#acb-design.contact-page .cform-status{margin:0!important;font-size:var(--fs-small)!important;color:var(--ink)!important}
+html body#acb-design.contact-page .cform-status.is-error{color:#b3261e!important}
 
 @media(max-width:774px){
   html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr!important}
@@ -907,7 +914,7 @@ html body#acb-design.contact-page main section.contact-unified{background:transp
 html body#acb-design.method-page .journey-step:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;font-weight:600!important}
 html body#acb-design.method-page .journey-step:first-child .tcard p{font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important}
 html body#acb-design.method-page .journey-step:first-child .tcard-ic{margin-bottom:5.4px!important}
-html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .35s cubic-bezier(.22,1,.36,1)}
+html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .45s cubic-bezier(.22,1,.36,1)}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16.2px!important}
 html body#acb-design.faq-page .faqx .offer-row.open .offer-toggle .pm{transform:none!important;background:transparent!important;color:var(--ink)!important;border-color:currentColor!important}
 
