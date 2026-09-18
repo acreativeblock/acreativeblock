@@ -20,6 +20,11 @@
    instead of a small, deliberate gap onto the gradient. */
 html body#acb-design.article-page main{background:transparent!important}
 
+/* No shadow/outline on the two cards — a flat white surface, nothing
+   reading as a border around it. */
+html body#acb-design.article-page .article-head .wrap,
+html body#acb-design.article-page .article-layout{box-shadow:none!important;outline:0!important}
+
 /* Kicker reuses the site's one eyebrow recipe (see acb.css's shared
    .eyebrow/.acb-eyebrow/etc rule — .article-kicker is included there).
    h1 already gets --fs-h1 from the shared internal-page h1 rule; just

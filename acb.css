@@ -3138,6 +3138,12 @@ html body#acb-design.blog-index .blog-list{
   padding-right:0!important;
   padding-top:0!important;
 }
+/* The grid itself (.wrap.blog-grid) also picks up the generic
+   "main section > .wrap" card padding independently of its parent
+   section — zero its top too so nothing pushes the cards down. */
+html body#acb-design.blog-index main section > .blog-grid{
+  padding-top:0!important;
+}
 
 /* Blog index cards: bigger title, smaller body copy — more contrast
    between the two so the hierarchy actually reads. */
