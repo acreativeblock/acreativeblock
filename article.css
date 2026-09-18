@@ -1,47 +1,46 @@
 /* ============================================================
-   ARTICLE PAGES — on-brand, consistent with the rest of the site.
-   Loaded last so it beats white-pages.css section striping and the
-   acb.css internal-page h2 sizing. No serif, no CTA: brand font (Inter),
-   the site's own gradient background, one clean reading column.
+   ARTICLE PAGES — built to match the rest of the site:
+   gradient page background, a white rounded content card with the
+   site's shadow, indigo uppercase eyebrow, Inter 500 ink headings.
+   Loaded last to beat white-pages.css striping + acb.css h2 sizing.
    ============================================================ */
-:root{--art-measure:820px}
 
-/* keep the site's gradient background — do NOT force white, kill the grey zebra */
+/* keep the site gradient; remove the grey section striping */
 html body#acb-design.article-page main section{background-color:transparent!important;background-image:none!important}
 html body#acb-design.article-page .acb-main-panel{background:transparent!important}
 
-/* ---- Hero: sits on the site gradient, dark text, same width as body ---- */
-html body#acb-design.article-page .article-head{background:transparent!important;color:var(--ink)!important;padding:clamp(46px,7vw,92px) 0 clamp(24px,3.5vw,44px)!important;margin:0!important}
-html body#acb-design.article-page .article-head .wrap{display:block!important;grid-template-columns:none!important;max-width:var(--art-measure)!important;margin:0 auto!important;padding:0 24px!important;gap:0!important}
-html body#acb-design.article-page .article-kicker{font-family:inherit!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.13em!important;font-weight:600!important;color:var(--brand)!important;opacity:1!important;margin:0 0 14px!important}
-html body#acb-design.article-page .article-head h1{font-family:inherit!important;font-weight:600!important;font-size:clamp(30px,4.6vw,52px)!important;line-height:1.03!important;letter-spacing:-.03em!important;max-width:20ch!important;margin:0!important;color:var(--ink)!important}
-html body#acb-design.article-page .article-dek{font-family:inherit!important;font-size:clamp(16px,1.6vw,20px)!important;line-height:1.5!important;color:var(--ink-soft,#3a4453)!important;opacity:1!important;max-width:58ch!important;margin:16px 0 0!important}
-html body#acb-design.article-page .article-meta{font-family:inherit!important;font-size:12.5px!important;letter-spacing:.03em!important;color:var(--muted,#6b7280)!important;opacity:1!important;margin:18px 0 0!important}
+/* ---- Hero: title block on the gradient, like the other page heroes ---- */
+html body#acb-design.article-page .article-head{background:transparent!important;color:var(--ink)!important;padding:clamp(42px,6vw,80px) 0 clamp(18px,2.6vw,32px)!important;margin:0!important}
+html body#acb-design.article-page .article-head .wrap{display:block!important;grid-template-columns:none!important;max-width:840px!important;margin:0 auto!important;padding:0 clamp(16px,4vw,32px)!important;gap:0!important}
+html body#acb-design.article-page .article-kicker{font-family:inherit!important;font-size:11.5px!important;text-transform:uppercase!important;letter-spacing:-.01em!important;font-weight:600!important;color:var(--brand)!important;opacity:1!important;margin:0 0 12px!important}
+html body#acb-design.article-page .article-head h1{font-family:inherit!important;font-weight:500!important;font-size:clamp(29px,4.2vw,48px)!important;line-height:1.05!important;letter-spacing:-.03em!important;color:var(--ink)!important;margin:0!important;max-width:20ch!important}
+html body#acb-design.article-page .article-dek{font-family:inherit!important;font-size:clamp(15px,1.5vw,19px)!important;line-height:1.5!important;color:var(--ink-soft,#3a4453)!important;opacity:1!important;margin:14px 0 0!important;max-width:56ch!important}
+html body#acb-design.article-page .article-meta{font-family:inherit!important;font-size:12px!important;letter-spacing:.02em!important;color:var(--muted,#6b7280)!important;opacity:1!important;margin:16px 0 0!important}
 
-/* ---- Body: one centred reading column on the site background ---- */
-html body#acb-design.article-page .article-body{padding:0 0 clamp(52px,7vw,96px)!important}
-html body#acb-design.article-page .article-layout{display:block!important;grid-template-columns:none!important;max-width:var(--art-measure)!important;margin:0 auto!important;padding:0 24px!important;gap:0!important}
+/* ---- Body: white rounded content card (same surface as site sections) ---- */
+html body#acb-design.article-page .article-body{padding:0 0 clamp(48px,7vw,92px)!important}
+html body#acb-design.article-page .article-body .article-layout{display:block!important;grid-template-columns:none!important;max-width:840px!important;margin:0 auto!important;background:#fff!important;border:1px solid var(--line)!important;border-radius:14px!important;box-shadow:0 1.66px 3.3px rgba(161,158,168,.12)!important;padding:clamp(28px,4vw,56px) clamp(22px,4vw,60px)!important}
 
 /* intro "useful question" → soft brand callout */
-html body#acb-design.article-page .article-aside{position:static!important;top:auto!important;float:none!important;width:auto!important;align-self:auto!important;border:0!important;border-left:3px solid var(--brand)!important;border-radius:12px!important;background:rgba(79,70,229,.06)!important;margin:0 0 clamp(26px,3.5vw,40px)!important;padding:16px 20px!important;font-family:inherit!important;font-size:15px!important;line-height:1.55!important;color:var(--ink,#1c2431)!important;font-style:normal!important}
+html body#acb-design.article-page .article-aside{position:static!important;top:auto!important;float:none!important;width:auto!important;align-self:auto!important;border:0!important;border-left:3px solid var(--brand)!important;border-radius:10px!important;background:rgba(79,70,229,.06)!important;margin:0 0 clamp(22px,3vw,34px)!important;padding:15px 18px!important;font-family:inherit!important;font-size:14.5px!important;line-height:1.55!important;color:var(--ink,#1c2431)!important;font-style:normal!important}
 
 html body#acb-design.article-page .article-copy{max-width:100%!important;margin:0!important}
 html body#acb-design.article-page .article-copy p,
-html body#acb-design.article-page .article-copy li{font-family:inherit!important;font-size:17px!important;line-height:1.72!important;color:var(--copy,#242b36)!important}
-html body#acb-design.article-page .article-copy>p:first-of-type{font-size:19px!important;line-height:1.6!important;color:#141a24!important}
-html body#acb-design.article-page .article-copy p+p{margin-top:1.1em!important}
+html body#acb-design.article-page .article-copy li{font-family:inherit!important;font-size:16.5px!important;line-height:1.72!important;color:var(--copy,#2a3340)!important}
+html body#acb-design.article-page .article-copy>p:first-of-type{font-size:18.5px!important;line-height:1.6!important;color:var(--ink,#141a24)!important}
+html body#acb-design.article-page .article-copy p+p{margin-top:1.05em!important}
 html body#acb-design.article-page .article-copy ul,
-html body#acb-design.article-page .article-copy ol{margin:1.05em 0!important;padding-left:1.2em!important}
+html body#acb-design.article-page .article-copy ol{margin:1em 0!important;padding-left:1.2em!important}
 
-/* section headings — brand sans; beat acb.css --fs-h2 with higher specificity */
-html body#acb-design.article-page .article-body .article-copy h2{font-family:inherit!important;font-weight:600!important;font-size:clamp(22px,2.5vw,30px)!important;line-height:1.14!important;letter-spacing:-.02em!important;color:var(--ink)!important;margin:1.6em 0 .4em!important}
+/* section headings — Inter 500 ink, matching site headings; beats acb --fs-h2 */
+html body#acb-design.article-page .article-body .article-copy h2{font-family:inherit!important;font-weight:500!important;font-size:clamp(21px,2.3vw,27px)!important;line-height:1.15!important;letter-spacing:-.03em!important;color:var(--ink)!important;margin:1.5em 0 .4em!important}
 
-/* pull-quote — brand sans, indigo rule */
-html body#acb-design.article-page .article-copy blockquote{font-family:inherit!important;font-weight:500!important;font-style:normal!important;font-size:clamp(19px,2.2vw,26px)!important;line-height:1.28!important;letter-spacing:-.01em!important;color:var(--ink)!important;margin:1.3em 0!important;padding:.15em 0 .15em 22px!important;border:0!important;border-left:3px solid var(--brand)!important}
+/* pull-quote — Inter, indigo rule (no serif) */
+html body#acb-design.article-page .article-copy blockquote{font-family:inherit!important;font-weight:500!important;font-style:normal!important;font-size:clamp(18px,2vw,23px)!important;line-height:1.3!important;letter-spacing:-.02em!important;color:var(--ink)!important;margin:1.25em 0!important;padding:.1em 0 .1em 20px!important;border:0!important;border-left:3px solid var(--brand)!important}
 
-/* research note */
-html body#acb-design.article-page .article-copy .article-note{background:rgba(228,226,68,.16)!important;border:1px solid rgba(0,0,0,.06)!important;border-left:4px solid var(--yellow)!important;border-radius:12px!important;padding:16px 20px!important;font-family:inherit!important;font-size:14.5px!important;line-height:1.6!important;color:#33333a!important;margin:1.8em 0!important}
+/* research note — brand yellow callout */
+html body#acb-design.article-page .article-copy .article-note{background:rgba(228,226,68,.16)!important;border:1px solid rgba(0,0,0,.06)!important;border-left:4px solid var(--yellow)!important;border-radius:10px!important;padding:15px 18px!important;font-family:inherit!important;font-size:14px!important;line-height:1.6!important;color:#33333a!important;margin:1.7em 0!important}
 
 /* back link */
-html body#acb-design.article-page .article-back{margin-top:clamp(38px,5vw,60px)!important;padding-top:24px!important;border-top:1px solid rgba(0,0,0,.1)!important}
-html body#acb-design.article-page .article-back a{font-family:inherit!important;color:var(--brand)!important;font-weight:500!important;font-size:15px!important}
+html body#acb-design.article-page .article-back{margin-top:clamp(34px,4.5vw,52px)!important;padding-top:22px!important;border-top:1px solid var(--line)!important}
+html body#acb-design.article-page .article-back a{font-family:inherit!important;color:var(--brand)!important;font-weight:500!important;font-size:14.5px!important}

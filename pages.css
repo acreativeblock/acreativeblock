@@ -827,7 +827,7 @@ body.legal-page .legal-note{background:#fffdf0;border-left-color:var(--yellow)}
 body.legal-page main>section{background:#fff!important;background-image:none!important}
 body.legal-page main section.reveal{opacity:1!important;transform:none!important;transition:none!important}
 body.legal-page{background:#fff!important}
-body.legal-page .legal-hero{padding:clamp(39.65px,6vw,62.79px) var(--pad)!important;text-align:left!important}
+body.legal-page .legal-hero{padding:clamp(60px,8vw,104px) var(--pad) clamp(20px,3vw,36px)!important;text-align:left!important}
 body.legal-page .legal-hero .wrap{max-width:1200px!important;margin:0 auto!important}
 body.legal-page .legal-hero h1{font-size:clamp(28.09px,4vw,46.27px)!important;max-width:16ch!important;margin:0!important}
 body.legal-page .legal-section{padding-top:clamp(28.09px,5vw,54.53px)!important}
@@ -846,10 +846,12 @@ html body#acb-design.internal-page.blog-index .blog-card.featured .blog-art{aspe
 html body#acb-design.internal-page.blog-index .blog-card:nth-of-type(3n) .blog-art{background:var(--yellow)!important;color:var(--ink)!important}
 html body#acb-design.internal-page.blog-index .blog-card:nth-of-type(3n+1):not(.featured) .blog-art{background:var(--pink,#FFB8CB)!important;color:var(--ink)!important}
 html body#acb-design.internal-page.blog-index .blog-copy{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:clamp(15px,1.4vw,20px)!important}
-html body#acb-design.internal-page.blog-index .blog-meta{font-size:10px!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:var(--blue)!important;margin:0 0 8px!important}
-html body#acb-design.internal-page.blog-index .blog-card h2{font-size:clamp(14.5px,1.15vw,16.5px)!important;line-height:1.18!important;letter-spacing:-.015em!important;margin:0 0 9px!important;font-weight:600!important}
-html body#acb-design.internal-page.blog-index .blog-card.featured h2{font-size:clamp(17px,1.5vw,20px)!important}
-html body#acb-design.internal-page.blog-index .blog-card p{font-size:clamp(12.5px,.95vw,14px)!important;line-height:1.5!important;color:var(--ink-soft)!important;margin:0!important}
+html body#acb-design.internal-page.blog-index .blog-meta{display:flex!important;align-items:baseline!important;justify-content:space-between!important;gap:10px!important;margin:0 0 10px!important;padding:0 0 9px!important;border-bottom:1px solid var(--line)!important}
+html body#acb-design.internal-page.blog-index .blog-cat{font-size:10px!important;letter-spacing:.03em!important;text-transform:uppercase!important;font-weight:700!important;color:var(--blue)!important}
+html body#acb-design.internal-page.blog-index .blog-time{font-size:10px!important;letter-spacing:.03em!important;text-transform:uppercase!important;font-weight:600!important;color:var(--blue)!important;opacity:.62!important;white-space:nowrap!important}
+html body#acb-design.internal-page.blog-index .blog-card h2{font-size:clamp(15px,1.2vw,17.5px)!important;line-height:1.2!important;letter-spacing:-.02em!important;margin:0 0 8px!important;font-weight:600!important;color:var(--ink)!important}
+html body#acb-design.internal-page.blog-index .blog-card.featured h2{font-size:clamp(17px,1.5vw,21px)!important}
+html body#acb-design.internal-page.blog-index .blog-card p{font-size:clamp(12.5px,.95vw,13.5px)!important;line-height:1.5!important;color:var(--muted,#6b7280)!important;margin:0!important}
 @media(max-width:820px){html body#acb-design.internal-page.blog-index .blog-grid{grid-template-columns:repeat(2,1fr)!important}html body#acb-design.internal-page.blog-index .blog-card.featured{grid-column:auto!important}}
 @media(max-width:520px){html body#acb-design.internal-page.blog-index .blog-grid{grid-template-columns:1fr!important}}
 
