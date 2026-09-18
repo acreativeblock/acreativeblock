@@ -835,20 +835,21 @@ body :is(.legal-nav,.faqx-nav) a.is-current{color:var(--brand)!important;font-we
 
 body.faq-page,body.faq-page main>section,body.faq-page .faqx-cat{background:#fff!important;background-image:none!important}
 
-/* Blog index: editorial cards, uniform height, gap-free 3x3 grid. */
-body.blog-index .blog-grid{grid-template-columns:repeat(3,1fr)!important;gap:clamp(14px,1.6vw,22px)!important;align-items:stretch!important;grid-auto-flow:row!important}
+/* Blog index: dense 4-up editorial grid, uniform cards, no gaps. */
+body.blog-index .blog-grid{grid-template-columns:repeat(4,1fr)!important;gap:clamp(12px,1.2vw,18px)!important;align-items:stretch!important;grid-auto-flow:row!important}
 body.blog-index .blog-card{align-self:stretch!important;height:100%!important;display:flex!important;flex-direction:column!important;border:1px solid var(--line)!important;overflow:hidden!important;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
-body.blog-index .blog-card:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px rgba(17,17,17,.10)!important;border-color:var(--blue)!important}
-body.blog-index .blog-card .blog-art{aspect-ratio:4/3!important;font-size:clamp(15px,1.7vw,21px)!important;font-weight:600!important;padding:clamp(15px,1.7vw,22px)!important;line-height:1.05!important}
-body.blog-index .blog-card.featured .blog-art{aspect-ratio:5/2!important;font-size:clamp(20px,2.4vw,32px)!important;background:var(--ink)!important;color:#fff!important}
-body.blog-index .blog-card .blog-art{background:var(--blue)!important;color:#fff!important}
-body.blog-index .blog-card:nth-of-type(3n) .blog-art{background:var(--yellow)!important;color:var(--ink)!important}
-body.blog-index .blog-card:nth-of-type(3n+1):not(.featured) .blog-art{background:var(--pink,#FFB8CB)!important;color:var(--ink)!important}
-body.blog-index .blog-copy{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:clamp(16px,1.7vw,23px)!important}
-body.blog-index .blog-card h2{font-size:clamp(17px,1.6vw,22px)!important;line-height:1.14!important;letter-spacing:-.02em!important;margin:0 0 10px!important;font-weight:600!important}
-body.blog-index .blog-card.featured h2{font-size:clamp(20px,2.1vw,28px)!important}
-body.blog-index .blog-card p{font-size:clamp(13px,1vw,14.5px)!important;line-height:1.5!important;margin:0!important}
-body.blog-index .blog-meta{font-size:11px!important;letter-spacing:.08em!important;margin:0 0 9px!important}
+body.blog-index .blog-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 26px rgba(17,17,17,.10)!important;border-color:var(--blue)!important}
+body.blog-index .blog-card.featured{grid-column:auto!important}
+body.blog-index .blog-card .blog-art{aspect-ratio:4/3!important;font-size:clamp(12px,1vw,14px)!important;font-weight:600!important;padding:clamp(12px,1vw,15px)!important;line-height:1.1!important;background:var(--blue)!important;color:#fff!important}
+body.blog-index .blog-card:nth-of-type(4n+2) .blog-art{background:var(--yellow)!important;color:var(--ink)!important}
+body.blog-index .blog-card:nth-of-type(4n+3) .blog-art{background:var(--pink,#FFB8CB)!important;color:var(--ink)!important}
+body.blog-index .blog-card.featured .blog-art{background:var(--ink)!important;color:#fff!important}
+body.blog-index .blog-copy{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:clamp(13px,1.1vw,16px)!important}
+body.blog-index .blog-meta{font-size:9.5px!important;letter-spacing:.07em!important;margin:0 0 7px!important}
+body.blog-index .blog-card h2{font-size:clamp(13.5px,1vw,15.5px)!important;line-height:1.2!important;letter-spacing:-.01em!important;margin:0 0 8px!important;font-weight:600!important}
+body.blog-index .blog-card p{font-size:clamp(11.5px,.8vw,12.5px)!important;line-height:1.45!important;margin:0!important}
+@media(max-width:900px){body.blog-index .blog-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:560px){body.blog-index .blog-grid{grid-template-columns:1fr!important}}
 
 /* Find Your Block: a complete, readable blue-and-white application surface. */
 body.questionnaire-page{background:whitesmoke!important;color:var(--copy)!important;min-height:100vh}
