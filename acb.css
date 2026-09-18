@@ -66,8 +66,8 @@ html body#acb-design .acb-header .acb-social a:hover{color:#4f46e5!important}
 html body#acb-design .acb-footer :is(.top,.foot-lead) a{display:block;padding:2.48px 4.96px!important;margin:-2.48px -4.96px!important;border-radius:6.61px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-footer :is(.top,.foot-lead) a:hover{color:#a5b4fc!important;background:rgba(255,255,255,.1)!important;text-decoration:none!important}
 html body#acb-design .acb-header .acb-actions{display:flex;gap:19.83px;align-items:center;margin:0!important}
-html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a}
-html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-size:14.87px!important;border-radius:6.61px!important;padding:6.61px 8.26px!important;margin:0 -8.26px!important;transition:background-color .2s ease,color .2s ease!important}
+html body#acb-design .acb-header .acb-sub{background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 1.66px 3.3px #a19ea81a;top:100%!important}
+html body#acb-design .acb-header .acb-sub a{color:var(--ink)!important;font-family:"Inter",sans-serif!important;font-size:13.22px!important;border-radius:6.61px!important;padding:6.61px 8.26px!important;margin:0 -8.26px!important;transition:background-color .2s ease,color .2s ease!important}
 html body#acb-design .acb-header .acb-sub a:hover{background:#eef2ff!important;color:#4f46e5!important}
 /* Original hero composition, image, copy and type. */
 html body#acb-design.home-page .acb-hero{--pad:clamp(16.52px,4vw,59.49px);--copy:var(--ink);--muted:var(--ink);--brand:#4f46e5;--action:#E4E244}
@@ -3136,6 +3136,16 @@ html body#acb-design.home-page .acb-proof .acb-proof-image img{
 html body#acb-design.blog-index .blog-list{
   padding-left:0!important;
   padding-right:0!important;
+  padding-top:0!important;
+}
+
+/* Blog index cards: bigger title, smaller body copy — more contrast
+   between the two so the hierarchy actually reads. */
+html body#acb-design.internal-page.blog-index .blog-card h2{
+  font-size:clamp(17px,1.4vw,20px)!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card p{
+  font-size:clamp(11.5px,.85vw,12.5px)!important;
 }
 
 /* Legal pages: restyle the two callout boxes ("before launch" reminder,

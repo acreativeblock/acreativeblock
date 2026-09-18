@@ -12,12 +12,20 @@
    existing design tokens — no new one-off sizes or colours.
    ============================================================ */
 
+/* legacy-article.css sets a bare "main{background:#fff}" left over from an
+   older design. That solid white main bled into the hero's own white card
+   right below the (also-white) header, so the hero never read as a
+   distinct floating card the way every other page's hero does, and the
+   header/hero boundary looked like one undifferentiated white mass
+   instead of a small, deliberate gap onto the gradient. */
+html body#acb-design.article-page main{background:transparent!important}
+
 /* Kicker reuses the site's one eyebrow recipe (see acb.css's shared
    .eyebrow/.acb-eyebrow/etc rule — .article-kicker is included there).
    h1 already gets --fs-h1 from the shared internal-page h1 rule; just
    cap its measure so a long title doesn't stretch edge to edge. */
 html body#acb-design.article-page .article-head h1{max-width:22ch!important}
-html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:14px 0 0!important;max-width:56ch!important}
+html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:6px 0 0!important;max-width:56ch!important}
 html body#acb-design.article-page .article-meta{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--muted)!important;opacity:.7!important;margin:16px 0 0!important}
 
 /* Body card (.article-layout) is already a full-width white card via the
