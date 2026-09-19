@@ -879,6 +879,12 @@ html body#acb-design .offer-row.open .offer-toggle .pm{display:inline-flex!impor
 html body#acb-design .offer-toggle .pm svg{display:none!important}
 html body#acb-design .offer-toggle .pm::after{content:"+"!important;display:inline-block!important;font-size:20px!important;font-weight:400!important;line-height:1!important;color:var(--blue)!important;transition:transform .4s cubic-bezier(.4,0,.2,1)!important}
 html body#acb-design .offer-row.open .offer-toggle .pm::after{transform:rotate(135deg)!important}
+
+/* Block map: cards contain only their useful content, and the closing link
+   has the same generous presence as the site's other CTA panels. */
+html body#acb-design.blocks-page .bmcard{min-height:clamp(190px,16vw,240px)!important}
+html body#acb-design.blocks-page .bmcard-body{flex:1!important;min-height:0!important;padding:clamp(18px,2vw,28px)!important;justify-content:space-between!important;border-top:3px solid var(--c)!important}
+html body#acb-design.blocks-page .bm-hypo > .wrap{min-height:clamp(240px,27vw,360px)!important;padding:var(--sp-card)!important}
 html{scroll-behavior:smooth;scroll-padding-top:108px}
 html body#acb-design .faqx-cat{scroll-margin-top:108px}
 
@@ -1747,6 +1753,23 @@ html body#acb-design.blocks-page .bm-hypo p.stmt{font-size:var(--fs-h2)!importan
 html body#acb-design.blocks-page .bm-hypo p.stmt span{display:inline-block;transition:transform .22s ease!important}
 html body#acb-design.blocks-page .bm-hypo>.wrap:hover p.stmt span{transform:translateX(7px)}
 html body#acb-design.blocks-page .bm-hypo .fine{letter-spacing:var(--ls-small)!important}
+
+/* The block map cards are text-first: colour, hierarchy and the shared arrow
+   communicate the interaction without loading a separate image for each card. */
+html body#acb-design.blocks-page .bmcard{
+  min-height:clamp(190px,16vw,240px)!important;
+}
+html body#acb-design.blocks-page .bmcard-body{
+  flex:1!important;
+  min-height:0!important;
+  padding:clamp(18px,2vw,28px)!important;
+  justify-content:space-between!important;
+  border-top:3px solid var(--c)!important;
+}
+html body#acb-design.blocks-page .bm-hypo > .wrap{
+  min-height:clamp(240px,27vw,360px)!important;
+  padding:var(--sp-card)!important;
+}
 html body#acb-design.blocks-page .evidence-band>.wrap{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr)!important;gap:var(--sp-card)!important;padding:0!important;overflow:hidden!important;background:#fff!important}
 html body#acb-design.blocks-page .evidence-band .evidence-copy{padding:var(--sp-card)!important;align-self:center!important}
 html body#acb-design.blocks-page .evidence-band .evidence-copy .btn{margin-top:18px!important}
