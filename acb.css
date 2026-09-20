@@ -3540,3 +3540,5 @@ html body#acb-design main :is(.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn
 html body#acb-design .acb-header .acb-utility-pill{
   font-size:20px!important;line-height:1.2!important;padding:20px!important;
 }
+
+html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill,.mobile-menu-toggle){letter-spacing:-.03em!important}
