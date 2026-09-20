@@ -2215,6 +2215,24 @@ html body#acb-design.individuals-page .individual-support .acb-loop-steps li p{
   html body#acb-design.individuals-page .individual-support .acb-loop-steps{grid-column:1!important;margin-top:var(--sp-card)!important}
 }
 
+/* The outcomes are intentionally text-led: no image split, just the three
+   practical things a person carries back into the work. */
+html body#acb-design.individuals-page .individual-takeaways>.wrap{
+  display:block!important;padding:var(--sp-card)!important;overflow:visible!important;
+}
+html body#acb-design.individuals-page .individual-takeaways .takeaway-copy{padding:0!important;max-width:none!important}
+html body#acb-design.individuals-page .individual-takeaways .takeaway-copy h2{margin:0 0 var(--sp-card)!important}
+html body#acb-design.individuals-page .individual-takeaways .outcome-list{
+  max-width:none!important;margin:0!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+html body#acb-design.individuals-page .individual-takeaways .outcome-list li{
+  padding:14px 0 0!important;background:transparent!important;color:var(--ink)!important;
+  border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;
+  font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;
+}
+html body#acb-design.individuals-page .individual-takeaways .outcome-list li::before{display:none!important}
+@media(max-width:774px){html body#acb-design.individuals-page .individual-takeaways .outcome-list{grid-template-columns:1fr!important}}
+
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
