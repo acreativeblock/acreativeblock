@@ -374,8 +374,8 @@ html body#acb-design .acb-header{position:fixed!important;left:0;right:0;top:19.
 
 /* Taller hero with the text bubble centred (both axes). */
 html body#acb-design.home-page .acb-hero-grid{min-height:clamp(423px,74vh,778px)!important;align-items:center!important;justify-items:center!important;padding:33.05px calc((100vw - var(--site-width)) / 2)!important}
-html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:var(--radius-card);width:fit-content!important;max-width:min(94vw,743.58px)!important;text-align:center!important;margin:0!important;padding:19.83px 26.44px!important}
-html body#acb-design.home-page .acb-hero h1{font-size:20px!important;line-height:1.4!important;letter-spacing:0!important;font-weight:500!important;max-width:none;margin:0}
+html body#acb-design.home-page .acb-hero-copy{position:relative;z-index:1;display:block;background:#fff!important;border-radius:var(--radius-card);width:fit-content!important;max-width:94vw!important;text-align:center!important;margin:0!important;padding:19.83px 26.44px!important}
+html body#acb-design.home-page .acb-hero h1{font-size:20px!important;line-height:1.4!important;letter-spacing:var(--ls-title)!important;font-weight:500!important;max-width:none!important;margin:0;white-space:nowrap!important}
 @media(max-width:684px){
   html body#acb-design.home-page .acb-hero h1{line-height:1.2!important;font-size:20px!important}
 }
@@ -743,6 +743,11 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .ac
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
 html body#acb-design:is(.home-page,.blocks-page) main .acb-say>.wrap{padding:var(--sp-card)!important}
+html body#acb-design.home-page main .acb-say{width:75%!important;margin-left:auto!important;margin-right:auto!important}
+html body#acb-design.home-page main .acb-say>.wrap{padding:0!important}
+html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}
+@media(max-width:954px){html body#acb-design.home-page main .acb-say{width:85.7143%!important}}
+@media(max-width:684px){html body#acb-design.home-page main .acb-say{width:100%!important}}
 html body#acb-design :is(.center-hero,.acb-close-sub){padding:var(--sp-card)!important}
 html body#acb-design.home-page .acb-proof-copy ::selection{background:#4f46e5!important;color:#fff!important}
 /* Every yellow-background surface site-wide gets blue selection instead of
@@ -1696,8 +1701,8 @@ html body#acb-design .faq-a>p{width:60%!important;max-width:60%!important;overfl
 @media(max-width:774px){html body#acb-design .faq-a>p{width:100%!important;max-width:none!important}}
 
 /* One FAQ control everywhere: a plain plus that turns into a cross. */
-html body#acb-design :is(.faq-a,.offer-body){overflow:hidden!important;display:grid!important;grid-template-rows:0fr!important;opacity:0!important;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1),opacity .3s ease!important}
-html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a,.offer-body){grid-template-rows:1fr!important;opacity:1!important}
+html body#acb-design :is(.faq-a,.offer-body){overflow:hidden!important;display:block!important;height:0!important;opacity:0!important;transition:height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease!important}
+html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a,.offer-body){height:auto!important;opacity:1!important}
 html body#acb-design :is(.faq-a>p,.offer-body>div){overflow:hidden!important;padding-bottom:0!important;transition:padding-bottom .4s cubic-bezier(.4,0,.2,1)!important}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16px!important}
 html body#acb-design .faq-item .faq-q::after{content:"+"!important;width:auto!important;height:auto!important;margin-left:auto!important;border:0!important;color:var(--blue)!important;font-size:20px!important;font-weight:400!important;line-height:1!important;transform:rotate(0)!important;transition:transform .4s cubic-bezier(.4,0,.2,1)!important}
@@ -2119,14 +2124,12 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
 html body#acb-design.home-page .acb-say p.scrolltext{
   width:100%!important;
   max-width:none!important;
-  padding-right:25%!important;
+  padding-right:0!important;
   text-wrap:pretty!important;
   overflow-wrap:normal!important;
   word-break:normal!important;
   hyphens:none!important;
 }
-@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:14.2857%!important}}
-@media(max-width:684px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}}
 @supports(text-wrap:balance){
   html body#acb-design.home-page .acb-say p.scrolltext{text-wrap:pretty!important}
 }
