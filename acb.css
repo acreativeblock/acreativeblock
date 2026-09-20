@@ -3653,3 +3653,24 @@ html body#acb-design.faq-page .faqx .offer-body p{
   html body#acb-design .faq-item .faq-a>p,
   html body#acb-design.faq-page .faqx .offer-body>div{width:100%!important}
 }
+
+/* Footer shares the contained card frame used by the rest of the site. */
+html body#acb-design .acb-footer{
+  width:calc(100vw - 16px)!important;
+  max-width:calc(100vw - 16px)!important;
+  margin:0 auto 8px!important;
+  border-radius:var(--radius-card)!important;
+  overflow:hidden!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design .acb-footer>.wrap,
+html body#acb-design .acb-footer>.top.acb-footer-links,
+html body#acb-design .acb-footer>.bottom{
+  width:calc(100% - 40px)!important;
+  max-width:var(--site-width)!important;
+}
+@media(min-width:1181px){
+  html body#acb-design .acb-footer{
+    width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
+  }
+}
