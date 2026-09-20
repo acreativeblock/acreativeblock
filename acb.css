@@ -3533,3 +3533,10 @@ html body#acb-design main{
     max-width:calc(100vw - 16px)!important;
   }
 }
+
+/* Final CTA lock: 20px text and 20px padding, including the variants that
+   had their own compact page-level declarations. */
+html body#acb-design main :is(.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.bm-hypo .btn,.acb-close .btn,a.refbar-btn),
+html body#acb-design .acb-header .acb-utility-pill{
+  font-size:20px!important;line-height:1.2!important;padding:20px!important;
+}
