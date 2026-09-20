@@ -3554,3 +3554,9 @@ html body#acb-design .acb-header .acb-utility-pill{
 html body#acb-design :is(.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note,.access-note){
   font-size:20px!important;
 }
+
+/* 4i / 4o share the Home hero copy scale at every breakpoint. */
+html body#acb-design:is(.individuals-page,.organisations-page) :is(h1.audience-hero-rotbubble,.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot){
+  font-size:20px!important;
+  line-height:1.4!important;
+}
