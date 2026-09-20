@@ -3490,3 +3490,6 @@ html body#acb-design .offer-row.open .offer-toggle .pm::after{transform:rotate(1
 /* Final type lock: this must sit after every page-specific typography rule. */
 html body#acb-design,
 html body#acb-design *{font-weight:100!important}
+
+/* One menu scale on every breakpoint. */
+html body#acb-design .acb-header :is(.navbutton,.acb-sub a){font-size:20px!important}
