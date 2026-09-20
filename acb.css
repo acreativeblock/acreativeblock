@@ -3560,3 +3560,8 @@ html body#acb-design:is(.individuals-page,.organisations-page) :is(h1.audience-h
   font-size:20px!important;
   line-height:1.4!important;
 }
+
+/* The header action remains compact inside the floating navigation bar. */
+html body#acb-design .acb-header .acb-utility-pill{
+  padding:10px 16px!important;
+}
