@@ -3565,3 +3565,10 @@ html body#acb-design:is(.individuals-page,.organisations-page) :is(h1.audience-h
 html body#acb-design .acb-header .acb-utility-pill{
   padding:10px 16px!important;
 }
+
+/* Start the first content card after a hero on the same rhythm as every
+   following card. Home has its marquee between those two elements. */
+html body#acb-design main > :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero) + .acb-main-panel > section:first-child,
+html body#acb-design.home-page main > .acb-main-panel > section:first-child{
+  margin-top:var(--sp-gap-wide)!important;
+}
