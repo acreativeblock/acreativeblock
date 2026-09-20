@@ -3513,3 +3513,5 @@ html body#acb-design main>.acb-main-panel{width:100%!important;margin:0!importan
     max-width:calc(100vw - 26px)!important;
   }
 }
+
+html body#acb-design.home-page .acb-hero-copy{padding:0 20px!important}
