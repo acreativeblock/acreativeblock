@@ -1387,9 +1387,9 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-ro
 html body#acb-design:is(.individuals-page,.organisations-page) h1.audience-hero-rotbubble,
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-line,
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble .cycling-word{
-  font-size:clamp(26px,2.5vw,34px)!important;
-  line-height:.98!important;
-  letter-spacing:-.02em!important;
+  font-size:20px!important;
+  line-height:1.4!important;
+  letter-spacing:var(--ls-title)!important;
   font-weight:500!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .hero-static-line{
