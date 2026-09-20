@@ -3515,3 +3515,21 @@ html body#acb-design main>.acb-main-panel{width:100%!important;margin:0!importan
 }
 
 html body#acb-design.home-page .acb-hero-copy{padding:0 20px!important}
+
+/* A slightly wider shared frame for content and the floating header. */
+html body#acb-design main{
+  width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;
+}
+@media(max-width:1180px){
+  html body#acb-design .acb-header{
+    left:8px!important;right:auto!important;width:calc(100vw - 16px)!important;
+    max-width:calc(100vw - 16px)!important;margin:0!important;
+  }
+}
+@media(min-width:1181px){
+  html body#acb-design main,
+  html body#acb-design .acb-header{
+    width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
+    max-width:calc(100vw - 16px)!important;
+  }
+}
