@@ -2213,7 +2213,7 @@ html body#acb-design.individuals-page .individual-support .acb-loop-steps li p{
   margin:0!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;
 }
 @media(max-width:774px){
-  html body#acb-design.individuals-page .individual-feeling .scrolltext{padding-right:0!important;font-size:clamp(28px,8vw,35px)!important}
+  html body#acb-design.individuals-page .individual-feeling .scrolltext{padding-right:0!important;font-size:35px!important}
   html body#acb-design.individuals-page .individual-support>.wrap{grid-template-columns:1fr!important}
   html body#acb-design.individuals-page .individual-support .acb-loop-steps{grid-column:1!important;margin-top:var(--sp-card)!important}
 }
