@@ -973,7 +973,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
    (its own full-screen "stage" UI, not a normal scrolling page).
    ========================================================================== */
 html body#acb-design:not(.questionnaire-page){
-  background-color:#faf7f2!important;
+  background-color:#f0f6ff!important;
   /* The 8 working-map block colours (see .bgm-card on the home page),
      bloomed around the edges/corners instead of the original 5 arbitrary
      hues. */
@@ -985,7 +985,7 @@ html body#acb-design:not(.questionnaire-page){
     radial-gradient(circle farthest-corner at bottom right, #9a8ff2 0%, rgba(154,143,242,0) 45%),
     radial-gradient(circle farthest-side at bottom center, #a9d5f5 0%, rgba(169,213,245,0) 35%),
     radial-gradient(circle farthest-corner at bottom left, #5f9dd6 0%, rgba(95,157,214,0) 45%),
-    radial-gradient(circle farthest-side at left center, #909090 0%, rgba(144,144,144,0) 35%)!important;
+    radial-gradient(circle farthest-side at left center, #909090 0%, rgba(144,144,144,0) 35%);
   background-attachment:fixed!important;
   background-repeat:no-repeat!important;
 }
