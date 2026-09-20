@@ -885,6 +885,9 @@ html body#acb-design .offer-toggle .pm svg{display:none!important}
 html body#acb-design .offer-toggle .pm::after{content:"+"!important;display:inline-block!important;font-size:20px!important;font-weight:400!important;line-height:1!important;color:var(--blue)!important;transition:transform .4s cubic-bezier(.4,0,.2,1)!important}
 html body#acb-design .offer-row.open .offer-toggle .pm::after{transform:rotate(135deg)!important}
 
+/* Home answers need a clear breath before the next rule. */
+html body#acb-design.home-page .acb-faq .faq-item.open .faq-a>p{padding-bottom:44px!important}
+
 html{scroll-behavior:smooth;scroll-padding-top:108px}
 html body#acb-design .faqx-cat{scroll-margin-top:108px}
 
