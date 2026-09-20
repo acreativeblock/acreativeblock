@@ -31,7 +31,7 @@
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
   --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
-  --fs-body:clamp(14.4px,1.5vw,17.1px);       --ls-body:-.005em;   /* medium copy: standard paragraph */
+  --fs-body:20px;                              --ls-body:-.005em;   /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
 }
