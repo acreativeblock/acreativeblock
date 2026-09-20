@@ -1917,6 +1917,26 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
   }
 }
 
+/* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
+@media(min-width:775px){
+  html body#acb-design.individuals-page .individual-feeling>.wrap{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(280px,.8fr)!important;
+    gap:var(--sp-card)!important;
+    align-items:start!important;
+  }
+  html body#acb-design.individuals-page .individual-feeling .audience-eyebrow{grid-column:1 / -1!important}
+  html body#acb-design.individuals-page .individual-feeling .feeling-copy{grid-column:1!important}
+  html body#acb-design.individuals-page .individual-feeling .signs-list{grid-column:2!important;margin:0!important;max-width:none!important;grid-template-columns:1fr!important}
+  html body#acb-design.individuals-page .individual-support>.wrap{display:grid!important;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;gap:var(--sp-card)!important;align-items:start!important}
+  html body#acb-design.individuals-page .individual-support .support-copy{grid-column:1!important}
+  html body#acb-design.individuals-page .individual-support .acb-loop-steps{grid-column:2!important;grid-template-columns:1fr!important;margin:0!important}
+}
+html body#acb-design.individuals-page .individual-feeling .feeling-copy .body{margin-bottom:0!important}
+html body#acb-design.individuals-page .individual-support .support-copy .big{color:#fff!important}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps{grid-template-columns:1fr!important}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps li:not(:last-child)::after{display:none!important}
+
 /* Home Our approach: improve measure and browser line balancing to avoid lonely words/letters. */
 html body#acb-design.home-page .acb-say p.scrolltext{
   max-width:35ch!important;
