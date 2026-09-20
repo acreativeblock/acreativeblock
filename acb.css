@@ -3674,3 +3674,6 @@ html body#acb-design .acb-footer>.bottom{
     width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
   }
 }
+
+/* The eight Block Map cards do not use the inherited coloured top rule. */
+html body#acb-design.blocks-page .bmcard-body{border-top:0!important}
