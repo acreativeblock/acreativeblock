@@ -31,7 +31,7 @@
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
   --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
-  --fs-body:20px;                              --ls-body:-.005em;   /* medium copy: standard paragraph */
+  --fs-body:20px;                              --ls-body:-.03em;    /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
 }
@@ -3951,6 +3951,66 @@ html body#acb-design .acb-footer>.bottom{
   display:flex!important;
   justify-content:center!important;
   text-align:center!important;
+}
+
+/* Final small interface refinements. */
+html body#acb-design .acb-footer .top.acb-footer-links .col{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+}
+html body#acb-design .acb-footer .top.acb-footer-links .col a{
+  display:inline-flex!important;
+  align-self:flex-start!important;
+  width:auto!important;
+}
+html body#acb-design .acb-header .acb-sub a{border-radius:var(--radius-card)!important}
+
+/* Home and the individuals lead use one shared long-form reading scale. */
+html body#acb-design.individuals-page .individual-feeling .scrolltext{
+  width:100%!important;
+  max-width:none!important;
+  padding-right:15%!important;
+  font-size:35px!important;
+  line-height:1.1!important;
+  letter-spacing:var(--ls-title)!important;
+  text-wrap:pretty!important;
+}
+
+/* The blog hero stays inside the same outer frame as the header and content. */
+html body#acb-design.blog-index main .blog-hero,
+html body#acb-design.blog-index main .blog-hero>.wrap{
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+html body#acb-design.faq-page main .faq-hero,
+html body#acb-design.faq-page main .faq-hero>.wrap{
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* Restore the FAQ’s category index to the left. Its section remains clear;
+   only headings and the individual question cards use white surfaces. */
+html body#acb-design.faq-page .faqx{
+  grid-template-columns:minmax(220px,.32fr) minmax(0,1fr)!important;
+  gap:16px!important;
+}
+html body#acb-design.faq-page .faqx-nav{
+  grid-column:1!important;
+  grid-row:1!important;
+  max-height:calc(100vh - 110px)!important;
+  overflow:auto!important;
+}
+html body#acb-design.faq-page .faqx>div{grid-column:2!important;grid-row:1!important}
+html body#acb-design.faq-page .faqx .faqx-cat,
+html body#acb-design.faq-page .faqx .offer-list{background:transparent!important}
+@media(max-width:774px){
+  html body#acb-design.individuals-page .individual-feeling .scrolltext{padding-right:0!important}
+  html body#acb-design.faq-page .faqx{grid-template-columns:1fr!important}
+  html body#acb-design.faq-page .faqx-nav,
+  html body#acb-design.faq-page .faqx>div{grid-column:1!important;grid-row:auto!important;max-height:none!important}
 }
 
 /* FAQ questions use the same standalone pill system everywhere. */
