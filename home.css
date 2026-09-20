@@ -78,7 +78,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .work-card{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(24.79px,4vw,49.57px);min-height:clamp(148.72px,18vw,198.29px);border-radius:9.92px;padding:var(--sp-card);text-decoration:none;transition:transform .2s ease}
 .work-card:hover{transform:translateY(-1.66px)}
 .work-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14.87px}
-.work-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.02;margin:0}
+.work-card h3{font-family:var(--sans);font-weight: 400;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.02;margin:0}
 .work-card .work-arrow{flex:0 0 auto;font-size:clamp(18.18px,2.2vw,26.44px);line-height:1}
 .work-card p{margin:0;font-size:clamp(12.39px,1.1vw,14.05px);line-height:1.4;max-width:34ch}
 @media(max-width:810px){.work-layout{grid-template-columns:1fr}.work-portrait{min-height:0;height:238px}}
@@ -126,7 +126,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 /* "You might be blocked by …" — animated rotating block name (Feeld-style) */
 .acb-blocked{text-align:center}
 .acb-blocked .acb-eyebrow{color:var(--blue)}
-.acb-blocked-h{font-family:var(--sans);font-weight:500;font-size:clamp(28.09px,5.8vw,82.62px);line-height:1.04;letter-spacing:-.035em;margin:0;color:var(--ink)}
+.acb-blocked-h{font-family:var(--sans);font-weight: 400;font-size:clamp(28.09px,5.8vw,82.62px);line-height:1.04;letter-spacing:-.035em;margin:0;color:var(--ink)}
 .rot-wrap{display:block;overflow:hidden;height:1.18em;margin-top:.06em}
 .rot{display:inline-block;color:var(--blue);line-height:1.18em;transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .5s ease}
 .rot.out{transform:translateY(-115%);opacity:0}
@@ -139,7 +139,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .acb-faq .acb-h2{margin-left:auto;margin-right:auto}
 .acb-faq .faq-list{max-width:654.35px;margin:0 auto;border-top:0.75px solid var(--line)}
 .acb-faq .faq-item{border-bottom:0.75px solid var(--line)}
-.acb-faq .faq-item .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:13.9px 0;font-family:var(--sans);font-weight:500;font-size:clamp(10.74px,1.36vw,13.9px);color:var(--ink);display:flex;justify-content:space-between;gap:12.65px;align-items:center}
+.acb-faq .faq-item .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:13.9px 0;font-family:var(--sans);font-weight: 400;font-size:clamp(10.74px,1.36vw,13.9px);color:var(--ink);display:flex;justify-content:space-between;gap:12.65px;align-items:center}
 .acb-faq .faq-item .faq-q::after{content:"+";display:inline-block;font-size:15.17px;color:var(--blue);line-height:1;transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .acb-faq .faq-item.open .faq-q::after{transform:rotate(135deg)}
 .acb-faq .faq-item .faq-q:hover{color:var(--blue)}
@@ -149,7 +149,7 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 
 /* dark "Looking at what you carry" teaser */
 .acb-look{background:#034748;color:#fff;text-align:center;padding:clamp(69.4px,13vh,123.93px) 0}
-.acb-look h2{font-family:var(--sans);font-weight:500;font-size:clamp(24.79px,5vw,59.49px);line-height:1.04;letter-spacing:-.03em;margin:0 auto;max-width:20ch;color:#fff}
+.acb-look h2{font-family:var(--sans);font-weight: 400;font-size:clamp(24.79px,5vw,59.49px);line-height:1.04;letter-spacing:-.03em;margin:0 auto;max-width:20ch;color:#fff}
 .acb-look p{margin:clamp(16.52px,2.6vw,26.44px) auto 0;max-width:52ch;font-size:13.22px;line-height:1.6;color:rgba(255,255,255,.82);text-wrap:pretty}
 .acb-look .cta{margin-top:clamp(21.48px,3vw,34.7px);display:flex;justify-content:center}
 .acb-look .pill.alt{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
@@ -170,10 +170,10 @@ body.home-page{background:var(--cream)!important;background-image:none!important
 .bgm-col-a{animation-duration:24s}
 .bgm-col-b{animation-duration:29s;animation-direction:reverse}
 .bgm-card{min-height:126px;box-sizing:border-box;background:#fafafa;color:var(--ink);border-radius:9.92px;padding:clamp(13.22px,1.6vw,18.18px);display:flex;flex-direction:column;gap:4.96px;box-shadow:var(--shadow-card)}
-.bgm-card .bgm-num{font-family:var(--sans);font-weight:500;font-size:clamp(13.22px,1.4vw,16.52px);letter-spacing:-.02em;opacity:.6}
-.bgm-card h3{font-family:var(--sans);font-weight:500;font-size:clamp(14.05px,1.5vw,17.35px);letter-spacing:-.02em;line-height:1.1;margin:2.48px 0 0}
+.bgm-card .bgm-num{font-family:var(--sans);font-weight: 400;font-size:clamp(13.22px,1.4vw,16.52px);letter-spacing:-.02em;opacity:.6}
+.bgm-card h3{font-family:var(--sans);font-weight: 400;font-size:clamp(14.05px,1.5vw,17.35px);letter-spacing:-.02em;line-height:1.1;margin:2.48px 0 0}
 .bgm-card p{font-size:clamp(10.74px,1.05vw,12.39px);line-height:1.4;margin:0;opacity:.7}
-.bgm-card .bgm-lab{align-self:flex-start;margin-top:auto;font-size:8.92px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--c);color:var(--ink);padding:3.3px 6.61px;border-radius:5.4px}
+.bgm-card .bgm-lab{align-self:flex-start;margin-top:auto;font-size:8.92px;font-weight: 400;letter-spacing:.08em;text-transform:uppercase;background:var(--c);color:var(--ink);padding:3.3px 6.61px;border-radius:5.4px}
 @keyframes bgmScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
 @media(max-width:810px){.blocks-layout{grid-template-columns:1fr}.blocks-masonry{height:clamp(297.54px,60vw,360px)}}
 @media(min-width:811px){.blocks-masonry-inner{padding-left:0px!important}}
@@ -270,7 +270,7 @@ body.home-page{
 .home-page .acb-say p .hl{color:var(--brand)}
 .home-page .acb-eyebrow,.home-page .mono,.home-page .eyebrow{
   display:inline-block;width:max-content;background:var(--brand);color:#fff!important;
-  padding:5.79px 9.09px;margin:0 0 clamp(13.22px,2vw,19.83px);font-size:9.92px;font-weight:600;line-height:1;letter-spacing:.08em;
+  padding:5.79px 9.09px;margin:0 0 clamp(13.22px,2vw,19.83px);font-size:9.92px;font-weight: 400;line-height:1;letter-spacing:.08em;
 }
 .home-page .acb-proof-copy{background:var(--quiet)!important;background-image:none!important}
 .home-page .acb-proof-image{background:var(--quiet);overflow:hidden}
@@ -314,7 +314,7 @@ html body.home-page .acb-close{background:#E4E244!important;background-color:#E4
 .acb-footer .mark .acb-logo-mount{height:47.92px!important}
 .acb-footer .ack{max-width:29ch;margin:19.83px 0 0;font-size:clamp(14.87px,1.55vw,20.66px);line-height:1.18;color:#fff}
 .acb-footer .acb-footer-news{display:flex!important;flex-direction:column;align-items:flex-start;justify-content:space-between;height:100%;padding:0!important;border:0!important}
-.acb-footer .acb-footer-news h3{font-family:var(--sans)!important;font-size:clamp(18.18px,2vw,24.79px)!important;font-weight:400;white-space:normal!important}
+.acb-footer .acb-footer-news h3{font-family:var(--sans)!important;font-size:clamp(18.18px,2vw,24.79px)!important;font-weight: 400;white-space:normal!important}
 .acb-footer .acb-footer-news p{font-size:clamp(11.56px,1vw,14.05px)!important;max-width:44ch!important;margin:9.92px 0 14.87px!important;line-height:1.4!important;align-self:flex-start!important}
 .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:none;width:100%}
 .acb-footer .top.acb-footer-links{padding-top:clamp(24.79px,4vw,46.27px)!important}
