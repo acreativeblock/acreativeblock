@@ -2162,6 +2162,11 @@ html body#acb-design main > section:not(.acb-hero):not(.center-hero):not(.page-h
   margin-top:var(--sp-gap-wide)!important;
 }
 
+/* Four organisation offers form two balanced rows; a single column keeps
+   each offer easy to scan on phones. */
+html body#acb-design.organisations-page .plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+@media(max-width:738px){html body#acb-design.organisations-page .plan-grid{grid-template-columns:1fr!important}}
+
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
