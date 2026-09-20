@@ -3394,8 +3394,8 @@ html body#acb-design.home-page .acb-faq .faq-list{padding:0!important}
 @media(max-width:774px){html body#acb-design .faq-a>p{width:100%!important;max-width:none!important}}
 
 /* Final FAQ control override: all questions use the same + → × motion. */
-html body#acb-design :is(.faq-a,.offer-body){overflow:hidden!important;display:grid!important;grid-template-rows:0fr!important;opacity:0!important;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1),opacity .3s ease!important}
-html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a,.offer-body){grid-template-rows:1fr!important;opacity:1!important}
+html body#acb-design :is(.faq-a,.offer-body){overflow:hidden!important;display:block!important;grid-template-rows:none!important;height:0!important;opacity:0!important;transition:height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease!important}
+html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a,.offer-body){height:auto!important;opacity:1!important}
 html body#acb-design :is(.faq-a>p,.offer-body>div){overflow:hidden!important;padding-bottom:0!important;transition:padding-bottom .4s cubic-bezier(.4,0,.2,1)!important}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16px!important}
 html body#acb-design .faq-item .faq-q::after{content:"+"!important;width:auto!important;height:auto!important;margin-left:auto!important;border:0!important;color:var(--blue)!important;font-size:20px!important;font-weight:400!important;line-height:1!important;transform:rotate(0)!important;transition:transform .4s cubic-bezier(.4,0,.2,1)!important}
