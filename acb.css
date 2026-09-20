@@ -2244,10 +2244,6 @@ html body#acb-design.home-page main .acb-close>a.home-close-link{
 }
 html body#acb-design.home-page main .acb-close>a.home-close-link:hover{background:#d9d73f!important}
 
-/* One intentionally light typographic voice across every page surface. */
-html body#acb-design,
-html body#acb-design *{font-weight:100!important}
-
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
@@ -3490,3 +3486,7 @@ html body#acb-design .offer-toggle .pm{display:inline-flex!important;align-items
 html body#acb-design .offer-toggle .pm svg{display:none!important}
 html body#acb-design .offer-toggle .pm::after{content:"+"!important;display:inline-block!important;font-size:20px!important;font-weight:400!important;line-height:1!important;color:var(--blue)!important;transition:transform .4s cubic-bezier(.4,0,.2,1)!important}
 html body#acb-design .offer-row.open .offer-toggle .pm::after{transform:rotate(135deg)!important}
+
+/* Final type lock: this must sit after every page-specific typography rule. */
+html body#acb-design,
+html body#acb-design *{font-weight:100!important}
