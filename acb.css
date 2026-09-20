@@ -27,7 +27,7 @@
   --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
   --lh-title:1;                           /* the one line-height for every title-sized text */
   --lh-copy:1.3;                          /* the one line-height for every copy size (copy-lg/body/small/button) */
-  --fs-label:15px;                           --ls-label:-.01em;   /* eyebrows / small caps labels */
+  --fs-label:20px;                           --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
   --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
@@ -3542,3 +3542,15 @@ html body#acb-design .acb-header .acb-utility-pill{
 }
 
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill,.mobile-menu-toggle){letter-spacing:-.03em!important}
+
+/* Global action and label scale. Kept last so individual page styles cannot
+   silently reduce an action or section label. */
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn),
+html body#acb-design .acb-header .acb-utility-pill{
+  font-size:20px!important;
+  line-height:1.2!important;
+  padding:20px!important;
+}
+html body#acb-design :is(.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note,.access-note){
+  font-size:20px!important;
+}
