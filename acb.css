@@ -2153,6 +2153,15 @@ html body#acb-design.home-page .acb-say p.scrolltext{
   html body#acb-design.home-page .acb-say p.scrolltext{text-wrap:pretty!important}
 }
 
+/* Give consecutive content cards room to breathe. The selector only starts
+   after the first card in a content panel, so every hero-to-first-card gap
+   keeps its established size. */
+:root{--sp-gap-wide:clamp(54px,13vw,92px)}
+html body#acb-design main > .acb-main-panel > section + section,
+html body#acb-design main > section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.blog-hero):not(.bm-hero):not(.domain-hero) + section{
+  margin-top:var(--sp-gap-wide)!important;
+}
+
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
