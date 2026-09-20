@@ -743,11 +743,6 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark .ac
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways p{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;font-weight:500!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-heading{font-weight:500!important}
 html body#acb-design:is(.home-page,.blocks-page) main .acb-say>.wrap{padding:var(--sp-card)!important}
-html body#acb-design.home-page main .acb-say{width:75%!important;margin-left:auto!important;margin-right:auto!important}
-html body#acb-design.home-page main .acb-say>.wrap{padding:0!important}
-html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}
-@media(max-width:954px){html body#acb-design.home-page main .acb-say{width:85.7143%!important}}
-@media(max-width:684px){html body#acb-design.home-page main .acb-say{width:100%!important}}
 html body#acb-design :is(.center-hero,.acb-close-sub){padding:var(--sp-card)!important}
 html body#acb-design.home-page .acb-proof-copy ::selection{background:#4f46e5!important;color:#fff!important}
 /* Every yellow-background surface site-wide gets blue selection instead of
@@ -2124,12 +2119,14 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
 html body#acb-design.home-page .acb-say p.scrolltext{
   width:100%!important;
   max-width:none!important;
-  padding-right:0!important;
+  padding-right:25%!important;
   text-wrap:pretty!important;
   overflow-wrap:normal!important;
   word-break:normal!important;
   hyphens:none!important;
 }
+@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:14.2857%!important}}
+@media(max-width:684px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}}
 @supports(text-wrap:balance){
   html body#acb-design.home-page .acb-say p.scrolltext{text-wrap:pretty!important}
 }
