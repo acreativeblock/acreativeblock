@@ -16,7 +16,7 @@
   /* spacing */
   --sp-card:clamp(18px,3vw,27px);               /* internal padding of a white/colour card */
   --sp-gap:clamp(28.8px,7vw,49.57px);             /* vertical gap between stacked sections */
-  --radius-card:1rem;                          /* card corner radius */
+  --radius-card:2rem;                          /* card corner radius */
   --shadow-card:0 1.66px 3.3px rgba(161,158,168,.1); /* card elevation, matches the header's own shadow */
 
   /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
