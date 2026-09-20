@@ -277,7 +277,7 @@ html body#acb-design:is(.home-page,.blocks-page) .acb-say p.scrolltext{line-heig
    sixth of the section on the right so lines stay a readable length. */
 html body#acb-design:is(.home-page,.blocks-page) .acb-say p.scrolltext{padding-right:16.67%!important}
 html body#acb-design.internal-page .access-note{padding-right:16.67%!important}
-html body#acb-design.home-page .acb-say p.scrolltext{font-size:20px!important;padding-right:25%!important}
+html body#acb-design.home-page .acb-say p.scrolltext{font-size:var(--fs-h2)!important;padding-right:25%!important}
 @media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:14.2857%!important}}
 @media(max-width:684px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}}
 
