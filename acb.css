@@ -3493,3 +3493,9 @@ html body#acb-design *{font-weight:100!important}
 
 /* One menu scale on every breakpoint. */
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a){font-size:20px!important}
+
+/* One generous action scale: regular calls to action and the header action
+   use 20px type with padding that gives the text room to breathe. */
+html body#acb-design :is(a.btn,a.btn-out,a.pill,a.refbar-btn,.acb-utility-pill,button.btn,button.btn-out,button.pill){
+  font-size:20px!important;line-height:1.2!important;padding:14px 22px!important;
+}
