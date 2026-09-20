@@ -3835,3 +3835,63 @@ html body#acb-design .acb-footer>.bottom{
   html body#acb-design .acb-footer{padding:24px 20px!important}
   html body#acb-design .acb-footer>.top.acb-footer-links{grid-template-columns:1fr 1fr!important}
 }
+
+/* Legal and FAQ reading layouts: an independent index card beside the copy. */
+html body#acb-design.legal-page main .legal-section{
+  padding:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+html body#acb-design.legal-page .legal-layout{
+  width:100%!important;
+  max-width:none!important;
+  grid-template-columns:minmax(220px,.32fr) minmax(0,1fr)!important;
+  gap:16px!important;
+  padding:0!important;
+}
+html body#acb-design.legal-page .legal-nav,
+html body#acb-design.faq-page .faqx-nav{
+  align-self:start!important;
+  padding:var(--sp-card)!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#dbeafe!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.legal-page .legal-nav::before{
+  content:"Contents";
+  display:block;
+  margin-bottom:12px;
+  color:var(--ink);
+  font-size:20px;
+  line-height:1.2;
+}
+html body#acb-design.legal-page .legal-nav a,
+html body#acb-design.faq-page .faqx-nav a{
+  padding:8px 0!important;
+  border:0!important;
+  color:var(--ink)!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+}
+html body#acb-design.legal-page .legal-copy{
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.faq-page .faqx-nav .lbl{
+  color:var(--ink)!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+  text-transform:none!important;
+}
+html body#acb-design.faq-page main>section:not(.page-hero):not(.acb-close-sub),
+html body#acb-design.faq-page .faqx-cat{background:transparent!important}
+@media(max-width:774px){
+  html body#acb-design.legal-page .legal-layout{grid-template-columns:1fr!important}
+  html body#acb-design.legal-page .legal-nav,
+  html body#acb-design.faq-page .faqx-nav{position:static!important}
+  html body#acb-design.faq-page .faqx-nav{display:flex!important}
+}
