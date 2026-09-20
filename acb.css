@@ -3499,3 +3499,17 @@ html body#acb-design .acb-header :is(.navbutton,.acb-sub a){font-size:20px!impor
 html body#acb-design :is(a.btn,a.btn-out,a.pill,a.refbar-btn,.acb-utility-pill,button.btn,button.btn-out,button.pill){
   font-size:20px!important;line-height:1.2!important;padding:14px 22px!important;
 }
+
+/* The content frame now shares the floating header's outside edges. Full
+   bleed image heroes keep their deliberate viewport-wide treatment. */
+html body#acb-design main{
+  width:calc(100vw - 26px)!important;max-width:calc(100vw - 26px)!important;
+  margin-left:auto!important;margin-right:auto!important;
+}
+html body#acb-design main>.acb-main-panel{width:100%!important;margin:0!important;padding:0!important}
+@media(min-width:1181px){
+  html body#acb-design main{
+    width:min(calc(var(--site-width) + var(--panel-boost) + 48px),calc(100vw - 26px))!important;
+    max-width:calc(100vw - 26px)!important;
+  }
+}
