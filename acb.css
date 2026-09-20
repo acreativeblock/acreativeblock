@@ -2233,6 +2233,14 @@ html body#acb-design.individuals-page .individual-takeaways .outcome-list li{
 html body#acb-design.individuals-page .individual-takeaways .outcome-list li::before{display:none!important}
 @media(max-width:774px){html body#acb-design.individuals-page .individual-takeaways .outcome-list{grid-template-columns:1fr!important}}
 
+/* Home's closing prompt is one large, direct action—not a small link inside
+   a card—so the entire yellow surface is the Get in touch button. */
+html body#acb-design.home-page main .acb-close>a.home-close-link{
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  min-height:clamp(112px,15vw,170px)!important;text-decoration:none!important;cursor:pointer!important;
+}
+html body#acb-design.home-page main .acb-close>a.home-close-link:hover{background:#d9d73f!important}
+
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
