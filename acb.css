@@ -3763,3 +3763,25 @@ html body#acb-design.home-page .journal-meta{margin-top:auto!important;padding-t
   html body#acb-design.home-page .acb-journal .journal-head{align-items:start!important;flex-direction:column!important}
   html body#acb-design.home-page .journal-card{flex-basis:min(82vw,340px)!important;min-height:410px!important}
 }
+
+/* FAQ surfaces stay independent: title card, then individual question cards. */
+html body#acb-design main section:has(.faq-list)>.wrap,
+html body#acb-design main section:has(.faqx)>.wrap{
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body#acb-design :is(.acb-faq .acb-head,.section-head:has(+.faq-list),.bm-faq .head){
+  margin:0 0 12px!important;
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.faq-page .faqx-cat-head{
+  margin:0 0 12px!important;
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
