@@ -3929,3 +3929,26 @@ html body#acb-design.home-page .acb-faq .faq-item .faq-a>p{
   padding-inline:var(--sp-card)!important;
   padding-bottom:28px!important;
 }
+
+/* Footer finishing details: social marks sit beneath the identity, while the
+   compact lower row is solely the centred copyright. */
+html body#acb-design .acb-footer .footer-socials{
+  display:flex!important;
+  gap:12px!important;
+  margin-top:18px!important;
+}
+html body#acb-design .acb-footer .footer-socials a{
+  display:grid!important;
+  place-items:center!important;
+  width:34px!important;
+  height:34px!important;
+  color:#fff!important;
+  border-radius:50%!important;
+  text-decoration:none!important;
+}
+html body#acb-design .acb-footer .footer-socials svg{width:20px!important;height:20px!important}
+html body#acb-design .acb-footer>.bottom{
+  display:flex!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
