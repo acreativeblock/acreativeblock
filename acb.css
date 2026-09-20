@@ -3758,10 +3758,18 @@ html body#acb-design.home-page .journal-card:hover img{transform:scale(1.03)!imp
 html body#acb-design.home-page .journal-tag{align-self:flex-start!important;margin:0 0 12px!important;padding:4px 9px!important;border:1px solid currentColor!important;border-radius:999px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.03em!important}
 html body#acb-design.home-page .journal-card h3{margin:0!important;font-size:clamp(24px,2vw,30px)!important;line-height:1.04!important;letter-spacing:-.04em!important}
 html body#acb-design.home-page .journal-meta{margin-top:auto!important;padding-top:20px!important;font-size:15px!important;letter-spacing:-.03em!important}
+/* Text-led cards keep the same generous height while exposing half of the
+   fifth card, making the horizontal continuation immediately obvious. */
+html body#acb-design.home-page .journal-viewport{container-type:inline-size!important}
+html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 64px) / 4.5)!important;min-height:430px!important}
+html body#acb-design.home-page .journal-card figure{display:none!important}
 @media(max-width:774px){
   html body#acb-design.home-page .acb-journal>.wrap{padding:20px!important}
   html body#acb-design.home-page .acb-journal .journal-head{align-items:start!important;flex-direction:column!important}
   html body#acb-design.home-page .journal-card{flex-basis:min(82vw,340px)!important;min-height:410px!important}
+}
+@media(min-width:775px) and (max-width:1180px){
+  html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 32px) / 2.5)!important}
 }
 
 /* FAQ surfaces stay independent: title card, then individual question cards. */
