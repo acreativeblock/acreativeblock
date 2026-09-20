@@ -2167,6 +2167,54 @@ html body#acb-design main > section:not(.acb-hero):not(.center-hero):not(.page-h
 html body#acb-design.organisations-page .plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 @media(max-width:738px){html body#acb-design.organisations-page .plan-grid{grid-template-columns:1fr!important}}
 
+/* Individuals: the opening statement uses the same long-form hierarchy as
+   Home's approach. The support journey then holds the explanatory copy on
+   the left and the complete process on the right half. */
+html body#acb-design.individuals-page .individual-feeling>.wrap{display:block!important}
+html body#acb-design.individuals-page .individual-feeling .scrolltext{
+  max-width:none!important;margin:0!important;padding-right:15%!important;
+  color:var(--ink)!important;font-size:35px!important;line-height:var(--lh-title)!important;
+  letter-spacing:var(--ls-title)!important;text-wrap:pretty!important;
+}
+html body#acb-design.individuals-page .individual-feeling .scrolltext .hl{
+  background-image:linear-gradient(to bottom,transparent 8%,var(--acb-yellow) 8%,var(--acb-yellow) 92%,transparent 92%)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design.individuals-page .individual-support>.wrap{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:var(--sp-card)!important;align-items:start!important;
+}
+html body#acb-design.individuals-page .individual-support .support-copy .big{
+  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;letter-spacing:var(--ls-h2)!important;
+  margin:0 0 16px!important;
+}
+html body#acb-design.individuals-page .individual-support .support-copy .lead{
+  font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-copy-lg)!important;
+  margin:0!important;
+}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps{
+  grid-column:2!important;grid-template-columns:1fr!important;gap:8px!important;margin:0!important;
+}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps li{
+  padding:16px!important;min-height:0!important;
+}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps li span{
+  display:block!important;margin:0 0 8px!important;font-size:var(--fs-label)!important;
+  letter-spacing:var(--ls-label)!important;line-height:1.2!important;text-transform:uppercase!important;
+}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps li b{
+  display:block!important;margin:0 0 7px!important;font-size:var(--fs-copy-lg)!important;
+  letter-spacing:var(--ls-copy-lg)!important;line-height:1!important;font-weight:500!important;
+}
+html body#acb-design.individuals-page .individual-support .acb-loop-steps li p{
+  margin:0!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;
+}
+@media(max-width:774px){
+  html body#acb-design.individuals-page .individual-feeling .scrolltext{padding-right:0!important;font-size:clamp(28px,8vw,35px)!important}
+  html body#acb-design.individuals-page .individual-support>.wrap{grid-template-columns:1fr!important}
+  html body#acb-design.individuals-page .individual-support .acb-loop-steps{grid-column:1!important;margin-top:var(--sp-card)!important}
+}
+
 /* CTA final lock: match the 4i hero button across page CTAs. */
 html body#acb-design main .cta a.btn,
 html body#acb-design main .cta a.btn-out,
