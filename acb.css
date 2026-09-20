@@ -3689,3 +3689,12 @@ html body#acb-design.blocks-page .bmcard-body{border-top:0!important}
     padding-inline:8px!important;
   }
 }
+
+/* Match the Research & method dropdown exactly to its trigger width. */
+@media(min-width:1181px){
+  html body#acb-design .acb-header .navitem:nth-child(3)>.acb-sub{
+    width:100%!important;
+    min-width:100%!important;
+    box-sizing:border-box!important;
+  }
+}
