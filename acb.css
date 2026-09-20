@@ -3572,3 +3572,84 @@ html body#acb-design main > :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm
 html body#acb-design.home-page main > .acb-main-panel > section:first-child{
   margin-top:var(--sp-gap-wide)!important;
 }
+
+/* FAQ cards: every question lives in its own white rounded bubble. */
+html body#acb-design .faq-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:12px!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:20px 0 0!important;
+  border:0!important;
+}
+html body#acb-design .faq-item{
+  overflow:hidden!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design .faq-item .faq-q{
+  min-height:72px!important;
+  padding:20px!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--ink)!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+}
+html body#acb-design .faq-item .faq-a{
+  background:transparent!important;
+}
+html body#acb-design .faq-item .faq-a>p{
+  width:min(60%,760px)!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0 20px 20px!important;
+  font-size:20px!important;
+  line-height:1.3!important;
+}
+html body#acb-design.home-page .acb-faq>.wrap{
+  display:block!important;
+}
+
+/* The dedicated FAQ page uses offer rows; give those the same card system. */
+html body#acb-design.faq-page .faqx .offer-list{
+  display:grid!important;
+  gap:12px!important;
+  margin:20px 0 0!important;
+  border:0!important;
+}
+html body#acb-design.faq-page .faqx .offer-row{
+  overflow:hidden!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.faq-page .faqx .offer-toggle{
+  min-height:72px!important;
+  padding:20px!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--ink)!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+}
+html body#acb-design.faq-page .faqx .offer-body>div{
+  width:min(60%,760px)!important;
+  margin:0!important;
+  padding:0 20px 20px!important;
+}
+html body#acb-design.faq-page .faqx .offer-body p{
+  margin:0!important;
+  font-size:20px!important;
+  line-height:1.3!important;
+}
+@media(max-width:774px){
+  html body#acb-design .faq-item .faq-a>p,
+  html body#acb-design.faq-page .faqx .offer-body>div{width:100%!important}
+}
