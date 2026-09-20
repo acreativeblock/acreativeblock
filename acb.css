@@ -3895,3 +3895,8 @@ html body#acb-design.faq-page .faqx-cat{background:transparent!important}
   html body#acb-design.faq-page .faqx-nav{position:static!important}
   html body#acb-design.faq-page .faqx-nav{display:flex!important}
 }
+
+/* Only Home keeps its hero-to-marquee divider. */
+html body#acb-design:not(.home-page) main :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero,.sub-hero,.fam-hero,.contact-visual-hero){
+  border-bottom:0!important;
+}
