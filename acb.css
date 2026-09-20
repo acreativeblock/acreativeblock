@@ -277,8 +277,8 @@ html body#acb-design:is(.home-page,.blocks-page) .acb-say p.scrolltext{line-heig
    sixth of the section on the right so lines stay a readable length. */
 html body#acb-design:is(.home-page,.blocks-page) .acb-say p.scrolltext{padding-right:16.67%!important}
 html body#acb-design.internal-page .access-note{padding-right:16.67%!important}
-html body#acb-design.home-page .acb-say p.scrolltext{font-size:var(--fs-h2)!important;padding-right:25%!important}
-@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:14.2857%!important}}
+html body#acb-design.home-page .acb-say p.scrolltext{font-size:var(--fs-h2)!important;padding-right:15%!important}
+@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:10%!important}}
 @media(max-width:684px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}}
 
 /* "Inter" body; existing display titles remain unchanged. */
@@ -2121,13 +2121,13 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
 html body#acb-design.home-page .acb-say p.scrolltext{
   width:100%!important;
   max-width:none!important;
-  padding-right:25%!important;
+  padding-right:15%!important;
   text-wrap:pretty!important;
   overflow-wrap:normal!important;
   word-break:normal!important;
   hyphens:none!important;
 }
-@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:14.2857%!important}}
+@media(max-width:954px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:10%!important}}
 @media(max-width:684px){html body#acb-design.home-page .acb-say p.scrolltext{padding-right:0!important}}
 @supports(text-wrap:balance){
   html body#acb-design.home-page .acb-say p.scrolltext{text-wrap:pretty!important}
