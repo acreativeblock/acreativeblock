@@ -3908,3 +3908,24 @@ html body#acb-design.faq-page .faqx-cat{background:transparent!important}
 html body#acb-design:not(.home-page) main :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero,.sub-hero,.fam-hero,.contact-visual-hero){
   border-bottom:0!important;
 }
+
+/* Final action scale: page-specific CTA rules may set their own colours,
+   but every actionable button in the main content shares the same 20px type
+   and breathing room. The header remains intentionally compact. */
+html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.plan-card a.btn,.speaking-grid a.btn,a.refbar-btn,button.map-test-inline,.bm-hypo button,.hero-panel .btn){
+  font-size:20px!important;
+  line-height:1.2!important;
+  padding:20px!important;
+}
+
+/* Home FAQ: the questions line up with the title card and lead at their own
+   larger reading size. */
+html body#acb-design.home-page .acb-faq .faq-item .faq-q{
+  padding-inline:var(--sp-card)!important;
+  font-size:30px!important;
+  line-height:1.15!important;
+}
+html body#acb-design.home-page .acb-faq .faq-item .faq-a>p{
+  padding-inline:var(--sp-card)!important;
+  padding-bottom:28px!important;
+}
