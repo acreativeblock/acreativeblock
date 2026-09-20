@@ -3785,3 +3785,53 @@ html body#acb-design.faq-page .faqx-cat-head{
   background:#fff!important;
   box-shadow:var(--shadow-card)!important;
 }
+
+/* Footer: wide blue card with its identity/news on the left and links right. */
+html body#acb-design .acb-footer{
+  background:var(--blue)!important;
+  padding:clamp(24px,3vw,40px)!important;
+}
+html body#acb-design .acb-footer .acb-logo-mount,
+html body#acb-design .acb-footer .acb-logo-mount svg{color:#fff!important}
+html body#acb-design .acb-footer>.wrap{
+  display:grid!important;
+  grid-template-columns:minmax(250px,.9fr) minmax(0,2.1fr)!important;
+  gap:clamp(28px,4vw,64px)!important;
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
+}
+html body#acb-design .acb-footer .foot-lead{
+  grid-column:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  gap:32px!important;
+  padding:0!important;
+  border:0!important;
+}
+html body#acb-design .acb-footer .acb-footer-news{width:100%!important}
+html body#acb-design .acb-footer>.top.acb-footer-links{
+  grid-column:2!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+html body#acb-design .acb-footer>.bottom{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding-top:20px!important;
+}
+@media(max-width:900px){
+  html body#acb-design .acb-footer>.wrap{grid-template-columns:1fr!important}
+  html body#acb-design .acb-footer .foot-lead,
+  html body#acb-design .acb-footer>.top.acb-footer-links{grid-column:1!important}
+}
+@media(max-width:600px){
+  html body#acb-design .acb-footer{padding:24px 20px!important}
+  html body#acb-design .acb-footer>.top.acb-footer-links{grid-template-columns:1fr 1fr!important}
+}
