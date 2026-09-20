@@ -3952,3 +3952,38 @@ html body#acb-design .acb-footer>.bottom{
   justify-content:center!important;
   text-align:center!important;
 }
+
+/* FAQ questions use the same standalone pill system everywhere. */
+html body#acb-design .faq-item .faq-q,
+html body#acb-design.faq-page .faqx .offer-toggle{
+  min-height:0!important;
+  padding:var(--sp-card)!important;
+  font-size:30px!important;
+  line-height:1.15!important;
+}
+html body#acb-design .faq-item .faq-a>p,
+html body#acb-design.faq-page .faqx .offer-body>div{
+  padding-inline:var(--sp-card)!important;
+  padding-bottom:28px!important;
+}
+
+/* The dedicated FAQ reads like a document: answers on the left, with every
+   question available from a sticky index card on the right. */
+html body#acb-design.faq-page .faqx{
+  grid-template-columns:minmax(0,1fr) minmax(260px,.34fr)!important;
+  gap:16px!important;
+}
+html body#acb-design.faq-page .faqx>div{grid-column:1!important;grid-row:1!important}
+html body#acb-design.faq-page .faqx-nav{
+  grid-column:2!important;
+  grid-row:1!important;
+  max-height:calc(100vh - 110px)!important;
+  overflow:auto!important;
+}
+html body#acb-design.faq-page .faqx-nav a{padding:8px 0!important}
+html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important}
+@media(max-width:774px){
+  html body#acb-design.faq-page .faqx{grid-template-columns:1fr!important}
+  html body#acb-design.faq-page .faqx>div,
+  html body#acb-design.faq-page .faqx-nav{grid-column:1!important;grid-row:auto!important;max-height:none!important}
+}
