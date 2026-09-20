@@ -3514,7 +3514,7 @@ html body#acb-design main>.acb-main-panel{width:100%!important;margin:0!importan
   }
 }
 
-html body#acb-design.home-page .acb-hero-copy{padding:0 20px!important}
+html body#acb-design.home-page .acb-hero-copy{padding:10px 50px!important}
 
 /* A slightly wider shared frame for content and the floating header. */
 html body#acb-design main{
