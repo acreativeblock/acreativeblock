@@ -3962,7 +3962,8 @@ html body#acb-design .acb-footer .acb-logo-mount svg{color:#fff!important}
 html body#acb-design .acb-footer>.wrap{
   display:grid!important;
   grid-template-columns:minmax(250px,.9fr) minmax(0,2.1fr)!important;
-  gap:clamp(28px,4vw,64px)!important;
+  column-gap:clamp(28px,4vw,64px)!important;
+  row-gap:0!important;
   width:100%!important;
   max-width:none!important;
   padding:0!important;
@@ -4557,6 +4558,12 @@ html body#acb-design.home-page .acb-hero h1{
 }
 @media(max-width:1180px){
   html body#acb-design.home-page .acb-hero-copy{min-height:40px!important}
+}
+/* On mobile only, shrink the home hero line so the full sentence sits in
+   1-2 lines instead of 3 — the 20px desktop size is unconditional above,
+   so this needs the doubled #acb-design ID to actually win on mobile. */
+@media(max-width:774px){
+  html body#acb-design#acb-design.home-page .acb-hero h1{font-size:15px!important}
 }
 
 /* Cascade lock: the legacy theme contains selectors with long chains of
