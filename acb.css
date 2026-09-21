@@ -4041,6 +4041,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-copy{
 html body#acb-design#acb-design .acb-quick-contact .qc-form{
   display:flex!important;
   flex-direction:column!important;
+  justify-content:center!important;
   gap:10px!important;
   align-items:flex-start!important;
   justify-self:end!important;
@@ -4109,8 +4110,8 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
   border-radius:var(--radius-card)!important;
   padding:0 20px!important;
   color:var(--ink)!important;
-  font-size:17px!important;
-  letter-spacing:var(--ls-body)!important;
+  font-size:20px!important;
+  letter-spacing:var(--ls-title)!important;
   line-height:1.2!important;
 }
 @media(max-width:774px){
@@ -4118,6 +4119,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
   html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:16px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-copy{width:100%!important;min-height:0!important;white-space:normal!important;font-size:17px!important;padding:14px 18px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form{max-width:none!important;justify-self:stretch!important;align-items:stretch!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-sent{font-size:17px!important;padding:14px 18px!important}
 }
 @media(max-width:420px){
   html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
@@ -4127,7 +4129,6 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
 html body#acb-design .acb-footer{
   background:var(--blue)!important;
   padding:clamp(24px,3vw,40px)!important;
-  border:1px solid rgba(255,255,255,.15)!important;
   box-sizing:border-box!important;
 }
 html body#acb-design .acb-footer .acb-logo-mount,
@@ -4266,20 +4267,32 @@ html body#acb-design.home-page .acb-faq .faq-item .faq-a>p{
    copyright line — copyright on the left, icons on the right — instead of
    sitting under the link columns behind their own divider. */
 html body#acb-design .acb-footer .footer-socials{
-  display:flex!important;
-  gap:12px!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  column-gap:clamp(16.2px,2.2vw,26px)!important;
+  width:100%!important;
   margin:0!important;
+}
+html body#acb-design .acb-footer .footer-socials .social-icons{
+  grid-column:4!important;
+  display:flex!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
 }
 html body#acb-design .acb-footer .footer-socials a{
   display:grid!important;
   place-items:center!important;
-  width:37px!important;
-  height:37px!important;
+  width:40px!important;
+  height:40px!important;
   color:#fff!important;
   border-radius:50%!important;
   text-decoration:none!important;
 }
-html body#acb-design .acb-footer .footer-socials svg{width:23px!important;height:23px!important}
+html body#acb-design .acb-footer .footer-socials svg{width:25px!important;height:25px!important}
+@media(max-width:900px){
+  html body#acb-design .acb-footer .footer-socials{display:flex!important;width:auto!important;gap:8px!important}
+  html body#acb-design .acb-footer .footer-socials .social-icons{display:contents!important}
+}
 @media(min-width:775px){
   html body#acb-design .acb-footer .wrap>.bottom span{font-size:10px!important}
 }
@@ -5006,12 +5019,16 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom{
   grid-column:1/-1!important;
   width:100%!important;
   max-width:none!important;
-  display:flex!important;
+  display:grid!important;
+  grid-template-columns:minmax(250px,.9fr) minmax(0,2.1fr)!important;
+  column-gap:clamp(28px,4vw,64px)!important;
   align-items:center!important;
-  justify-content:space-between!important;
   text-align:left!important;
   gap:16px!important;
   margin:0!important;
+}
+@media(max-width:900px){
+  html body#acb-design#acb-design .acb-footer .wrap>.bottom{display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important}
 }
 
 /* Newsletter card on desktop: bounded by the site's own content-width

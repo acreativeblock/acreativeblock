@@ -18,7 +18,7 @@
   if(footerHost){
     footerHost.innerHTML='<div class="footer-reveal">'+quickContactHtml+footerHtml+'</div>';
     var footerBottom=footerHost.querySelector('.acb-footer .bottom');
-    if(footerBottom)footerBottom.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div>')
+    if(footerBottom)footerBottom.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><div class="social-icons"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div></div>')
   }
 
   var header=document.querySelector('.site-header'),toggle=document.querySelector('.menu-toggle');
@@ -49,7 +49,7 @@
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(Object.fromEntries(new FormData(form)))
       }).then(function(r){return r.json().then(function(data){return{ok:r.ok,data:data}})}).then(function(res){
-        if(res.ok&&res.data&&res.data.success===true){form.innerHTML='<p class="note qc-sent">Got it — let\'s get you unstuck.</p>'}
+        if(res.ok&&res.data&&res.data.success===true){form.style.minHeight=form.getBoundingClientRect().height+'px';form.innerHTML='<p class="note qc-sent">Message received — let\'s get you unstuck.</p>'}
         else{throw new Error('web3forms error')}
       }).catch(function(){
         btn.disabled=false;btn.textContent=btnLabel;
