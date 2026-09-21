@@ -4946,8 +4946,8 @@ html body#acb-design#acb-design.home-page .acb-close h2{
   margin:0!important;
   max-width:12ch!important;
   color:var(--ink)!important;
-  font-size:clamp(32px,4vw,54px)!important;
-  line-height:1.05!important;
+  font-size:clamp(38px,5vw,64px)!important;
+  line-height:0.95!important;
   letter-spacing:var(--ls-h1)!important;
   font-weight:400!important;
 }
@@ -4964,7 +4964,7 @@ html body#acb-design#acb-design.home-page .acb-close .pill.big{
 @media(max-width:774px){
   html body#acb-design#acb-design.home-page .acb-close>.wrap{grid-template-columns:1fr!important}
   html body#acb-design#acb-design.home-page .acb-close .close-image{min-height:0!important;aspect-ratio:16/10!important}
-  html body#acb-design#acb-design.home-page .acb-close h2{max-width:none!important;font-size:28px!important}
+  html body#acb-design#acb-design.home-page .acb-close h2{max-width:none!important;font-size:32px!important;line-height:0.95!important}
 }
 
 /* Peekaboo footer reveal (home only): the footer sticks to the bottom of
