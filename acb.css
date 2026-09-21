@@ -4564,6 +4564,7 @@ html body#acb-design.home-page .acb-hero h1{
    so this needs the doubled #acb-design ID to actually win on mobile. */
 @media(max-width:774px){
   html body#acb-design#acb-design.home-page .acb-hero h1{font-size:15px!important}
+  html body#acb-design#acb-design.home-page .acb-hero-copy{padding:10px 20px!important}
 }
 
 /* Cascade lock: the legacy theme contains selectors with long chains of
