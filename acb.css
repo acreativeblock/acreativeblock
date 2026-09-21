@@ -4558,7 +4558,8 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
   html body#acb-design main .acb-lead{line-height:1.1!important}
   html body#acb-design#acb-design :is(.t-label,.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note){font-size:16px!important}
   html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn){font-size:var(--fs-button)!important}
-  html body#acb-design :is(.faq-item .faq-q,.faq-item .faq-a>p,.faq-page .faqx .offer-toggle,.faq-page .faqx .offer-body p){font-size:var(--fs-body)!important}
+  html body#acb-design#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design :is(.faq-item .faq-a>p,.faq-page .faqx .offer-body p){font-size:var(--fs-body)!important}
   html body#acb-design.home-page .acb-hero h1,
   html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){font-size:clamp(9.5px,3.3vw,14.4px)!important}
   html body#acb-design.home-page :is(.acb-say p.scrolltext,.individual-feeling .scrolltext),
@@ -4877,4 +4878,15 @@ html body#acb-design#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-curren
     grid-column:1!important;
     grid-row:auto!important;
   }
+}
+
+/* FAQ questions on mobile: true final word. An unconditional rule earlier
+   in the file (the .wrap:has(>.faq-list) variant, itself doubled #acb-design)
+   pins these to a flat 30px — it isn't just tied with a double-ID override,
+   its :is()/:has() chain genuinely carries more raw class-tier specificity
+   (8 vs 6), so even doubling #acb-design here still lost. Tripled instead:
+   the ID tier always outranks class/element count regardless of how either
+   selector is built. */
+@media(max-width:774px){
+  html body#acb-design#acb-design#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:var(--fs-copy-lg)!important}
 }
