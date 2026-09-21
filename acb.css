@@ -4525,6 +4525,20 @@ html body#acb-design .cookie-banner .cookie-actions button{
 html body#acb-design.home-page .acb-hero h1{font-size:54px!important;line-height:1!important}
 @media(max-width:1180px){html body#acb-design.home-page .acb-hero h1{font-size:40px!important}}
 
+/* The individuals/organisations hero statement matches the home hero's
+   type exactly (20px/1.2/ls-title), at every width — home hero has no
+   mobile-specific size of its own (its one unconditional rule wins at
+   every viewport), so this stays unconditional too rather than only
+   fixing the desktop mismatch. Doubled #acb-design: earlier rotbubble
+   rules elsewhere in the file are a tangle of h1.audience-hero-rotbubble
+   and :is(...) variants at competing specificities; this is the one
+   rule meant to win regardless of what came before it. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){
+  font-size:20px!important;
+  line-height:1.2!important;
+  letter-spacing:var(--ls-title)!important;
+}
+
 /* Header links need physical separation as well as a padded hover surface. */
 html body#acb-design .acb-header:not(.mobile-open) .acb-nav{gap:10px!important}
 html body#acb-design .acb-header:not(.mobile-open) .acb-sub{gap:4px!important}
