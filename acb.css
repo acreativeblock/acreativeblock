@@ -4457,36 +4457,6 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
   html body#acb-design .acb-footer .ack{font-size:clamp(13.22px,1.3vw,17.7px)!important}
 }
 
-/* MOBILE TYPE — restore the mobile scale that was in use immediately before
-   the failed "gradient-era" rollback. Keep this last: earlier generic rules
-   must not shrink page copy, labels, calls to action or hero copy. */
-@media(max-width:774px){
-  html body#acb-design{
-    --fs-h1:35px;
-    --fs-h2:35px;
-    --fs-copy-lg:20px;
-    --fs-body:20px;
-    --fs-small:16px;
-    --fs-button:20px;
-    --fs-label:20px;
-  }
-  html body#acb-design main :is(p,li,.t-body,.t-copy-lg,.acb-lead,.section-head p,.callout p,.lead,.access-note){font-size:20px!important;line-height:1.3!important}
-  html body#acb-design main :is(h1,.t-h1){font-size:35px!important;line-height:1.05!important}
-  html body#acb-design main :is(h2,.t-h2){font-size:35px!important;line-height:1.1!important}
-  html body#acb-design main :is(h3,.t-h3){font-size:24px!important;line-height:1.1!important}
-  html body#acb-design :is(.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note,.access-note){font-size:20px!important}
-  html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn){font-size:20px!important;line-height:1.2!important}
-  html body#acb-design.home-page .acb-hero h1,
-  html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){font-size:20px!important;line-height:1.4!important}
-  html body#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:30px!important;line-height:1.15!important}
-  html body#acb-design :is(.faq-item .faq-a>p,.faq-page .faqx .offer-body p){font-size:20px!important;line-height:1.3!important}
-  html body#acb-design .faq-item .faq-q::after,html body#acb-design .offer-toggle .pm::after{font-size:20px!important}
-  html body#acb-design.blocks-page .bmcard-title{font-size:20px!important}
-  html body#acb-design.blocks-page .bmcard-lead{font-size:16px!important}
-  html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a),
-  html body#acb-design .acb-header .acb-utility-pill,
-  html body#acb-design .mobile-header-cta{font-size:20px!important}
-}
 
 /* FINAL INTERACTION AND MOBILE TYPE LAYER — deliberately last. */
 html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a){
@@ -4514,20 +4484,6 @@ html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current){
   background:rgba(79,70,229,.18)!important;
   color:var(--ink)!important;
   transform:none!important;
-}
-
-/* One final mobile type scale. This supersedes the two conflicting historical
-   restoration blocks above and matches the current 20px interface scale. */
-@media(max-width:774px){
-  html body#acb-design main :is(p,li,.t-body,.t-copy-lg,.acb-lead,.section-head p,.callout p,.lead,.access-note,.prose p,.card p,.offer-body p){font-size:20px!important;line-height:1.3!important}
-  html body#acb-design main :is(h1,.t-h1,.fam-h1){font-size:35px!important;line-height:1.05!important}
-  html body#acb-design main :is(h2,.t-h2,.display,.big,.section-head h2,.section h2){font-size:35px!important;line-height:1.1!important}
-  html body#acb-design main :is(h3,.t-h3,.card h3,.plan-card h3){font-size:24px!important;line-height:1.1!important}
-  html body#acb-design.home-page .acb-hero h1,
-  html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){font-size:20px!important;line-height:1.4!important}
-  html body#acb-design :is(.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note,.access-note){font-size:20px!important}
-  html body#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:30px!important;line-height:1.15!important}
-  html body#acb-design :is(.faq-item .faq-a>p,.faq-page .faqx .offer-body p){font-size:20px!important;line-height:1.3!important}
 }
 
 html body#acb-design :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn,.acb-utility-pill,.mobile-header-cta){
