@@ -4991,6 +4991,7 @@ html body#acb-design#acb-design .footer-reveal .acb-footer{
   bottom:0!important;
   z-index:2!important;
   border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card),0 -14px 24px -12px rgba(30,27,60,.28)!important;
 }
 @media(max-width:774px){
   html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
@@ -5015,4 +5016,15 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom{
   text-align:left!important;
   gap:16px!important;
   margin:0!important;
+}
+
+/* Newsletter card on desktop: bounded by the site's own content-width
+   system (site-width + panel-boost, like the header) rather than
+   stretching edge-to-edge like the footer, capped at the same
+   100vw-16px the footer uses so it never runs past it either. */
+@media(min-width:685px){
+  html body#acb-design#acb-design .footer-reveal .acb-subscribe{
+    width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
+    max-width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
+  }
 }
