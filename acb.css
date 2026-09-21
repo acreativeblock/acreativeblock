@@ -922,6 +922,14 @@ html body#acb-design.contact-page .cform-status.is-error{color:#b3261e!important
    inherit the same cursor so it never flickers between pointer and default. */
 html body#acb-design :is(.faq-q,.offer-toggle),
 html body#acb-design :is(.faq-q,.offer-toggle) *{cursor:pointer!important}
+
+/* Shared action pills: a single compact, one-line treatment everywhere. */
+html body#acb-design :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn,.acb-utility-pill,.mobile-header-cta){
+  font-size:20px!important;
+  line-height:0!important;
+  padding:20px!important;
+  white-space:nowrap!important;
+}
 @media(max-width:504px){
   html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
   html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
