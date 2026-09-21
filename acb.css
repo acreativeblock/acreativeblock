@@ -4149,6 +4149,17 @@ html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-l
   margin-top:12px!important;
 }
 
+/* Text-only heroes use the same outer edge as the shared header and main.
+   Image heroes retain their intentional full-bleed treatment. */
+html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main>
+  :is(.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero){
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+
 /* FAQ questions use the same standalone pill system everywhere. */
 html body#acb-design .faq-item .faq-q,
 html body#acb-design.faq-page .faqx .offer-toggle{
