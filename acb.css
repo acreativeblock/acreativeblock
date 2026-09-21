@@ -1229,8 +1229,8 @@ html body#acb-design.home-page .work-card .work-arrow{position:absolute!importan
   html body#acb-design.factors-page .flush.reverse .flush-img img{border-radius:var(--radius-card) var(--radius-card) 0 0!important}
   html body#acb-design.home-page .work-layout{grid-template-columns:1fr!important}
   html body#acb-design.home-page .work-cards{grid-template-columns:1fr!important}
-  html body#acb-design.home-page .work-card{min-height:200px!important}
-  html body#acb-design.home-page .work-card h3{font-size:clamp(30px,11vw,40px)!important}
+  html body#acb-design.home-page .work-card{min-height:130px!important}
+  html body#acb-design.home-page .work-card h3{font-size:clamp(30px,11vw,40px)!important;letter-spacing:normal!important}
   html body#acb-design.home-page .work-card p{padding-right:44px!important}
   html body#acb-design.home-page .work-card .work-arrow{font-size:22px!important}
   html body#acb-design.blocks-page .bmcard-body{min-height:0;padding-bottom:62px!important}
@@ -1362,7 +1362,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
 /* Contact hero: match the 4i/4o height, drop the bottom margin, white 15px base border. */
 html body#acb-design.contact-page .contact-visual-hero{min-height:clamp(423px,74vh,778px)!important;margin-bottom:0!important;border-bottom:15px solid #fff!important}
 /* 4i/4o heroes: matching white 15px base border. */
-html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero{border-bottom:15px solid #fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero{border-bottom:0!important}
 
 /* 4i/4o hero: rotating sentence bubble on top (contact-size type), stacked prompt+CTA bubble below. */
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{position:relative;z-index:1;align-self:end;justify-self:start;display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:min(612px,94vw);max-width:min(612px,94vw);margin:0}
@@ -1402,7 +1402,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-rotbubble{width:100%!important;max-width:none!important;font-size:clamp(26px,2.5vw,34px)!important;line-height:.98!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{width:100%!important;max-width:none!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .hero-static-line{font-size:clamp(19px,1.7vw,24px)!important;line-height:1!important}
-html body#acb-design:is(.individuals-page,.organisations-page) main section.acb-hero{border-bottom:15px solid #fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) main section.acb-hero{border-bottom:0!important}
 
 /* About and Block Map should start at the same vertical rhythm as FAQ and the other hero pages. */
 html body#acb-design.internal-page:is(.about-page,.blocks-page) main{padding-top:0!important}
@@ -3896,13 +3896,13 @@ html body#acb-design.home-page .journal-control{
 html body#acb-design.home-page .journal-control.is-next{background:var(--blue)!important;color:#fff!important}
 html body#acb-design.home-page .journal-control:hover{transform:translateX(-2px)!important}
 html body#acb-design.home-page .journal-control.is-next:hover{transform:translateX(2px)!important}
-html body#acb-design.home-page .journal-viewport{overflow-x:auto!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth!important;scrollbar-width:none!important}
+html body#acb-design.home-page .journal-viewport{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth!important;scrollbar-width:none!important;touch-action:pan-x!important}
 html body#acb-design.home-page .journal-viewport::-webkit-scrollbar{display:none!important}
 html body#acb-design.home-page .journal-track{display:flex!important;gap:16px!important;width:max-content!important;padding:0 10px 2px 0!important}
 html body#acb-design.home-page .journal-card{
   display:flex!important;
   flex:0 0 clamp(270px,23vw,320px)!important;
-  min-height:430px!important;
+  min-height:340px!important;
   flex-direction:column!important;
   scroll-snap-align:start!important;
   padding:20px!important;
@@ -3923,12 +3923,12 @@ html body#acb-design.home-page .journal-meta{margin-top:auto!important;padding-t
 /* Text-led cards keep the same generous height while exposing half of the
    fifth card, making the horizontal continuation immediately obvious. */
 html body#acb-design.home-page .journal-viewport{container-type:inline-size!important}
-html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 64px) / 4.5)!important;min-height:430px!important}
+html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 64px) / 4.5)!important;min-height:340px!important}
 html body#acb-design.home-page .journal-card figure{display:none!important}
 @media(max-width:774px){
   html body#acb-design.home-page .acb-journal>.wrap{padding:20px!important}
   html body#acb-design.home-page .acb-journal .journal-head{align-items:start!important;flex-direction:column!important}
-  html body#acb-design.home-page .journal-card{flex-basis:min(82vw,340px)!important;min-height:410px!important}
+  html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 16px) / 1.5)!important;min-height:300px!important}
 }
 @media(min-width:775px) and (max-width:1180px){
   html body#acb-design.home-page .journal-card{flex-basis:calc((100cqw - 32px) / 2.5)!important}
@@ -5095,5 +5095,62 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom span{
     max-width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
     margin-top:70px!important;
     margin-bottom:-20px!important;
+  }
+}
+
+/* Mobile-only: shrink the longer body-copy blocks on home (not the
+   "Our approach" pull-quote, not the titles) and the FAQ answer text,
+   to a smaller, easier-to-scan 15px. */
+@media(max-width:774px){
+  html body#acb-design#acb-design.home-page .acb-lead{font-size:15px!important}
+  html body#acb-design#acb-design.home-page .work-intro{font-size:15px!important}
+  html body#acb-design#acb-design.home-page .acb-journal .journal-head p{font-size:15px!important}
+  html body#acb-design#acb-design.home-page .acb-faq .faq-a p{font-size:15px!important}
+  html body#acb-design#acb-design.faq-page .faqx .offer-body p{font-size:15px!important}
+}
+
+/* Mobile-only: collapse the FAQ "Jump to" list and the legal pages'
+   "Contents" index into a tap-to-open toggle instead of a permanently
+   expanded block taking up a screen's worth of space before the content. */
+@media(max-width:774px){
+  html body#acb-design#acb-design.legal-page .legal-nav::before{display:none!important}
+  html body#acb-design#acb-design.faq-page .faqx-nav .lbl,
+  html body#acb-design#acb-design.legal-page .legal-nav-toggle{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:none!important;
+    font-family:inherit!important;
+    cursor:pointer!important;
+    text-align:left!important;
+  }
+  html body#acb-design#acb-design.faq-page .faqx-nav .lbl::after,
+  html body#acb-design#acb-design.legal-page .legal-nav-toggle::after{
+    content:""!important;
+    flex:none!important;
+    width:9px!important;
+    height:9px!important;
+    margin-left:12px!important;
+    border-right:2px solid currentColor!important;
+    border-bottom:2px solid currentColor!important;
+    transform:rotate(45deg)!important;
+    transition:transform .2s ease!important;
+  }
+  html body#acb-design#acb-design.faq-page .faqx-nav.is-open .lbl::after,
+  html body#acb-design#acb-design.legal-page .legal-nav.is-open .legal-nav-toggle::after{
+    transform:rotate(-135deg)!important;
+  }
+  html body#acb-design#acb-design.faq-page .faqx-nav>a,
+  html body#acb-design#acb-design.legal-page .legal-nav>a{
+    display:none!important;
+  }
+  html body#acb-design#acb-design.faq-page .faqx-nav.is-open>a,
+  html body#acb-design#acb-design.legal-page .legal-nav.is-open>a{
+    display:block!important;
+    margin-top:8px!important;
   }
 }

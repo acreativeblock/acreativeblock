@@ -16,7 +16,8 @@
   if(atRoot){headerHtml=headerHtml.replace(/\.\.\//g,'');footerHtml=footerHtml.replace(/\.\.\//g,'');quickContactHtml=quickContactHtml.replace(/\.\.\//g,'');}
   if(headerHost)headerHost.innerHTML=headerHtml;
   if(footerHost){
-    footerHost.innerHTML='<div class="footer-reveal">'+quickContactHtml+footerHtml+'</div>';
+    var skipQuickContact=document.body.classList.contains('contact-page');
+    footerHost.innerHTML=skipQuickContact?footerHtml:('<div class="footer-reveal">'+quickContactHtml+footerHtml+'</div>');
     var footerBottom=footerHost.querySelector('.acb-footer .bottom');
     if(footerBottom)footerBottom.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><div class="social-icons"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div></div>')
   }
@@ -35,6 +36,15 @@
   var timeNode=document.querySelector('[data-lisbon-time]');function updateLisbonTime(){if(timeNode)timeNode.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())}updateLisbonTime();setInterval(updateLisbonTime,30000);
   document.querySelectorAll('.navbutton').forEach(function(b){b.addEventListener('click',function(e){if(b.tagName==='A')return;e.preventDefault();if(innerWidth>1180){b.blur()}})});
   document.querySelectorAll('.submenu a').forEach(function(a){a.addEventListener('click',function(){document.querySelectorAll('.navitem.open').forEach(function(n){n.classList.remove('open')});if(document.activeElement)document.activeElement.blur()})});
+  document.querySelectorAll('.faqx-nav .lbl,.legal-nav-toggle').forEach(function(b){
+    var nav=b.closest('.faqx-nav,.legal-nav');
+    if(!nav)return;
+    b.addEventListener('click',function(){
+      var opening=!nav.classList.contains('is-open');
+      nav.classList.toggle('is-open',opening);
+      b.setAttribute('aria-expanded',opening?'true':'false');
+    });
+  });
   document.querySelectorAll('.offer-toggle,.faq-q').forEach(function(b){var item=b.parentElement,answer=item.querySelector('.offer-body,.faq-a'),icon=b.querySelector('.pm');if(icon)icon.innerHTML='<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"m5 7.5 5 5 5-5\"/></svg>';b.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');b.addEventListener('click',function(){var opening=!item.classList.contains('open');if(!answer){item.classList.toggle('open',opening);b.setAttribute('aria-expanded',opening?'true':'false');return}if(opening){item.classList.add('open');b.setAttribute('aria-expanded','true');answer.style.setProperty('height','0px','important');void answer.offsetHeight;answer.style.setProperty('height',answer.scrollHeight+'px','important')}else{answer.style.setProperty('height',answer.scrollHeight+'px','important');void answer.offsetHeight;item.classList.remove('open');b.setAttribute('aria-expanded','false');answer.style.setProperty('height','0px','important')}answer.addEventListener('transitionend',function(e){if(e.propertyName==='height')answer.style.removeProperty('height')},{once:true})})});
   (function(){var viewport=document.querySelector('[data-journal-viewport]'),previous=document.querySelector('[data-journal-prev]'),next=document.querySelector('[data-journal-next]');if(!viewport)return;function move(direction){var card=viewport.querySelector('.journal-card'),amount=card?card.getBoundingClientRect().width+16:viewport.clientWidth*.8;viewport.scrollBy({left:direction*amount,behavior:'smooth'})}if(previous)previous.addEventListener('click',function(){move(-1)});if(next)next.addEventListener('click',function(){move(1)});viewport.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}if(e.key==='ArrowRight'){e.preventDefault();move(1)}})})();
   document.querySelectorAll('.newsletter').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button');b.textContent='Thank you!';b.disabled=true})});
