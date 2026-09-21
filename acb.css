@@ -4984,13 +4984,13 @@ html body#acb-design#acb-design .footer-reveal .acb-subscribe{
   margin-left:auto!important;
   margin-right:auto!important;
   margin-bottom:-32px!important;
-  border-radius:var(--radius-card) var(--radius-card) 0 0!important;
+  border-radius:var(--radius-card)!important;
 }
 html body#acb-design#acb-design .footer-reveal .acb-footer{
   position:sticky!important;
   bottom:0!important;
   z-index:2!important;
-  border-radius:0 0 var(--radius-card) var(--radius-card)!important;
+  border-radius:var(--radius-card)!important;
 }
 @media(max-width:774px){
   html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
