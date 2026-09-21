@@ -4013,6 +4013,119 @@ html body#acb-design.faq-page .faqx .offer-list{background:transparent!important
   html body#acb-design.faq-page .faqx>div{grid-column:1!important;grid-row:auto!important;max-height:none!important}
 }
 
+/* FAQs are a field of independent cards. The page surface stays clear, with
+   a title card followed by one white pill for every question. */
+html body#acb-design main :is(section,.bm-faq):has(.faq-list),
+html body#acb-design main :is(section,.bm-faq):has(.faq-list)>.wrap,
+html body#acb-design main .faq-list{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+html body#acb-design main :is(section,.bm-faq):has(.faq-list)>.wrap{padding:0!important}
+html body#acb-design main .faq-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:12px!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:12px 0 0!important;
+  padding:0!important;
+}
+html body#acb-design main .faq-item{
+  margin:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design main .faq-item .faq-q{
+  width:100%!important;
+  min-height:0!important;
+  padding:var(--sp-card)!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--ink)!important;
+  font-size:30px!important;
+  line-height:1.15!important;
+}
+html body#acb-design main .faq-item .faq-a,
+html body#acb-design main .faq-item .faq-a>p{background:transparent!important}
+html body#acb-design main .faq-item .faq-a>p{
+  width:min(60%,760px)!important;
+  margin:0!important;
+  padding:0 var(--sp-card) 28px!important;
+  font-size:20px!important;
+  line-height:1.3!important;
+}
+html body#acb-design :is(.acb-faq .acb-head,.section-head:has(+.faq-list),.bm-faq .head){
+  width:100%!important;
+  margin:0!important;
+  padding:var(--sp-card)!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+
+/* Legal pages and the dedicated FAQ share a document-and-index composition:
+   reading content sits left; a sticky contents card sits right. */
+html body#acb-design.legal-page .legal-layout,
+html body#acb-design.faq-page .faqx{
+  grid-template-columns:minmax(0,1fr) minmax(220px,.32fr)!important;
+  gap:16px!important;
+}
+html body#acb-design.legal-page .legal-copy,
+html body#acb-design.faq-page .faqx>div{grid-column:1!important;grid-row:1!important}
+html body#acb-design.legal-page .legal-nav,
+html body#acb-design.faq-page .faqx-nav{grid-column:2!important;grid-row:1!important}
+html body#acb-design.legal-page .legal-nav::before,
+html body#acb-design.faq-page .faqx-nav .lbl{
+  display:block!important;
+  margin:0 0 12px!important;
+  padding:0 0 12px!important;
+  border-bottom:1px solid rgba(17,17,24,.18)!important;
+}
+html body#acb-design :is(.legal-nav,.faqx-nav) a{
+  position:relative!important;
+  display:block!important;
+  transition:color .25s ease,transform .25s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design :is(.legal-nav,.faqx-nav) a::after{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  bottom:2px!important;
+  height:2px!important;
+  border-radius:2px!important;
+  background:var(--blue)!important;
+  transform:scaleX(0)!important;
+  transform-origin:left center!important;
+  transition:transform .32s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current){
+  color:var(--blue)!important;
+  transform:translateX(4px)!important;
+}
+html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current)::after{transform:scaleX(1)!important}
+html body#acb-design.faq-page,
+html body#acb-design.faq-page main,
+html body#acb-design.faq-page main>section:not(.page-hero):not(.acb-close-sub),
+html body#acb-design.faq-page .faqx,
+html body#acb-design.faq-page .faqx-cat{background:transparent!important;background-image:none!important}
+@media(max-width:774px){
+  html body#acb-design main .faq-item .faq-a>p{width:100%!important}
+  html body#acb-design.legal-page .legal-layout,
+  html body#acb-design.faq-page .faqx{grid-template-columns:1fr!important}
+  html body#acb-design.legal-page .legal-copy,
+  html body#acb-design.legal-page .legal-nav,
+  html body#acb-design.faq-page .faqx>div,
+  html body#acb-design.faq-page .faqx-nav{grid-column:1!important;grid-row:auto!important}
+}
+
 /* FAQ questions use the same standalone pill system everywhere. */
 html body#acb-design .faq-item .faq-q,
 html body#acb-design.faq-page .faqx .offer-toggle{
