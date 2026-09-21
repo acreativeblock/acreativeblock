@@ -49,7 +49,7 @@
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(Object.fromEntries(new FormData(form)))
       }).then(function(r){return r.json().then(function(data){return{ok:r.ok,data:data}})}).then(function(res){
-        if(res.ok&&res.data&&res.data.success===true){form.innerHTML='<p class="note qc-sent">Thanks — your message is on its way. We\'ll get back to you as soon as we can.</p>'}
+        if(res.ok&&res.data&&res.data.success===true){form.innerHTML='<p class="note qc-sent">Got it — let\'s get you unstuck.</p>'}
         else{throw new Error('web3forms error')}
       }).catch(function(){
         btn.disabled=false;btn.textContent=btnLabel;
