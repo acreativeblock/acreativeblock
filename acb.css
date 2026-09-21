@@ -4167,6 +4167,7 @@ html body#acb-design .acb-footer{
   background:var(--blue)!important;
   padding:clamp(24px,3vw,40px)!important;
   padding-bottom:0px!important;
+  margin-bottom:0px!important;
   box-sizing:border-box!important;
 }
 html body#acb-design .acb-footer .acb-logo-mount,
