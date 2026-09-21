@@ -3955,7 +3955,9 @@ html body#acb-design.faq-page .faqx-cat-head{
 /* Newsletter sign-up: its own bold CTA band above the footer — same
    width/inset mechanism as .acb-footer below it (100vw-16px, centered),
    so it lines up exactly instead of running edge-to-edge past every
-   other card on the page. Stacked and centered, like the reference. */
+   other card on the page. A single wide row like the home page's
+   "Get in touch" close, not a tall centered stack: one line of title,
+   no supporting copy, form on the right. */
 html body#acb-design .acb-subscribe{
   width:calc(100vw - 16px)!important;
   max-width:calc(100vw - 16px)!important;
@@ -3963,39 +3965,33 @@ html body#acb-design .acb-subscribe{
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
-  padding:clamp(32px,5vw,56px) var(--sp-card)!important;
+  padding:clamp(18px,2.6vw,28px) var(--sp-card)!important;
   box-sizing:border-box!important;
 }
 html body#acb-design .acb-subscribe>.wrap{
   display:flex!important;
-  flex-direction:column!important;
   align-items:center!important;
-  text-align:center!important;
-  gap:20px!important;
+  justify-content:space-between!important;
+  gap:clamp(16px,3vw,32px)!important;
   width:100%!important;
-  max-width:560px!important;
-  margin:0 auto!important;
+  max-width:none!important;
+  margin:0!important;
   padding:0!important;
 }
 html body#acb-design .acb-subscribe h2{
   margin:0!important;
   color:#fff!important;
-  font-size:var(--fs-h2)!important;
-  line-height:var(--lh-title)!important;
+  font-size:clamp(18px,2.1vw,28px)!important;
+  line-height:1.2!important;
   letter-spacing:var(--ls-h2)!important;
   font-weight:400!important;
-}
-html body#acb-design .acb-subscribe .note{
-  margin:0!important;
-  color:rgba(255,255,255,.8)!important;
-  font-size:var(--fs-body)!important;
-  line-height:var(--lh-copy)!important;
-  max-width:42ch!important;
+  white-space:nowrap!important;
 }
 html body#acb-design .acb-subscribe .acb-newsletter{
   display:flex!important;
   align-items:center!important;
-  width:min(420px,100%)!important;
+  flex:none!important;
+  width:min(360px,100%)!important;
   background:#fff!important;
   border-radius:999px!important;
   padding:6px!important;
@@ -4034,6 +4030,11 @@ html body#acb-design .acb-subscribe .acb-newsletter button{
 html body#acb-design .acb-subscribe .acb-newsletter button:disabled{cursor:default!important;opacity:.9!important}
 html body#acb-design .acb-subscribe .acb-newsletter button:hover{background:var(--ink)!important}
 html body#acb-design .acb-subscribe .acb-newsletter button svg{width:18px!important;height:18px!important}
+@media(max-width:684px){
+  html body#acb-design .acb-subscribe>.wrap{flex-direction:column!important;align-items:stretch!important}
+  html body#acb-design .acb-subscribe h2{white-space:normal!important;text-align:center!important}
+  html body#acb-design .acb-subscribe .acb-newsletter{width:100%!important}
+}
 
 /* Footer: wide blue card with its identity/news on the left and links right. */
 html body#acb-design .acb-footer{
