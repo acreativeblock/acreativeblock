@@ -49,7 +49,14 @@
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(Object.fromEntries(new FormData(form)))
       }).then(function(r){return r.json().then(function(data){return{ok:r.ok,data:data}})}).then(function(res){
-        if(res.ok&&res.data&&res.data.success===true){form.style.minHeight=form.getBoundingClientRect().height+'px';form.innerHTML='<p class="note qc-sent">Message received — let\'s get you unstuck.</p>'}
+        if(res.ok&&res.data&&res.data.success===true){
+          form.style.minHeight=form.getBoundingClientRect().height+'px';
+          form.style.opacity='0';
+          setTimeout(function(){
+            form.innerHTML='<p class="note qc-sent">Message received — let\'s get you unstuck.</p>';
+            requestAnimationFrame(function(){form.style.opacity='1'});
+          },250);
+        }
         else{throw new Error('web3forms error')}
       }).catch(function(){
         btn.disabled=false;btn.textContent=btnLabel;

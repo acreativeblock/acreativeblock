@@ -4054,6 +4054,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form{
   padding:0!important;
   box-sizing:border-box!important;
   box-shadow:none!important;
+  transition:opacity .25s ease!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
   display:grid!important;
