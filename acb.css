@@ -1979,6 +1979,18 @@ html body#acb-design.faq-page .faqx .offer-body p{font-size:20px!important;line-
   html body#acb-design.faq-page .faqx .offer-body p{font-size:var(--fs-body)!important}
 }
 
+/* One 20px content-action scale on every page and viewport. The floating
+   header remains compact; this covers page CTAs, offer enquiries, map links
+   and reference actions only. */
+html body#acb-design main :is(
+  a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,
+  button.btn,button.btn-out,button.pill,
+  .cta :is(a,button),.plan-card :is(a.btn,button.btn),
+  .speaking-grid :is(a.btn,button.btn),a.refbar-btn,button.refbar,
+  .map-test-inline,.bm-hypo button,.hero-panel .btn,.acb-close .btn,
+  .acb-close-sub .btn
+){font-size:20px!important}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
