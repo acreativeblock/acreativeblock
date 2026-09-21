@@ -4995,3 +4995,24 @@ html body#acb-design#acb-design .footer-reveal .acb-footer{
 @media(max-width:774px){
   html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
 }
+
+/* Bug fix: every earlier ".acb-footer>.bottom" rule in this file uses a
+   direct-child combinator, but .bottom actually lives inside .acb-footer
+   .wrap (footer > wrap > bottom) — that combinator has never matched
+   anything. It stayed invisible while .bottom only held a centered
+   copyright line; once the social icons moved in and .bottom needed to
+   span the full footer width in a space-between row, the real (grid
+   auto-placed, ~1 column wide) layout showed through as a squeezed,
+   narrower-than-the-footer bottom row. Using the correct descendant
+   selector here, with the grid-column span the old rule never applied. */
+html body#acb-design#acb-design .acb-footer .wrap>.bottom{
+  grid-column:1/-1!important;
+  width:100%!important;
+  max-width:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  text-align:left!important;
+  gap:16px!important;
+  margin:0!important;
+}
