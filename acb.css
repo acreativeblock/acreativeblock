@@ -4296,7 +4296,7 @@ html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,butto
    larger reading size. */
 html body#acb-design.home-page .acb-faq .faq-item .faq-q{
   padding-inline:var(--sp-card)!important;
-  font-size:30px!important;
+  font-size:20px!important;
   line-height:1.15!important;
 }
 html body#acb-design.home-page .acb-faq .faq-item .faq-a>p{
@@ -4449,7 +4449,7 @@ html body#acb-design main .faq-item .faq-q{
   border:0!important;
   background:transparent!important;
   color:var(--ink)!important;
-  font-size:30px!important;
+  font-size:20px!important;
   line-height:1.15!important;
 }
 html body#acb-design main .faq-item .faq-a,
@@ -4888,7 +4888,7 @@ html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:h
   padding:var(--sp-card)!important;
   border:0!important;
   background:transparent!important;
-  font-size:30px!important;
+  font-size:20px!important;
   line-height:1.15!important;
   text-align:left!important;
 }
