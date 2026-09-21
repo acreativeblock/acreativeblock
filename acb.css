@@ -5060,7 +5060,7 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom{
   width:100%!important;
   max-width:none!important;
   display:grid!important;
-  grid-template-columns:minmax(250px,.9fr) minmax(0,2.1fr)!important;
+  grid-template-columns:1fr 1fr!important;
   column-gap:clamp(28px,4vw,64px)!important;
   align-items:center!important;
   text-align:left!important;
