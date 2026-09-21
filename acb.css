@@ -2011,6 +2011,21 @@ html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current)::after{
   opacity:1!important;
 }
 
+/* FAQ and legal documents sit directly on the page field. Their separate
+   index and reading cards provide the only surfaces; no generic section
+   wrapper should add a third white background or shrink the shared frame. */
+html body#acb-design.faq-page main section.section>.wrap,
+html body#acb-design.legal-page main .legal-section,
+html body#acb-design.legal-page main .legal-wrap.legal-layout{
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
