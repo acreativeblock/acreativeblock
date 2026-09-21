@@ -4089,6 +4089,8 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea):
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
   align-self:flex-start!important;
   margin:0!important;
+  font-size:20px!important;
+  padding:20px!important;
   letter-spacing:var(--ls-copy-lg)!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-status:empty{
@@ -4933,7 +4935,6 @@ html body#acb-design#acb-design.legal-page main .legal-copy{
 }
 
 html body#acb-design#acb-design.faq-page main .acb-main-panel,
-html body#acb-design#acb-design.faq-page main section.section,
 html body#acb-design#acb-design.faq-page main section.section>.wrap,
 html body#acb-design#acb-design.faq-page main .faqx,
 html body#acb-design#acb-design.faq-page main .faqx>div,
@@ -4942,6 +4943,12 @@ html body#acb-design#acb-design.faq-page main .faqx-cat{
   background-image:none!important;
   box-shadow:none!important;
   margin-top:0!important;
+}
+html body#acb-design#acb-design.faq-page main section.section{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  margin-top:var(--sp-gap)!important;
 }
 html body#acb-design#acb-design.faq-page main .faqx-cat+.faqx-cat{
   margin-top:clamp(29.74px,5vw,56.51px)!important;
