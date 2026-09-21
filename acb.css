@@ -4048,6 +4048,11 @@ html body#acb-design#acb-design .acb-subscribe .acb-newsletter button svg{width:
   html body#acb-design#acb-design .acb-subscribe h2{max-width:none!important}
   html body#acb-design#acb-design .acb-subscribe .acb-newsletter{width:100%!important}
 }
+@media(min-width:685px){
+  html body#acb-design#acb-design .acb-subscribe>.wrap{padding:20px!important}
+  html body#acb-design#acb-design .acb-subscribe h2{max-width:none!important;font-size:45px!important}
+  html body#acb-design#acb-design .acb-subscribe .acb-newsletter{padding:0px 6px!important}
+}
 
 /* Footer: wide blue card with its identity/news on the left and links right. */
 html body#acb-design .acb-footer{
