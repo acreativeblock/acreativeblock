@@ -940,6 +940,24 @@ html body#acb-design.home-page .acb-hero h1{
 @media(max-width:1180px){
   html body#acb-design.home-page .acb-hero h1{font-size:40px!important}
 }
+
+/* Exact action controls — these names appear in the document markup and
+   remain protected from legacy component declarations. */
+html body#acb-design.contact-page .cform button[type="submit"],
+html body#acb-design.home-page .acb-look .cta .pill,
+html body#acb-design .cookie-banner .cookie-actions button{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:20px!important;
+  font-size:20px!important;
+  line-height:0!important;
+  white-space:nowrap!important;
+}
 @media(max-width:504px){
   html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
   html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
@@ -4518,3 +4536,24 @@ html body#acb-design :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn
   padding:20px!important;
   white-space:nowrap!important;
 }
+
+/* ACTUAL END OF STYLESHEET — exact CTA controls. */
+html body#acb-design.contact-page .cform button[type="submit"],
+html body#acb-design.home-page .acb-look .cta .pill,
+html body#acb-design .cookie-banner .cookie-actions button{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:20px!important;
+  font-size:20px!important;
+  line-height:0!important;
+  white-space:nowrap!important;
+}
+
+/* The homepage headline uses the header's measured 54px desktop height. */
+html body#acb-design.home-page .acb-hero h1{font-size:54px!important;line-height:1!important}
+@media(max-width:1180px){html body#acb-design.home-page .acb-hero h1{font-size:40px!important}}

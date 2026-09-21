@@ -1,8 +1,12 @@
 /* GTM backup loader (GTM-NXN6JJ2H) — fires only if the inline <head> snippet is missing (e.g. a page was regenerated). Idempotent: never double-loads. KEEP THIS. */
 (function(){var i='GTM-NXN6JJ2H';try{if(window.google_tag_manager&&window.google_tag_manager[i])return;if(document.querySelector('script[src*="googletagmanager.com/gtm.js?id='+i+'"]'))return;window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);}catch(e){}})();
 (function(){
-  if(!document.querySelector('link[href*="base.css"]')){var baseLink=document.createElement('link');baseLink.rel='stylesheet';baseLink.href='../base.css?v=45';document.head.appendChild(baseLink)}
-  if(!document.querySelector('link[href*="sections.css"]')){var sectionsLink=document.createElement('link');sectionsLink.rel='stylesheet';sectionsLink.href='../sections.css?v=54';document.head.appendChild(sectionsLink)}
+  /* The project stylesheet is the final visual layer. On pages where these
+     shared sheets are injected, insert them before it rather than appending
+     them after it, so legacy rules cannot override the current system. */
+  var acbStyle=document.querySelector('link[href*="acb.css"]');
+  if(!document.querySelector('link[href*="base.css"]')){var baseLink=document.createElement('link');baseLink.rel='stylesheet';baseLink.href='../base.css?v=45';document.head.insertBefore(baseLink,acbStyle||null)}
+  if(!document.querySelector('link[href*="sections.css"]')){var sectionsLink=document.createElement('link');sectionsLink.rel='stylesheet';sectionsLink.href='../sections.css?v=54';document.head.insertBefore(sectionsLink,acbStyle||null)}
   var headerHost=document.querySelector('[data-site-header]'),footerHost=document.querySelector('[data-site-footer]');
   var siteJsTag=document.currentScript,atRoot=siteJsTag&&siteJsTag.getAttribute('src').indexOf('../')!==0;
   var instagram='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4Zm8.9 1.5a1.35 1.35 0 1 0 0 2.7 1.35 1.35 0 0 0 0-2.7ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg>',linkedin='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>';
