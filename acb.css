@@ -468,7 +468,7 @@ html body#acb-design.internal-page :is(.display,.section-head h2,.section h2,.bi
 html body#acb-design.internal-page :is(.page-hero h1,.legal-hero h1,.audience-hero-heading,.center-hero h1,h1){font-size:var(--fs-h1)!important;line-height:var(--lh-title)!important}
 html body#acb-design.internal-page :is(.card h3,h3){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
 /* Body copy: big (lead paragraphs) / medium (standard) / small (fine detail). */
-html body#acb-design.internal-page :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
+html body#acb-design :is(.acb-lead,.section-head p,.callout p){font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
 html body#acb-design.internal-page :is(p,.prose p,.card p,.outcome-list li,.faq-q,.faq-a p,.faqx .offer-toggle,.faqx .offer-body p,.audience-intro .body,.audience-eyebrow+p){font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important}
 html body#acb-design.internal-page :is(.plan-card p,.plan-card .plan-format,.note,small,.resitem span,.fxcard p){font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important}
 html body#acb-design.internal-page .access-note{font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;line-height:var(--lh-copy)!important}
@@ -4119,8 +4119,14 @@ html body#acb-design .acb-footer .top.acb-footer-links .col a{
 }
 html body#acb-design .acb-header .acb-sub a{border-radius:var(--radius-card)!important}
 
-/* Home and the individuals lead use one shared long-form reading scale. */
-html body#acb-design.individuals-page .individual-feeling .scrolltext{
+/* Home, the individuals lead and the organisations opening statement use one
+   shared long-form reading scale. Doubled #acb-design: the generic
+   .internal-page :is(p,...) copy rule below carries a :is() branch
+   (.faqx .offer-body p) with more raw specificity than this selector, so a
+   single-ID version of this rule loses to it on individuals/organisations
+   pages even though those pages never match that branch. */
+html body#acb-design#acb-design.individuals-page .individual-feeling .scrolltext,
+html body#acb-design#acb-design.organisations-page .audience-intro.dark.centered p.lead{
   width:100%!important;
   max-width:none!important;
   padding-right:15%!important;
@@ -4160,7 +4166,8 @@ html body#acb-design.faq-page .faqx>div{grid-column:2!important;grid-row:1!impor
 html body#acb-design.faq-page .faqx .faqx-cat,
 html body#acb-design.faq-page .faqx .offer-list{background:transparent!important}
 @media(max-width:774px){
-  html body#acb-design.individuals-page .individual-feeling .scrolltext{padding-right:0!important}
+  html body#acb-design#acb-design.individuals-page .individual-feeling .scrolltext,
+  html body#acb-design#acb-design.organisations-page .audience-intro.dark.centered p.lead{padding-right:0!important}
   html body#acb-design.faq-page .faqx{grid-template-columns:1fr!important}
   html body#acb-design.faq-page .faqx-nav,
   html body#acb-design.faq-page .faqx>div{grid-column:1!important;grid-row:auto!important;max-height:none!important}
@@ -4319,7 +4326,7 @@ html body#acb-design.internal-page:not(.individuals-page):not(.organisations-pag
 @media(max-width:774px){
   html body#acb-design{
     --fs-h1:28.8px;
-    --fs-h2:22.5px;
+    --fs-h2:35px;
     --fs-copy-lg:21.6px;
     --fs-body:14.4px;
     --fs-small:9.9px;
@@ -4424,7 +4431,7 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
 @media(max-width:774px){
   html body#acb-design{
     --fs-h1:clamp(28.8px,5vw,63px);
-    --fs-h2:clamp(22.5px,3.8vw,45px);
+    --fs-h2:clamp(35px,4vw,56px);
     --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);
     --fs-body:clamp(14.4px,1.5vw,17.1px);
     --fs-small:clamp(9.9px,1vw,11.7px);
@@ -4435,12 +4442,15 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
   html body#acb-design main :is(h3,.t-h3){font-size:var(--fs-copy-lg)!important}
   html body#acb-design main :is(p,li,.t-body){font-size:var(--fs-body)!important}
   html body#acb-design main :is(.t-copy-lg,.acb-lead,.section-head p,.callout p,.lead,.access-note){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design main .acb-lead{line-height:1.1!important}
+  html body#acb-design#acb-design :is(.t-label,.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note){font-size:16px!important}
   html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn){font-size:var(--fs-button)!important}
   html body#acb-design :is(.faq-item .faq-q,.faq-item .faq-a>p,.faq-page .faqx .offer-toggle,.faq-page .faqx .offer-body p){font-size:var(--fs-body)!important}
   html body#acb-design.home-page .acb-hero h1,
   html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){font-size:clamp(9.5px,3.3vw,14.4px)!important}
   html body#acb-design.home-page :is(.acb-say p.scrolltext,.individual-feeling .scrolltext),
-  html body#acb-design.individuals-page .individual-feeling .scrolltext{font-size:var(--fs-copy-lg)!important}
+  html body#acb-design#acb-design.individuals-page .individual-feeling .scrolltext,
+  html body#acb-design#acb-design.organisations-page .audience-intro.dark.centered p.lead{font-size:var(--fs-copy-lg)!important}
   html body#acb-design.blocks-page .bmcard-title{font-size:var(--fs-copy-lg)!important}
   html body#acb-design.blocks-page .bmcard-lead{font-size:var(--fs-small)!important}
   html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a){font-size:14.87px!important}
