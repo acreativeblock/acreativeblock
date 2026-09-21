@@ -4315,13 +4315,13 @@ html body#acb-design .acb-footer .footer-socials .social-icons{
   grid-column:4!important;
   display:flex!important;
   justify-content:flex-start!important;
-  gap:2px!important;
+  gap:20px!important;
 }
 html body#acb-design .acb-footer .footer-socials a{
   display:grid!important;
   place-items:center!important;
-  width:40px!important;
-  height:40px!important;
+  width:25px!important;
+  height:25px!important;
   margin:0!important;
   color:#fff!important;
   border-radius:50%!important;
