@@ -4006,7 +4006,7 @@ html body#acb-design#acb-design .acb-quick-contact>.wrap{
   z-index:2!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr)!important;
-  align-items:stretch!important;
+  align-items:center!important;
   text-align:left!important;
   gap:24px!important;
   width:100%!important;
@@ -4019,29 +4019,24 @@ html body#acb-design#acb-design .acb-quick-contact>.wrap{
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-copy{
   display:flex!important;
-  flex-direction:column!important;
+  align-items:center!important;
   justify-content:center!important;
+  align-self:start!important;
+  width:fit-content!important;
+  max-width:100%!important;
+  margin:0!important;
+  min-height:54px!important;
   background:#fff!important;
   border-radius:var(--radius-card)!important;
-  padding:24px 28px!important;
-  box-shadow:0 12px 34px rgba(7,19,33,.12)!important;
-}
-html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{
-  margin:0!important;
-  max-width:12ch!important;
+  padding:0 20px!important;
+  box-shadow:none!important;
   color:var(--ink)!important;
-  font-size:clamp(24px,2.6vw,32px)!important;
-  line-height:1.05!important;
-  letter-spacing:var(--ls-h1)!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+  letter-spacing:var(--ls-title)!important;
   font-weight:400!important;
-}
-html body#acb-design#acb-design .acb-quick-contact .qc-copy .note{
-  margin:12px 0 0!important;
-  max-width:32ch!important;
-  color:var(--ink)!important;
-  font-size:var(--fs-body)!important;
-  line-height:var(--lh-copy)!important;
-  letter-spacing:var(--ls-body)!important;
+  text-align:center!important;
+  white-space:nowrap!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form{
   display:grid!important;
@@ -4099,8 +4094,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
 @media(max-width:774px){
   html body#acb-design#acb-design .acb-quick-contact{padding:20px!important}
   html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:16px!important}
-  html body#acb-design#acb-design .acb-quick-contact .qc-copy{padding:20px!important}
-  html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{max-width:none!important;font-size:26px!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-copy{width:100%!important;min-height:0!important;white-space:normal!important;font-size:17px!important;padding:14px 18px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form{max-width:none!important;justify-self:stretch!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
 }
