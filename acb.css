@@ -3984,7 +3984,7 @@ html body#acb-design#acb-design .acb-quick-contact{
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
-  padding:clamp(32px,4.2vw,48px) var(--sp-card)!important;
+  padding:clamp(20px,2.6vw,28px) var(--sp-card) clamp(32px,4.2vw,48px)!important;
   box-sizing:border-box!important;
   box-shadow:var(--shadow-card)!important;
 }
@@ -4060,7 +4060,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
   gap:10px!important;
   width:100%!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form input{
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea){
   box-sizing:border-box!important;
   width:100%!important;
   border:0!important;
@@ -4075,10 +4075,15 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form input{
   line-height:1.2!important;
   box-shadow:none!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form input[name="message"]{
-  min-height:72px!important;
+html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
+  height:84px!important;
+  min-height:0!important;
+  padding:14px 20px!important;
+  line-height:1.4!important;
+  resize:none!important;
+  overflow-y:auto!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form input::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea)::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
   align-self:flex-start!important;
   margin:4px 0 0!important;
