@@ -4577,3 +4577,208 @@ html body#acb-design.home-page .acb-hero h1{
 @media(max-width:1180px){
   html body#acb-design.home-page .acb-hero-copy{min-height:40px!important}
 }
+
+/* Cascade lock: the legacy theme contains selectors with long chains of
+   :not() filters.  These component rules intentionally carry the page id
+   twice so the final component layer wins on every page without depending
+   on stylesheet load timing. */
+html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-nav{gap:8px!important}
+html body#acb-design#acb-design .acb-header:not(.mobile-open) .navitem>.navbutton{
+  padding:7px 11px!important;
+  border-radius:var(--radius-card)!important;
+}
+html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-sub{padding:8px!important;gap:4px!important}
+html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-sub a{
+  display:block!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:8px 10px!important;
+  border-radius:var(--radius-card)!important;
+}
+
+html body#acb-design#acb-design main :is(
+  a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,
+  button.btn,button.btn-out,button.pill,
+  .plan-card a.btn,.speaking-grid a.btn,.cta a,
+  a.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn
+),
+html body#acb-design#acb-design.contact-page .cform button[type="submit"],
+html body#acb-design#acb-design.home-page .acb-blocks .cta .pill,
+html body#acb-design#acb-design .cookie-banner .cookie-actions button{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding:20px!important;
+  font-size:20px!important;
+  line-height:0!important;
+  white-space:nowrap!important;
+}
+
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list),
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq):has(>.wrap>.faq-list){
+  padding:0!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list){
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:16px!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list) :is(.section-head,.head){
+  display:block!important;
+  margin:0!important;
+  padding:var(--sp-card)!important;
+  text-align:left!important;
+  background:#fff!important;
+  border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list) .faq-list{
+  display:grid!important;
+  gap:12px!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list) .faq-item{
+  overflow:hidden!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list) .faq-q{
+  width:100%!important;
+  min-height:0!important;
+  padding:var(--sp-card)!important;
+  border:0!important;
+  background:transparent!important;
+  font-size:30px!important;
+  line-height:1.15!important;
+  text-align:left!important;
+}
+html body#acb-design#acb-design.internal-page main :is(.section,.bm-faq)>.wrap:has(>.faq-list) .faq-a>p{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0 var(--sp-card) 28px!important;
+  font-size:20px!important;
+  line-height:1.3!important;
+}
+
+html body#acb-design#acb-design.legal-page main section.legal-section{
+  padding:0!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+}
+html body#acb-design#acb-design.legal-page main .legal-wrap.legal-layout{
+  display:grid!important;
+  grid-template-columns:minmax(220px,.34fr) minmax(0,1fr)!important;
+  gap:16px!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+}
+html body#acb-design#acb-design.legal-page main .legal-nav{
+  grid-column:1!important;
+  padding:var(--sp-card)!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#dbeafe!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.legal-page main .legal-copy{
+  grid-column:2!important;
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+
+html body#acb-design#acb-design.faq-page main .acb-main-panel,
+html body#acb-design#acb-design.faq-page main section.section,
+html body#acb-design#acb-design.faq-page main section.section>.wrap,
+html body#acb-design#acb-design.faq-page main .faqx,
+html body#acb-design#acb-design.faq-page main .faqx>div,
+html body#acb-design#acb-design.faq-page main .faqx-cat{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body#acb-design#acb-design.faq-page main section.section>.wrap{padding:0!important;border-radius:0!important}
+html body#acb-design#acb-design.faq-page main .faqx{
+  display:grid!important;
+  grid-template-columns:minmax(220px,.34fr) minmax(0,1fr)!important;
+  gap:16px!important;
+  width:100%!important;
+  max-width:none!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx-nav{
+  grid-column:1!important;
+  grid-row:1!important;
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#dbeafe!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx>div{
+  grid-column:2!important;
+  grid-row:1!important;
+  padding:0!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx-cat-head{
+  margin:0 0 12px!important;
+  padding:var(--sp-card)!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx .offer-list{
+  display:grid!important;
+  gap:12px!important;
+  background:transparent!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx .offer-row{
+  overflow:hidden!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-card)!important;
+}
+
+html body#acb-design#acb-design :is(.legal-nav,.faqx-nav) a{
+  display:block!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:9px 12px!important;
+  border-radius:var(--radius-card)!important;
+}
+html body#acb-design#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current){
+  background:rgba(79,70,229,.18)!important;
+}
+
+@media(max-width:774px){
+  html body#acb-design#acb-design.legal-page main .legal-layout,
+  html body#acb-design#acb-design.faq-page main .faqx{grid-template-columns:1fr!important}
+  html body#acb-design#acb-design.legal-page main :is(.legal-nav,.legal-copy),
+  html body#acb-design#acb-design.faq-page main :is(.faqx-nav,.faqx>div){
+    grid-column:1!important;
+    grid-row:auto!important;
+  }
+}
