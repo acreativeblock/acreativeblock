@@ -930,6 +930,16 @@ html body#acb-design :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn
   padding:20px!important;
   white-space:nowrap!important;
 }
+
+/* The homepage headline mirrors the measured header height: 54px on desktop
+   and the 40px compact header used below the desktop-navigation breakpoint. */
+html body#acb-design.home-page .acb-hero h1{
+  font-size:54px!important;
+  line-height:1!important;
+}
+@media(max-width:1180px){
+  html body#acb-design.home-page .acb-hero h1{font-size:40px!important}
+}
 @media(max-width:504px){
   html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
   html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
