@@ -16,9 +16,8 @@
   var footerHtml='<footer class="acb-footer"><div class="wrap"><div class="foot-lead"><div class="mark"><a href="../" aria-label="A Creative Block home"><span class="acb-logo-mount" data-acb-logo="3lines" data-acb-mode="none" style="color:#FEFDF9"></span></a><p class="ack">For anyone shaping their creative identity, vision, and work.</p></div></div><div class="top acb-footer-links"><div class="col"><b>Work together</b><a href="../for-individuals/">For individuals</a><a href="../for-organisations/">For organisations</a><a href="../contact/">Contact</a></div><div class="col"><b>Research &amp; method</b><a href="../our-method/">How we work</a><a href="../the-block-map/">The 7+1 map</a><a href="../the-factors/">The factors</a><a href="../evidence/">The evidence</a></div><div class="col"><b>Explore</b><a href="../blog/">Blog</a><a href="../find-your-block/">Find your block</a><a href="../about/">Our story</a></div><div class="col"><b>Support</b><a href="../faq/">FAQ</a><a href="../terms/">Terms &amp; Conditions</a><a href="../privacy/">Privacy Policy</a><a href="../cookies/">Cookies</a></div></div><div class="bottom"><span>© 2026 A Creative Block · Understand the why, then move.</span></div></div></footer>';
   if(atRoot){headerHtml=headerHtml.replace(/\.\.\//g,'');footerHtml=footerHtml.replace(/\.\.\//g,'');}
   if(headerHost)headerHost.innerHTML=headerHtml;
-  var isHome=document.body.classList.contains('home-page');
   if(footerHost){
-    footerHost.innerHTML=isHome?('<div class="footer-reveal">'+newsletterHtml+footerHtml+'</div>'):footerHtml;
+    footerHost.innerHTML='<div class="footer-reveal">'+newsletterHtml+footerHtml+'</div>';
     var footerBottom=footerHost.querySelector('.acb-footer .bottom');
     if(footerBottom)footerBottom.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div>')
   }
