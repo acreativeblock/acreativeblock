@@ -3953,21 +3953,25 @@ html body#acb-design.faq-page .faqx-cat-head{
 }
 
 /* Newsletter sign-up: its own bold CTA band inside main, right after the
-   home page's "Get in touch" close — same width/inset mechanism as
-   .acb-footer (100vw-16px, centered). Doubled #acb-design throughout:
-   now that this lives as a direct <main>/.acb-main-panel section, the
-   page-type generic section resets (home page's :where(...) reset and
-   the internal-page main section:not(...)... background reset, both
-   with more raw specificity than a plain single-ID rule despite being
-   "generic") would otherwise strip its background/padding/radius.
-   margin-top is deliberately left unset here so the normal
-   main > .acb-main-panel > section + section rhythm rule still applies. */
+   home page's "Get in touch" close. No special width of its own any
+   more — it just sizes to .acb-main-panel like every sibling section
+   (.acb-close, .acb-say, ...), so it can never run wider than main.
+   margin-top/bottom are both pinned to the same section-rhythm gap
+   used between every other section, so the gap up to the CTA above and
+   down to the footer below match exactly. Doubled #acb-design
+   throughout: now that this lives as a direct <main>/.acb-main-panel
+   section, the page-type generic section resets (home page's
+   :where(...) reset and the internal-page main section:not(...)...
+   background reset, both with more raw specificity than a plain
+   single-ID rule despite being "generic") would otherwise strip its
+   width/background/padding/radius. */
 html body#acb-design#acb-design .acb-subscribe{
-  width:calc(100vw - 16px)!important;
-  max-width:calc(100vw - 16px)!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
-  margin-bottom:16px!important;
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  margin-top:var(--sp-gap-wide)!important;
+  margin-bottom:var(--sp-gap-wide)!important;
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
