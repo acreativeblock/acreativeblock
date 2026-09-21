@@ -1991,6 +1991,12 @@ html body#acb-design main :is(
   .acb-close-sub .btn
 ){font-size:20px!important}
 
+/* Give desktop/tablet menu hover surfaces a subtle horizontal breathing room
+   without changing their height or the expanded mobile-menu geometry. */
+html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a){
+  padding-inline:4px!important;
+}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
