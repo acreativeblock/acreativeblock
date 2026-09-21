@@ -4050,7 +4050,7 @@ html body#acb-design#acb-design .acb-subscribe .acb-newsletter button svg{width:
   html body#acb-design#acb-design .acb-subscribe .acb-newsletter{width:100%!important}
 }
 @media(min-width:685px){
-  html body#acb-design#acb-design .acb-subscribe{padding:20px!important}
+  html body#acb-design#acb-design .acb-subscribe{padding:clamp(24px,3vw,40px)!important}
   html body#acb-design#acb-design .acb-subscribe>.wrap{padding:20px!important}
   html body#acb-design#acb-design .acb-subscribe h2{max-width:none!important;font-size:30px!important}
   html body#acb-design#acb-design .acb-subscribe .acb-newsletter{padding:0px 6px!important}
@@ -4991,5 +4991,5 @@ html body#acb-design#acb-design .footer-reveal .acb-footer{
   z-index:2!important;
 }
 @media(max-width:774px){
-  html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important}
+  html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
 }
