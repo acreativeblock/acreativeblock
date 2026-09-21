@@ -390,7 +390,7 @@ html body#acb-design .acb-footer{width:100%!important;max-width:none!important;m
 html body#acb-design .acb-footer>.wrap,
 html body#acb-design .acb-footer>.top.acb-footer-links,
 html body#acb-design .acb-footer>.bottom{width:var(--site-width)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
-html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(19.8px,3.4vw,33.6px) 0!important;gap:clamp(16.2px,2.2vw,26px)!important}
+html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(19.8px,3.4vw,33.6px) 0!important;gap:clamp(16.2px,2.2vw,26px)!important;border:0!important}
 /* Copyright row: hugs the very bottom of the page, sized to its own text
    plus menu-style padding rather than the taller row spacing above. */
 html body#acb-design .acb-footer .bottom{margin-top:0!important;padding:9.92px 0!important}
@@ -4126,10 +4126,47 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
   html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
 }
 
+/* Branded validation tooltip for the CTA form, replacing the browser's
+   default "please fill out this field" bubble. Positioned in JS via
+   getBoundingClientRect against the invalid field, anchored bottom-center
+   so the arrow always points straight down at it. */
+html body#acb-design .qc-tooltip{
+  position:absolute!important;
+  z-index:9999!important;
+  transform:translate(-50%,-100%) translateY(10px)!important;
+  background:var(--yellow)!important;
+  color:var(--ink)!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:13px!important;
+  letter-spacing:var(--ls-body)!important;
+  line-height:1.3!important;
+  white-space:nowrap!important;
+  padding:8px 16px!important;
+  border-radius:999px!important;
+  box-shadow:0 10px 24px rgba(30,27,60,.28)!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transition:opacity .18s ease,transform .18s ease!important;
+}
+html body#acb-design .qc-tooltip::after{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  top:100%!important;
+  transform:translateX(-50%)!important;
+  border:6px solid transparent!important;
+  border-top-color:var(--yellow)!important;
+}
+html body#acb-design .qc-tooltip.is-visible{
+  opacity:1!important;
+  transform:translate(-50%,-100%) translateY(-8px)!important;
+}
+
 /* Footer: wide blue card with its identity/news on the left and links right. */
 html body#acb-design .acb-footer{
   background:var(--blue)!important;
   padding:clamp(24px,3vw,40px)!important;
+  padding-bottom:0px!important;
   box-sizing:border-box!important;
 }
 html body#acb-design .acb-footer .acb-logo-mount,
@@ -4174,7 +4211,7 @@ html body#acb-design .acb-footer>.bottom{
   html body#acb-design .acb-footer>.top.acb-footer-links{grid-column:1!important}
 }
 @media(max-width:600px){
-  html body#acb-design .acb-footer{padding:24px 20px!important}
+  html body#acb-design .acb-footer{padding:24px 20px 0!important}
   html body#acb-design .acb-footer>.top.acb-footer-links{grid-template-columns:1fr 1fr!important}
 }
 

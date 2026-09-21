@@ -39,9 +39,36 @@
   (function(){var viewport=document.querySelector('[data-journal-viewport]'),previous=document.querySelector('[data-journal-prev]'),next=document.querySelector('[data-journal-next]');if(!viewport)return;function move(direction){var card=viewport.querySelector('.journal-card'),amount=card?card.getBoundingClientRect().width+16:viewport.clientWidth*.8;viewport.scrollBy({left:direction*amount,behavior:'smooth'})}if(previous)previous.addEventListener('click',function(){move(-1)});if(next)next.addEventListener('click',function(){move(1)});viewport.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}if(e.key==='ArrowRight'){e.preventDefault();move(1)}})})();
   document.querySelectorAll('.newsletter').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button');b.textContent='Thank you!';b.disabled=true})});
   document.querySelectorAll('.qc-form').forEach(function(form){
+    form.setAttribute('novalidate','');
     var status=form.querySelector('.qc-status'),btn=form.querySelector('button[type=submit]'),btnLabel=btn.textContent;
+    var tip=null;
+    function clearTip(){if(tip){tip.remove();tip=null}}
+    var tipCopy={name:'What should we call you?',email:'We\'ll need your email to reply',message:'Tell us what\'s on your mind'};
+    function showTip(field){
+      clearTip();
+      var msg;
+      if(field.validity.typeMismatch)msg='That email doesn\'t look right';
+      else if(field.validity.valueMissing)msg=tipCopy[field.name]||'Don\'t forget this one';
+      else msg=field.validationMessage;
+      var el=document.createElement('div');
+      el.className='qc-tooltip';
+      el.textContent=msg;
+      document.body.appendChild(el);
+      var r=field.getBoundingClientRect();
+      el.style.left=(r.left+window.scrollX+r.width/2)+'px';
+      el.style.top=(r.top+window.scrollY)+'px';
+      tip=el;
+      requestAnimationFrame(function(){el.classList.add('is-visible')});
+      field.addEventListener('input',clearTip,{once:true});
+    }
     form.addEventListener('submit',function(e){
       e.preventDefault();
+      clearTip();
+      if(!form.checkValidity()){
+        var invalid=form.querySelector(':invalid');
+        if(invalid){invalid.focus({preventScroll:true});showTip(invalid)}
+        return;
+      }
       btn.disabled=true;btn.textContent='Sending…';
       if(status){status.textContent='';status.className='cform-status qc-status'}
       fetch(form.action,{
