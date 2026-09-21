@@ -3952,6 +3952,95 @@ html body#acb-design.faq-page .faqx-cat-head{
   box-shadow:var(--shadow-card)!important;
 }
 
+/* Newsletter sign-up: its own bold CTA band above the footer, same weight
+   as the home page's yellow "Get in touch" close — not a quiet line of
+   text buried in the footer's identity column. */
+html body#acb-design .acb-subscribe{
+  background:var(--yellow)!important;
+  border-radius:var(--radius-card)!important;
+  padding:clamp(28px,4vw,48px) var(--sp-card)!important;
+  margin:0 0 16px!important;
+}
+html body#acb-design .acb-subscribe>.wrap{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:clamp(20px,3vw,40px)!important;
+  max-width:none!important;
+  padding:0!important;
+}
+html body#acb-design .acb-subscribe .subscribe-copy{max-width:46ch!important}
+html body#acb-design .acb-subscribe .acb-eyebrow{
+  display:block!important;
+  color:var(--blue)!important;
+  font-size:var(--fs-label)!important;
+  letter-spacing:var(--ls-label)!important;
+  text-transform:uppercase!important;
+  margin:0 0 8px!important;
+}
+html body#acb-design .acb-subscribe h2{
+  margin:0 0 8px!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-h2)!important;
+  line-height:var(--lh-title)!important;
+  letter-spacing:var(--ls-h2)!important;
+  font-weight:400!important;
+}
+html body#acb-design .acb-subscribe .note{
+  margin:0!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-body)!important;
+  line-height:var(--lh-copy)!important;
+  max-width:42ch!important;
+}
+html body#acb-design .acb-subscribe .acb-newsletter{
+  display:flex!important;
+  align-items:center!important;
+  flex:none!important;
+  width:min(380px,100%)!important;
+  background:#fff!important;
+  border-radius:999px!important;
+  padding:6px!important;
+  gap:6px!important;
+}
+html body#acb-design .acb-subscribe .acb-newsletter input{
+  flex:1!important;
+  min-width:0!important;
+  border:0!important;
+  background:transparent!important;
+  padding:10px 8px 10px 16px!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:var(--fs-body)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design .acb-subscribe .acb-newsletter input::placeholder{color:#9a9a9a!important}
+html body#acb-design .acb-subscribe .acb-newsletter button{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:none!important;
+  min-width:40px!important;
+  height:40px!important;
+  padding:0 11px!important;
+  border-radius:999px!important;
+  border:0!important;
+  background:var(--blue)!important;
+  color:#fff!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:14px!important;
+  white-space:nowrap!important;
+  cursor:pointer!important;
+  transition:background-color .2s ease!important;
+}
+html body#acb-design .acb-subscribe .acb-newsletter button:disabled{cursor:default!important;opacity:.9!important}
+html body#acb-design .acb-subscribe .acb-newsletter button:hover{background:var(--ink)!important}
+html body#acb-design .acb-subscribe .acb-newsletter button svg{width:18px!important;height:18px!important}
+@media(max-width:774px){
+  html body#acb-design .acb-subscribe>.wrap{flex-direction:column!important;align-items:stretch!important;text-align:left!important}
+  html body#acb-design .acb-subscribe .subscribe-copy{max-width:none!important}
+  html body#acb-design .acb-subscribe .acb-newsletter{width:100%!important}
+}
+
 /* Footer: wide blue card with its identity/news on the left and links right. */
 html body#acb-design .acb-footer{
   background:var(--blue)!important;
