@@ -4557,3 +4557,7 @@ html body#acb-design .cookie-banner .cookie-actions button{
 /* The homepage headline uses the header's measured 54px desktop height. */
 html body#acb-design.home-page .acb-hero h1{font-size:54px!important;line-height:1!important}
 @media(max-width:1180px){html body#acb-design.home-page .acb-hero h1{font-size:40px!important}}
+
+/* Header links need physical separation as well as a padded hover surface. */
+html body#acb-design .acb-header:not(.mobile-open) .acb-nav{gap:10px!important}
+html body#acb-design .acb-header:not(.mobile-open) .acb-sub{gap:4px!important}
