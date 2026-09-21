@@ -917,6 +917,11 @@ html body#acb-design.contact-page .cform-status.is-error{color:#b3261e!important
   html body#acb-design.contact-page .contact-unified>.wrap{grid-template-columns:1fr!important}
   html body#acb-design.contact-page :is(.contact-form-wrap,.contact-side){grid-column:1!important;grid-row:auto!important;height:auto!important}
 }
+
+/* FAQ rows are one interactive surface. Their nested text/icon elements must
+   inherit the same cursor so it never flickers between pointer and default. */
+html body#acb-design :is(.faq-q,.offer-toggle),
+html body#acb-design :is(.faq-q,.offer-toggle) *{cursor:pointer!important}
 @media(max-width:504px){
   html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
   html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
