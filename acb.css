@@ -1943,6 +1943,12 @@ html body#acb-design .acb-footer .footer-socials a{
   color:#fff!important;
 }
 html body#acb-design .acb-footer .footer-socials svg{
+  width:29px!important;
+  height:29px!important;
+  fill:currentColor!important;
+  stroke:none!important;
+}
+html body#acb-design .acb-footer .footer-socials svg{
   width:24px!important;
   height:24px!important;
   color:#fff!important;
