@@ -4966,3 +4966,30 @@ html body#acb-design#acb-design.home-page .acb-close .pill.big{
   html body#acb-design#acb-design.home-page .acb-close .close-image{min-height:0!important;aspect-ratio:16/10!important}
   html body#acb-design#acb-design.home-page .acb-close h2{max-width:none!important;font-size:28px!important}
 }
+
+/* Peekaboo footer reveal (home only): the footer sticks to the bottom of
+   the viewport once it arrives there, while the subscribe card — pulled
+   up behind it via a negative bottom margin, lower z-index, no bottom
+   gap of its own — keeps scrolling underneath. As the page scrolls the
+   rest of the way, subscribe rises up from behind the pinned footer
+   before the footer finally lets go and settles into its normal place. */
+html body#acb-design#acb-design .footer-reveal{
+  position:relative!important;
+}
+html body#acb-design#acb-design .footer-reveal .acb-subscribe{
+  position:relative!important;
+  z-index:1!important;
+  width:calc(100vw - 16px)!important;
+  max-width:calc(100vw - 16px)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  margin-bottom:-32px!important;
+}
+html body#acb-design#acb-design .footer-reveal .acb-footer{
+  position:sticky!important;
+  bottom:0!important;
+  z-index:2!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important}
+}
