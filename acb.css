@@ -3978,7 +3978,7 @@ html body#acb-design#acb-design .acb-quick-contact{
   max-width:none!important;
   margin-left:0!important;
   margin-right:0!important;
-  margin-top:calc(var(--sp-gap-wide) + 32px)!important;
+  margin-top:calc(var(--sp-gap-wide) + 64px)!important;
   margin-bottom:var(--sp-gap-wide)!important;
   min-height:0!important;
   border-radius:var(--radius-card)!important;
@@ -4086,8 +4086,11 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
 html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea)::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
   align-self:flex-start!important;
-  margin:4px 0 0!important;
+  margin:0!important;
   letter-spacing:var(--ls-copy-lg)!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-status:empty{
+  display:none!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-status{
   margin:0!important;
