@@ -1972,11 +1972,11 @@ html body#acb-design .acb-footer .acb-footer-news p{
 }
 html body#acb-design .acb-footer .footer-socials{
   display:flex!important;
-  width:100%!important;
+  width:auto!important;
   gap:10px!important;
-  margin:14px 0 0!important;
-  padding-top:14px!important;
-  border-top:1px solid rgba(255,255,255,.25)!important;
+  margin:0!important;
+  padding-top:0!important;
+  border-top:0!important;
 }
 html body#acb-design .acb-footer .footer-socials a{
   width:44px!important;
@@ -4193,12 +4193,13 @@ html body#acb-design.home-page .acb-faq .faq-item .faq-a>p{
   padding-bottom:28px!important;
 }
 
-/* Footer finishing details: social marks sit beneath the identity, while the
-   compact lower row is solely the centred copyright. */
+/* Footer finishing details: the social marks share the bottom row with the
+   copyright line — copyright on the left, icons on the right — instead of
+   sitting under the link columns behind their own divider. */
 html body#acb-design .acb-footer .footer-socials{
   display:flex!important;
   gap:12px!important;
-  margin-top:18px!important;
+  margin:0!important;
 }
 html body#acb-design .acb-footer .footer-socials a{
   display:grid!important;
@@ -4212,8 +4213,10 @@ html body#acb-design .acb-footer .footer-socials a{
 html body#acb-design .acb-footer .footer-socials svg{width:20px!important;height:20px!important}
 html body#acb-design .acb-footer>.bottom{
   display:flex!important;
-  justify-content:center!important;
-  text-align:center!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  text-align:left!important;
+  gap:16px!important;
 }
 
 /* Final small interface refinements. */
