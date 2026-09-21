@@ -4246,3 +4246,23 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
   html body#acb-design .faq-item .faq-q,
   html body#acb-design.faq-page .faqx .offer-toggle{font-size:var(--fs-body)!important}
 }
+
+/* Document pages read from left to right: the contents index is its own
+   left-hand card and the actual document is a separate right-hand card. */
+@media(min-width:775px){
+  html body#acb-design.legal-page .legal-layout,
+  html body#acb-design.faq-page .faqx{
+    grid-template-columns:minmax(220px,.34fr) minmax(0,1fr)!important;
+    gap:16px!important;
+  }
+  html body#acb-design.legal-page .legal-nav,
+  html body#acb-design.faq-page .faqx-nav{grid-column:1!important;grid-row:1!important}
+  html body#acb-design.legal-page .legal-copy,
+  html body#acb-design.faq-page .faqx>div{grid-column:2!important;grid-row:1!important}
+  html body#acb-design.faq-page .faqx>div{
+    padding:var(--sp-card)!important;
+    border-radius:var(--radius-card)!important;
+    background:#fff!important;
+    box-shadow:var(--shadow-card)!important;
+  }
+}
