@@ -4160,6 +4160,52 @@ html body#acb-design.internal-page:not(.individuals-page):not(.organisations-pag
   box-sizing:border-box!important;
 }
 
+/* Mobile type returns to the compact scale used by the gradient-era site.
+   This is deliberately a type-only layer: the current layout, spacing,
+   surfaces and responsive behaviour remain intact. */
+@media(max-width:774px){
+  html body#acb-design{
+    --fs-label:11.56px;
+    --fs-h1:28.8px;
+    --fs-h2:22.5px;
+    --fs-copy-lg:21.6px;
+    --fs-body:14.4px;
+    --fs-small:9.9px;
+    --fs-button:12.15px;
+  }
+
+  html body#acb-design main :is(h1,.t-h1){font-size:var(--fs-h1)!important}
+  html body#acb-design main :is(h2,.t-h2){font-size:var(--fs-h2)!important}
+  html body#acb-design main :is(h3,.t-h3){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design main :is(p,li,.t-body){font-size:var(--fs-body)!important}
+  html body#acb-design main :is(.t-copy-lg,.acb-lead,.section-head p,.callout p,.lead,.access-note){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design :is(.t-label,.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note){font-size:var(--fs-label)!important}
+
+  html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn){font-size:var(--fs-button)!important}
+  html body#acb-design .acb-header .acb-utility-pill,
+  html body#acb-design .mobile-header-cta{font-size:12.15px!important}
+
+  html body#acb-design :is(.faq-item .faq-q,.faq-item .faq-a>p,.faq-page .faqx .offer-toggle,.faq-page .faqx .offer-body p){font-size:var(--fs-body)!important}
+  html body#acb-design :is(.faq-item .faq-q::after,.offer-toggle .pm::after){font-size:14.4px!important}
+
+  html body#acb-design.home-page .acb-hero h1,
+  html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot),
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel .hero-static-line{font-size:clamp(9.5px,3.3vw,14.4px)!important}
+  html body#acb-design.contact-page .contact-visual-hero h1{font-size:var(--fs-h1)!important}
+
+  html body#acb-design.home-page :is(.acb-say p.scrolltext,.individual-feeling .scrolltext),
+  html body#acb-design.individuals-page .individual-feeling .scrolltext{font-size:35px!important}
+
+  html body#acb-design.blocks-page .bmcard-title{font-size:16px!important}
+  html body#acb-design.blocks-page .bmcard-lead{font-size:11.5px!important}
+  html body#acb-design.blocks-page .card-tag{font-size:9px!important}
+
+  html body#acb-design .acb-footer :is(.col a,.news p,.ack){font-size:14.4px!important}
+  html body#acb-design .acb-header.mobile-open .navitem :is(a.navbutton,button.navbutton){font-size:clamp(24.79px,8vw,36.35px)!important}
+  html body#acb-design .acb-header.mobile-open :is(.acb-sub a,.submenu a){font-size:clamp(16px,4.2vw,22px)!important}
+  html body#acb-design .acb-header.mobile-open .mobile-menu-footer a{font-size:14.4px!important}
+}
+
 /* FAQ questions use the same standalone pill system everywhere. */
 html body#acb-design .faq-item .faq-q,
 html body#acb-design.faq-page .faqx .offer-toggle{
@@ -4193,4 +4239,10 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
   html body#acb-design.faq-page .faqx{grid-template-columns:1fr!important}
   html body#acb-design.faq-page .faqx>div,
   html body#acb-design.faq-page .faqx-nav{grid-column:1!important;grid-row:auto!important;max-height:none!important}
+}
+
+/* Keep the mobile scale above the late FAQ component rules as well. */
+@media(max-width:774px){
+  html body#acb-design .faq-item .faq-q,
+  html body#acb-design.faq-page .faqx .offer-toggle{font-size:var(--fs-body)!important}
 }
