@@ -1953,6 +1953,22 @@ html body#acb-design .acb-footer>.bottom{
   line-height:1.2!important;
 }
 
+/* The FAQ page keeps its finished title and question cards, without a
+   second background panel around them. This lets both use the full reading
+   column beside the contents index. */
+html body#acb-design.faq-page .section>.wrap,
+html body#acb-design.faq-page .faqx>div{
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body#acb-design.faq-page .faqx :is(.faqx-cat-head,.offer-list){
+  width:100%!important;
+  max-width:none!important;
+}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
