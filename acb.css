@@ -1969,6 +1969,16 @@ html body#acb-design.faq-page .faqx :is(.faqx-cat-head,.offer-list){
   max-width:none!important;
 }
 
+/* Dedicated FAQ typography follows the Home FAQ exactly. */
+html body#acb-design.faq-page .faqx-cat-head h2{font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important}
+html body#acb-design.faq-page .faqx .offer-toggle{font-size:30px!important;line-height:1.15!important}
+html body#acb-design.faq-page .faqx .offer-body p{font-size:20px!important;line-height:1.3!important}
+@media(max-width:774px){
+  html body#acb-design.faq-page .faqx-cat-head h2{font-size:var(--fs-h2)!important}
+  html body#acb-design.faq-page .faqx .offer-toggle,
+  html body#acb-design.faq-page .faqx .offer-body p{font-size:var(--fs-body)!important}
+}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
