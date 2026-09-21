@@ -4890,3 +4890,79 @@ html body#acb-design#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-curren
 @media(max-width:774px){
   html body#acb-design#acb-design#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:var(--fs-copy-lg)!important}
 }
+
+/* Home closing CTA: rebuilt as an image + title + copy + button card
+   (one wide image, not two, unlike the reference) instead of the
+   single full-bleed "Get in touch" bar. Doubled #acb-design throughout,
+   matching this file's established defense against generic section
+   resets now that .acb-close's children have real content again. */
+html body#acb-design#acb-design.home-page .acb-close{
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  margin-top:var(--sp-gap-wide)!important;
+  margin-bottom:var(--sp-gap-wide)!important;
+  border-radius:var(--radius-card)!important;
+  background:var(--yellow)!important;
+  overflow:hidden!important;
+  padding:0!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.home-page .acb-close>.wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
+  align-items:stretch!important;
+  gap:0!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+html body#acb-design#acb-design.home-page .acb-close .close-image{
+  margin:0!important;
+  display:block!important;
+  height:100%!important;
+  min-height:340px!important;
+}
+html body#acb-design#acb-design.home-page .acb-close .close-image img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  display:block!important;
+}
+html body#acb-design#acb-design.home-page .acb-close .close-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:16px!important;
+  padding:clamp(32px,5vw,56px)!important;
+}
+html body#acb-design#acb-design.home-page .acb-close h2{
+  margin:0!important;
+  max-width:12ch!important;
+  color:var(--ink)!important;
+  font-size:clamp(32px,4vw,54px)!important;
+  line-height:1.05!important;
+  letter-spacing:var(--ls-h1)!important;
+  font-weight:400!important;
+}
+html body#acb-design#acb-design.home-page .acb-close .note{
+  margin:0!important;
+  max-width:42ch!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-body)!important;
+  line-height:var(--lh-copy)!important;
+}
+html body#acb-design#acb-design.home-page .acb-close .pill.big{
+  margin-top:4px!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.home-page .acb-close>.wrap{grid-template-columns:1fr!important}
+  html body#acb-design#acb-design.home-page .acb-close .close-image{min-height:0!important;aspect-ratio:16/10!important}
+  html body#acb-design#acb-design.home-page .acb-close h2{max-width:none!important;font-size:28px!important}
+}
