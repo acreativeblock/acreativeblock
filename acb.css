@@ -1178,14 +1178,14 @@ html body#acb-design.home-page main .acb-work>.wrap{padding:var(--sp-card)!impor
 html body#acb-design.home-page .work-layout{display:grid!important;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr)!important;gap:var(--sp-card)!important;align-items:stretch!important}
 html body#acb-design.home-page .work-head{display:flex;flex-direction:column;justify-content:flex-start;padding:clamp(6px,1.4vw,18px) 0}
 html body#acb-design.home-page .work-head .acb-eyebrow{color:#4f46e5!important}
-html body#acb-design.home-page .work-head .acb-h2{font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;color:var(--ink)!important;margin:0 0 18px!important}
+html body#acb-design.home-page .work-head .acb-h2{font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;letter-spacing:var(--ls-h2)!important;color:var(--ink)!important;margin:0 0 18px!important}
 html body#acb-design.home-page .work-head .work-intro{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important;max-width:42ch;margin:0!important}
 html body#acb-design.home-page .work-cards{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
-html body#acb-design.home-page .work-card{position:relative!important;min-height:clamp(220px,22vw,300px)!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;box-shadow:none!important;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease!important}
+html body#acb-design.home-page .work-card{position:relative!important;min-height:clamp(110px,10vw,150px)!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;box-shadow:none!important;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease!important}
 html body#acb-design.home-page .work-card.blue{background:#4f46e5!important;color:#fff!important}
 html body#acb-design.home-page .work-card.pink{background:var(--acb-yellow)!important;color:var(--ink)!important}
-html body#acb-design.home-page .work-card h3{font-size:clamp(34px,7.2vw,72px)!important;line-height:.92!important;letter-spacing:var(--ls-title)!important;max-width:none!important;width:100%!important;color:inherit!important}
-html body#acb-design.home-page .work-card p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:inherit!important;max-width:24ch!important;padding-right:56px!important}
+html body#acb-design.home-page .work-card h3{font-size:clamp(34px,7.2vw,72px)!important;line-height:.92!important;letter-spacing:-.3rem!important;max-width:none!important;width:100%!important;color:inherit!important}
+html body#acb-design.home-page .work-card p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:inherit!important;max-width:none!important;padding-right:56px!important}
 html body#acb-design.home-page .work-card:hover{transform:translateY(-4px)!important;box-shadow:0 14px 30px rgba(7,19,33,.14)!important}
 html body#acb-design.home-page .work-card .work-arrow{position:absolute!important;right:var(--sp-card)!important;bottom:var(--sp-card)!important;font-size:clamp(20px,2.6vw,30px)!important;line-height:1!important}
 
@@ -3980,11 +3980,11 @@ html body#acb-design#acb-design .acb-quick-contact{
   margin-right:0!important;
   margin-top:var(--sp-gap-wide)!important;
   margin-bottom:var(--sp-gap-wide)!important;
-  min-height:clamp(480px,46vw,600px)!important;
+  min-height:0!important;
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
-  padding:clamp(32px,5vw,56px) var(--sp-card)!important;
+  padding:clamp(24px,3.2vw,36px) var(--sp-card)!important;
   box-sizing:border-box!important;
   box-shadow:var(--shadow-card)!important;
 }
@@ -4001,20 +4001,14 @@ html body#acb-design#acb-design .acb-quick-contact .qc-media img{
   object-fit:cover!important;
   display:block!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-scrim{
-  position:absolute!important;
-  inset:0!important;
-  z-index:1!important;
-  background:linear-gradient(115deg,rgba(20,18,40,.82) 0%,rgba(20,18,40,.52) 42%,rgba(20,18,40,.22) 72%)!important;
-}
 html body#acb-design#acb-design .acb-quick-contact>.wrap{
   position:relative!important;
   z-index:2!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr)!important;
-  align-items:center!important;
+  align-items:stretch!important;
   text-align:left!important;
-  gap:40px!important;
+  gap:24px!important;
   width:100%!important;
   max-width:none!important;
   margin:0!important;
@@ -4023,22 +4017,31 @@ html body#acb-design#acb-design .acb-quick-contact>.wrap{
   border-radius:0!important;
   box-shadow:none!important;
 }
+html body#acb-design#acb-design .acb-quick-contact .qc-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  background:#fff!important;
+  border-radius:var(--radius-card)!important;
+  padding:24px 28px!important;
+  box-shadow:0 12px 34px rgba(7,19,33,.12)!important;
+}
 html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{
   margin:0!important;
   max-width:12ch!important;
-  color:#fff!important;
-  font-size:clamp(28px,3.6vw,42px)!important;
+  color:var(--ink)!important;
+  font-size:clamp(24px,2.6vw,32px)!important;
   line-height:1.05!important;
   letter-spacing:var(--ls-h1)!important;
   font-weight:400!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-copy .note{
-  margin:14px 0 0!important;
+  margin:12px 0 0!important;
   max-width:32ch!important;
-  color:#fff!important;
-  opacity:.92!important;
+  color:var(--ink)!important;
   font-size:var(--fs-body)!important;
   line-height:var(--lh-copy)!important;
+  letter-spacing:var(--ls-body)!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form{
   display:grid!important;
@@ -4052,7 +4055,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form{
   border-radius:var(--radius-card)!important;
   padding:24px!important;
   box-sizing:border-box!important;
-  box-shadow:var(--shadow-card)!important;
+  box-shadow:0 12px 34px rgba(7,19,33,.12)!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
   display:grid!important;
@@ -4073,12 +4076,13 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea){
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
   min-height:96px!important;
-  resize:vertical!important;
+  resize:none!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea)::placeholder{color:#9a9a9a!important}
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
   justify-self:start!important;
   margin:0!important;
+  letter-spacing:var(--ls-copy-lg)!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-status{
   margin:0!important;
@@ -4093,9 +4097,10 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
   line-height:var(--lh-copy)!important;
 }
 @media(max-width:774px){
-  html body#acb-design#acb-design .acb-quick-contact{min-height:0!important;padding:28px 20px!important}
-  html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:24px!important}
-  html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{max-width:none!important;font-size:28px!important}
+  html body#acb-design#acb-design .acb-quick-contact{padding:20px!important}
+  html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:16px!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-copy{padding:20px!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{max-width:none!important;font-size:26px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form{max-width:none!important;justify-self:stretch!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
 }
@@ -4104,6 +4109,8 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
 html body#acb-design .acb-footer{
   background:var(--blue)!important;
   padding:clamp(24px,3vw,40px)!important;
+  border:1px solid rgba(255,255,255,.15)!important;
+  box-sizing:border-box!important;
 }
 html body#acb-design .acb-footer .acb-logo-mount,
 html body#acb-design .acb-footer .acb-logo-mount svg{color:#fff!important}
@@ -4248,13 +4255,16 @@ html body#acb-design .acb-footer .footer-socials{
 html body#acb-design .acb-footer .footer-socials a{
   display:grid!important;
   place-items:center!important;
-  width:34px!important;
-  height:34px!important;
+  width:37px!important;
+  height:37px!important;
   color:#fff!important;
   border-radius:50%!important;
   text-decoration:none!important;
 }
-html body#acb-design .acb-footer .footer-socials svg{width:20px!important;height:20px!important}
+html body#acb-design .acb-footer .footer-socials svg{width:23px!important;height:23px!important}
+@media(min-width:775px){
+  html body#acb-design .acb-footer .wrap>.bottom span{font-size:10px!important}
+}
 html body#acb-design .acb-footer>.bottom{
   display:flex!important;
   align-items:center!important;
