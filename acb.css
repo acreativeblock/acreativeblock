@@ -4126,6 +4126,29 @@ html body#acb-design.faq-page .faqx-cat{background:transparent!important;backgro
   html body#acb-design.faq-page .faqx-nav{grid-column:1!important;grid-row:auto!important}
 }
 
+/* Bottom-of-page FAQs use the Home composition everywhere: one title card,
+   then a full-width vertical stack of separate question cards. */
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list){
+  display:block!important;
+  padding:0!important;
+}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) :is(.section-head.center,.head){
+  display:block!important;
+  width:100%!important;
+  text-align:left!important;
+  margin:0!important;
+}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) .section-head.center>div{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+}
+html body#acb-design.internal-page :is(.section>.wrap,.bm-faq>.wrap):has(>.faq-list) .faq-list{
+  width:100%!important;
+  max-width:none!important;
+  margin-top:12px!important;
+}
+
 /* FAQ questions use the same standalone pill system everywhere. */
 html body#acb-design .faq-item .faq-q,
 html body#acb-design.faq-page .faqx .offer-toggle{
