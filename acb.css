@@ -1997,6 +1997,20 @@ html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a){
   padding-inline:4px!important;
 }
 
+/* The document index uses a rounded, pill-like progress stroke rather than
+   a hairline underline as each linked section becomes current. */
+html body#acb-design :is(.legal-nav,.faqx-nav) a::after{
+  bottom:3px!important;
+  height:7px!important;
+  border-radius:999px!important;
+  background:rgba(79,70,229,.24)!important;
+  opacity:0!important;
+  transition:transform .36s cubic-bezier(.16,1,.3,1),opacity .2s ease!important;
+}
+html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current)::after{
+  opacity:1!important;
+}
+
 /* Individuals: a fuller feeling check-in, then a visible, adaptable process. */
 @media(min-width:775px){
   html body#acb-design.individuals-page .individual-feeling>.wrap{
