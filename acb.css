@@ -4941,6 +4941,10 @@ html body#acb-design#acb-design.faq-page main .faqx-cat{
   background:transparent!important;
   background-image:none!important;
   box-shadow:none!important;
+  margin-top:0!important;
+}
+html body#acb-design#acb-design.faq-page main .faqx-cat+.faqx-cat{
+  margin-top:clamp(29.74px,5vw,56.51px)!important;
 }
 html body#acb-design#acb-design.faq-page main section.section>.wrap{padding:0!important;border-radius:0!important}
 html body#acb-design#acb-design.faq-page main .faqx{
