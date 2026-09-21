@@ -4054,6 +4054,12 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form{
   box-sizing:border-box!important;
   box-shadow:none!important;
 }
+html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:10px!important;
+  width:100%!important;
+}
 html body#acb-design#acb-design .acb-quick-contact .qc-form input{
   box-sizing:border-box!important;
   width:100%!important;
@@ -4068,6 +4074,9 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form input{
   color:var(--ink)!important;
   line-height:1.2!important;
   box-shadow:none!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-form input[name="message"]{
+  min-height:72px!important;
 }
 html body#acb-design#acb-design .acb-quick-contact .qc-form input::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
@@ -4092,6 +4101,9 @@ html body#acb-design#acb-design .acb-quick-contact .qc-sent{
   html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:16px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-copy{width:100%!important;min-height:0!important;white-space:normal!important;font-size:17px!important;padding:14px 18px!important}
   html body#acb-design#acb-design .acb-quick-contact .qc-form{max-width:none!important;justify-self:stretch!important;align-items:stretch!important}
+}
+@media(max-width:420px){
+  html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
 }
 
 /* Footer: wide blue card with its identity/news on the left and links right. */
