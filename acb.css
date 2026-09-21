@@ -3977,6 +3977,7 @@ html body#acb-design#acb-design .acb-subscribe{
   color:#fff!important;
   padding:clamp(32px,5vw,56px) var(--sp-card)!important;
   box-sizing:border-box!important;
+  box-shadow:var(--shadow-card)!important;
 }
 html body#acb-design#acb-design .acb-subscribe>.wrap{
   display:flex!important;
