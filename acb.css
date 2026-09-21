@@ -2325,8 +2325,13 @@ html body#acb-design.organisations-page .plan-grid{grid-template-columns:repeat(
 
 /* Individuals: the opening statement uses the same long-form hierarchy as
    Home's approach. The support journey then holds the explanatory copy on
-   the left and the complete process on the right half. */
-html body#acb-design.individuals-page .individual-feeling>.wrap{display:block!important}
+   the left and the complete process on the right half. Doubled #acb-design:
+   two stale two-column grid rules further down (written for an older
+   .feeling-copy/.signs-list layout this section no longer has) still match
+   via .individual-feeling>.wrap and .audience-intro:first-of-type>.wrap and
+   carry more raw specificity, so a single-ID block override here loses and
+   the grid's row-gap adds ~27px of unwanted space under the eyebrow. */
+html body#acb-design#acb-design.individuals-page .individual-feeling>.wrap{display:block!important;gap:0!important}
 html body#acb-design.individuals-page .individual-feeling .scrolltext{
   max-width:none!important;margin:0!important;padding-right:15%!important;
   color:var(--ink)!important;font-size:35px!important;line-height:var(--lh-title)!important;
