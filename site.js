@@ -17,8 +17,10 @@
   if(atRoot){headerHtml=headerHtml.replace(/\.\.\//g,'');footerHtml=footerHtml.replace(/\.\.\//g,'');}
   if(headerHost)headerHost.innerHTML=headerHtml;
   if(footerHost){footerHost.innerHTML=footerHtml;var footerSupport=footerHost.querySelector('.acb-footer-links .col:last-child');if(footerSupport)footerSupport.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div>')}
-  var mainPanel=document.querySelector('main .acb-main-panel')||document.querySelector('main');
-  if(mainPanel)mainPanel.insertAdjacentHTML('beforeend',newsletterHtml);
+  if(document.body.classList.contains('home-page')){
+    var mainPanel=document.querySelector('main .acb-main-panel')||document.querySelector('main');
+    if(mainPanel)mainPanel.insertAdjacentHTML('beforeend',newsletterHtml);
+  }
 
   var header=document.querySelector('.site-header'),toggle=document.querySelector('.menu-toggle');
   var mobileToggle=document.querySelector('.mobile-menu-toggle');
