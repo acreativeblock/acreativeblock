@@ -286,7 +286,7 @@ html body#acb-design .acb-hero :is(.sub,.pill){font-family:"Inter",sans-serif!im
 /* White-version near-black footer with readable white type and mark. */
 html body#acb-design .acb-footer :is(p,a,b,h3,.bottom,input,button){color:#fff!important}
 html body#acb-design .acb-footer .acb-logo-mount{color:#fff!important}
-html body#acb-design .acb-footer :is(.top,.bottom,.foot-lead,.acb-newsletter){border-color:rgba(255,255,255,.25)!important}
+html body#acb-design .acb-footer :is(.top,.bottom,.foot-lead,.qc-form){border-color:rgba(255,255,255,.25)!important}
 html body#acb-design .acb-footer input::placeholder{color:rgba(255,255,255,.7)!important}
 /* Even rhythm between panels: 49.57px everywhere (the average of the old 41.31px
    section gap and the ~82.62px it actually came out to before the footer,
@@ -405,7 +405,7 @@ html body#acb-design .acb-footer .ack{max-width:29ch!important;margin:13.22px 0 
 html body#acb-design .acb-footer .acb-footer-news{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:space-between!important;height:100%!important;padding:0!important;border:0!important;grid-column:auto!important}
 html body#acb-design .acb-footer .acb-footer-news h3{font-family:"Inter",sans-serif!important;font-size:clamp(16.2px,1.7vw,21px)!important;font-weight: 400!important;white-space:normal!important;margin:0!important}
 html body#acb-design .acb-footer .acb-footer-news p{font-size:clamp(11.02px,1vw,13.22px)!important;max-width:44ch!important;margin:6.61px 0 11.02px!important;line-height:1.4!important;align-self:flex-start!important}
-html body#acb-design .acb-footer .acb-newsletter{display:flex!important;margin:0!important;max-width:none!important;width:100%!important;grid-column:auto!important}
+html body#acb-design .acb-footer .qc-form{display:flex!important;margin:0!important;max-width:none!important;width:100%!important;grid-column:auto!important}
 html body#acb-design .acb-footer .bottom a{color:inherit!important}
 @media(max-width:630px){
   html body#acb-design .acb-footer .foot-lead{grid-template-columns:1fr!important}
@@ -1127,7 +1127,7 @@ html body#acb-design.contact-page .contact-form-wrap{width:100%!important;max-wi
 html body#acb-design.contact-page .mail-big{border:0!important;text-decoration:none!important;padding-bottom:0!important;color:#4f46e5!important}
 html body#acb-design.contact-page .mail-big:hover{text-decoration:none!important;color:#3f37c4!important}
 /* Contact form controls must not resize the newsletter field in the shared footer. */
-html body#acb-design.contact-page .acb-footer .acb-newsletter input{font-size:inherit!important;line-height:inherit!important;background:transparent!important;color:#fff!important;border:0!important;padding:0 9.92px!important}
+html body#acb-design.contact-page .acb-footer .qc-form input{font-size:inherit!important;line-height:inherit!important;background:transparent!important;color:#fff!important;border:0!important;padding:0 9.92px!important}
 
 /* Block-map introduction: full card, centered readable text measure. */
 html body#acb-design.blocks-page .bm-intro>.wrap{text-align:center!important}
@@ -1181,12 +1181,13 @@ html body#acb-design.home-page .work-head .acb-eyebrow{color:#4f46e5!important}
 html body#acb-design.home-page .work-head .acb-h2{font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;color:var(--ink)!important;margin:0 0 18px!important}
 html body#acb-design.home-page .work-head .work-intro{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important;max-width:42ch;margin:0!important}
 html body#acb-design.home-page .work-cards{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
-html body#acb-design.home-page .work-card{position:relative!important;min-height:125px!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;box-shadow:none!important;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease!important}
+html body#acb-design.home-page .work-card{position:relative!important;min-height:clamp(220px,22vw,300px)!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;box-shadow:none!important;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease!important}
 html body#acb-design.home-page .work-card.blue{background:#4f46e5!important;color:#fff!important}
 html body#acb-design.home-page .work-card.pink{background:var(--acb-yellow)!important;color:var(--ink)!important}
-html body#acb-design.home-page .work-card h3{font-size:clamp(24px,3vw,38px)!important;line-height:.92!important;letter-spacing:var(--ls-title)!important;max-width:8ch!important;color:inherit!important}
-html body#acb-design.home-page .work-card p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:inherit!important;max-width:24ch!important}
+html body#acb-design.home-page .work-card h3{font-size:clamp(34px,7.2vw,72px)!important;line-height:.92!important;letter-spacing:var(--ls-title)!important;max-width:none!important;width:100%!important;color:inherit!important}
+html body#acb-design.home-page .work-card p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:inherit!important;max-width:24ch!important;padding-right:56px!important}
 html body#acb-design.home-page .work-card:hover{transform:translateY(-4px)!important;box-shadow:0 14px 30px rgba(7,19,33,.14)!important}
+html body#acb-design.home-page .work-card .work-arrow{position:absolute!important;right:var(--sp-card)!important;bottom:var(--sp-card)!important;font-size:clamp(20px,2.6vw,30px)!important;line-height:1!important}
 
 @media(max-width:954px){
   html body#acb-design .acb-header .inner{position:relative!important}
@@ -1228,7 +1229,10 @@ html body#acb-design.home-page .work-card:hover{transform:translateY(-4px)!impor
   html body#acb-design.factors-page .flush.reverse .flush-img img{border-radius:var(--radius-card) var(--radius-card) 0 0!important}
   html body#acb-design.home-page .work-layout{grid-template-columns:1fr!important}
   html body#acb-design.home-page .work-cards{grid-template-columns:1fr!important}
-  html body#acb-design.home-page .work-card{min-height:150px!important}
+  html body#acb-design.home-page .work-card{min-height:200px!important}
+  html body#acb-design.home-page .work-card h3{font-size:clamp(30px,11vw,40px)!important}
+  html body#acb-design.home-page .work-card p{padding-right:44px!important}
+  html body#acb-design.home-page .work-card .work-arrow{font-size:22px!important}
   html body#acb-design.blocks-page .bmcard-body{min-height:0;padding-bottom:62px!important}
 }
 
@@ -3965,13 +3969,18 @@ html body#acb-design.faq-page .faqx-cat-head{
    background reset, both with more raw specificity than a plain
    single-ID rule despite being "generic") would otherwise strip its
    width/background/padding/radius. */
-html body#acb-design#acb-design .acb-subscribe{
+html body#acb-design#acb-design .acb-quick-contact{
+  position:relative!important;
+  overflow:hidden!important;
+  display:flex!important;
+  align-items:center!important;
   width:100%!important;
   max-width:none!important;
   margin-left:0!important;
   margin-right:0!important;
   margin-top:var(--sp-gap-wide)!important;
   margin-bottom:var(--sp-gap-wide)!important;
+  min-height:clamp(480px,46vw,600px)!important;
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
@@ -3979,12 +3988,33 @@ html body#acb-design#acb-design .acb-subscribe{
   box-sizing:border-box!important;
   box-shadow:var(--shadow-card)!important;
 }
-html body#acb-design#acb-design .acb-subscribe>.wrap{
-  display:flex!important;
-  flex-direction:column!important;
+html body#acb-design#acb-design .acb-quick-contact .qc-media{
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  margin:0!important;
+  display:block!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-media img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  display:block!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-scrim{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:linear-gradient(115deg,rgba(20,18,40,.82) 0%,rgba(20,18,40,.52) 42%,rgba(20,18,40,.22) 72%)!important;
+}
+html body#acb-design#acb-design .acb-quick-contact>.wrap{
+  position:relative!important;
+  z-index:2!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,.85fr)!important;
   align-items:center!important;
-  text-align:center!important;
-  gap:20px!important;
+  text-align:left!important;
+  gap:40px!important;
   width:100%!important;
   max-width:none!important;
   margin:0!important;
@@ -3993,67 +4023,81 @@ html body#acb-design#acb-design .acb-subscribe>.wrap{
   border-radius:0!important;
   box-shadow:none!important;
 }
-html body#acb-design#acb-design .acb-subscribe h2{
+html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{
   margin:0!important;
-  max-width:14ch!important;
+  max-width:12ch!important;
   color:#fff!important;
-  font-size:clamp(24px,3.2vw,38px)!important;
-  line-height:1.2!important;
-  letter-spacing:var(--ls-h2)!important;
+  font-size:clamp(28px,3.6vw,42px)!important;
+  line-height:1.05!important;
+  letter-spacing:var(--ls-h1)!important;
   font-weight:400!important;
 }
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter{
-  display:flex!important;
-  align-items:center!important;
-  flex:none!important;
-  width:min(420px,100%)!important;
-  background:#fff!important;
-  border-radius:999px!important;
-  padding:6px!important;
-  gap:6px!important;
+html body#acb-design#acb-design .acb-quick-contact .qc-copy .note{
+  margin:14px 0 0!important;
+  max-width:32ch!important;
+  color:#fff!important;
+  opacity:.92!important;
+  font-size:var(--fs-body)!important;
+  line-height:var(--lh-copy)!important;
 }
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter input{
-  flex:1!important;
-  min-width:0!important;
-  border:0!important;
-  background:transparent!important;
-  padding:10px 8px 10px 18px!important;
+html body#acb-design#acb-design .acb-quick-contact .qc-form{
+  display:grid!important;
+  gap:12px!important;
+  justify-self:end!important;
+  width:100%!important;
+  max-width:400px!important;
+  margin:0!important;
+  background:#fff!important;
+  color:var(--ink)!important;
+  border-radius:var(--radius-card)!important;
+  padding:24px!important;
+  box-sizing:border-box!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:10px!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea){
+  box-sizing:border-box!important;
+  width:100%!important;
+  border:.9px solid #dedede!important;
+  border-radius:8px!important;
+  background:#f6f6f6!important;
+  padding:12px 14px!important;
   font-family:"Inter",sans-serif!important;
   font-size:var(--fs-body)!important;
   color:var(--ink)!important;
-  text-align:left!important;
+  line-height:var(--lh-copy)!important;
 }
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter input::placeholder{color:#9a9a9a!important}
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter button{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex:none!important;
-  min-width:40px!important;
-  height:40px!important;
-  padding:0 11px!important;
-  border-radius:999px!important;
-  border:0!important;
-  background:var(--blue)!important;
-  color:#fff!important;
-  font-family:"Inter",sans-serif!important;
-  font-size:14px!important;
-  white-space:nowrap!important;
-  cursor:pointer!important;
-  transition:background-color .2s ease!important;
+html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
+  min-height:96px!important;
+  resize:vertical!important;
 }
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter button:disabled{cursor:default!important;opacity:.9!important}
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter button:hover{background:var(--ink)!important}
-html body#acb-design#acb-design .acb-subscribe .acb-newsletter button svg{width:18px!important;height:18px!important}
-@media(max-width:684px){
-  html body#acb-design#acb-design .acb-subscribe h2{max-width:none!important}
-  html body#acb-design#acb-design .acb-subscribe .acb-newsletter{width:100%!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea)::placeholder{color:#9a9a9a!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form button{
+  justify-self:start!important;
+  margin:0!important;
 }
-@media(min-width:685px){
-  html body#acb-design#acb-design .acb-subscribe{padding:clamp(24px,3vw,40px)!important}
-  html body#acb-design#acb-design .acb-subscribe>.wrap{padding:20px!important}
-  html body#acb-design#acb-design .acb-subscribe h2{max-width:none!important;font-size:30px!important}
-  html body#acb-design#acb-design .acb-subscribe .acb-newsletter{padding:0px 6px!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-status{
+  margin:0!important;
+  font-size:var(--fs-small)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-status.is-error{color:#b3261e!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-sent{
+  margin:0!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-body)!important;
+  line-height:var(--lh-copy)!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design .acb-quick-contact{min-height:0!important;padding:28px 20px!important}
+  html body#acb-design#acb-design .acb-quick-contact>.wrap{grid-template-columns:1fr!important;gap:24px!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-copy h2{max-width:none!important;font-size:28px!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-form{max-width:none!important;justify-self:stretch!important}
+  html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{grid-template-columns:1fr!important}
 }
 
 /* Footer: wide blue card with its identity/news on the left and links right. */
@@ -4891,82 +4935,6 @@ html body#acb-design#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-curren
   html body#acb-design#acb-design#acb-design :is(.faq-item .faq-q,.faq-page .faqx .offer-toggle){font-size:var(--fs-copy-lg)!important}
 }
 
-/* Home closing CTA: rebuilt as an image + title + copy + button card
-   (one wide image, not two, unlike the reference) instead of the
-   single full-bleed "Get in touch" bar. Doubled #acb-design throughout,
-   matching this file's established defense against generic section
-   resets now that .acb-close's children have real content again. */
-html body#acb-design#acb-design.home-page .acb-close{
-  width:100%!important;
-  max-width:none!important;
-  margin-left:0!important;
-  margin-right:0!important;
-  margin-top:var(--sp-gap-wide)!important;
-  margin-bottom:var(--sp-gap-wide)!important;
-  border-radius:var(--radius-card)!important;
-  background:var(--yellow)!important;
-  overflow:hidden!important;
-  padding:0!important;
-  box-shadow:var(--shadow-card)!important;
-}
-html body#acb-design#acb-design.home-page .acb-close>.wrap{
-  display:grid!important;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
-  align-items:stretch!important;
-  gap:0!important;
-  width:100%!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:0!important;
-  background:transparent!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-}
-html body#acb-design#acb-design.home-page .acb-close .close-image{
-  margin:0!important;
-  display:block!important;
-  height:100%!important;
-  min-height:340px!important;
-}
-html body#acb-design#acb-design.home-page .acb-close .close-image img{
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  display:block!important;
-}
-html body#acb-design#acb-design.home-page .acb-close .close-copy{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:flex-start!important;
-  justify-content:center!important;
-  gap:16px!important;
-  padding:clamp(32px,5vw,56px)!important;
-}
-html body#acb-design#acb-design.home-page .acb-close h2{
-  margin:0!important;
-  max-width:12ch!important;
-  color:var(--ink)!important;
-  font-size:clamp(38px,5vw,64px)!important;
-  line-height:0.95!important;
-  letter-spacing:var(--ls-h1)!important;
-  font-weight:400!important;
-}
-html body#acb-design#acb-design.home-page .acb-close .note{
-  margin:0!important;
-  max-width:42ch!important;
-  color:var(--ink)!important;
-  font-size:var(--fs-body)!important;
-  line-height:var(--lh-copy)!important;
-}
-html body#acb-design#acb-design.home-page .acb-close .pill.big{
-  margin-top:4px!important;
-}
-@media(max-width:774px){
-  html body#acb-design#acb-design.home-page .acb-close>.wrap{grid-template-columns:1fr!important}
-  html body#acb-design#acb-design.home-page .acb-close .close-image{min-height:0!important;aspect-ratio:16/10!important}
-  html body#acb-design#acb-design.home-page .acb-close h2{max-width:none!important;font-size:32px!important;line-height:0.95!important}
-}
-
 /* Peekaboo footer reveal (home only): the footer sticks to the bottom of
    the viewport once it arrives there, while the subscribe card — pulled
    up behind it via a negative bottom margin, lower z-index, no bottom
@@ -4976,7 +4944,7 @@ html body#acb-design#acb-design.home-page .acb-close .pill.big{
 html body#acb-design#acb-design .footer-reveal{
   position:relative!important;
 }
-html body#acb-design#acb-design .footer-reveal .acb-subscribe{
+html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
   position:relative!important;
   z-index:1!important;
   width:calc(100vw - 16px)!important;
@@ -4994,7 +4962,7 @@ html body#acb-design#acb-design .footer-reveal .acb-footer{
   box-shadow:var(--shadow-card),0 -14px 24px -12px rgba(30,27,60,.28)!important;
 }
 @media(max-width:774px){
-  html body#acb-design#acb-design .footer-reveal .acb-subscribe{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
+  html body#acb-design#acb-design .footer-reveal .acb-quick-contact{margin-bottom:-24px!important;padding-left:20px!important;padding-right:20px!important}
 }
 
 /* Bug fix: every earlier ".acb-footer>.bottom" rule in this file uses a
@@ -5023,7 +4991,7 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom{
    stretching edge-to-edge like the footer, capped at the same
    100vw-16px the footer uses so it never runs past it either. */
 @media(min-width:685px){
-  html body#acb-design#acb-design .footer-reveal .acb-subscribe{
+  html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
     width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
     max-width:min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))!important;
     margin-top:20px!important;
