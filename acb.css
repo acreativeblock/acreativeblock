@@ -3984,7 +3984,7 @@ html body#acb-design#acb-design .acb-quick-contact{
   border-radius:var(--radius-card)!important;
   background:var(--blue)!important;
   color:#fff!important;
-  padding:clamp(24px,3.2vw,36px) var(--sp-card)!important;
+  padding:clamp(32px,4.2vw,48px) var(--sp-card)!important;
   box-sizing:border-box!important;
   box-shadow:var(--shadow-card)!important;
 }
