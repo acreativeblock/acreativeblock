@@ -4372,3 +4372,40 @@ html body#acb-design.faq-page .faqx .offer-row{scroll-margin-top:110px!important
     box-shadow:var(--shadow-card)!important;
   }
 }
+
+/* FINAL MOBILE TYPE RESTORATION — exact type tokens from the gradient-era
+   version. This is intentionally at the end of the stylesheet so no later
+   component rule can keep the newer, oversized mobile type. */
+@media(max-width:774px){
+  html body#acb-design{
+    --fs-label:clamp(9.9px,1vw,11.56px);
+    --fs-h1:clamp(28.8px,5vw,63px);
+    --fs-h2:clamp(22.5px,3.8vw,45px);
+    --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);
+    --fs-body:clamp(14.4px,1.5vw,17.1px);
+    --fs-small:clamp(9.9px,1vw,11.7px);
+    --fs-button:clamp(12.15px,1vw,13.22px);
+  }
+  html body#acb-design main :is(h1,.t-h1){font-size:var(--fs-h1)!important}
+  html body#acb-design main :is(h2,.t-h2){font-size:var(--fs-h2)!important}
+  html body#acb-design main :is(h3,.t-h3){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design main :is(p,li,.t-body){font-size:var(--fs-body)!important}
+  html body#acb-design main :is(.t-copy-lg,.acb-lead,.section-head p,.callout p,.lead,.access-note){font-size:var(--fs-copy-lg)!important}
+  html body#acb-design :is(.t-label,.acb-eyebrow,.eyebrow,.eyebrow2,.audience-eyebrow,.contact-hero-kicker,.jn-label,.card-tag,.tag,.stage,.labels,.note,.side-note){font-size:var(--fs-label)!important}
+  html body#acb-design main :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn){font-size:var(--fs-button)!important}
+  html body#acb-design :is(.faq-item .faq-q,.faq-item .faq-a>p,.faq-page .faqx .offer-toggle,.faq-page .faqx .offer-body p){font-size:var(--fs-body)!important}
+  html body#acb-design.home-page .acb-hero h1,
+  html body#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot,.audience-hero-panel .hero-static-line){font-size:clamp(9.5px,3.3vw,14.4px)!important}
+  html body#acb-design.home-page :is(.acb-say p.scrolltext,.individual-feeling .scrolltext),
+  html body#acb-design.individuals-page .individual-feeling .scrolltext{font-size:35px!important}
+  html body#acb-design.blocks-page .bmcard-title{font-size:var(--fs-copy-lg)!important}
+  html body#acb-design.blocks-page .bmcard-lead{font-size:var(--fs-small)!important}
+  html body#acb-design .acb-header:not(.mobile-open) :is(.navbutton,.acb-sub a){font-size:14.87px!important}
+  html body#acb-design .acb-header .acb-utility-pill{font-size:13.22px!important}
+  html body#acb-design .mobile-header-cta{font-size:16.52px!important}
+  html body#acb-design .acb-header.mobile-open .navitem :is(a.navbutton,button.navbutton),
+  html body#acb-design .acb-header.mobile-open :is(.acb-sub a,.submenu a){font-size:clamp(24.79px,8vw,36.35px)!important}
+  html body#acb-design .acb-header.mobile-open .mobile-menu-footer a,
+  html body#acb-design .acb-footer :is(.col a,.news p){font-size:14.87px!important}
+  html body#acb-design .acb-footer .ack{font-size:clamp(13.22px,1.3vw,17.7px)!important}
+}
