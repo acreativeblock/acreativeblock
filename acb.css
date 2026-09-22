@@ -1280,6 +1280,7 @@ html body#acb-design.internal-page.contact-page:not(.individuals-page):not(.orga
   }
 }
 
+
 /* Use the Evidence domain pills as the shared visual language for the 7+1
    labels on Home and on every Block Map card. */
 html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab,
@@ -6014,4 +6015,19 @@ html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab{
   html body#acb-design#acb-design.evidence-page main .evidence-hero .acb-hero-grid{
     padding-inline:8px!important;
   }
+}
+
+/* The individual and organisation offer decks share one heading scale: more
+   presence than the former 4i title, without the oversized 4o treatment. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+main .section > .wrap:has(> .plan-grid) > h2.big{
+  width:100%!important;
+  min-width:100%!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+  font-size:clamp(36px,5vw,60px)!important;
+  line-height:.95!important;
+  letter-spacing:-.045em!important;
 }
