@@ -5187,9 +5187,6 @@ html body#acb-design.evidence-page .evidence-hero-def .hl{color:var(--ink)!impor
 }
 
 /* Keep the Evidence image flush with the viewport, as on the audience pages. */
-html body#acb-design.evidence-page [data-site-header]{position:absolute!important;inset:0 0 auto!important;height:0!important;width:100%!important;z-index:70}
-html body#acb-design.internal-page.evidence-page main{padding-top:0!important}
-html body#acb-design.evidence-page main section.acb-hero:first-child{margin-top:0!important}
 html body#acb-design.evidence-page .acb-hero-grid{padding-inline:calc(8px + var(--sp-card))!important}
 html body#acb-design.evidence-page .acb-hero-grid,
 html body#acb-design.evidence-page .acb-hero-img,
