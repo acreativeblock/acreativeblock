@@ -5215,3 +5215,6 @@ html body#acb-design.evidence-page .evidence-organise h2{margin:0 0 24px!importa
 html body#acb-design.evidence-page .evidence-organise p{max-width:80ch!important;margin:0 0 22px!important;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
 html body#acb-design.evidence-page .evidence-organise p:last-child{margin-bottom:0!important}
 html body#acb-design.evidence-page .evidence-organise .hl{background-image:linear-gradient(to bottom,transparent 12%,var(--acb-yellow) 12%,var(--acb-yellow) 90%,transparent 90%)!important;color:var(--ink)!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important}
+
+/* Keep the block map's evidence label distinct from its heading. */
+html body#acb-design.blocks-page .evidence-band .evidence-copy>.mono{color:var(--brand)!important}
