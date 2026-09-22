@@ -2282,12 +2282,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{
   display:grid!important;gap:18px!important;margin:0!important;padding:0!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock{
-  display:grid!important;grid-template-columns:clamp(44px,5vw,72px) minmax(0,1fr)!important;
-  align-items:center!important;gap:clamp(12px,2vw,22px)!important;
   padding:26px 30px!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
-}
-html body#acb-design:is(.individuals-page,.organisations-page) .tblock img{
-  display:block!important;width:100%!important;height:auto!important;max-height:96px!important;object-fit:contain!important;
 }
 /* Doubled ID: a generic paragraph rule elsewhere (html body#acb-design.internal-page
    :is(p,...,.faqx .offer-body p,...)) carries the :is() list's most-specific
