@@ -17,7 +17,7 @@
   --sp-card:clamp(18px,3vw,27px);               /* internal padding of a white/colour card */
   --sp-gap:clamp(28.8px,7vw,49.57px);             /* vertical gap between stacked sections */
   --radius-card:2rem;                          /* card corner radius */
-  --shadow-card:0 4px 12px rgba(17,17,24,.12); /* soft, visible elevation shared by every card surface */
+  --shadow-card:0 1.66px 3.3px rgba(161,158,168,.1); /* shared elevation for every card and section surface */
 
   /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
      letter-spacing — same tightness, only the size differs. Body copy is
@@ -5483,11 +5483,18 @@ html body#acb-design#acb-design :is(
   .faq-item,
   .offer-row,
   .contact-form-wrap,
-  .contact-side
+  .contact-side,
+  .bmcard,
+  .bm-hypo>.wrap,
+  .contact-visual-hero h1,
+  .wm-pill,
+  .bgm-lab,
+  .card-tag
 ){box-shadow:var(--shadow-card)!important}
 html body#acb-design#acb-design.home-page main .acb-journal>.wrap,
 html body#acb-design#acb-design.blocks-page main .evidence-band>.wrap,
-html body#acb-design#acb-design.legal-page main .legal-section{
+html body#acb-design#acb-design.legal-page main .legal-section,
+html body#acb-design#acb-design .acb-footer{
   box-shadow:var(--shadow-card)!important;
 }
 
