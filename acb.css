@@ -2272,7 +2272,9 @@ html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy{
   display:flex!important;flex-direction:column!important;justify-content:flex-start!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy h2{
-  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;margin:12px 0 0!important;max-width:none!important;width:100%!important;color:var(--ink)!important;
+  font-size:clamp(60px,6.7vw,100px)!important;line-height:.8!important;
+  letter-spacing:-.055em!important;text-wrap:balance!important;
+  margin:18px 0 0!important;max-width:none!important;width:100%!important;color:var(--ink)!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{
   display:grid!important;gap:18px!important;margin:0!important;padding:0!important;
@@ -2295,7 +2297,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c3{backgr
 @media(max-width:774px){
   html body#acb-design:is(.individuals-page,.organisations-page) .takeaways>.wrap{grid-template-columns:1fr!important;gap:16px!important}
   html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy{padding:24px!important}
-  html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy h2{max-width:none!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy h2{font-size:clamp(48px,11vw,68px)!important;line-height:.9!important;max-width:none!important}
   html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{gap:12px!important}
   html body#acb-design:is(.individuals-page,.organisations-page) .tblock{margin-left:0!important}
 }
