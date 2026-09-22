@@ -5969,3 +5969,17 @@ html body#acb-design#acb-design.blocks-page .bmcard .card-tag,
 html body#acb-design#acb-design.method-page :is(.terrain-cols .eyebrow,.tcard .eyebrow){
   font-weight:400!important;
 }
+
+/* How We Work: the terrain labels behave as full-width single-line pills. */
+html body#acb-design#acb-design.method-page .terrain-cols .tcol > .eyebrow{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+}
