@@ -685,7 +685,6 @@ html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .pl
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight: 400!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:0!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:12.8px!important;line-height:1.55!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Inter",sans-serif!important;font-weight: 400!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-actions{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:16px!important}
 /* All three cards are the same size — equal-height grid row, no scale
    transform on the middle one (that was throwing its top/bottom edges
    out of line with its siblings). */
@@ -783,14 +782,12 @@ html body#acb-design:is(.individuals-page,.organisations-page) .section.dark>.wr
    ========================================================================== */
 :root{--page-gutter:clamp(16.2px,2vw,24.79px)}
 html body#acb-design.internal-page:not(.individuals-page):not(.organisations-page) main{padding-top:99px}
-html body#acb-design.internal-page main section,
-html body#acb-design.internal-page .method-journey{width:auto!important;max-width:none!important;margin-left:var(--page-gutter)!important;margin-right:var(--page-gutter)!important}
+html body#acb-design.internal-page main section{width:auto!important;max-width:none!important;margin-left:var(--page-gutter)!important;margin-right:var(--page-gutter)!important}
 html body#acb-design.internal-page main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.blog-hero):not(.bm-hero):not(.domain-hero){margin-top:var(--sp-gap)!important;margin-bottom:var(--sp-gap)!important}
 html body#acb-design.internal-page main :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero){margin-top:0!important;margin-bottom:0!important}
 html body#acb-design.internal-page main section:first-child{margin-top:var(--page-gutter)!important}
 html body#acb-design.internal-page main section:last-child{margin-bottom:var(--page-gutter)!important}
-html body#acb-design.internal-page main section>.wrap,
-html body#acb-design.internal-page .method-journey .journey-step>.wrap{box-sizing:border-box;max-width:none!important;width:100%!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
+html body#acb-design.internal-page main section>.wrap{box-sizing:border-box;max-width:none!important;width:100%!important;padding:var(--sp-card)!important;border-radius:var(--radius-card)!important}
 
 /* References bar: same card language as every other block on the page
    (margin, rounded corners, elevation) instead of the old flat,
@@ -958,19 +955,17 @@ html body#acb-design .cookie-banner .cookie-actions button{
   white-space:nowrap!important;
 }
 @media(max-width:504px){
-  html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{margin-left:12.6px!important;margin-right:12.6px!important}
+  html body#acb-design.internal-page main section{margin-left:12.6px!important;margin-right:12.6px!important}
   html body#acb-design.blocks-page .bmgrid{grid-template-columns:1fr!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}html body#acb-design .offer-body,html body#acb-design .faq-a{transition:none!important}}
 
 /* Main already owns the homepage width; internal sections fill it exactly. */
-html body#acb-design.internal-page main section,
-html body#acb-design.internal-page .method-journey{width:100%!important;margin-left:0!important;margin-right:0!important}
+html body#acb-design.internal-page main section{width:100%!important;margin-left:0!important;margin-right:0!important}
 html body#acb-design.contact-page main section.contact-unified{background:transparent!important}
-@media(max-width:504px){html body#acb-design.internal-page main section,html body#acb-design.internal-page .method-journey{width:100%!important;margin-left:0!important;margin-right:0!important}}
-html body#acb-design.method-page .journey-step:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;font-weight: 400!important}
-html body#acb-design.method-page .journey-step:first-child .tcard p{font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important}
-html body#acb-design.method-page .journey-step:first-child .tcard-ic{margin-bottom:5.4px!important}
+@media(max-width:504px){html body#acb-design.internal-page main section{width:100%!important;margin-left:0!important;margin-right:0!important}}
+html body#acb-design.method-page .method-block:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;font-weight: 400!important}
+html body#acb-design.method-page .method-block:first-child .tcard p{font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important}
 html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .4s cubic-bezier(.4,0,.2,1)}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16.2px!important}
 
@@ -1154,19 +1149,43 @@ html body#acb-design.blocks-page main .acb-main-panel>section.evidence-band{back
 /* References bars fill the same card frame as every neighbouring section. */
 html body#acb-design.internal-page .acb-main-panel>.refbar-wrap{width:100%!important;margin:var(--sp-gap) 0 0!important}
 
-/* How we work: separate raised steps joined into one visible journey. */
-html body#acb-design.method-page .method-journey{position:relative!important;display:grid!important;grid-template-columns:minmax(145px,170px) minmax(0,1fr)!important;gap:0 var(--sp-card)!important;padding:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
-html body#acb-design.method-page .journey-nav{grid-column:1!important;padding:var(--sp-card) 0!important}
-html body#acb-design.method-page .journey-nav-item .jn-label{font-size:var(--fs-body)!important;line-height:1.15!important}
-html body#acb-design.method-page .journey-step{position:relative!important;grid-column:2!important;margin:0 0 34px!important;padding:0!important;border:0!important;scroll-margin-top:120px}
-html body#acb-design.method-page .journey-step:last-child{margin-bottom:0!important}
-html body#acb-design.method-page .journey-step>.wrap{position:relative!important;padding:var(--sp-card)!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:0 12px 34px rgba(7,19,33,.12)!important;border-top:6px solid var(--step-color,#4f46e5)!important}
-html body#acb-design.method-page .journey-step:nth-of-type(1){--step-color:#F6D65D}
-html body#acb-design.method-page .journey-step:nth-of-type(2){--step-color:#ef9f5e}
-html body#acb-design.method-page .journey-step:nth-of-type(3){--step-color:#e35d54}
-html body#acb-design.method-page .journey-step:nth-of-type(4){--step-color:#4f46e5}
-html body#acb-design.method-page .journey-step:not(:last-child)::after{content:"";position:absolute;z-index:2;left:34px;top:100%;width:3px;height:34px;background:linear-gradient(var(--step-color),#4f46e5);border-radius:3px}
-html body#acb-design.method-page .journey-step-number{display:block!important;margin:0 0 clamp(24px,4vw,44px)!important;font-size:clamp(58px,8vw,104px)!important;line-height:.76!important;letter-spacing:-.07em!important;color:var(--step-color)!important;font-weight: 400!important}
+/* How we work: two-column reading layout — sticky "Contents" nav card
+   (same visual language as legal-nav/faqx-nav) beside floating white
+   section cards, instead of full-bleed colour bands. */
+html body#acb-design.method-page main .method-section{padding:0!important;background:transparent!important}
+html body#acb-design.method-page .method-layout{
+  width:100%!important;max-width:none!important;
+  display:grid!important;
+  grid-template-columns:minmax(220px,.32fr) minmax(0,1fr)!important;
+  gap:16px!important;
+  align-items:start!important;
+  padding:0!important;
+}
+html body#acb-design.method-page .method-nav{
+  position:sticky!important;top:96px!important;align-self:start!important;
+  display:flex!important;flex-direction:column!important;
+  padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;
+  background:#dbeafe!important;box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.method-page .method-nav::before{
+  content:"Contents";display:block;margin-bottom:12px;color:var(--ink);font-size:20px;line-height:1.2;
+}
+html body#acb-design.method-page .method-nav a{
+  display:block!important;padding:9px 12px!important;margin:0 -12px!important;
+  border-radius:var(--radius-card)!important;color:var(--ink)!important;
+  font-size:16px!important;line-height:1.3!important;text-decoration:none!important;
+}
+html body#acb-design.method-page .method-nav a:is(:hover,.is-current){background:rgba(79,70,229,.18)!important}
+html body#acb-design.method-page .method-copy{display:flex!important;flex-direction:column!important;gap:16px!important}
+html body#acb-design.method-page .method-block{
+  padding:var(--sp-card)!important;border-radius:var(--radius-card)!important;
+  background:#fff!important;box-shadow:var(--shadow-card)!important;
+  scroll-margin-top:110px!important;
+}
+@media(max-width:774px){
+  html body#acb-design.method-page .method-layout{grid-template-columns:1fr!important}
+  html body#acb-design.method-page .method-nav{position:static!important}
+}
 
 /* The image meets the copy with square inner corners; only the card edge rounds. */
 html body#acb-design.factors-page .flush.reverse .flush-img,
@@ -1219,9 +1238,6 @@ html body#acb-design.home-page .work-card .work-arrow{position:absolute!importan
 @media(max-width:774px){
   html body#acb-design.contact-page .contact-unified>.wrap{grid-template-columns:1fr!important}
   html body#acb-design.contact-page :is(.contact-form-wrap,.contact-side){grid-column:1!important;grid-row:auto!important;width:100%!important}
-  html body#acb-design.method-page .method-journey{display:block!important}
-  html body#acb-design.method-page .journey-step{grid-column:auto!important;margin-bottom:28px!important}
-  html body#acb-design.method-page .journey-step:not(:last-child)::after{left:28px;height:28px}
   html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr!important;gap:8px!important}
   html body#acb-design.method-page .tcard{padding:12px!important}
   html body#acb-design.factors-page .flush.reverse .flush-img,
@@ -2081,8 +2097,7 @@ html body#acb-design.home-page main .acb-close a.pill,
 html body#acb-design.home-page main .acb-close a.pill.big,
 html body#acb-design.internal-page main .cta a.btn,
 html body#acb-design.internal-page main .cta a.btn-out,
-html body#acb-design.internal-page main .plan-card a.btn,
-html body#acb-design.internal-page main .plan-actions a{
+html body#acb-design.internal-page main .plan-card a.btn{
   flex-direction:row!important;
   gap:0!important;
   font-size:13.22px!important;
@@ -2093,8 +2108,7 @@ html body#acb-design.home-page main .cta a.pill::after,
 html body#acb-design.home-page main .acb-close a.pill::after,
 html body#acb-design.internal-page main .cta a.btn::after,
 html body#acb-design.internal-page main .cta a.btn-out::after,
-html body#acb-design.internal-page main .plan-card a.btn::after,
-html body#acb-design.internal-page main .plan-actions a::after{
+html body#acb-design.internal-page main .plan-card a.btn::after{
   flex:0 0 auto!important;
 }
 
@@ -2506,130 +2520,6 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
   margin-bottom:clamp(18px,3vw,42px)!important;
 }
 
-/* How we work: restore left progress rail and connected white process cards. */
-html body#acb-design.method-page .method-journey{
-  position:relative!important;
-  display:grid!important;
-  grid-template-columns:minmax(128px,168px) minmax(0,1fr)!important;
-  gap:0 var(--sp-card)!important;
-  padding:var(--sp-card)!important;
-  background:#fff!important;
-  border-radius:var(--radius-card)!important;
-  box-shadow:none!important;
-  overflow:visible!important;
-}
-html body#acb-design.method-page .journey-nav{
-  position:sticky!important;
-  top:108px!important;
-  align-self:start!important;
-  grid-column:1!important;
-  display:flex!important;
-  flex-direction:column!important;
-  gap:30px!important;
-  padding:6px 0!important;
-  min-height:360px!important;
-}
-html body#acb-design.method-page .journey-nav::before{
-  content:""!important;
-  position:absolute!important;
-  left:7px!important;
-  top:14px!important;
-  bottom:14px!important;
-  width:2px!important;
-  border-radius:2px!important;
-  background:#d8d6cd!important;
-}
-html body#acb-design.method-page .journey-nav-item{
-  position:relative!important;
-  z-index:1!important;
-  display:grid!important;
-  grid-template-columns:16px minmax(0,1fr)!important;
-  align-items:start!important;
-  gap:12px!important;
-  padding:0!important;
-  margin:0!important;
-  background:transparent!important;
-  border:0!important;
-  text-align:left!important;
-}
-html body#acb-design.method-page .journey-nav-item .jn-line{
-  width:16px!important;
-  height:16px!important;
-  flex:0 0 16px!important;
-  border-radius:50%!important;
-  border:2px solid #d8d6cd!important;
-  background:#fff!important;
-  margin-top:1px!important;
-}
-html body#acb-design.method-page .journey-nav-item.active .jn-line{background:#4f46e5!important;border-color:#4f46e5!important}
-html body#acb-design.method-page .journey-nav-item .jn-label{
-  padding:0!important;
-  font-size:var(--fs-small)!important;
-  line-height:1.2!important;
-  letter-spacing:var(--ls-small)!important;
-  color:var(--ink-soft)!important;
-  font-weight: 400!important;
-}
-html body#acb-design.method-page .journey-nav-item.active .jn-label{color:var(--ink)!important;font-weight: 400!important}
-html body#acb-design.method-page .journey-step{
-  position:relative!important;
-  grid-column:2!important;
-  margin:0!important;
-  padding:0 0 clamp(28px,4vw,46px)!important;
-  border:0!important;
-  background:transparent!important;
-  overflow:visible!important;
-}
-html body#acb-design.method-page .journey-step:last-child{padding-bottom:0!important}
-html body#acb-design.method-page .journey-step:not(:last-child)::after{
-  content:""!important;
-  position:absolute!important;
-  z-index:0!important;
-  left:calc(var(--sp-card) + 11px)!important;
-  top:calc(100% - clamp(28px,4vw,46px))!important;
-  width:2px!important;
-  height:clamp(28px,4vw,46px)!important;
-  border-radius:2px!important;
-  background:#d8d6cd!important;
-  display:block!important;
-}
-html body#acb-design.method-page .journey-step>.wrap,
-html body#acb-design.method-page main .method-journey .journey-step>.wrap{
-  position:relative!important;
-  z-index:1!important;
-  background:#fff!important;
-  border-radius:var(--radius-card)!important;
-  box-shadow:0 14px 34px rgba(7,19,33,.12)!important;
-  border:0!important;
-  padding:var(--sp-card)!important;
-}
-html body#acb-design.method-page .journey-step .section-head{
-  display:grid!important;
-  grid-template-columns:auto minmax(0,1fr)!important;
-  column-gap:18px!important;
-  row-gap:8px!important;
-  align-items:start!important;
-}
-html body#acb-design.method-page .journey-step-number{
-  grid-row:1 / span 2!important;
-  margin:0!important;
-  font-size:clamp(38px,5.2vw,72px)!important;
-  line-height:.82!important;
-  letter-spacing:-.065em!important;
-  color:#4f46e5!important;
-}
-html body#acb-design.method-page .journey-step .display{margin:0!important;align-self:end!important}
-html body#acb-design.method-page .journey-step .section-head p{grid-column:2!important;margin:0!important}
-
-@media(max-width:774px){
-  html body#acb-design.method-page .method-journey{display:block!important;padding:var(--sp-card)!important}
-  html body#acb-design.method-page .journey-nav{display:none!important}
-  html body#acb-design.method-page .journey-step{grid-column:auto!important;padding:0 0 var(--sp-card)!important;margin:0!important}
-  html body#acb-design.method-page .journey-step:not(:last-child)::after{display:none!important}
-  html body#acb-design.method-page .journey-step .section-head{grid-template-columns:1fr!important}
-  html body#acb-design.method-page .journey-step-number{grid-row:auto!important;margin:0 0 10px!important}
-  html body#acb-design.method-page .journey-step .section-head p{grid-column:auto!important}
-}
 
 
 /* Audience hero: text-only layout, no lower CTA container. */
@@ -5052,53 +4942,12 @@ html body#acb-design#acb-design.legal-page .legal-nav-toggle{
   }
 }
 
-/* Offer detail pages (one per plan/offer card on for-individuals and
-   for-organisations) - a catalog-style single-item page: hero with a
-   link back to the parent audience page, a two-column body (copy +
-   sticky enquire sidebar), a numbered "what happens" list, and a
-   closing CTA repeating the enquire action. */
-html body#acb-design.offer-page .center-hero .mono a{color:inherit!important;text-decoration:underline!important;text-underline-offset:2px!important}
-html body#acb-design.offer-page .offer-layout{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) minmax(280px,340px)!important;
-  gap:clamp(28px,4vw,64px)!important;
-  align-items:start!important;
-}
-html body#acb-design.offer-page .offer-copy h2{
-  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;margin:0 0 14px!important;color:var(--ink)!important;
-}
-html body#acb-design.offer-page .offer-copy>*+h2{margin-top:clamp(32px,4vw,48px)!important}
-html body#acb-design.offer-page .offer-copy p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-body)!important;color:var(--ink)!important;max-width:62ch!important;margin:0 0 12px!important}
-html body#acb-design.offer-page .offer-steps{list-style:none!important;margin:0!important;padding:0!important;display:grid!important;gap:14px!important}
-html body#acb-design.offer-page .offer-steps li{padding:18px 20px!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
-html body#acb-design.offer-page .offer-steps li b{display:block!important;margin-bottom:4px!important;color:var(--blue)!important;font-weight:600!important;text-transform:uppercase!important;font-size:13px!important;letter-spacing:.06em!important}
-html body#acb-design.offer-page .offer-side{
-  position:sticky!important;top:120px!important;
-  display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:14px!important;
-  padding:var(--sp-card)!important;background:#eef1ff!important;border-radius:var(--radius-card)!important;
-}
-html body#acb-design.offer-page .offer-side .plan-format{font-size:14px!important;letter-spacing:.02em!important;color:var(--ink)!important;opacity:.7!important}
-html body#acb-design.offer-page .offer-side .btn{width:100%!important;justify-content:center!important}
-html body#acb-design.offer-page .offer-back{font-size:14px!important;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:2px!important;opacity:.75!important}
-html body#acb-design.offer-page .offer-back:hover{opacity:1!important}
-html body#acb-design.offer-page .offer-close{background:var(--acb-yellow)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;text-align:center!important}
-html body#acb-design.offer-page .offer-close h2{margin:0 0 8px!important;font-size:var(--fs-h2)!important;color:var(--ink)!important}
-html body#acb-design.offer-page .offer-close p{margin:0 0 20px!important;color:var(--ink)!important}
-@media(max-width:774px){
-  html body#acb-design.offer-page .offer-layout{grid-template-columns:1fr!important}
-  html body#acb-design.offer-page .offer-side{position:relative!important;top:0!important}
-}
-
-/* Plan-card "Read more" + "Enquire" row: same size as every other button
-   on the site (the compact 4i treatment), wrapping onto its own line
-   rather than shrinking when a card is too narrow for both side by side. */
-html body#acb-design#acb-design .plan-actions{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:16px!important}
-
 /* Evidence page: "Backed by research" scrolling researcher-name marquee, reusing the
    acb-marquee keyframe. Single container: the card, the clip box and the fade mask
    all live on .acb-marq itself, not on a separate wrapper. Never pauses on hover —
    it's a passive credibility strip, not something to read line by line. */
 html body#acb-design.evidence-page .acb-marq{
+  width:100%!important;max-width:var(--wrap)!important;margin:0 auto!important;box-sizing:border-box!important;
   background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
   padding:clamp(26.44px,4vw,46.34px) 0!important;text-align:center!important;overflow:hidden!important;
 }
@@ -5106,7 +4955,7 @@ html body#acb-design.evidence-page .acb-marq .eyebrow{color:var(--brand)!importa
 html body#acb-design.evidence-page .acb-marq h2{margin:0 clamp(19.83px,3.5vw,33.05px) 26.44px!important}
 html body#acb-design.evidence-page .acb-marq .track{
   display:flex!important;width:max-content!important;gap:0!important;white-space:nowrap!important;
-  animation:acb-marquee 34s linear infinite!important;will-change:transform;
+  animation:acb-marquee 70s linear infinite!important;will-change:transform;
   mask-image:linear-gradient(to right,transparent,#000 46px,#000 calc(100% - 46px),transparent)!important;
   -webkit-mask-image:linear-gradient(to right,transparent,#000 46px,#000 calc(100% - 46px),transparent)!important;
 }
