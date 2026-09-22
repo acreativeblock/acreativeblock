@@ -510,10 +510,14 @@ html body#acb-design .acb-logo .acb-logo-mount{height:38px!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page){background:#f6f6f6!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.bmap):not(.bm-hero):not(.bm-faq):not(.evidence-band):not(.arc-sec):not(.legal-section){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main :is(.acb-hero,.page-hero){margin:0!important;padding:0!important;border:0!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band){background:transparent!important;background-image:none!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.bm-hypo) > .wrap{
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.acb-marq):not(.method-block){background:transparent!important;background-image:none!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.bm-hypo) > .wrap:not(.raw){
   background:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important;
 }
+/* .raw wraps (e.g. two-column splits that carry their own per-column
+   background) opt out of the generic auto white-card treatment above,
+   and out of the section's own default padding/margin reset too. */
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main .wrap.raw{background:transparent!important;box-shadow:none!important;border-radius:0!important;padding:0!important}
 /* .talks-section keeps its own black card instead of the generic grey/white treatment. */
 html body#acb-design.organisations-page main section.talks-section{background:#000!important}
 html body#acb-design.organisations-page main section.talks-section>.wrap{background:#000!important;color:#fff!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;max-width:none!important;width:100%!important;box-shadow:var(--shadow-card)!important}
@@ -5069,3 +5073,49 @@ html body#acb-design.evidence-page .flush-vmarq .vmarq-pill{
 }
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .flush-vmarq .vtrack{animation:none!important}}
 @media(max-width:774px){html body#acb-design.evidence-page .flush-vmarq{min-height:220px!important}}
+
+/* Citation tooltip: a real visible popup with the reference text (site.js
+   builds it on hover/focus), not the native browser title box. */
+html body#acb-design sup.cite.cite-tip{cursor:pointer!important;text-decoration:underline dotted!important;text-underline-offset:2px!important;outline:none!important}
+html body .cite-tip-bubble{
+  position:absolute!important;z-index:9999!important;max-width:min(320px,80vw)!important;
+  background:var(--ink,#111118)!important;color:#fff!important;
+  font-family:"Inter",sans-serif!important;font-size:12.5px!important;line-height:1.5!important;font-weight:400!important;
+  padding:10px 13px!important;border-radius:10px!important;box-shadow:0 12px 28px rgba(7,19,33,.28)!important;
+  opacity:0!important;transform:translateY(4px)!important;transition:opacity .15s ease,transform .15s ease!important;
+  pointer-events:none!important;
+}
+html body .cite-tip-bubble.is-visible{opacity:1!important;transform:translateY(0)!important}
+
+/* Evidence page hero: the same big-image, split-grid hero as 4i/4o, with the
+   research definition standing in as the headline instead of a rotating word. */
+html body#acb-design.evidence-page .acb-hero{padding:0!important}
+html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;padding:0!important}
+html body#acb-design.evidence-page .acb-hero-grid{
+  display:grid!important;grid-template-columns:1fr 1.05fr!important;align-items:stretch!important;
+  min-height:clamp(397px,74vh,628px)!important;
+}
+html body#acb-design.evidence-page .audience-hero-stack{
+  display:flex!important;flex-direction:column!important;justify-content:center!important;
+  padding:clamp(33px,7vh,74px) var(--pad)!important;
+  padding-left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)))!important;
+}
+html body#acb-design.evidence-page .audience-hero-stack .mono{
+  color:var(--brand)!important;background:none!important;display:block!important;
+  margin:0 0 clamp(13px,2vw,21px)!important;font-size:var(--fs-label)!important;
+  letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:400!important;
+}
+html body#acb-design.evidence-page .evidence-hero-def{
+  font-family:"Inter",sans-serif!important;font-weight:400!important;
+  font-size:clamp(24px,3.6vw,46px)!important;line-height:1.16!important;letter-spacing:-.025em!important;
+  color:var(--ink)!important;margin:0!important;max-width:22ch!important;
+}
+html body#acb-design.evidence-page .evidence-hero-def .hl{color:var(--ink)!important}
+html body#acb-design.evidence-page .acb-hero-img{overflow:hidden!important;background:var(--tint)!important;min-height:100%!important}
+html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;min-height:100%!important;object-fit:cover!important;display:block!important}
+@media(max-width:774px){
+  html body#acb-design.evidence-page .acb-hero-grid{grid-template-columns:1fr!important;min-height:0!important}
+  html body#acb-design.evidence-page .acb-hero-img{order:2!important;min-height:44vh!important}
+  html body#acb-design.evidence-page .audience-hero-stack{padding:clamp(38px,11vw,66px) var(--pad)!important}
+  html body#acb-design.evidence-page .evidence-hero-def{max-width:none!important}
+}
