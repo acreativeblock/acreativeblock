@@ -979,10 +979,10 @@ html body#acb-design:is(.individuals-page,.organisations-page) [data-site-header
    verbatim rather than reformulated with --site-width, since that's the
    one version of this that's been proven correct across every browser
    this session. */
-html body#acb-design:is(.individuals-page,.organisations-page) main section.acb-hero{width:100vw!important;max-width:100vw!important;margin:0 0 var(--sp-gap) calc(50% - 50vw)!important;background:transparent!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important;border-radius:0!important;background:transparent!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{position:relative!important;display:grid!important;grid-template-columns:1fr!important;min-height:clamp(423px,74vh,778px)!important;padding:33.05px calc((100vw - var(--site-width))/2)!important;align-items:center!important;justify-items:center!important;overflow:hidden!important;isolation:isolate}
-html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-img{position:absolute!important;inset:0!important;z-index:-1!important;order:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;border-radius:0!important}
+html body#acb-design:is(.individuals-page,.organisations-page,.evidence-page) main section.acb-hero{width:100vw!important;max-width:100vw!important;margin:0 0 var(--sp-gap) calc(50% - 50vw)!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page,.evidence-page) .acb-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important;border-radius:0!important;background:transparent!important}
+html body#acb-design:is(.individuals-page,.organisations-page,.evidence-page) .acb-hero-grid{position:relative!important;display:grid!important;grid-template-columns:1fr!important;min-height:clamp(423px,74vh,778px)!important;padding:33.05px calc((100vw - var(--site-width))/2)!important;align-items:center!important;justify-items:center!important;overflow:hidden!important;isolation:isolate}
+html body#acb-design:is(.individuals-page,.organisations-page,.evidence-page) .acb-hero-img{position:absolute!important;inset:0!important;z-index:-1!important;order:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;border-radius:0!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-img img{width:100%!important;height:100%!important;min-height:0!important;border-radius:0!important;object-fit:cover!important;object-position:center 48%!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel{position:relative!important;z-index:1!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:25.2px!important;width:min(612px,94vw)!important;max-width:min(612px,94vw)!important;margin:0!important;padding:19.83px 26.44px!important;text-align:left!important;background:#fff!important;border-radius:var(--radius-card)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-panel>.mono{display:none!important}
@@ -5059,15 +5059,7 @@ html body#acb-design.evidence-page .ev-stat-block sup.cite{color:inherit!importa
   html body#acb-design.evidence-page .ev-stat-block{transform:none!important;margin-left:0!important}
 }
 
-/* Evidence page: "Why it matters" — centred copy card with the 7+1 domain
-   names floating as loose pills in the space around it, each gently
-   bobbing on its own cycle so the whole thing feels adrift rather than
-   mechanically scrolling. */
-@keyframes wm-float{0%,100%{transform:translate(var(--tx,0),0) rotate(var(--rot,0deg))}50%{transform:translate(var(--tx,0),-14px) rotate(var(--rot,0deg))}}
-html body#acb-design.evidence-page .why-matters-stage{
-  position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
-  min-height:clamp(420px,58vw,620px)!important;padding:clamp(24px,4vw,48px)!important;
-}
+/* Evidence page: "Why it matters" copy and domain pills. */
 html body#acb-design.evidence-page .why-matters-copy{
   position:relative!important;z-index:1!important;max-width:46ch!important;text-align:center!important;
   background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
@@ -5076,27 +5068,13 @@ html body#acb-design.evidence-page .why-matters-copy{
 html body#acb-design.evidence-page .why-matters-copy .side-note{display:block!important;margin:0 0 12px!important}
 html body#acb-design.evidence-page .why-matters-copy h2{margin:0 0 14px!important}
 html body#acb-design.evidence-page .why-matters-copy p{margin:0 0 20px!important;max-width:none!important}
-html body#acb-design.evidence-page .why-matters-pills{position:absolute!important;inset:0!important;pointer-events:none!important}
 html body#acb-design.evidence-page .wm-pill{
-  position:absolute!important;display:inline-flex!important;white-space:nowrap!important;
+  display:inline-flex!important;
   background:var(--c,#4f46e5)!important;color:var(--ink)!important;border-radius:999px!important;
   padding:12px 20px!important;font-size:15px!important;font-weight:600!important;
   box-shadow:0 8px 20px rgba(7,19,33,.1)!important;
-  animation:wm-float 7s ease-in-out infinite!important;
 }
-html body#acb-design.evidence-page .wm-p1{top:2%!important;left:14%!important;--rot:-9deg;animation-delay:-.6s!important;animation-duration:7.4s!important}
-html body#acb-design.evidence-page .wm-p2{top:18%!important;right:4%!important;--rot:3deg;animation-delay:-3.7s!important;animation-duration:6.6s!important}
-html body#acb-design.evidence-page .wm-p3{top:52%!important;left:1%!important;--rot:7deg;animation-delay:-5.2s!important;animation-duration:8.1s!important}
-html body#acb-design.evidence-page .wm-p4{top:26%!important;right:17%!important;--rot:-8deg;animation-delay:-1.1s!important;animation-duration:7s!important}
-html body#acb-design.evidence-page .wm-p5{bottom:30%!important;left:19%!important;--rot:-4deg;animation-delay:-6.3s!important;animation-duration:6.2s!important}
-html body#acb-design.evidence-page .wm-p6{bottom:9%!important;right:1%!important;--rot:6deg;animation-delay:-2.8s!important;animation-duration:7.8s!important}
-html body#acb-design.evidence-page .wm-p7{bottom:1%!important;left:38%!important;--rot:9deg;animation-delay:-4.6s!important;animation-duration:6.9s!important}
-html body#acb-design.evidence-page .wm-p8{bottom:39%!important;right:27%!important;--rot:-6deg;animation-delay:-.3s!important;animation-duration:7.3s!important}
-@media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .wm-pill{animation:none!important}}
-@media(max-width:900px){
-  html body#acb-design.evidence-page .why-matters-pills{display:none!important}
-  html body#acb-design.evidence-page .why-matters-stage{min-height:0!important;padding:0!important}
-}
+@media(max-width:900px){html body#acb-design.evidence-page .wm-pill{padding:9px 15px!important;font-size:13px!important}}
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .flush-vmarq .vtrack{animation:none!important}}
 @media(max-width:774px){html body#acb-design.evidence-page .flush-vmarq{min-height:220px!important}}
 
@@ -5114,27 +5092,15 @@ html body .cite-tip-bubble{
 }
 html body .cite-tip-bubble.is-visible{opacity:1!important;transform:translateY(0)!important}
 
-/* Evidence page hero: the same full-bleed-image hero as 4i/4o/home — the
-   image fills the whole hero band (absolutely positioned, behind
-   everything), and the copy sits in a white rounded bubble overlaid on
-   top of it, bottom-left. The research definition stands in as the
-   headline instead of a rotating word. */
-html body#acb-design.evidence-page main section.acb-hero{
-  width:100vw!important;max-width:100vw!important;margin:0 0 var(--sp-gap-wide) calc(50% - 50vw)!important;
-  padding:0!important;background:transparent!important;
-}
-html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important}
-html body#acb-design.evidence-page .acb-hero-grid{
-  position:relative!important;display:grid!important;grid-template-columns:1fr!important;
-  min-height:clamp(423px,74vh,778px)!important;
-  padding:0!important;
-  align-items:end!important;justify-items:start!important;
-  overflow:hidden!important;isolation:isolate!important;
-}
+/* Evidence page hero: structural rules (full-bleed breakout, grid, image)
+   are the exact 4i/4o ones, extended to .evidence-page above — copied
+   verbatim rather than reimplemented. Only the bubble/copy styling below
+   is evidence-specific: a white rounded bubble bottom-left (instead of
+   4i/4o's compact cycling-word panel), with the research definition as
+   its headline. */
 html body#acb-design.evidence-page .audience-hero-stack{
-  position:relative!important;z-index:1!important;width:min(654px,94vw)!important;max-width:min(654px,94vw)!important;
-  padding:33px calc((100vw - var(--site-width,var(--wrap)))/2)!important;
-  box-sizing:content-box!important;
+  position:relative!important;z-index:1!important;align-self:end!important;justify-self:start!important;
+  width:min(654px,94vw)!important;max-width:min(654px,94vw)!important;margin:0!important;
 }
 html body#acb-design.evidence-page .evidence-hero-bubble{
   background:#fff!important;border-radius:32px!important;padding:clamp(20px,2.6vw,32px)!important;
@@ -5144,19 +5110,59 @@ html body#acb-design.evidence-page .evidence-hero-bubble .mono{
   margin:0 0 clamp(13px,2vw,21px)!important;font-size:var(--fs-label)!important;
   letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:400!important;
 }
-html body#acb-design.evidence-page .evidence-hero-def{
+html body#acb-design#acb-design.evidence-page .evidence-hero-def{
   font-family:"Inter",sans-serif!important;font-weight:400!important;
   font-size:35px!important;line-height:1.2!important;letter-spacing:-.02em!important;
   color:var(--ink)!important;margin:0!important;max-width:none!important;
 }
 html body#acb-design.evidence-page .evidence-hero-def .hl{color:var(--ink)!important}
-html body#acb-design.evidence-page .acb-hero-img{
-  position:absolute!important;inset:0!important;z-index:-1!important;margin:0!important;
-  width:100%!important;height:100%!important;min-height:0!important;border-radius:0!important;
-}
-html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
 @media(max-width:774px){
-  html body#acb-design.evidence-page .audience-hero-stack{padding:13px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important}
-  html body#acb-design.evidence-page .acb-hero-grid{min-height:561px!important}
-  html body#acb-design.evidence-page .evidence-hero-def{font-size:24px!important}
+  html body#acb-design.evidence-page .audience-hero-stack{width:100%!important;max-width:100%!important}
+  html body#acb-design#acb-design.evidence-page .evidence-hero-def{font-size:24px!important}
+}
+
+/* Keep the Evidence image flush with the viewport, as on the audience pages. */
+html body#acb-design.evidence-page [data-site-header]{position:absolute!important;inset:0 0 auto!important;height:0!important;width:100%!important;z-index:70}
+html body#acb-design.internal-page.evidence-page main{padding-top:0!important}
+html body#acb-design.evidence-page main section.acb-hero:first-child{margin-top:0!important}
+html body#acb-design.evidence-page .acb-hero-grid,
+html body#acb-design.evidence-page .acb-hero-img,
+html body#acb-design.evidence-page .acb-hero-img img{border-radius:0!important}
+html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+/* The 7+1 labels occupy their own rows, so no viewport can put them behind
+   the central explanation. The white background belongs to the whole card. */
+html body#acb-design.evidence-page section.why-matters,
+html body#acb-design.evidence-page section.why-matters>.why-matters-stage{background:#fff!important}
+html body#acb-design.evidence-page .why-matters-stage{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  grid-template-rows:auto auto auto!important;gap:clamp(24px,3vw,42px)!important;
+  min-height:0!important;padding:clamp(24px,4vw,48px)!important;
+}
+html body#acb-design.evidence-page .why-matters-pills{display:contents!important;position:static!important}
+html body#acb-design.evidence-page .wm-pill{
+  position:static!important;justify-self:center!important;align-self:center!important;
+  max-width:100%!important;white-space:normal!important;text-align:center!important;
+  animation:none!important;
+}
+html body#acb-design.evidence-page .wm-p1,
+html body#acb-design.evidence-page .wm-p2,
+html body#acb-design.evidence-page .wm-p3,
+html body#acb-design.evidence-page .wm-p4{grid-row:1!important}
+html body#acb-design.evidence-page .wm-p5,
+html body#acb-design.evidence-page .wm-p6,
+html body#acb-design.evidence-page .wm-p7,
+html body#acb-design.evidence-page .wm-p8{grid-row:3!important}
+html body#acb-design.evidence-page .why-matters-copy{
+  grid-column:1/-1!important;grid-row:2!important;justify-self:center!important;
+  width:min(100%,46ch)!important;max-width:46ch!important;
+}
+@media(max-width:600px){
+  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto) auto repeat(2,auto)!important;gap:14px!important}
+  html body#acb-design.evidence-page .why-matters-pills{display:contents!important}
+  html body#acb-design.evidence-page .wm-p1,html body#acb-design.evidence-page .wm-p2{grid-row:1!important}
+  html body#acb-design.evidence-page .wm-p3,html body#acb-design.evidence-page .wm-p4{grid-row:2!important}
+  html body#acb-design.evidence-page .wm-p5,html body#acb-design.evidence-page .wm-p6{grid-row:4!important}
+  html body#acb-design.evidence-page .wm-p7,html body#acb-design.evidence-page .wm-p8{grid-row:5!important}
+  html body#acb-design.evidence-page .why-matters-copy{grid-row:3!important}
 }
