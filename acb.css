@@ -3699,7 +3699,8 @@ html body#acb-design.home-page .journal-control:hover{transform:translateX(-2px)
 html body#acb-design.home-page .journal-control.is-next:hover{transform:translateX(2px)!important}
 html body#acb-design.home-page .journal-viewport{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth!important;scrollbar-width:none!important;touch-action:pan-x!important}
 html body#acb-design.home-page .journal-viewport::-webkit-scrollbar{display:none!important}
-html body#acb-design.home-page .journal-track{display:flex!important;gap:16px!important;width:max-content!important;padding:0 10px 2px 0!important}
+/* Reserve vertical space inside the scrolling viewport for the 5px card lift. */
+html body#acb-design.home-page .journal-track{display:flex!important;gap:16px!important;width:max-content!important;padding:8px 10px 8px 0!important}
 html body#acb-design.home-page .journal-card{
   display:flex!important;
   flex:0 0 clamp(270px,23vw,320px)!important;
