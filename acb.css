@@ -1431,7 +1431,7 @@ html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main h
   margin-left:auto!important;
   margin-right:auto!important;
   text-align:center!important;
-  font-size:clamp(36px,4.4vw,56px)!important;
+  font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.95!important;
   letter-spacing:-.045em!important;
 }
@@ -5527,7 +5527,7 @@ html body#acb-design#acb-design.organisations-page main #offers>.wrap>h2.big{
   margin-left:auto!important;
   margin-right:auto!important;
   text-align:center!important;
-  font-size:clamp(44px,6.8vw,80px)!important;
+  font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.88!important;
   letter-spacing:-.055em!important;
 }
@@ -6144,7 +6144,7 @@ main .section > .wrap:has(> .plan-grid) > h2.big{
   margin-left:auto!important;
   margin-right:auto!important;
   text-align:center!important;
-  font-size:clamp(36px,4.4vw,56px)!important;
+  font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.95!important;
   letter-spacing:-.045em!important;
 }
