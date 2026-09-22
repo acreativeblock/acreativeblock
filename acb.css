@@ -6104,3 +6104,18 @@ html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
     font-size:clamp(10px,2.8vw,12px)!important;
   }
 }
+
+/* Mobile actions use the compact type scale; desktop CTAs remain 20px. */
+@media(max-width:684px){
+  html body#acb-design#acb-design main :is(
+    a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,
+    button.btn,button.btn-out,button.pill,
+    .plan-card a.btn,.speaking-grid a.btn,.cta a,
+    a.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn
+  ),
+  html body#acb-design#acb-design.contact-page .cform button[type="submit"],
+  html body#acb-design#acb-design .acb-quick-contact .qc-form button,
+  html body#acb-design#acb-design .cookie-banner .cookie-actions button{
+    font-size:14px!important;
+  }
+}
