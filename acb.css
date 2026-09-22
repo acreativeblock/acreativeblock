@@ -1323,6 +1323,19 @@ html body#acb-design#acb-design.blocks-page .bmcard .card-tag{
 html body#acb-design#acb-design.evidence-page .refpanel:not(.open){
   box-shadow:none!important;
 }
+
+/* The 4i and 4o offer-deck headings are one shared typographic component. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main h2.offer-deck-title{
+  width:100%!important;
+  min-width:100%!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+  font-size:clamp(36px,4.4vw,56px)!important;
+  line-height:.95!important;
+  letter-spacing:-.045em!important;
+}
 html body#acb-design.contact-page .contact-visual-hero h1{display:block!important;width:min(520px,46vw)!important;margin:0!important;padding:19.83px 26.44px!important;background:#fff!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;font-size:clamp(26px,2.5vw,34px)!important;line-height:.98!important;text-align:left!important;box-shadow:0 12px 34px rgba(7,19,33,.12)}
 html body#acb-design.contact-page .contact-hero-kicker,
 html body#acb-design.contact-page .contact-hero-main{display:block}
@@ -6033,7 +6046,7 @@ main .section > .wrap:has(> .plan-grid) > h2.big{
   margin-left:auto!important;
   margin-right:auto!important;
   text-align:center!important;
-  font-size:clamp(36px,5vw,60px)!important;
+  font-size:clamp(36px,4.4vw,56px)!important;
   line-height:.95!important;
   letter-spacing:-.045em!important;
 }
