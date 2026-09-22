@@ -5292,6 +5292,9 @@ html body#acb-design#acb-design main :is(.acb-faq .acb-head,.section-head:has(+.
 
 /* The process index uses the FAQ's sticky offset, and step one starts level with it. */
 html body#acb-design#acb-design.method-page main .method-nav{top:125px!important}
+html body#acb-design#acb-design.method-page main .method-nav,
+html body#acb-design#acb-design.method-page main .method-nav a,
+html body#acb-design#acb-design.method-page main .method-nav a::before{letter-spacing:-.6px!important}
 html body#acb-design#acb-design.method-page main .method-copy>.method-block:first-child{margin-top:0!important}
 
 /* Align the Evidence hero bubble with the shared content and header edge. */
