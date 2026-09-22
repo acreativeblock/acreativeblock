@@ -1929,7 +1929,7 @@ html body#acb-design :is(.legal-nav,.faqx-nav) a::after{
   height:7px!important;
   border-radius:999px!important;
   background:rgba(79,70,229,.24)!important;
-  opacity:0!important;
+  opacity:0;
   transition:transform .36s cubic-bezier(.16,1,.3,1),opacity .2s ease!important;
 }
 html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current)::after{
@@ -5381,3 +5381,25 @@ html body#acb-design#acb-design.evidence-page .organise-map .hl{color:var(--ink)
 /* The process cards connect without the extra vertical gutters. */
 html body#acb-design#acb-design.method-page main .method-copy{gap:0!important}
 html body#acb-design#acb-design.method-page main .method-block{margin-top:0!important;margin-bottom:0!important}
+
+/* Calm site-wide motion. Elements move only a few pixels, reveal once and
+   retain their own hover transforms through the independent translate axis. */
+html body#acb-design .acb-soft-reveal{
+  --acb-reveal-delay:0ms;
+  opacity:0!important;
+  translate:0 12px;
+  transition:
+    opacity .52s ease var(--acb-reveal-delay),
+    translate .72s cubic-bezier(.22,1,.36,1) var(--acb-reveal-delay)!important;
+  will-change:opacity,translate;
+}
+html body#acb-design .acb-soft-reveal.acb-soft-in{
+  opacity:1!important;
+  translate:0 0;
+}
+@media(prefers-reduced-motion:reduce){
+  html body#acb-design .acb-soft-reveal,
+  html body#acb-design .acb-soft-reveal.acb-soft-in{
+    opacity:1!important;translate:none!important;transition:none!important;
+  }
+}

@@ -107,6 +107,42 @@
   (function(){var nav=document.querySelector('.legal-nav,.faqx-nav,.method-nav');if(!nav)return;var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),pairs=links.map(function(a){return{a:a,s:document.querySelector(a.getAttribute('href'))}}).filter(function(x){return x.s});if(!pairs.length)return;var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;links.forEach(function(a){a.classList.remove('is-current')});var hit=pairs.find(function(x){return x.s===entry.target});if(hit)hit.a.classList.add('is-current')})},{rootMargin:'-18% 0px -68% 0px',threshold:0});pairs.forEach(function(x){spy.observe(x.s)});if(pairs[0])pairs[0].a.classList.add('is-current')})();
   (function(){var refs=[].slice.call(document.querySelectorAll('.refpanel ol.refs>li'));if(!refs.length)return;var map={};refs.forEach(function(li,i){map[i+1]=li.textContent.replace(/\s+/g,' ').trim()});var tip;function hide(){if(tip){tip.remove();tip=null}}function wire(sup,num){var text=map[num];if(!text)return;sup.classList.add('cite-tip');sup.setAttribute('tabindex','0');function show(){hide();tip=document.createElement('span');tip.className='cite-tip-bubble';tip.textContent=num+'. '+text;document.body.appendChild(tip);var r=sup.getBoundingClientRect();var top=r.top+window.scrollY-tip.offsetHeight-10;var left=r.left+window.scrollX+r.width/2-tip.offsetWidth/2;left=Math.max(8,Math.min(left,window.scrollX+document.documentElement.clientWidth-tip.offsetWidth-8));tip.style.top=top+'px';tip.style.left=left+'px';requestAnimationFrame(function(){if(tip)tip.classList.add('is-visible')})}sup.addEventListener('mouseenter',show);sup.addEventListener('focus',show);sup.addEventListener('mouseleave',hide);sup.addEventListener('blur',hide)}[].slice.call(document.querySelectorAll('sup.cite')).forEach(function(sup){var nums=sup.textContent.split(',').map(function(n){return n.trim()}).filter(Boolean).filter(function(n){return map[n]});if(!nums.length)return;if(nums.length===1){wire(sup,nums[0]);return}var frag=document.createDocumentFragment();nums.forEach(function(n){var s=document.createElement('sup');s.className='cite';s.textContent=n;wire(s,n);frag.appendChild(s)});sup.replaceWith(frag)});document.addEventListener('scroll',hide,true)})();
   (function(){var groups=[].slice.call(document.querySelectorAll('.takeaway-blocks'));if(!groups.length)return;groups.forEach(function(group){var blocks=[].slice.call(group.querySelectorAll('.tblock'));var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;var i=blocks.indexOf(entry.target);entry.target.style.transitionDelay=(Math.max(i,0)*90)+'ms';entry.target.classList.add('in-view');spy.unobserve(entry.target)})},{rootMargin:'0px 0px -10% 0px',threshold:.25});blocks.forEach(function(b){spy.observe(b)})})})();
+  /* A quiet, shared reveal system. The takeaway cards keep their more
+     expressive drop; elsewhere we use a small rise and restrained stagger. */
+  (function(){
+    if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    function setupSoftMotion(){
+      var items=[],seen=new WeakSet(),skip='.acb-header,.acb-hero,.page-hero,.center-hero,.hero,.cookie-banner,.refpanel,.legal-nav,.faqx-nav,.method-nav,.takeaway-blocks';
+      function add(el,delay){
+        if(!el||seen.has(el)||el.matches(skip)||el.closest(skip))return;
+        seen.add(el);el.classList.add('acb-soft-reveal');
+        el.style.setProperty('--acb-reveal-delay',Math.min(delay||0,240)+'ms');items.push(el);
+      }
+      [
+        ['.work-cards','.work-card'],['.plan-grid','.plan-card'],['.journal-track','.journal-card'],
+        ['.bmgrid','.bmcard'],['.faq-list','.faq-item'],['.offer-list','.offer'],
+        ['.trio','.card'],['.evidence-organise-grid','.organise-card'],['.terrain-cols','.tcard'],
+        ['.reslist','.resitem'],['.blog-grid','.post'],['.method-copy','.method-block']
+      ].forEach(function(group){
+        document.querySelectorAll(group[0]).forEach(function(host){
+          host.querySelectorAll(':scope > '+group[1]).forEach(function(el,i){add(el,i*65)});
+        });
+      });
+      document.querySelectorAll('main section:not(.acb-hero):not(.page-hero):not(.center-hero):not(.hero)').forEach(function(section){
+        var wrap=section.querySelector(':scope > .wrap');
+        if(!wrap||wrap.querySelector('.acb-soft-reveal'))return;
+        add(wrap,0);
+      });
+      if(!items.length)return;
+      var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){
+        if(!entry.isIntersecting)return;var el=entry.target;el.classList.add('acb-soft-in');spy.unobserve(el);
+        setTimeout(function(){el.classList.remove('acb-soft-reveal','acb-soft-in');el.style.removeProperty('--acb-reveal-delay')},1050);
+      })},{rootMargin:'0px 0px -7% 0px',threshold:.08});
+      items.forEach(function(el){spy.observe(el)});
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(setupSoftMotion)},{once:true});
+    else requestAnimationFrame(setupSoftMotion);
+  })();
   (function(){var journey=document.querySelector('.method-journey');if(!journey)return;var navItems=[].slice.call(journey.querySelectorAll('.journey-nav-item')),steps=[].slice.call(journey.querySelectorAll('.journey-step'));var pairs=navItems.map(function(nav){var step=steps.find(function(s){return s.dataset.step===nav.dataset.stepNav});return{nav:nav,step:step}}).filter(function(x){return x.step});if(!pairs.length)return;navItems.forEach(function(nav){nav.addEventListener('click',function(){var hit=pairs.find(function(x){return x.nav===nav});if(hit)hit.step.scrollIntoView({behavior:'smooth',block:'start'})})});var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;var hit=pairs.find(function(x){return x.step===entry.target});if(!hit)return;navItems.forEach(function(n){n.classList.remove('active')});hit.nav.classList.add('active')})},{rootMargin:'-20% 0px -65% 0px',threshold:0});pairs.forEach(function(x){spy.observe(x.step)});if(pairs[0])pairs[0].nav.classList.add('active')})();
   var consentKey='acb-cookie-consent-v1',consent=localStorage.getItem(consentKey),banner=document.createElement('aside');
   banner.className='cookie-banner';
