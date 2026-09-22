@@ -5382,6 +5382,26 @@ html body#acb-design#acb-design.evidence-page .organise-map .hl{color:var(--ink)
 html body#acb-design#acb-design.method-page main .method-copy{gap:20px!important}
 html body#acb-design#acb-design.method-page main .method-block{margin-top:0!important;margin-bottom:0!important}
 
+/* 4o offers: a centred, full-width editorial heading above the card deck. */
+html body#acb-design#acb-design.organisations-page main #offers>.wrap>.audience-eyebrow{
+  display:block!important;
+  width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
+html body#acb-design#acb-design.organisations-page main #offers>.wrap>h2.big{
+  width:100%!important;
+  min-width:100%!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+  font-size:clamp(44px,6.8vw,80px)!important;
+  line-height:.88!important;
+  letter-spacing:-.055em!important;
+}
+
 /* Surface elevation lock: custom/composite sections opt out of the generic
    section wrapper, so their visible cards receive the same shared shadow. */
 html body#acb-design#acb-design :is(
