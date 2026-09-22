@@ -6031,3 +6031,15 @@ main .section > .wrap:has(> .plan-grid) > h2.big{
   line-height:.95!important;
   letter-spacing:-.045em!important;
 }
+
+/* Mobile contact CTA: a clean yellow card with no background photograph.
+   Desktop keeps the full image-backed treatment. */
+@media(max-width:774px){
+  html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
+    background:var(--acb-yellow)!important;
+    color:var(--ink)!important;
+  }
+  html body#acb-design#acb-design .footer-reveal .acb-quick-contact .qc-media{
+    display:none!important;
+  }
+}
