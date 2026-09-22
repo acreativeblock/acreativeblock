@@ -5983,3 +5983,20 @@ html body#acb-design#acb-design.method-page .terrain-cols .tcol > .eyebrow{
   overflow:hidden!important;
   text-overflow:clip!important;
 }
+
+/* Working-map cards: keep the domain pill attached to its card copy on small
+   screens instead of pushing every pill to the bottom edge. */
+html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab{
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  justify-content:center!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+@media(max-width:810px){
+  html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab{
+    align-self:stretch!important;
+    margin-top:6px!important;
+  }
+}
