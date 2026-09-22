@@ -5298,3 +5298,12 @@ html body#acb-design .acb-header .acb-sub a[aria-current="page"]{
     color:var(--ink)!important;background:var(--acb-yellow)!important;
   }
 }
+
+/* Anchor targets need one offset, not scroll-padding plus scroll-margin. */
+html:has(> body#acb-design:is(.method-page,.faq-page,.legal-page)){scroll-padding-top:0!important}
+html body#acb-design.method-page main .method-block,
+html body#acb-design.faq-page main .faqx-cat{scroll-margin-top:125px!important}
+html body#acb-design.legal-page main .legal-copy [id]{scroll-margin-top:96px!important}
+html body#acb-design#acb-design.legal-page main .legal-copy{
+  padding-bottom:calc(var(--sp-card) + max(80px,20vh))!important;
+}
