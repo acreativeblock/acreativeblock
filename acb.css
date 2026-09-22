@@ -5379,7 +5379,7 @@ html body#acb-design#acb-design.evidence-page .organise-map .hl{color:var(--ink)
 }
 
 /* The process cards connect without the extra vertical gutters. */
-html body#acb-design#acb-design.method-page main .method-copy{gap:0!important}
+html body#acb-design#acb-design.method-page main .method-copy{gap:20px!important}
 html body#acb-design#acb-design.method-page main .method-block{margin-top:0!important;margin-bottom:0!important}
 
 /* Surface elevation lock: custom/composite sections opt out of the generic
