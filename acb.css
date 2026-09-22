@@ -5082,7 +5082,7 @@ html body#acb-design.evidence-page .acb-marq .track{
 html body#acb-design.evidence-page .acb-marq .marq-group{display:flex!important;align-items:center!important;flex-shrink:0!important;gap:11.56px!important;padding:0 11.56px 0 0!important}
 html body#acb-design.evidence-page .acb-marq .marq-pill{
   display:inline-flex!important;align-items:center!important;flex-shrink:0!important;
-  border:1.5px solid var(--ink)!important;border-radius:999px!important;background:#fff!important;
+  border:0!important;border-radius:999px!important;background:#fafafa!important;
   padding:11.56px 19.83px!important;font-size:14.87px!important;font-weight:600!important;color:var(--ink)!important;white-space:nowrap!important;
 }
 html body#acb-design.evidence-page .acb-marq .marq-pill::after{content:none!important}
