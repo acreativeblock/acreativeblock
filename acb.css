@@ -5474,6 +5474,19 @@ html body#acb-design#acb-design .acb-header .navitem>button.navbutton::after{
 html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main .plan-card>p{
   padding-bottom:20px!important;
 }
+
+/* Block-map copy uses the full card width. The arrow only occupies the bottom
+   corner, so reserving its width on every line created tiny orphan endings. */
+html body#acb-design#acb-design.blocks-page .bmcard-body{
+  padding:14.4px 18px 64px 14.4px!important;
+}
+html body#acb-design#acb-design.blocks-page :is(.bmcard-title,.bmcard-lead){
+  max-width:none!important;
+  text-wrap:pretty!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
 @media(prefers-reduced-motion:reduce){
   html body#acb-design .acb-soft-reveal,
   html body#acb-design .acb-soft-reveal.acb-soft-in{
