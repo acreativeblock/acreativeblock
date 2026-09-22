@@ -5059,29 +5059,44 @@ html body#acb-design.evidence-page .ev-stat-block sup.cite{color:inherit!importa
   html body#acb-design.evidence-page .ev-stat-block{transform:none!important;margin-left:0!important}
 }
 
-/* Evidence page: "Why it matters" — vertical marquee of the 7+1 domains,
-   standing in for the flush section's usual portrait image. Same technique
-   AND same look as the home page's horizontal ticker (plain coloured text,
-   no pill boxes, a small dot between entries) — just rotated 90°. */
-@keyframes acb-marquee-v{to{transform:translateY(-50%)}}
-html body#acb-design.evidence-page .flush-vmarq{
-  overflow:hidden!important;position:relative!important;align-self:stretch!important;height:100%!important;min-height:340px!important;
-  background:#fff!important;border-radius:var(--radius-card)!important;display:flex!important;align-items:center!important;justify-content:center!important;
-  mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)!important;
-  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)!important;
+/* Evidence page: "Why it matters" — centred copy card with the 7+1 domain
+   names floating as loose pills in the space around it, each gently
+   bobbing on its own cycle so the whole thing feels adrift rather than
+   mechanically scrolling. */
+@keyframes wm-float{0%,100%{transform:translate(var(--tx,0),0) rotate(var(--rot,0deg))}50%{transform:translate(var(--tx,0),-14px) rotate(var(--rot,0deg))}}
+html body#acb-design#acb-design.evidence-page.evidence-page .why-matters>.wrap{background:transparent!important;box-shadow:none!important;padding:0!important}
+html body#acb-design.evidence-page .why-matters-stage{
+  position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  min-height:clamp(420px,58vw,620px)!important;padding:clamp(24px,4vw,48px)!important;
 }
-html body#acb-design.evidence-page .flush.reverse .flush-vmarq{order:-1!important}
-html body#acb-design.evidence-page .flush-vmarq .vtrack{
-  display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;gap:0!important;
-  animation:acb-marquee-v 26s linear infinite!important;will-change:transform;
+html body#acb-design.evidence-page .why-matters-copy{
+  position:relative!important;z-index:1!important;max-width:46ch!important;text-align:center!important;
+  background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
+  padding:clamp(28px,4vw,44px)!important;
 }
-html body#acb-design.evidence-page .flush-vmarq .vmarq-group{display:flex!important;flex-direction:column!important;align-items:center!important;gap:0!important;flex-shrink:0!important}
-html body#acb-design.evidence-page .flush-vmarq .vmarq-pill{
-  display:block!important;background:none!important;color:var(--c,#4f46e5)!important;
-  padding:10px 0!important;font-size:19px!important;font-weight:600!important;text-align:center!important;white-space:nowrap!important;
+html body#acb-design.evidence-page .why-matters-copy .side-note{display:block!important;margin:0 0 12px!important}
+html body#acb-design.evidence-page .why-matters-copy h2{margin:0 0 14px!important}
+html body#acb-design.evidence-page .why-matters-copy p{margin:0 0 20px!important;max-width:none!important}
+html body#acb-design.evidence-page .why-matters-pills{position:absolute!important;inset:0!important;pointer-events:none!important}
+html body#acb-design.evidence-page .wm-pill{
+  position:absolute!important;display:inline-flex!important;white-space:nowrap!important;
+  background:var(--c,#4f46e5)!important;color:var(--ink)!important;border-radius:999px!important;
+  padding:12px 20px!important;font-size:15px!important;font-weight:600!important;
+  box-shadow:0 8px 20px rgba(7,19,33,.1)!important;
+  animation:wm-float 7s ease-in-out infinite!important;
 }
-html body#acb-design.evidence-page .flush-vmarq .vmarq-pill::after{
-  content:"•"!important;display:block!important;margin-top:10px!important;color:#c7c5d6!important;font-weight:400!important;
+html body#acb-design.evidence-page .wm-p1{top:4%!important;left:4%!important;--rot:-6deg;animation-delay:-.6s!important}
+html body#acb-design.evidence-page .wm-p2{top:10%!important;right:5%!important;--rot:5deg;animation-delay:-2.4s!important}
+html body#acb-design.evidence-page .wm-p3{top:44%!important;left:0%!important;--rot:-4deg;animation-delay:-4.1s!important}
+html body#acb-design.evidence-page .wm-p4{top:40%!important;right:1%!important;--rot:7deg;animation-delay:-1.3s!important}
+html body#acb-design.evidence-page .wm-p5{bottom:22%!important;left:6%!important;--rot:4deg;animation-delay:-5.5s!important}
+html body#acb-design.evidence-page .wm-p6{bottom:26%!important;right:7%!important;--rot:-5deg;animation-delay:-3.2s!important}
+html body#acb-design.evidence-page .wm-p7{bottom:4%!important;left:26%!important;--rot:-3deg;animation-delay:-6.4s!important}
+html body#acb-design.evidence-page .wm-p8{bottom:3%!important;right:24%!important;--rot:6deg;animation-delay:-.2s!important}
+@media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .wm-pill{animation:none!important}}
+@media(max-width:900px){
+  html body#acb-design.evidence-page .why-matters-pills{display:none!important}
+  html body#acb-design.evidence-page .why-matters-stage{min-height:0!important;padding:0!important}
 }
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .flush-vmarq .vtrack{animation:none!important}}
 @media(max-width:774px){html body#acb-design.evidence-page .flush-vmarq{min-height:220px!important}}
@@ -5110,12 +5125,14 @@ html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;padd
 html body#acb-design.evidence-page .acb-hero-grid{
   position:relative!important;display:grid!important;grid-template-columns:1fr!important;
   min-height:clamp(423px,74vh,778px)!important;
-  padding:33px calc((100vw - var(--wrap))/2 + var(--pad))!important;
+  padding:0!important;
   align-items:end!important;justify-items:start!important;
   overflow:hidden!important;isolation:isolate!important;
 }
 html body#acb-design.evidence-page .audience-hero-stack{
   position:relative!important;z-index:1!important;width:min(654px,94vw)!important;max-width:min(654px,94vw)!important;
+  padding:33px calc((100vw - var(--wrap))/2 + var(--pad))!important;
+  box-sizing:content-box!important;
 }
 html body#acb-design.evidence-page .evidence-hero-bubble{
   background:#fff!important;border-radius:32px!important;padding:clamp(20px,2.6vw,32px)!important;
@@ -5127,7 +5144,7 @@ html body#acb-design.evidence-page .evidence-hero-bubble .mono{
 }
 html body#acb-design.evidence-page .evidence-hero-def{
   font-family:"Inter",sans-serif!important;font-weight:400!important;
-  font-size:clamp(20px,2.4vw,30px)!important;line-height:1.22!important;letter-spacing:-.02em!important;
+  font-size:35px!important;line-height:1.2!important;letter-spacing:-.02em!important;
   color:var(--ink)!important;margin:0!important;max-width:none!important;
 }
 html body#acb-design.evidence-page .evidence-hero-def .hl{color:var(--ink)!important}
@@ -5137,5 +5154,7 @@ html body#acb-design.evidence-page .acb-hero-img{
 }
 html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
 @media(max-width:774px){
-  html body#acb-design.evidence-page .acb-hero-grid{padding:13px!important;min-height:561px!important}
+  html body#acb-design.evidence-page .audience-hero-stack{padding:13px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+  html body#acb-design.evidence-page .acb-hero-grid{min-height:561px!important}
+  html body#acb-design.evidence-page .evidence-hero-def{font-size:24px!important}
 }
