@@ -5487,6 +5487,30 @@ html body#acb-design#acb-design.blocks-page :is(.bmcard-title,.bmcard-lead){
   word-break:normal!important;
   hyphens:none!important;
 }
+
+/* Block-map arrows use the same forward-control language as the Home journal
+   carousel: compact rounded rectangle, blue fill and a quiet horizontal move. */
+html body#acb-design#acb-design.blocks-page .bmcard-arr{
+  right:14.4px!important;
+  bottom:14.4px!important;
+  width:44px!important;
+  height:36px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:var(--blue)!important;
+  color:#fff!important;
+  font:400 24px/1 "Inter",sans-serif!important;
+  box-shadow:none!important;
+  transform:none!important;
+  transition:transform .2s ease,background-color .2s ease!important;
+}
+html body#acb-design#acb-design.blocks-page .bmcard:is(:hover,:focus-visible) .bmcard-arr{
+  transform:translateX(2px)!important;
+}
+@media(max-width:504px){
+  html body#acb-design#acb-design.blocks-page .bmcard-arr{right:10px!important;bottom:10px!important}
+}
 @media(prefers-reduced-motion:reduce){
   html body#acb-design .acb-soft-reveal,
   html body#acb-design .acb-soft-reveal.acb-soft-in{
