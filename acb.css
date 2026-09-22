@@ -5469,6 +5469,11 @@ html body#acb-design#acb-design .acb-header .navitem>button.navbutton{
 html body#acb-design#acb-design .acb-header .navitem>button.navbutton::after{
   --acb-icon-size:8px;color:currentColor!important;margin:-4px 2px 0 0!important;
 }
+
+/* Give offer copy room to breathe before the aligned Enquire action. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main .plan-card>p{
+  padding-bottom:20px!important;
+}
 @media(prefers-reduced-motion:reduce){
   html body#acb-design .acb-soft-reveal,
   html body#acb-design .acb-soft-reveal.acb-soft-in{
