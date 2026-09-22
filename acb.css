@@ -5230,3 +5230,13 @@ html body#acb-design.evidence-page .evidence-definition-copy .hl{background:line
 html body#acb-design.method-page .terrain-cols .tcard :is(h3,p),html body#acb-design.factors-page .terrain-cols .tcard :is(h3,p){color:var(--ink)!important}
 html body#acb-design#acb-design.home-page .acb-blocks .blocks-head .acb-lead{font-size:20px!important;line-height:1!important;padding-right:6%!important;box-sizing:border-box!important}
 @media(max-width:684px){html body#acb-design#acb-design.home-page .acb-blocks .blocks-head .acb-lead{padding-right:8px!important}}
+
+/* Match offer format tags to the small outlined tags on Home's article cards. */
+html body#acb-design:is(.individuals-page,.organisations-page) main .plan-card .plan-format{
+  display:inline-flex!important;align-self:flex-start!important;width:max-content!important;max-width:100%!important;
+  margin:0 0 2px!important;padding:4px 9px!important;border:1px solid currentColor!important;
+  border-radius:999px!important;color:inherit!important;opacity:1!important;
+  font-size:15px!important;line-height:1!important;letter-spacing:-.03em!important;text-transform:none!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) main .plan-card a.btn{margin-top:auto!important}
+html body#acb-design.individuals-page main .access-note{font-size:20px!important}
