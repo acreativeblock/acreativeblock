@@ -5755,3 +5755,120 @@ html body#acb-design button:disabled *{
     corner-shape:round;
   }
 }
+
+/* One outlined action arrow everywhere. A mask avoids font-dependent arrow
+   glyphs, whose endpoints vary between a filled triangle and two strokes. */
+html body#acb-design{
+  --acb-go-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 16'%3E%3Cpath d='M1 8h15M11 3l5 5-5 5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+html body#acb-design .acb-header .acb-utility-pill::after,
+html body#acb-design .qc-form button[type="submit"]::after,
+html body#acb-design .work-card .work-arrow,
+html body#acb-design .bm-hypo .stmt span,
+html body#acb-design .refbar .arr,
+html body#acb-design .journal-control::after,
+html body#acb-design .bmcard-arr::after{
+  content:""!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:18px!important;
+  height:16px!important;
+  margin:0 0 0 9px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:currentColor!important;
+  -webkit-mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+
+/* Diagonal actions keep their direction; their arrowhead geometry and weight
+   now match every horizontal control. */
+html body#acb-design .acb-header .acb-utility-pill::after,
+html body#acb-design .qc-form button[type="submit"]::after,
+html body#acb-design .work-card .work-arrow{
+  transform:rotate(-45deg)!important;
+  transition:transform .24s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design .acb-header .acb-utility-pill:hover::after,
+html body#acb-design .qc-form button[type="submit"]:hover::after{
+  transform:translate(2px,-2px) rotate(-45deg)!important;
+}
+html body#acb-design.home-page .work-card:is(:hover,:focus-visible) .work-arrow{
+  transform:translate(4px,-4px) rotate(-45deg)!important;
+}
+
+/* Controls that already provide their own coloured container use the same
+   mask without the legacy extra shaft/head pseudo-element. */
+html body#acb-design :is(.journal-control,.bmcard-arr)::before{display:none!important}
+html body#acb-design.home-page .journal-control::after,
+html body#acb-design.blocks-page .bmcard-arr::after{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  margin:0!important;
+  transform:translate(-50%,-50%)!important;
+}
+html body#acb-design.home-page .journal-control:not(.is-next)::after{
+  transform:translate(-50%,-50%) scaleX(-1)!important;
+}
+
+html body#acb-design .bm-hypo .stmt span,
+html body#acb-design .refbar .arr{
+  vertical-align:middle!important;
+}
+
+/* Links styled as buttons used to inherit several legacy font arrows. Keep
+   every actionable button on the same outlined, diagonal arrow language. */
+html body#acb-design a.btn::after,
+html body#acb-design a.btn-out::after,
+html body#acb-design a.pill::after,
+html body#acb-design button.btn::after,
+html body#acb-design button.btn-out::after,
+html body#acb-design button.pill::after,
+html body#acb-design button.refbar-btn::after{
+  content:""!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:18px!important;
+  height:16px!important;
+  margin:0 0 0 9px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:currentColor!important;
+  -webkit-mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  font-size:0!important;
+  line-height:0!important;
+  transform:rotate(-45deg)!important;
+  transition:transform .24s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design a.btn:hover::after,
+html body#acb-design a.btn-out:hover::after,
+html body#acb-design a.pill:hover::after,
+html body#acb-design button.btn:hover::after,
+html body#acb-design button.btn-out:hover::after,
+html body#acb-design button.pill:hover::after,
+html body#acb-design button.refbar-btn:hover::after{
+  transform:translate(2px,-2px) rotate(-45deg)!important;
+}
+
+/* The evidence loop is directional rather than clickable, but it uses the
+   same stroke and open endpoint so it belongs to the same visual system. */
+html body#acb-design.evidence-page .evidence-cycle-step:not(:last-child)::after{
+  content:""!important;
+  width:26px!important;
+  height:20px!important;
+  background:var(--ink)!important;
+  -webkit-mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+@media(max-width:774px){
+  html body#acb-design.evidence-page .evidence-cycle-step:not(:last-child)::after{
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+}
