@@ -6005,7 +6005,10 @@ html body#acb-design#acb-design.method-page .terrain-cols .tcol > .eyebrow{
    screens instead of pushing every pill to the bottom edge. */
 html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab{
   width:100%!important;
+  min-width:100%!important;
   max-width:100%!important;
+  flex:0 0 auto!important;
+  align-self:stretch!important;
   box-sizing:border-box!important;
   justify-content:center!important;
   text-align:center!important;
@@ -6066,7 +6069,13 @@ html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
   font-weight:400!important;
   text-align:center!important;
   justify-content:center!important;
-  animation:none!important;
+  animation:wm-drift var(--duration,7s) ease-in-out infinite!important;
+  animation-delay:var(--delay,0s)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
+    animation:none!important;
+  }
 }
 @media(max-width:600px){
   html body#acb-design#acb-design.evidence-page .why-matters-stage{
