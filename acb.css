@@ -3670,6 +3670,8 @@ html body#acb-design.home-page .acb-journal>.wrap{
   background:var(--acb-yellow)!important;
   box-shadow:none!important;
 }
+html body#acb-design.home-page .acb-journal ::selection{background:#4f46e5!important;color:#fff!important}
+html body#acb-design.home-page .acb-journal ::-moz-selection{background:#4f46e5!important;color:#fff!important}
 html body#acb-design.home-page .acb-journal .journal-head{
   display:flex!important;
   align-items:end!important;
