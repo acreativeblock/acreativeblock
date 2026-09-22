@@ -5063,12 +5063,12 @@ html body#acb-design.evidence-page .ev-stat-block sup.cite{color:inherit!importa
 /* Evidence page: "Why it matters" copy and domain pills. */
 html body#acb-design.evidence-page .why-matters-copy{
   position:relative!important;z-index:1!important;max-width:46ch!important;text-align:center!important;
-  background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
-  padding:clamp(28px,4vw,44px)!important;
+  background:transparent!important;border-radius:0!important;box-shadow:none!important;
+  padding:0!important;
 }
-html body#acb-design.evidence-page .why-matters-copy .side-note{display:block!important;margin:0 0 12px!important}
-html body#acb-design.evidence-page .why-matters-copy h2{margin:0 0 14px!important}
-html body#acb-design.evidence-page .why-matters-copy p{margin:0 0 20px!important;max-width:none!important}
+html body#acb-design.evidence-page .why-matters-copy .side-note{display:block!important;margin:0 0 8px!important}
+html body#acb-design.evidence-page .why-matters-copy h2{margin:0 0 8px!important;font-size:clamp(32px,3vw,42px)!important;line-height:1.05!important}
+html body#acb-design.evidence-page .why-matters-copy p{margin:0 0 12px!important;max-width:none!important;line-height:1.2!important}
 html body#acb-design.evidence-page .wm-pill{
   display:inline-flex!important;
   background:var(--c,#4f46e5)!important;color:var(--ink)!important;border-radius:999px!important;
@@ -5134,13 +5134,13 @@ html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height
 
 /* Three independent columns let the 7+1 labels drift around the copy without
    ever crossing its space. Narrow layouts move them above and below it. */
-@keyframes wm-drift{0%,100%{transform:translate(0,0) rotate(var(--rot,0deg))}50%{transform:translate(var(--dx,0px),-8px) rotate(var(--rot,0deg))}}
+@keyframes wm-drift{0%,100%{transform:translate(0,0) rotate(var(--rot,0deg))}50%{transform:translate(var(--dx,0px),-4px) rotate(var(--rot,0deg))}}
 html body#acb-design.evidence-page section.why-matters,
 html body#acb-design.evidence-page section.why-matters>.why-matters-stage{background:#fff!important}
 html body#acb-design.evidence-page .why-matters-stage{
   display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,58%) minmax(0,1fr)!important;
   grid-template-rows:repeat(4,minmax(0,1fr))!important;column-gap:clamp(34px,4vw,60px)!important;row-gap:8px!important;
-  min-height:0!important;padding:clamp(24px,3vw,40px)!important;
+  min-height:0!important;padding:clamp(16px,2vw,28px)!important;
 }
 html body#acb-design.evidence-page .why-matters-pills{display:contents!important;position:static!important}
 html body#acb-design.evidence-page .wm-pill{
@@ -5168,7 +5168,10 @@ html body#acb-design.evidence-page .why-matters-copy{
   html body#acb-design.evidence-page .why-matters-copy{grid-column:1/-1!important;grid-row:2!important;justify-self:center!important;width:min(100%,680px)!important}
 }
 @media(max-width:600px){
-  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto) auto repeat(2,auto)!important;gap:12px!important}
+  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto) auto repeat(2,auto)!important;gap:8px!important;padding:12px!important}
+  html body#acb-design.evidence-page .why-matters-copy h2{font-size:32px!important}
+  html body#acb-design.evidence-page .why-matters-copy p{font-size:18px!important;line-height:1.25!important}
+  html body#acb-design.evidence-page .wm-pill{padding:6px 8px!important;font-size:12px!important}
   html body#acb-design.evidence-page .wm-p1,html body#acb-design.evidence-page .wm-p2{grid-row:1!important}
   html body#acb-design.evidence-page .wm-p3,html body#acb-design.evidence-page .wm-p4{grid-row:2!important}
   html body#acb-design.evidence-page .wm-p5,html body#acb-design.evidence-page .wm-p6{grid-row:4!important}
