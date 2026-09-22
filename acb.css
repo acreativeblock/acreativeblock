@@ -6217,3 +6217,136 @@ html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
     font-size:14px!important;
   }
 }
+
+
+/* Audience process cards: calm, tactile stacks built from one shared white-card
+   language. 4i overlaps five cards vertically; 4o opens the same idea into a
+   three-part Discover / Design / Deliver sequence. */
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps{
+  gap:0!important;
+  padding:8px 0!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li{
+  --step-rotate:0deg;
+  position:relative!important;
+  z-index:1;
+  margin-top:-10px!important;
+  padding:20px!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  color:var(--ink)!important;
+  box-shadow:var(--shadow-card)!important;
+  transform:rotate(var(--step-rotate))!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:first-child{margin-top:0!important;--step-rotate:-.35deg}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(2){z-index:2;--step-rotate:.25deg}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(3){z-index:3;--step-rotate:-.2deg}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(4){z-index:4;--step-rotate:.3deg}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(5){z-index:5;--step-rotate:-.25deg}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li span{color:var(--blue)!important}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li b,
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li p{color:var(--ink)!important}
+
+html body#acb-design#acb-design.organisations-page .organisation-feeling>.wrap{display:block!important;gap:0!important}
+html body#acb-design#acb-design.organisations-page .organisation-feeling .scrolltext{
+  max-width:none!important;
+  margin:0!important;
+  padding-right:15%!important;
+  color:var(--ink)!important;
+  font-size:35px!important;
+  line-height:1.1!important;
+  letter-spacing:var(--ls-title)!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-feeling .scrolltext .hl{
+  background-image:linear-gradient(to bottom,transparent 8%,var(--acb-yellow) 8%,var(--acb-yellow) 92%,transparent 92%)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support>.wrap{
+  display:block!important;
+  padding:var(--sp-card)!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy{
+  width:min(900px,100%)!important;
+  margin:0 auto!important;
+  text-align:center!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .big{
+  margin:0 auto 16px!important;
+  font-size:var(--fs-h2)!important;
+  line-height:var(--lh-title)!important;
+  letter-spacing:var(--ls-h2)!important;
+  color:#fff!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead{
+  max-width:58ch!important;
+  margin:0 auto!important;
+  font-size:var(--fs-copy-lg)!important;
+  line-height:var(--lh-copy)!important;
+  letter-spacing:var(--ls-copy-lg)!important;
+  color:#fff!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead strong{
+  color:var(--acb-yellow)!important;
+  font-weight:400!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:12px!important;
+  margin:32px 0 0!important;
+  padding:0!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process li{
+  min-height:250px!important;
+  padding:24px!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  color:var(--ink)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process li::after{display:none!important}
+html body#acb-design#acb-design.organisations-page .organisation-process .step-number{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:42px!important;
+  height:42px!important;
+  margin:0 0 34px!important;
+  padding:0!important;
+  border-radius:50%!important;
+  background:var(--acb-yellow)!important;
+  color:var(--ink)!important;
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process li:nth-child(2) .step-number{background:#bde7d5!important}
+html body#acb-design#acb-design.organisations-page .organisation-process li:nth-child(3) .step-number{background:#eef2ff!important;color:var(--blue)!important}
+html body#acb-design#acb-design.organisations-page .organisation-process li b{
+  display:block!important;
+  margin:0 0 14px!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-copy-lg)!important;
+  line-height:1!important;
+  letter-spacing:var(--ls-copy-lg)!important;
+  font-weight:400!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process li p{
+  margin:0!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-body)!important;
+  line-height:var(--lh-copy)!important;
+  letter-spacing:var(--ls-body)!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.organisations-page .organisation-feeling .scrolltext{padding-right:0!important;font-size:35px!important}
+  html body#acb-design#acb-design.organisations-page .organisation-support .support-copy{text-align:left!important}
+  html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .big,
+  html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead{margin-left:0!important;margin-right:0!important}
+  html body#acb-design#acb-design.organisations-page .organisation-process{grid-template-columns:1fr!important;gap:10px!important;margin-top:24px!important}
+  html body#acb-design#acb-design.organisations-page .organisation-process li{min-height:0!important}
+  html body#acb-design#acb-design.organisations-page .organisation-process .step-number{margin-bottom:22px!important}
+}
