@@ -116,23 +116,52 @@
   (function(){var nav=document.querySelector('.legal-nav,.faqx-nav,.method-nav');if(!nav)return;var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),pairs=links.map(function(a){return{a:a,s:document.querySelector(a.getAttribute('href'))}}).filter(function(x){return x.s});if(!pairs.length)return;var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;links.forEach(function(a){a.classList.remove('is-current')});var hit=pairs.find(function(x){return x.s===entry.target});if(hit)hit.a.classList.add('is-current')})},{rootMargin:'-18% 0px -68% 0px',threshold:0});pairs.forEach(function(x){spy.observe(x.s)});if(pairs[0])pairs[0].a.classList.add('is-current')})();
   (function(){var refs=[].slice.call(document.querySelectorAll('.refpanel ol.refs>li'));if(!refs.length)return;var map={};refs.forEach(function(li,i){map[i+1]=li.textContent.replace(/\s+/g,' ').trim()});var tip;function hide(){if(tip){tip.remove();tip=null}}function wire(sup,num){var text=map[num];if(!text)return;sup.classList.add('cite-tip');sup.setAttribute('tabindex','0');function show(){hide();tip=document.createElement('span');tip.className='cite-tip-bubble';tip.textContent=num+'. '+text;document.body.appendChild(tip);var r=sup.getBoundingClientRect();var top=r.top+window.scrollY-tip.offsetHeight-10;var left=r.left+window.scrollX+r.width/2-tip.offsetWidth/2;left=Math.max(8,Math.min(left,window.scrollX+document.documentElement.clientWidth-tip.offsetWidth-8));tip.style.top=top+'px';tip.style.left=left+'px';requestAnimationFrame(function(){if(tip)tip.classList.add('is-visible')})}sup.addEventListener('mouseenter',show);sup.addEventListener('focus',show);sup.addEventListener('mouseleave',hide);sup.addEventListener('blur',hide)}[].slice.call(document.querySelectorAll('sup.cite')).forEach(function(sup){var nums=sup.textContent.split(',').map(function(n){return n.trim()}).filter(Boolean).filter(function(n){return map[n]});if(!nums.length)return;if(nums.length===1){wire(sup,nums[0]);return}var frag=document.createDocumentFragment();nums.forEach(function(n){var s=document.createElement('sup');s.className='cite';s.textContent=n;wire(s,n);frag.appendChild(s)});sup.replaceWith(frag)});document.addEventListener('scroll',hide,true)})();
   (function(){var groups=[].slice.call(document.querySelectorAll('.takeaway-blocks'));if(!groups.length)return;groups.forEach(function(group){var blocks=[].slice.call(group.querySelectorAll('.tblock'));var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;var i=blocks.indexOf(entry.target);entry.target.style.transitionDelay=(Math.max(i,0)*90)+'ms';entry.target.classList.add('in-view');spy.unobserve(entry.target)})},{rootMargin:'0px 0px -10% 0px',threshold:.25});blocks.forEach(function(b){spy.observe(b)})})})();
-  /* Calm page motion prototype, deliberately limited to Home and 4i. The
-     takeaway section is excluded because its three cards keep their own
-     gravity animation above. */
+  /* Calm shared motion. Takeaway sections are deliberately excluded because
+     their three stacked cards keep the custom gravity animation above. */
   (function(){
-    if(!document.body.matches('.home-page,.individuals-page'))return;
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var sections=[].slice.call(document.querySelectorAll('main .acb-main-panel>section')).filter(function(section){return!section.classList.contains('takeaways')});
-    if(!sections.length)return;
+    var main=document.querySelector('main'),observer;
+    if(!main)return;
     document.documentElement.classList.add('acb-motion');
-    sections.forEach(function(section){
+    function prepareHero(){
+      var hero=main.querySelector(':scope>.acb-hero,:scope>.page-hero,:scope>.center-hero,:scope>.blog-hero,:scope>.bm-hero,:scope>.domain-hero');
+      if(!hero||hero.classList.contains('acb-motion-hero'))return;
+      hero.classList.add('acb-motion-hero');
+      var source=hero.querySelector('.acb-hero-copy,.audience-hero-stack')||hero.querySelector(':scope>.wrap');
+      if(!source)return;
+      [].slice.call(source.children).forEach(function(item,index){
+        item.classList.add('acb-motion-hero-item');
+        item.style.setProperty('--acb-hero-delay',(Math.min(index,4)*75)+'ms');
+      });
+    }
+    function show(section){
+      if(section.classList.contains('is-motion-visible'))return;
+      section.classList.add('is-motion-visible');
+      if(observer)observer.unobserve(section);
+    }
+    observer='IntersectionObserver'in window?new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)show(entry.target)})},{rootMargin:'0px 0px -9% 0px',threshold:.08}):null;
+    function prepareSection(section,index){
+      if(section.classList.contains('acb-motion-section')||section.classList.contains('takeaways')||section.matches('.acb-hero,.page-hero,.center-hero,.blog-hero,.bm-hero,.domain-hero')||(document.body.classList.contains('home-page')&&section.classList.contains('acb-marq')))return;
       section.classList.add('acb-motion-section');
-      var items=[].slice.call(section.querySelectorAll('.work-card,.journal-card,.faq-item,.acb-loop-steps>li,.plan-card'));
-      items.forEach(function(item,index){item.classList.add('acb-motion-item');item.style.setProperty('--acb-motion-delay',(Math.min(index,6)*70)+'ms');item.style.setProperty('--acb-motion-x',(index%2?5:-5)+'px')});
-    });
-    function show(section){if(section.classList.contains('is-motion-visible'))return;section.classList.add('is-motion-visible');observer&&observer.unobserve(section)}
-    var observer='IntersectionObserver'in window?new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)show(entry.target)})},{rootMargin:'0px 0px -9% 0px',threshold:.08}):null;
-    requestAnimationFrame(function(){requestAnimationFrame(function(){sections.forEach(function(section,index){if(section.getBoundingClientRect().top<window.innerHeight*.94)setTimeout(function(){show(section)},index*75);else if(observer)observer.observe(section);else show(section)})})});
+      var items=[].slice.call(section.querySelectorAll('.work-card,.journal-card,.blog-card,.faq-item,.offer-row,.acb-loop-steps>li,.plan-card,.bmcard,.method-block,.resitem,.evidence-cycle-step,.ev-stat-block,.trio>.card,.terrain-cols>.tcard'));
+      items.forEach(function(item,itemIndex){
+        item.classList.add('acb-motion-item');
+        item.style.setProperty('--acb-motion-delay',(Math.min(itemIndex,6)*65)+'ms');
+        item.style.setProperty('--acb-motion-x',(itemIndex%2?5:-5)+'px');
+      });
+      if(section.getBoundingClientRect().top<window.innerHeight*.94)setTimeout(function(){show(section)},Math.min(index,3)*70);
+      else if(observer)observer.observe(section);
+      else show(section);
+    }
+    function scanMotion(){
+      prepareHero();
+      var sections=[].slice.call(document.querySelectorAll('main>.acb-main-panel>section,main>section')).filter(function(section,index,list){return list.indexOf(section)===index});
+      sections.forEach(prepareSection);
+    }
+    scanMotion();
+    var dynamicObserver=new MutationObserver(function(){scanMotion()});
+    dynamicObserver.observe(main,{childList:true,subtree:true});
+    setTimeout(function(){dynamicObserver.disconnect();scanMotion()},1500);
   })();
   document.documentElement.classList.remove('acb-preload');
   (function(){var journey=document.querySelector('.method-journey');if(!journey)return;var navItems=[].slice.call(journey.querySelectorAll('.journey-nav-item')),steps=[].slice.call(journey.querySelectorAll('.journey-step'));var pairs=navItems.map(function(nav){var step=steps.find(function(s){return s.dataset.step===nav.dataset.stepNav});return{nav:nav,step:step}}).filter(function(x){return x.step});if(!pairs.length)return;navItems.forEach(function(nav){nav.addEventListener('click',function(){var hit=pairs.find(function(x){return x.nav===nav});if(hit)hit.step.scrollIntoView({behavior:'smooth',block:'start'})})});var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;var hit=pairs.find(function(x){return x.step===entry.target});if(!hit)return;navItems.forEach(function(n){n.classList.remove('active')});hit.nav.classList.add('active')})},{rootMargin:'-20% 0px -65% 0px',threshold:0});pairs.forEach(function(x){spy.observe(x.step)});if(pairs[0])pairs[0].nav.classList.add('active')})();
