@@ -583,6 +583,21 @@ html body#acb-design .refpanel ol.refs li{color:rgba(17,17,24,.85)!important;bor
 html body#acb-design .refpanel ol.refs li b{color:var(--ink)!important}
 html body#acb-design .refpanel ol.refs li::before{color:var(--ink)!important;opacity:.55}
 
+/* "References & sources" panel + its trigger button (evidence, the-factors,
+   the legacy method page) — ink background, white text. The block-map's own
+   .refpanel (per-block colour, .blocks-page) is a separate component and
+   keeps its light background + ink text untouched. */
+html body#acb-design.internal-page .refbar-wrap{background:var(--ink)!important}
+html body#acb-design.internal-page .refbar{color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel{background:var(--ink)!important;color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel.refpanel h3{color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel h4{color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel-close{color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel .refpanel-note{color:rgba(255,255,255,.78)!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel ol.refs li{color:rgba(255,255,255,.85)!important;border-top-color:rgba(255,255,255,.18)!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel ol.refs li b{color:#fff!important}
+html body#acb-design:is(.evidence-page,.factors-page,.method-page) .refpanel ol.refs li::before{color:#fff!important;opacity:.55}
+
 /* Terrain cards (the-factors, our-method) get a small icon badge (indigo
    tint, matching the block-color-badge language used on the block map). */
 html body#acb-design:is(.factors-page,.method-page) .tcard{display:flex!important;flex-direction:column;align-items:flex-start}
@@ -683,7 +698,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) h3,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) p,
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) .plan-format{color:#fff!important}
-html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) .btn{background:#fff!important;color:#4f46e5!important;border-color:#fff!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(2) :is(.btn,.btn-out){background:#fff!important;color:#4f46e5!important;border-color:#fff!important}
 /* Third card: the deepest tier — dark, yellow accent. */
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3){background:#111!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid .plan-card:nth-child(3) h3,
@@ -2074,7 +2089,6 @@ html body#acb-design.internal-page main .plan-actions a{
   line-height:1!important;
   padding:8.26px 14.87px!important;
 }
-html body#acb-design.internal-page main .plan-actions a{padding:8.26px 11px!important;font-size:12px!important}
 html body#acb-design.home-page main .cta a.pill::after,
 html body#acb-design.home-page main .acb-close a.pill::after,
 html body#acb-design.internal-page main .cta a.btn::after,
@@ -2222,7 +2236,7 @@ html body#acb-design.individuals-page .individual-support .acb-loop-steps li p{
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaways>.wrap{
   display:grid!important;
   grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;
-  align-items:center!important;
+  align-items:start!important;
   gap:clamp(28px,4vw,64px)!important;
   padding:var(--sp-card)!important;
   background:#eef1ff!important;
@@ -2239,8 +2253,12 @@ html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock{
   padding:22px 26px!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
 }
-html body#acb-design:is(.individuals-page,.organisations-page) .tblock p{
-  margin:0!important;font-size:var(--fs-copy-lg)!important;line-height:1.3!important;font-weight:400!important;
+/* Doubled ID: a generic paragraph rule elsewhere (html body#acb-design.internal-page
+   :is(p,...,.faqx .offer-body p,...)) carries the :is() list's most-specific
+   branch (2 classes+element) across its whole selector, outranking this
+   single-ID rule even though .tblock p matches none of those branches. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page) .tblock p{
+  margin:0!important;font-size:clamp(19px,2.4vw,25px)!important;line-height:1.35!important;font-weight:400!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c1{background:#4f46e5!important;color:#fff!important;transform:rotate(-1.4deg)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c2{background:var(--acb-yellow)!important;color:var(--ink)!important;transform:rotate(1deg)!important;margin-left:clamp(0px,4vw,32px)!important}
@@ -5071,28 +5089,27 @@ html body#acb-design.offer-page .offer-close p{margin:0 0 20px!important;color:v
   html body#acb-design.offer-page .offer-side{position:relative!important;top:0!important}
 }
 
-/* The shared "big action pill" rule (a.btn,a.btn-out,...{font-size:20px;
-   padding:20px}) was outranking the plan-card's own smaller button sizing
-   for the new two-button row - same :is() raw-specificity issue as
-   elsewhere in this file. Doubled ID to win regardless. */
-html body#acb-design#acb-design .plan-actions{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;margin-top:16px!important}
-html body#acb-design#acb-design#acb-design .plan-actions a{
-  padding:8.26px 11px!important;
-  font-size:11.5px!important;
-  line-height:1!important;
-  white-space:nowrap!important;
-}
+/* Plan-card "Read more" + "Enquire" row: same size as every other button
+   on the site (the compact 4i treatment), wrapping onto its own line
+   rather than shrinking when a card is too narrow for both side by side. */
+html body#acb-design#acb-design .plan-actions{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:16px!important}
 
-/* Evidence page: "Backed by research" scrolling researcher-name marquee, reusing the acb-marquee keyframe. */
-html body#acb-design.evidence-page .acb-marq-card{
+/* Evidence page: "Backed by research" scrolling researcher-name marquee, reusing the
+   acb-marquee keyframe. Single container: the card, the clip box and the fade mask
+   all live on .acb-marq itself, not on a separate wrapper. Never pauses on hover —
+   it's a passive credibility strip, not something to read line by line. */
+html body#acb-design.evidence-page .acb-marq{
   background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
-  padding:clamp(26.44px,4vw,46.34px) clamp(19.83px,3.5vw,33.05px)!important;text-align:center!important;
+  padding:clamp(26.44px,4vw,46.34px) 0!important;text-align:center!important;overflow:hidden!important;
 }
-html body#acb-design.evidence-page .acb-marq-card .eyebrow{color:var(--brand)!important;font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;margin:0 0 8px!important}
-html body#acb-design.evidence-page .acb-marq-card h2{margin:0 auto 26.44px!important;max-width:52ch!important}
-html body#acb-design.evidence-page .acb-marq{overflow:hidden!important;margin:0 calc(-1 * clamp(19.83px,3.5vw,33.05px))!important}
-html body#acb-design.evidence-page .acb-marq .track{display:flex!important;width:max-content!important;gap:0!important;white-space:nowrap!important;animation:acb-marquee 30s linear infinite!important;will-change:transform}
-html body#acb-design.evidence-page .acb-marq:hover .track{animation-play-state:paused!important}
+html body#acb-design.evidence-page .acb-marq .eyebrow{color:var(--brand)!important;font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;margin:0 clamp(19.83px,3.5vw,33.05px) 8px!important}
+html body#acb-design.evidence-page .acb-marq h2{margin:0 clamp(19.83px,3.5vw,33.05px) 26.44px!important}
+html body#acb-design.evidence-page .acb-marq .track{
+  display:flex!important;width:max-content!important;gap:0!important;white-space:nowrap!important;
+  animation:acb-marquee 34s linear infinite!important;will-change:transform;
+  mask-image:linear-gradient(to right,transparent,#000 46px,#000 calc(100% - 46px),transparent)!important;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 46px,#000 calc(100% - 46px),transparent)!important;
+}
 html body#acb-design.evidence-page .acb-marq .marq-group{display:flex!important;align-items:center!important;flex-shrink:0!important;gap:11.56px!important;padding:0 11.56px 0 0!important}
 html body#acb-design.evidence-page .acb-marq .marq-pill{
   display:inline-flex!important;align-items:center!important;flex-shrink:0!important;
@@ -5105,7 +5122,26 @@ html body#acb-design.evidence-page .acb-marq .marq-pill::after{content:none!impo
   html body#acb-design.evidence-page .acb-marq .marq-group[aria-hidden]{display:none!important}
 }
 @media(max-width:684px){
-  html body#acb-design.evidence-page .acb-marq-card{padding:19.83px 16.52px!important}
-  html body#acb-design.evidence-page .acb-marq{margin:0 -16.52px!important}
+  html body#acb-design.evidence-page .acb-marq{padding:19.83px 0!important}
+  html body#acb-design.evidence-page .acb-marq .eyebrow,
+  html body#acb-design.evidence-page .acb-marq h2{margin-left:16.52px!important;margin-right:16.52px!important}
   html body#acb-design.evidence-page .acb-marq .marq-pill{padding:9.29px 14.87px!important;font-size:13px!important}
+}
+
+/* Evidence page: two-column "document" spread — prose on the left,
+   a stacked stat list on the right, echoing the superhi.com catalog layout. */
+html body#acb-design.evidence-page .ev-split{
+  display:grid!important;grid-template-columns:1fr 1fr!important;gap:clamp(32px,5vw,64px)!important;align-items:start!important;
+}
+html body#acb-design.evidence-page .ev-split .eyebrow{margin:0 0 8px!important}
+html body#acb-design.evidence-page .ev-split h2{margin:0 0 16px!important}
+html body#acb-design.evidence-page .ev-stats{display:flex!important;flex-direction:column!important}
+html body#acb-design.evidence-page .ev-stat-row{padding:20px 0!important;border-top:1px solid rgba(17,17,24,.12)!important}
+html body#acb-design.evidence-page .ev-stat-row:first-child{padding-top:0!important;border-top:0!important}
+html body#acb-design.evidence-page .ev-stat-row .statnum{font-size:clamp(30px,4vw,44px)!important;color:var(--brand)!important;margin:0 0 4px!important;font-weight:400!important;line-height:1!important}
+html body#acb-design.evidence-page .ev-stat-row h3{margin:0 0 6px!important;font-size:16px!important;font-weight:600!important;color:var(--ink)!important}
+html body#acb-design.evidence-page .ev-stat-row p{margin:0!important;font-size:14.5px!important;line-height:1.5!important;color:rgba(17,17,24,.75)!important}
+html body#acb-design.evidence-page .ev-stat-row .statsrc{display:block!important;margin-top:6px!important;font-size:11.5px!important;opacity:.6!important}
+@media(max-width:774px){
+  html body#acb-design.evidence-page .ev-split{grid-template-columns:1fr!important}
 }
