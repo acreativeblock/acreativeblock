@@ -140,12 +140,12 @@
          flash before the transition begins. */
       requestAnimationFrame(function(){
         root.classList.remove('acb-preload');
-        setTimeout(function(){document.body.classList.add('acb-load-ready')},70);
+        setTimeout(function(){document.body.classList.add('acb-load-ready')},100);
       });
       setTimeout(function(){
         document.body.classList.remove('acb-load-motion','acb-load-ready');
         [header,hero,first].forEach(function(el){if(el)el.classList.remove('acb-load-item','acb-load-header','acb-load-hero','acb-load-first')});
-      },1750);
+      },2200);
     }
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupPageEntrance,{once:true});
     else setupPageEntrance();
