@@ -16,7 +16,7 @@
   if(atRoot){headerHtml=headerHtml.replace(/\.\.\//g,'');footerHtml=footerHtml.replace(/\.\.\//g,'');quickContactHtml=quickContactHtml.replace(/\.\.\//g,'');}
   if(headerHost)headerHost.innerHTML=headerHtml;
   if(footerHost){
-    var skipQuickContact=document.body.classList.contains('contact-page');
+    var skipQuickContact=document.body.classList.contains('contact-page')||document.body.classList.contains('legal-page');
     footerHost.innerHTML=skipQuickContact?footerHtml:('<div class="footer-reveal">'+quickContactHtml+footerHtml+'</div>');
     var footerBottom=footerHost.querySelector('.acb-footer .bottom');
     if(footerBottom)footerBottom.insertAdjacentHTML('beforeend','<div class="footer-socials" aria-label="Follow A Creative Block"><div class="social-icons"><a href="https://www.instagram.com/a.creative.block/" target="_blank" rel="noopener" aria-label="Instagram">'+instagram+'</a><a href="https://www.linkedin.com/company/acreativeblock/" target="_blank" rel="noopener" aria-label="LinkedIn">'+linkedin+'</a></div></div>')
