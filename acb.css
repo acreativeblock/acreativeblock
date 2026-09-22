@@ -5251,3 +5251,50 @@ html body#acb-design.individuals-page main .access-note{font-size:20px!important
 html body#acb-design#acb-design main :is(.acb-faq .acb-head,.section-head:has(+.faq-list),.bm-faq .head) > :is(.acb-eyebrow,.eyebrow){
   display:block!important;margin:0 0 16.52px!important;
 }
+
+/* The process index uses the FAQ's sticky offset, and step one starts level with it. */
+html body#acb-design#acb-design.method-page main .method-nav{top:125px!important}
+html body#acb-design#acb-design.method-page main .method-copy>.method-block:first-child{margin-top:0!important}
+
+/* Align the Evidence hero bubble with the shared content and header edge. */
+html body#acb-design#acb-design.evidence-page main .acb-hero-grid{padding-inline:8px!important}
+html body#acb-design#acb-design.evidence-page .acb-hero-img img{object-position:center center!important}
+
+/* Use Home's highlight depth and copy rhythm in the definition. */
+html body#acb-design#acb-design.evidence-page main .evidence-definition-copy p{
+  padding-right:15%!important;line-height:1.1!important;letter-spacing:var(--ls-body)!important;
+}
+html body#acb-design#acb-design.evidence-page main .evidence-definition-copy .hl{
+  background-image:linear-gradient(to bottom,transparent 8%,var(--acb-yellow) 8%,var(--acb-yellow) 92%,transparent 92%)!important;
+  box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;padding:0 .05em!important;
+}
+@media(max-width:954px){html body#acb-design#acb-design.evidence-page main .evidence-definition-copy p{padding-right:10%!important}}
+@media(max-width:684px){html body#acb-design#acb-design.evidence-page main .evidence-definition-copy p{padding-right:0!important}}
+
+/* Give the scrolling research chips room for their lower borders. */
+html body#acb-design#acb-design.evidence-page .acb-marq .marq-viewport{padding-block:4px!important}
+
+/* Make the figure and its explanation read as one unit inside each pill. */
+html body#acb-design#acb-design.evidence-page .ev-stat-block{
+  display:grid!important;grid-template-columns:clamp(100px,8vw,150px) minmax(0,1fr)!important;
+  align-items:center!important;column-gap:clamp(16px,2vw,28px)!important;
+}
+html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{
+  font-size:clamp(52px,6vw,84px)!important;line-height:.9!important;margin:0!important;
+}
+@media(max-width:684px){
+  html body#acb-design#acb-design.evidence-page .ev-stat-block{grid-template-columns:90px minmax(0,1fr)!important;column-gap:14px!important}
+  html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{font-size:clamp(44px,10vw,60px)!important}
+}
+
+/* Keep the current submenu destination visible along with its parent. */
+html body#acb-design .acb-header .acb-sub a.is-active,
+html body#acb-design .acb-header .acb-sub a[aria-current="page"]{
+  color:var(--brand)!important;background:#eef2ff!important;
+}
+@media(max-width:1180px){
+  html body#acb-design .acb-header.mobile-open .acb-sub a.is-active,
+  html body#acb-design .acb-header.mobile-open .acb-sub a[aria-current="page"]{
+    color:var(--ink)!important;background:var(--acb-yellow)!important;
+  }
+}
