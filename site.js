@@ -116,12 +116,39 @@
   (function(){var nav=document.querySelector('.legal-nav,.faqx-nav,.method-nav');if(!nav)return;var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),pairs=links.map(function(a){return{a:a,s:document.querySelector(a.getAttribute('href'))}}).filter(function(x){return x.s});if(!pairs.length)return;var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;links.forEach(function(a){a.classList.remove('is-current')});var hit=pairs.find(function(x){return x.s===entry.target});if(hit)hit.a.classList.add('is-current')})},{rootMargin:'-18% 0px -68% 0px',threshold:0});pairs.forEach(function(x){spy.observe(x.s)});if(pairs[0])pairs[0].a.classList.add('is-current')})();
   (function(){var refs=[].slice.call(document.querySelectorAll('.refpanel ol.refs>li'));if(!refs.length)return;var map={};refs.forEach(function(li,i){map[i+1]=li.textContent.replace(/\s+/g,' ').trim()});var tip;function hide(){if(tip){tip.remove();tip=null}}function wire(sup,num){var text=map[num];if(!text)return;sup.classList.add('cite-tip');sup.setAttribute('tabindex','0');function show(){hide();tip=document.createElement('span');tip.className='cite-tip-bubble';tip.textContent=num+'. '+text;document.body.appendChild(tip);var r=sup.getBoundingClientRect();var top=r.top+window.scrollY-tip.offsetHeight-10;var left=r.left+window.scrollX+r.width/2-tip.offsetWidth/2;left=Math.max(8,Math.min(left,window.scrollX+document.documentElement.clientWidth-tip.offsetWidth-8));tip.style.top=top+'px';tip.style.left=left+'px';requestAnimationFrame(function(){if(tip)tip.classList.add('is-visible')})}sup.addEventListener('mouseenter',show);sup.addEventListener('focus',show);sup.addEventListener('mouseleave',hide);sup.addEventListener('blur',hide)}[].slice.call(document.querySelectorAll('sup.cite')).forEach(function(sup){var nums=sup.textContent.split(',').map(function(n){return n.trim()}).filter(Boolean).filter(function(n){return map[n]});if(!nums.length)return;if(nums.length===1){wire(sup,nums[0]);return}var frag=document.createDocumentFragment();nums.forEach(function(n){var s=document.createElement('sup');s.className='cite';s.textContent=n;wire(s,n);frag.appendChild(s)});sup.replaceWith(frag)});document.addEventListener('scroll',hide,true)})();
   (function(){var groups=[].slice.call(document.querySelectorAll('.takeaway-blocks'));if(!groups.length)return;groups.forEach(function(group){var blocks=[].slice.call(group.querySelectorAll('.tblock'));var spy=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;var i=blocks.indexOf(entry.target);entry.target.style.transitionDelay=(Math.max(i,0)*90)+'ms';entry.target.classList.add('in-view');spy.unobserve(entry.target)})},{rootMargin:'0px 0px -10% 0px',threshold:.25});blocks.forEach(function(b){spy.observe(b)})})})();
+  /* Page entrance: navigation first, then the hero, then the opening content.
+     The short stagger borrows the calm sequencing of the SuperHi reference
+     without turning normal page navigation into a long intro. */
+  (function(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    function setupPageEntrance(){
+      var main=document.querySelector('main'),header=document.querySelector('.acb-header');
+      if(!main||!header)return;
+      var hero=main.querySelector(':scope > .acb-hero,:scope > .center-hero,:scope > .page-hero,:scope > .blog-hero,:scope > .bm-hero,:scope > .domain-hero,:scope > .sub-hero,:scope > .fam-hero,:scope > .contact-visual-hero');
+      if(!hero)hero=main.querySelector('.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero,.sub-hero,.fam-hero,.contact-visual-hero');
+      var panel=main.querySelector(':scope > .acb-main-panel'),first=panel&&panel.querySelector(':scope > section');
+      if(!first){
+        first=[].slice.call(main.querySelectorAll(':scope > section')).find(function(section){return section!==hero&&!section.matches('.acb-marq')});
+      }
+      document.body.classList.add('acb-load-motion');
+      header.classList.add('acb-load-item','acb-load-header');
+      if(hero)hero.classList.add('acb-load-item','acb-load-hero');
+      if(first)first.classList.add('acb-load-item','acb-load-first');
+      requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('acb-load-ready')})});
+      setTimeout(function(){
+        document.body.classList.remove('acb-load-motion','acb-load-ready');
+        [header,hero,first].forEach(function(el){if(el)el.classList.remove('acb-load-item','acb-load-header','acb-load-hero','acb-load-first')});
+      },1250);
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupPageEntrance,{once:true});
+    else setupPageEntrance();
+  })();
   /* A quiet, shared reveal system. The takeaway cards keep their more
      expressive drop; elsewhere we use a small rise and restrained stagger. */
   (function(){
     if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     function setupSoftMotion(){
-      var items=[],seen=new WeakSet(),skip='.acb-header,.acb-hero,.page-hero,.center-hero,.hero,.cookie-banner,.refpanel,.legal-nav,.faqx-nav,.method-nav,.takeaway-blocks';
+      var items=[],seen=new WeakSet(),skip='.acb-header,.acb-hero,.page-hero,.center-hero,.hero,.cookie-banner,.refpanel,.legal-nav,.faqx-nav,.method-nav,.takeaway-blocks,.acb-load-item';
       function add(el,delay){
         if(!el||seen.has(el)||el.matches(skip)||el.closest(skip))return;
         seen.add(el);el.classList.add('acb-soft-reveal');
