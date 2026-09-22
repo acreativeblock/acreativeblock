@@ -5725,3 +5725,26 @@ html body#acb-design button:disabled,
 html body#acb-design button:disabled *{
   cursor:not-allowed!important;
 }
+
+/* Lamé-curve corners. The existing radius remains the fallback for browsers
+   without CSS corner-shape; supporting browsers render the same geometry as a
+   superellipse instead of a quarter-circle. */
+@supports (corner-shape:superellipse(2)){
+  html body#acb-design,
+  html body#acb-design *,
+  html body#acb-design *::before,
+  html body#acb-design *::after{
+    corner-shape:superellipse(2);
+  }
+
+  /* These elements are intentionally circular rather than card surfaces. */
+  html body#acb-design :is(
+    input[type="radio"],
+    input[type="checkbox"],
+    .blob,
+    .leave .card .n,
+    .acb-footer .footer-socials a
+  ){
+    corner-shape:round;
+  }
+}
