@@ -508,7 +508,7 @@ html body#acb-design .acb-logo .acb-logo-mount{height:38px!important}
    Custom-layout pages keep their structure (they get typography/radius only).
    ========================================================================== */
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page){background:#f6f6f6!important}
-html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.bmap):not(.bm-hero):not(.bm-faq):not(.evidence-band):not(.arc-sec):not(.legal-section){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
+html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.bmap):not(.bm-hero):not(.bm-faq):not(.evidence-band):not(.arc-sec):not(.legal-section):not(.acb-marq):not(.method-block){margin:var(--sp-gap) 0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main :is(.acb-hero,.page-hero){margin:0!important;padding:0!important;border:0!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.talks-section):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.acb-marq):not(.method-block){background:transparent!important;background-image:none!important}
 html body#acb-design:is(.evidence-page,.factors-page,.about-page,.individuals-page,.organisations-page,.faq-page,.legal-page,.blocks-page,.method-page,.resources-page,.article-page) main section:not(.acb-hero):not(.page-hero):not(.acb-close-sub):not(.close):not(.talks-section):not(.dark):not(.blue):not(.yellow):not(.pink):not(.ink):not(.tint):not(.legal-section):not(.bmap):not(.arc-sec):not(.evidence-band):not(.bm-hypo) > .wrap:not(.raw){
@@ -964,6 +964,12 @@ html body#acb-design.contact-page main section.contact-unified{background:transp
 @media(max-width:504px){html body#acb-design.internal-page main section{width:100%!important;margin-left:0!important;margin-right:0!important}}
 html body#acb-design.method-page .method-block:first-child .tcard h3{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;font-weight: 400!important}
 html body#acb-design.method-page .method-block:first-child .tcard p{font-size:clamp(13.5px,1.4vw,15.5px)!important;line-height:1.4!important}
+/* The "Mostly fixed" eyebrow sits on the tcol's own indigo background;
+   a sitewide rule forces every .eyebrow to indigo text regardless of
+   context, which made this one unreadable. Restore pages.css's original
+   per-column contrast (white on indigo, ink on yellow) at higher specificity. */
+html body#acb-design.method-page .terrain-cols .tcol>.eyebrow{color:#fff!important}
+html body#acb-design.method-page .terrain-cols .tcol.movable>.eyebrow{color:var(--ink)!important}
 html body#acb-design :is(.faq-a>p,.offer-body>div){padding-bottom:0!important;transition:padding-bottom .4s cubic-bezier(.4,0,.2,1)}
 html body#acb-design :is(.faq-item,.offer-row).open :is(.faq-a>p,.offer-body>div){padding-bottom:16.2px!important}
 
@@ -1164,7 +1170,7 @@ html body#acb-design.method-page .method-nav{
   position:sticky!important;top:96px!important;align-self:start!important;
   counter-reset:method-step;
   display:flex!important;flex-direction:column!important;gap:4px!important;
-  padding:8px!important;background:transparent!important;box-shadow:none!important;
+  padding:var(--sp-card)!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
 }
 html body#acb-design.method-page .method-nav a{
   counter-increment:method-step;
@@ -2184,8 +2190,8 @@ html body#acb-design.home-page .acb-say p.scrolltext{
    after the first card in a content panel, so every hero-to-first-card gap
    keeps its established size. */
 :root{--sp-gap-wide:clamp(54px,13vw,92px)}
-html body#acb-design main > .acb-main-panel > section + section,
-html body#acb-design main > section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.blog-hero):not(.bm-hero):not(.domain-hero) + section{
+html body#acb-design#acb-design main > .acb-main-panel > section + section,
+html body#acb-design#acb-design main > section:not(.acb-hero):not(.center-hero):not(.page-hero):not(.blog-hero):not(.bm-hero):not(.domain-hero) + section{
   margin-top:var(--sp-gap-wide)!important;
 }
 
@@ -2262,11 +2268,11 @@ html body#acb-design:is(.individuals-page,.organisations-page) .takeaways>.wrap{
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy{
   padding:var(--sp-card)!important;max-width:none!important;
-  background:#eef1ff!important;border-radius:var(--radius-card)!important;
-  display:flex!important;flex-direction:column!important;justify-content:center!important;
+  background:#fff!important;border-radius:var(--radius-card)!important;
+  display:flex!important;flex-direction:column!important;justify-content:flex-start!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy h2{
-  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;margin:12px 0 0!important;max-width:14ch!important;color:var(--ink)!important;
+  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;margin:12px 0 0!important;max-width:none!important;width:100%!important;color:var(--ink)!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{
   display:grid!important;gap:18px!important;margin:0!important;padding:0!important;
@@ -2280,7 +2286,9 @@ html body#acb-design:is(.individuals-page,.organisations-page) .tblock{
    single-ID rule even though .tblock p matches none of those branches. */
 html body#acb-design#acb-design:is(.individuals-page,.organisations-page) .tblock p{
   margin:0!important;font-size:clamp(23px,3vw,32px)!important;line-height:1.3!important;font-weight:400!important;letter-spacing:-.01em!important;
+  color:inherit!important;
 }
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page) .tblock sup.cite{color:inherit!important;opacity:.75!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c1{background:#4f46e5!important;color:#fff!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c2{background:var(--acb-yellow)!important;color:var(--ink)!important;margin-left:clamp(0px,4vw,32px)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .tblock.c3{background:#f6b3cc!important;color:var(--ink)!important}
@@ -3521,8 +3529,8 @@ html body#acb-design .acb-header .acb-utility-pill{
 
 /* Start the first content card after a hero on the same rhythm as every
    following card. Home has its marquee between those two elements. */
-html body#acb-design main > :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero) + .acb-main-panel > section:first-child,
-html body#acb-design.home-page main > .acb-main-panel > section:first-child{
+html body#acb-design#acb-design main > :is(.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero) + .acb-main-panel > section:first-child,
+html body#acb-design#acb-design.home-page main > .acb-main-panel > section:first-child{
   margin-top:var(--sp-gap-wide)!important;
 }
 
@@ -5044,39 +5052,44 @@ html body#acb-design.evidence-page .ev-stat-block.sc1{background:#4f46e5!importa
 html body#acb-design.evidence-page .ev-stat-block.sc2{background:var(--acb-yellow)!important;color:var(--ink)!important;transform:rotate(.9deg)!important;margin-left:clamp(0px,3vw,20px)!important}
 html body#acb-design.evidence-page .ev-stat-block.sc3{background:#f6b3cc!important;color:var(--ink)!important;transform:rotate(-.7deg)!important}
 html body#acb-design.evidence-page .ev-stat-block .statnum{font-size:clamp(40px,5.5vw,60px)!important;margin:0 0 6px!important;font-weight:400!important;line-height:1!important;color:inherit!important;letter-spacing:normal!important}
-html body#acb-design.evidence-page .ev-stat-block p{margin:0!important;font-size:clamp(16px,1.8vw,19px)!important;line-height:1.4!important;font-weight:400!important}
+html body#acb-design.evidence-page .ev-stat-block p{margin:0!important;font-size:clamp(16px,1.8vw,19px)!important;line-height:1.4!important;font-weight:400!important;color:inherit!important}
+html body#acb-design.evidence-page .ev-stat-block sup.cite{color:inherit!important;opacity:.75!important}
 @media(max-width:774px){
   html body#acb-design.evidence-page .ev-split{grid-template-columns:1fr!important}
   html body#acb-design.evidence-page .ev-stat-block{transform:none!important;margin-left:0!important}
 }
 
 /* Evidence page: "Why it matters" — vertical marquee of the 7+1 domains,
-   standing in for the flush section's usual portrait image. Same seamless
-   two-copy loop technique as the home page's horizontal ticker, rotated. */
+   standing in for the flush section's usual portrait image. Same technique
+   AND same look as the home page's horizontal ticker (plain coloured text,
+   no pill boxes, a small dot between entries) — just rotated 90°. */
 @keyframes acb-marquee-v{to{transform:translateY(-50%)}}
 html body#acb-design.evidence-page .flush-vmarq{
   overflow:hidden!important;position:relative!important;align-self:stretch!important;height:100%!important;min-height:340px!important;
-  background:#fff!important;border-radius:var(--radius-card)!important;display:flex!important;align-items:center!important;
+  background:#fff!important;border-radius:var(--radius-card)!important;display:flex!important;align-items:center!important;justify-content:center!important;
   mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)!important;
   -webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)!important;
 }
 html body#acb-design.evidence-page .flush.reverse .flush-vmarq{order:-1!important}
 html body#acb-design.evidence-page .flush-vmarq .vtrack{
-  display:flex!important;flex-direction:column!important;width:100%!important;gap:14px!important;padding:14px 20px!important;
-  animation:acb-marquee-v 22s linear infinite!important;will-change:transform;
+  display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;gap:0!important;
+  animation:acb-marquee-v 26s linear infinite!important;will-change:transform;
 }
-html body#acb-design.evidence-page .flush-vmarq .vmarq-group{display:flex!important;flex-direction:column!important;gap:14px!important;flex-shrink:0!important}
+html body#acb-design.evidence-page .flush-vmarq .vmarq-group{display:flex!important;flex-direction:column!important;align-items:center!important;gap:0!important;flex-shrink:0!important}
 html body#acb-design.evidence-page .flush-vmarq .vmarq-pill{
-  display:block!important;background:var(--c,#4f46e5)!important;color:var(--ink)!important;
-  border-radius:var(--radius-card)!important;padding:16px 22px!important;
-  font-size:18px!important;font-weight:600!important;text-align:center!important;
+  display:block!important;background:none!important;color:var(--c,#4f46e5)!important;
+  padding:10px 0!important;font-size:19px!important;font-weight:600!important;text-align:center!important;white-space:nowrap!important;
+}
+html body#acb-design.evidence-page .flush-vmarq .vmarq-pill::after{
+  content:"•"!important;display:block!important;margin-top:10px!important;color:#c7c5d6!important;font-weight:400!important;
 }
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .flush-vmarq .vtrack{animation:none!important}}
 @media(max-width:774px){html body#acb-design.evidence-page .flush-vmarq{min-height:220px!important}}
 
 /* Citation tooltip: a real visible popup with the reference text (site.js
    builds it on hover/focus), not the native browser title box. */
-html body#acb-design sup.cite.cite-tip{cursor:pointer!important;text-decoration:underline dotted!important;text-underline-offset:2px!important;outline:none!important}
+html body#acb-design sup.cite.cite-tip{cursor:pointer!important;text-decoration:underline dotted!important;text-underline-offset:2px!important;outline:none!important;margin-right:.45em!important}
+html body#acb-design sup.cite.cite-tip:last-of-type{margin-right:0!important}
 html body .cite-tip-bubble{
   position:absolute!important;z-index:9999!important;max-width:min(320px,80vw)!important;
   background:var(--ink,#111118)!important;color:#fff!important;
@@ -5087,35 +5100,42 @@ html body .cite-tip-bubble{
 }
 html body .cite-tip-bubble.is-visible{opacity:1!important;transform:translateY(0)!important}
 
-/* Evidence page hero: the same big-image, split-grid hero as 4i/4o, with the
-   research definition standing in as the headline instead of a rotating word. */
+/* Evidence page hero: the same full-bleed-image hero as 4i/4o/home — the
+   image fills the whole hero band (absolutely positioned, behind
+   everything), and the copy sits in a white rounded bubble overlaid on
+   top of it, bottom-left. The research definition stands in as the
+   headline instead of a rotating word. */
 html body#acb-design.evidence-page .acb-hero{padding:0!important}
 html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;padding:0!important}
 html body#acb-design.evidence-page .acb-hero-grid{
-  display:grid!important;grid-template-columns:1fr 1.05fr!important;align-items:stretch!important;
-  min-height:clamp(397px,74vh,628px)!important;
+  position:relative!important;display:grid!important;grid-template-columns:1fr!important;
+  min-height:clamp(423px,74vh,778px)!important;
+  padding:33px calc((100vw - var(--wrap))/2 + var(--pad))!important;
+  align-items:end!important;justify-items:start!important;
+  overflow:hidden!important;isolation:isolate!important;
 }
 html body#acb-design.evidence-page .audience-hero-stack{
-  display:flex!important;flex-direction:column!important;justify-content:center!important;
-  padding:clamp(33px,7vh,74px) var(--pad)!important;
-  padding-left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)))!important;
+  position:relative!important;z-index:1!important;width:min(654px,94vw)!important;max-width:min(654px,94vw)!important;
 }
-html body#acb-design.evidence-page .audience-hero-stack .mono{
+html body#acb-design.evidence-page .evidence-hero-bubble{
+  background:#fff!important;border-radius:32px!important;padding:clamp(20px,2.6vw,32px)!important;
+}
+html body#acb-design.evidence-page .evidence-hero-bubble .mono{
   color:var(--brand)!important;background:none!important;display:block!important;
   margin:0 0 clamp(13px,2vw,21px)!important;font-size:var(--fs-label)!important;
   letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;font-weight:400!important;
 }
 html body#acb-design.evidence-page .evidence-hero-def{
   font-family:"Inter",sans-serif!important;font-weight:400!important;
-  font-size:clamp(24px,3.6vw,46px)!important;line-height:1.16!important;letter-spacing:-.025em!important;
-  color:var(--ink)!important;margin:0!important;max-width:22ch!important;
+  font-size:clamp(20px,2.4vw,30px)!important;line-height:1.22!important;letter-spacing:-.02em!important;
+  color:var(--ink)!important;margin:0!important;max-width:none!important;
 }
 html body#acb-design.evidence-page .evidence-hero-def .hl{color:var(--ink)!important}
-html body#acb-design.evidence-page .acb-hero-img{overflow:hidden!important;background:var(--tint)!important;min-height:100%!important}
-html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;min-height:100%!important;object-fit:cover!important;display:block!important}
+html body#acb-design.evidence-page .acb-hero-img{
+  position:absolute!important;inset:0!important;z-index:-1!important;margin:0!important;
+  width:100%!important;height:100%!important;min-height:0!important;border-radius:0!important;
+}
+html body#acb-design.evidence-page .acb-hero-img img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
 @media(max-width:774px){
-  html body#acb-design.evidence-page .acb-hero-grid{grid-template-columns:1fr!important;min-height:0!important}
-  html body#acb-design.evidence-page .acb-hero-img{order:2!important;min-height:44vh!important}
-  html body#acb-design.evidence-page .audience-hero-stack{padding:clamp(38px,11vw,66px) var(--pad)!important}
-  html body#acb-design.evidence-page .evidence-hero-def{max-width:none!important}
+  html body#acb-design.evidence-page .acb-hero-grid{padding:13px!important;min-height:561px!important}
 }
