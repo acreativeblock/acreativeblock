@@ -17,7 +17,7 @@
   --sp-card:clamp(18px,3vw,27px);               /* internal padding of a white/colour card */
   --sp-gap:clamp(28.8px,7vw,49.57px);             /* vertical gap between stacked sections */
   --radius-card:2rem;                          /* card corner radius */
-  --shadow-card:0 1.66px 3.3px rgba(161,158,168,.1); /* card elevation, matches the header's own shadow */
+  --shadow-card:0 4px 12px rgba(17,17,24,.12); /* soft, visible elevation shared by every card surface */
 
   /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
      letter-spacing — same tightness, only the size differs. Body copy is
@@ -5381,6 +5381,30 @@ html body#acb-design#acb-design.evidence-page .organise-map .hl{color:var(--ink)
 /* The process cards connect without the extra vertical gutters. */
 html body#acb-design#acb-design.method-page main .method-copy{gap:0!important}
 html body#acb-design#acb-design.method-page main .method-block{margin-top:0!important;margin-bottom:0!important}
+
+/* Surface elevation lock: custom/composite sections opt out of the generic
+   section wrapper, so their visible cards receive the same shared shadow. */
+html body#acb-design#acb-design :is(
+  .takeaway-copy,
+  .tblock,
+  .plan-card,
+  .work-card,
+  .journal-card,
+  .blog-card,
+  .ev-copy-card,
+  .ev-stats-card,
+  .organise-card,
+  .method-block,
+  .faq-item,
+  .offer-row,
+  .contact-form-wrap,
+  .contact-side
+){box-shadow:var(--shadow-card)!important}
+html body#acb-design#acb-design.home-page main .acb-journal>.wrap,
+html body#acb-design#acb-design.blocks-page main .evidence-band>.wrap,
+html body#acb-design#acb-design.legal-page main .legal-section{
+  box-shadow:var(--shadow-card)!important;
+}
 
 /* Calm site-wide motion. Elements move only a few pixels, reveal once and
    retain their own hover transforms through the independent translate axis. */
