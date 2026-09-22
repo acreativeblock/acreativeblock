@@ -624,33 +624,6 @@ html body#acb-design.home-page .social-handle{
 html body#acb-design.home-page .social-handle:hover{color:var(--ink)!important;opacity:.7}
 html body#acb-design.home-page .pill.social-follow{display:none!important}
 
-/* How we work — CRAFT method: five numbered steps in a row, connected by a
-   thin line, each in the same rounded-card language as the rest of the site. */
-html body#acb-design.method-page .craft-steps{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:13.22px;position:relative;
-}
-html body#acb-design.method-page .craft-step{
-  position:relative;background:#fff;border-radius:var(--radius-card);padding:21.48px 16.52px;
-  display:flex;flex-direction:column;gap:8.26px;
-}
-html body#acb-design.method-page .craft-step:not(:last-child)::after{
-  content:"";position:absolute;top:31.39px;left:100%;width:13.22px;height:1.66px;
-  background:#e0deee;z-index:1;
-}
-html body#acb-design.method-page .craft-num{
-  display:flex;align-items:center;justify-content:center;width:33.05px;height:33.05px;
-  border-radius:var(--radius-card);background:#4f46e5;color:#fff;font-weight: 400;font-size:14.05px;
-}
-html body#acb-design.method-page .craft-step h3{font-size:var(--fs-copy-lg);font-weight: 400;letter-spacing:var(--ls-copy-lg);margin:0;color:var(--ink);line-height:var(--lh-copy)!important}
-html body#acb-design.method-page .craft-step p{font-size:var(--fs-small);letter-spacing:var(--ls-small);line-height:var(--lh-copy);color:var(--ink-soft);margin:0}
-@media(max-width:900px){
-  html body#acb-design.method-page .craft-steps{grid-template-columns:1fr 1fr}
-  html body#acb-design.method-page .craft-step:nth-child(2)::after,html body#acb-design.method-page .craft-step:nth-child(4)::after{display:none}
-}
-@media(max-width:558px){
-  html body#acb-design.method-page .craft-steps{grid-template-columns:1fr}
-  html body#acb-design.method-page .craft-step::after{display:none!important}
-}
 
 /* Block map cards: Fairgrounds-locations vibe — photo card, white body,
    bold black title, color used only as a small hint (the label text).
@@ -829,10 +802,6 @@ html body#acb-design.organisations-page .talks-section :is(h2,p,.note){color:#ff
 
 html body#acb-design.method-page .terrain-cols{grid-template-columns:1fr 1fr!important;gap:12.6px!important}
 html body#acb-design.method-page .tcard{padding:16.2px!important}
-html body#acb-design.method-page .craft-steps{grid-template-columns:1fr!important;gap:9px!important}
-html body#acb-design.method-page .craft-step{display:grid!important;grid-template-columns:auto 1fr;align-items:center;padding:14.4px!important}
-html body#acb-design.method-page .craft-step p{grid-column:2}
-html body#acb-design.method-page .craft-step::after{display:none!important}
 
 /* Block map */
 html body#acb-design.blocks-page :is(.bmap,.bm-faq,.evidence-band){padding:0!important;background:transparent!important}
@@ -1154,19 +1123,6 @@ html body#acb-design.blocks-page main .acb-main-panel>section.evidence-band{back
 /* References bars fill the same card frame as every neighbouring section. */
 html body#acb-design.internal-page .acb-main-panel>.refbar-wrap{width:100%!important;margin:var(--sp-gap) 0 0!important}
 
-/* How we work: separate raised steps joined into one visible journey. */
-html body#acb-design.method-page .method-journey{position:relative!important;display:grid!important;grid-template-columns:minmax(145px,170px) minmax(0,1fr)!important;gap:0 var(--sp-card)!important;padding:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
-html body#acb-design.method-page .journey-nav{grid-column:1!important;padding:var(--sp-card) 0!important}
-html body#acb-design.method-page .journey-nav-item .jn-label{font-size:var(--fs-body)!important;line-height:1.15!important}
-html body#acb-design.method-page .journey-step{position:relative!important;grid-column:2!important;margin:0 0 34px!important;padding:0!important;border:0!important;scroll-margin-top:120px}
-html body#acb-design.method-page .journey-step:last-child{margin-bottom:0!important}
-html body#acb-design.method-page .journey-step>.wrap{position:relative!important;padding:var(--sp-card)!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:0 12px 34px rgba(7,19,33,.12)!important;border-top:6px solid var(--step-color,#4f46e5)!important}
-html body#acb-design.method-page .journey-step:nth-of-type(1){--step-color:#F6D65D}
-html body#acb-design.method-page .journey-step:nth-of-type(2){--step-color:#ef9f5e}
-html body#acb-design.method-page .journey-step:nth-of-type(3){--step-color:#e35d54}
-html body#acb-design.method-page .journey-step:nth-of-type(4){--step-color:#4f46e5}
-html body#acb-design.method-page .journey-step:not(:last-child)::after{content:"";position:absolute;z-index:2;left:34px;top:100%;width:3px;height:34px;background:linear-gradient(var(--step-color),#4f46e5);border-radius:3px}
-html body#acb-design.method-page .journey-step-number{display:block!important;margin:0 0 clamp(24px,4vw,44px)!important;font-size:clamp(58px,8vw,104px)!important;line-height:.76!important;letter-spacing:-.07em!important;color:var(--step-color)!important;font-weight: 400!important}
 
 /* The image meets the copy with square inner corners; only the card edge rounds. */
 html body#acb-design.factors-page .flush.reverse .flush-img,
@@ -2630,6 +2586,15 @@ html body#acb-design.method-page .journey-step .section-head p{grid-column:2!imp
   html body#acb-design.method-page .journey-step-number{grid-row:auto!important;margin:0 0 10px!important}
   html body#acb-design.method-page .journey-step .section-head p{grid-column:auto!important}
 }
+
+/* How we work, step 1 (Clarify): two labelled sub-sections — terrain cards,
+   then the domain-map CTA — inside the same journey-step card. */
+html body#acb-design.method-page .method-sub{
+  margin:clamp(28px,4vw,42px) 0 14px!important;font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;
+  text-transform:uppercase!important;color:var(--brand)!important;font-weight:600!important;
+}
+html body#acb-design.method-page .terrain-cols + .method-sub{margin-top:clamp(28px,4vw,42px)!important}
+html body#acb-design.method-page .method-sub-copy{margin:0 0 18px!important;color:var(--ink-soft)!important;font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important;max-width:62ch!important}
 
 
 /* Audience hero: text-only layout, no lower CTA container. */
