@@ -5064,7 +5064,6 @@ html body#acb-design.evidence-page .ev-stat-block sup.cite{color:inherit!importa
    bobbing on its own cycle so the whole thing feels adrift rather than
    mechanically scrolling. */
 @keyframes wm-float{0%,100%{transform:translate(var(--tx,0),0) rotate(var(--rot,0deg))}50%{transform:translate(var(--tx,0),-14px) rotate(var(--rot,0deg))}}
-html body#acb-design#acb-design.evidence-page.evidence-page .why-matters>.wrap{background:transparent!important;box-shadow:none!important;padding:0!important}
 html body#acb-design.evidence-page .why-matters-stage{
   position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
   min-height:clamp(420px,58vw,620px)!important;padding:clamp(24px,4vw,48px)!important;
@@ -5085,14 +5084,14 @@ html body#acb-design.evidence-page .wm-pill{
   box-shadow:0 8px 20px rgba(7,19,33,.1)!important;
   animation:wm-float 7s ease-in-out infinite!important;
 }
-html body#acb-design.evidence-page .wm-p1{top:4%!important;left:4%!important;--rot:-6deg;animation-delay:-.6s!important}
-html body#acb-design.evidence-page .wm-p2{top:10%!important;right:5%!important;--rot:5deg;animation-delay:-2.4s!important}
-html body#acb-design.evidence-page .wm-p3{top:44%!important;left:0%!important;--rot:-4deg;animation-delay:-4.1s!important}
-html body#acb-design.evidence-page .wm-p4{top:40%!important;right:1%!important;--rot:7deg;animation-delay:-1.3s!important}
-html body#acb-design.evidence-page .wm-p5{bottom:22%!important;left:6%!important;--rot:4deg;animation-delay:-5.5s!important}
-html body#acb-design.evidence-page .wm-p6{bottom:26%!important;right:7%!important;--rot:-5deg;animation-delay:-3.2s!important}
-html body#acb-design.evidence-page .wm-p7{bottom:4%!important;left:26%!important;--rot:-3deg;animation-delay:-6.4s!important}
-html body#acb-design.evidence-page .wm-p8{bottom:3%!important;right:24%!important;--rot:6deg;animation-delay:-.2s!important}
+html body#acb-design.evidence-page .wm-p1{top:2%!important;left:14%!important;--rot:-9deg;animation-delay:-.6s!important;animation-duration:7.4s!important}
+html body#acb-design.evidence-page .wm-p2{top:18%!important;right:4%!important;--rot:3deg;animation-delay:-3.7s!important;animation-duration:6.6s!important}
+html body#acb-design.evidence-page .wm-p3{top:52%!important;left:1%!important;--rot:7deg;animation-delay:-5.2s!important;animation-duration:8.1s!important}
+html body#acb-design.evidence-page .wm-p4{top:26%!important;right:17%!important;--rot:-8deg;animation-delay:-1.1s!important;animation-duration:7s!important}
+html body#acb-design.evidence-page .wm-p5{bottom:30%!important;left:19%!important;--rot:-4deg;animation-delay:-6.3s!important;animation-duration:6.2s!important}
+html body#acb-design.evidence-page .wm-p6{bottom:9%!important;right:1%!important;--rot:6deg;animation-delay:-2.8s!important;animation-duration:7.8s!important}
+html body#acb-design.evidence-page .wm-p7{bottom:1%!important;left:38%!important;--rot:9deg;animation-delay:-4.6s!important;animation-duration:6.9s!important}
+html body#acb-design.evidence-page .wm-p8{bottom:39%!important;right:27%!important;--rot:-6deg;animation-delay:-.3s!important;animation-duration:7.3s!important}
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .wm-pill{animation:none!important}}
 @media(max-width:900px){
   html body#acb-design.evidence-page .why-matters-pills{display:none!important}
@@ -5120,8 +5119,11 @@ html body .cite-tip-bubble.is-visible{opacity:1!important;transform:translateY(0
    everything), and the copy sits in a white rounded bubble overlaid on
    top of it, bottom-left. The research definition stands in as the
    headline instead of a rotating word. */
-html body#acb-design.evidence-page .acb-hero{padding:0!important}
-html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;padding:0!important}
+html body#acb-design.evidence-page main section.acb-hero{
+  width:100vw!important;max-width:100vw!important;margin:0 0 var(--sp-gap-wide) calc(50% - 50vw)!important;
+  padding:0!important;background:transparent!important;
+}
+html body#acb-design.evidence-page .acb-hero>.wrap{max-width:none!important;width:100%!important;padding:0!important}
 html body#acb-design.evidence-page .acb-hero-grid{
   position:relative!important;display:grid!important;grid-template-columns:1fr!important;
   min-height:clamp(423px,74vh,778px)!important;
@@ -5131,7 +5133,7 @@ html body#acb-design.evidence-page .acb-hero-grid{
 }
 html body#acb-design.evidence-page .audience-hero-stack{
   position:relative!important;z-index:1!important;width:min(654px,94vw)!important;max-width:min(654px,94vw)!important;
-  padding:33px calc((100vw - var(--wrap))/2 + var(--pad))!important;
+  padding:33px calc((100vw - var(--site-width,var(--wrap)))/2)!important;
   box-sizing:content-box!important;
 }
 html body#acb-design.evidence-page .evidence-hero-bubble{
