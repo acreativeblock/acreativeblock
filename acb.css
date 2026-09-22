@@ -5655,3 +5655,73 @@ html body#acb-design#acb-design.blocks-page .bmcard:is(:hover,:focus-visible) .b
     opacity:1!important;translate:none!important;transition:none!important;
   }
 }
+
+/* Keep the interaction cursor stable across the whole clickable surface.
+   Without the descendant and generated-content rules, the cursor briefly
+   returned to the default arrow when it crossed text, icons or arrow layers. */
+html body#acb-design :is(
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  .faq-q,
+  .offer-toggle,
+  .work-card,
+  .journal-card,
+  .bmcard,
+  .brow2,
+  .refbar,
+  .refbar-btn,
+  .map-test-inline
+),
+html body#acb-design :is(
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  .faq-q,
+  .offer-toggle,
+  .work-card,
+  .journal-card,
+  .bmcard,
+  .brow2,
+  .refbar,
+  .refbar-btn,
+  .map-test-inline
+) *,
+html body#acb-design :is(
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  .faq-q,
+  .offer-toggle,
+  .work-card,
+  .journal-card,
+  .bmcard,
+  .brow2,
+  .refbar,
+  .refbar-btn,
+  .map-test-inline
+)::before,
+html body#acb-design :is(
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  .faq-q,
+  .offer-toggle,
+  .work-card,
+  .journal-card,
+  .bmcard,
+  .brow2,
+  .refbar,
+  .refbar-btn,
+  .map-test-inline
+)::after{
+  cursor:pointer!important;
+}
+html body#acb-design button:disabled,
+html body#acb-design button:disabled *{
+  cursor:not-allowed!important;
+}
