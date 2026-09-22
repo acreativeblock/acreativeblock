@@ -5622,8 +5622,14 @@ html body#acb-design#acb-design.blocks-page .bmcard-arr{
 }
 /* Carousel and map controls use an outlined, two-stroke arrowhead like the
    Get in touch arrow, instead of the font glyph's filled triangle. */
-html body#acb-design#acb-design.home-page .journal-control,
-html body#acb-design#acb-design.blocks-page .bmcard-arr{position:relative!important;font-size:0!important}
+html body#acb-design#acb-design.home-page .journal-control{
+  position:relative!important;
+  font-size:0!important;
+}
+html body#acb-design#acb-design.blocks-page .bmcard-arr{
+  position:absolute!important;
+  font-size:0!important;
+}
 html body#acb-design#acb-design.home-page .journal-control::before,
 html body#acb-design#acb-design.blocks-page .bmcard-arr::before{
   content:""!important;position:absolute!important;left:50%!important;top:50%!important;
