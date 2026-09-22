@@ -5373,7 +5373,7 @@ html body#acb-design#acb-design.evidence-page .evidence-hero-def{letter-spacing:
 html body#acb-design#acb-design.evidence-page main .evidence-definition-copy p{padding-right:0!important;text-wrap:balance!important}
 html body#acb-design#acb-design.evidence-page main .evidence-organise p{max-width:100%!important;text-wrap:balance!important}
 html body#acb-design#acb-design.evidence-page .ev-copy-card .hl{
-  background-image:linear-gradient(to bottom,transparent 55%,var(--acb-yellow) 55%,var(--acb-yellow) 92%,transparent 92%)!important;
+  background-image:none!important;background-color:var(--acb-yellow)!important;
   color:inherit!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;
 }
 html body#acb-design#acb-design.evidence-page .ev-stat-block{grid-template-columns:minmax(120px,auto) minmax(0,1fr)!important;column-gap:clamp(16px,2vw,28px)!important}
