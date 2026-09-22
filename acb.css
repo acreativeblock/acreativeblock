@@ -1280,7 +1280,6 @@ html body#acb-design.internal-page.contact-page:not(.individuals-page):not(.orga
   }
 }
 
-
 /* Use the Evidence domain pills as the shared visual language for the 7+1
    labels on Home and on every Block Map card. */
 html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab,
@@ -6041,5 +6040,41 @@ main .section > .wrap:has(> .plan-grid) > h2.big{
   }
   html body#acb-design#acb-design .footer-reveal .acb-quick-contact .qc-media{
     display:none!important;
+  }
+}
+
+/* Evidence 7+1 card: on phones the copy leads and all eight domain pills form
+   one tidy grid beneath it. Pills stay centred, regular-weight and single-line. */
+html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
+  font-weight:400!important;
+  text-align:center!important;
+  justify-content:center!important;
+  animation:none!important;
+}
+@media(max-width:600px){
+  html body#acb-design#acb-design.evidence-page .why-matters-stage{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:auto!important;
+    align-items:stretch!important;
+    gap:12px!important;
+  }
+  html body#acb-design#acb-design.evidence-page .why-matters-stage .why-matters-copy{
+    grid-column:1 / -1!important;
+    grid-row:1!important;
+    width:100%!important;
+    max-width:none!important;
+    margin-bottom:8px!important;
+  }
+  html body#acb-design#acb-design.evidence-page .why-matters-stage .wm-pill{
+    grid-column:auto!important;
+    grid-row:auto!important;
+    align-self:stretch!important;
+    justify-self:stretch!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+    white-space:nowrap!important;
+    font-size:clamp(10px,2.8vw,12px)!important;
   }
 }
