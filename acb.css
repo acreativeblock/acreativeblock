@@ -4377,7 +4377,6 @@ html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current){
   transform:translateX(4px)!important;
 }
 html body#acb-design :is(.legal-nav,.faqx-nav) a:is(:hover,.is-current)::after{transform:scaleX(1)!important}
-html body#acb-design.faq-page,
 html body#acb-design.faq-page main,
 html body#acb-design.faq-page main>section:not(.page-hero):not(.acb-close-sub),
 html body#acb-design.faq-page .faqx,
