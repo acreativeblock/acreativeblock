@@ -5174,3 +5174,42 @@ html body#acb-design.evidence-page .why-matters-copy{
   html body#acb-design.evidence-page .why-matters-copy{grid-row:3!important}
 }
 @media(prefers-reduced-motion:reduce){html body#acb-design.evidence-page .wm-pill{animation:none!important}}
+
+/* Evidence: an unused portrait from the original block map, cropped to keep
+   the face visible beside the hero copy. */
+html body#acb-design.evidence-page .acb-hero-img img{object-position:center 34%!important}
+@media(max-width:774px){html body#acb-design.evidence-page .acb-hero-img img{object-position:center 38%!important}}
+
+/* One explanation of the underlying causes and their repeating effect. */
+html body#acb-design.evidence-page .evidence-cause>.wrap{background:var(--acb-yellow)!important}
+html body#acb-design.evidence-page .evidence-cause .eyebrow{margin:0 0 16px!important}
+html body#acb-design.evidence-page .evidence-cause h2{max-width:22ch!important;margin:0 0 20px!important}
+html body#acb-design.evidence-page .evidence-cause-lead{max-width:78ch!important;margin:0 0 clamp(36px,4vw,56px)!important;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
+html body#acb-design.evidence-page .evidence-cycle-track{list-style:none!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(40px,5vw,72px)!important;margin:0!important;padding:0!important}
+html body#acb-design.evidence-page .evidence-cycle-step{position:relative!important;min-width:0!important;padding:clamp(24px,3vw,36px)!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important}
+html body#acb-design.evidence-page .evidence-cycle-step:nth-child(2){background:#e8f2ff!important}
+html body#acb-design.evidence-page .evidence-cycle-step:nth-child(3){background:#f9e5ed!important}
+html body#acb-design.evidence-page .evidence-cycle-num{display:block!important;margin:0 0 18px!important;color:var(--brand)!important;font-size:var(--fs-label)!important;line-height:1.15!important}
+html body#acb-design.evidence-page .evidence-cycle-step h3{margin:0 0 12px!important;font-size:clamp(27px,3vw,42px)!important;line-height:1!important;font-weight:400!important;letter-spacing:var(--ls-title)!important}
+html body#acb-design.evidence-page .evidence-cycle-step p{margin:0!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
+html body#acb-design.evidence-page .evidence-cycle-step:not(:last-child)::after{content:'→';position:absolute!important;left:calc(100% + clamp(10px,1.5vw,24px))!important;top:50%!important;transform:translateY(-50%)!important;color:var(--ink)!important;font-size:clamp(30px,3vw,46px)!important;line-height:1!important}
+html body#acb-design.evidence-page .evidence-cycle-return{position:relative!important;height:82px!important;margin:12px 0 0!important;text-align:center!important}
+html body#acb-design.evidence-page .evidence-cycle-return svg{display:block!important;width:100%!important;height:76px!important;overflow:visible!important}
+html body#acb-design.evidence-page .evidence-cycle-return svg path{fill:none!important;stroke:var(--ink)!important;stroke-width:2.5!important;vector-effect:non-scaling-stroke!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+html body#acb-design.evidence-page .evidence-cycle-return span{position:absolute!important;left:50%!important;bottom:7px!important;transform:translateX(-50%)!important;padding:2px 14px!important;background:var(--acb-yellow)!important;color:var(--ink)!important;font-size:var(--fs-label)!important;white-space:nowrap!important}
+@media(max-width:774px){
+  html body#acb-design.evidence-page .evidence-cycle-track{grid-template-columns:1fr!important;gap:42px!important}
+  html body#acb-design.evidence-page .evidence-cycle-step:not(:last-child)::after{content:'↓';left:50%!important;top:calc(100% + 7px)!important;transform:translateX(-50%)!important}
+  html body#acb-design.evidence-page .evidence-cycle-return{height:auto!important;margin:12px 0 0!important}
+  html body#acb-design.evidence-page .evidence-cycle-return svg{display:none!important}
+  html body#acb-design.evidence-page .evidence-cycle-return::before{content:'↺';display:block!important;font-size:48px!important;line-height:1!important}
+  html body#acb-design.evidence-page .evidence-cycle-return span{position:static!important;display:block!important;transform:none!important;background:transparent!important}
+}
+
+/* Follow the site's label-title-copy rhythm rather than a split heading. */
+html body#acb-design.evidence-page .evidence-organise{display:block!important}
+html body#acb-design.evidence-page .evidence-organise .eyebrow{margin:0 0 16px!important}
+html body#acb-design.evidence-page .evidence-organise h2{margin:0 0 24px!important;max-width:24ch!important}
+html body#acb-design.evidence-page .evidence-organise p{max-width:80ch!important;margin:0 0 22px!important;font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
+html body#acb-design.evidence-page .evidence-organise p:last-child{margin-bottom:0!important}
+html body#acb-design.evidence-page .evidence-organise .hl{background-image:linear-gradient(to bottom,transparent 12%,var(--acb-yellow) 12%,var(--acb-yellow) 90%,transparent 90%)!important;color:var(--ink)!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important}
