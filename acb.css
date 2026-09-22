@@ -5473,25 +5473,26 @@ html body#acb-design#acb-design .acb-footer{
 
 /* Calm site-wide motion. Elements move only a few pixels, reveal once and
    retain their own hover transforms through the independent translate axis. */
+html.acb-preload body#acb-design :is([data-site-header],main){visibility:hidden!important}
 html body#acb-design.acb-load-motion .acb-load-item{
   opacity:0!important;
   will-change:opacity,translate;
 }
 html body#acb-design.acb-load-motion .acb-load-header{
-  translate:0 -10px;
-  transition:opacity .52s ease,translate .72s cubic-bezier(.16,1,.3,1)!important;
+  translate:0 -16px;
+  transition:opacity .58s ease,translate .88s cubic-bezier(.16,1,.3,1)!important;
 }
 html body#acb-design.acb-load-motion .acb-load-hero{
-  translate:0 16px;
-  transition:opacity .62s ease 80ms,translate .86s cubic-bezier(.16,1,.3,1) 80ms!important;
+  translate:0 24px;
+  transition:opacity .66s ease 110ms,translate .96s cubic-bezier(.16,1,.3,1) 110ms!important;
 }
 html body#acb-design.acb-load-motion .acb-load-first{
-  translate:0 18px;
-  transition:opacity .62s ease 175ms,translate .9s cubic-bezier(.16,1,.3,1) 175ms!important;
+  translate:0 28px;
+  transition:opacity .66s ease 260ms,translate 1s cubic-bezier(.16,1,.3,1) 260ms!important;
 }
 html body#acb-design.acb-load-motion .acb-load-hero :is(img,picture,video){
-  scale:1.018;
-  transition:scale 1.1s cubic-bezier(.16,1,.3,1) 70ms!important;
+  scale:1.035;
+  transition:scale 1.25s cubic-bezier(.16,1,.3,1) 100ms!important;
 }
 html body#acb-design.acb-load-motion.acb-load-ready .acb-load-item{
   opacity:1!important;

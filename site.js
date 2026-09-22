@@ -120,10 +120,11 @@
      The short stagger borrows the calm sequencing of the SuperHi reference
      without turning normal page navigation into a long intro. */
   (function(){
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var root=document.documentElement;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){root.classList.remove('acb-preload');return}
     function setupPageEntrance(){
       var main=document.querySelector('main'),header=document.querySelector('.acb-header');
-      if(!main||!header)return;
+      if(!main||!header){root.classList.remove('acb-preload');return}
       var hero=main.querySelector(':scope > .acb-hero,:scope > .center-hero,:scope > .page-hero,:scope > .blog-hero,:scope > .bm-hero,:scope > .domain-hero,:scope > .sub-hero,:scope > .fam-hero,:scope > .contact-visual-hero');
       if(!hero)hero=main.querySelector('.acb-hero,.center-hero,.page-hero,.blog-hero,.bm-hero,.domain-hero,.sub-hero,.fam-hero,.contact-visual-hero');
       var panel=main.querySelector(':scope > .acb-main-panel'),first=panel&&panel.querySelector(':scope > section');
@@ -134,11 +135,17 @@
       header.classList.add('acb-load-item','acb-load-header');
       if(hero)hero.classList.add('acb-load-item','acb-load-hero');
       if(first)first.classList.add('acb-load-item','acb-load-first');
-      requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('acb-load-ready')})});
+      /* The head sets acb-preload before CSS can paint. Reveal visibility for
+         one settled frame, then start the stagger so there is no final-state
+         flash before the transition begins. */
+      requestAnimationFrame(function(){
+        root.classList.remove('acb-preload');
+        setTimeout(function(){document.body.classList.add('acb-load-ready')},70);
+      });
       setTimeout(function(){
         document.body.classList.remove('acb-load-motion','acb-load-ready');
         [header,hero,first].forEach(function(el){if(el)el.classList.remove('acb-load-item','acb-load-header','acb-load-hero','acb-load-first')});
-      },1250);
+      },1750);
     }
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupPageEntrance,{once:true});
     else setupPageEntrance();
