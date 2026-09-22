@@ -5139,8 +5139,8 @@ html body#acb-design.evidence-page section.why-matters,
 html body#acb-design.evidence-page section.why-matters>.why-matters-stage{background:#fff!important}
 html body#acb-design.evidence-page .why-matters-stage{
   display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,58%) minmax(0,1fr)!important;
-  grid-template-rows:repeat(4,minmax(0,1fr))!important;column-gap:clamp(34px,4vw,60px)!important;row-gap:24px!important;
-  min-height:clamp(600px,52vw,760px)!important;padding:clamp(32px,4vw,56px)!important;
+  grid-template-rows:repeat(4,minmax(0,1fr))!important;column-gap:clamp(34px,4vw,60px)!important;row-gap:8px!important;
+  min-height:0!important;padding:clamp(24px,3vw,40px)!important;
 }
 html body#acb-design.evidence-page .why-matters-pills{display:contents!important;position:static!important}
 html body#acb-design.evidence-page .wm-pill{
@@ -5160,15 +5160,15 @@ html body#acb-design.evidence-page .why-matters-copy{
   grid-column:2!important;grid-row:1/5!important;justify-self:stretch!important;align-self:center!important;
   box-sizing:border-box!important;width:100%!important;max-width:none!important;
 }
-@media(max-width:1100px){
-  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:auto auto auto!important;gap:clamp(28px,4vw,42px)!important;min-height:0!important}
+@media(max-width:850px){
+  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:auto auto auto!important;gap:clamp(12px,2vw,24px)!important;min-height:0!important}
   html body#acb-design.evidence-page .wm-pill{grid-column:auto!important;justify-self:center!important}
   html body#acb-design.evidence-page .wm-p1,html body#acb-design.evidence-page .wm-p2,html body#acb-design.evidence-page .wm-p3,html body#acb-design.evidence-page .wm-p4{grid-row:1!important}
   html body#acb-design.evidence-page .wm-p5,html body#acb-design.evidence-page .wm-p6,html body#acb-design.evidence-page .wm-p7,html body#acb-design.evidence-page .wm-p8{grid-row:3!important}
   html body#acb-design.evidence-page .why-matters-copy{grid-column:1/-1!important;grid-row:2!important;justify-self:center!important;width:min(100%,680px)!important}
 }
 @media(max-width:600px){
-  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto) auto repeat(2,auto)!important;gap:20px!important}
+  html body#acb-design.evidence-page .why-matters-stage{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto) auto repeat(2,auto)!important;gap:12px!important}
   html body#acb-design.evidence-page .wm-p1,html body#acb-design.evidence-page .wm-p2{grid-row:1!important}
   html body#acb-design.evidence-page .wm-p3,html body#acb-design.evidence-page .wm-p4{grid-row:2!important}
   html body#acb-design.evidence-page .wm-p5,html body#acb-design.evidence-page .wm-p6{grid-row:4!important}
@@ -5218,3 +5218,12 @@ html body#acb-design.evidence-page .evidence-organise .hl{background-image:linea
 
 /* Keep the block map's evidence label distinct from its heading. */
 html body#acb-design.blocks-page .evidence-band .evidence-copy>.mono{color:var(--brand)!important}
+
+/* The evidence definition uses the same spacious, highlighted copy as Home. */
+html body#acb-design.evidence-page .evidence-definition .eyebrow{display:block!important;margin-bottom:24px!important}
+html body#acb-design.evidence-page main section.evidence-definition .evidence-definition-copy p{max-width:none!important;margin:0 0 1em!important;font-size:clamp(24px,2.5vw,35px)!important;line-height:1.13!important;letter-spacing:var(--ls-body)!important;text-wrap:pretty!important;color:var(--ink)!important}
+html body#acb-design.evidence-page main section.evidence-definition .evidence-definition-copy p:last-child{margin-bottom:0!important}
+html body#acb-design.evidence-page .evidence-definition-copy .hl{background:linear-gradient(to bottom,transparent 55%,var(--acb-yellow) 55%,var(--acb-yellow) 91%,transparent 91%)!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;color:var(--ink)!important;padding:0!important}
+html body#acb-design.method-page .terrain-cols .tcard :is(h3,p),html body#acb-design.factors-page .terrain-cols .tcard :is(h3,p){color:var(--ink)!important}
+html body#acb-design#acb-design.home-page .acb-blocks .blocks-head .acb-lead{font-size:20px!important;line-height:1!important;padding-right:6%!important;box-sizing:border-box!important}
+@media(max-width:684px){html body#acb-design#acb-design.home-page .acb-blocks .blocks-head .acb-lead{padding-right:8px!important}}
