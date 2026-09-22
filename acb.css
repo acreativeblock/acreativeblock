@@ -5082,3 +5082,30 @@ html body#acb-design#acb-design#acb-design .plan-actions a{
   line-height:1!important;
   white-space:nowrap!important;
 }
+
+/* Evidence page: "Backed by research" scrolling researcher-name marquee, reusing the acb-marquee keyframe. */
+html body#acb-design.evidence-page .acb-marq-card{
+  background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;
+  padding:clamp(26.44px,4vw,46.34px) clamp(19.83px,3.5vw,33.05px)!important;text-align:center!important;
+}
+html body#acb-design.evidence-page .acb-marq-card .eyebrow{color:var(--brand)!important;font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important;margin:0 0 8px!important}
+html body#acb-design.evidence-page .acb-marq-card h2{margin:0 auto 26.44px!important;max-width:52ch!important}
+html body#acb-design.evidence-page .acb-marq{overflow:hidden!important;margin:0 calc(-1 * clamp(19.83px,3.5vw,33.05px))!important}
+html body#acb-design.evidence-page .acb-marq .track{display:flex!important;width:max-content!important;gap:0!important;white-space:nowrap!important;animation:acb-marquee 30s linear infinite!important;will-change:transform}
+html body#acb-design.evidence-page .acb-marq:hover .track{animation-play-state:paused!important}
+html body#acb-design.evidence-page .acb-marq .marq-group{display:flex!important;align-items:center!important;flex-shrink:0!important;gap:11.56px!important;padding:0 11.56px 0 0!important}
+html body#acb-design.evidence-page .acb-marq .marq-pill{
+  display:inline-flex!important;align-items:center!important;flex-shrink:0!important;
+  border:1.5px solid var(--ink)!important;border-radius:999px!important;background:#fff!important;
+  padding:11.56px 19.83px!important;font-size:14.87px!important;font-weight:600!important;color:var(--ink)!important;white-space:nowrap!important;
+}
+html body#acb-design.evidence-page .acb-marq .marq-pill::after{content:none!important}
+@media(prefers-reduced-motion:reduce){
+  html body#acb-design.evidence-page .acb-marq .track{animation:none!important}
+  html body#acb-design.evidence-page .acb-marq .marq-group[aria-hidden]{display:none!important}
+}
+@media(max-width:684px){
+  html body#acb-design.evidence-page .acb-marq-card{padding:19.83px 16.52px!important}
+  html body#acb-design.evidence-page .acb-marq{margin:0 -16.52px!important}
+  html body#acb-design.evidence-page .acb-marq .marq-pill{padding:9.29px 14.87px!important;font-size:13px!important}
+}
