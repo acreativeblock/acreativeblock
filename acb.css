@@ -5402,6 +5402,30 @@ html body#acb-design#acb-design.organisations-page main #offers>.wrap>h2.big{
   letter-spacing:-.055em!important;
 }
 
+/* 4i offers use the same overlapping deck language as 4o, adapted to three
+   cards. The heading remains at its existing scale but is centred above it. */
+html body#acb-design#acb-design.individuals-page main .section.tint>.wrap>.audience-eyebrow{
+  display:block!important;width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important;
+}
+html body#acb-design#acb-design.individuals-page main .section.tint>.wrap>h2.big{
+  width:100%!important;min-width:100%!important;max-width:none!important;
+  margin-left:auto!important;margin-right:auto!important;text-align:center!important;
+}
+@media(min-width:700px){
+  html body#acb-design#acb-design.individuals-page main .plan-grid{
+    display:flex!important;gap:0!important;align-items:stretch!important;padding:10px 0 14px!important;
+  }
+  html body#acb-design#acb-design.individuals-page main .plan-card{
+    position:relative!important;flex:0 0 calc((100% + 36px)/3)!important;width:calc((100% + 36px)/3)!important;
+    height:auto!important;align-self:stretch!important;margin-left:-18px!important;padding:clamp(18px,2vw,28px)!important;
+    transform:rotate(-.55deg)!important;box-shadow:var(--shadow-card)!important;
+    transition:transform .22s ease,box-shadow .22s ease!important;
+  }
+  html body#acb-design#acb-design.individuals-page main .plan-card:first-child{margin-left:0!important}
+  html body#acb-design#acb-design.individuals-page main .plan-card:nth-child(even){transform:translateY(8px) rotate(.55deg)!important}
+  html body#acb-design#acb-design.individuals-page main .plan-card:hover{z-index:5!important;transform:translateY(-4px) rotate(0)!important}
+}
+
 /* Surface elevation lock: custom/composite sections opt out of the generic
    section wrapper, so their visible cards receive the same shared shadow. */
 html body#acb-design#acb-design :is(
