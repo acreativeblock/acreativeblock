@@ -5592,6 +5592,31 @@ html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main .
   padding-bottom:20px!important;
 }
 
+/* Organisation offer colours: advisory stays light; speaking carries the
+   brand blue with a reversed action for clear contrast. */
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(3){
+  background:#fff!important;
+  color:var(--ink)!important;
+}
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(3) :is(h3,p,.plan-format){
+  color:var(--ink)!important;
+}
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(4){
+  background:var(--blue)!important;
+  color:#fff!important;
+}
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(4) :is(h3,p,.plan-format){
+  color:#fff!important;
+}
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(4) a.btn{
+  background:#fff!important;
+  color:var(--blue)!important;
+}
+html body#acb-design#acb-design.organisations-page main .plan-grid .plan-card:nth-child(4) a.btn:hover{
+  background:var(--acb-yellow)!important;
+  color:var(--ink)!important;
+}
+
 /* Block-map copy uses the full card width. The arrow only occupies the bottom
    corner, so reserving its width on every line created tiny orphan endings. */
 html body#acb-design#acb-design.blocks-page .bmcard-body{
