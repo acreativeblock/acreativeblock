@@ -17,7 +17,7 @@
   --sp-card:clamp(18px,3vw,27px);               /* internal padding of a white/colour card */
   --sp-gap:clamp(28.8px,7vw,49.57px);             /* vertical gap between stacked sections */
   --radius-card:2rem;                          /* card corner radius */
-  --shadow-card:0 3.2px 4px rgba(0,0,0,.15)!important; /* 0 .2rem .25rem at a 16px root size */
+  --shadow-card:0 1.66px 3.3px rgba(161,158,168,.1); /* card elevation, matches the header's own shadow */
 
   /* type scale — 2 titles, 3 body sizes, 1 label. Titles (h1/h2) share one
      letter-spacing — same tightness, only the size differs. Body copy is
@@ -45,7 +45,7 @@ html body#acb-design .t-body{font-size:var(--fs-body)!important;letter-spacing:v
 html body#acb-design .t-small{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;font-weight: 400}
 html body#acb-design .t-button{font-size:var(--fs-button)!important;letter-spacing:var(--ls-button)!important;line-height:var(--lh-copy)!important;font-weight: 400}
 html,html body#acb-design.home-page,html body#acb-design:not(.home-page){background:#f6f6f6!important;color:var(--ink);background-image:none!important}
-html body#acb-design .acb-header{position:sticky!important;width:calc(100% - 49.57px)!important;max-width:none!important;margin:19.83px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;backdrop-filter:none!important;z-index:60}
+html body#acb-design .acb-header{position:sticky!important;width:calc(100% - 49.57px)!important;max-width:none!important;margin:19.83px auto!important;background:#fff!important;color:var(--ink)!important;border:0!important;border-radius:var(--radius-card)!important;box-shadow:0 0 55px rgba(0,0,0,.15)!important;backdrop-filter:none!important;z-index:60}
 html body#acb-design .acb-header .inner{display:flex!important;align-items:center!important;justify-content:space-between!important;max-width:none!important;padding:0!important;gap:19.83px!important;height:46.27px!important;min-height:46.27px!important}
 html body#acb-design .acb-logo{margin-left:16.52px!important}
 html body#acb-design .acb-header .mobile-menu-toggle{margin-right:5px!important}
