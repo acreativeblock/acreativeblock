@@ -5891,7 +5891,7 @@ html body#acb-design.blocks-page .bm-hypo>.wrap::after{content:none!important;di
    these three controls from the site's broad 20px CTA rule. */
 @media(max-width:1180px){
   html body#acb-design#acb-design .acb-header:not(.mobile-open){
-    width:100%!important;
+    width:auto!important;
     max-width:100%!important;
     margin:10px auto!important;
     overflow:visible!important;
