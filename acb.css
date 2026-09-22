@@ -5109,6 +5109,29 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom span{
   html body#acb-design#acb-design.faq-page .faqx .offer-body p{font-size:15px!important}
 }
 
+/* Base reset for the two toggle buttons (real <button> elements now,
+   not <span>/pseudo-content), so they don't pick up default browser
+   button chrome (border box, padding) on desktop where they're still
+   laid out like plain text via the existing .lbl/::before styling.
+   The legal-page toggle is desktop-hidden entirely - "Contents" (the
+   ::before label) already does its job there; the toggle only takes
+   over on mobile, inside the media query below. */
+html body#acb-design#acb-design.faq-page .faqx-nav .lbl{
+  display:block!important;
+  margin:0 0 7.43px!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  font-family:inherit!important;
+  cursor:default!important;
+  text-align:left!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+}
+html body#acb-design#acb-design.legal-page .legal-nav-toggle{
+  display:none!important;
+}
+
 /* Mobile-only: collapse the FAQ "Jump to" list and the legal pages'
    "Contents" index into a tap-to-open toggle instead of a permanently
    expanded block taking up a screen's worth of space before the content. */
@@ -5127,6 +5150,8 @@ html body#acb-design#acb-design .acb-footer .wrap>.bottom span{
     font-family:inherit!important;
     cursor:pointer!important;
     text-align:left!important;
+    appearance:none!important;
+    -webkit-appearance:none!important;
   }
   html body#acb-design#acb-design.faq-page .faqx-nav .lbl::after,
   html body#acb-design#acb-design.legal-page .legal-nav-toggle::after{
