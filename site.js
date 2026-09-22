@@ -109,7 +109,7 @@
   var consentKey='acb-cookie-consent-v1',consent=localStorage.getItem(consentKey),banner=document.createElement('aside');
   banner.className='cookie-banner';
   banner.setAttribute('aria-label','Cookie choices');
-  banner.innerHTML='<div><strong>Cookies, without the crumbs.</strong><p>We use essential storage so the site works and remembers this choice. Optional analytics will only run if you accept them.</p><a href="../cookies/">Read the Cookie Policy</a></div><div class="cookie-actions"><button type="button" data-cookie-reject>Essential only</button><button type="button" data-cookie-accept>Accept optional</button></div>';
+  banner.innerHTML='<div><strong>🍪 Cookies, without the crumbs.</strong><p>We use essential storage so the site works and remembers this choice. Optional analytics will only run if you accept them. <a href="../cookies/">Read the cookie policy</a></p></div><div class="cookie-actions"><button type="button" data-cookie-reject>Essential only</button><button type="button" data-cookie-accept>Accept optional</button></div>';
   document.body.appendChild(banner);
   banner.hidden=!!consent;
   function setConsent(choice){localStorage.setItem(consentKey,choice);banner.hidden=true;var __g=choice==='accepted'?'granted':'denied';try{(window.gtag||function(){(window.dataLayer=window.dataLayer||[]).push(arguments)})('consent','update',{ad_storage:__g,ad_user_data:__g,ad_personalization:__g,analytics_storage:__g})}catch(e){}window.dispatchEvent(new CustomEvent('acb:consent',{detail:{optional:choice==='accepted'}}));if(choice==='accepted'){setTimeout(function(){location.reload()},250)}}
