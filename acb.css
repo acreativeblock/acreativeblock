@@ -6000,3 +6000,18 @@ html body#acb-design#acb-design.home-page .acb-blocks .bgm-card .bgm-lab{
     margin-top:6px!important;
   }
 }
+
+/* Evidence is full-bleed, but its copy starts on the same left edge as the
+   floating header and the shared main frame. This final rule replaces the
+   older fixed 8px desktop inset that pulled the bubble outside that frame. */
+@media(min-width:1181px){
+  html body#acb-design#acb-design.evidence-page main .evidence-hero .acb-hero-grid{
+    padding-left:calc((100vw - min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))) / 2)!important;
+    padding-right:calc((100vw - min(calc(var(--site-width) + var(--panel-boost) + 80px),calc(100vw - 16px))) / 2)!important;
+  }
+}
+@media(max-width:1180px){
+  html body#acb-design#acb-design.evidence-page main .evidence-hero .acb-hero-grid{
+    padding-inline:8px!important;
+  }
+}
