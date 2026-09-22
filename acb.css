@@ -935,6 +935,7 @@ html body#acb-design.home-page .acb-hero h1{
   html body#acb-design.home-page .acb-hero h1{font-size:40px!important}
 }
 
+
 /* Exact action controls — these names appear in the document markup and
    remain protected from legacy component declarations. */
 html body#acb-design.contact-page .cform button[type="submit"],
@@ -6018,4 +6019,17 @@ html body#acb-design.acb-load-motion.acb-load-ready .acb-load-hero{clip-path:ins
     bottom:auto!important;
     display:inline-flex!important;
   }
+}
+
+/* Keep the three outcome cards visibly elevated. Their resting rotations
+   create new paint layers, so pin the shared card shadow to the cards after
+   every animation and page-specific rule in the cascade. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+main .takeaways .takeaway-blocks{
+  overflow:visible!important;
+}
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+main .takeaways .takeaway-blocks > .tblock{
+  position:relative!important;
+  box-shadow:var(--shadow-card)!important;
 }
