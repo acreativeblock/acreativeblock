@@ -1316,6 +1316,13 @@ html body#acb-design#acb-design.blocks-page .bmcard .card-tag{
     font-size:12px!important;
   }
 }
+
+/* The closed references drawer sits just outside the viewport. Its left-facing
+   shadow must stay off until the drawer opens, otherwise it paints a dark fade
+   down the right edge of the Evidence page on narrow screens. */
+html body#acb-design#acb-design.evidence-page .refpanel:not(.open){
+  box-shadow:none!important;
+}
 html body#acb-design.contact-page .contact-visual-hero h1{display:block!important;width:min(520px,46vw)!important;margin:0!important;padding:19.83px 26.44px!important;background:#fff!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;font-size:clamp(26px,2.5vw,34px)!important;line-height:.98!important;text-align:left!important;box-shadow:0 12px 34px rgba(7,19,33,.12)}
 html body#acb-design.contact-page .contact-hero-kicker,
 html body#acb-design.contact-page .contact-hero-main{display:block}
