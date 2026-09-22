@@ -5421,6 +5421,54 @@ html body#acb-design .acb-soft-reveal.acb-soft-in{
   opacity:1!important;
   translate:0 0;
 }
+
+/* One icon language: diagonal arrows mean "go"; matching chevrons mean
+   "reveal". FAQ and submenu chevrons share stroke, size and motion. */
+html body#acb-design{
+  --acb-icon-size:10px;
+  --acb-icon-stroke:2px;
+  --acb-icon-ease:cubic-bezier(.16,1,.3,1);
+}
+html body#acb-design#acb-design .faq-item .faq-q::after,
+html body#acb-design#acb-design .offer-toggle .pm::after,
+html body#acb-design#acb-design .acb-header .navitem>button.navbutton::after{
+  content:""!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:var(--acb-icon-size)!important;
+  height:var(--acb-icon-size)!important;
+  border:0!important;
+  border-right:var(--acb-icon-stroke) solid currentColor!important;
+  border-bottom:var(--acb-icon-stroke) solid currentColor!important;
+  border-radius:1px!important;
+  background:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+  transform:rotate(45deg)!important;
+  transform-origin:50% 50%!important;
+  transition:transform .3s var(--acb-icon-ease),color .2s ease!important;
+}
+html body#acb-design#acb-design .faq-item .faq-q::after,
+html body#acb-design#acb-design .offer-toggle .pm{margin-left:auto!important}
+html body#acb-design#acb-design .faq-item.open .faq-q::after,
+html body#acb-design#acb-design .offer-row.open .offer-toggle .pm::after,
+html body#acb-design#acb-design .acb-header .navitem>button.navbutton[aria-expanded="true"]::after,
+html body#acb-design#acb-design .acb-header:not(.mobile-open) .navitem:is(:hover,:focus-within)>button.navbutton::after{
+  transform:rotate(225deg)!important;
+}
+html body#acb-design#acb-design .faq-item .faq-q::after,
+html body#acb-design#acb-design .offer-toggle .pm::after{color:var(--brand)!important}
+html body#acb-design#acb-design .offer-toggle .pm{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  width:var(--acb-icon-size)!important;height:var(--acb-icon-size)!important;
+  font-size:0!important;line-height:0!important;
+}
+html body#acb-design#acb-design .acb-header .navitem>button.navbutton{
+  display:inline-flex!important;align-items:center!important;gap:10px!important;
+}
+html body#acb-design#acb-design .acb-header .navitem>button.navbutton::after{
+  --acb-icon-size:8px;color:currentColor!important;margin:-4px 2px 0 0!important;
+}
 @media(prefers-reduced-motion:reduce){
   html body#acb-design .acb-soft-reveal,
   html body#acb-design .acb-soft-reveal.acb-soft-in{
