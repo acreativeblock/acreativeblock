@@ -670,6 +670,7 @@ html body#acb-design.internal-page:is(.individuals-page,.organisations-page) .pl
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card h3{font-family:"Inter",sans-serif!important;font-weight: 400!important;font-size:var(--fs-copy-lg)!important;letter-spacing:var(--ls-copy-lg)!important;margin-top:0!important;line-height:var(--lh-copy)!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card p{font-size:12.8px!important;line-height:1.55!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .plan-card .plan-format{font-family:"Inter",sans-serif!important;font-weight: 400!important}
+html body#acb-design:is(.individuals-page,.organisations-page) .plan-actions{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:16px!important}
 /* All three cards are the same size — equal-height grid row, no scale
    transform on the middle one (that was throwing its top/bottom edges
    out of line with its siblings). */
@@ -2065,18 +2066,21 @@ html body#acb-design.home-page main .acb-close a.pill,
 html body#acb-design.home-page main .acb-close a.pill.big,
 html body#acb-design.internal-page main .cta a.btn,
 html body#acb-design.internal-page main .cta a.btn-out,
-html body#acb-design.internal-page main .plan-card a.btn{
+html body#acb-design.internal-page main .plan-card a.btn,
+html body#acb-design.internal-page main .plan-actions a{
   flex-direction:row!important;
   gap:0!important;
   font-size:13.22px!important;
   line-height:1!important;
   padding:8.26px 14.87px!important;
 }
+html body#acb-design.internal-page main .plan-actions a{padding:8.26px 11px!important;font-size:12px!important}
 html body#acb-design.home-page main .cta a.pill::after,
 html body#acb-design.home-page main .acb-close a.pill::after,
 html body#acb-design.internal-page main .cta a.btn::after,
 html body#acb-design.internal-page main .cta a.btn-out::after,
-html body#acb-design.internal-page main .plan-card a.btn::after{
+html body#acb-design.internal-page main .plan-card a.btn::after,
+html body#acb-design.internal-page main .plan-actions a::after{
   flex:0 0 auto!important;
 }
 
@@ -5028,4 +5032,53 @@ html body#acb-design#acb-design.legal-page .legal-nav-toggle{
     display:block!important;
     margin-top:8px!important;
   }
+}
+
+/* Offer detail pages (one per plan/offer card on for-individuals and
+   for-organisations) - a catalog-style single-item page: hero with a
+   link back to the parent audience page, a two-column body (copy +
+   sticky enquire sidebar), a numbered "what happens" list, and a
+   closing CTA repeating the enquire action. */
+html body#acb-design.offer-page .center-hero .mono a{color:inherit!important;text-decoration:underline!important;text-underline-offset:2px!important}
+html body#acb-design.offer-page .offer-layout{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(280px,340px)!important;
+  gap:clamp(28px,4vw,64px)!important;
+  align-items:start!important;
+}
+html body#acb-design.offer-page .offer-copy h2{
+  font-size:var(--fs-h2)!important;line-height:var(--lh-title)!important;margin:0 0 14px!important;color:var(--ink)!important;
+}
+html body#acb-design.offer-page .offer-copy>*+h2{margin-top:clamp(32px,4vw,48px)!important}
+html body#acb-design.offer-page .offer-copy p{font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-body)!important;color:var(--ink)!important;max-width:62ch!important;margin:0 0 12px!important}
+html body#acb-design.offer-page .offer-steps{list-style:none!important;margin:0!important;padding:0!important;display:grid!important;gap:14px!important}
+html body#acb-design.offer-page .offer-steps li{padding:18px 20px!important;background:#fff!important;border-radius:var(--radius-card)!important;box-shadow:var(--shadow-card)!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important}
+html body#acb-design.offer-page .offer-steps li b{display:block!important;margin-bottom:4px!important;color:var(--blue)!important;font-weight:600!important;text-transform:uppercase!important;font-size:13px!important;letter-spacing:.06em!important}
+html body#acb-design.offer-page .offer-side{
+  position:sticky!important;top:120px!important;
+  display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:14px!important;
+  padding:var(--sp-card)!important;background:#eef1ff!important;border-radius:var(--radius-card)!important;
+}
+html body#acb-design.offer-page .offer-side .plan-format{font-size:14px!important;letter-spacing:.02em!important;color:var(--ink)!important;opacity:.7!important}
+html body#acb-design.offer-page .offer-side .btn{width:100%!important;justify-content:center!important}
+html body#acb-design.offer-page .offer-back{font-size:14px!important;color:var(--ink)!important;text-decoration:underline!important;text-underline-offset:2px!important;opacity:.75!important}
+html body#acb-design.offer-page .offer-back:hover{opacity:1!important}
+html body#acb-design.offer-page .offer-close{background:var(--acb-yellow)!important;border-radius:var(--radius-card)!important;padding:var(--sp-card)!important;text-align:center!important}
+html body#acb-design.offer-page .offer-close h2{margin:0 0 8px!important;font-size:var(--fs-h2)!important;color:var(--ink)!important}
+html body#acb-design.offer-page .offer-close p{margin:0 0 20px!important;color:var(--ink)!important}
+@media(max-width:774px){
+  html body#acb-design.offer-page .offer-layout{grid-template-columns:1fr!important}
+  html body#acb-design.offer-page .offer-side{position:relative!important;top:0!important}
+}
+
+/* The shared "big action pill" rule (a.btn,a.btn-out,...{font-size:20px;
+   padding:20px}) was outranking the plan-card's own smaller button sizing
+   for the new two-button row - same :is() raw-specificity issue as
+   elsewhere in this file. Doubled ID to win regardless. */
+html body#acb-design#acb-design .plan-actions{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;margin-top:16px!important}
+html body#acb-design#acb-design#acb-design .plan-actions a{
+  padding:8.26px 11px!important;
+  font-size:11.5px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
 }
