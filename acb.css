@@ -5307,3 +5307,29 @@ html body#acb-design.legal-page main .legal-copy [id]{scroll-margin-top:96px!imp
 html body#acb-design#acb-design.legal-page main .legal-copy{
   padding-bottom:calc(var(--sp-card) + max(80px,20vh))!important;
 }
+
+/* Evidence refinements: align copy with the shared card inset and avoid orphans. */
+html body#acb-design#acb-design.evidence-page main .acb-hero-grid{padding-inline:calc(8px + var(--sp-card))!important}
+html body#acb-design#acb-design.evidence-page .evidence-hero-def{letter-spacing:var(--ls-body)!important}
+html body#acb-design#acb-design.evidence-page main .evidence-definition-copy p{padding-right:0!important;text-wrap:balance!important}
+html body#acb-design#acb-design.evidence-page main .evidence-organise p{max-width:100%!important;text-wrap:balance!important}
+html body#acb-design#acb-design.evidence-page .ev-copy-card .hl{
+  background-image:linear-gradient(to bottom,transparent 55%,var(--acb-yellow) 55%,var(--acb-yellow) 92%,transparent 92%)!important;
+  color:inherit!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;
+}
+html body#acb-design#acb-design.evidence-page .ev-stat-block{grid-template-columns:minmax(120px,auto) minmax(0,1fr)!important;column-gap:clamp(16px,2vw,28px)!important}
+html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{min-width:0!important;white-space:nowrap!important;letter-spacing:-.065em!important;padding-right:8px!important;font-size:clamp(48px,5vw,72px)!important}
+html body#acb-design#acb-design.evidence-page .ev-stat-block p{min-width:0!important}
+html body#acb-design#acb-design.evidence-page .why-matters-copy h2{font-size:clamp(40px,4vw,56px)!important}
+@media(max-width:684px){
+  html body#acb-design#acb-design.evidence-page .ev-stat-block{grid-template-columns:minmax(108px,auto) minmax(0,1fr)!important;column-gap:12px!important}
+  html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{font-size:clamp(38px,10vw,52px)!important}
+  html body#acb-design#acb-design.evidence-page .why-matters-copy h2{font-size:36px!important}
+}
+html body#acb-design.blocks-page .refpanel .bd-list{margin-bottom:clamp(26px,3vw,44px)!important}
+html body#acb-design.blocks-page .refpanel h3{margin-bottom:clamp(18px,2vw,28px)!important}
+html body#acb-design.blocks-page .refpanel .bd-under{max-width:80%!important}
+html body#acb-design.blocks-page .evidence-band>.wrap{gap:0!important}
+html body#acb-design.blocks-page .evidence-band .evidence-copy{padding:clamp(28px,4vw,54px)!important}
+html body#acb-design.blocks-page .evidence-band .evidence-image{min-height:260px!important;max-height:380px!important}
+@media(max-width:774px){html body#acb-design.blocks-page .evidence-band .evidence-image{max-height:260px!important}}
