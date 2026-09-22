@@ -1296,7 +1296,7 @@ html body#acb-design#acb-design.blocks-page .bmcard .card-tag{
   color:var(--ink)!important;
   font-family:"Inter",sans-serif!important;
   font-size:15px!important;
-  font-weight:600!important;
+  font-weight:400!important;
   line-height:1!important;
   letter-spacing:-.03em!important;
   text-transform:none!important;
@@ -5472,48 +5472,6 @@ html body#acb-design#acb-design .acb-footer{
   box-shadow:var(--shadow-card)!important;
 }
 
-/* Calm site-wide motion. Elements move only a few pixels, reveal once and
-   retain their own hover transforms through the independent translate axis. */
-html.acb-preload body#acb-design :is([data-site-header],main){visibility:hidden!important}
-html body#acb-design.acb-load-motion .acb-load-item{
-  opacity:0!important;
-  will-change:opacity,translate;
-}
-html body#acb-design.acb-load-motion .acb-load-header{
-  translate:0 -16px;
-  transition:opacity .58s ease,translate .88s cubic-bezier(.16,1,.3,1)!important;
-}
-html body#acb-design.acb-load-motion .acb-load-hero{
-  translate:0 24px;
-  transition:opacity .66s ease 110ms,translate .96s cubic-bezier(.16,1,.3,1) 110ms!important;
-}
-html body#acb-design.acb-load-motion .acb-load-first{
-  translate:0 28px;
-  transition:opacity .66s ease 260ms,translate 1s cubic-bezier(.16,1,.3,1) 260ms!important;
-}
-html body#acb-design.acb-load-motion .acb-load-hero :is(img,picture,video){
-  scale:1.035;
-  transition:scale 1.25s cubic-bezier(.16,1,.3,1) 100ms!important;
-}
-html body#acb-design.acb-load-motion.acb-load-ready .acb-load-item{
-  opacity:1!important;
-  translate:0 0;
-}
-html body#acb-design.acb-load-motion.acb-load-ready .acb-load-hero :is(img,picture,video){scale:1}
-html body#acb-design .acb-soft-reveal{
-  --acb-reveal-delay:0ms;
-  opacity:0!important;
-  translate:0 12px;
-  transition:
-    opacity .52s ease var(--acb-reveal-delay),
-    translate .72s cubic-bezier(.22,1,.36,1) var(--acb-reveal-delay)!important;
-  will-change:opacity,translate;
-}
-html body#acb-design .acb-soft-reveal.acb-soft-in{
-  opacity:1!important;
-  translate:0 0;
-}
-
 /* One icon language: diagonal arrows mean "go"; matching chevrons mean
    "reveal". FAQ and submenu chevrons share stroke, size and motion. */
 html body#acb-design{
@@ -5653,17 +5611,6 @@ html body#acb-design#acb-design.blocks-page .bmcard:is(:hover,:focus-visible) .b
 @media(max-width:504px){
   html body#acb-design#acb-design.blocks-page .bmcard-arr{right:10px!important;bottom:10px!important}
 }
-@media(prefers-reduced-motion:reduce){
-  html body#acb-design .acb-load-item,
-  html body#acb-design .acb-load-hero :is(img,picture,video){
-    opacity:1!important;translate:none!important;scale:1!important;transition:none!important;
-  }
-  html body#acb-design .acb-soft-reveal,
-  html body#acb-design .acb-soft-reveal.acb-soft-in{
-    opacity:1!important;translate:none!important;transition:none!important;
-  }
-}
-
 /* Keep the interaction cursor stable across the whole clickable surface.
    Without the descendant and generated-content rules, the cursor briefly
    returned to the default arrow when it crossed text, icons or arrow layers. */
@@ -5923,24 +5870,6 @@ html body#acb-design .acb-header .acb-utility-pill::after{
    Suppress the older second glyph that sat in the panel corner. */
 html body#acb-design.blocks-page .bm-hypo>.wrap::after{content:none!important;display:none!important}
 
-/* Make the opening sequence readable as movement rather than a late opacity
-   change. The page is hidden pre-paint, then header, hero and first card enter
-   in a short, calm cascade. */
-html body#acb-design.acb-load-motion .acb-load-header{
-  translate:0 -24px!important;
-  transition:opacity .5s ease,translate .8s cubic-bezier(.16,1,.3,1)!important;
-}
-html body#acb-design.acb-load-motion .acb-load-hero{
-  translate:0 34px!important;
-  clip-path:inset(8% 0 0 0 round var(--radius-card))!important;
-  transition:opacity .62s ease 140ms,translate .95s cubic-bezier(.16,1,.3,1) 140ms,clip-path 1s cubic-bezier(.16,1,.3,1) 140ms!important;
-}
-html body#acb-design.acb-load-motion .acb-load-first{
-  translate:0 42px!important;
-  transition:opacity .64s ease 430ms,translate 1s cubic-bezier(.16,1,.3,1) 430ms!important;
-}
-html body#acb-design.acb-load-motion.acb-load-ready .acb-load-hero{clip-path:inset(0 0 0 0 round var(--radius-card))!important}
-
 /* Final mobile header geometry. Double ID specificity deliberately protects
    these three controls from the site's broad 20px CTA rule. */
 @media(max-width:1180px){
@@ -6032,4 +5961,11 @@ html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
 main .takeaways .takeaway-blocks > .tblock{
   position:relative!important;
   box-shadow:var(--shadow-card)!important;
+}
+
+/* Domain tags use the same regular weight wherever the 7+1 language appears. */
+html body#acb-design#acb-design.home-page .acb-blocks .bgm-lab,
+html body#acb-design#acb-design.blocks-page .bmcard .card-tag,
+html body#acb-design#acb-design.method-page :is(.terrain-cols .eyebrow,.tcard .eyebrow){
+  font-weight:400!important;
 }
