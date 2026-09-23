@@ -7206,9 +7206,184 @@ html body#acb-design#acb-design.organisations-page .organisation-process li:nth-
     will-change:auto!important;
     animation:none!important;
   }
-  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .navitem{
+html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .navitem{
     opacity:1!important;
     transform:translateZ(0)!important;
     animation:none!important;
   }
+}
+
+/* Evidence: play is presented as a mental mode rather than a prescribed
+   craft. The two rails make the generation/evaluation shift visible without
+   turning the section into another long block of explanatory copy. */
+html body#acb-design.evidence-page .evidence-play>.wrap{
+  display:grid!important;
+  gap:clamp(22px,3vw,36px)!important;
+  padding:var(--sp-card)!important;
+  background:#fff!important;
+  border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.evidence-page .evidence-play-intro{
+  display:grid!important;
+  grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr)!important;
+  column-gap:clamp(24px,5vw,76px)!important;
+  align-items:start!important;
+}
+html body#acb-design.evidence-page .evidence-play-intro .eyebrow{
+  grid-column:1/-1!important;
+  margin:0 0 12px!important;
+  color:var(--brand)!important;
+}
+html body#acb-design.evidence-page .evidence-play-intro h2{
+  margin:0!important;
+  max-width:12ch!important;
+  font-size:clamp(42px,5vw,68px)!important;
+  line-height:.92!important;
+  letter-spacing:-.05em!important;
+}
+html body#acb-design.evidence-page .evidence-play-intro>p{
+  margin:0!important;
+  max-width:64ch!important;
+  font-size:clamp(20px,2vw,27px)!important;
+  line-height:1.14!important;
+  letter-spacing:var(--ls-body)!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design.evidence-page .evidence-play-intro .hl{
+  background:linear-gradient(transparent 8%,var(--acb-yellow) 8%,var(--acb-yellow) 92%,transparent 92%)!important;
+  box-decoration-break:clone!important;
+  -webkit-box-decoration-break:clone!important;
+}
+html body#acb-design.evidence-page .play-process{
+  display:grid!important;
+  grid-template-columns:.72fr 1.28fr!important;
+  gap:14px!important;
+}
+html body#acb-design.evidence-page .play-route{
+  display:grid!important;
+  align-content:space-between!important;
+  min-width:0!important;
+  padding:22px!important;
+  border-radius:calc(var(--radius-card) * .72)!important;
+}
+html body#acb-design.evidence-page .play-route-tight{background:#eef2ff!important}
+html body#acb-design.evidence-page .play-route-open{background:var(--acb-yellow)!important}
+html body#acb-design.evidence-page .play-route-label{
+  display:block!important;
+  margin:0 0 22px!important;
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
+  color:var(--ink)!important;
+}
+html body#acb-design.evidence-page .play-route ol{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+html body#acb-design.evidence-page .play-route li{
+  display:flex!important;
+  align-items:center!important;
+  min-width:0!important;
+  font-size:clamp(18px,2vw,27px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+  color:var(--ink)!important;
+  white-space:nowrap!important;
+}
+html body#acb-design.evidence-page .play-route li:not(:last-child)::after{
+  content:""!important;
+  display:block!important;
+  flex:0 0 22px!important;
+  width:22px!important;
+  height:16px!important;
+  margin-left:10px!important;
+  background:currentColor!important;
+  -webkit-mask:var(--acb-go-arrow) center/contain no-repeat!important;
+  mask:var(--acb-go-arrow) center/contain no-repeat!important;
+}
+html body#acb-design.evidence-page .evidence-play-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+html body#acb-design.evidence-page .evidence-play-card{
+  padding:clamp(22px,3vw,34px)!important;
+  border-radius:calc(var(--radius-card) * .72)!important;
+  background:#fafafa!important;
+}
+html body#acb-design.evidence-page .evidence-play-card h3{
+  margin:0 0 14px!important;
+  max-width:24ch!important;
+  font-size:clamp(25px,2.8vw,38px)!important;
+  line-height:.98!important;
+  letter-spacing:-.045em!important;
+}
+html body#acb-design.evidence-page .evidence-play-card p{
+  margin:0!important;
+  max-width:62ch!important;
+  font-size:20px!important;
+  line-height:1.25!important;
+  letter-spacing:var(--ls-body)!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design.evidence-page .evidence-play-card.play-limit{
+  grid-column:1/-1!important;
+  display:grid!important;
+  grid-template-columns:.72fr 1.28fr!important;
+  gap:clamp(24px,5vw,76px)!important;
+  background:var(--ink)!important;
+}
+html body#acb-design.evidence-page .evidence-play-card.play-limit :is(h3,p){color:#fff!important}
+html body#acb-design.evidence-page .play-question{
+  display:grid!important;
+  grid-template-columns:.36fr 1.64fr!important;
+  gap:20px!important;
+  align-items:center!important;
+  padding:22px 24px!important;
+  border-radius:999px!important;
+  background:var(--acb-blue,#4f46e5)!important;
+  color:#fff!important;
+}
+html body#acb-design.evidence-page .play-question span{
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
+  text-transform:uppercase!important;
+  color:#fff!important;
+}
+html body#acb-design.evidence-page .play-question p{
+  margin:0!important;
+  font-size:clamp(22px,2.5vw,34px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+  color:#fff!important;
+}
+@media(max-width:900px){
+  html body#acb-design.evidence-page .evidence-play-intro,
+  html body#acb-design.evidence-page .evidence-play-card.play-limit{grid-template-columns:1fr!important}
+  html body#acb-design.evidence-page .evidence-play-intro h2{max-width:18ch!important;margin-bottom:18px!important}
+  html body#acb-design.evidence-page .play-process{grid-template-columns:1fr!important}
+  html body#acb-design.evidence-page .play-route ol{flex-wrap:wrap!important}
+}
+@media(max-width:684px){
+  html body#acb-design.evidence-page .evidence-play>.wrap{gap:18px!important}
+  html body#acb-design.evidence-page .evidence-play-intro h2{font-size:36px!important}
+  html body#acb-design.evidence-page .evidence-play-intro>p,
+  html body#acb-design.evidence-page .evidence-play-card p{font-size:16px!important;line-height:1.35!important}
+  html body#acb-design.evidence-page .evidence-play-grid{grid-template-columns:1fr!important}
+  html body#acb-design.evidence-page .evidence-play-card.play-limit{grid-column:auto!important}
+  html body#acb-design.evidence-page .play-route{padding:18px!important}
+  html body#acb-design.evidence-page .play-route li{font-size:18px!important}
+  html body#acb-design.evidence-page .play-question{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    border-radius:var(--radius-card)!important;
+  }
+  html body#acb-design.evidence-page .play-question p{font-size:24px!important;line-height:1.05!important}
 }

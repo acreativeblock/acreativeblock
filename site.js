@@ -199,7 +199,7 @@
     function prepareSection(section,index){
       if(section.classList.contains('acb-motion-section')||section.matches('.acb-hero,.page-hero,.center-hero,.blog-hero,.bm-hero,.domain-hero')||(document.body.classList.contains('home-page')&&section.classList.contains('acb-marq')))return;
       section.classList.add('acb-motion-section');
-      var items=[].slice.call(section.querySelectorAll('.takeaway-copy,.support-copy,.section-head,.faqx-cat-head,.work-card,.journal-card,.blog-card,.faq-item,.offer-row,.acb-loop-steps>li,.plan-card,.bmcard,.resitem,.evidence-cycle-step,.ev-stat-block,.trio>.card,.terrain-cols>.tcard,.craft-step')).filter(function(item){
+      var items=[].slice.call(section.querySelectorAll('.takeaway-copy,.support-copy,.section-head,.faqx-cat-head,.work-card,.journal-card,.blog-card,.faq-item,.offer-row,.acb-loop-steps>li,.plan-card,.bmcard,.resitem,.evidence-cycle-step,.ev-stat-block,.evidence-play-card,.play-route,.play-question,.trio>.card,.terrain-cols>.tcard,.craft-step')).filter(function(item){
         var nested=item.closest('.faqx-cat,.method-block');
         return !nested||nested===section;
       });
