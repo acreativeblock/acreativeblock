@@ -6398,3 +6398,106 @@ html body#acb-design#acb-design.home-page .journal-control:not(.is-next)::after{
 html body#acb-design#acb-design.blocks-page .bmcard-arr::after{
   transform:translate(-50%,-50%)!important;
 }
+
+
+/* Audience process stacks: both audience pages use the same layered-card
+   construction. The stronger downward shadow stays visible where each white
+   card tucks beneath the next one. */
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+:is(.individual-support .acb-loop-steps,.organisation-process){
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:0!important;
+  margin:0!important;
+  padding:8px 0!important;
+  overflow:visible!important;
+}
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+:is(.individual-support .acb-loop-steps,.organisation-process)>li{
+  --process-shift:0px;
+  --process-rotate:0deg;
+  position:relative!important;
+  min-height:0!important;
+  margin-top:-18px!important;
+  padding:20px!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:#fff!important;
+  color:var(--ink)!important;
+  box-shadow:0 7px 16px rgba(17,17,24,.18)!important;
+  transform:translateX(var(--process-shift)) rotate(var(--process-rotate))!important;
+}
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+:is(.individual-support .acb-loop-steps,.organisation-process)>li:first-child{
+  margin-top:0!important;
+  --process-shift:-2px;
+  --process-rotate:-.35deg;
+}
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+:is(.individual-support .acb-loop-steps,.organisation-process)>li:nth-child(2){
+  z-index:2;
+  --process-shift:5px;
+  --process-rotate:.25deg;
+}
+html body#acb-design#acb-design:is(.individuals-page,.organisations-page)
+:is(.individual-support .acb-loop-steps,.organisation-process)>li:nth-child(3){
+  z-index:3;
+  --process-shift:-3px;
+  --process-rotate:-.2deg;
+}
+html body#acb-design#acb-design.individuals-page
+.individual-support .acb-loop-steps>li:nth-child(4){
+  z-index:4;
+  --process-shift:4px;
+  --process-rotate:.3deg;
+}
+html body#acb-design#acb-design.individuals-page
+.individual-support .acb-loop-steps>li:nth-child(5){
+  z-index:5;
+  --process-shift:-1px;
+  --process-rotate:-.25deg;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support>.wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:var(--sp-card)!important;
+  align-items:start!important;
+  padding:var(--sp-card)!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy{
+  grid-column:1!important;
+  width:100%!important;
+  margin:0!important;
+  text-align:left!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy :is(.big,.lead){
+  margin-left:0!important;
+  margin-right:0!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process{
+  grid-column:2!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process .step-number{
+  margin-bottom:20px!important;
+}
+
+/* Prefer balanced line endings throughout editorial copy. The closing thought
+   in the individual feeling statement stays together so it cannot leave one
+   or two words stranded on their own line. */
+html body#acb-design main :is(p,.scrolltext,.lead,.body,.faq-a){
+  text-wrap:pretty;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+html body#acb-design .keep-together{white-space:nowrap!important}
+
+@media(max-width:774px){
+  html body#acb-design#acb-design.organisations-page .organisation-support>.wrap{
+    grid-template-columns:1fr!important;
+  }
+  html body#acb-design#acb-design.organisations-page .organisation-process{
+    grid-column:1!important;
+    margin-top:var(--sp-card)!important;
+  }
+}
