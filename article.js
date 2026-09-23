@@ -357,4 +357,72 @@ confidence:{k:'Confidence spiral',title:'How one bad review becomes a two-year b
 
 <div class="article-note">This is a mechanism, not a fixed trait. The same person can be mid-spiral on one project and completely fine on another, which is itself useful diagnostic information: it points at the specific setback that started the loop, rather than at some general deficit in the person.</div>`}
 }
-const key=document.body.dataset.article,a=ARTICLES[key]||ARTICLES.why;document.title=a.title+' — A Creative Block';document.querySelector('main[data-article]').innerHTML=`<section class="article-head page-hero"><div class="wrap"><div class="article-kicker">${a.k}</div><h1>${a.title}</h1><p class="article-dek">${a.dek}</p><p class="article-meta">A Creative Block · ${a.read}</p></div></section><div class="acb-main-panel"><section class="article-body"><div class="wrap article-layout"><div class="article-col"><aside class="article-aside">${a.aside}</aside><article class="article-copy">${a.body}</article><p class="article-back"><a href="../blog/">← All articles</a></p></div></div></section></div>`;
+const ARTICLE_META={
+why:{published:'2026-08-06',references:[
+  '<a href="https://eric.ed.gov/?id=ED248527">Rose, M. (1984). <cite>Writer’s Block: The Cognitive Dimension.</cite> Southern Illinois University Press.</a>',
+  'Flaherty, A. W. (2004). <cite>The Midnight Disease: The Drive to Write, Writer’s Block, and the Creative Brain.</cite> Houghton Mifflin.',
+  '<a href="https://doi.org/10.1016/0197-4556(82)90003-X">Crosson, C. W. (1982). Creative block: A brief inquiry. <cite>The Arts in Psychotherapy, 9</cite>(4), 259–262.</a>'
+]},
+lazy:{published:'2026-08-21',references:[
+  'Flaherty, A. W. (2004). <cite>The Midnight Disease: The Drive to Write, Writer’s Block, and the Creative Brain.</cite> Houghton Mifflin.',
+  '<a href="https://doi.org/10.1080/00221546.1993.11778406">Boice, R. (1993). Writing blocks and tacit knowledge. <cite>The Journal of Higher Education, 64</cite>(1), 19–54.</a>',
+  '<a href="https://doi.org/10.1037/0033-2909.133.1.65">Steel, P. (2007). The nature of procrastination. <cite>Psychological Bulletin, 133</cite>(1), 65–94.</a>'
+]},
+state:{published:'2026-08-06',references:[
+  'Flaherty, A. W. (2004). <cite>The Midnight Disease: The Drive to Write, Writer’s Block, and the Creative Brain.</cite> Houghton Mifflin.',
+  '<a href="https://doi.org/10.1037/a0012815">Baas, M., De Dreu, C. K. W., &amp; Nijstad, B. A. (2008). A meta-analysis of 25 years of mood–creativity research. <cite>Psychological Bulletin, 134</cite>(6), 779–806.</a>'
+]},
+finish:{published:'2026-08-21',references:[
+  'Bayles, D., &amp; Orland, T. (2001). <cite>Art &amp; Fear: Observations on the Perils (and Rewards) of Artmaking.</cite> Image Continuum Press.',
+  'Flaherty, A. W. (2004). <cite>The Midnight Disease: The Drive to Write, Writer’s Block, and the Creative Brain.</cite> Houghton Mifflin.'
+]},
+incubation:{published:'2026-08-06',references:[
+  '<a href="https://doi.org/10.1037/a0014212">Sio, U. N., &amp; Ormerod, T. C. (2009). Does incubation enhance problem solving? A meta-analytic review. <cite>Psychological Bulletin, 135</cite>(1), 94–120.</a>',
+  '<a href="https://doi.org/10.1016/0142-694X(91)90003-F">Jansson, D. G., &amp; Smith, S. M. (1991). Design fixation. <cite>Design Studies, 12</cite>(1), 3–11.</a>'
+]},
+big:{published:'2026-08-06',references:[
+  '<a href="https://eric.ed.gov/?id=ED248527">Rose, M. (1984). <cite>Writer’s Block: The Cognitive Dimension.</cite> Southern Illinois University Press.</a>',
+  '<a href="https://doi.org/10.1080/00221546.1993.11778406">Boice, R. (1993). Writing blocks and tacit knowledge. <cite>The Journal of Higher Education, 64</cite>(1), 19–54.</a>'
+]},
+skill:{published:'2026-08-21',references:[
+  '<a href="https://eric.ed.gov/?id=ED248527">Rose, M. (1984). <cite>Writer’s Block: The Cognitive Dimension.</cite> Southern Illinois University Press.</a>',
+  '<a href="https://doi.org/10.1037/0033-295X.100.3.363">Ericsson, K. A., Krampe, R. T., &amp; Tesch-Römer, C. (1993). The role of deliberate practice in the acquisition of expert performance. <cite>Psychological Review, 100</cite>(3), 363–406.</a>'
+]},
+feedback:{published:'2026-08-21',references:[
+  'Amabile, T. M. (1996). <cite>Creativity in Context.</cite> Westview Press.',
+  '<a href="https://doi.org/10.2307/256995">Amabile, T. M., Conti, R., Coon, H., Lazenby, J., &amp; Herron, M. (1996). Assessing the work environment for creativity. <cite>Academy of Management Journal, 39</cite>(5), 1154–1184.</a>',
+  'Csikszentmihalyi, M. (1996). <cite>Creativity: Flow and the Psychology of Discovery and Invention.</cite> HarperCollins.'
+]},
+direction:{published:'2026-09-18',references:[
+  'Amabile, T. M. (1996). <cite>Creativity in Context.</cite> Westview Press.',
+  'Deci, E. L., &amp; Ryan, R. M. (1985). <cite>Intrinsic Motivation and Self-Determination in Human Behavior.</cite> Plenum.'
+]},
+perfectionism:{published:'2026-09-18',references:[
+  '<a href="https://doi.org/10.1016/j.tsc.2024.101692">When the creative well dries up—burnout syndrome and art block in artists’ sample. (2024). <cite>Thinking Skills and Creativity, 54</cite>, 101692.</a>',
+  'Bayles, D., &amp; Orland, T. (2001). <cite>Art &amp; Fear: Observations on the Perils (and Rewards) of Artmaking.</cite> Image Continuum Press.',
+  '<a href="https://eric.ed.gov/?id=ED248527">Rose, M. (1984). <cite>Writer’s Block: The Cognitive Dimension.</cite> Southern Illinois University Press.</a>'
+]},
+burnout:{published:'2026-09-18',references:[
+  '<a href="https://doi.org/10.1016/j.tsc.2024.101692">When the creative well dries up—burnout syndrome and art block in artists’ sample. (2024). <cite>Thinking Skills and Creativity, 54</cite>, 101692.</a>',
+  '<a href="https://doi.org/10.1002/wps.20311">Maslach, C., &amp; Leiter, M. P. (2016). Understanding the burnout experience. <cite>World Psychiatry, 15</cite>(2), 103–111.</a>'
+]},
+aftersuccess:{published:'2026-09-18',references:[
+  'Flaherty, A. W. (2004). <cite>The Midnight Disease: The Drive to Write, Writer’s Block, and the Creative Brain.</cite> Houghton Mifflin.',
+  'Bayles, D., &amp; Orland, T. (2001). <cite>Art &amp; Fear: Observations on the Perils (and Rewards) of Artmaking.</cite> Image Continuum Press.'
+]},
+isolation:{published:'2026-09-18',references:[
+  '<a href="https://doi.org/10.1016/0197-4556(82)90003-X">Crosson, C. W. (1982). Creative block: A brief inquiry. <cite>The Arts in Psychotherapy, 9</cite>(4), 259–262.</a>',
+  'Csikszentmihalyi, M. (1996). <cite>Creativity: Flow and the Psychology of Discovery and Invention.</cite> HarperCollins.',
+  'Paris, A. (2008). <cite>Standing at Water’s Edge: Moving Past Fear, Blocks, and Pitfalls to Discover the Power of Creative Immersion.</cite> New World Library.'
+]},
+confidence:{published:'2026-09-18',references:[
+  '<a href="https://doi.org/10.1037/0033-295X.84.2.191">Bandura, A. (1977). Self-efficacy: Toward a unifying theory of behavioral change. <cite>Psychological Review, 84</cite>(2), 191–215.</a>',
+  '<a href="https://doi.org/10.5465/amr.1995.9508080333">Lindsley, D. H., Brass, D. J., &amp; Thomas, J. B. (1995). Efficacy-performance spirals. <cite>Academy of Management Review, 20</cite>(3), 645–678.</a>'
+]}
+};
+const AUTHOR_BIO='Mirco Fragomena is the founder of A Creative Block, a designer and an MOE-certified coach based in Lisbon. His work brings together creative practice, coaching, psychology and systems thinking to understand why meaningful work gets stuck—and what helps it move again. He is a member of the Association for Coaching and works under ongoing professional supervision.';
+const formatDate=value=>new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric'}).format(new Date(`${value}T12:00:00`));
+const key=document.body.dataset.article,a=ARTICLES[key]||ARTICLES.why,m=ARTICLE_META[key]||ARTICLE_META.why,updated='2026-09-23';
+const references=m.references.map(reference=>`<li>${reference}</li>`).join('');
+document.title=a.title+' — A Creative Block';
+document.querySelector('main[data-article]').innerHTML=`<section class="article-head page-hero"><div class="wrap"><div class="article-kicker">${a.k}</div><h1>${a.title}</h1><p class="article-dek">${a.dek}</p><p class="article-meta"><span>By <a href="../about/" rel="author">Mirco Fragomena</a></span><span>Published <time datetime="${m.published}">${formatDate(m.published)}</time></span><span>Updated <time datetime="${updated}">${formatDate(updated)}</time></span><span>${a.read}</span></p></div></section><div class="acb-main-panel"><section class="article-body"><div class="wrap article-layout"><div class="article-col"><aside class="article-aside">${a.aside}</aside><article class="article-copy">${a.body}</article><section class="article-references" aria-labelledby="article-references-title"><h2 id="article-references-title">References and further reading</h2><ol>${references}</ol></section><aside class="article-author" aria-label="About the author"><p class="article-author-label">About the author</p><h2><a href="../about/" rel="author">Mirco Fragomena</a></h2><p>${AUTHOR_BIO}</p></aside><p class="article-back"><a href="../blog/">← All articles</a></p></div></div></section></div>`;

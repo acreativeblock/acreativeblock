@@ -8107,3 +8107,22 @@ html body#acb-design#acb-design.about-page main .about-cta>.wrap{background:var(
 }
 
 html body#acb-design.evidence-page .evidence-definition h1.eyebrow{margin:0!important}
+
+/* Final shared-frame corrections: preserve the floating wordmark breathing
+   room, allow desktop dropdowns to escape the header row, and keep the
+   quick-contact CTA exactly level with the footer. */
+html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
+  width:var(--acb-frame-width)!important;
+  max-width:var(--acb-frame-width)!important;
+}
+@media(min-width:1181px){
+  html body#acb-design .acb-header,
+  html body#acb-design .acb-header .inner{height:54px!important;min-height:54px!important}
+  html body#acb-design .acb-header .inner{overflow:visible!important}
+  html body#acb-design .acb-header .acb-logo{padding:3px!important}
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:40px!important}
+}
+@media(max-width:1180px){
+  html body#acb-design .acb-header .acb-logo{padding:3px!important}
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:36px!important}
+}

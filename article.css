@@ -31,7 +31,8 @@ html body#acb-design.article-page .article-layout{box-shadow:none!important;outl
    cap its measure so a long title doesn't stretch edge to edge. */
 html body#acb-design.article-page .article-head h1{max-width:22ch!important}
 html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:6px 0 0!important;max-width:56ch!important}
-html body#acb-design.article-page .article-meta{font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--muted)!important;opacity:.7!important;margin:16px 0 0!important}
+html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;gap:6px 18px!important;font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--muted)!important;opacity:.8!important;margin:16px 0 0!important}
+html body#acb-design.article-page .article-meta a{color:inherit!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
 
 /* Body card (.article-layout) is already a full-width white card via the
    shared mechanism; keep the actual reading column at a comfortable
@@ -55,6 +56,17 @@ html body#acb-design.article-page .article-copy blockquote{font-weight: 400!impo
 
 /* Research note: same solid-yellow callout language as the aside. */
 html body#acb-design.article-page .article-copy .article-note{background:var(--acb-yellow)!important;border:0!important;border-radius:var(--radius-card)!important;padding:15px 18px!important;font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--ink)!important;margin:1.7em 0!important}
+
+html body#acb-design.article-page .article-references{margin-top:clamp(44px,6vw,74px)!important;padding-top:clamp(24px,3vw,34px)!important;border-top:1px solid var(--line)!important}
+html body#acb-design.article-page .article-references h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 20px!important}
+html body#acb-design.article-page .article-references ol{margin:0!important;padding-left:1.25em!important;display:grid!important;gap:12px!important}
+html body#acb-design.article-page .article-references li{padding-left:5px!important;font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-small)!important}
+html body#acb-design.article-page .article-references a{color:inherit!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
+html body#acb-design.article-page .article-author{margin-top:clamp(36px,5vw,60px)!important;background:var(--acb-light-blue)!important;border-radius:var(--radius-card)!important;padding:clamp(22px,3vw,36px)!important}
+html body#acb-design.article-page .article-author-label{color:var(--blue)!important;font-size:var(--fs-label)!important;line-height:1!important;letter-spacing:var(--ls-label)!important;text-transform:none!important;margin:0 0 10px!important}
+html body#acb-design.article-page .article-author h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 14px!important}
+html body#acb-design.article-page .article-author h2 a{color:inherit!important;text-decoration:none!important}
+html body#acb-design.article-page .article-author>p:last-child{max-width:820px!important;margin:0!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-body)!important}
 
 /* Back link */
 html body#acb-design.article-page .article-back{margin-top:clamp(34px,4.5vw,52px)!important;padding-top:22px!important;border-top:1px solid var(--line)!important}
