@@ -7015,7 +7015,7 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
   }
   @keyframes acbMenuDropOut{
     from{transform:translate3d(0,0,0)}
-    to{transform:translate3d(0,calc(-100% + 52px),0)}
+    to{transform:translate3d(0,-100%,0)}
   }
 }
 
