@@ -7081,6 +7081,29 @@ html.menu-open body{
     position:relative!important;
     z-index:65!important;
   }
+  html body#acb-design#acb-design .acb-header.mobile-open>.inner{
+    transition:background-color .28s cubic-bezier(.4,0,.2,1),box-shadow .28s cubic-bezier(.4,0,.2,1)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open :is(.acb-logo,.acb-logo-mount,.mobile-header-cta){
+    transition:color .28s cubic-bezier(.4,0,.2,1),background-color .28s cubic-bezier(.4,0,.2,1)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing>.inner{
+    background:#fff!important;
+    box-shadow:0 0 34px rgba(7,19,33,.16)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing :is(.acb-logo,.acb-logo-mount){
+    color:var(--acb-blue,#4f46e5)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .mobile-header-cta{
+    background:var(--acb-blue,#4f46e5)!important;
+    color:#fff!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .mobile-menu-toggle::before{
+    transform:translate(-50%,-50%) translateY(-4px)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .mobile-menu-toggle::after{
+    transform:translate(-50%,-50%) translateY(4px)!important;
+  }
 }
 
 @media(max-width:684px){
