@@ -422,8 +422,30 @@ confidence:{published:'2026-06-17',seoTitle:'How to Rebuild Creative Confidence 
 };
 const ARTICLE_SLUGS={why:'what-is-creative-block',lazy:'how-to-overcome-creative-block-and-avoidance',state:'creative-block-burnout-or-overwhelm',finish:'how-to-finish-and-share-a-creative-project',incubation:'creative-block-or-incubation',big:'how-to-start-a-creative-project-that-feels-too-big',skill:'creative-block-vs-skill-gap',feedback:'how-to-unblock-a-creative-team-with-better-feedback',direction:'why-artists-lose-motivation-and-direction',perfectionism:'why-perfectionism-causes-creative-block',burnout:'creative-block-vs-burnout',aftersuccess:'why-artists-lose-motivation-after-success',isolation:'can-working-alone-cause-creative-block',confidence:'rebuild-creative-confidence-after-bad-feedback'};
 const formatDate=value=>new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric'}).format(new Date(`${value}T12:00:00`));
-const key=document.body.dataset.article,a=ARTICLES[key]||ARTICLES.why,m=ARTICLE_META[key]||ARTICLE_META.why,updated='2026-09-23';
+const key=document.body.dataset.article,a=ARTICLES[key]||ARTICLES.why,m=ARTICLE_META[key]||ARTICLE_META.why;
 const references=m.references.map(reference=>`<li>${reference}</li>`).join('');
-const related=m.related.map(relatedKey=>`<li><a href="/blog/article/${ARTICLE_SLUGS[relatedKey]}/">${ARTICLES[relatedKey].title}</a></li>`).join('');
+const related=m.related.map(relatedKey=>{
+  const article=ARTICLES[relatedKey],meta=ARTICLE_META[relatedKey];
+  return `<a class="article-next-card" href="/blog/article/${ARTICLE_SLUGS[relatedKey]}/"><span class="article-next-tag">${article.k}</span><h3>${article.title}</h3><span class="article-next-meta">${article.read}</span></a>`;
+}).join('');
 document.title=m.seoTitle;
-document.querySelector('main[data-article]').innerHTML=`<section class="article-head page-hero"><div class="wrap"><div class="article-kicker">${a.k}</div><h1>${a.title}</h1><p class="article-dek">${a.dek}</p><p class="article-meta"><span>By <a href="/about/" rel="author">A Creative Block</a></span><span>Published <time datetime="${m.published}">${formatDate(m.published)}</time></span><span>Updated <time datetime="${updated}">${formatDate(updated)}</time></span><span>${a.read}</span></p></div></section><div class="acb-main-panel"><section class="article-body"><div class="wrap article-layout"><div class="article-col"><aside class="article-aside">${a.aside}</aside><article class="article-copy">${a.body}</article><nav class="article-next" aria-labelledby="article-next-title"><p class="article-next-label">Where next</p><h2 id="article-next-title">Keep following the useful thread.</h2><a class="article-service" href="${m.service[0]}">${m.service[1]} <span aria-hidden="true">↗</span></a><ul>${related}</ul></nav><section class="article-references" aria-labelledby="article-references-title"><h2 id="article-references-title">References and further reading</h2><ol>${references}</ol></section><p class="article-back"><a href="/blog/">← All articles</a></p></div></div></section></div>`;
+document.querySelector('main[data-article]').innerHTML=`<section class="article-head page-hero"><div class="wrap"><div class="article-kicker">${a.k}</div><h1>${a.title}</h1><p class="article-dek">${a.dek}</p><p class="article-meta"><span>By A Creative Block</span><span class="article-published">Published <time datetime="${m.published}">${formatDate(m.published)}</time></span><span>${a.read}</span></p></div></section><div class="acb-main-panel"><section class="article-body"><div class="wrap article-layout"><div class="article-col"><aside class="article-aside">${a.aside}</aside><article class="article-copy">${a.body}</article><nav class="article-next" aria-labelledby="article-next-title"><p class="article-next-label">Where next</p><h2 id="article-next-title">Keep following the useful thread.</h2><div class="article-next-grid">${related}</div></nav><section class="article-references" aria-labelledby="article-references-title"><h2 id="article-references-title">References and further reading</h2><ol>${references}</ol></section><p class="article-back"><a href="/blog/">← All articles</a></p></div></div></section></div>`;
+
+/* Give each displayed pull-quote a numbered source with the same accessible,
+   custom tooltip language used on the Evidence page. The source is the first
+   reference for the article unless a more specific primary reference is set. */
+const quoteReference={why:2,lazy:2,state:1,finish:1,incubation:1,big:1,skill:1,feedback:1,direction:1,perfectionism:2,burnout:1,aftersuccess:1,isolation:1,confidence:2};
+const quote=document.querySelector('.article-copy blockquote'),referenceNumber=quoteReference[key]||1;
+if(quote&&m.references[referenceNumber-1]){
+  const source=document.createElement('div');
+  source.innerHTML=m.references[referenceNumber-1];
+  const sourceText=source.textContent.replace(/\s+/g,' ').trim();
+  const marker=document.createElement('sup');
+  marker.className='cite cite-tip';marker.textContent=referenceNumber;marker.tabIndex=0;
+  marker.setAttribute('aria-label',`Reference ${referenceNumber}: ${sourceText}`);
+  quote.append(' ',marker);
+  let tip;
+  const hide=()=>{if(tip){tip.remove();tip=null}};
+  const show=()=>{hide();tip=document.createElement('span');tip.className='cite-tip-bubble';tip.textContent=`${referenceNumber}. ${sourceText}`;document.body.appendChild(tip);const r=marker.getBoundingClientRect();let left=r.left+scrollX+r.width/2-tip.offsetWidth/2;left=Math.max(8,Math.min(left,scrollX+document.documentElement.clientWidth-tip.offsetWidth-8));tip.style.top=(r.top+scrollY-tip.offsetHeight-10)+'px';tip.style.left=left+'px';requestAnimationFrame(()=>tip&&tip.classList.add('is-visible'))};
+  marker.addEventListener('mouseenter',show);marker.addEventListener('focus',show);marker.addEventListener('mouseleave',hide);marker.addEventListener('blur',hide);document.addEventListener('scroll',hide,true);
+}

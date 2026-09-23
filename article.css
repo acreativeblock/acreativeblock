@@ -31,8 +31,8 @@ html body#acb-design.article-page .article-layout{box-shadow:none!important;outl
    cap its measure so a long title doesn't stretch edge to edge. */
 html body#acb-design.article-page .article-head h1{max-width:22ch!important}
 html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:6px 0 0!important;max-width:56ch!important}
-html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;gap:6px 18px!important;font-size:var(--fs-small)!important;letter-spacing:var(--ls-small)!important;line-height:var(--lh-copy)!important;color:var(--muted)!important;opacity:.8!important;margin:16px 0 0!important}
-html body#acb-design.article-page .article-meta a{color:inherit!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
+html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px 16px!important;font-size:15px!important;letter-spacing:-.022em!important;line-height:1!important;color:var(--ink)!important;margin:16px 0 0!important}
+html body#acb-design.article-page .article-published{display:inline-flex!important;align-items:center!important;border:1px solid currentColor!important;border-radius:999px!important;padding:5px 10px!important}
 
 /* Body card (.article-layout) is already a full-width white card via the
    shared mechanism; keep the actual reading column at a comfortable
@@ -60,12 +60,14 @@ html body#acb-design.article-page .article-copy .article-note{background:var(--a
 html body#acb-design.article-page .article-next{margin-top:clamp(44px,6vw,74px)!important;background:var(--acb-yellow)!important;border-radius:var(--radius-card)!important;padding:clamp(22px,3vw,36px)!important}
 html body#acb-design.article-page .article-next-label{font-size:var(--fs-label)!important;line-height:1!important;letter-spacing:var(--ls-label)!important;color:var(--blue)!important;margin:0 0 10px!important}
 html body#acb-design.article-page .article-next h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 22px!important}
-html body#acb-design.article-page .article-next .article-service{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;width:100%!important;background:var(--blue)!important;color:#fff!important;border-radius:var(--radius-pill)!important;padding:18px 20px!important;font-size:20px!important;line-height:1!important;text-decoration:none!important;cursor:pointer!important}
-html body#acb-design.article-page .article-next .article-service span{transition:transform .25s cubic-bezier(.16,1,.3,1)!important}
-html body#acb-design.article-page .article-next .article-service:hover span{transform:translate(3px,-3px)!important}
-html body#acb-design.article-page .article-next ul{list-style:none!important;margin:20px 0 0!important;padding:0!important;display:grid!important;gap:10px!important}
-html body#acb-design.article-page .article-next li{margin:0!important;padding:0!important}
-html body#acb-design.article-page .article-next li a{display:inline!important;color:var(--ink)!important;font-size:var(--fs-body)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-body)!important;text-underline-offset:4px!important;cursor:pointer!important}
+html body#acb-design.article-page .article-next-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
+html body#acb-design.article-page .article-next-card{display:flex!important;flex-direction:column!important;min-height:250px!important;background:#fff!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:18px!important;text-decoration:none!important;cursor:pointer!important;transition:transform .25s cubic-bezier(.16,1,.3,1)!important}
+html body#acb-design.article-page .article-next-card,html body#acb-design.article-page .article-next-card *{cursor:pointer!important}
+html body#acb-design.article-page .article-next-card:hover{transform:translateY(-3px)!important}
+html body#acb-design.article-page .article-next-tag{align-self:flex-start!important;margin:0 0 12px!important;padding:4px 9px!important;border:1px solid currentColor!important;border-radius:999px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.022em!important}
+html body#acb-design.article-page .article-next-card h3{margin:0!important;font-size:clamp(20px,1.65vw,25px)!important;line-height:1.04!important;letter-spacing:-.022em!important}
+html body#acb-design.article-page .article-next-meta{margin-top:auto!important;padding-top:20px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.022em!important}
+@media(max-width:900px){html body#acb-design.article-page .article-next-grid{grid-template-columns:1fr!important}html body#acb-design.article-page .article-next-card{min-height:210px!important}}
 
 html body#acb-design.article-page .article-references{margin-top:clamp(44px,6vw,74px)!important;padding-top:clamp(24px,3vw,34px)!important;border-top:1px solid var(--line)!important}
 html body#acb-design.article-page .article-references h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 20px!important}
