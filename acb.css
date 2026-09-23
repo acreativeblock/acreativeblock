@@ -7626,3 +7626,11 @@ html body#acb-design#acb-design.organisations-page .organisation-support .suppor
     line-height:.88!important;
   }
 }
+
+/* Home FAQ answers use the full question-card width, matching the accordions
+   across the internal pages. */
+html body#acb-design#acb-design.home-page .acb-faq .faq-item .faq-a>p{
+  width:100%!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+}
