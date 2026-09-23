@@ -7679,3 +7679,38 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-item .faq-a>p{
     font-size:clamp(13px,1.1vw,15px)!important;
   }
 }
+
+/* 4o process cards: number and title share one compact heading row. */
+html body#acb-design#acb-design.organisations-page .organisation-process>li{
+  display:grid!important;
+  grid-template-columns:42px minmax(0,1fr)!important;
+  column-gap:14px!important;
+  row-gap:12px!important;
+  align-items:center!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process .step-number{
+  grid-column:1!important;
+  grid-row:1!important;
+  margin:0!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process>li>b{
+  grid-column:2!important;
+  grid-row:1!important;
+  margin:0!important;
+}
+html body#acb-design#acb-design.organisations-page .organisation-process>li>p{
+  grid-column:1/-1!important;
+  grid-row:2!important;
+}
+@media(max-width:684px){
+  html body#acb-design#acb-design.organisations-page .organisation-process>li{
+    grid-template-columns:36px minmax(0,1fr)!important;
+    column-gap:12px!important;
+    row-gap:10px!important;
+  }
+  html body#acb-design#acb-design.organisations-page .organisation-process .step-number{
+    width:36px!important;
+    height:36px!important;
+    font-size:13px!important;
+  }
+}
