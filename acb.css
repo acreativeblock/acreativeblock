@@ -8126,3 +8126,101 @@ html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
   html body#acb-design .acb-header .acb-logo{padding:3px!important}
   html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:36px!important}
 }
+
+/* Shared frame alignment: Home content cards use the complete frame, while
+   4i/4o keep full-bleed imagery and align only their copy to that frame. */
+html body#acb-design.home-page main>.acb-main-panel>section:where(:not(.acb-hero):not(.acb-marq)){
+  margin-left:0!important;
+  margin-right:0!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  margin-left:calc((100vw - var(--acb-frame-width))/2 + 10px)!important;
+  width:calc(100% - ((100vw - var(--acb-frame-width))/2 + 20px))!important;
+}
+
+/* About: four focused sections using the site's large-copy and stacked-card
+   language. */
+html body#acb-design.about-page .about-overview>.wrap{
+  background:#fff!important;
+  padding:clamp(40px,6vw,86px)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-overview-copy{
+  max-width:95%!important;
+  margin:clamp(18px,2.4vw,30px) 0 0!important;
+  font-size:clamp(30px,3.35vw,50px)!important;
+  line-height:1.03!important;
+  letter-spacing:-.04em!important;
+}
+html body#acb-design.about-page .about-overview-copy .hl{
+  background-image:linear-gradient(to bottom,transparent 10%,var(--yellow) 10%,var(--yellow) 92%,transparent 92%)!important;
+  box-decoration-break:clone!important;
+  -webkit-box-decoration-break:clone!important;
+  padding:0 .04em!important;
+}
+html body#acb-design.about-page .about-why-grid,
+html body#acb-design.about-page .about-beliefs-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:clamp(34px,5vw,78px)!important;
+  align-items:start!important;
+}
+html body#acb-design.about-page .about-why-grid .about-reasons{grid-column:1!important;grid-row:1!important;margin:0!important}
+html body#acb-design.about-page .about-why-grid .about-intro{grid-column:2!important;grid-row:1!important}
+html body#acb-design.about-page .about-stack{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:0!important;
+  padding-top:8px!important;
+}
+html body#acb-design.about-page .about-stack article{
+  min-height:0!important;
+  display:grid!important;
+  grid-template-columns:46px minmax(0,1fr)!important;
+  grid-template-rows:auto!important;
+  align-items:start!important;
+  gap:15px!important;
+  margin-top:-8px!important;
+  padding:clamp(19px,2.2vw,29px)!important;
+  background:#fff!important;
+  border-radius:var(--radius-card)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-stack article:first-child{margin-top:0!important}
+html body#acb-design.about-page .about-stack article>span{width:38px!important;height:38px!important;font-size:13px!important}
+html body#acb-design.about-page .about-stack article p{
+  grid-column:2!important;
+  margin:0!important;
+  max-width:none!important;
+  font-size:clamp(20px,1.75vw,27px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+html body#acb-design.about-page .about-why .about-lead,
+html body#acb-design.about-page .about-why .about-why-close{max-width:none!important}
+html body#acb-design.about-page .about-origin>.wrap{align-items:center!important}
+html body#acb-design.about-page .about-origin h2{margin:.28em 0 .5em!important;font-size:clamp(42px,5.2vw,76px)!important;line-height:.9!important}
+html body#acb-design.about-page .about-origin .about-founder-photo{position:relative!important;top:auto!important}
+html body#acb-design.about-page .about-beliefs-head{position:sticky!important;top:110px!important;margin:0!important}
+html body#acb-design.about-page .about-beliefs-head p{max-width:34ch!important;font-size:var(--fs-body)!important;line-height:1.15!important}
+
+@media(max-width:954px){
+  html body#acb-design.about-page .about-why-grid,
+  html body#acb-design.about-page .about-beliefs-grid{grid-template-columns:1fr!important}
+  html body#acb-design.about-page .about-why-grid .about-reasons,
+  html body#acb-design.about-page .about-why-grid .about-intro{grid-column:1!important;grid-row:auto!important}
+  html body#acb-design.about-page .about-why-grid .about-intro{order:-1!important}
+  html body#acb-design.about-page .about-beliefs-head{position:relative!important;top:auto!important}
+}
+@media(max-width:684px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+    margin-left:20px!important;
+    width:calc(100% - 40px)!important;
+  }
+  html body#acb-design.about-page .about-overview>.wrap{padding:30px 20px!important}
+  html body#acb-design.about-page .about-overview-copy{max-width:none!important;font-size:27px!important}
+  html body#acb-design.about-page .about-stack article{grid-template-columns:38px minmax(0,1fr)!important;padding:20px 16px!important}
+  html body#acb-design.about-page .about-stack article p{font-size:21px!important}
+}
