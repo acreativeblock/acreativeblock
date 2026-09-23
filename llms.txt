@@ -13,14 +13,14 @@ A Creative Block is a creative coaching and consulting practice for artists, cre
 - [Contact A Creative Block](https://acreativeblock.com/contact/)
 
 ## The 7+1 map
-- [Starting and doing](https://acreativeblock.com/starting-and-doing/)
-- [Confidence and exposure](https://acreativeblock.com/confidence-and-exposure/)
-- [Direction and meaning](https://acreativeblock.com/direction-and-meaning/)
-- [Energy and recovery](https://acreativeblock.com/energy-and-recovery/)
-- [The work itself](https://acreativeblock.com/the-work-itself/)
-- [Structure and workflow](https://acreativeblock.com/structure-and-workflow/)
-- [Context and support](https://acreativeblock.com/context-and-support/)
-- [Creative block or skill gap](https://acreativeblock.com/skill-gap/)
+- [Starting and doing](https://acreativeblock.com/the-block-map/starting-and-doing/)
+- [Confidence and exposure](https://acreativeblock.com/the-block-map/confidence-and-exposure/)
+- [Direction and meaning](https://acreativeblock.com/the-block-map/direction-and-meaning/)
+- [Energy and recovery](https://acreativeblock.com/the-block-map/energy-and-recovery/)
+- [The work itself](https://acreativeblock.com/the-block-map/the-work-itself/)
+- [Structure and workflow](https://acreativeblock.com/the-block-map/structure-and-workflow/)
+- [Context and support](https://acreativeblock.com/the-block-map/context-and-support/)
+- [Creative block or skill gap](https://acreativeblock.com/the-block-map/skill-gap/)
 
 ## Research-informed articles
 - [What is creative block? Seven causes and what helps](https://acreativeblock.com/blog/article/what-is-creative-block/)
