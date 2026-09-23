@@ -8293,3 +8293,54 @@ html body#acb-design.about-page .about-certification-copy strong{
   html body#acb-design.about-page .about-certification-mark{width:76px;height:76px;flex-basis:76px}
   html body#acb-design.about-page .about-certification-copy strong{font-size:16px!important}
 }
+
+/* About uses the established 4o opening rhythm and stacked process cards. */
+html body#acb-design.about-page .about-overview>.wrap{padding:clamp(38px,5vw,72px)!important}
+html body#acb-design.about-page .about-overview .side-note{display:block!important;margin:0 0 12px!important}
+html body#acb-design.about-page .about-overview-copy{
+  margin:0!important;padding-right:15%!important;font-size:35px!important;
+  line-height:1.1!important;letter-spacing:var(--ls-title)!important;text-wrap:pretty!important;
+}
+html body#acb-design.about-page .about-main>.section:not(.about-overview) .side-note{display:block!important;margin:0 0 12px!important}
+html body#acb-design.about-page .about-main>.section h2{margin:0 0 20px!important}
+html body#acb-design.about-page .about-main>.section p+p{margin-top:16px!important}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack{
+  display:grid!important;grid-template-columns:1fr!important;gap:0!important;margin:0!important;
+  padding:8px 0!important;overflow:visible!important;background:transparent!important;border-radius:0!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article{
+  --about-stack-shift:0px;--about-stack-rotate:0deg;position:relative!important;z-index:1;
+  min-height:0!important;margin:0!important;margin-top:-18px!important;padding:20px!important;
+  display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;align-items:center!important;gap:16px!important;
+  border:0!important;border-radius:var(--radius-card)!important;background:#fff!important;color:var(--ink)!important;
+  box-shadow:0 7px 16px rgba(17,17,24,.18)!important;
+  transform:translateX(var(--about-stack-shift)) rotate(var(--about-stack-rotate))!important;
+  transition:transform .45s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:first-child{margin-top:0!important;--about-stack-shift:-2px;--about-stack-rotate:-.35deg}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(2){z-index:2;--about-stack-shift:5px;--about-stack-rotate:.25deg}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(3){z-index:3;--about-stack-shift:-3px;--about-stack-rotate:-.2deg}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(4){z-index:4;--about-stack-shift:4px;--about-stack-rotate:.3deg}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(5){z-index:5;--about-stack-shift:-1px;--about-stack-rotate:-.25deg}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>span{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  width:42px!important;height:42px!important;margin:0!important;border-radius:50%!important;
+  background:#eef2ff!important;color:var(--blue)!important;font-size:15px!important;line-height:1!important;letter-spacing:0!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{
+  grid-column:2!important;margin:0!important;max-width:none!important;font-size:clamp(24px,2.55vw,38px)!important;
+  line-height:1!important;letter-spacing:-.035em!important;
+}
+html body#acb-design.about-page .about-beliefs-head{position:relative!important;top:auto!important;margin:0!important}
+html body#acb-design.about-page :is(.about-overview-copy .hl,.about-lead strong){
+  background:linear-gradient(to bottom,transparent 8%,var(--yellow) 8%,var(--yellow) 92%,transparent 92%)!important;
+  box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;padding:0 .04em!important;
+}
+html body#acb-design.about-page .about-certification{box-shadow:none!important;transform:none!important}
+@media(max-width:684px){
+  html body#acb-design.about-page .about-overview>.wrap{padding:30px 20px!important}
+  html body#acb-design.about-page .about-overview-copy{padding-right:0!important;font-size:var(--fs-copy-lg)!important}
+  html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article{margin-top:-10px!important;padding:17px 15px!important;gap:14px!important}
+  html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>span{width:42px!important;height:42px!important;font-size:14px!important}
+  html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{font-size:19px!important;line-height:1.04!important}
+}
