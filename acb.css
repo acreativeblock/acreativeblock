@@ -6501,3 +6501,52 @@ html body#acb-design .keep-together{white-space:nowrap!important}
     margin-top:var(--sp-card)!important;
   }
 }
+
+/* Individual support steps: one action per card, with only a quiet number for orientation. */
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li{
+  display:grid!important;
+  grid-template-columns:42px minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:16px!important;
+  min-height:92px!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps .step-number{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:42px!important;
+  height:42px!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:50%!important;
+  background:#eef2ff!important;
+  color:var(--blue)!important;
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li:nth-child(even) .step-number{
+  background:var(--acb-yellow)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li>p{
+  margin:0!important;
+  color:var(--ink)!important;
+  font-size:var(--fs-copy-lg)!important;
+  line-height:1.05!important;
+  letter-spacing:var(--ls-copy-lg)!important;
+  text-wrap:pretty!important;
+}
+@media(max-width:684px){
+  html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li{
+    grid-template-columns:36px minmax(0,1fr)!important;
+    gap:12px!important;
+    min-height:78px!important;
+  }
+  html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps .step-number{
+    width:36px!important;
+    height:36px!important;
+    font-size:13px!important;
+  }
+}
