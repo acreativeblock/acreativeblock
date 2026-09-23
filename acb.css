@@ -7728,3 +7728,380 @@ html body#acb-design :is(button,input,select,textarea){
   font-synthesis:none!important;
   text-rendering:optimizeLegibility;
 }
+
+
+/* About page narrative — long-form story using the same card, spacing and type
+   language as the rest of A Creative Block. */
+html body#acb-design.about-page .about-main{
+  display:flex;
+  flex-direction:column;
+  gap:var(--section-gap)!important;
+}
+html body#acb-design.about-page .about-main>.section,
+html body#acb-design.about-page .about-main>.acb-close-sub{
+  margin:0!important;
+}
+html body#acb-design.about-page .about-main :is(h1,h2,h3,p){text-wrap:pretty}
+html body#acb-design.about-page .about-main :is(h1,h2){letter-spacing:-.04em!important}
+html body#acb-design.about-page .about-hero>.wrap{
+  min-height:clamp(470px,62svh,690px);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  padding:clamp(34px,5.2vw,76px)!important;
+  background:var(--blue)!important;
+  color:#fff;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-hero .side-note{color:var(--yellow)!important}
+html body#acb-design.about-page .about-hero h1{
+  max-width:15ch;
+  margin:.35em 0 .45em!important;
+  font-size:clamp(48px,6.4vw,96px)!important;
+  line-height:.86!important;
+  color:#fff!important;
+}
+html body#acb-design.about-page .about-hero-copy{
+  width:min(860px,100%);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(18px,3vw,48px);
+}
+html body#acb-design.about-page .about-hero-copy p{
+  margin:0!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.15!important;
+  color:#fff!important;
+}
+html body#acb-design.about-page .about-main>.section:not(.about-hero)>.wrap{
+  padding:clamp(38px,5vw,72px)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-intro{max-width:1100px}
+html body#acb-design.about-page .about-intro h2,
+html body#acb-design.about-page .about-founder h2,
+html body#acb-design.about-page .about-turn h2,
+html body#acb-design.about-page .about-beliefs h2,
+html body#acb-design.about-page .about-next h2,
+html body#acb-design.about-page .about-cta h2{
+  margin:.28em 0 .5em!important;
+  font-size:clamp(42px,5.2vw,76px)!important;
+  line-height:.9!important;
+}
+html body#acb-design.about-page .about-lead,
+html body#acb-design.about-page .about-why-close{
+  max-width:46ch;
+  font-size:clamp(25px,2.7vw,40px)!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
+}
+html body#acb-design.about-page .about-lead strong{
+  background:linear-gradient(transparent 52%,var(--yellow) 52%);
+  color:inherit!important;
+}
+html body#acb-design.about-page .about-reasons{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin:clamp(34px,5vw,70px) 0;
+}
+html body#acb-design.about-page .about-reasons article{
+  min-height:235px;
+  display:grid;
+  grid-template-columns:46px 1fr;
+  grid-template-rows:auto 1fr;
+  gap:8px 14px;
+  padding:clamp(22px,3vw,38px);
+  border-radius:var(--radius-card);
+  background:var(--bg)!important;
+}
+html body#acb-design.about-page .about-reasons article>span,
+html body#acb-design.about-page .about-belief-stack article>span{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  background:var(--pale-blue);
+  color:var(--blue);
+  font-size:14px;
+}
+html body#acb-design.about-page .about-reasons h3{
+  margin:0!important;
+  align-self:center;
+  font-size:clamp(27px,2.5vw,38px)!important;
+  line-height:1!important;
+}
+html body#acb-design.about-page .about-reasons p{
+  grid-column:2;
+  margin:0!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.15!important;
+}
+html body#acb-design.about-page .about-two-col{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);
+  gap:clamp(30px,5vw,78px);
+  align-items:start;
+}
+html body#acb-design.about-page .about-story-copy p,
+html body#acb-design.about-page .about-next-card p{
+  font-size:var(--fs-body)!important;
+  line-height:1.25!important;
+}
+html body#acb-design.about-page .about-story-copy p:first-of-type{
+  font-size:clamp(23px,2.1vw,31px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.025em!important;
+}
+html body#acb-design.about-page .about-founder-photo{
+  position:sticky;
+  top:110px;
+  margin:0!important;
+}
+html body#acb-design.about-page .about-founder-photo picture,
+html body#acb-design.about-page .about-founder-photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:72% 28%;
+  border-radius:var(--radius-card);
+}
+html body#acb-design.about-page .about-founder-photo figcaption{
+  padding-top:10px;
+  font-size:14px;
+  color:color-mix(in srgb,var(--ink) 65%,transparent);
+}
+html body#acb-design.about-page .about-turn>.wrap{background:var(--yellow)!important}
+html body#acb-design.about-page .about-turn-grid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)!important}
+html body#acb-design.about-page .about-turn-title{position:sticky;top:110px}
+html body#acb-design.about-page .about-pull{
+  max-width:19ch;
+  margin-top:clamp(38px,7vw,92px)!important;
+  font-size:clamp(29px,3vw,44px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+}
+html body#acb-design.about-page .about-closing-line{
+  margin-top:1.6em!important;
+  font-size:clamp(28px,3vw,43px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+}
+html body#acb-design.about-page .about-beliefs-head{max-width:950px;margin-bottom:clamp(30px,4vw,54px)}
+html body#acb-design.about-page .about-belief-stack{display:grid;gap:12px}
+html body#acb-design.about-page .about-belief-stack article{
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+  padding:clamp(22px,2.8vw,38px);
+  background:var(--bg)!important;
+  border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-belief-stack p{
+  max-width:46ch;
+  margin:0!important;
+  font-size:clamp(25px,2.8vw,42px)!important;
+  line-height:1.03!important;
+  letter-spacing:-.035em!important;
+}
+html body#acb-design.about-page .about-next>.wrap{background:transparent!important;padding:0!important;box-shadow:none!important}
+html body#acb-design.about-page .about-next-card{
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:clamp(32px,4vw,58px);
+  border-radius:var(--radius-card);
+  background:#fff;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-next-card .btn{margin-top:auto!important}
+html body#acb-design.about-page .about-next-future{background:var(--pale-blue)!important}
+html body#acb-design.about-page .about-cta>.wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(24px,5vw,72px);
+  align-items:end;
+  padding:clamp(38px,5vw,72px)!important;
+  background:var(--yellow)!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page .about-cta-copy{max-width:1000px}
+html body#acb-design.about-page .about-cta p{
+  max-width:45ch;
+  margin:0!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.15!important;
+}
+html body#acb-design.about-page .about-cta .btn{white-space:nowrap}
+
+@media(max-width:954px){
+  html body#acb-design.about-page .about-two-col,
+  html body#acb-design.about-page .about-turn-grid{grid-template-columns:1fr!important}
+  html body#acb-design.about-page .about-founder-photo,
+  html body#acb-design.about-page .about-turn-title{position:relative;top:auto}
+  html body#acb-design.about-page .about-founder-photo{order:-1}
+  html body#acb-design.about-page .about-founder-photo picture,
+  html body#acb-design.about-page .about-founder-photo img{aspect-ratio:16/10;object-position:70% 30%}
+  html body#acb-design.about-page .about-next-card{min-height:0}
+  html body#acb-design.about-page .about-next-card .btn{margin-top:24px!important}
+}
+@media(max-width:684px){
+  html body#acb-design.about-page .about-main{gap:var(--section-gap)!important}
+  html body#acb-design.about-page .about-hero>.wrap{min-height:70svh;padding:26px 20px!important}
+  html body#acb-design.about-page .about-hero h1{max-width:none;font-size:clamp(43px,13vw,64px)!important;line-height:.88!important}
+  html body#acb-design.about-page .about-hero-copy{grid-template-columns:1fr;gap:12px}
+  html body#acb-design.about-page .about-main>.section:not(.about-hero)>.wrap{padding:30px 20px!important}
+  html body#acb-design.about-page .about-intro h2,
+  html body#acb-design.about-page .about-founder h2,
+  html body#acb-design.about-page .about-turn h2,
+  html body#acb-design.about-page .about-beliefs h2,
+  html body#acb-design.about-page .about-next h2,
+  html body#acb-design.about-page .about-cta h2{font-size:clamp(36px,10.5vw,50px)!important;line-height:.92!important}
+  html body#acb-design.about-page .about-lead,
+  html body#acb-design.about-page .about-why-close{font-size:25px!important}
+  html body#acb-design.about-page .about-reasons{grid-template-columns:1fr;margin:30px 0}
+  html body#acb-design.about-page .about-reasons article{min-height:0;padding:22px 18px;grid-template-columns:38px 1fr}
+  html body#acb-design.about-page .about-reasons article>span,
+  html body#acb-design.about-page .about-belief-stack article>span{width:34px;height:34px;font-size:12px}
+  html body#acb-design.about-page .about-reasons p{grid-column:1/-1;padding-top:8px}
+  html body#acb-design.about-page .about-two-col{gap:28px}
+  html body#acb-design.about-page .about-founder-photo picture,
+  html body#acb-design.about-page .about-founder-photo img{aspect-ratio:4/5}
+  html body#acb-design.about-page .about-pull{margin-top:30px!important}
+  html body#acb-design.about-page .about-belief-stack article{grid-template-columns:38px 1fr;gap:12px;padding:20px 16px}
+  html body#acb-design.about-page .about-belief-stack p{font-size:24px!important}
+  html body#acb-design.about-page .about-next>.wrap{padding:0!important}
+  html body#acb-design.about-page .about-next-card{padding:28px 20px}
+  html body#acb-design.about-page .about-cta>.wrap{grid-template-columns:1fr;padding:30px 20px!important}
+  html body#acb-design.about-page .about-cta .btn{width:100%;justify-content:space-between}
+}
+
+/* Shared frame and control corrections: footer, content, CTA and floating
+   header now resolve from one measured width at every breakpoint. */
+html body#acb-design{
+  --acb-frame-width:calc(100vw - 26px);
+}
+html body#acb-design main,
+html body#acb-design .acb-footer,
+html body#acb-design .footer-reveal .acb-quick-contact{
+  width:var(--acb-frame-width)!important;
+  max-width:var(--acb-frame-width)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  box-sizing:border-box!important;
+}
+html body#acb-design .acb-footer{
+  padding-left:clamp(20px,3vw,40px)!important;
+  padding-right:clamp(20px,3vw,40px)!important;
+}
+html body#acb-design .acb-footer>.wrap{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+}
+@media(min-width:1181px){
+  html body#acb-design{
+    --acb-frame-width:min(calc(var(--site-width) + var(--panel-boost) + 45.6px),calc(100vw - 26px));
+  }
+  html body#acb-design .acb-header{
+    width:var(--acb-frame-width)!important;
+    max-width:var(--acb-frame-width)!important;
+  }
+  html body#acb-design .acb-header .inner{
+    overflow:hidden!important;
+  }
+  html body#acb-design .acb-header .acb-logo{padding:0!important}
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{
+    height:42px!important;
+  }
+  html body#acb-design .acb-header .acb-utility-pill{
+    height:40px!important;
+    min-height:40px!important;
+    max-height:40px!important;
+    padding:0 13px!important;
+    font-size:16px!important;
+  }
+}
+@media(max-width:1180px){
+  html body#acb-design .acb-header:not(.mobile-open),
+  html body#acb-design .acb-header.mobile-open>.inner,
+  html body#acb-design .acb-header.mobile-open .acb-head-right{
+    right:13px!important;
+    left:13px!important;
+    width:auto!important;
+    max-width:none!important;
+  }
+  html body#acb-design .acb-header .acb-logo{padding:0!important}
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{
+    height:38px!important;
+  }
+  html body#acb-design .acb-footer{padding-left:20px!important;padding-right:20px!important}
+}
+
+/* Panel close control: a large, high-contrast version of the mobile menu X. */
+html body#acb-design .refpanel-close{
+  position:absolute!important;
+  top:18px!important;
+  right:18px!important;
+  z-index:4!important;
+  display:grid!important;
+  place-items:center!important;
+  width:44px!important;
+  height:44px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:var(--radius-card)!important;
+  background:var(--pale-blue,#dcecff)!important;
+  color:var(--blue,#4f46e5)!important;
+  opacity:1!important;
+  font-size:0!important;
+  line-height:0!important;
+  cursor:pointer!important;
+  transition:transform .22s cubic-bezier(.16,1,.3,1),background .2s ease!important;
+}
+html body#acb-design .refpanel-close::before,
+html body#acb-design .refpanel-close::after{
+  content:""!important;
+  position:absolute!important;
+  width:23px!important;
+  height:2px!important;
+  border-radius:999px!important;
+  background:currentColor!important;
+}
+html body#acb-design .refpanel-close::before{transform:rotate(45deg)!important}
+html body#acb-design .refpanel-close::after{transform:rotate(-45deg)!important}
+html body#acb-design .refpanel-close:hover{
+  transform:scale(1.05)!important;
+  background:var(--yellow,#e4e244)!important;
+}
+
+/* About colour surfaces must beat the generic internal-page white-card rule. */
+html body#acb-design#acb-design.about-page main .about-hero>.wrap{
+  background:var(--blue)!important;
+  color:#fff!important;
+}
+html body#acb-design#acb-design.about-page main .about-hero :is(h1,p){color:#fff!important}
+html body#acb-design#acb-design.about-page main .about-hero .side-note{color:var(--yellow)!important}
+html body#acb-design#acb-design.about-page main .about-turn>.wrap{background:var(--yellow)!important}
+html body#acb-design#acb-design.about-page main .about-next>.wrap{
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body#acb-design#acb-design.about-page main .about-cta>.wrap{background:var(--yellow)!important}
+
+/* The three-line wordmark should read as a peer to the header controls. */
+@media(min-width:1181px){
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:44px!important}
+}
+@media(max-width:1180px){
+  html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:40px!important}
+}
