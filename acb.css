@@ -6790,3 +6790,91 @@ html body#acb-design#acb-design .faq-item.closing .faq-q::after,
 html body#acb-design#acb-design .offer-row.closing .offer-toggle .pm::after{
   transform:rotate(45deg)!important;
 }
+
+/* Mobile footer and menu alignment. The open header occupies the exact same
+   floating frame as the closed header; the blue panel sits underneath it. */
+@media(max-width:900px){
+  html body#acb-design#acb-design .acb-header.mobile-open{
+    padding:0!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open>.inner{
+    position:fixed!important;
+    top:10px!important;
+    right:13px!important;
+    left:13px!important;
+    z-index:63!important;
+    width:auto!important;
+    height:52px!important;
+    min-height:52px!important;
+    margin:0!important;
+    padding:6px 10px!important;
+    box-sizing:border-box!important;
+    border-radius:var(--radius-card)!important;
+    background:transparent!important;
+  }
+  html body#acb-design#acb-design .acb-header .acb-logo,
+  html body#acb-design#acb-design .acb-header .acb-logo .acb-logo-mount{
+    height:36px!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open .acb-head-right{
+    padding:86px 22px 0!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open .mobile-menu-footer{
+    flex:0 0 auto!important;
+    margin:auto 0 0!important;
+    padding:20px 0 calc(22px + env(safe-area-inset-bottom))!important;
+  }
+  html body#acb-design .mobile-menu-utility{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px 20px!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open .mobile-menu-utility a{
+    display:inline-flex!important;
+    align-items:center!important;
+    width:fit-content!important;
+    padding:2px 0!important;
+    color:#fff!important;
+    font-size:16px!important;
+    line-height:1.15!important;
+    letter-spacing:-.03em!important;
+  }
+  html body#acb-design .mobile-menu-socials{
+    margin-top:20px!important;
+  }
+}
+
+@media(max-width:684px){
+  html body#acb-design#acb-design .acb-footer{
+    padding:24px 14px 16px!important;
+  }
+  html body#acb-design#acb-design .acb-footer>.wrap{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  html body#acb-design#acb-design .acb-footer .wrap>.bottom{
+    display:flex!important;
+    flex-direction:column!important;
+    flex-wrap:nowrap!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    gap:12px!important;
+    width:100%!important;
+    padding:16px 0 0!important;
+  }
+  html body#acb-design#acb-design .acb-footer .footer-socials{
+    order:1!important;
+  }
+  html body#acb-design#acb-design .acb-footer .wrap>.bottom>span{
+    order:2!important;
+    max-width:none!important;
+    font-size:9px!important;
+    white-space:nowrap!important;
+  }
+  html body#acb-design#acb-design .footer-reveal .acb-quick-contact{
+    margin-top:clamp(36px,11vw,52px)!important;
+    margin-bottom:-8px!important;
+  }
+}
