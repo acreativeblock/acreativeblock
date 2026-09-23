@@ -24,14 +24,14 @@
      close to normal tracking; only titles get pulled in. Line-height is the
      same two-value rule everywhere: big/title-sized text always sits at
      --lh-title, every smaller (copy) size always sits at --lh-copy. */
-  --ls-title:-.025em;                     /* tight, while preserving Inter's designed kerning pairs */
+  --ls-title:-.022em;                     /* tight, while preserving Inter's designed kerning pairs */
   --lh-title:1;                           /* the one line-height for every title-sized text */
   --lh-copy:1.3;                          /* the one line-height for every copy size (copy-lg/body/small/button) */
   --fs-label:20px;                           --ls-label:-.01em;   /* eyebrows / small caps labels */
   --fs-h1:clamp(28.8px,5vw,63px);           --ls-h1:var(--ls-title); /* hero headline, closing statement */
   --fs-h2:clamp(22.5px,3.8vw,45px);         --ls-h2:var(--ls-title); /* section titles, card/panel headings */
   --fs-copy-lg:clamp(21.6px,2.8vw,30.6px);    --ls-copy-lg:-.015em;/* big copy: pull-quote, lead paragraph */
-  --fs-body:20px;                              --ls-body:-.03em;    /* medium copy: standard paragraph */
+  --fs-body:20px;                              --ls-body:-.017em;    /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
 }
@@ -594,7 +594,7 @@ html body#acb-design .refpanel{
   background:var(--pc)!important;color:var(--ink)!important;
 }
 @media(max-width:774px){html body#acb-design .refpanel{width:88%!important;min-width:0!important}}
-html body#acb-design .refpanel.refpanel h3{font-size:clamp(31.1px,4.2vw,50.54px)!important;font-weight: 400!important;letter-spacing:-.025em!important;color:var(--ink)!important}
+html body#acb-design .refpanel.refpanel h3{font-size:clamp(31.1px,4.2vw,50.54px)!important;font-weight: 400!important;letter-spacing:-.022em!important;color:var(--ink)!important}
 html body#acb-design .bd-sci{font-size:12.64px!important;font-weight: 400!important;letter-spacing:.08em!important;color:var(--ink)!important;opacity:.65}
 html body#acb-design .refpanel .bd-lead{font-size:18.47px!important;line-height:1.5!important;color:var(--ink)!important}
 html body#acb-design .refpanel h4{color:var(--ink)!important;opacity:.65;font-size:11.66px!important;font-weight: 400!important;letter-spacing:.08em!important}
@@ -1249,7 +1249,7 @@ html body#acb-design.home-page .work-card:is(:hover,:focus-visible) .work-arrow{
   html body#acb-design .acb-header.mobile-open.menu-closing .acb-head-right{animation:acbMenuOut .52s cubic-bezier(.7,0,.84,0) forwards!important}
   html body#acb-design .acb-header.mobile-open .acb-nav{gap:clamp(10px,2.4vh,18px)!important}
   html body#acb-design .acb-header.mobile-open .navitem>a.navbutton,
-  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{font-size:clamp(31px,9vw,52px)!important;line-height:.94!important;letter-spacing:-.05em!important}
+  html body#acb-design .acb-header.mobile-open .navitem>button.navbutton{font-size:clamp(31px,9vw,52px)!important;line-height:.94!important;letter-spacing:-.022em!important}
   html body#acb-design .acb-header.mobile-open .acb-sub a,
   html body#acb-design .acb-header.mobile-open .submenu a{font-size:clamp(21px,6.4vw,30px)!important;line-height:1.05!important;color:rgba(255,255,255,.68)!important}
   html body#acb-design .acb-header.mobile-open .navitem{opacity:0;animation:acbMenuItemIn .55s cubic-bezier(.16,1,.3,1) forwards}
@@ -1419,7 +1419,7 @@ html body#acb-design#acb-design.blocks-page .bmcard .card-tag{
   font-size:15px!important;
   font-weight:400!important;
   line-height:1!important;
-  letter-spacing:-.03em!important;
+  letter-spacing:-.022em!important;
   text-transform:none!important;
   box-shadow:0 8px 20px rgba(7,19,33,.1)!important;
 }
@@ -1455,7 +1455,7 @@ html body#acb-design#acb-design:is(.individuals-page,.organisations-page) main h
   text-align:center!important;
   font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.95!important;
-  letter-spacing:-.045em!important;
+  letter-spacing:-.022em!important;
 }
 html body#acb-design.contact-page .contact-visual-hero h1{display:block!important;width:min(520px,46vw)!important;margin:0!important;padding:19.83px 26.44px!important;background:#fff!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;font-size:clamp(26px,2.5vw,34px)!important;line-height:.98!important;text-align:left!important;box-shadow:0 12px 34px rgba(7,19,33,.12)}
 html body#acb-design.contact-page .contact-hero-kicker,
@@ -1693,7 +1693,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
     justify-content:space-between!important;
     font-size:clamp(26px,7vw,42px)!important;
     line-height:1!important;
-    letter-spacing:-.04em!important;
+    letter-spacing:-.022em!important;
     color:#fff!important;
     text-align:left!important;
   }
@@ -1738,7 +1738,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
     color:var(--ink)!important;
     font-size:clamp(20px,5vw,28px)!important;
     line-height:1!important;
-    letter-spacing:-.03em!important;
+    letter-spacing:-.022em!important;
     text-decoration:none!important;
   }
   html body#acb-design .acb-header.mobile-open .mobile-header-cta{background:var(--acb-yellow)!important;color:var(--ink)!important}
@@ -2454,7 +2454,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy{
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy .audience-eyebrow{margin-bottom:0!important}
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-copy h2{
   font-size:clamp(60px,6.7vw,100px)!important;line-height:.8!important;
-  letter-spacing:-.055em!important;text-wrap:balance!important;
+  letter-spacing:-.022em!important;text-wrap:balance!important;
   margin:0!important;padding-top:20px!important;max-width:none!important;width:100%!important;color:var(--ink)!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .takeaway-blocks{
@@ -2468,7 +2468,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .tblock{
    branch (2 classes+element) across its whole selector, outranking this
    single-ID rule even though .tblock p matches none of those branches. */
 html body#acb-design#acb-design:is(.individuals-page,.organisations-page) .tblock p{
-  margin:0!important;font-size:clamp(28px,3.6vw,42px)!important;line-height:1.08!important;font-weight:400!important;letter-spacing:-.04em!important;
+  margin:0!important;font-size:clamp(28px,3.6vw,42px)!important;line-height:1.08!important;font-weight:400!important;letter-spacing:-.022em!important;
   color:inherit!important;
 }
 html body#acb-design#acb-design:is(.individuals-page,.organisations-page) .tblock sup.cite{color:inherit!important;opacity:.75!important}
@@ -2700,7 +2700,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
     padding:8px 0!important;
     font-size:clamp(24px,6.4vw,36px)!important;
     line-height:1!important;
-    letter-spacing:-.04em!important;
+    letter-spacing:-.022em!important;
   }
   html body#acb-design .acb-header.mobile-open .navitem.submenu-open .submenu,
   html body#acb-design .acb-header.mobile-open .navitem.submenu-open .acb-sub{
@@ -2719,7 +2719,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-pa
     margin:0!important;
     font-size:clamp(16px,4.2vw,22px)!important;
     line-height:1.12!important;
-    letter-spacing:-.025em!important;
+    letter-spacing:-.022em!important;
     color:rgba(255,255,255,.82)!important;
     text-align:left!important;
   }
@@ -3734,7 +3734,7 @@ html body#acb-design .acb-header .acb-utility-pill{
   font-size:20px!important;line-height:1.2!important;padding:20px!important;
 }
 
-html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill,.mobile-menu-toggle){letter-spacing:-.03em!important}
+html body#acb-design .acb-header :is(.navbutton,.acb-sub a,.acb-utility-pill,.mobile-menu-toggle){letter-spacing:-.022em!important}
 
 /* Global action and label scale. Kept last so individual page styles cannot
    silently reduce an action or section label. */
@@ -3952,9 +3952,9 @@ html body#acb-design.home-page .journal-card,html body#acb-design.home-page .jou
 html body#acb-design.home-page .journal-card figure{width:100%!important;aspect-ratio:4/3!important;margin:0 0 18px!important;overflow:hidden!important;border-radius:calc(var(--radius-card) - 8px)!important;background:#dbeafe!important}
 html body#acb-design.home-page .journal-card img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;transition:transform .4s ease!important}
 html body#acb-design.home-page .journal-card:hover img{transform:scale(1.03)!important}
-html body#acb-design.home-page .journal-tag{align-self:flex-start!important;margin:0 0 12px!important;padding:4px 9px!important;border:1px solid currentColor!important;border-radius:999px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.03em!important}
-html body#acb-design.home-page .journal-card h3{margin:0!important;font-size:clamp(24px,2vw,30px)!important;line-height:1.04!important;letter-spacing:-.04em!important}
-html body#acb-design.home-page .journal-meta{margin-top:auto!important;padding-top:20px!important;font-size:15px!important;letter-spacing:-.03em!important}
+html body#acb-design.home-page .journal-tag{align-self:flex-start!important;margin:0 0 12px!important;padding:4px 9px!important;border:1px solid currentColor!important;border-radius:999px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.022em!important}
+html body#acb-design.home-page .journal-card h3{margin:0!important;font-size:clamp(24px,2vw,30px)!important;line-height:1.04!important;letter-spacing:-.022em!important}
+html body#acb-design.home-page .journal-meta{margin-top:auto!important;padding-top:20px!important;font-size:15px!important;letter-spacing:-.022em!important}
 /* Text-led cards keep the same generous height while exposing half of the
    fifth card, making the horizontal continuation immediately obvious. */
 html body#acb-design.home-page .journal-viewport{container-type:inline-size!important}
@@ -5467,7 +5467,7 @@ html body#acb-design:is(.individuals-page,.organisations-page) main .plan-card .
   display:inline-flex!important;align-self:flex-start!important;width:max-content!important;max-width:100%!important;
   margin:0 0 2px!important;padding:4px 9px!important;border:1px solid currentColor!important;
   border-radius:999px!important;color:inherit!important;opacity:1!important;
-  font-size:15px!important;line-height:1!important;letter-spacing:-.03em!important;text-transform:none!important;
+  font-size:15px!important;line-height:1!important;letter-spacing:-.022em!important;text-transform:none!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) main .plan-card a.btn{margin-top:auto!important}
 html body#acb-design.individuals-page main .access-note{font-size:20px!important}
@@ -5546,7 +5546,7 @@ html body#acb-design#acb-design.evidence-page .ev-copy-card .hl{
   color:inherit!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;
 }
 html body#acb-design#acb-design.evidence-page .ev-stat-block{grid-template-columns:minmax(120px,auto) minmax(0,1fr)!important;column-gap:clamp(16px,2vw,28px)!important}
-html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{min-width:0!important;white-space:nowrap!important;letter-spacing:-.065em!important;padding-right:8px!important;font-size:clamp(48px,5vw,72px)!important}
+html body#acb-design#acb-design.evidence-page .ev-stat-block .statnum{min-width:0!important;white-space:nowrap!important;letter-spacing:-.022em!important;padding-right:8px!important;font-size:clamp(48px,5vw,72px)!important}
 html body#acb-design#acb-design.evidence-page .ev-stat-block p{min-width:0!important}
 html body#acb-design#acb-design.evidence-page .why-matters-copy h2{font-size:clamp(40px,4vw,56px)!important}
 @media(max-width:684px){
@@ -5600,7 +5600,7 @@ html body#acb-design#acb-design.organisations-page main #offers>.wrap>h2.big{
   text-align:center!important;
   font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.88!important;
-  letter-spacing:-.055em!important;
+  letter-spacing:-.022em!important;
 }
 
 /* 4i offers use the same overlapping deck language as 4o, adapted to three
@@ -6098,7 +6098,7 @@ html body#acb-design.blocks-page .bm-hypo>.wrap::after{content:none!important;di
     padding:0 12px!important;
     font-size:14px!important;
     line-height:1!important;
-    letter-spacing:-.03em!important;
+    letter-spacing:-.022em!important;
     white-space:nowrap!important;
     overflow:visible!important;
   }
@@ -6217,7 +6217,7 @@ main .section > .wrap:has(> .plan-grid) > h2.big{
   text-align:center!important;
   font-size:clamp(40px,5.6vw,68px)!important;
   line-height:.95!important;
-  letter-spacing:-.045em!important;
+  letter-spacing:-.022em!important;
 }
 
 /* Mobile contact CTA: a clean yellow card with no background photograph.
@@ -6763,7 +6763,7 @@ html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-s
     color:#fff!important;
     font-size:16px!important;
     line-height:1.15!important;
-    letter-spacing:-.03em!important;
+    letter-spacing:-.022em!important;
   }
   html body#acb-design .mobile-menu-socials{
     display:flex!important;
@@ -6907,7 +6907,7 @@ html body#acb-design#acb-design .offer-row.closing .offer-toggle .pm::after{
     color:#fff!important;
     font-size:16px!important;
     line-height:1.15!important;
-    letter-spacing:-.03em!important;
+    letter-spacing:-.022em!important;
   }
   html body#acb-design .mobile-menu-socials{
     margin-top:20px!important;
@@ -7062,7 +7062,7 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
     color:#fff!important;
     font-size:16px!important;
     line-height:1.15!important;
-    letter-spacing:-.03em!important;
+    letter-spacing:-.022em!important;
   }
   html body#acb-design .mobile-menu-socials{
     display:flex!important;
@@ -7314,7 +7314,7 @@ html body#acb-design.evidence-page .evidence-play-intro h2{
   max-width:12ch!important;
   font-size:clamp(42px,5vw,68px)!important;
   line-height:.92!important;
-  letter-spacing:-.05em!important;
+  letter-spacing:-.022em!important;
 }
 html body#acb-design.evidence-page .evidence-play-intro>p{
   margin:0!important;
@@ -7348,7 +7348,7 @@ html body#acb-design.evidence-page .play-route-label{
   margin:0 0 22px!important;
   font-size:15px!important;
   line-height:1!important;
-  letter-spacing:-.03em!important;
+  letter-spacing:-.022em!important;
   color:var(--ink)!important;
 }
 html body#acb-design.evidence-page .play-route ol{
@@ -7366,7 +7366,7 @@ html body#acb-design.evidence-page .play-route li{
   min-width:0!important;
   font-size:clamp(18px,2vw,27px)!important;
   line-height:1!important;
-  letter-spacing:-.04em!important;
+  letter-spacing:-.022em!important;
   color:var(--ink)!important;
   white-space:nowrap!important;
 }
@@ -7396,7 +7396,7 @@ html body#acb-design.evidence-page .evidence-play-card h3{
   max-width:24ch!important;
   font-size:clamp(25px,2.8vw,38px)!important;
   line-height:.98!important;
-  letter-spacing:-.045em!important;
+  letter-spacing:-.022em!important;
 }
 html body#acb-design.evidence-page .evidence-play-card p{
   margin:0!important;
@@ -7427,7 +7427,7 @@ html body#acb-design.evidence-page .play-question{
 html body#acb-design.evidence-page .play-question span{
   font-size:15px!important;
   line-height:1!important;
-  letter-spacing:-.03em!important;
+  letter-spacing:-.022em!important;
   text-transform:uppercase!important;
   color:#fff!important;
 }
@@ -7435,7 +7435,7 @@ html body#acb-design.evidence-page .play-question p{
   margin:0!important;
   font-size:clamp(22px,2.5vw,34px)!important;
   line-height:1!important;
-  letter-spacing:-.04em!important;
+  letter-spacing:-.022em!important;
   color:#fff!important;
 }
 @media(max-width:900px){
@@ -7616,7 +7616,7 @@ html body#acb-design#acb-design.organisations-page .organisation-support .suppor
   max-width:11.5ch!important;
   font-size:clamp(42px,5.2vw,72px)!important;
   line-height:.84!important;
-  letter-spacing:-.055em!important;
+  letter-spacing:-.022em!important;
   text-wrap:balance!important;
 }
 @media(max-width:774px){
@@ -7713,4 +7713,18 @@ html body#acb-design#acb-design.organisations-page .organisation-process>li>p{
     height:36px!important;
     font-size:13px!important;
   }
+}
+
+/* Typography rendering system. Inter's variable optical-size axis handles
+   glyph drawing at each rendered size; native OpenType shaping handles real
+   kerning and contextual pairs. Manual tracking stays restrained so it does
+   not fight those font metrics. */
+html body#acb-design,
+html body#acb-design :is(button,input,select,textarea){
+  font-kerning:normal!important;
+  font-optical-sizing:auto!important;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1!important;
+  font-variant-ligatures:common-ligatures contextual!important;
+  font-synthesis:none!important;
+  text-rendering:optimizeLegibility;
 }
