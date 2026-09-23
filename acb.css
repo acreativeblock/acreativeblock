@@ -7608,3 +7608,21 @@ html body#acb-design.individuals-page .individual-support .service-scope-note{
   html body#acb-design.questionnaire-page .stage{min-height:calc(100svh - 79.2px)!important;padding:clamp(30.6px,5.4vw,79.2px) max(14.4px,var(--pad,2.7vw))!important}
   html body#acb-design.questionnaire-page .card{width:min(828px,100%)!important;min-height:396px!important;padding:clamp(25.2px,4.5vw,64.8px)!important}
 }
+
+/* Keep the organisation support headline as compact and expressive as the
+   closing "A team that keeps moving." title. Its fluid cap prevents the
+   half-width copy column from breaking into four short lines. */
+html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .big{
+  max-width:11.5ch!important;
+  font-size:clamp(42px,5.2vw,72px)!important;
+  line-height:.84!important;
+  letter-spacing:-.055em!important;
+  text-wrap:balance!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .big{
+    max-width:12ch!important;
+    font-size:clamp(40px,10.5vw,58px)!important;
+    line-height:.88!important;
+  }
+}
