@@ -6955,6 +6955,8 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
     background:var(--acb-blue,#4f46e5)!important;
     transform-origin:50% 0!important;
     animation:acbMenuDropIn .48s cubic-bezier(.16,1,.3,1) both!important;
+    will-change:transform!important;
+    backface-visibility:hidden!important;
     overscroll-behavior:contain!important;
   }
   html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .acb-head-right{
@@ -7008,12 +7010,12 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
     height:21px!important;
   }
   @keyframes acbMenuDropIn{
-    from{opacity:.96;clip-path:inset(0 0 calc(100% - 52px) 0 round var(--radius-card));transform:translateY(-6px)}
-    to{opacity:1;clip-path:inset(0 0 0 0 round var(--radius-card));transform:translateY(0)}
+    from{transform:translate3d(0,calc(-100% + 52px),0)}
+    to{transform:translate3d(0,0,0)}
   }
   @keyframes acbMenuDropOut{
-    from{opacity:1;clip-path:inset(0 0 0 0 round var(--radius-card));transform:translateY(0)}
-    to{opacity:.96;clip-path:inset(0 0 calc(100% - 52px) 0 round var(--radius-card));transform:translateY(-6px)}
+    from{transform:translate3d(0,0,0)}
+    to{transform:translate3d(0,calc(-100% + 52px),0)}
   }
 }
 
@@ -7021,6 +7023,22 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
   html body#acb-design .mobile-menu-utility{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     justify-content:stretch!important;
+  }
+}
+
+/* The document behind the open navigation stays put. The body receives a
+   fixed scroll position from site.js so this also holds on iOS Safari. */
+html.menu-open,
+html.menu-open body{
+  overflow:hidden!important;
+  overscroll-behavior:none!important;
+}
+
+/* Match the mobile/tablet content frame to the floating header exactly. */
+@media(max-width:1180px){
+  html body#acb-design main{
+    width:calc(100vw - 26px)!important;
+    max-width:calc(100vw - 26px)!important;
   }
 }
 
