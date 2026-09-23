@@ -41,6 +41,22 @@ html body#acb-design{
   font-feature-settings:"kern" 1,"liga" 1,"calt" 1;
   text-rendering:optimizeLegibility;
 }
+html body#acb-design .service-scope-marker{
+  margin-left:.12em;
+  font-size:.55em;
+  line-height:0;
+  vertical-align:super;
+}
+html body#acb-design .service-scope-note{
+  max-width:62ch!important;
+  margin:18px 0 0!important;
+  padding-top:12px!important;
+  border-top:1px solid currentColor!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+  letter-spacing:-.01em!important;
+  opacity:.72!important;
+}
 /* Same tiers as classes, for markup that wants the whole bundle in one go
    (font-size + letter-spacing + a sensible line-height/weight default). */
 html body#acb-design .t-label{font-size:var(--fs-label)!important;letter-spacing:var(--ls-label)!important;line-height:1.2!important;text-transform:uppercase;font-weight: 400}
@@ -7444,4 +7460,14 @@ html body#acb-design.evidence-page .play-question p{
     border-radius:var(--radius-card)!important;
   }
   html body#acb-design.evidence-page .play-question p{font-size:24px!important;line-height:1.05!important}
+}
+html body#acb-design.individuals-page .individual-support .service-scope-note{
+  max-width:62ch!important;
+  margin:18px 0 0!important;
+  padding-top:12px!important;
+  border-top:1px solid currentColor!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+  letter-spacing:-.01em!important;
+  opacity:.72!important;
 }
