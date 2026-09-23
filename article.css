@@ -29,10 +29,25 @@ html body#acb-design.article-page .article-layout{box-shadow:none!important;outl
    .eyebrow/.acb-eyebrow/etc rule — .article-kicker is included there).
    h1 already gets --fs-h1 from the shared internal-page h1 rule; just
    cap its measure so a long title doesn't stretch edge to edge. */
+html body#acb-design.internal-page.article-page .article-kicker{
+  display:inline-flex!important;
+  width:max-content!important;
+  align-items:center!important;
+  margin:0 0 14px!important;
+  padding:4px 9px!important;
+  border:1px solid currentColor!important;
+  border-radius:999px!important;
+  color:var(--ink)!important;
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:-.022em!important;
+  text-transform:none!important;
+  font-weight:400!important;
+}
 html body#acb-design.article-page .article-head h1{max-width:22ch!important}
 html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:6px 0 0!important;max-width:56ch!important}
 html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px 16px!important;font-size:15px!important;letter-spacing:-.022em!important;line-height:1!important;color:var(--ink)!important;margin:16px 0 0!important}
-html body#acb-design.article-page .article-published{display:inline-flex!important;align-items:center!important;border:1px solid currentColor!important;border-radius:999px!important;padding:5px 10px!important}
+html body#acb-design.article-page .article-published{display:inline-flex!important;align-items:center!important;gap:4px!important;border:1px solid currentColor!important;border-radius:999px!important;padding:5px 10px!important}
 
 /* Body card (.article-layout) is already a full-width white card via the
    shared mechanism; keep the actual reading column at a comfortable

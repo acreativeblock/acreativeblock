@@ -3639,6 +3639,24 @@ html body#acb-design.internal-page.blog-index .blog-card :is(.blog-cat,.blog-tim
   line-height:1.1!important;
   letter-spacing:-.01em!important;
 }
+/* Journal taxonomy labels use one compact outlined-pill language on the
+   homepage, blog index, related cards and inside each article. */
+html body#acb-design.internal-page.blog-index .blog-card .blog-cat,
+html body#acb-design.article-page .article-kicker{
+  display:inline-flex!important;
+  width:max-content!important;
+  align-items:center!important;
+  padding:4px 9px!important;
+  border:1px solid currentColor!important;
+  border-radius:999px!important;
+  color:var(--ink)!important;
+  font-size:15px!important;
+  line-height:1!important;
+  letter-spacing:-.022em!important;
+  text-transform:none!important;
+  font-weight:400!important;
+}
+html body#acb-design.article-page .article-kicker{margin:0 0 14px!important}
 html body#acb-design.internal-page.blog-index .blog-card h2{
   font-size:clamp(24px,2vw,30px)!important;
   line-height:1.05!important;
