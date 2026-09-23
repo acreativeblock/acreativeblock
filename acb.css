@@ -6350,3 +6350,51 @@ html body#acb-design#acb-design.organisations-page .organisation-process li p{
   html body#acb-design#acb-design.organisations-page .organisation-process li{min-height:0!important}
   html body#acb-design#acb-design.organisations-page .organisation-process .step-number{margin-bottom:22px!important}
 }
+
+
+/* Audience process refinement: the five individual steps sit as a tactile
+   vertical deck, while the organisation offer now reflects its three actual
+   levels of work. */
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps{
+  overflow:visible!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li{
+  --step-shift:0px;
+  margin-top:-18px!important;
+  transform:translateX(var(--step-shift)) rotate(var(--step-rotate))!important;
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:first-child{margin-top:0!important;--step-shift:-2px}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(2){--step-shift:5px}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(3){--step-shift:-3px}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(4){--step-shift:4px}
+html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps li:nth-child(5){--step-shift:-1px}
+@media(min-width:700px){
+  html body#acb-design#acb-design.organisations-page main .plan-card{
+    flex-basis:calc((100% + 36px)/3)!important;
+    width:calc((100% + 36px)/3)!important;
+  }
+}
+
+/* Horizontal navigation arrows: an exact left/right axis for the journal
+   carousel and block-map cards, independent of legacy font glyphs. */
+html body#acb-design{
+  --acb-horizontal-arrow:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 18 14%27%3E%3Cpath d=%27M1 7h15M11 2l5 5-5 5%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E");
+}
+html body#acb-design#acb-design.home-page .journal-control::after,
+html body#acb-design#acb-design.blocks-page .bmcard-arr::after{
+  width:18px!important;
+  height:14px!important;
+  margin:0!important;
+  border:0!important;
+  background:currentColor!important;
+  -webkit-mask:var(--acb-horizontal-arrow) center/18px 14px no-repeat!important;
+  mask:var(--acb-horizontal-arrow) center/18px 14px no-repeat!important;
+  transform:translate(-50%,-50%)!important;
+}
+html body#acb-design#acb-design.home-page .journal-control:not(.is-next)::after{
+  transform:translate(-50%,-50%) scaleX(-1)!important;
+}
+html body#acb-design#acb-design.blocks-page .bmcard-arr::after{
+  transform:translate(-50%,-50%)!important;
+}
