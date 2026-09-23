@@ -7473,140 +7473,140 @@ html body#acb-design.individuals-page .individual-support .service-scope-note{
 }
 
 /* ========================================================================
-   DESKTOP 90% SCALE
-   Each design token and component dimension is reduced at its source. This
+   DESKTOP 95% SCALE
+   Each design token and component dimension is set midway between the original scale and the former 90% reduction. This
    is intentionally a desktop-only layer: tablet and mobile keep their
    current measurements, and full-bleed/percentage-based geometry is intact.
    ======================================================================== */
 @media (min-width:955px){
   html body#acb-design{
-    --sp-card:clamp(16.2px,2.7vw,24.3px);
-    --sp-gap:clamp(25.92px,6.3vw,44.61px);
-    --radius-card:1.8rem;
-    --site-gutter:clamp(16.2px,.9vw,25.92px);
-    --site-width:calc(min(100vw,1174.86px) - 2 * var(--site-gutter));
-    --panel-boost:clamp(0px,5.4vw,72px);
-    --fs-label:18px;
-    --fs-h1:clamp(25.92px,4.5vw,56.7px);
-    --fs-h2:clamp(20.25px,3.42vw,40.5px);
-    --fs-copy-lg:clamp(19.44px,2.52vw,27.54px);
-    --fs-body:18px;
-    --fs-small:clamp(8.91px,.9vw,10.53px);
-    --fs-button:18px;
+    --sp-card:clamp(17.1px,2.85vw,25.65px);
+    --sp-gap:clamp(27.36px,6.65vw,47.09px);
+    --radius-card:1.9rem;
+    --site-gutter:clamp(17.1px,0.95vw,27.36px);
+    --site-width:calc(min(100vw,1240.13px) - 2 * var(--site-gutter));
+    --panel-boost:clamp(0px,5.7vw,76px);
+    --fs-label:19px;
+    --fs-h1:clamp(27.36px,4.75vw,59.85px);
+    --fs-h2:clamp(21.38px,3.61vw,42.75px);
+    --fs-copy-lg:clamp(20.52px,2.66vw,29.07px);
+    --fs-body:19px;
+    --fs-small:clamp(9.41px,0.95vw,11.12px);
+    --fs-button:19px;
   }
 
   html body#acb-design .acb-header{
-    top:17.85px!important;
-    width:calc(var(--site-width) + var(--panel-boost) + 43.2px)!important;
+    top:18.84px!important;
+    width:calc(var(--site-width) + var(--panel-boost) + 45.6px)!important;
   }
   html body#acb-design .acb-header .inner{
-    height:41.64px!important;
-    min-height:41.64px!important;
-    gap:17.85px!important;
+    height:43.95px!important;
+    min-height:43.95px!important;
+    gap:18.84px!important;
   }
-  html body#acb-design .acb-header .acb-logo{padding:2.7px!important}
-  html body#acb-design .acb-header .acb-actions{padding:9px!important;gap:17.85px!important}
-  html body#acb-design .acb-header .acb-nav{gap:23.8px!important}
+  html body#acb-design .acb-header .acb-logo{padding:2.85px!important}
+  html body#acb-design .acb-header .acb-actions{padding:9.5px!important;gap:18.84px!important}
+  html body#acb-design .acb-header .acb-nav{gap:25.12px!important}
   html body#acb-design .acb-header .navbutton,
-  html body#acb-design .acb-header .acb-social a{font-size:13.38px!important}
+  html body#acb-design .acb-header .acb-social a{font-size:14.12px!important}
   html body#acb-design .acb-header .acb-sub a{
-    font-size:11.9px!important;
-    padding:5.95px 7.43px!important;
+    font-size:12.56px!important;
+    padding:6.28px 7.84px!important;
     margin:0 -7.43px!important;
   }
   html body#acb-design .acb-header .acb-utility-pill{
-    padding:7.43px 13.38px!important;
-    font-size:11.9px!important;
+    padding:7.84px 14.12px!important;
+    font-size:12.56px!important;
   }
 
-  html body#acb-design.home-page main section:where(:not(.acb-hero):not(.acb-marq)){margin:22.31px!important}
-  html body#acb-design.home-page .acb-marq{padding:11.9px 0!important}
-  html body#acb-design.home-page .acb-marq .track{font-size:13.38px!important}
-  html body#acb-design.home-page .acb-marq .marq-group{gap:17.85px;padding-right:17.85px!important}
-  html body#acb-design.home-page .acb-marq .track em{font-size:13.38px!important}
-  html body#acb-design.home-page .acb-hero-grid{padding:29.75px calc((100vw - var(--site-width)) / 2)!important}
-  html body#acb-design.home-page .acb-hero-copy{padding:17.85px 23.8px!important}
-  html body#acb-design.home-page .acb-hero h1{font-size:48.6px!important}
-  html body#acb-design.home-page .acb-hero .acb-cta{gap:7.43px;margin-top:13.38px!important}
-  html body#acb-design.home-page .acb-proof-copy{gap:14.87px!important}
+  html body#acb-design.home-page main section:where(:not(.acb-hero):not(.acb-marq)){margin:23.55px!important}
+  html body#acb-design.home-page .acb-marq{padding:12.56px 0!important}
+  html body#acb-design.home-page .acb-marq .track{font-size:14.12px!important}
+  html body#acb-design.home-page .acb-marq .marq-group{gap:18.84px;padding-right:18.84px!important}
+  html body#acb-design.home-page .acb-marq .track em{font-size:14.12px!important}
+  html body#acb-design.home-page .acb-hero-grid{padding:31.4px calc((100vw - var(--site-width)) / 2)!important}
+  html body#acb-design.home-page .acb-hero-copy{padding:18.84px 25.12px!important}
+  html body#acb-design.home-page .acb-hero h1{font-size:51.3px!important}
+  html body#acb-design.home-page .acb-hero .acb-cta{gap:7.84px;margin-top:14.12px!important}
+  html body#acb-design.home-page .acb-proof-copy{gap:15.7px!important}
   html body#acb-design.home-page .acb-proof-copy h2,
-  html body#acb-design.home-page .acb-say p.scrolltext{font-size:31.5px!important}
-  html body#acb-design.home-page .acb-proof-copy p{font-size:16.2px!important}
-  html body#acb-design.home-page .acb-proof-image{min-height:312.3px!important}
-  html body#acb-design.home-page .acb-look>.wrap{gap:17.85px 22.31px!important}
-  html body#acb-design.home-page .acb-faq>.wrap{gap:22.31px!important}
+  html body#acb-design.home-page .acb-say p.scrolltext{font-size:33.25px!important}
+  html body#acb-design.home-page .acb-proof-copy p{font-size:17.1px!important}
+  html body#acb-design.home-page .acb-proof-image{min-height:329.65px!important}
+  html body#acb-design.home-page .acb-look>.wrap{gap:18.84px 23.55px!important}
+  html body#acb-design.home-page .acb-faq>.wrap{gap:23.55px!important}
 
   html body#acb-design :is(a.btn,a.btn-out,a.pill,a.pill.big,a.pill.alt,button.btn,button.btn-out,button.pill,.refbar-btn,.map-test-inline,.bm-hypo button,.hero-panel .btn,.cta .btn,.cta .btn-out,.cta .pill,.plan-card .btn,.speaking-grid .btn,.acb-close .btn,.acb-close-sub .btn,.acb-utility-pill),
   html body#acb-design.contact-page .cform button[type="submit"],
   html body#acb-design.home-page .acb-look .cta .pill,
   html body#acb-design .cookie-banner .cookie-actions button{
-    font-size:18px!important;
-    padding:18px!important;
+    font-size:19px!important;
+    padding:19px!important;
   }
   html body#acb-design .faq-item .faq-q,
-  html body#acb-design.faq-page .faqx .offer-toggle{font-size:27px!important}
+  html body#acb-design.faq-page .faqx .offer-toggle{font-size:28.5px!important}
   html body#acb-design .faq-item .faq-a>p,
-  html body#acb-design.faq-page .faqx .offer-body>div{padding-bottom:25.2px!important}
+  html body#acb-design.faq-page .faqx .offer-body>div{padding-bottom:26.6px!important}
 
-  html body#acb-design .acb-footer{padding:clamp(21.6px,3.06vw,36px) 0 0!important}
-  html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(17.82px,3.06vw,30.24px) 0!important;gap:clamp(14.58px,1.98vw,23.4px)!important}
-  html body#acb-design .acb-footer .foot-lead{gap:clamp(18px,3.06vw,39.6px)!important;padding-bottom:clamp(18px,3.06vw,32.4px)!important}
-  html body#acb-design .acb-footer .ack{margin-top:11.9px!important;font-size:clamp(11.9px,1.17vw,15.93px)!important}
-  html body#acb-design .acb-footer :is(.col a,.news p){font-size:13.38px!important}
-  html body#acb-design .acb-footer .bottom{padding:8.93px 0!important}
+  html body#acb-design .acb-footer{padding:clamp(22.8px,3.23vw,38px) 0 0!important}
+  html body#acb-design .acb-footer .top.acb-footer-links{padding:clamp(18.81px,3.23vw,31.92px) 0!important;gap:clamp(15.39px,2.09vw,24.7px)!important}
+  html body#acb-design .acb-footer .foot-lead{gap:clamp(19px,3.23vw,41.8px)!important;padding-bottom:clamp(19px,3.23vw,34.2px)!important}
+  html body#acb-design .acb-footer .ack{margin-top:12.56px!important;font-size:clamp(12.56px,1.23vw,16.82px)!important}
+  html body#acb-design .acb-footer :is(.col a,.news p){font-size:14.12px!important}
+  html body#acb-design .acb-footer .bottom{padding:9.43px 0!important}
 
-  html body#acb-design .cookie-banner{padding:16.2px clamp(14.58px,3.6vw,32.4px)!important;gap:14.58px 22.68px!important}
-  html body#acb-design .cookie-banner p{font-size:8.1px!important}
-  html body#acb-design .cookie-banner .cookie-actions{gap:9.72px!important}
+  html body#acb-design .cookie-banner{padding:17.1px clamp(15.39px,3.8vw,34.2px)!important;gap:15.39px 23.94px!important}
+  html body#acb-design .cookie-banner p{font-size:8.55px!important}
+  html body#acb-design .cookie-banner .cookie-actions{gap:10.26px!important}
 
-  html body#acb-design.contact-page .cform{gap:14.58px!important}
-  html body#acb-design.contact-page .cform :is(input,textarea,select){padding:11.34px 12.96px!important}
-  html body#acb-design.contact-page .cform-consent{gap:9px!important}
+  html body#acb-design.contact-page .cform{gap:15.39px!important}
+  html body#acb-design.contact-page .cform :is(input,textarea,select){padding:11.97px 13.68px!important}
+  html body#acb-design.contact-page .cform-consent{gap:9.5px!important}
 
-  html body#acb-design.blocks-page .bmgrid{gap:clamp(9.72px,1.26vw,16.2px)!important}
-  html body#acb-design.blocks-page .bmcard-body{padding:12.96px 21.6px 12.96px 12.96px!important}
-  html body#acb-design.blocks-page .bmcard-title{font-size:clamp(21.6px,2.34vw,28.8px)!important}
-  html body#acb-design.blocks-page .card-tag{padding:3.72px 6.69px!important}
+  html body#acb-design.blocks-page .bmgrid{gap:clamp(10.26px,1.33vw,17.1px)!important}
+  html body#acb-design.blocks-page .bmcard-body{padding:13.68px 22.8px 13.68px 13.68px!important}
+  html body#acb-design.blocks-page .bmcard-title{font-size:clamp(22.8px,2.47vw,30.4px)!important}
+  html body#acb-design.blocks-page .card-tag{padding:3.93px 7.06px!important}
 
-  html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{gap:clamp(11.9px,1.62vw,16.36px)!important}
-  html body#acb-design:is(.individuals-page,.organisations-page) .signs-list{gap:8.93px 23.8px!important;margin-top:clamp(17.85px,2.7vw,26.77px)!important}
-  html body#acb-design:is(.individuals-page,.organisations-page) .signs-list li{padding-left:17.85px!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .plan-grid{gap:clamp(12.56px,1.71vw,17.27px)!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .signs-list{gap:9.43px 25.12px!important;margin-top:clamp(18.84px,2.85vw,28.26px)!important}
+  html body#acb-design:is(.individuals-page,.organisations-page) .signs-list li{padding-left:18.84px!important}
 
-  html body#acb-design.method-page .craft-steps{gap:11.9px!important}
-  html body#acb-design.method-page .craft-step{padding:19.33px 14.87px!important;gap:7.43px!important}
-  html body#acb-design.method-page .craft-step p{font-size:clamp(12.15px,1.26vw,13.95px)!important}
+  html body#acb-design.method-page .craft-steps{gap:12.56px!important}
+  html body#acb-design.method-page .craft-step{padding:20.4px 15.7px!important;gap:7.84px!important}
+  html body#acb-design.method-page .craft-step p{font-size:clamp(12.83px,1.33vw,14.72px)!important}
 
-  html body#acb-design.evidence-page .evidence-play-card h3{font-size:clamp(22.5px,2.52vw,34.2px)!important;margin-bottom:12.6px!important}
-  html body#acb-design.evidence-page .evidence-play-card p{font-size:18px!important}
-  html body#acb-design.evidence-page .evidence-play-card.play-limit{gap:clamp(21.6px,4.5vw,68.4px)!important}
-  html body#acb-design.evidence-page .play-question{gap:18px!important;padding:19.8px 21.6px!important}
-  html body#acb-design.evidence-page .play-question span{font-size:13.5px!important}
-  html body#acb-design.evidence-page .play-question p{font-size:clamp(19.8px,2.25vw,30.6px)!important}
+  html body#acb-design.evidence-page .evidence-play-card h3{font-size:clamp(23.75px,2.66vw,36.1px)!important;margin-bottom:13.3px!important}
+  html body#acb-design.evidence-page .evidence-play-card p{font-size:19px!important}
+  html body#acb-design.evidence-page .evidence-play-card.play-limit{gap:clamp(22.8px,4.75vw,72.2px)!important}
+  html body#acb-design.evidence-page .play-question{gap:19px!important;padding:20.9px 22.8px!important}
+  html body#acb-design.evidence-page .play-question span{font-size:14.25px!important}
+  html body#acb-design.evidence-page .play-question p{font-size:clamp(20.9px,2.38vw,32.3px)!important}
 
-  html body#acb-design.article-page .article-dek{margin-top:5.4px!important}
-  html body#acb-design.article-page .article-meta{margin-top:14.4px!important}
-  html body#acb-design.article-page .article-col{max-width:630px!important}
-  html body#acb-design.article-page .article-aside{margin-bottom:clamp(19.8px,2.7vw,30.6px)!important;padding:14.4px 16.2px!important}
-  html body#acb-design.article-page .article-copy .article-note{padding:13.5px 16.2px!important}
-  html body#acb-design.article-page .article-back{margin-top:clamp(30.6px,4.05vw,46.8px)!important;padding-top:19.8px!important}
+  html body#acb-design.article-page .article-dek{margin-top:5.7px!important}
+  html body#acb-design.article-page .article-meta{margin-top:15.2px!important}
+  html body#acb-design.article-page .article-col{max-width:665px!important}
+  html body#acb-design.article-page .article-aside{margin-bottom:clamp(20.9px,2.85vw,32.3px)!important;padding:15.2px 17.1px!important}
+  html body#acb-design.article-page .article-copy .article-note{padding:14.25px 17.1px!important}
+  html body#acb-design.article-page .article-back{margin-top:clamp(32.3px,4.28vw,49.4px)!important;padding-top:20.9px!important}
 
-  html body#acb-design.questionnaire-page .progress{height:4.5px!important}
+  html body#acb-design.questionnaire-page .progress{height:4.75px!important}
   html body#acb-design.questionnaire-page .top{
-    width:calc(100% - 28.8px)!important;
-    max-width:1620px!important;
-    height:64.8px!important;
-    margin-top:14.4px!important;
-    padding:9px 14.4px!important;
+    width:calc(100% - 30.4px)!important;
+    max-width:1710px!important;
+    height:68.4px!important;
+    margin-top:15.2px!important;
+    padding:9.5px 15.2px!important;
   }
   html body#acb-design.questionnaire-page .quiz-home,
-  html body#acb-design.questionnaire-page .quiz-wordmark{width:135px!important}
-  html body#acb-design.questionnaire-page .quiz-home{height:30.6px!important}
-  html body#acb-design.questionnaire-page .quiz-logo{height:43.2px!important}
-  html body#acb-design.questionnaire-page .quiz-status{gap:9px!important}
-  html body#acb-design.questionnaire-page .count{min-width:63px!important;font-size:13.5px!important}
-  html body#acb-design.questionnaire-page .quiz-exit{min-height:39.6px!important;padding:10.8px 16.2px!important;font-size:14.4px!important}
-  html body#acb-design.questionnaire-page .stage{min-height:calc(100svh - 79.2px)!important;padding:clamp(30.6px,5.4vw,79.2px) max(14.4px,var(--pad,2.7vw))!important}
-  html body#acb-design.questionnaire-page .card{width:min(828px,100%)!important;min-height:396px!important;padding:clamp(25.2px,4.5vw,64.8px)!important}
+  html body#acb-design.questionnaire-page .quiz-wordmark{width:142.5px!important}
+  html body#acb-design.questionnaire-page .quiz-home{height:32.3px!important}
+  html body#acb-design.questionnaire-page .quiz-logo{height:45.6px!important}
+  html body#acb-design.questionnaire-page .quiz-status{gap:9.5px!important}
+  html body#acb-design.questionnaire-page .count{min-width:66.5px!important;font-size:14.25px!important}
+  html body#acb-design.questionnaire-page .quiz-exit{min-height:41.8px!important;padding:11.4px 17.1px!important;font-size:15.2px!important}
+  html body#acb-design.questionnaire-page .stage{min-height:calc(100svh - 83.6px)!important;padding:clamp(32.3px,5.7vw,83.6px) max(15.2px,var(--pad,2.85vw))!important}
+  html body#acb-design.questionnaire-page .card{width:min(874px,100%)!important;min-height:418px!important;padding:clamp(26.6px,4.75vw,68.4px)!important}
 }
 
 /* Keep the organisation support headline as compact and expressive as the
@@ -7633,4 +7633,49 @@ html body#acb-design#acb-design.home-page .acb-faq .faq-item .faq-a>p{
   width:100%!important;
   max-width:none!important;
   box-sizing:border-box!important;
+}
+
+/* Components whose proportions were already deliberately tuned before the
+   desktop scale pass. Keep their own measurements while the surrounding
+   layout uses the intermediate 95% scale. */
+@media(min-width:955px){
+  html body#acb-design .acb-header .navbutton,
+  html body#acb-design .acb-header .acb-sub a{
+    font-size:20px!important;
+  }
+  html body#acb-design .acb-header .acb-sub a{
+    padding:6px 8px!important;
+    margin:0 -8px!important;
+  }
+  html body#acb-design .acb-header .acb-utility-pill{
+    height:46px!important;
+    min-height:46px!important;
+    max-height:46px!important;
+    padding:0 16px!important;
+    font-size:18px!important;
+    line-height:1!important;
+  }
+  html body#acb-design .acb-footer{
+    padding:clamp(24px,3.4vw,40px) 0 0!important;
+  }
+  html body#acb-design .acb-footer .top.acb-footer-links{
+    padding:clamp(19.8px,3.4vw,33.6px) 0!important;
+    gap:clamp(16.2px,2.2vw,26px)!important;
+  }
+  html body#acb-design .acb-footer .foot-lead{
+    gap:clamp(20px,3.4vw,44px)!important;
+    padding-bottom:clamp(20px,3.4vw,36px)!important;
+  }
+  html body#acb-design.home-page .acb-hero-copy{
+    padding:10px 50px!important;
+  }
+  html body#acb-design.home-page .acb-hero h1{
+    font-size:20px!important;
+    line-height:1.2!important;
+  }
+}
+@media(min-width:1181px) and (max-width:1380px){
+  html body#acb-design .acb-header .navbutton{
+    font-size:clamp(13px,1.1vw,15px)!important;
+  }
 }
