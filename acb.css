@@ -7187,3 +7187,11 @@ html.menu-open body{
     font-size:var(--fs-copy-lg)!important;
   }
 }
+
+/* Match all 4o process-number colours to the five 4i support steps. */
+html body#acb-design#acb-design.organisations-page .organisation-process .step-number,
+html body#acb-design#acb-design.organisations-page .organisation-process li:nth-child(2) .step-number,
+html body#acb-design#acb-design.organisations-page .organisation-process li:nth-child(3) .step-number{
+  background:#eef2ff!important;
+  color:var(--blue)!important;
+}
