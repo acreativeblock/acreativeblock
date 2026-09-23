@@ -8136,8 +8136,8 @@ html body#acb-design.home-page main>.acb-main-panel>section:where(:not(.acb-hero
   max-width:100%!important;
 }
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
-  margin-left:calc((100vw - var(--acb-frame-width))/2 + 10px)!important;
-  width:calc(100% - ((100vw - var(--acb-frame-width))/2 + 20px))!important;
+  margin-left:calc((100vw - var(--acb-frame-width))/2 - 8px)!important;
+  width:calc(100% - ((100vw - var(--acb-frame-width))/2 + 2px))!important;
 }
 
 /* About: four focused sections using the site's large-copy and stacked-card
