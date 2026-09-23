@@ -2385,7 +2385,7 @@ html body#acb-design.individuals-page .individual-support .support-copy .big{
   margin:0 0 16px!important;
 }
 html body#acb-design.individuals-page .individual-support .support-copy .lead{
-  font-size:var(--fs-copy-lg)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-copy-lg)!important;
+  font-size:var(--fs-copy-lg)!important;line-height:1!important;letter-spacing:var(--ls-copy-lg)!important;
   margin:0!important;
 }
 html body#acb-design.individuals-page .individual-support .acb-loop-steps{
