@@ -24,7 +24,7 @@
      close to normal tracking; only titles get pulled in. Line-height is the
      same two-value rule everywhere: big/title-sized text always sits at
      --lh-title, every smaller (copy) size always sits at --lh-copy. */
-  --ls-title:-.035em;                     /* the one tracking value for every title-sized text */
+  --ls-title:-.025em;                     /* tight, while preserving Inter's designed kerning pairs */
   --lh-title:1;                           /* the one line-height for every title-sized text */
   --lh-copy:1.3;                          /* the one line-height for every copy size (copy-lg/body/small/button) */
   --fs-label:20px;                           --ls-label:-.01em;   /* eyebrows / small caps labels */
@@ -34,6 +34,12 @@
   --fs-body:20px;                              --ls-body:-.03em;    /* medium copy: standard paragraph */
   --fs-small:clamp(9.9px,1vw,11.7px);        --ls-small:0em;      /* small copy: fine print, list detail */
   --fs-button:clamp(12.15px,1vw,13.22px);  --ls-button:0em;     /* buttons — same size everywhere */
+}
+html body#acb-design{
+  font-kerning:normal;
+  font-optical-sizing:auto;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1;
+  text-rendering:optimizeLegibility;
 }
 /* Same tiers as classes, for markup that wants the whole bundle in one go
    (font-size + letter-spacing + a sensible line-height/weight default). */
@@ -3582,6 +3588,54 @@ html body#acb-design.internal-page.blog-index .blog-card p.blog-meta{
   padding:0 0 10px!important;
   border-bottom:1px solid var(--line)!important;
 }
+html body#acb-design.internal-page.blog-index .blog-card .blog-art{
+  position:relative!important;
+  overflow:hidden!important;
+  font-size:20px!important;
+  letter-spacing:var(--ls-body)!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card .blog-art img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transition:transform .55s cubic-bezier(.16,1,.3,1)!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card .blog-art:has(img)::after{
+  content:""!important;
+  position:absolute!important;
+  inset:35% 0 0!important;
+  background:linear-gradient(transparent,rgba(17,17,24,.72))!important;
+  pointer-events:none!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card .blog-art span{
+  position:relative!important;
+  z-index:1!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card:hover .blog-art img{
+  transform:scale(1.025)!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card :is(.blog-cat,.blog-time){
+  font-size:15px!important;
+  line-height:1.1!important;
+  letter-spacing:-.01em!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card h2{
+  font-size:clamp(24px,2vw,30px)!important;
+  line-height:1.05!important;
+  letter-spacing:var(--ls-title)!important;
+  margin-bottom:14px!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card.featured h2{
+  font-size:clamp(28px,2.6vw,36px)!important;
+}
+html body#acb-design.internal-page.blog-index .blog-card p:not(.blog-meta){
+  font-size:16px!important;
+  line-height:1.35!important;
+  letter-spacing:var(--ls-body)!important;
+}
 
 /* Final shared menu and FAQ behaviour, placed after page-specific layers. */
 html body#acb-design .acb-header :is(.navbutton,.acb-sub a){font-size:14.87px!important;line-height:1.4!important;letter-spacing:0!important;font-weight: 400!important}
@@ -6275,7 +6329,7 @@ html body#acb-design#acb-design.organisations-page .organisation-support .suppor
 }
 html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .big{
   margin:0 auto 16px!important;
-  font-size:var(--fs-h2)!important;
+  font-size:clamp(45px,7.6vw,90px)!important;
   line-height:var(--lh-title)!important;
   letter-spacing:var(--ls-h2)!important;
   color:#fff!important;
@@ -6283,10 +6337,14 @@ html body#acb-design#acb-design.organisations-page .organisation-support .suppor
 html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead{
   max-width:58ch!important;
   margin:0 auto!important;
+  padding-right:6%!important;
   font-size:var(--fs-copy-lg)!important;
-  line-height:var(--lh-copy)!important;
+  line-height:1.1!important;
   letter-spacing:var(--ls-copy-lg)!important;
   color:#fff!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead{padding-right:0!important}
 }
 html body#acb-design#acb-design.organisations-page .organisation-support .support-copy .lead strong{
   color:var(--acb-yellow)!important;

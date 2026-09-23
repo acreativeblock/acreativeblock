@@ -29,6 +29,7 @@
       </label>
       <label>Your message<textarea name="message" placeholder="Tell us a bit about what you have in mind." required></textarea></label>
       <label class="cform-consent"><input type="checkbox" name="consent" value="I agree to the privacy policy" required><span>I agree to A Creative Block handling my details to reply to this enquiry, as described in the <a href="../privacy/">privacy policy</a>.</span></label>
+      <label class="cform-consent cform-newsletter"><input type="checkbox" name="newsletter_consent" value="yes"><span>You may also email me occasional updates from A Creative Block. I can unsubscribe at any time.</span></label>
       <p class="cform-status" role="status" aria-live="polite"></p>
       <button class="btn" type="submit">Send message</button>
     </form>
@@ -60,7 +61,17 @@
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(Object.fromEntries(new FormData(form)))
     }).then(function(r){return r.json().then(function(data){return{ok:r.ok,data:data}})}).then(function(res){
-      if(res.ok&&res.data&&res.data.success===true){showSent()}
+      if(res.ok&&res.data&&res.data.success===true){
+        var data=new FormData(form),register=new URLSearchParams();
+        register.set('entry.130916964',data.get('name')||'');
+        register.set('entry.1518910155',data.get('email')||'');
+        register.set('entry.1531820482',data.get('Enquiring as')||'');
+        register.set('entry.1720739946',data.get('message')||'');
+        register.set('entry.2137194281',data.get('newsletter_consent')==='yes'?'Yes':'No');
+        register.set('entry.1960037256','Website contact form');
+        fetch('https://docs.google.com/forms/d/e/1FAIpQLSetSjf0rcEl7HiOcuqEUkxarB6It4wJosqZY3kgEqwIbsqavw/formResponse',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:register.toString()}).catch(function(){});
+        showSent();
+      }
       else{throw new Error('web3forms error')}
     }).catch(function(){
       btn.disabled=false;btn.textContent=btnLabel;
