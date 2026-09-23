@@ -6874,3 +6874,10 @@ html body#acb-design#acb-design .offer-row.closing .offer-toggle .pm::after{
     margin-bottom:-8px!important;
   }
 }
+
+/* Home FAQ: resolve the answer padding before measuring its opening height.
+   Otherwise the height animation targets the partially padded copy and jumps
+   to the full natural height during its final frame. */
+html body#acb-design#acb-design.home-page .acb-faq .faq-a>p{
+  transition:none!important;
+}
