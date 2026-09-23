@@ -6527,10 +6527,6 @@ html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-s
   letter-spacing:0!important;
   text-transform:none!important;
 }
-html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li:nth-child(even) .step-number{
-  background:var(--acb-yellow)!important;
-  color:var(--ink)!important;
-}
 html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-steps>li>p{
   margin:0!important;
   color:var(--ink)!important;
