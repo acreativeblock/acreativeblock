@@ -8401,3 +8401,28 @@ html body#acb-design.about-page .about-overview-copy{
   letter-spacing:var(--ls-title)!important;
   text-wrap:pretty!important;
 }
+
+/* About stacks use the same colour and elevation language as the 4o
+   "What the team leaves with" cards, while retaining their numbered stack. */
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article{
+  box-shadow:var(--shadow-card)!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(3n + 1){
+  background:#4f46e5!important;
+  color:#fff!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(3n + 2){
+  background:var(--acb-yellow)!important;
+  color:var(--ink)!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article:nth-child(3n){
+  background:#f6b3cc!important;
+  color:var(--ink)!important;
+}
+html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{
+  color:inherit!important;
+}
