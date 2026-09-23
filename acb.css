@@ -8245,3 +8245,51 @@ html body#acb-design.about-page .about-future-copy p{font-size:clamp(23px,2.1vw,
   html body#acb-design.about-page .about-stack article>span{width:44px!important;height:44px!important;border-radius:14px!important;font-size:14px!important}
   html body#acb-design.about-page .about-stack article p{grid-column:2!important;font-size:19px!important;line-height:1.04!important}
 }
+
+
+/* About: coaching credential. The source artwork is kept intact and visually
+   cropped in its frame so a future SVG can replace it without layout changes. */
+html body#acb-design.about-page .about-certification{
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+  margin-top:28px;
+  padding:10px 22px 10px 10px;
+  border-radius:var(--radius-card);
+  background:var(--pale-blue);
+  box-shadow:var(--shadow-card);
+}
+html body#acb-design.about-page .about-certification-mark{
+  position:relative;
+  display:block;
+  width:96px;
+  height:96px;
+  flex:0 0 96px;
+  overflow:hidden;
+  border-radius:50%;
+  background:#fff;
+}
+html body#acb-design.about-page .about-certification-mark img{
+  position:absolute;
+  width:137%;
+  max-width:none!important;
+  height:auto;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+html body#acb-design.about-page .about-certification-copy{
+  display:grid;
+  gap:5px;
+}
+html body#acb-design.about-page .about-certification-copy .side-note{margin:0!important}
+html body#acb-design.about-page .about-certification-copy strong{
+  font-size:20px!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
+}
+@media(max-width:774px){
+  html body#acb-design.about-page .about-certification{gap:12px;margin-top:22px;padding:8px 16px 8px 8px}
+  html body#acb-design.about-page .about-certification-mark{width:76px;height:76px;flex-basis:76px}
+  html body#acb-design.about-page .about-certification-copy strong{font-size:16px!important}
+}
