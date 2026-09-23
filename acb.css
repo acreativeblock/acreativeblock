@@ -8344,3 +8344,9 @@ html body#acb-design.about-page .about-certification{box-shadow:none!important;t
   html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>span{width:42px!important;height:42px!important;font-size:14px!important}
   html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{font-size:19px!important;line-height:1.04!important}
 }
+
+/* Keep 4i/4o hero copy on the exact shared frame edge. The previous -8px
+   optical adjustment pulled it outside both the header and main content. */
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  margin-left:calc((100vw - var(--acb-frame-width))/2)!important;
+}
