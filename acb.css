@@ -863,7 +863,7 @@ html body#acb-design.blocks-page .bmcard-body{padding:14.4px 24px 14.4px 14.4px!
    like the rest of the map page's text blocks. */
 html body#acb-design.blocks-page .bm-intro>.wrap{text-align:center!important;max-width:820px;margin:0 auto}
 html body#acb-design.blocks-page .bm-intro .eyebrow2{color:var(--acb-yellow)!important}
-html body#acb-design.blocks-page .bm-intro h2{margin:0 0 16.2px!important;color:var(--ink)!important}
+html body#acb-design.blocks-page .bm-intro :is(h1,h2){margin:0 0 16.2px!important;color:var(--ink)!important}
 html body#acb-design.blocks-page .evidence-band>.wrap{background:#fff!important;color:var(--ink)!important}
 html body#acb-design.blocks-page .evidence-band :is(h2,p,.mono){color:var(--ink)!important}
 /* "Want a useful first hypothesis?" — its own short, punchy section: a
@@ -8105,3 +8105,5 @@ html body#acb-design#acb-design.about-page main .about-cta>.wrap{background:var(
 @media(max-width:1180px){
   html body#acb-design .acb-header .acb-logo .acb-logo-mount{height:40px!important}
 }
+
+html body#acb-design.evidence-page .evidence-definition h1.eyebrow{margin:0!important}
