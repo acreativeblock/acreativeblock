@@ -8368,3 +8368,24 @@ html body#acb-design.about-page .about-certification{box-shadow:none!important;t
 html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
   margin-left:calc((100vw - var(--acb-frame-width))/2)!important;
 }
+
+
+/* 4i/4o hero alignment: the full-bleed image keeps its own viewport width,
+   while the copy uses the same single gutter as the header and main frame. */
+html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+  padding-left:calc((100vw - var(--acb-frame-width))/2)!important;
+  padding-right:calc((100vw - var(--acb-frame-width))/2)!important;
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  margin-left:0!important;
+}
+@media(max-width:1180px){
+  html body#acb-design:is(.individuals-page,.organisations-page) .acb-hero-grid{
+    padding-left:13px!important;
+    padding-right:13px!important;
+  }
+}
+html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-stack{
+  padding-left:0!important;
+  padding-right:0!important;
+}
