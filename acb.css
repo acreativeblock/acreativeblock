@@ -7197,22 +7197,15 @@ html body#acb-design#acb-design.organisations-page .organisation-process li:nth-
   color:var(--blue)!important;
 }
 
-/* Keep menu-row text on one composited plane while the panel opens. Moving
-   every row independently made iOS Safari re-rasterise it at the endpoint. */
-@keyframes acbMenuItemFadeIn{
-  from{opacity:0}
-  to{opacity:1}
-}
+/* Keep menu-row text fully rendered on one stable plane while the panel
+   opens. iOS Safari otherwise briefly redraws the glyphs near the endpoint. */
 @media(max-width:1180px){
   html body#acb-design#acb-design .acb-header.mobile-open .navitem{
+    opacity:1!important;
     transform:translateZ(0)!important;
-    will-change:opacity!important;
-    animation:acbMenuItemFadeIn .26s ease-out both!important;
+    will-change:auto!important;
+    animation:none!important;
   }
-  html body#acb-design#acb-design .acb-header.mobile-open .navitem:nth-child(1){animation-delay:.06s!important}
-  html body#acb-design#acb-design .acb-header.mobile-open .navitem:nth-child(2){animation-delay:.09s!important}
-  html body#acb-design#acb-design .acb-header.mobile-open .navitem:nth-child(3){animation-delay:.12s!important}
-  html body#acb-design#acb-design .acb-header.mobile-open .navitem:nth-child(4){animation-delay:.15s!important}
   html body#acb-design#acb-design .acb-header.mobile-open.menu-closing .navitem{
     opacity:1!important;
     transform:translateZ(0)!important;
