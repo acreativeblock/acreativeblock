@@ -6784,3 +6784,9 @@ html body#acb-design#acb-design.individuals-page .individual-support .acb-loop-s
     transform:none!important;
   }
 }
+
+/* Rotate reveal icons as soon as closing starts while the answer finishes its height transition. */
+html body#acb-design#acb-design .faq-item.closing .faq-q::after,
+html body#acb-design#acb-design .offer-row.closing .offer-toggle .pm::after{
+  transform:rotate(45deg)!important;
+}
