@@ -156,7 +156,7 @@ html body#acb-design.questionnaire-page .intro h1{
   font-size:clamp(54px,8vw,104px)!important;
   line-height:.86!important;
 }
-html body#acb-design.questionnaire-page .intro h1::after{content:".";color:var(--quiz-blue)}
+html body#acb-design.questionnaire-page .intro h1::after{content:".";color:inherit}
 html body#acb-design.questionnaire-page .intro p{
   max-width:61ch!important;
   margin:30px 0!important;
@@ -328,4 +328,23 @@ html body#acb-design.questionnaire-page .note{max-width:72ch;margin:20px 0 0!imp
 
 @media(prefers-reduced-motion:reduce){
   html body#acb-design.questionnaire-page *{scroll-behavior:auto!important;transition:none!important}
+}
+
+
+/* Quiz polish: keep the card clean, make the opening action blue, and keep
+   the interaction cursor stable across every clickable surface. */
+html body#acb-design.questionnaire-page .card::after{display:none!important}
+html body#acb-design.questionnaire-page main.stage #screen .intro .btn.btn{
+  background:var(--quiz-blue)!important;
+  color:#fff!important;
+  border-color:var(--quiz-blue)!important;
+}
+html body#acb-design.questionnaire-page :is(a.btn,button.btn,.opt,.scale button),
+html body#acb-design.questionnaire-page :is(a.btn,button.btn,.opt,.scale button) *{
+  cursor:pointer!important;
+}
+html body#acb-design.questionnaire-page :is(a.btn,button.btn,.opt,.scale button)::before,
+html body#acb-design.questionnaire-page :is(a.btn,button.btn,.opt,.scale button)::after{
+  pointer-events:none!important;
+  cursor:pointer!important;
 }
