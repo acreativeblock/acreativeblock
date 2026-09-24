@@ -74,7 +74,7 @@ html body#acb-design.article-page .article-copy .article-note{background:var(--a
 
 html body#acb-design.article-page .article-next{margin-top:clamp(44px,6vw,74px)!important;background:var(--acb-yellow)!important;border-radius:var(--radius-card)!important;padding:clamp(22px,3vw,36px)!important}
 html body#acb-design.article-page .article-next-label{font-size:var(--fs-label)!important;line-height:1!important;letter-spacing:var(--ls-label)!important;color:var(--blue)!important;margin:0 0 10px!important}
-html body#acb-design.article-page .article-next h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 22px!important}
+html body#acb-design.article-page .article-next h2{font-size:var(--fs-h2)!important;line-height:.95!important;letter-spacing:var(--ls-title)!important;color:var(--ink)!important;margin:0 0 24px!important}
 html body#acb-design.article-page .article-next-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
 html body#acb-design.article-page .article-next-card{display:flex!important;flex-direction:column!important;min-height:250px!important;background:#fff!important;color:var(--ink)!important;border-radius:var(--radius-card)!important;padding:18px!important;text-decoration:none!important;cursor:pointer!important;transition:transform .25s cubic-bezier(.16,1,.3,1)!important}
 html body#acb-design.article-page .article-next-card,html body#acb-design.article-page .article-next-card *{cursor:pointer!important}
@@ -84,7 +84,7 @@ html body#acb-design.article-page .article-next-card h3{margin:0!important;font-
 html body#acb-design.article-page .article-next-meta{margin-top:auto!important;padding-top:20px!important;font-size:15px!important;line-height:1!important;letter-spacing:-.022em!important}
 @media(max-width:900px){html body#acb-design.article-page .article-next-grid{grid-template-columns:1fr!important}html body#acb-design.article-page .article-next-card{min-height:210px!important}}
 
-html body#acb-design.article-page .article-references{margin-top:clamp(44px,6vw,74px)!important;padding-top:clamp(24px,3vw,34px)!important;border-top:1px solid var(--line)!important}
+html body#acb-design.article-page .article-references{margin-top:clamp(44px,6vw,74px)!important;padding:clamp(24px,3vw,36px)!important;border:0!important;border-radius:var(--radius-card)!important;background:#fff!important;box-shadow:var(--shadow-card)!important}
 html body#acb-design.article-page .article-references h2{font-size:var(--fs-h3)!important;line-height:1!important;letter-spacing:var(--ls-heading)!important;margin:0 0 20px!important}
 html body#acb-design.article-page .article-references ol{margin:0!important;padding-left:1.25em!important;display:grid!important;gap:12px!important}
 html body#acb-design.article-page .article-references li{padding-left:5px!important;font-size:var(--fs-small)!important;line-height:var(--lh-copy)!important;letter-spacing:var(--ls-small)!important}
