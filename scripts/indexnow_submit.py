@@ -15,7 +15,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HOST = "acreativeblock.com"
 ORIGIN = f"https://{HOST}"
-KEY = os.environ["INDEXNOW_KEY"]
+def discover_key() -> str:
+    configured = os.environ.get("INDEXNOW_KEY")
+    if configured:
+        return configured
+    candidates = sorted(ROOT.glob("*.txt"))
+    for candidate in candidates:
+        value = candidate.read_text(encoding="utf-8").strip()
+        if candidate.stem == value and len(value) in range(32, 129) and value.isalnum():
+            return value
+    raise RuntimeError("No IndexNow root key file found")
+
+
+KEY = discover_key()
 KEY_LOCATION = f"{ORIGIN}/{KEY}.txt"
 SHARED_SUFFIXES = {".css", ".js"}
 SHARED_FILES = {"sitemap.xml", "robots.txt", "llms.txt"}
