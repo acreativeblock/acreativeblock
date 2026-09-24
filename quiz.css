@@ -860,3 +860,29 @@ html body#acb-design.questionnaire-page #screen .res .result-actions .btn{min-he
   html body#acb-design.questionnaire-page #screen .res .bar{grid-template-columns:150px 1fr 22px!important;gap:10px!important;margin:7px 0!important;font-size:10.5px!important}
   html body#acb-design.questionnaire-page #screen .res>.note{font-size:9.5px!important;line-height:1.3!important}
 }
+
+/* Final PDF logo cleanup: suppress the obsolete wordmark fallback and give the
+   centred three-line mark clear space before the result begins. */
+@media print{
+  html body#acb-design.questionnaire-page .top{margin-bottom:32px!important}
+  html body#acb-design.questionnaire-page .top .quiz-home::before,
+  html body#acb-design.questionnaire-page .top .quiz-home::after{content:none!important;display:none!important}
+}
+
+/* Landscape results use the full available frame. Actions get their own wide
+   row so every label remains contained and readable. */
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page .card:has(.res){
+    width:min(1240px,calc(100vw - 32px))!important;max-width:none!important;
+  }
+  html body#acb-design.questionnaire-page .res{
+    grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr)!important;
+    grid-template-areas:"meta bars" "title bars" "domains bars" "state bars" "skill bars" "note bars" "actions actions"!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-actions{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;width:100%!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-actions .btn{
+    min-width:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:clip!important;
+  }
+}
