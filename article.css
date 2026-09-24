@@ -46,7 +46,7 @@ html body#acb-design.internal-page.article-page .article-kicker{
 }
 html body#acb-design.article-page .article-head h1{max-width:22ch!important}
 html body#acb-design.article-page .article-dek{font-size:var(--fs-body)!important;letter-spacing:var(--ls-body)!important;line-height:var(--lh-copy)!important;color:var(--ink-soft)!important;margin:6px 0 0!important;max-width:56ch!important}
-html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px 16px!important;font-size:15px!important;letter-spacing:-.022em!important;line-height:1!important;color:var(--ink)!important;margin:16px 0 0!important}
+html body#acb-design.article-page .article-meta{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px 14px!important;font-size:13px!important;letter-spacing:-.018em!important;line-height:1!important;color:var(--ink)!important;margin:16px 0 0!important}
 html body#acb-design.article-page .article-published{display:inline-flex!important;align-items:center!important;gap:4px!important;border:1px solid currentColor!important;border-radius:999px!important;padding:5px 10px!important}
 
 /* Body card (.article-layout) is already a full-width white card via the
