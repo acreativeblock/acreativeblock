@@ -8575,3 +8575,24 @@ html body#acb-design.about-page main .about-overview p.about-overview-copy{
     color:var(--acb-blue,#4f46e5)!important;
   }
 }
+
+/* Horizontal tablet and compact-laptop navigation: retain a readable desktop
+   scale and use more of the viewport so the larger labels still breathe. */
+@media(min-width:901px) and (max-width:1180px){
+  html body#acb-design#acb-design .acb-header:not(.mobile-open){
+    width:calc(100% - 20px)!important;
+    max-width:calc(100% - 20px)!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-nav{
+    gap:5px!important;
+    max-width:calc(100% - 270px)!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .navbutton{
+    padding:8px 10px!important;
+    font-size:16px!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-utility-pill{
+    padding:9px 14px!important;
+    font-size:16px!important;
+  }
+}
