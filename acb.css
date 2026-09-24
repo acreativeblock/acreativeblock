@@ -8551,3 +8551,27 @@ html body#acb-design.about-page main .about-overview p.about-overview-copy{
     font-size:14px!important;
   }
 }
+
+/* Final portrait-tablet hero and mobile-navigation locks. */
+@media(min-width:775px) and (max-width:900px){
+  html body#acb-design#acb-design.home-page .acb-hero-copy{
+    min-height:54px!important;
+    padding:14px 50px!important;
+  }
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.home-page .acb-hero h1,
+  html body#acb-design#acb-design:is(.individuals-page,.organisations-page) :is(.audience-hero-rotbubble,.audience-hero-rotbubble .cycling-line,.audience-hero-rotbubble .cycling-word,.audience-hero-rotbubble .hero-static-in-rot){
+    font-size:clamp(9.5px,3.3vw,14.4px)!important;
+  }
+}
+@media(max-width:900px){
+  html body#acb-design#acb-design .acb-header.mobile-open .navitem.is-active>.navbutton,
+  html body#acb-design#acb-design .acb-header.mobile-open .navitem.is-active>a.navbutton,
+  html body#acb-design#acb-design .acb-header.mobile-open .navitem.is-active>button.navbutton,
+  html body#acb-design#acb-design .acb-header.mobile-open .acb-sub a:is(.is-active,[aria-current="page"]),
+  html body#acb-design#acb-design .acb-header.mobile-open .submenu a:is(.is-active,[aria-current="page"]){
+    background:var(--acb-sky,#dbeafe)!important;
+    color:var(--acb-blue,#4f46e5)!important;
+  }
+}
