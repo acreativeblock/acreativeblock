@@ -665,3 +665,102 @@ html body#acb-design.questionnaire-page #screen .res .result-actions .action-res
 html body#acb-design.questionnaire-page main.stage #screen .res .result-actions .action-contact.action-contact{
   background:var(--quiz-blue)!important;color:#fff!important;
 }
+
+/* Branded A4 result sheet. This deliberately resets the compact screen grid so
+   saved PDFs remain readable, precise and useful away from the browser. */
+@media print{
+  @page{size:A4 portrait;margin:15mm}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  html,body,html body#acb-design.questionnaire-page{width:auto!important;min-height:0!important;margin:0!important;background:#fff!important;color:#111118!important}
+  html body#acb-design.questionnaire-page .progress{display:none!important}
+  html body#acb-design.questionnaire-page .top{
+    display:flex!important;position:static!important;width:100%!important;height:auto!important;
+    margin:0 0 18px!important;padding:0 0 12px!important;border:0!important;border-bottom:2px solid #4f46e5!important;
+    border-radius:0!important;background:#fff!important;box-shadow:none!important;
+  }
+  html body#acb-design.questionnaire-page .top img{width:132px!important;height:auto!important;filter:none!important}
+  html body#acb-design.questionnaire-page .quiz-status{display:none!important}
+  html body#acb-design.questionnaire-page .stage{display:block!important;min-height:0!important;padding:0!important}
+  html body#acb-design.questionnaire-page #screen.card:has(.res){
+    display:block!important;width:100%!important;max-width:none!important;min-height:0!important;
+    margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+    background:#fff!important;box-shadow:none!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res{display:block!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.qmeta{
+    display:inline-flex!important;margin:0 0 10px!important;padding:6px 10px!important;
+    border-radius:8px!important;background:#dcecff!important;color:#4f46e5!important;
+    font-size:11px!important;line-height:1!important;letter-spacing:-.02em!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>h2{
+    margin:0 0 18px!important;color:#111118!important;font-size:44px!important;
+    line-height:.92!important;letter-spacing:-.045em!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.result-grid{
+    display:grid!important;grid-template-columns:1.12fr .88fr!important;gap:10px!important;margin:0 0 10px!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-card{
+    display:block!important;margin:0!important;padding:15px 16px!important;border:0!important;
+    border-radius:14px!important;background:#f0f6ff!important;color:#111118!important;box-shadow:none!important;
+    break-inside:avoid!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-card small{
+    color:#4f46e5!important;font-size:10px!important;line-height:1!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-card h3{
+    display:block!important;margin:7px 0 8px!important;color:#111118!important;
+    font-size:21px!important;line-height:1!important;letter-spacing:-.035em!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-card p{
+    margin:6px 0 0!important;color:#111118!important;font-size:12px!important;line-height:1.3!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.state{
+    margin:0 0 10px!important;padding:14px 16px!important;border-radius:14px!important;
+    background:#e4e244!important;color:#111118!important;break-inside:avoid!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.state strong{font-size:19px!important;line-height:1!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.state p{margin:5px 0 0!important;font-size:12px!important;line-height:1.3!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{
+    display:grid!important;grid-template-columns:150px 1fr!important;gap:12px!important;align-items:start!important;margin-bottom:10px!important;background:#f0f6ff!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.result-card h3,
+  html body#acb-design.questionnaire-page #screen .res>.result-card p{margin:0!important}
+  html body#acb-design.questionnaire-page #screen .res>.bars{
+    display:block!important;margin:0 0 10px!important;padding:14px 16px!important;
+    border:0!important;border-radius:14px!important;background:#fff!important;
+    box-shadow:inset 0 0 0 1px #dcecff!important;break-inside:avoid!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .bar{
+    display:grid!important;grid-template-columns:150px 1fr 22px!important;gap:10px!important;
+    align-items:center!important;margin:7px 0!important;color:#111118!important;
+    font-size:10.5px!important;line-height:1!important;text-transform:none!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .track{height:8px!important;border-radius:999px!important;background:#dcecff!important;overflow:hidden!important}
+  html body#acb-design.questionnaire-page #screen .res .fill{height:100%!important;border-radius:999px!important;background:#4f46e5!important}
+  html body#acb-design.questionnaire-page #screen .res .bar b{color:#4f46e5!important;font-weight:400!important;text-align:right!important}
+  html body#acb-design.questionnaire-page #screen .res>.note{
+    margin:0!important;padding:10px 12px!important;border-radius:10px!important;
+    background:#fafafa!important;color:#555565!important;font-size:9.5px!important;line-height:1.3!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.note::after{
+    content:"  ·  acreativeblock.com";color:#4f46e5!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-actions{display:none!important}
+}
+@media print{
+  html body#acb-design.questionnaire-page .top .quiz-home{display:flex!important;align-items:center!important;text-decoration:none!important}
+  html body#acb-design.questionnaire-page .top .quiz-home img{display:none!important}
+  html body#acb-design.questionnaire-page .top .quiz-home::before{
+    content:"A CREATIVE BLOCK";color:#4f46e5!important;font:400 16px/1 Inter,Arial,sans-serif!important;letter-spacing:-.04em!important;
+  }
+  html body#acb-design.questionnaire-page .top::after{
+    content:"Find your block · Result";margin-left:auto;color:#4f46e5!important;font:400 11px/1 Inter,Arial,sans-serif!important;letter-spacing:-.02em!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.note{width:100%!important;max-width:none!important}
+}
+@media print{
+  html body#acb-design.questionnaire-page .top .quiz-home{display:none!important}
+  html body#acb-design.questionnaire-page .top::before{
+    content:"A CREATIVE BLOCK";color:#4f46e5!important;font:400 16px/1 Inter,Arial,sans-serif!important;letter-spacing:-.04em!important;
+  }
+}
