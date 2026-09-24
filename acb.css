@@ -1,3 +1,6 @@
+@font-face{font-family:"Inter";src:url("fonts/Inter-VariableFont_opsz-wght.ttf") format("truetype");font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/Inter-Italic-VariableFont_opsz-wght.ttf") format("truetype");font-style:italic;font-weight:100 900;font-display:swap}
+
 /* Measured from the live A Creative Block homepage. */
 :root{--acb-red:#873030;--acb-yellow:#E4E244;--copy:#071321;--muted:#071321;--ink:#111118;--ink-soft:#071321;--quiet:#f6f6f6;--quiet-2:#ddd;--pad:24.79px;
   /* base.css's --blue (#006FDA) is a leftover web-blue, not our brand
