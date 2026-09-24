@@ -8596,3 +8596,13 @@ html body#acb-design.about-page main .about-overview p.about-overview-copy{
     font-size:16px!important;
   }
 }
+
+/* Internal-page opening rhythm: Evidence is the reference. Every comparable
+   first section begins after the same main offset and shared section gap. */
+html body#acb-design#acb-design:is(.blocks-page,.method-page,.about-page,.contact-page,.blog-index,.legal-page,.faq-page) main{
+  padding-top:99px!important;
+}
+html body#acb-design#acb-design:is(.blocks-page,.method-page,.about-page,.contact-page,.blog-index,.legal-page,.faq-page) main>section:first-of-type,
+html body#acb-design#acb-design:is(.blocks-page,.method-page,.about-page,.contact-page,.blog-index,.legal-page,.faq-page) main>.acb-main-panel>section:first-child{
+  margin-top:var(--sp-gap)!important;
+}
