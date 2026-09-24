@@ -348,3 +348,136 @@ html body#acb-design.questionnaire-page :is(a.btn,button.btn,.opt,.scale button)
   pointer-events:none!important;
   cursor:pointer!important;
 }
+
+/* Compact quiz scale: preserve the existing character while keeping each step
+   comfortably inside common laptop and tablet viewports. */
+html body#acb-design.questionnaire-page .stage{
+  padding:clamp(20px,4vw,48px) max(14px,var(--pad,3vw))!important;
+}
+html body#acb-design.questionnaire-page .card{
+  width:min(840px,100%)!important;
+  min-height:380px!important;
+  padding:clamp(22px,3.5vw,48px)!important;
+}
+html body#acb-design.questionnaire-page .intro h1{font-size:clamp(48px,7vw,86px)!important}
+html body#acb-design.questionnaire-page .intro p{margin:22px 0!important;font-size:18px!important}
+html body#acb-design.questionnaire-page .qtext{margin-bottom:30px!important;font-size:clamp(34px,4.8vw,58px)!important}
+html body#acb-design.questionnaire-page :is(.opt,.scale button){min-height:56px;padding:14px 17px!important;font-size:17px!important}
+html body#acb-design.questionnaire-page .scale button{min-height:66px!important;font-size:21px!important}
+html body#acb-design.questionnaire-page .btn,
+html body#acb-design.questionnaire-page .btn.alt{min-height:52px!important;padding:16px 18px!important;font-size:18px!important}
+
+/* Landscape result: summary on the left, comparison bars on the right. This
+   keeps the whole result visible as one screenshot without removing content. */
+@media(orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page .stage{padding:12px 16px!important}
+  html body#acb-design.questionnaire-page .card:has(.res){
+    width:min(1120px,100%)!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:14px 16px!important;
+  }
+  html body#acb-design.questionnaire-page .res{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr)!important;
+    grid-template-areas:"meta bars" "title bars" "domains bars" "state bars" "skill bars" "note bars" "actions bars"!important;
+    column-gap:14px!important;
+    row-gap:6px!important;
+    align-items:start!important;
+  }
+  html body#acb-design.questionnaire-page .res>.qmeta{grid-area:meta;margin:0!important;padding:5px 9px!important;font-size:10px!important}
+  html body#acb-design.questionnaire-page .res>h2{grid-area:title;margin:0!important;font-size:clamp(30px,3.4vw,40px)!important;line-height:.92!important}
+  html body#acb-design.questionnaire-page .res>.result-grid{grid-area:domains;grid-template-columns:1.15fr .85fr!important;gap:8px!important}
+  html body#acb-design.questionnaire-page .res>.state{grid-area:state}
+  html body#acb-design.questionnaire-page .res>.result-card{grid-area:skill}
+  html body#acb-design.questionnaire-page .res>.bars{grid-area:bars;align-self:stretch}
+  html body#acb-design.questionnaire-page .res>.note{grid-area:note}
+  html body#acb-design.questionnaire-page .res>.nav{grid-area:actions}
+  html body#acb-design.questionnaire-page .result-card{padding:10px 11px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .result-card small{font-size:9px!important}
+  html body#acb-design.questionnaire-page .result-card h3{margin:4px 0!important;font-size:17px!important;line-height:1!important}
+  html body#acb-design.questionnaire-page .result-card p{margin:4px 0 0!important;font-size:10.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .result-grid .result-card:first-child h3{display:none!important}
+  html body#acb-design.questionnaire-page .res>.result-card{display:grid!important;grid-template-columns:auto 1fr!important;gap:7px!important;align-items:start!important}
+  html body#acb-design.questionnaire-page .res>.result-card :is(h3,p){margin:0!important}
+  html body#acb-design.questionnaire-page .state{margin:0!important;padding:10px 11px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .state strong{font-size:16px!important}
+  html body#acb-design.questionnaire-page .state p{margin:3px 0 0!important;font-size:10.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .bars{margin:0!important;padding:10px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .bar{grid-template-columns:minmax(100px,135px) 1fr 18px!important;gap:7px!important;margin:5px 0!important;font-size:10px!important}
+  html body#acb-design.questionnaire-page .track{height:6px!important}
+  html body#acb-design.questionnaire-page .note{margin:0!important;font-size:9px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .nav{margin:0!important;gap:8px!important}
+  html body#acb-design.questionnaire-page .res .btn,
+  html body#acb-design.questionnaire-page .res .btn.alt{min-height:38px!important;padding:10px 12px!important;font-size:13px!important}
+}
+
+/* Portrait result: a compact vertical summary sized for a single mobile
+   screenshot, including the diagnostic note and both actions. */
+@media(orientation:portrait) and (max-width:700px){
+  html body#acb-design.questionnaire-page .stage{padding:10px!important;place-items:center!important}
+  html body#acb-design.questionnaire-page .card{min-height:0!important;padding:20px 16px!important}
+  html body#acb-design.questionnaire-page .card:has(.res){
+    max-height:none!important;
+    padding:12px!important;
+  }
+  html body#acb-design.questionnaire-page .res>.qmeta{margin:0 0 7px!important;padding:5px 9px!important;font-size:10px!important}
+  html body#acb-design.questionnaire-page .res>h2{margin:0 0 8px!important;font-size:clamp(26px,8vw,34px)!important;line-height:.92!important}
+  html body#acb-design.questionnaire-page .result-grid{grid-template-columns:1.1fr .9fr!important;gap:5px!important}
+  html body#acb-design.questionnaire-page .result-card{padding:9px 10px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .result-card small{font-size:9px!important}
+  html body#acb-design.questionnaire-page .result-card h3{margin:4px 0!important;font-size:16px!important;line-height:1!important}
+  html body#acb-design.questionnaire-page .result-card p{margin:4px 0 0!important;font-size:10px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .state{margin:6px 0!important;padding:9px 10px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .state strong{font-size:14px!important}
+  html body#acb-design.questionnaire-page .state p{margin:3px 0 0!important;font-size:10px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .result-grid .result-card:first-child h3{display:none!important}
+  html body#acb-design.questionnaire-page .res>.result-card{display:grid!important;grid-template-columns:auto 1fr!important;gap:6px!important;align-items:start!important}
+  html body#acb-design.questionnaire-page .res>.result-card :is(h3,p){margin:0!important}
+  html body#acb-design.questionnaire-page .bars{margin:6px 0!important;padding:7px 9px!important;border-radius:12px!important}
+  html body#acb-design.questionnaire-page .bar{grid-template-columns:82px 1fr 13px!important;gap:5px!important;margin:3px 0!important;font-size:9px!important;line-height:1!important}
+  html body#acb-design.questionnaire-page .track{height:5px!important}
+  html body#acb-design.questionnaire-page .note{margin:5px 0 0!important;font-size:8.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page .nav{margin-top:7px!important;gap:6px!important;flex-wrap:nowrap!important}
+  html body#acb-design.questionnaire-page .res .btn,
+  html body#acb-design.questionnaire-page .res .btn.alt{flex:1 1 0!important;min-height:36px!important;padding:9px 8px!important;font-size:12px!important}
+}
+
+@media(orientation:portrait) and (max-width:700px) and (max-height:720px){
+  html body#acb-design.questionnaire-page .top{height:54px!important;margin-top:6px!important}
+  html body#acb-design.questionnaire-page .quiz-logo{height:34px!important}
+  html body#acb-design.questionnaire-page .stage{min-height:calc(100svh - 60px)!important;padding:6px 8px!important}
+  html body#acb-design.questionnaire-page .card:has(.res){max-height:none!important;padding:9px!important}
+  html body#acb-design.questionnaire-page .res>h2{font-size:24px!important}
+  html body#acb-design.questionnaire-page .result-card{padding:7px 9px!important}
+  html body#acb-design.questionnaire-page .result-card p{font-size:9px!important}
+  html body#acb-design.questionnaire-page .bar{margin:2px 0!important}
+  html body#acb-design.questionnaire-page .note{font-size:8px!important}
+}
+
+/* Result viewport hardening: the site-wide type system intentionally uses
+   strong selectors, so the quiz result needs its own equally explicit scale. */
+html body#acb-design.questionnaire-page #screen .res .result-card p,
+html body#acb-design.questionnaire-page #screen .res .state p,
+html body#acb-design.questionnaire-page #screen .res .note{
+  text-wrap:pretty!important;
+}
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:10.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .state p{font-size:10.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .note{font-size:9px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card h3{font-size:17px!important;line-height:1!important}
+  html body#acb-design.questionnaire-page #screen .res .state strong{font-size:16px!important}
+}
+@media (orientation:portrait) and (max-width:700px){
+  html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:10px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .state p{font-size:10px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .note{font-size:8.5px!important;line-height:1.18!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card h3{font-size:16px!important;line-height:1!important}
+  html body#acb-design.questionnaire-page #screen .res .state strong{font-size:14px!important}
+}
+@media (orientation:portrait) and (max-width:700px) and (max-height:720px){
+  html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:9px!important;line-height:1.12!important}
+  html body#acb-design.questionnaire-page #screen .res .state p{font-size:9px!important;line-height:1.12!important}
+  html body#acb-design.questionnaire-page #screen .res .note{font-size:8px!important;line-height:1.12!important}
+}
