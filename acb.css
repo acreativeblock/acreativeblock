@@ -3639,6 +3639,11 @@ html body#acb-design.internal-page.blog-index .blog-card :is(.blog-cat,.blog-tim
   line-height:1.1!important;
   letter-spacing:-.01em!important;
 }
+html body#acb-design.internal-page.blog-index .blog-card .blog-time{
+  color:var(--ink)!important;
+  text-transform:none!important;
+  opacity:1!important;
+}
 /* Journal taxonomy labels use one compact outlined-pill language on the
    homepage, blog index, related cards and inside each article. */
 html body#acb-design.internal-page.blog-index .blog-card .blog-cat,
