@@ -886,3 +886,11 @@ html body#acb-design.questionnaire-page #screen .res .result-actions .btn{min-he
     min-width:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:clip!important;
   }
 }
+
+/* Preserve the site's original logo weight in print; the SVG fill already
+   defines the mark, so an additional path stroke makes it look too heavy. */
+@media print{
+  html body#acb-design.questionnaire-page .top .quiz-logo svg :is(path,circle){
+    fill:#4f46e5!important;stroke:none!important;
+  }
+}
