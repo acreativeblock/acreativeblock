@@ -764,3 +764,22 @@ html body#acb-design.questionnaire-page main.stage #screen .res .result-actions 
     content:"A CREATIVE BLOCK";color:#4f46e5!important;font:400 16px/1 Inter,Arial,sans-serif!important;letter-spacing:-.04em!important;
   }
 }
+
+/* Centre the three-line ACB mark independently of the quiz status controls. */
+html body#acb-design.questionnaire-page .top .quiz-home{
+  position:absolute!important;left:50%!important;top:50%!important;
+  width:70px!important;height:46px!important;margin:0!important;
+  transform:translate(-50%,-50%)!important;background:none!important;
+}
+html body#acb-design.questionnaire-page .top .quiz-logo{
+  display:block!important;width:100%!important;height:100%!important;color:var(--quiz-blue)!important;
+}
+html body#acb-design.questionnaire-page .top .quiz-logo svg{display:block!important;width:100%!important;height:100%!important}
+html body#acb-design.questionnaire-page .top .quiz-status{margin-left:auto!important}
+@media(max-width:700px){
+  html body#acb-design.questionnaire-page .top .quiz-home{width:58px!important;height:40px!important}
+  html body#acb-design.questionnaire-page .top .quiz-logo{height:40px!important}
+}
+@media print{html body#acb-design.questionnaire-page .top .quiz-home{display:none!important}}
+html body#acb-design.questionnaire-page .top .quiz-logo svg{color:var(--quiz-blue)!important}
+html body#acb-design.questionnaire-page .top .quiz-logo svg :is(path,circle){fill:var(--quiz-blue)!important;stroke:var(--quiz-blue)!important}
