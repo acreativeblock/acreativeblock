@@ -8613,3 +8613,15 @@ html body#acb-design.faq-page .faq-hero h1{
   max-width:24ch!important;
   text-wrap:balance!important;
 }
+
+/* Keep the future statement evenly filled, with no one- or two-word final line. */
+html body#acb-design.about-page main .about-future p.about-overview-copy{
+  padding-right:6%!important;
+  text-wrap:balance!important;
+}
+@media(max-width:684px){
+  html body#acb-design.about-page main .about-future p.about-overview-copy{
+    padding-right:0!important;
+    text-wrap:balance!important;
+  }
+}
