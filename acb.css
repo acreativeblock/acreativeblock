@@ -8410,7 +8410,7 @@ html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-st
 /* About overview copy — definitive component styles. Keep this more specific
    than the shared internal-page paragraph system so its editorial type scale
    cannot be reset by generic page copy rules. */
-html body#acb-design.about-page main .about-overview p.about-overview-copy{
+html body#acb-design.about-page main :is(.about-overview,.about-future) p.about-overview-copy{
   max-width:none!important;
   width:100%!important;
   margin:0!important;
@@ -8422,7 +8422,7 @@ html body#acb-design.about-page main .about-overview p.about-overview-copy{
   text-wrap:pretty!important;
 }
 @media(max-width:684px){
-  html body#acb-design.about-page main .about-overview p.about-overview-copy{
+  html body#acb-design.about-page main :is(.about-overview,.about-future) p.about-overview-copy{
     padding-right:0!important;
     font-size:var(--fs-copy-lg)!important;
   }
