@@ -481,3 +481,127 @@ html body#acb-design.questionnaire-page #screen .res .note{
   html body#acb-design.questionnaire-page #screen .res .state p{font-size:9px!important;line-height:1.12!important}
   html body#acb-design.questionnaire-page #screen .res .note{font-size:8px!important;line-height:1.12!important}
 }
+
+/* Result actions: two compact rows in portrait, one row when space allows. */
+html body#acb-design.questionnaire-page #screen .res .result-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+html body#acb-design.questionnaire-page #screen .res .result-actions .btn{
+  width:100%!important;
+  white-space:nowrap!important;
+}
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page #screen .res .result-actions{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res .result-actions .btn{
+    padding-inline:8px!important;
+    font-size:11px!important;
+  }
+}
+
+/* Native browser print-to-PDF layout. The result becomes a clean A4 document
+   while interactive quiz chrome and controls stay out of the saved file. */
+@media print{
+  @page{size:A4 portrait;margin:14mm}
+  html,body,html body#acb-design.questionnaire-page{
+    width:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    background:#fff!important;
+    color:#111118!important;
+  }
+  html body#acb-design.questionnaire-page .top,
+  html body#acb-design.questionnaire-page .progress,
+  html body#acb-design.questionnaire-page #screen .res .result-actions{
+    display:none!important;
+  }
+  html body#acb-design.questionnaire-page .stage{
+    display:block!important;
+    min-height:0!important;
+    padding:0!important;
+  }
+  html body#acb-design.questionnaire-page .card:has(.res){
+    width:100%!important;
+    max-width:none!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    box-shadow:none!important;
+    background:#fff!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res{
+    display:grid!important;
+    grid-template-columns:1.08fr .92fr!important;
+    grid-template-areas:"meta bars" "title bars" "domains bars" "state bars" "skill bars" "note bars"!important;
+    gap:8px 12px!important;
+    color:#111118!important;
+  }
+  html body#acb-design.questionnaire-page #screen .res>.qmeta{grid-area:meta!important}
+  html body#acb-design.questionnaire-page #screen .res>h2{grid-area:title!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-grid{grid-area:domains!important}
+  html body#acb-design.questionnaire-page #screen .res>.state{grid-area:state!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{grid-area:skill!important}
+  html body#acb-design.questionnaire-page #screen .res>.bars{grid-area:bars!important;align-self:stretch!important}
+  html body#acb-design.questionnaire-page #screen .res>.note{grid-area:note!important;color:#555565!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card,
+  html body#acb-design.questionnaire-page #screen .res .bars{
+    break-inside:avoid!important;
+    border:1px solid #dcecff!important;
+    background:#f0f6ff!important;
+  }
+}
+
+/* Result actions: two compact rows in portrait, one row when space allows. */
+html body#acb-design.questionnaire-page #screen .res .result-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+html body#acb-design.questionnaire-page #screen .res .result-actions .btn{width:100%!important;white-space:nowrap!important}
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page #screen .res .result-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  html body#acb-design.questionnaire-page #screen .res .result-actions .btn{padding-inline:8px!important;font-size:11px!important}
+}
+
+/* Clean native browser print-to-PDF layout. */
+@media print{
+  @page{size:A4 portrait;margin:14mm}
+  html,body,html body#acb-design.questionnaire-page{width:auto!important;min-height:0!important;margin:0!important;background:#fff!important;color:#111118!important}
+  html body#acb-design.questionnaire-page :is(.top,.progress),html body#acb-design.questionnaire-page #screen .res .result-actions{display:none!important}
+  html body#acb-design.questionnaire-page .stage{display:block!important;min-height:0!important;padding:0!important}
+  html body#acb-design.questionnaire-page .card:has(.res){width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:#fff!important}
+  html body#acb-design.questionnaire-page #screen .res{display:grid!important;grid-template-columns:1.08fr .92fr!important;grid-template-areas:"meta bars" "title bars" "domains bars" "state bars" "skill bars" "note bars"!important;gap:8px 12px!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.qmeta{grid-area:meta!important}
+  html body#acb-design.questionnaire-page #screen .res>h2{grid-area:title!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-grid{grid-area:domains!important}
+  html body#acb-design.questionnaire-page #screen .res>.state{grid-area:state!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{grid-area:skill!important}
+  html body#acb-design.questionnaire-page #screen .res>.bars{grid-area:bars!important;align-self:stretch!important}
+  html body#acb-design.questionnaire-page #screen .res>.note{grid-area:note!important;color:#555565!important}
+  html body#acb-design.questionnaire-page #screen .res :is(.result-card,.bars){break-inside:avoid!important;border:1px solid #dcecff!important;background:#f0f6ff!important}
+}
+
+/* Result actions: two compact rows in portrait, one row when space allows. */
+html body#acb-design.questionnaire-page #screen .res .result-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+html body#acb-design.questionnaire-page #screen .res .result-actions .btn{width:100%!important;white-space:nowrap!important}
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page #screen .res .result-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  html body#acb-design.questionnaire-page #screen .res .result-actions .btn{padding-inline:8px!important;font-size:11px!important}
+}
+
+/* Clean native browser print-to-PDF layout. */
+@media print{
+  @page{size:A4 portrait;margin:14mm}
+  html,body,html body#acb-design.questionnaire-page{width:auto!important;min-height:0!important;margin:0!important;background:#fff!important;color:#111118!important}
+  html body#acb-design.questionnaire-page :is(.top,.progress),html body#acb-design.questionnaire-page #screen .res .result-actions{display:none!important}
+  html body#acb-design.questionnaire-page .stage{display:block!important;min-height:0!important;padding:0!important}
+  html body#acb-design.questionnaire-page .card:has(.res){width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:#fff!important}
+  html body#acb-design.questionnaire-page #screen .res{display:grid!important;grid-template-columns:1.08fr .92fr!important;grid-template-areas:"meta bars" "title bars" "domains bars" "state bars" "skill bars" "note bars"!important;gap:8px 12px!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.qmeta{grid-area:meta!important}
+  html body#acb-design.questionnaire-page #screen .res>h2{grid-area:title!important;color:#111118!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-grid{grid-area:domains!important}
+  html body#acb-design.questionnaire-page #screen .res>.state{grid-area:state!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{grid-area:skill!important}
+  html body#acb-design.questionnaire-page #screen .res>.bars{grid-area:bars!important;align-self:stretch!important}
+  html body#acb-design.questionnaire-page #screen .res>.note{grid-area:note!important;color:#555565!important}
+  html body#acb-design.questionnaire-page #screen .res :is(.result-card,.bars){break-inside:avoid!important;border:1px solid #dcecff!important;background:#f0f6ff!important}
+}
