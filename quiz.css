@@ -827,3 +827,36 @@ html body#acb-design.questionnaire-page #screen .res .result-actions .btn{min-he
   html body#acb-design.questionnaire-page #screen .res .nav{margin-top:12px!important;gap:8px!important}
   html body#acb-design.questionnaire-page #screen .res .result-actions .btn{font-size:14px!important}
 }
+
+/* PDF masthead: use the actual centred three-line mark, without text labels. */
+@media print{
+  html body#acb-design.questionnaire-page .top{
+    display:flex!important;justify-content:center!important;align-items:center!important;
+    margin:0 0 20px!important;padding:0!important;border:0!important;background:transparent!important;
+  }
+  html body#acb-design.questionnaire-page .top::before,
+  html body#acb-design.questionnaire-page .top::after{content:none!important;display:none!important}
+  html body#acb-design.questionnaire-page .top .quiz-home{
+    display:block!important;position:static!important;width:74px!important;height:48px!important;
+    margin:0 auto!important;transform:none!important;background:none!important;
+  }
+  html body#acb-design.questionnaire-page .top .quiz-logo,
+  html body#acb-design.questionnaire-page .top .quiz-logo svg{display:block!important;width:74px!important;height:48px!important;color:#4f46e5!important}
+  html body#acb-design.questionnaire-page .top .quiz-logo svg :is(path,circle){fill:#4f46e5!important;stroke:#4f46e5!important}
+}
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  html body#acb-design.questionnaire-page .top{margin-bottom:14px!important}
+  html body#acb-design.questionnaire-page #screen .res>h2{font-size:44px!important;margin-bottom:16px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card{padding:15px 16px!important;border-radius:14px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card small{font-size:10px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card h3{font-size:21px!important;line-height:1!important;margin:7px 0 8px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:12px!important;line-height:1.3!important;margin:6px 0 0!important}
+  html body#acb-design.questionnaire-page #screen .res>.state{padding:14px 16px!important;border-radius:14px!important}
+  html body#acb-design.questionnaire-page #screen .res>.state strong{font-size:19px!important}
+  html body#acb-design.questionnaire-page #screen .res>.state p{font-size:12px!important;line-height:1.3!important;margin-top:5px!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{grid-template-columns:150px 1fr!important;gap:12px!important}
+  html body#acb-design.questionnaire-page #screen .res>.bars{padding:14px 16px!important;border-radius:14px!important}
+  html body#acb-design.questionnaire-page #screen .res .bar{grid-template-columns:150px 1fr 22px!important;gap:10px!important;margin:7px 0!important;font-size:10.5px!important}
+  html body#acb-design.questionnaire-page #screen .res>.note{font-size:9.5px!important;line-height:1.3!important}
+}
