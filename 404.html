@@ -18,29 +18,36 @@
   <link rel="stylesheet" href="/pages.css?v=20" onerror="this.onerror=null;this.href='./pages.css?v=20'">
   <link rel="stylesheet" href="/acb.css?v=522" onerror="this.onerror=null;this.href='./acb.css?v=522'">
   <style>
-    html body#acb-design.not-found-page main{min-height:min(720px,calc(100svh - 120px));display:flex}
-    html body#acb-design.not-found-page .not-found{width:100%;display:flex;padding:0}
-    html body#acb-design.not-found-page .not-found>.wrap{width:100%;max-width:none;margin:0;padding:clamp(32px,6vw,84px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(48px,10vw,120px);border-radius:var(--radius-card);background:var(--yellow);box-shadow:var(--shadow-card)}
-    html body#acb-design.not-found-page .not-found-label{margin:0;color:var(--blue);font-size:20px;line-height:1;letter-spacing:-.03em;text-transform:uppercase}
-    html body#acb-design.not-found-page .not-found-copy{max-width:1050px}
-    html body#acb-design.not-found-page h1{max-width:12ch;margin:0;font-size:clamp(62px,10vw,150px);font-weight:400;line-height:.86;letter-spacing:-.055em;text-wrap:balance}
-    html body#acb-design.not-found-page .not-found-copy>p{max-width:38ch;margin:24px 0 0;font-size:clamp(20px,2.2vw,32px);line-height:1.08;letter-spacing:-.03em}
-    html body#acb-design.not-found-page .not-found-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-    html body#acb-design.not-found-page .not-found-actions .btn{background:var(--blue)!important;color:#fff!important}
-    html body#acb-design.not-found-page .not-found-actions .btn.secondary{background:#fff!important;color:var(--ink)!important}
+    html body#acb-design.not-found-page main{width:var(--acb-frame-width)!important;max-width:var(--acb-frame-width)!important;margin:0 auto!important}
+    html body#acb-design.not-found-page .not-found-panel{width:100%!important}
+    html body#acb-design.not-found-page .not-found{width:100%!important;margin:0!important;padding:0!important}
+    html body#acb-design.not-found-page .not-found>.wrap{
+      width:100%!important;max-width:none!important;min-height:calc(100svh - 88px)!important;
+      margin:0!important;padding:clamp(38px,5vw,72px)!important;
+      display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+      gap:clamp(48px,10vw,120px)!important;border-radius:var(--radius-card)!important;
+      background:#fff!important;box-shadow:var(--shadow-card)!important;
+    }
+    html body#acb-design.not-found-page .not-found-label{margin:0!important;color:var(--blue)!important;font-size:var(--fs-label)!important;line-height:1!important;letter-spacing:var(--ls-label)!important;text-transform:uppercase!important}
+    html body#acb-design.not-found-page .not-found-copy{max-width:1050px!important}
+    html body#acb-design.not-found-page .not-found-copy h1{max-width:12ch!important;margin:0!important;color:var(--ink)!important;font-size:clamp(62px,10vw,142px)!important;font-weight:400!important;line-height:.86!important;letter-spacing:-.055em!important;text-wrap:balance!important}
+    html body#acb-design.not-found-page .not-found-copy>p{max-width:38ch!important;margin:24px 0 0!important;color:var(--ink)!important;font-size:clamp(20px,2.2vw,32px)!important;line-height:1.08!important;letter-spacing:var(--ls-title)!important}
+    html body#acb-design.not-found-page .not-found-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin-top:28px!important}
+    html body#acb-design.not-found-page .not-found-actions .btn{background:var(--blue)!important;color:#fff!important;cursor:pointer!important}
+    html body#acb-design.not-found-page .not-found-actions .btn.secondary{background:var(--light-blue)!important;color:var(--blue)!important}
     @media(max-width:684px){
-      html body#acb-design.not-found-page main{min-height:calc(100svh - 90px)}
-      html body#acb-design.not-found-page .not-found>.wrap{padding:28px 20px}
-      html body#acb-design.not-found-page h1{font-size:clamp(52px,17vw,78px)}
-      html body#acb-design.not-found-page .not-found-actions{display:grid}
-      html body#acb-design.not-found-page .not-found-actions .btn{width:100%;justify-content:space-between}
+      html body#acb-design.not-found-page .not-found>.wrap{min-height:calc(100svh - 76px)!important;padding:30px 20px!important}
+      html body#acb-design.not-found-page .not-found-copy h1{font-size:clamp(52px,17vw,78px)!important}
+      html body#acb-design.not-found-page .not-found-actions{display:grid!important}
+      html body#acb-design.not-found-page .not-found-actions .btn{width:100%!important;justify-content:space-between!important}
     }
   </style>
 </head>
 <body id="acb-design" class="internal-page not-found-page">
   <div data-site-header></div>
   <main>
-    <section class="not-found">
+    <div class="acb-main-panel not-found-panel">
+    <section class="section not-found">
       <div class="wrap">
         <p class="not-found-label">404 · Wrong turn</p>
         <div class="not-found-copy">
@@ -54,6 +61,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
   <div data-site-footer></div>
   <script src="/site.js?v=143" onerror="this.onerror=null;this.src='./site.js?v=143'"></script>
