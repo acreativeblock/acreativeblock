@@ -783,3 +783,47 @@ html body#acb-design.questionnaire-page .top .quiz-status{margin-left:auto!impor
 @media print{html body#acb-design.questionnaire-page .top .quiz-home{display:none!important}}
 html body#acb-design.questionnaire-page .top .quiz-logo svg{color:var(--quiz-blue)!important}
 html body#acb-design.questionnaire-page .top .quiz-logo svg :is(path,circle){fill:var(--quiz-blue)!important;stroke:var(--quiz-blue)!important}
+
+/* Final result typography follows the website's real reading scale. The result
+   may scroll on compact screens; legibility takes priority over forced fitting. */
+html body#acb-design.questionnaire-page #screen .res>.qmeta{font-size:14px!important;padding:7px 11px!important}
+html body#acb-design.questionnaire-page #screen .res>h2{font-size:clamp(48px,5.4vw,72px)!important;line-height:.9!important;margin-bottom:18px!important}
+html body#acb-design.questionnaire-page #screen .res .result-card{padding:20px!important;border-radius:18px!important}
+html body#acb-design.questionnaire-page #screen .res .result-card small{font-size:14px!important;line-height:1!important}
+html body#acb-design.questionnaire-page #screen .res .result-card h3{font-size:28px!important;line-height:.98!important;margin:10px 0!important}
+html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:18px!important;line-height:1.3!important;margin:9px 0 0!important}
+html body#acb-design.questionnaire-page #screen .res .state{padding:20px!important;border-radius:18px!important}
+html body#acb-design.questionnaire-page #screen .res .state strong{font-size:26px!important;line-height:1!important}
+html body#acb-design.questionnaire-page #screen .res .state p{font-size:18px!important;line-height:1.3!important;margin-top:8px!important}
+html body#acb-design.questionnaire-page #screen .res .bars{padding:20px!important;border-radius:18px!important}
+html body#acb-design.questionnaire-page #screen .res .bar{grid-template-columns:minmax(145px,210px) 1fr 24px!important;gap:12px!important;margin:9px 0!important;font-size:14px!important;line-height:1.05!important}
+html body#acb-design.questionnaire-page #screen .res .track{height:9px!important}
+html body#acb-design.questionnaire-page #screen .res .note{font-size:12px!important;line-height:1.35!important}
+html body#acb-design.questionnaire-page #screen .res .result-actions .btn{min-height:48px!important;padding:14px 12px!important;font-size:15px!important}
+@media (orientation:landscape) and (min-width:701px){
+  html body#acb-design.questionnaire-page .card:has(.res){padding:26px 28px!important}
+  html body#acb-design.questionnaire-page .res{row-gap:12px!important;column-gap:18px!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{grid-template-columns:190px 1fr!important;gap:16px!important}
+}
+@media (max-width:700px){
+  html body#acb-design.questionnaire-page .stage{place-items:start center!important}
+  html body#acb-design.questionnaire-page .card:has(.res){padding:18px 14px!important}
+  html body#acb-design.questionnaire-page #screen .res>.qmeta{font-size:12px!important}
+  html body#acb-design.questionnaire-page #screen .res>h2{font-size:clamp(40px,12vw,52px)!important;margin-bottom:14px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-grid{grid-template-columns:1fr!important;gap:10px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card{padding:16px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-grid .result-card:first-child h3{display:block!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card small{font-size:12px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card h3{display:block!important;font-size:23px!important;margin:8px 0!important}
+  html body#acb-design.questionnaire-page #screen .res .result-card p{font-size:15px!important;line-height:1.28!important}
+  html body#acb-design.questionnaire-page #screen .res>.result-card{display:block!important}
+  html body#acb-design.questionnaire-page #screen .res .state{padding:16px!important;margin:10px 0!important}
+  html body#acb-design.questionnaire-page #screen .res .state strong{font-size:21px!important}
+  html body#acb-design.questionnaire-page #screen .res .state p{font-size:15px!important;line-height:1.28!important}
+  html body#acb-design.questionnaire-page #screen .res .bars{padding:14px!important;margin:10px 0!important}
+  html body#acb-design.questionnaire-page #screen .res .bar{grid-template-columns:112px 1fr 18px!important;gap:7px!important;margin:7px 0!important;font-size:11px!important}
+  html body#acb-design.questionnaire-page #screen .res .track{height:7px!important}
+  html body#acb-design.questionnaire-page #screen .res .note{font-size:11px!important;line-height:1.3!important;margin-top:9px!important}
+  html body#acb-design.questionnaire-page #screen .res .nav{margin-top:12px!important;gap:8px!important}
+  html body#acb-design.questionnaire-page #screen .res .result-actions .btn{font-size:14px!important}
+}
