@@ -8511,3 +8511,38 @@ html body#acb-design.about-page main .about-overview p.about-overview-copy{
     color:var(--ink,#111118)!important;
   }
 }
+
+/* Keep the landscape-tablet navigation readable and optically centred.
+   The nav is centred on the header itself, independent of the logo and CTA. */
+@media(min-width:901px) and (max-width:1180px){
+  html body#acb-design#acb-design .acb-header:not(.mobile-open)>.inner{
+    position:relative!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-head-right{
+    display:contents!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-nav{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    width:max-content!important;
+    max-width:calc(100% - 300px)!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .navbutton{
+    padding:8px 9px!important;
+    font-size:14px!important;
+    line-height:1!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-actions{
+    margin-left:auto!important;
+  }
+  html body#acb-design#acb-design .acb-header:not(.mobile-open) .acb-utility-pill{
+    padding:9px 12px!important;
+    font-size:14px!important;
+  }
+}
