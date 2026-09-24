@@ -8166,15 +8166,6 @@ html body#acb-design.about-page .about-overview>.wrap{
   padding:clamp(40px,6vw,86px)!important;
   box-shadow:var(--shadow-card)!important;
 }
-html body#acb-design.about-page .about-overview-copy{
-  max-width:none!important;
-  width:100%!important;
-  margin:clamp(18px,2.4vw,30px) 0 0!important;
-  padding-right:15%!important;
-  font-size:33.25px!important;
-  line-height:1.1!important;
-  letter-spacing:-.04em!important;
-}
 html body#acb-design.about-page .about-overview-copy .hl{
   background-image:linear-gradient(to bottom,transparent 10%,var(--yellow) 10%,var(--yellow) 92%,transparent 92%)!important;
   box-decoration-break:clone!important;
@@ -8258,8 +8249,7 @@ html body#acb-design.about-page .about-future-copy p{font-size:clamp(23px,2.1vw,
     width:calc(100% - 26px)!important;
   }
   html body#acb-design.about-page .about-overview>.wrap{padding:30px 20px!important}
-  html body#acb-design.about-page .about-overview-copy{max-width:none!important;padding-right:0!important;font-size:21.6px!important}
-  html body#acb-design.about-page .about-stack article{grid-template-columns:auto minmax(0,1fr)!important;gap:14px!important;padding:17px 15px!important;margin-top:-7px!important}
+    html body#acb-design.about-page .about-stack article{grid-template-columns:auto minmax(0,1fr)!important;gap:14px!important;padding:17px 15px!important;margin-top:-7px!important}
   html body#acb-design.about-page .about-stack article>span{width:44px!important;height:44px!important;border-radius:14px!important;font-size:14px!important}
   html body#acb-design.about-page .about-stack article p{grid-column:2!important;font-size:19px!important;line-height:1.04!important}
 }
@@ -8315,10 +8305,6 @@ html body#acb-design.about-page .about-certification-copy strong{
 /* About uses the established 4o opening rhythm and stacked process cards. */
 html body#acb-design.about-page .about-overview>.wrap{padding:clamp(38px,5vw,72px)!important}
 html body#acb-design.about-page .about-overview .side-note{display:block!important;margin:0 0 12px!important}
-html body#acb-design.about-page .about-overview-copy{
-  margin:0!important;padding-right:15%!important;font-size:35px!important;
-  line-height:1.1!important;letter-spacing:var(--ls-title)!important;text-wrap:pretty!important;
-}
 html body#acb-design.about-page .about-main>.section:not(.about-overview) .side-note{display:block!important;margin:0 0 12px!important}
 html body#acb-design.about-page .about-main>.section h2{margin:0 0 20px!important}
 html body#acb-design.about-page .about-main>.section p+p{margin-top:16px!important}
@@ -8357,8 +8343,7 @@ html body#acb-design.about-page :is(.about-overview-copy .hl,.about-lead strong)
 html body#acb-design.about-page .about-certification{box-shadow:none!important;transform:none!important}
 @media(max-width:684px){
   html body#acb-design.about-page .about-overview>.wrap{padding:30px 20px!important}
-  html body#acb-design.about-page .about-overview-copy{padding-right:0!important;font-size:var(--fs-copy-lg)!important}
-  html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article{margin-top:-10px!important;padding:17px 15px!important;gap:14px!important}
+    html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article{margin-top:-10px!important;padding:17px 15px!important;gap:14px!important}
   html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>span{width:42px!important;height:42px!important;font-size:14px!important}
   html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{font-size:19px!important;line-height:1.04!important}
 }
@@ -8391,16 +8376,6 @@ html body#acb-design:is(.individuals-page,.organisations-page) .audience-hero-st
 }
 
 /* About opening statement: requested full-width editorial measure. */
-html body#acb-design.about-page .about-overview-copy{
-  max-width:none!important;
-  margin:0!important;
-  padding-right:15%!important;
-  color:var(--ink)!important;
-  font-size:35px!important;
-  line-height:1.1!important;
-  letter-spacing:var(--ls-title)!important;
-  text-wrap:pretty!important;
-}
 
 /* About stacks use the same colour and elevation language as the 4o
    "What the team leaves with" cards, while retaining their numbered stack. */
@@ -8425,4 +8400,25 @@ html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-st
 }
 html body#acb-design.about-page :is(.about-reasons,.about-belief-stack).about-stack>article>p{
   color:inherit!important;
+}
+
+/* About overview copy — definitive component styles. Keep this more specific
+   than the shared internal-page paragraph system so its editorial type scale
+   cannot be reset by generic page copy rules. */
+html body#acb-design.about-page main .about-overview p.about-overview-copy{
+  max-width:none!important;
+  width:100%!important;
+  margin:0!important;
+  padding-right:15%!important;
+  color:var(--ink)!important;
+  font-size:35px!important;
+  line-height:1.1!important;
+  letter-spacing:var(--ls-title)!important;
+  text-wrap:pretty!important;
+}
+@media(max-width:684px){
+  html body#acb-design.about-page main .about-overview p.about-overview-copy{
+    padding-right:0!important;
+    font-size:var(--fs-copy-lg)!important;
+  }
 }
