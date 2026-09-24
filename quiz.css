@@ -647,3 +647,21 @@ html body#acb-design.questionnaire-page #screen:not(:has(.res)) .btn{font-size:2
   html body#acb-design.questionnaire-page #screen .res .state p{font-size:10px!important;line-height:1.14!important}
   html body#acb-design.questionnaire-page #screen .res .note{font-size:8.5px!important}
 }
+
+/* Result actions use the same quiet ACB palette and hierarchy as the site. */
+html body#acb-design.questionnaire-page #screen .res .result-actions .btn{border:0!important;box-shadow:none!important}
+html body#acb-design.questionnaire-page #screen .res .result-actions .action-contact{
+  background:var(--quiz-blue)!important;color:#fff!important;
+}
+html body#acb-design.questionnaire-page #screen .res .result-actions .action-pdf{
+  background:#dcecff!important;color:var(--quiz-blue)!important;
+}
+html body#acb-design.questionnaire-page #screen .res .result-actions .action-map{
+  background:var(--quiz-yellow)!important;color:var(--quiz-ink)!important;
+}
+html body#acb-design.questionnaire-page #screen .res .result-actions .action-restart{
+  background:#fff!important;color:var(--quiz-ink)!important;
+}
+html body#acb-design.questionnaire-page main.stage #screen .res .result-actions .action-contact.action-contact{
+  background:var(--quiz-blue)!important;color:#fff!important;
+}
