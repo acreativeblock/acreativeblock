@@ -8606,3 +8606,10 @@ html body#acb-design#acb-design:is(.blocks-page,.method-page,.about-page,.contac
 html body#acb-design#acb-design:is(.blocks-page,.method-page,.about-page,.contact-page,.blog-index,.legal-page,.faq-page) main>.acb-main-panel>section:first-child{
   margin-top:var(--sp-gap)!important;
 }
+
+/* Give the FAQ opening enough measure to keep its final phrase together. */
+html body#acb-design.faq-page .faq-hero h1{
+  width:100%!important;
+  max-width:24ch!important;
+  text-wrap:balance!important;
+}
