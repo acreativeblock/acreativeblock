@@ -8751,3 +8751,24 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
     justify-content:flex-start!important;
   }
 }
+
+/* Join the descending mobile menu to its blue footer. The navigation owns the
+   flexible space above; the footer stays anchored as the seamless lower edge. */
+@media(max-width:1180px){
+  html body#acb-design#acb-design .acb-header.mobile-open .acb-head-right{
+    display:flex!important;
+    flex-direction:column!important;
+    background:var(--acb-blue,#4f46e5)!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open .acb-nav{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    margin-bottom:0!important;
+  }
+  html body#acb-design#acb-design .acb-header.mobile-open .mobile-menu-footer{
+    flex:0 0 auto!important;
+    margin:0!important;
+    border-top:0!important;
+    background:var(--acb-blue,#4f46e5)!important;
+  }
+}
