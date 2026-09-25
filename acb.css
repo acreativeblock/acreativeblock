@@ -8683,3 +8683,14 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
     max-width:26ch!important;
   }
 }
+
+/* Align the footer navigation with the identity row and lift the social marks. */
+@media(min-width:685px){
+  html body#acb-design#acb-design .acb-footer>.top.acb-footer-links{
+    align-self:start!important;
+    padding-top:0!important;
+  }
+  html body#acb-design#acb-design .acb-footer .footer-socials{
+    transform:translateY(-10px)!important;
+  }
+}
