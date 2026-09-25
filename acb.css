@@ -4124,7 +4124,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form .row2{
   gap:10px!important;
   width:100%!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea){
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input:not([type="checkbox"]),textarea){
   box-sizing:border-box!important;
   width:100%!important;
   border:0!important;
@@ -4147,7 +4147,36 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
   resize:none!important;
   overflow-y:auto!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input,textarea)::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input:not([type="checkbox"]),textarea)::placeholder{color:#7a7a7a!important;letter-spacing:var(--ls-body)!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form .qc-consent{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:10px!important;
+  width:100%!important;
+  margin:2px 0!important;
+  color:#fff!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  letter-spacing:var(--ls-body)!important;
+  text-transform:none!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-form .qc-consent input[type="checkbox"]{
+  appearance:auto!important;
+  width:16px!important;
+  height:16px!important;
+  min-width:16px!important;
+  min-height:16px!important;
+  flex:0 0 16px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:3px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  accent-color:var(--blue)!important;
+}
+html body#acb-design#acb-design .acb-quick-contact .qc-form .qc-consent :is(span,a){color:#fff!important}
+html body#acb-design#acb-design .acb-quick-contact .qc-form .qc-consent a{text-decoration:underline!important;text-underline-offset:2px!important}
 html body#acb-design#acb-design .acb-quick-contact .qc-form button{
   align-self:flex-start!important;
   margin:0!important;
