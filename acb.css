@@ -8736,3 +8736,18 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
     margin-top:34px!important;
   }
 }
+
+/* Preserve the four-column social alignment at tablet widths too. */
+@media(min-width:685px){
+  html body#acb-design#acb-design .acb-footer .footer-socials{
+    display:grid!important;
+    width:100%!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    column-gap:clamp(16.2px,2.2vw,26px)!important;
+  }
+  html body#acb-design#acb-design .acb-footer .footer-socials .social-icons{
+    display:flex!important;
+    grid-column:4!important;
+    justify-content:flex-start!important;
+  }
+}
