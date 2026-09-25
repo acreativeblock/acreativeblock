@@ -4142,8 +4142,8 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input:not([type=
 html body#acb-design#acb-design .acb-quick-contact .qc-form.qc-form textarea{
   height:84px!important;
   min-height:0!important;
-  padding:24px 20px 14px!important;
-  padding-block-start:24px!important;
+  padding:18px 20px 14px!important;
+  padding-block-start:18px!important;
   line-height:1.4!important;
   resize:none!important;
   overflow-y:auto!important;
