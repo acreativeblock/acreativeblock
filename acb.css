@@ -8658,3 +8658,28 @@ html body#acb-design.about-page main .about-future p.about-overview-copy{
     text-wrap:balance!important;
   }
 }
+
+/* Keep the footer identity together: logo and motto share one row. */
+html body#acb-design#acb-design .acb-footer .mark{
+  display:flex!important;
+  align-items:center!important;
+  flex-wrap:nowrap!important;
+  gap:clamp(14px,1.8vw,24px)!important;
+  width:100%!important;
+}
+html body#acb-design#acb-design .acb-footer .mark>a{
+  display:flex!important;
+  align-items:center!important;
+  flex:0 0 auto!important;
+}
+html body#acb-design#acb-design .acb-footer .mark .ack{
+  margin:0!important;
+}
+@media(max-width:684px){
+  html body#acb-design#acb-design .acb-footer .mark{
+    gap:12px!important;
+  }
+  html body#acb-design#acb-design .acb-footer .mark .ack{
+    max-width:26ch!important;
+  }
+}
