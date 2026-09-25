@@ -8714,3 +8714,25 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
     transform:translateY(-28px)!important;
   }
 }
+
+/* Footer lower rhythm: mirror the upper grid so the social marks begin on the
+   Support-column edge, then give the copyright its own quieter row below. */
+@media(min-width:685px){
+  html body#acb-design#acb-design .acb-footer>.wrap>.bottom{
+    display:grid!important;
+    grid-template-columns:minmax(230px,.82fr) minmax(0,2.18fr)!important;
+    column-gap:clamp(18px,3vw,48px)!important;
+    align-items:start!important;
+    padding-top:12px!important;
+    padding-bottom:12px!important;
+  }
+  html body#acb-design#acb-design .acb-footer .footer-socials{
+    grid-column:2!important;
+    grid-row:1!important;
+  }
+  html body#acb-design#acb-design .acb-footer>.wrap>.bottom>span{
+    grid-column:1/-1!important;
+    grid-row:2!important;
+    margin-top:34px!important;
+  }
+}
