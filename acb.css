@@ -8694,3 +8694,23 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
     transform:translateY(-10px)!important;
   }
 }
+
+/* Footer alignment correction: the links are nested inside .wrap. Keep the
+   identity and four navigation columns in the same row down to mobile. */
+@media(min-width:685px){
+  html body#acb-design#acb-design .acb-footer>.wrap{
+    grid-template-columns:minmax(230px,.82fr) minmax(0,2.18fr)!important;
+    column-gap:clamp(18px,3vw,48px)!important;
+  }
+  html body#acb-design#acb-design .acb-footer .foot-lead{
+    grid-column:1!important;
+  }
+  html body#acb-design#acb-design .acb-footer>.wrap>.top.acb-footer-links{
+    grid-column:2!important;
+    align-self:start!important;
+    padding-top:0!important;
+  }
+  html body#acb-design#acb-design .acb-footer .footer-socials{
+    transform:translateY(-28px)!important;
+  }
+}
