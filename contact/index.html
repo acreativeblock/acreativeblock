@@ -49,6 +49,17 @@
 <script>(function(){
   var wrap=document.querySelector('.contact-form-wrap'),form=document.querySelector('.cform');
   function showSent(){if(wrap)wrap.innerHTML='<span class="side-note">Message sent</span><h2 style="margin:.2em 0 .45em">Thanks — your message is on its way.</h2><p class="note">We’ll get back to you as soon as we can.</p>';}
+  function registerContact(data){
+    var frame=document.createElement('iframe'),register=document.createElement('form');
+    frame.name='acb-contact-register';frame.hidden=true;document.body.appendChild(frame);
+    register.action='https://docs.google.com/forms/d/e/1FAIpQLSdI0t3dVzyvd7uibiWpRRDg2N25_2E6lQe_07LgDlz1ogYUzw/formResponse';
+    register.method='POST';register.target=frame.name;register.hidden=true;
+    [['entry.849059572',data.get('name')||''],['entry.1300875247',data.get('email')||''],['entry.1507375343',data.get('Enquiring as')||''],['entry.931649760',data.get('message')||''],['entry.272002493',data.get('newsletter_consent')==='yes'?'Yes':'No'],['entry.1810905236','Website contact form']].forEach(function(field){
+      var input=document.createElement('input');input.name=field[0];input.value=field[1];register.appendChild(input);
+    });
+    document.body.appendChild(register);register.submit();
+    setTimeout(function(){register.remove();frame.remove()},5000);
+  }
   if(/[?&]sent=1/.test(location.search)){showSent();return}
   if(!form)return;
   var status=form.querySelector('.cform-status'),btn=form.querySelector('button[type=submit]'),btnLabel=btn.textContent;
@@ -62,14 +73,7 @@
       body:JSON.stringify(Object.fromEntries(new FormData(form)))
     }).then(function(r){return r.json().then(function(data){return{ok:r.ok,data:data}})}).then(function(res){
       if(res.ok&&res.data&&res.data.success===true){
-        var data=new FormData(form),register=new URLSearchParams();
-        register.set('entry.849059572',data.get('name')||'');
-        register.set('entry.1300875247',data.get('email')||'');
-        register.set('entry.1507375343',data.get('Enquiring as')||'');
-        register.set('entry.931649760',data.get('message')||'');
-        register.set('entry.272002493',data.get('newsletter_consent')==='yes'?'Yes':'No');
-        register.set('entry.1810905236','Website contact form');
-        fetch('https://docs.google.com/forms/d/e/1FAIpQLSdI0t3dVzyvd7uibiWpRRDg2N25_2E6lQe_07LgDlz1ogYUzw/formResponse',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:register.toString()}).catch(function(){});
+        registerContact(new FormData(form));
         showSent();
       }
       else{throw new Error('web3forms error')}
