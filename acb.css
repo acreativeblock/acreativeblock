@@ -4139,7 +4139,7 @@ html body#acb-design#acb-design .acb-quick-contact .qc-form :is(input:not([type=
   line-height:1.2!important;
   box-shadow:none!important;
 }
-html body#acb-design#acb-design .acb-quick-contact .qc-form textarea{
+html body#acb-design#acb-design .acb-quick-contact .qc-form.qc-form textarea{
   height:84px!important;
   min-height:0!important;
   padding:24px 20px 14px!important;
