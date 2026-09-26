@@ -8783,3 +8783,52 @@ html body#acb-design#acb-design.about-page .about-origin .about-founder-photo im
     width:140px!important;
   }
 }
+
+/* About story: a large opening column beside the smaller supporting story. */
+html body#acb-design#acb-design.about-page .about-origin .about-story-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:clamp(36px,5vw,78px)!important;
+  align-items:start!important;
+}
+html body#acb-design#acb-design.about-page .about-story-lead p{
+  margin:0!important;
+  font-size:clamp(26px,2.8vw,40px)!important;
+  line-height:1.08!important;
+  letter-spacing:var(--ls-title)!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design#acb-design.about-page .about-story-detail p{
+  margin-top:0!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.25!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design#acb-design.about-page .about-story-lead .about-founder-photo{
+  width:160px!important;
+  max-width:160px!important;
+  margin:clamp(28px,4vw,48px) 0 0!important;
+}
+html body#acb-design#acb-design.about-page .about-certification-mark picture{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+html body#acb-design#acb-design.about-page .about-certification-mark img{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:1!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.about-page .about-origin .about-story-grid{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-story-lead p{
+    font-size:var(--fs-copy-lg)!important;
+  }
+  html body#acb-design#acb-design.about-page .about-story-lead .about-founder-photo{
+    width:140px!important;
+  }
+}
