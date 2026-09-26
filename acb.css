@@ -8912,9 +8912,10 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
 @media(min-width:1025px){
   html body#acb-design#acb-design.about-page .about-origin .about-two-col{
     align-items:start!important;
+    align-content:start!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
-    padding-top:24px!important;
+    padding-top:0!important;
   }
 }
 @media(min-width:601px) and (max-width:1024px){
