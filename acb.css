@@ -8910,20 +8910,24 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
 
 /* About story responsive composition. */
 @media(min-width:1025px){
+  html body#acb-design#acb-design.about-page .about-origin .about-two-col{
+    align-items:start!important;
+  }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
-    padding-top:32px!important;
+    padding-top:24px!important;
   }
 }
 @media(min-width:601px) and (max-width:1024px){
   html body#acb-design#acb-design.about-page .about-origin .about-two-col{
     grid-template-columns:150px minmax(0,1fr)!important;
     gap:clamp(28px,4vw,48px)!important;
+    align-items:start!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
     display:block!important;
     width:150px!important;
     max-width:150px!important;
-    padding-top:32px!important;
+    padding-top:24px!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
     width:150px!important;
