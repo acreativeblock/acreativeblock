@@ -8885,6 +8885,9 @@ html body#acb-design#acb-design.about-page .about-origin .about-portrait-credent
   text-align:left!important;
   color:var(--ink)!important;
 }
+html body#acb-design#acb-design.about-page .about-origin>.wrap{
+  padding-bottom:clamp(44px,5vw,68px)!important;
+}
 @media(max-width:774px){
   html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
     grid-template-columns:1fr!important;
