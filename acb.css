@@ -8865,30 +8865,22 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-detail p{
   line-height:1.25!important;
   text-wrap:pretty!important;
 }
-html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential{
-  display:grid!important;
-  justify-items:start!important;
-  gap:6px!important;
-  margin-top:16px!important;
+html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
+  width:100%!important;
+  max-width:160px!important;
 }
-html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential .about-certification-mark{
-  width:66px!important;
+html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-logo{
+  display:block!important;
+  width:70px!important;
+  max-width:70px!important;
   height:auto!important;
-  flex-basis:auto!important;
-  overflow:visible!important;
+  margin:16px 0 0!important;
   border-radius:0!important;
   background:transparent!important;
   box-shadow:none!important;
 }
-html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential .about-certification-mark img{
-  position:static!important;
-  display:block!important;
-  width:100%!important;
-  max-width:100%!important;
-  height:auto!important;
-  transform:none!important;
-}
-html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential figcaption{
+html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-caption{
+  margin:5px 0 0!important;
   padding:0!important;
   font-size:11px!important;
   line-height:1.1!important;
