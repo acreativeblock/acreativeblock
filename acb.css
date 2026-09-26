@@ -8848,7 +8848,7 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side
 html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
   grid-column:1!important;
   margin:0!important;
-  font-size:clamp(23px,2.1vw,32px)!important;
+  font-size:clamp(22px,1.9vw,29px)!important;
   line-height:1.08!important;
   letter-spacing:var(--ls-title)!important;
   text-wrap:pretty!important;
