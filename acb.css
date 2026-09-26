@@ -8951,14 +8951,15 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
 @media(max-width:600px){
   html body#acb-design#acb-design.about-page .about-origin .about-two-col{
     display:grid!important;
-    grid-template-columns:minmax(96px,118px) minmax(0,1fr)!important;
+    grid-template-columns:1fr!important;
     grid-template-areas:
-      "label label"
-      "photo intro"
-      "detail detail"
-      "credential credential"
-      "caption caption"!important;
-    column-gap:18px!important;
+      "photo"
+      "label"
+      "intro"
+      "detail"
+      "credential"
+      "caption"!important;
+    column-gap:0!important;
     row-gap:0!important;
     align-items:start!important;
   }
@@ -8968,7 +8969,7 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
   }
   html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note{
     grid-area:label!important;
-    margin:0 0 10px!important;
+    margin:24px 0 10px!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
     grid-area:photo!important;
@@ -8982,7 +8983,7 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
   }
   html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
     grid-area:detail!important;
-    margin-top:28px!important;
+    margin-top:20px!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-logo{
     grid-area:credential!important;
