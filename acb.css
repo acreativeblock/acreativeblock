@@ -8872,10 +8872,21 @@ html body#acb-design#acb-design.about-page .about-origin .about-portrait-credent
   margin-top:16px!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential .about-certification-mark{
-  width:58px!important;
-  height:58px!important;
-  flex-basis:58px!important;
+  width:66px!important;
+  height:auto!important;
+  flex-basis:auto!important;
+  overflow:visible!important;
+  border-radius:0!important;
+  background:transparent!important;
   box-shadow:none!important;
+}
+html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential .about-certification-mark img{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  transform:none!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential figcaption{
   padding:0!important;
