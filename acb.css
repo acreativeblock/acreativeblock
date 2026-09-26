@@ -8907,3 +8907,86 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
     margin-top:24px!important;
   }
 }
+
+/* About story responsive composition. */
+@media(min-width:1025px){
+  html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
+    padding-top:32px!important;
+  }
+}
+@media(min-width:601px) and (max-width:1024px){
+  html body#acb-design#acb-design.about-page .about-origin .about-two-col{
+    grid-template-columns:150px minmax(0,1fr)!important;
+    gap:clamp(28px,4vw,48px)!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-founder-column{
+    display:block!important;
+    width:150px!important;
+    max-width:150px!important;
+    padding-top:32px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
+    width:150px!important;
+    max-width:150px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    column-gap:0!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note,
+  html body#acb-design#acb-design.about-page .about-origin .about-story-intro,
+  html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+    grid-column:1!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+    margin-top:24px!important;
+  }
+}
+@media(max-width:600px){
+  html body#acb-design#acb-design.about-page .about-origin .about-two-col{
+    display:grid!important;
+    grid-template-columns:minmax(96px,118px) minmax(0,1fr)!important;
+    grid-template-areas:
+      "label label"
+      "photo intro"
+      "detail detail"
+      "credential credential"
+      "caption caption"!important;
+    column-gap:18px!important;
+    row-gap:0!important;
+    align-items:start!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-founder-column,
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
+    display:contents!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note{
+    grid-area:label!important;
+    margin:0 0 10px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
+    grid-area:photo!important;
+    width:100%!important;
+    max-width:118px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
+    grid-area:intro!important;
+    font-size:clamp(20px,5.8vw,24px)!important;
+    line-height:1.06!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+    grid-area:detail!important;
+    margin-top:28px!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-logo{
+    grid-area:credential!important;
+    width:70px!important;
+    max-width:70px!important;
+    margin:26px 0 0!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-caption{
+    grid-area:caption!important;
+    margin:5px 0 0!important;
+  }
+}
