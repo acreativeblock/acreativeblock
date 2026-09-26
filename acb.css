@@ -8833,11 +8833,20 @@ html body#acb-design#acb-design.about-page .about-certification-mark img{
   }
 }
 
-/* Story composition: compact portrait left; large opening then smaller copy right. */
+/* Story composition: portrait left; the story itself stays in two text columns. */
 html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  column-gap:clamp(36px,4vw,64px)!important;
+  align-items:start!important;
   min-width:0!important;
 }
+html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note{
+  grid-column:1/-1!important;
+  margin-bottom:clamp(18px,2vw,28px)!important;
+}
 html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
+  grid-column:1!important;
   margin:0!important;
   font-size:clamp(26px,2.8vw,40px)!important;
   line-height:1.08!important;
@@ -8845,9 +8854,10 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
   text-wrap:pretty!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+  grid-column:2!important;
   display:grid!important;
   gap:16px!important;
-  margin-top:clamp(24px,3vw,38px)!important;
+  margin-top:0!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-story-detail p{
   margin:0!important;
@@ -8856,7 +8866,18 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-detail p{
   text-wrap:pretty!important;
 }
 @media(max-width:774px){
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
+    grid-template-columns:1fr!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note,
+  html body#acb-design#acb-design.about-page .about-origin .about-story-intro,
+  html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+    grid-column:1!important;
+  }
   html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
     font-size:var(--fs-copy-lg)!important;
+  }
+  html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+    margin-top:24px!important;
   }
 }
