@@ -8879,15 +8879,6 @@ html body#acb-design#acb-design.about-page .about-origin .about-portrait-credent
   background:transparent!important;
   box-shadow:none!important;
 }
-html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-caption{
-  margin:5px 0 0!important;
-  padding:0!important;
-  font-size:11px!important;
-  line-height:1.1!important;
-  letter-spacing:-.01em!important;
-  text-align:left!important;
-  color:var(--ink)!important;
-}
 html body#acb-design#acb-design.about-page .about-origin>.wrap{
   padding-bottom:clamp(44px,5vw,68px)!important;
 }
@@ -8957,8 +8948,7 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
       "label"
       "intro"
       "detail"
-      "credential"
-      "caption"!important;
+      "credential"!important;
     column-gap:0!important;
     row-gap:0!important;
     align-items:start!important;
@@ -8990,9 +8980,5 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
     width:70px!important;
     max-width:70px!important;
     margin:26px 0 0!important;
-  }
-  html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential-caption{
-    grid-area:caption!important;
-    margin:5px 0 0!important;
   }
 }
