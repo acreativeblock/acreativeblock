@@ -8843,7 +8843,7 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
 }
 html body#acb-design#acb-design.about-page .about-origin .about-story-copy>.side-note{
   grid-column:1/-1!important;
-  margin-bottom:clamp(18px,2vw,28px)!important;
+  margin-bottom:8px!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
   grid-column:1!important;
