@@ -8972,7 +8972,7 @@ html body#acb-design#acb-design.about-page .about-origin>.wrap{
   }
   html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
     grid-area:intro!important;
-    font-size:clamp(20px,5.8vw,24px)!important;
+    font-size:var(--fs-body)!important;
     line-height:1.06!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
