@@ -8832,3 +8832,31 @@ html body#acb-design#acb-design.about-page .about-certification-mark img{
     width:140px!important;
   }
 }
+
+/* Story composition: compact portrait left; large opening then smaller copy right. */
+html body#acb-design#acb-design.about-page .about-origin .about-story-copy{
+  min-width:0!important;
+}
+html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
+  margin:0!important;
+  font-size:clamp(26px,2.8vw,40px)!important;
+  line-height:1.08!important;
+  letter-spacing:var(--ls-title)!important;
+  text-wrap:pretty!important;
+}
+html body#acb-design#acb-design.about-page .about-origin .about-story-detail{
+  display:grid!important;
+  gap:16px!important;
+  margin-top:clamp(24px,3vw,38px)!important;
+}
+html body#acb-design#acb-design.about-page .about-origin .about-story-detail p{
+  margin:0!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.25!important;
+  text-wrap:pretty!important;
+}
+@media(max-width:774px){
+  html body#acb-design#acb-design.about-page .about-origin .about-story-intro{
+    font-size:var(--fs-copy-lg)!important;
+  }
+}
