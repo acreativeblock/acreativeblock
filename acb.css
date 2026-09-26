@@ -8867,7 +8867,7 @@ html body#acb-design#acb-design.about-page .about-origin .about-story-detail p{
 }
 html body#acb-design#acb-design.about-page .about-origin .about-portrait-credential{
   display:grid!important;
-  justify-items:center!important;
+  justify-items:start!important;
   gap:6px!important;
   margin-top:16px!important;
 }
@@ -8882,7 +8882,7 @@ html body#acb-design#acb-design.about-page .about-origin .about-portrait-credent
   font-size:11px!important;
   line-height:1.1!important;
   letter-spacing:-.01em!important;
-  text-align:center!important;
+  text-align:left!important;
   color:var(--ink)!important;
 }
 @media(max-width:774px){
