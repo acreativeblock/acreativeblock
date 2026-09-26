@@ -8754,19 +8754,19 @@ html body#acb-design#acb-design .acb-footer .mark .ack{
 
 /* The founder portrait reads as a compact ID-style image beside the story. */
 html body#acb-design#acb-design.about-page .about-origin .about-two-col{
-  grid-template-columns:minmax(160px,230px) minmax(0,1fr)!important;
+  grid-template-columns:minmax(190px,260px) minmax(0,1fr)!important;
   gap:clamp(28px,4vw,64px)!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
   width:100%!important;
-  max-width:230px!important;
+  max-width:260px!important;
   justify-self:start!important;
   align-self:start!important;
 }
 html body#acb-design#acb-design.about-page .about-origin .about-founder-photo picture,
 html body#acb-design#acb-design.about-page .about-origin .about-founder-photo img{
   width:100%!important;
-  aspect-ratio:3/4!important;
+  aspect-ratio:4/5!important;
   object-fit:cover!important;
   object-position:center!important;
 }
@@ -8775,11 +8775,11 @@ html body#acb-design#acb-design.about-page .about-origin .about-founder-photo im
     grid-template-columns:1fr!important;
   }
   html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
-    width:clamp(150px,28vw,190px)!important;
+    width:clamp(170px,30vw,220px)!important;
   }
 }
 @media(max-width:684px){
   html body#acb-design#acb-design.about-page .about-origin .about-founder-photo{
-    width:clamp(140px,42vw,175px)!important;
+    width:clamp(155px,46vw,200px)!important;
   }
 }
